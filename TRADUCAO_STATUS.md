@@ -45,7 +45,10 @@ Status: **em andamento; tradução integral ainda não concluída**.
 - Interface: áreas de resposta dos seis tipos, sim/não e nomes acessíveis, ações, opções, rótulos de laboratórios/competências e escopo da curadoria. Os filtros mantêm os valores `in`, `borderline`, `out`; a detecção de imagem aceita a redação em português.
 - `lote-01-casos-md102.json`: os 14 domínios das três provas; todas as abas e o conteúdo dos dois estudos de caso MD-102.
 - `lote-02-md102-q001-q020.json`: enunciados e campos de resposta de Q001–Q020 da MD-102. Explicações/detalhes e títulos dos links ainda precisam da revisão final.
-- Imagens MD-102 Q005 e Q017: capturas inspecionadas; tradução completa dos rótulos e valores acrescentada ao enunciado, sem comentários sobre o gabarito. Q028 e Q044 inspecionadas, ainda sem transcrição.
+- `lote-03-md102-q021-q066.json` e `lote-04-md102-q067-q112.json`: mais 80 questões MD-102. Total: **100/241** enunciados e campos de resposta traduzidos (os IDs originais têm lacunas; não criar as questões ausentes).
+- `lote-05-casos-sc300.json` e `lote-06-casos-az104.json`: todas as abas e textos dos seis estudos de caso SC-300/AZ-104. Os oito estudos de caso das três provas estão traduzidos; revisão final ainda necessária.
+- `competencias.json` + `node tools/traducao/competencias.mjs`: as 44 competências e seus 263 itens, nas três provas. Os títulos dos documentos vinculados ainda estão em inglês. Os snapshots dos guias oficiais continuam originais.
+- Imagens MD-102 Q005, Q017, Q028, Q044, Q085 e Q094: capturas inspecionadas; tradução dos rótulos e valores acrescentada ao enunciado, sem comentários sobre o gabarito. URLs presentes nas capturas foram reproduzidas literalmente e constam como adições permitidas no validador.
 
 ## Verificações realizadas
 
@@ -55,7 +58,7 @@ Status: **em andamento; tradução integral ainda não concluída**.
 
 ## Próxima etapa
 
-Continuar MD-102 a partir de Q021. Traduzir os estudos de caso SC-300/AZ-104 e os três catálogos de documentação. Revisar explicações/detalhes, laboratórios/fontes Markdown e todas as imagens restantes. SC-300 e AZ-104 ainda têm os enunciados e alternativas originais em inglês. Nenhum banco está marcado como integralmente concluído.
+Continuar MD-102 a partir de Q113 (índice 100 do banco). Iniciar os lotes de enunciados/alternativas SC-300 e AZ-104. Traduzir os títulos dos links dos três catálogos e das explicações; revisar os tópicos, as explicações/detalhes, laboratórios/fontes Markdown e todas as imagens restantes. Nenhum banco está marcado como integralmente concluído.
 
 ## Validação prevista
 

@@ -7,6 +7,11 @@ import { abrir, ler } from './dados.mjs';
 
 const base = '4ab8291';
 const textos = new Set(['stem','topic','options','statements','pool','label','panelTitle','alt','caption','explanation','details','note','name','title','body','t','overview','prereqs','steps','test','evidence','expected','variations','breakit','cleanup']);
+// URL já visível na captura Q028, agora também na transcrição adjacente.
+const urlsTranscritas = {
+  'exams/MD-102/questions.js/dados/Q028/stem': ['https://contoso.com'],
+  'exams/MD-102/questions.js/dados/Q085/stem': ['https://products.office.com/en-us/explore-office-for-home','https://privacy.microsoft.com/en-us/privacystatement']
+};
 const protegidos = texto => ({
   imagens: [...texto.matchAll(/!\[[^\]]*\]\(([^)]+)\)(\{w=\d+\})?/g)].map(m => m[1] + (m[2] || '')),
   urls: [...texto.matchAll(/https?:\/\/[^\s<>"`]+/g)].map(m => m[0]),
@@ -15,13 +20,15 @@ const protegidos = texto => ({
 });
 function comparar(a,b,caminho,campo='') {
   if (typeof a === 'string' && typeof b === 'string' && textos.has(campo)) {
-    assert.deepEqual(protegidos(b), protegidos(a), `Código/URL/imagem/marcador alterado: ${caminho}`);
+    const original = protegidos(a);
+    original.urls.push(...(urlsTranscritas[caminho] || []));
+    assert.deepEqual(protegidos(b), original, `Código/URL/imagem/marcador alterado: ${caminho}`);
     return;
   }
   if (Array.isArray(a)) {
     assert.ok(Array.isArray(b), caminho);
     assert.equal(b.length, a.length, `Quantidade alterada: ${caminho}`);
-    a.forEach((v,i) => comparar(v,b[i],`${caminho}/${i}`,campo));
+    a.forEach((v,i) => comparar(v,b[i],`${caminho}/${v?.id ?? i}`,campo));
   } else if (a && typeof a === 'object') {
     assert.deepEqual(Object.keys(b).sort(), Object.keys(a).sort(), `Chaves alteradas: ${caminho}`);
     for (const k of Object.keys(a)) comparar(a[k],b[k],`${caminho}/${k}`,k);

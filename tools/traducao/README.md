@@ -4,6 +4,7 @@ Cada JSON desta pasta registra alterações de textos em campos específicos. `a
 
 ```powershell
 node tools/traducao/aplicar.mjs tools/traducao/lote-01.json
+node tools/traducao/competencias.mjs
 node tools/traducao/validar.mjs
 ```
 
