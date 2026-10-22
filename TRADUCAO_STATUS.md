@@ -20,7 +20,7 @@ Lista exata e reutilizável: `tools/traducao/TRADUCAO_PENDENCIAS.json`. Termos p
 
 - Backup integral anterior às alterações: `../Certificados-102-backups/antes-traducao-2026-10-22.zip` (644 arquivos, incluindo PDFs e imagens; manifesto SHA-256 dentro do ZIP).
 - Commit do estado original do simulador: `4ab8291`.
-- O projeto já continha arquivos não rastreados; esse commit registra o estado encontrado. Os PDFs em `Dumps/` continuam fora do Git e estão no backup.
+- O projeto já continha arquivos não rastreados; esse commit registra o estado encontrado. Os PDFs em `Dumps/` foram adicionados ao Git no commit `80b3be4` e também estão no backup.
 - Não executar novamente a curadoria nem `enrich.py` durante a tradução: esses geradores podem substituir textos e gabaritos. Os insumos originais em `tools/pipeline/enrich/cache/` devem permanecer originais.
 
 ## Inventário e escopo

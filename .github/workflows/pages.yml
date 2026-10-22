@@ -1,0 +1,44 @@
+name: Publicar simulador no GitHub Pages
+
+# Ativação manual enquanto o Pages aguarda a definição de repositório/plano.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - name: Obter arquivos do simulador
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /index.html
+            /exams.js
+            /exams/
+            /tools/publicar/
+          sparse-checkout-cone-mode: false
+      - name: Preparar pacote do site
+        run: node tools/publicar/preparar.mjs
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Enviar pacote
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publicar
+        id: publicacao
+        uses: actions/deploy-pages@v4
