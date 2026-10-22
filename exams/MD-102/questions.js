@@ -38,15 +38,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 cria arquivo em D:\\Folder1 com o Notepad:** Não, pelo gabarito (pasta protegida). A comunidade aponta que o Notepad é confiável e passaria.\n- **User2 remove a pasta da lista:** Não. Configuração gerenciada pelo Intune não é editável no dispositivo.\n- **User3 grava no Desktop por script:** Não. O Desktop é pasta protegida por padrão, e scripts do PowerShell não são confiáveis.\n\n**Dica de prova:** O Controlled folder access em modo Audit só registra (evento 1124); use-o antes de ativar o Block.",
     "docs": [
       {
-        "t": "Protect folders from ransomware with controlled folder access - Microsoft Defender for Endpoint",
+        "t": "Proteger pastas contra ransomware com o acesso controlado a pastas - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/controlled-folder-access-overview"
       },
       {
-        "t": "Manage attack surface reduction settings with Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de redução da superfície de ataque com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/attack-surface-reduction"
       },
       {
-        "t": "ASR rules reference - Microsoft Defender for Endpoint",
+        "t": "Referência de regras de redução da superfície de ataque (ASR) - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference"
       }
     ]
@@ -77,7 +77,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device3:** é pessoal; o \"Convert all targeted devices to Autopilot\" só registra dispositivos corporativos.\n- **Device2:** está no grupo excluído (Group2).\n\n**Dica de prova:** A conversão faz o upload do hash do dispositivo; o perfil Autopilot só vale no próximo reset ou na reinstalação.",
     "docs": [
       {
-        "t": "Windows Autopilot for existing devices",
+        "t": "Windows Autopilot para dispositivos existentes",
         "u": "https://learn.microsoft.com/en-us/autopilot/existing-devices"
       },
       {
@@ -212,15 +212,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Só credenciais / só PIN:** com \"Require\" para as credenciais, a reverificação pede PIN e conta.\n- **Bloquear / reset do PIN do dispositivo / wipe:** a ação configurada em \"Max PIN attempts\" é Reset PIN (do app).\n\n**Dica de prova:** \"Recheck the access requirements after (minutes of inactivity)\" vale para o app protegido, não para o dispositivo.",
     "docs": [
       {
-        "t": "iOS/iPadOS App Protection Policy Settings - Microsoft Intune",
+        "t": "Configurações de políticas de proteção de aplicativos iOS/iPadOS - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/ref-settings-ios"
       },
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ],
@@ -261,7 +261,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Sequência**\n- **/packager:** gera pacote App-V, não instala o Microsoft 365 Apps.\n- **Ordem:** sem baixar e extrair o ODT não há setup.exe; sem o XML editado, o /download não sabe o que baixar.\n\n**Dica de prova:** Para instalar direto da CDN, pule o /download e use só /configure com o XML (sem SourcePath).",
     "docs": [
       {
-        "t": "Add Microsoft 365 Apps to Windows Devices Using Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar Aplicativos do Microsoft 365 a dispositivos Windows usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-microsoft-365-windows"
       }
     ]
@@ -289,11 +289,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Windows inscritos:** app config para Windows existe só via MAM (Edge, não inscritos).\n- **Todos:** dispositivos gerenciados Windows usam perfis de configuração, não app config.",
     "docs": [
       {
-        "t": "App Configuration Policies for Microsoft Intune - Microsoft Intune",
+        "t": "Políticas de configuração de aplicativos para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/overview"
       },
       {
-        "t": "Add App Configuration Policies for Managed iOS/iPadOS Devices - Microsoft Intune",
+        "t": "Adicionar políticas de configuração de aplicativos para dispositivos iOS/iPadOS gerenciados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-ios"
       }
     ]
@@ -335,11 +335,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **App configuration policy:** configura o app, não protege dados.\n- **Conditional Access:** controla acesso, não copiar/colar.\n- **Compliance policy:** avalia o dispositivo.\n- **1, 2, 4 ou 5 políticas:** uma por plataforma (Windows, Android, iOS); versões não importam.",
     "docs": [
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ]
@@ -401,11 +401,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **1:** as políticas são por plataforma (Android ≠ iOS).\n- **3 a 5:** versões diferentes do mesmo SO usam a mesma política.",
     "docs": [
       {
-        "t": "App Configuration Policies for Microsoft Intune - Microsoft Intune",
+        "t": "Políticas de configuração de aplicativos para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/overview"
       },
       {
-        "t": "Add App Configuration Policies for Managed iOS/iPadOS Devices - Microsoft Intune",
+        "t": "Adicionar políticas de configuração de aplicativos para dispositivos iOS/iPadOS gerenciados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-ios"
       }
     ]
@@ -466,11 +466,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Filter for devices / device platforms:** filtram o dispositivo, não o protocolo.\n- **User risk / sign-in risk:** tratam de risco.\n\n**Dica de prova:** A Microsoft oferece o template \"Block legacy authentication\"; teste em report-only.",
     "docs": [
       {
-        "t": "Use Conditional Access with Microsoft Intune compliance policies - Microsoft Intune",
+        "t": "Usar o Acesso Condicional com políticas de conformidade do Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview"
       },
       {
-        "t": "How to Require Device Compliance with Conditional Access - Microsoft Entra ID",
+        "t": "Como exigir a conformidade de dispositivos com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance"
       }
     ]
@@ -510,7 +510,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Monthly Enterprise / What's New / Health / Inventory / Setup / Home:** não controlam WebView2 nem feedback.\n\n**Dica de prova:** As políticas de nuvem (Cloud Policy) valem para o usuário em qualquer dispositivo onde ele entra no Office.",
     "docs": [
       {
-        "t": "Overview of the Microsoft 365 Apps admin center - Microsoft 365 Apps",
+        "t": "Visão geral do centro de administração dos Aplicativos do Microsoft 365 - Aplicativos do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/overview"
       }
     ]
@@ -536,7 +536,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device profile:** configura o Windows, não instala o Office.\n- **App registration / enterprise app:** objetos de identidade.\n\n**Dica de prova:** No app Microsoft 365 Apps do Intune, escolha a arquitetura, o canal (Current/Monthly/Semi-Annual) e os apps excluídos.",
     "docs": [
       {
-        "t": "Add Microsoft 365 Apps to Windows Devices Using Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar Aplicativos do Microsoft 365 a dispositivos Windows usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-microsoft-365-windows"
       }
     ]
@@ -562,15 +562,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Retire:** fica pendente até o check-in; não remove o objeto \"imediatamente\".\n- **Fresh Start:** reinstala o Windows e remove apps do usuário (pode manter dados).\n- **Autopilot Reset:** limpa tudo, menos a inscrição.\n\n**Dica de prova:** Delete remove o registro do Intune; no próximo check-in, o dispositivo sofre o retire automaticamente.",
     "docs": [
       {
-        "t": "Wipe devices with Microsoft Intune - Microsoft Intune",
+        "t": "Apagar dispositivos com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/wipe"
       },
       {
-        "t": "Device Action: Sync - Microsoft Intune",
+        "t": "Ação de dispositivo: sincronizar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/sync"
       },
       {
-        "t": "Device Action: Restart - Microsoft Intune",
+        "t": "Ação de dispositivo: reiniciar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/restart"
       }
     ],
@@ -599,11 +599,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Azure Monitor:** plataforma de logs; não traz o relatório pronto de boot.\n- **Intune Data Warehouse:** dados históricos de inventário e compliance.\n- **Defender for Endpoint:** segurança.\n\n**Dica de prova:** O Endpoint analytics exige que os dispositivos enviem dados (perfil de onboarding ou Intune data collection policy).",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ],
@@ -728,11 +728,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Users and Accounts / General / System security:** não contêm as opções de quiosque.\n\n**Dica de prova:** Para quiosque de verdade, use o perfil **dedicated** (COSU) com o Managed Home Screen.",
     "docs": [
       {
-        "t": "Device restriction settings for Android in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de restrição de dispositivos Android no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-android-enterprise"
       },
       {
-        "t": "Device features and settings in Microsoft Intune - Microsoft Intune",
+        "t": "Recursos e configurações de dispositivos no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/overview"
       }
     ]
@@ -758,15 +758,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Purview:** compliance, não Defender for Endpoint.\n- **Security baseline:** não faz o onboarding no macOS.\n- **Instalar o Defender manualmente:** mais esforço; o gabarito considera os perfis de configuração do Intune (mais o app).\n\n**Dica de prova:** O onboarding no macOS precisa: system extensions, full disk access, network filter, notificações, o pacote de onboarding e o app (PKG).",
     "docs": [
       {
-        "t": "Deploy Microsoft Defender for Endpoint on macOS with Intune - Microsoft Defender for Endpoint",
+        "t": "Implantar o Microsoft Defender for Endpoint no macOS com o Intune - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/mac-install-with-intune"
       },
       {
-        "t": "Configure Microsoft Defender for Endpoint with Intune and onboard devices - Microsoft Intune",
+        "t": "Configurar o Microsoft Defender for Endpoint com o Intune e integrar dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/configure-integration"
       },
       {
-        "t": "Onboard devices to Microsoft Defender for Endpoint - Microsoft Defender for Endpoint",
+        "t": "Integrar dispositivos ao Microsoft Defender for Endpoint - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/onboarding"
       }
     ]
@@ -797,11 +797,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **GPO:** dispositivos só Entra joined não recebem GPO.\n- **Antivírus em Endpoint protection:** nos templates clássicos, o Defender AV fica em Device restrictions.\n- **Firewall em Device restrictions:** o Firewall fica em Endpoint protection.\n\n**Dica de prova:** Hoje use Endpoint security > Antivirus e Firewall (melhor relatório e menos conflitos).",
     "docs": [
       {
-        "t": "Manage firewall settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de firewall com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/firewall"
       },
       {
-        "t": "Manage antivirus settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de antivírus com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/antivirus"
       }
     ]
@@ -870,11 +870,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que cada um:** sem a conexão com o Intune, o risco de máquina do MDE não chega à compliance policy nem ao CA. Scripts ofuscados e downloaders JS/VBS são bloqueados por regras de ASR específicas.\n\n**Dica de prova:** A compliance policy usa \"Require the device to be at or under the machine risk score\".",
     "docs": [
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -900,7 +900,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Administrative Templates:** ADMX; não incluem a política de senha local.\n- **Endpoint protection:** firewall, BitLocker etc.\n- **Custom:** OMA-URI manual; desnecessário.\n\n**Dica de prova:** Em dispositivos Entra joined, a política de senha do Windows Hello/PIN é separada da senha local.",
     "docs": [
       {
-        "t": "Restrict devices features using policy in Microsoft Intune - Microsoft Intune",
+        "t": "Restringir recursos de dispositivos usando políticas no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-device-restrictions"
       },
       {
@@ -979,11 +979,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **ASR / baseline / account protection / antivirus:** configuram proteção, mas não fazem o onboarding no MDE.\n\n**Dica de prova:** Antes, habilite a conexão Intune ↔ MDE; aí a política de EDR usa automaticamente o pacote de onboarding do conector.",
     "docs": [
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -1012,7 +1012,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Bloquear só Personally Owned do device admin:** corporativos ainda entrariam pelo device administrator.\n- **Permitir device admin:** contraria o requisito.\n\n**Dica de prova:** O Android device administrator está descontinuado no Intune com GMS (desde dezembro de 2024).",
     "docs": [
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -1060,19 +1060,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Só URLs com contoso.com:** o Public Browsing não restringe URLs (precisaria da lista de bloqueio).\n- **Sem barra de endereços:** o modo Digital/Interactive signage é que esconde.\n- **Várias instâncias:** single-app kiosk tem uma instância só.\n\n**Dica de prova:** A Kiosk URL é só a página inicial; o reset por inatividade limpa a sessão.",
     "docs": [
       {
-        "t": "Kiosk settings for Windows and Holographic devices in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de quiosque para dispositivos Windows e Holographic no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-kiosk"
       },
       {
-        "t": "Windows Holographic Business device settings - Microsoft Intune",
+        "t": "Configurações de dispositivos Windows Holographic Business - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-windows-holographic"
       },
       {
-        "t": "Surface Hub Windows 10 Team device restrictions in Microsoft Intune - Microsoft Intune",
+        "t": "Restrições de dispositivos Surface Hub com Windows 10 Team no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-surface-hub"
       },
       {
-        "t": "Deploy OEMConfig profiles to Zebra devices using Microsoft Intune - Microsoft Intune",
+        "t": "Implantar perfis OEMConfig em dispositivos Zebra usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/deploy-oemconfig-zebra-android"
       }
     ],
@@ -1118,11 +1118,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Bandwidth optimization / VPN peer caching:** não definem a fonte (LAN/internet).\n- **App configuration / quality updates / update rings:** não configuram o Delivery Optimization.\n\n**Dica de prova:** Download mode: HTTP only (0), LAN (1), Group (2), Internet (3), Simple (99), Bypass (100).",
     "docs": [
       {
-        "t": "Windows Delivery Optimization settings in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de Otimização de Entrega do Windows no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-delivery-optimization-windows"
       },
       {
-        "t": "What is Delivery Optimization?",
+        "t": "O que é a Otimização de Entrega?",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/do/waas-delivery-optimization"
       }
     ],
@@ -1154,19 +1154,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 no Device1 (Windows):** Não. Custom notifications só chegam em iOS/Android.\n- **User2:** Não. Não está no Group1.\n- **User1 no Device3 (iOS):** Sim. A notificação segue o usuário em qualquer dispositivo iOS/Android dele.\n\n**Dica de prova:** A notificação aparece como push do Company Portal; limite de 25 por hora.",
     "docs": [
       {
-        "t": "Device Action: Send Custom Notification - Microsoft Intune",
+        "t": "Ação de dispositivo: enviar notificação personalizada - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/send-custom-notification"
       },
       {
-        "t": "Device Action: Sync - Microsoft Intune",
+        "t": "Ação de dispositivo: sincronizar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/sync"
       },
       {
-        "t": "Wipe devices with Microsoft Intune - Microsoft Intune",
+        "t": "Apagar dispositivos com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/wipe"
       },
       {
-        "t": "Device Action: Restart - Microsoft Intune",
+        "t": "Ação de dispositivo: reiniciar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/restart"
       }
     ]
@@ -1192,7 +1192,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Company Portal:** app do usuário final.\n- **Endpoint analytics:** relatórios de desempenho.\n- **Azure portal app:** não gera relatórios do Data Warehouse.\n\n**Dica de prova:** O feed OData também pode ser consumido no Excel ou por qualquer cliente OData.",
     "docs": [
       {
-        "t": "Use the Intune Data Warehouse - Microsoft Intune",
+        "t": "Usar o Data Warehouse do Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/developer/data-warehouse/create-reports"
       },
       {
@@ -1230,11 +1230,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **DEM:** conta para inscrever muitos dispositivos, mas depende do certificado antes.\n- **Restrições:** vêm depois.\n- **Identificadores:** são usados no Apple Configurator, mas só depois do push certificate.\n\n**Dica de prova:** O certificado vale um ano; renove com o **mesmo Apple ID** para não perder a gestão dos dispositivos.",
     "docs": [
       {
-        "t": "Set up automated device enrollment (ADE) for iOS/iPadOS - Microsoft Intune",
+        "t": "Configurar a inscrição automatizada de dispositivos (ADE) para iOS/iPadOS - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-automated-ios"
       },
       {
-        "t": "Set up automated device enrollment (ADE) for macOS - Microsoft Intune",
+        "t": "Configurar a inscrição automatizada de dispositivos (ADE) para macOS - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-automated-macos"
       }
     ]
@@ -1282,11 +1282,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **WSUS / ConfigMgr:** exigem servidores on-premises (custo).\n- **GPO:** dispositivos só Entra joined não recebem GPO.\n- **BranchCache / Peer cache:** BranchCache exige configuração on-premises; Peer cache é do ConfigMgr.\n\n**Dica de prova:** WUfB via Intune = update rings + feature/quality/driver update policies.",
     "docs": [
       {
-        "t": "Windows Update Management Overview - Microsoft Intune",
+        "t": "Visão geral do gerenciamento do Windows Update - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/windows/"
       },
       {
-        "t": "Quick guide to Windows as a service",
+        "t": "Guia rápido do Windows como serviço",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/update/waas-quick-start"
       }
     ]
@@ -1312,11 +1312,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **GPO de WUfB / Peer-to-Peer Networking:** não são a forma gerenciada pelo Intune, e Peer-to-Peer Networking não é Delivery Optimization.\n- **Update ring:** tem uma opção de Delivery Optimization antiga, mas os limites de banda ficam no perfil próprio.\n\n**Dica de prova:** Limite por porcentagem: \"Maximum foreground/background download bandwidth (percentage)\".",
     "docs": [
       {
-        "t": "Windows Delivery Optimization settings in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de Otimização de Entrega do Windows no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-delivery-optimization-windows"
       },
       {
-        "t": "What is Delivery Optimization?",
+        "t": "O que é a Otimização de Entrega?",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/do/waas-delivery-optimization"
       }
     ]
@@ -1343,7 +1343,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Group1 (distribuição):** grupos de distribuição não têm SID de segurança útil para permissões locais.\n- **Group3 (local):** grupos locais não podem ser aninhados em outro grupo local.\n\n**Dica de prova:** Grupos locais aceitam: usuários locais e do domínio, e grupos globais e universais de segurança do domínio (e domain local do mesmo domínio).",
     "docs": [
       {
-        "t": "Manage account protection settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de proteção de contas com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/account-protection"
       }
     ]
@@ -1504,11 +1504,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Sequência**\n- **System Security:** não valida BIOS.\n- **CA Insights workbook:** mostra impacto de CA, não o resultado do script.\n- **Upload do JSON no Entra:** o JSON vai na própria compliance policy do Intune.\n\n**Dica de prova:** O script de descoberta retorna um JSON compacto; as regras comparam os valores (ex.: BiosVersion GreaterEquals).",
     "docs": [
       {
-        "t": "Use custom compliance settings in Microsoft Intune - Microsoft Intune",
+        "t": "Usar configurações de conformidade personalizadas no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/compliance/custom-settings"
       },
       {
-        "t": "Create discovery scripts for custom compliance policy in Microsoft Intune - Microsoft Intune",
+        "t": "Criar scripts de descoberta para políticas de conformidade personalizadas no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/compliance/create-custom-script"
       }
     ]
@@ -1544,7 +1544,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Event Log Readers:** só lê logs.\n- **Power Users:** grupo legado, sem direitos extras no Windows 10.\n\n**Dica de prova:** Alternativa de menor privilégio: dar só o direito específico (Change the system time / Manage auditing and security log) via política, sem Administrators.",
     "docs": [
       {
-        "t": "Manage account protection settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de proteção de contas com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/account-protection"
       }
     ]
@@ -1587,15 +1587,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Join para iOS / Ubuntu:** Entra join é só para Windows 10/11 (e Server em VM do Azure).\n- **Registro só de alguns:** iOS, Android, macOS e Ubuntu também registram.",
     "docs": [
       {
-        "t": "What is device identity in Microsoft Entra ID? - Microsoft Entra ID",
+        "t": "O que é a identidade de dispositivo no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/overview"
       },
       {
-        "t": "What is a Microsoft Entra joined device? - Microsoft Entra ID",
+        "t": "O que é um dispositivo ingressado no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join"
       },
       {
-        "t": "What is a Microsoft Entra hybrid joined device? - Microsoft Entra ID",
+        "t": "O que é um dispositivo com ingresso híbrido no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-hybrid-join"
       }
     ]
@@ -1624,11 +1624,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 (quem fez o join):** Sim. Vira admin local por padrão (a menos que \"Registering user is added as local administrator\" esteja em None).\n- **Admin1 (Security admin):** Não. A função não dá admin local.\n- **Admin2 (Cloud Device admin):** Não. Também não dá admin local.\n\n**Dica de prova:** Use \"Microsoft Entra Joined Device Local Administrator\" ou o Windows LAPS para administração local.",
     "docs": [
       {
-        "t": "Plan your Microsoft Entra join deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do ingresso no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan"
       },
       {
-        "t": "Join Windows 11 Devices to Microsoft Entra ID During OOBE - Microsoft Entra ID",
+        "t": "Ingressar dispositivos Windows 11 no Microsoft Entra ID durante a OOBE - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-out-of-box"
       }
     ]
@@ -1654,7 +1654,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Access Control Assistance Operators:** consulta permissões de recursos remotamente.\n- **Remote Desktop Users:** RDP, não WinRM.\n- **Power Users:** legado.\n\n**Dica de prova:** O endpoint padrão do PowerShell remoting permite Administrators e Remote Management Users.",
     "docs": [
       {
-        "t": "Security considerations for PowerShell Remoting using WinRM - PowerShell",
+        "t": "Considerações de segurança para comunicação remota do PowerShell usando o WinRM - PowerShell",
         "u": "https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/winrm-security"
       },
       {
@@ -1795,7 +1795,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Connections / Licensing / Profiles / Session Time Limits / Temporary folders / Connection Broker / Printer Redirection / Remote Session Environment:** não contêm as duas opções pedidas.\n\n**Dica de prova:** Caminho: Computer Configuration > Administrative Templates > Windows Components > Remote Desktop Services > Remote Desktop Session Host.",
     "docs": [
       {
-        "t": "Enable Remote Desktop on your PC",
+        "t": "Habilitar a Área de Trabalho Remota no seu computador",
         "u": "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access"
       },
       {
@@ -1882,7 +1882,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Automatic enrollment:** define o MDM, não a coleta de logs.\n- **Deployment profile:** OOBE e tipo de join.\n- **Device configuration profile:** não controla a ESP.\n\n**Dica de prova:** Na ESP, também dá para permitir \"Continue anyway\" ou \"Reset device\" em caso de erro.",
     "docs": [
       {
-        "t": "Set up the Enrollment Status Page in the admin center copy - Microsoft Intune",
+        "t": "Configurar a Página de Status da Inscrição no centro de administração (cópia) - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/setup-status-page"
       }
     ]
@@ -1914,11 +1914,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Intune Administrator:** funciona, mas excede o menor privilégio.\n- **Licença M365 E5:** o E5 não inclui o Remote Help (é add-on ou Intune Suite).\n- **Rerun onboarding:** desnecessário.\n\n**Dica de prova:** O Remote Help precisa ser habilitado no tenant (Tenant administration > Remote Help > Settings).",
     "docs": [
       {
-        "t": "Use Remote Help to Assist Users Authenticated by your Organization - Microsoft Intune",
+        "t": "Usar a Ajuda Remota para auxiliar usuários autenticados pela sua organização - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/remote-help/"
       },
       {
-        "t": "Plan for Remote Help with Microsoft Intune - Microsoft Intune",
+        "t": "Planejar a Ajuda Remota com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/remote-help/plan"
       }
     ]
@@ -1993,15 +1993,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Autopilot com registro manual / automático para Vendas:** OEM é o menor esforço quando o dispositivo vem direto do fabricante.\n- **Autopilot para Marketing:** o requisito é só AD e apps complexos na montagem, o que o ConfigMgr faz melhor.\n\n**Dica de prova:** O revendedor/CSP também pode registrar os dispositivos (Partner Center).",
     "docs": [
       {
-        "t": "Windows deployment scenarios and tools",
+        "t": "Cenários e ferramentas de implantação do Windows",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/windows-deployment-scenarios-and-tools"
       },
       {
-        "t": "Overview of Windows Autopilot",
+        "t": "Visão geral do Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/overview"
       },
       {
-        "t": "Compare Windows Autopilot device preparation and Windows Autopilot",
+        "t": "Comparar a preparação de dispositivos do Windows Autopilot com o Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/device-preparation/compare"
       }
     ]
@@ -2027,15 +2027,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Autopilot / MDT / WDS:** reinstalam ou resetam o Windows e perdem os apps do usuário.\n\n**Dica de prova:** O provisioning package (.ppkg) pode ser aplicado por clique duplo, por USB no OOBE ou por Install-ProvisioningPackage.",
     "docs": [
       {
-        "t": "Provisioning packages overview",
+        "t": "Visão geral dos pacotes de provisionamento",
         "u": "https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-packages"
       },
       {
-        "t": "Overview of Windows Autopilot",
+        "t": "Visão geral do Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/overview"
       },
       {
-        "t": "Compare Windows Autopilot device preparation and Windows Autopilot",
+        "t": "Comparar a preparação de dispositivos do Windows Autopilot com o Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/device-preparation/compare"
       }
     ]
@@ -2064,7 +2064,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Série \"Solution\" (PIN de 6 dígitos no join):** atende **inscrição automática + opções de inscrição do Windows Hello for Business** no Intune. Configurações do Entra e device restrictions não atendem.\n\n**Dica de prova:** Alternativa: política de Account protection (Endpoint security) com o tamanho mínimo do PIN.",
     "docs": [
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -2097,7 +2097,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Série \"Solution\":** device restrictions não controlam o PIN do Windows Hello no provisionamento.",
     "docs": [
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -2130,7 +2130,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Série \"Solution\":** Devices > Windows > Enrollment > Windows Hello for Business → Minimum PIN length = 6. Vale para todos os novos provisionamentos.",
     "docs": [
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -2164,11 +2164,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Deployment profile:** é do Autopilot (Windows).\n- **App protection:** protege dados em apps.\n- **Compliance:** avalia o estado, não configura.",
     "docs": [
       {
-        "t": "Apple device restriction settings in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de restrição de dispositivos Apple no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-apple"
       },
       {
-        "t": "Device features and settings in Microsoft Intune - Microsoft Intune",
+        "t": "Recursos e configurações de dispositivos no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/overview"
       }
     ]
@@ -2295,7 +2295,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 com 5 / 15 / 1.000 / ilimitado:** vale o limite da restrição atribuída ao grupo dele (10); a função Intune Administrator não altera o limite.\n- **User2 com 10 ou ilimitado:** DEM tem limite fixo de 1.000.\n\n**Dica de prova:** Contas DEM não suportam Conditional Access baseado em dispositivo nem Autopilot user-driven.",
     "docs": [
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -2384,7 +2384,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Remote Management Users:** dá permissão, mas sem o WinRM habilitado não há conexão.\n- **Trusted for Delegation:** trata de double-hop, não do básico.\n- **New-PSSession no Computer1:** falharia sem o remoting no destino.",
     "docs": [
       {
-        "t": "Security considerations for PowerShell Remoting using WinRM - PowerShell",
+        "t": "Considerações de segurança para comunicação remota do PowerShell usando o WinRM - PowerShell",
         "u": "https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/winrm-security"
       },
       {
@@ -2457,7 +2457,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Connect-WSMan:** conecta a um WinRM remoto; não configura o local.\n- **Invoke-WSManAction:** chama métodos de recursos WMI via WS-Man.\n- **Enable-PSSessionConfiguration:** só reabilita configurações de sessão; não cria o listener nem a exceção de firewall.\n\n**Dica de prova:** Em redes Public, use -SkipNetworkProfileCheck (a regra de firewall fica restrita à sub-rede local).",
     "docs": [
       {
-        "t": "Installation and configuration for Windows Remote Management - Win32 apps",
+        "t": "Instalação e configuração do Gerenciamento Remoto do Windows - Aplicativos Win32",
         "u": "https://learn.microsoft.com/en-us/windows/win32/winrm/installation-and-configuration-for-windows-remote-management"
       },
       {
@@ -2606,11 +2606,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **3, 7 ou 8:** o limite é de 5 dispositivos por usuário licenciado.\n\n**Dica de prova:** A mesma regra vale para Microsoft 365 Apps (5 PCs/Macs + 5 tablets + 5 telefones).",
     "docs": [
       {
-        "t": "Microsoft Intune Licensing Plans and Options - Microsoft Intune",
+        "t": "Planos e opções de licenciamento do Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/licensing"
       },
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -2679,11 +2679,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device configuration profile:** exige dispositivo inscrito.\n- **DLP do Purview:** protege conteúdo sensível, mas não exige PIN no app nem restringe salvar em outra nuvem de forma nativa.\n- **Insider risk:** trata de comportamento de risco interno.",
     "docs": [
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ]
@@ -2709,11 +2709,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Compliance:** avalia o estado.\n- **Configuration profile:** configura o sistema, não um app específico.\n- **App protection:** protege dados, não entrega favoritos.\n\n**Dica de prova:** No Android Enterprise, as \"managed configurations\" vêm do Managed Google Play; o Intune as entrega via app configuration policy.",
     "docs": [
       {
-        "t": "App Configuration Policies for Microsoft Intune - Microsoft Intune",
+        "t": "Políticas de configuração de aplicativos para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/overview"
       },
       {
-        "t": "Add App Configuration Policies for Managed iOS/iPadOS Devices - Microsoft Intune",
+        "t": "Adicionar políticas de configuração de aplicativos para dispositivos iOS/iPadOS gerenciados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-ios"
       }
     ]
@@ -2739,11 +2739,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **M365 admin center / Intune / Purview:** não geram o XML do ODT.\n\n**Dica de prova:** A Office Customization Tool também exporta e importa configurações e permite escolher o canal, os idiomas e a remoção de versões MSI.",
     "docs": [
       {
-        "t": "Overview of the Office Deployment Tool - Microsoft 365 Apps",
+        "t": "Visão geral da Ferramenta de Implantação do Office - Aplicativos do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool"
       },
       {
-        "t": "Add Microsoft 365 Apps to Windows Devices Using Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar Aplicativos do Microsoft 365 a dispositivos Windows usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-microsoft-365-windows"
       }
     ]
@@ -2806,7 +2806,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **LT1:** Sim. Corporativo, Windows, no grupo.\n- **LT2:** Não. Pessoal, fora do Group1.\n- **LT3:** Não. O app atribuído é o de Windows; macOS usa outro tipo de app (Microsoft 365 Apps for macOS).",
     "docs": [
       {
-        "t": "Add Microsoft 365 Apps to Windows Devices Using Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar Aplicativos do Microsoft 365 a dispositivos Windows usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-microsoft-365-windows"
       }
     ],
@@ -2843,7 +2843,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device restrictions:** já teve \"Insider builds\", mas o gabarito usa custom e update ring.\n- **App configuration / security baseline:** não controlam o Insider.\n\n**Dica de prova:** Hoje use o Settings catalog: \"Allow Build Preview = Not allowed\".",
     "docs": [
       {
-        "t": "Managing preview builds across your organization - Windows Insider Program",
+        "t": "Gerenciar versões prévias em toda a organização - Programa Windows Insider",
         "u": "https://learn.microsoft.com/en-us/windows-insider/business/manage-builds"
       },
       {
@@ -2881,11 +2881,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Baseline regression threshold:** só ajusta o alerta de regressão.\n- **Log Analytics / workbook:** o Endpoint analytics não depende deles.\n\n**Dica de prova:** O baseline padrão é \"All organizations (median)\"; você pode criar baselines próprias depois de ter dados.",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ]
@@ -2984,11 +2984,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Company Portal:** inscrição sem supervisão; não permite controlar atualizações do iOS.\n- **Compliance:** só marca a versão mínima.\n- **App provisioning profile:** é para apps LOB.\n\n**Dica de prova:** Hoje as atualizações de iOS são gerenciadas por DDM (declarative device management) no Settings catalog.",
     "docs": [
       {
-        "t": "Use Microsoft Intune to manage software updates for supervised iOS/iPadOS devices - Microsoft Intune",
+        "t": "Usar o Microsoft Intune para gerenciar atualizações de software de dispositivos iOS/iPadOS supervisionados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-ios"
       },
       {
-        "t": "Configure Update Policies for Apple Devices - Microsoft Intune",
+        "t": "Configurar políticas de atualização para dispositivos Apple - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/"
       }
     ]
@@ -3082,11 +3082,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Azure Monitor agent:** não alimenta o Endpoint analytics.\n- **Compliance / CA:** não coletam dados de desempenho.\n\n**Dica de prova:** Em Endpoint analytics > Settings, a política \"Intune data collection\" é atribuída a todos ou a grupos.",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ]
@@ -3115,11 +3115,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Device1 na quarta:** Sim. Liberado depois do fim da janela de bloqueio (qua 13h).\n- **Device2:** Não. Grupo excluído.\n- **Device3:** Não. Sem supervisão, a política de atualização não se aplica.",
     "docs": [
       {
-        "t": "Use Microsoft Intune to manage software updates for supervised iOS/iPadOS devices - Microsoft Intune",
+        "t": "Usar o Microsoft Intune para gerenciar atualizações de software de dispositivos iOS/iPadOS supervisionados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-ios"
       },
       {
-        "t": "Configure Update Policies for Apple Devices - Microsoft Intune",
+        "t": "Configurar políticas de atualização para dispositivos Apple - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/"
       }
     ],
@@ -3153,15 +3153,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **CA1:** políticas de Conditional Access não entram em policy sets.\n- **Office1:** políticas de nuvem do Office ficam fora.\n- **Só uma plataforma:** o set aceita várias plataformas.",
     "docs": [
       {
-        "t": "Policy Sets - Microsoft Intune",
+        "t": "Conjuntos de políticas - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/policy-sets"
       },
       {
-        "t": "Create assignment filters in Microsoft Intune - Microsoft Intune",
+        "t": "Criar filtros de atribuição no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/filters/overview"
       },
       {
-        "t": "Assignment Filter Performance Tips for Intune - Microsoft Intune",
+        "t": "Dicas de desempenho de filtros de atribuição do Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/filters/performance-recommendations"
       }
     ]
@@ -3187,11 +3187,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Power BI app:** relatórios, não comparação com baseline.\n- **Endpoint Analytics:** experiência e desempenho.\n- **M365 Defender portal:** é o portal; a ferramenta é o Secure Score (dentro dele).\n\n**Dica de prova:** O Microsoft Defender Vulnerability Management também tem avaliação de security baselines.",
     "docs": [
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -3217,11 +3217,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Premium add-ons:** licenças do Intune Suite.\n- **Tenant enrollment:** inscrição.\n- **Tunnel Gateway:** VPN.\n\n**Dica de prova:** A conexão precisa ser ligada também no portal do Defender (Settings > Endpoints > Advanced features > Microsoft Intune connection).",
     "docs": [
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -3252,15 +3252,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Sequência**\n- **Enrollment restrictions:** sem relação.\n- **Certificate managers na CA:** controla a aprovação de certificados, não é exigido.\n\n**Dica de prova:** O template de certificado na CA precisa permitir a exportação da chave privada para o PKCS, e o conector precisa de permissão no template.",
     "docs": [
       {
-        "t": "Types of certificate that are supported by Microsoft Intune - Microsoft Intune",
+        "t": "Tipos de certificado com suporte no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/certificates/overview"
       },
       {
-        "t": "Microsoft Cloud PKI for Microsoft Intune - Microsoft Intune",
+        "t": "Microsoft Cloud PKI para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/cloud-pki/"
       },
       {
-        "t": "Configure Microsoft Cloud PKI root and issuing CA for Microsoft Intune - Microsoft Intune",
+        "t": "Configurar ACs raiz e emissora do Microsoft Cloud PKI para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/cloud-pki/configure-ca"
       }
     ]
@@ -3290,7 +3290,7 @@ SIM.registerQuestions("MD-102", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "Add groups to organize users and devices for Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar grupos para organizar usuários e dispositivos no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/tenant-administration/add-groups"
       }
     ]
@@ -3325,15 +3325,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que App & browser control:** Exploit protection fica lá (System settings e Program settings). Exporte com Get-ProcessMitigation -RegistryConfigFilePath ou pelo botão de exportar, e importe o XML no Intune (ASR/Exploit protection).",
     "docs": [
       {
-        "t": "Apply mitigations to help prevent attacks through vulnerabilities - Microsoft Defender for Endpoint",
+        "t": "Aplicar mitigações para ajudar a prevenir ataques por meio de vulnerabilidades - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/exploit-protection"
       },
       {
-        "t": "Manage attack surface reduction settings with Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de redução da superfície de ataque com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/attack-surface-reduction"
       },
       {
-        "t": "ASR rules reference - Microsoft Defender for Endpoint",
+        "t": "Referência de regras de redução da superfície de ataque (ASR) - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference"
       }
     ]
@@ -3359,11 +3359,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **dsregcmd:** diagnóstico (dsregcmd /status) e operações de hybrid join; não faz o join interativo de workgroup.\n- **Computer Management / netdom:** AD DS.\n\n**Dica de prova:** O join também pode ser feito no OOBE (Autopilot ou manual).",
     "docs": [
       {
-        "t": "Plan your Microsoft Entra join deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do ingresso no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan"
       },
       {
-        "t": "Join Windows 11 Devices to Microsoft Entra ID During OOBE - Microsoft Entra ID",
+        "t": "Ingressar dispositivos Windows 11 no Microsoft Entra ID durante a OOBE - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-out-of-box"
       }
     ]
@@ -3389,11 +3389,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Voz / SMS:** não usam number matching e não são passwordless.\n- **FIDO2:** passwordless, mas usa PIN/biometria na chave, não number matching.",
     "docs": [
       {
-        "t": "Passkeys (FIDO2) authentication method in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Método de autenticação com chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       },
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -3471,15 +3471,15 @@ SIM.registerQuestions("MD-102", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Role-based access control (RBAC) with Microsoft Intune - Microsoft Intune",
+        "t": "Controle de acesso baseado em função (RBAC) com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/overview"
       },
       {
-        "t": "Create a custom role in Intune - Microsoft Intune",
+        "t": "Criar uma função personalizada no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role"
       },
       {
-        "t": "Windows 365 role-based access",
+        "t": "Acesso baseado em função do Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access"
       }
     ]
@@ -3582,7 +3582,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Série \"Solution\" (PIN de 6 dígitos):** Authentication methods do Entra não controlam o PIN do Windows Hello. Atende: **inscrição automática + opções de inscrição do WHfB** no Intune.",
     "docs": [
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -3614,7 +3614,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Admin1 (usuário):** destinatários adicionais são grupos, não usuários avulsos.\n- **Group4 (segurança sem e-mail):** não tem endereço para receber; o gabarito o exclui.\n\n**Dica de prova:** O e-mail usa um message template (Tenant administration > Notifications) e pode incluir o usuário do dispositivo.",
     "docs": [
       {
-        "t": "Configure compliance policies with actions for noncompliance in Microsoft Intune - Microsoft Intune",
+        "t": "Configurar políticas de conformidade com ações para não conformidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/compliance/configure-noncompliance-actions"
       },
       {
@@ -3665,11 +3665,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **net accounts / net user:** tratam de política de contas e de usuários, não de grupos.\n- **CONTOSO\\ / UPN\\:** o prefixo das contas Entra no Windows é AzureAD\\.\n\n**Dica de prova:** Para gerenciar em escala, use a política Local user group membership (Account protection) no Intune.",
     "docs": [
       {
-        "t": "Plan your Microsoft Entra join deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do ingresso no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan"
       },
       {
-        "t": "Join Windows 11 Devices to Microsoft Entra ID During OOBE - Microsoft Entra ID",
+        "t": "Ingressar dispositivos Windows 11 no Microsoft Entra ID durante a OOBE - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-out-of-box"
       }
     ]
@@ -3699,15 +3699,15 @@ SIM.registerQuestions("MD-102", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Role-based access control (RBAC) with Microsoft Intune - Microsoft Intune",
+        "t": "Controle de acesso baseado em função (RBAC) com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/overview"
       },
       {
-        "t": "Create a custom role in Intune - Microsoft Intune",
+        "t": "Criar uma função personalizada no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role"
       },
       {
-        "t": "Windows 365 role-based access",
+        "t": "Acesso baseado em função do Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access"
       }
     ]
@@ -3770,7 +3770,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App configuration / compliance:** não alteram grupos locais.\n- **Device configuration profile:** também funcionaria via OMA-URI (custom), mas o caminho dedicado é Account protection.\n\n**Dica de prova:** A ação \"Add (Update)\" adiciona membros sem remover os existentes; \"Replace\" substitui todos.",
     "docs": [
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -3803,15 +3803,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 registra o Device1:** Não, pelo gabarito (registro sem join). A documentação discute inscrição via \"Access work or school\" para usuários no escopo.\n- **User1 faz join do Device2:** Sim. Entra join + MDM user scope = inscrição automática.\n- **User2 registra o Device3 (Android):** Não. Android se inscreve pelo Company Portal, e o User2 está só no escopo MAM.\n\n**Dica de prova:** O MDM user scope tem prioridade sobre o MAM scope quando o usuário está nos dois.",
     "docs": [
       {
-        "t": "Enable MDM automatic enrollment for Windows - Microsoft Intune",
+        "t": "Habilitar a inscrição automática de MDM para Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm"
       },
       {
-        "t": "Set up automatic enrollment in Intune - Microsoft Intune",
+        "t": "Configurar a inscrição automática no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/quickstart-automatic-mdm"
       },
       {
-        "t": "Enroll a Windows device automatically using Group Policy",
+        "t": "Inscrever um dispositivo Windows automaticamente usando a Política de Grupo",
         "u": "https://learn.microsoft.com/en-us/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy"
       }
     ]
@@ -3837,15 +3837,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Configuration profile:** não limpa dados.\n- **In-place upgrade:** preserva apps e dados.\n- **Clean install:** mais esforço (imagem, mídia).\n\n**Dica de prova:** O Autopilot Reset exige o Windows RE funcional e o dispositivo Entra joined e gerenciado.",
     "docs": [
       {
-        "t": "Wipe devices with Microsoft Intune - Microsoft Intune",
+        "t": "Apagar dispositivos com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/wipe"
       },
       {
-        "t": "Device Action: Sync - Microsoft Intune",
+        "t": "Ação de dispositivo: sincronizar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/sync"
       },
       {
-        "t": "Device Action: Restart - Microsoft Intune",
+        "t": "Ação de dispositivo: reiniciar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/restart"
       }
     ]
@@ -3917,7 +3917,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Reputation-based protection:** SmartScreen.\n- **Network Discovery:** descoberta na rede.\n- **Remote Desktop Configuration service:** é um serviço interno, não habilita a pré-autenticação.",
     "docs": [
       {
-        "t": "Enable Remote Desktop on your PC",
+        "t": "Habilitar a Área de Trabalho Remota no seu computador",
         "u": "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access"
       },
       {
@@ -3992,7 +3992,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1:** Sim. Domain Admins pertence a Administrators.\n- **User2:** Não. O Deny log on through RDS (Group2) vence o Allow.\n- **User3:** Sim. O \"Deny log on locally\" não afeta o RDP.\n\n**Dica de prova:** Em direitos de usuário, Deny sempre prevalece sobre Allow.",
     "docs": [
       {
-        "t": "Enable Remote Desktop on your PC",
+        "t": "Habilitar a Área de Trabalho Remota no seu computador",
         "u": "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access"
       },
       {
@@ -4030,7 +4030,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Configurar o Computer2:** o redirecionamento é escolhido no cliente (e pode ser bloqueado por política no host).\n- **Firewall do Computer1 / File and Printer Sharing:** o redirecionamento passa dentro do canal RDP.",
     "docs": [
       {
-        "t": "Enable Remote Desktop on your PC",
+        "t": "Habilitar a Área de Trabalho Remota no seu computador",
         "u": "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access"
       },
       {
@@ -4074,15 +4074,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Subscription activation:** só troca a edição; não instala app nem faz join.\n- **In-place upgrade:** não faz join nem instala app ou certificado.\n\n**Dica de prova:** Autopilot + Intune entregam o MSI (LOB) e o certificado (perfil trusted/PKCS).",
     "docs": [
       {
-        "t": "Windows deployment scenarios and tools",
+        "t": "Cenários e ferramentas de implantação do Windows",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/windows-deployment-scenarios-and-tools"
       },
       {
-        "t": "Overview of Windows Autopilot",
+        "t": "Visão geral do Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/overview"
       },
       {
-        "t": "Compare Windows Autopilot device preparation and Windows Autopilot",
+        "t": "Comparar a preparação de dispositivos do Windows Autopilot com o Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/device-preparation/compare"
       }
     ]
@@ -4180,11 +4180,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App1 (store app):** no Android Enterprise, apps \"Android store app\" são links para a loja pública, sem managed configuration.\n- **App2 (LOB):** managed configurations exigem Managed Google Play (um LOB pode ser publicado como app privado no MGP).",
     "docs": [
       {
-        "t": "App Configuration Policies for Microsoft Intune - Microsoft Intune",
+        "t": "Políticas de configuração de aplicativos para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/overview"
       },
       {
-        "t": "Add App Configuration Policies for Managed iOS/iPadOS Devices - Microsoft Intune",
+        "t": "Adicionar políticas de configuração de aplicativos para dispositivos iOS/iPadOS gerenciados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-ios"
       }
     ]
@@ -4210,11 +4210,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Configuration profile / certificate connector / Partner device management:** não habilitam a distribuição de apps.\n\n**Dica de prova:** A vinculação também é pré-requisito para inscrever qualquer dispositivo Android Enterprise.",
     "docs": [
       {
-        "t": "Manage Apple Volume-Purchased Apps - Microsoft Intune",
+        "t": "Gerenciar aplicativos Apple comprados por volume - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/manage-vpp-apple"
       },
       {
-        "t": "Add and Assign Managed Google Play Apps to Android Enterprise Devices - Microsoft Intune",
+        "t": "Adicionar e atribuir aplicativos do Google Play gerenciado a dispositivos Android Enterprise - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-managed-google-play"
       }
     ]
@@ -4244,7 +4244,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Developer / Owner:** campos informativos para administradores.\n\n**Dica de prova:** Também aparecem para o usuário: Description, Publisher, Category e logo.",
     "docs": [
       {
-        "t": "How to Configure the Intune Company Portal Apps, Company Portal Website, and Intune App - Microsoft Intune",
+        "t": "Como configurar os aplicativos do Portal da Empresa do Intune, o site do Portal da Empresa e o aplicativo do Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-company-portal"
       },
       {
@@ -4301,7 +4301,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Display / General / Control Panel / Privacy etc.:** não contêm as imagens de fundo.\n\n**Dica de prova:** Os dois exigem URL de imagem acessível (PNG/JPG); essas opções funcionam no Windows Enterprise/Education.",
     "docs": [
       {
-        "t": "Restrict devices features using policy in Microsoft Intune - Microsoft Intune",
+        "t": "Restringir recursos de dispositivos usando políticas no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-device-restrictions"
       },
       {
@@ -4339,7 +4339,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Compliance / cleanup / enrollment policy:** não trocam a edição.\n\n**Dica de prova:** Com subscription activation e licença E3/E5, o upgrade acontece sozinho; o perfil é útil para chaves MAK/KMS.",
     "docs": [
       {
-        "t": "Upgrade Windows editions or switch S mode using Intune policy - Microsoft Intune",
+        "t": "Atualizar edições do Windows ou alternar o modo S usando uma política do Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-edition-upgrade-windows"
       },
       {
@@ -4377,15 +4377,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Application Guard:** isola a navegação no Edge.\n- **SmartScreen:** reputação de sites e apps.\n- **Application Control:** controla quais apps executam, não quem grava na pasta.",
     "docs": [
       {
-        "t": "Protect folders from ransomware with controlled folder access - Microsoft Defender for Endpoint",
+        "t": "Proteger pastas contra ransomware com o acesso controlado a pastas - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/controlled-folder-access-overview"
       },
       {
-        "t": "Manage attack surface reduction settings with Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de redução da superfície de ataque com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/attack-surface-reduction"
       },
       {
-        "t": "ASR rules reference - Microsoft Defender for Endpoint",
+        "t": "Referência de regras de redução da superfície de ataque (ASR) - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference"
       }
     ]
@@ -4421,11 +4421,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Firewall:** configura o firewall, mas não esconde a área no app Windows Security.\n- **Disk encryption / EDR / ASR:** outras funções.\n- **Compliance / CA:** não são perfis de Endpoint security para essas opções.",
     "docs": [
       {
-        "t": "Endpoint security in Microsoft Intune - Microsoft Intune",
+        "t": "Segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/endpoint-security-policies"
       },
       {
-        "t": "Manage antivirus settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de antivírus com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/antivirus"
       }
     ]
@@ -4451,11 +4451,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device Management / Azure Monitor / Data Warehouse:** não trazem processos de boot e reinícios prontos.",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ]
@@ -4494,11 +4494,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **FileVault em Account protection / ASR:** criptografia de disco fica em Disk encryption.\n- **Credential Guard em ASR:** Credential Guard fica em Account protection.\n- **WDAC em Disk encryption:** o controle de aplicativos ficava em ASR (hoje em App Control for Business).",
     "docs": [
       {
-        "t": "Endpoint security in Microsoft Intune - Microsoft Intune",
+        "t": "Segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/endpoint-security-policies"
       },
       {
-        "t": "Manage antivirus settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de antivírus com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/antivirus"
       }
     ]
@@ -4524,11 +4524,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Compliance / app protection:** sem relação com download.\n- **Update ring:** define quando instalar, não de onde baixar (a opção de DO dele é legada).",
     "docs": [
       {
-        "t": "Windows Delivery Optimization settings in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de Otimização de Entrega do Windows no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-delivery-optimization-windows"
       },
       {
-        "t": "What is Delivery Optimization?",
+        "t": "O que é a Otimização de Entrega?",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/do/waas-delivery-optimization"
       }
     ]
@@ -4554,15 +4554,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **GPO:** exige domínio; os dispositivos estão em workgroup.\n- **MDM automatic enrollment:** precisa que o dispositivo faça join no Entra antes.\n- **Device configuration:** só se aplica a dispositivos já inscritos.\n\n**Dica de prova:** O bulk enrollment usa um token de conta de pacote (expira em 180 dias).",
     "docs": [
       {
-        "t": "Provisioning packages overview",
+        "t": "Visão geral dos pacotes de provisionamento",
         "u": "https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-packages"
       },
       {
-        "t": "Overview of Windows Autopilot",
+        "t": "Visão geral do Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/overview"
       },
       {
-        "t": "Compare Windows Autopilot device preparation and Windows Autopilot",
+        "t": "Comparar a preparação de dispositivos do Windows Autopilot com o Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/device-preparation/compare"
       }
     ]
@@ -4603,11 +4603,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Os dois como pessoal ou corporativo:** o tipo de vínculo define o ownership na inscrição automática.\n\n**Dica de prova:** O ownership pode ser alterado manualmente depois; dispositivos corporativos permitem mais ações (ex.: inventário de apps completo).",
     "docs": [
       {
-        "t": "Add corporate identifiers to Intune - Microsoft Intune",
+        "t": "Adicionar identificadores corporativos ao Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/add-corporate-identifiers"
       },
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -4680,11 +4680,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Android / iOS:** baselines são só Windows; no mobile, use app config/app protection para o Edge.",
     "docs": [
       {
-        "t": "Learn about Intune security baselines for Windows devices - Microsoft Intune",
+        "t": "Conhecer as linhas de base de segurança do Intune para dispositivos Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview"
       },
       {
-        "t": "Configure security baseline policies in Microsoft Intune - Microsoft Intune",
+        "t": "Configurar políticas de linha de base de segurança no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/configure-baselines"
       }
     ]
@@ -4763,7 +4763,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device compliance / Noncompliant devices / Setting compliance:** mostram o estado do dispositivo, não as tentativas de acesso por app.\n\n**Dica de prova:** O workbook exige os sign-in logs no Log Analytics (diagnostic settings).",
     "docs": [
       {
-        "t": "Conditional Access insights and reporting workbook - Microsoft Entra ID",
+        "t": "Pasta de trabalho de insights e relatórios do Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-insights-reporting"
       },
       {
@@ -4849,15 +4849,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Autodiscover A record / SCP:** o SCP permite o hybrid join; a inscrição em massa vem da GPO.\n- **Autopilot:** para dispositivos novos ou resetados, não para os 2.000 existentes.\n\n**Dica de prova:** A GPO fica em Computer Configuration > Administrative Templates > Windows Components > MDM.",
     "docs": [
       {
-        "t": "Enroll a Windows device automatically using Group Policy",
+        "t": "Inscrever um dispositivo Windows automaticamente usando a Política de Grupo",
         "u": "https://learn.microsoft.com/en-us/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy"
       },
       {
-        "t": "Enable MDM automatic enrollment for Windows - Microsoft Intune",
+        "t": "Habilitar a inscrição automática de MDM para Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm"
       },
       {
-        "t": "Set up automatic enrollment in Intune - Microsoft Intune",
+        "t": "Configurar a inscrição automática no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/quickstart-automatic-mdm"
       }
     ]
@@ -4946,15 +4946,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Application Guard / SmartScreen / Application Control / Credential Guard:** não tratam de processos filhos do Office nem de FTP.\n- **Encryption / Security Center / Local security options / Xbox:** sem relação.\n\n**Dica de prova:** Hoje: Endpoint security > ASR (regras) e Firewall (regras), com relatórios melhores.",
     "docs": [
       {
-        "t": "Settings you can manage with Intune Endpoint Protection profiles for Windows devices - Microsoft Intune",
+        "t": "Configurações gerenciáveis com perfis de Proteção de Ponto de Extremidade do Intune para dispositivos Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-endpoint-protection-settings-windows"
       },
       {
-        "t": "Manage attack surface reduction settings with Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de redução da superfície de ataque com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/attack-surface-reduction"
       },
       {
-        "t": "ASR rules reference - Microsoft Defender for Endpoint",
+        "t": "Referência de regras de redução da superfície de ataque (ASR) - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference"
       }
     ]
@@ -5053,15 +5053,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Device1:** Não. O User1 está no Group1 excluído.\n- **Device2:** Sim. Políticas de \"Windows 10 and later\" valem para o Windows 11.\n- **Device3:** Não. Android, e as políticas são de Windows.",
     "docs": [
       {
-        "t": "Policy Sets - Microsoft Intune",
+        "t": "Conjuntos de políticas - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/policy-sets"
       },
       {
-        "t": "Create assignment filters in Microsoft Intune - Microsoft Intune",
+        "t": "Criar filtros de atribuição no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/filters/overview"
       },
       {
-        "t": "Assignment Filter Performance Tips for Intune - Microsoft Intune",
+        "t": "Dicas de desempenho de filtros de atribuição do Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/filters/performance-recommendations"
       }
     ]
@@ -5100,11 +5100,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **200 / 1.000:** só os dispositivos supervisionados (ADE) recebem política de atualização.\n- **Compliance / CA:** não impedem a instalação manual de versão mais nova.\n\n**Dica de prova:** A restrição \"Defer software updates\" (até 90 dias) esconde as atualizações do usuário.",
     "docs": [
       {
-        "t": "Use Microsoft Intune to manage software updates for supervised iOS/iPadOS devices - Microsoft Intune",
+        "t": "Usar o Microsoft Intune para gerenciar atualizações de software de dispositivos iOS/iPadOS supervisionados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-ios"
       },
       {
-        "t": "Configure Update Policies for Apple Devices - Microsoft Intune",
+        "t": "Configurar políticas de atualização para dispositivos Apple - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/"
       }
     ]
@@ -5137,15 +5137,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1:** Sim. Está no MDM scope.\n- **User2:** Não. Está só no escopo MAM.\n- **User3:** Sim. Está nos dois; o MDM tem precedência.",
     "docs": [
       {
-        "t": "Enable MDM automatic enrollment for Windows - Microsoft Intune",
+        "t": "Habilitar a inscrição automática de MDM para Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm"
       },
       {
-        "t": "Set up automatic enrollment in Intune - Microsoft Intune",
+        "t": "Configurar a inscrição automática no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/quickstart-automatic-mdm"
       },
       {
-        "t": "Enroll a Windows device automatically using Group Policy",
+        "t": "Inscrever um dispositivo Windows automaticamente usando a Política de Grupo",
         "u": "https://learn.microsoft.com/en-us/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy"
       }
     ],
@@ -5179,7 +5179,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **DC1:** não é quem cria os objetos.\n- **GroupA:** usuários não criam o computador no Autopilot hybrid.\n- **Server2:** o conector não está nele.\n\n**Dica de prova:** Delegue \"Create computer objects\" e \"Delete computer objects\" na OU para a conta de computador do servidor do conector.",
     "docs": [
       {
-        "t": "Enrollment for Microsoft Entra hybrid joined devices - Windows Autopilot",
+        "t": "Inscrição de dispositivos com ingresso híbrido no Microsoft Entra - Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/windows-autopilot-hybrid"
       },
       {
@@ -5238,7 +5238,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Device1 com 1, 3 ou mais:** a Connection1 substitui a VPN1 de mesmo nome; somam-se só as conexões diferentes.\n- **Device2 com 2, 4 ou 5:** VPN1 (substituída), VPN3 (já existente) e VPN2.",
     "docs": [
       {
-        "t": "Add VPN settings to devices in Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar configurações de VPN a dispositivos no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-vpn"
       },
       {
@@ -5281,7 +5281,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Ambígua:** pela documentação, qualquer usuário licenciado pode inscrever pelo Company Portal; o gabarito considera o MDM scope e o Global Admin.\n\n**Dica de prova:** Restrições de plataforma e de limite de dispositivos também podem bloquear a inscrição.",
     "docs": [
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -5311,11 +5311,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App configuration:** configura o app, não bloqueia a impressão.\n- **Security baseline:** só Windows.\n- **App provisioning profile:** assina apps LOB de iOS.",
     "docs": [
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ],
@@ -5346,7 +5346,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Admin1 / Admin2:** funções de apps do Entra, sem acesso ao Microsoft 365 Apps admin center.\n\n**Dica de prova:** O Office Apps Administrator também gerencia Cloud Policy e Servicing.",
     "docs": [
       {
-        "t": "Overview of the Microsoft 365 Apps admin center - Microsoft 365 Apps",
+        "t": "Visão geral do centro de administração dos Aplicativos do Microsoft 365 - Aplicativos do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/overview"
       }
     ]
@@ -5408,7 +5408,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Admin1:** o Intune atribui a grupos, não a usuários avulsos.\n- **Group2 (distribuição):** grupos de distribuição não são suportados em atribuições.",
     "docs": [
       {
-        "t": "Assign Apps to Groups in Microsoft Intune - Microsoft Intune",
+        "t": "Atribuir aplicativos a grupos no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/assign-groups"
       },
       {
@@ -5460,11 +5460,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Authenticator:** é o broker no iOS (com o Company Portal opcional); no Android, o broker é o Company Portal.\n- **MDE / Purview:** não são necessários para MAM.\n- **Dispositivos / usuários e dispositivos:** app protection é sempre atribuída a usuários.",
     "docs": [
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ],
@@ -5500,11 +5500,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Baixar do Company Portal:** é a ação do usuário, não a preparação.\n- **OEMConfig:** configura recursos do fabricante (ex.: Samsung, Zebra), não publica apps.\n\n**Dica de prova:** Apps aprovados também podem ser sincronizados automaticamente; a sincronização manual força a atualização.",
     "docs": [
       {
-        "t": "Add and Assign Managed Google Play Apps to Android Enterprise Devices - Microsoft Intune",
+        "t": "Adicionar e atribuir aplicativos do Google Play gerenciado a dispositivos Android Enterprise - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-managed-google-play"
       },
       {
-        "t": "Manage Apple Volume-Purchased Apps - Microsoft Intune",
+        "t": "Gerenciar aplicativos Apple comprados por volume - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/manage-vpp-apple"
       }
     ]
@@ -5726,15 +5726,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Marketing com Enterprise / Workstations:** o Pro já suporta WUfB (mínimo).\n- **Research com Pro:** 24 meses; 36 meses só no Enterprise/Education.",
     "docs": [
       {
-        "t": "Overview of Windows as a service",
+        "t": "Visão geral do Windows como serviço",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/update/waas-overview"
       },
       {
-        "t": "Windows Update Management Overview - Microsoft Intune",
+        "t": "Visão geral do gerenciamento do Windows Update - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/windows/"
       },
       {
-        "t": "Quick guide to Windows as a service",
+        "t": "Guia rápido do Windows como serviço",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/update/waas-quick-start"
       }
     ]
@@ -5809,7 +5809,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Always On VPN:** ajuda, mas não cria o objeto de computador.\n- **Co-management:** é para ConfigMgr + Intune.\n- **Configuration profile para o app:** apps são entregues por atribuição de app, não por perfil.\n\n**Dica de prova:** Para dispositivos remotos, o perfil precisa de \"Skip AD connectivity check\" e uma VPN que conecte antes do logon.",
     "docs": [
       {
-        "t": "Enrollment for Microsoft Entra hybrid joined devices - Windows Autopilot",
+        "t": "Inscrição de dispositivos com ingresso híbrido no Microsoft Entra - Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/windows-autopilot-hybrid"
       },
       {
@@ -5854,7 +5854,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Allow Remote Shell:** só controla o WinRS; não habilita o listener.\n- **Exceção do Remote Desktop:** é RDP, não WinRM.\n- **Remote Registry:** sem relação.\n\n**Dica de prova:** Os três itens equivalem ao que o Enable-PSRemoting faz localmente.",
     "docs": [
       {
-        "t": "Installation and configuration for Windows Remote Management - Win32 apps",
+        "t": "Instalação e configuração do Gerenciamento Remoto do Windows - Aplicativos Win32",
         "u": "https://learn.microsoft.com/en-us/windows/win32/winrm/installation-and-configuration-for-windows-remote-management"
       },
       {
@@ -5963,7 +5963,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Hybrid join:** exige domínio AD.\n- **Entra joined:** o logon passaria a ser com a conta corporativa, o que contraria o requisito.\n\n**Dica de prova:** Com \"Allow my organization to manage my device\" na adição da conta, o dispositivo se inscreve no Intune como pessoal.",
     "docs": [
       {
-        "t": "What are Microsoft Entra registered devices? - Microsoft Entra ID",
+        "t": "O que são dispositivos registrados no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration"
       }
     ]
@@ -6002,11 +6002,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Compliance / configuration para o Requirement1:** localização de acesso a um app é condição de CA.\n- **CA / configuration para o Requirement2:** o risco do MDE entra na compliance policy; o CA usa o resultado.",
     "docs": [
       {
-        "t": "Use Conditional Access with Microsoft Intune compliance policies - Microsoft Intune",
+        "t": "Usar o Acesso Condicional com políticas de conformidade do Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview"
       },
       {
-        "t": "How to Require Device Compliance with Conditional Access - Microsoft Entra ID",
+        "t": "Como exigir a conformidade de dispositivos com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance"
       }
     ]
@@ -6047,15 +6047,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Help Desk Operator para o Group1:** não gerencia funções.\n- **Intune Service Administrator:** Entra role com acesso total; excesso.\n- **Policy and Profile Manager para o Group2:** cria e gerencia políticas (mais do que atribuir).\n\n**Dica de prova:** Funções do Intune podem ter escopo por scope tags e grupos (assignments).",
     "docs": [
       {
-        "t": "Role-based access control (RBAC) with Microsoft Intune - Microsoft Intune",
+        "t": "Controle de acesso baseado em função (RBAC) com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/overview"
       },
       {
-        "t": "Create a custom role in Intune - Microsoft Intune",
+        "t": "Criar uma função personalizada no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role"
       },
       {
-        "t": "Windows 365 role-based access",
+        "t": "Acesso baseado em função do Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access"
       }
     ]
@@ -6121,11 +6121,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Device1:** Sim. Sem política atribuída, e o tenant marca como Compliant.\n- **Device2:** Sim. Atende a Compliance1.\n- **Device3:** Não. Sem criptografia, falha na Compliance2, e o CA bloqueia.\n\n**Dica de prova:** Para o CA reconhecer o dispositivo no Edge, entre no perfil do Edge com a conta de trabalho (ou use a extensão no Chrome).",
     "docs": [
       {
-        "t": "Use Conditional Access with Microsoft Intune compliance policies - Microsoft Intune",
+        "t": "Usar o Acesso Condicional com políticas de conformidade do Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview"
       },
       {
-        "t": "How to Require Device Compliance with Conditional Access - Microsoft Entra ID",
+        "t": "Como exigir a conformidade de dispositivos com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance"
       }
     ]
@@ -6151,11 +6151,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Autopilot:** tem a opção \"User account type = Standard\", mas a pergunta é sobre o join manual.\n- **Provisioning packages:** não mudam o comportamento do join.\n- **Security defaults:** sem relação.\n\n**Dica de prova:** A mesma tela define \"Additional local administrators on all Microsoft Entra joined devices\".",
     "docs": [
       {
-        "t": "Plan your Microsoft Entra join deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do ingresso no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan"
       },
       {
-        "t": "Join Windows 11 Devices to Microsoft Entra ID During OOBE - Microsoft Entra ID",
+        "t": "Ingressar dispositivos Windows 11 no Microsoft Entra ID durante a OOBE - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/device-join-out-of-box"
       }
     ]
@@ -6222,7 +6222,7 @@ SIM.registerQuestions("MD-102", [
         "u": "https://learn.microsoft.com/en-us/intune/governance/integrate-azure-monitor"
       },
       {
-        "t": "Set Up the Azure Monitor Agent on Windows Client Devices - Azure Monitor",
+        "t": "Configurar o Agente do Azure Monitor em dispositivos cliente Windows - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-windows-client"
       },
       {
@@ -6348,11 +6348,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Identities:** contas, não dispositivos.\n- **Vulnerability management (várias):** inventário de software fica em Inventories, mas para \"dispositivos integrados com o Edge\" o gabarito usa Devices.\n- **Reports / Audit / Health / Permissions / Configuration management:** não baixam o pacote de onboarding.",
     "docs": [
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -6378,11 +6378,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Security baseline:** configura muitas coisas, mas não impede desligar o Defender (sem tamper protection).\n- **Account protection / EDR:** outras funções.\n\n**Dica de prova:** O tamper protection também protege exclusões (quando gerenciado pelo Intune) e configurações de proteção em tempo real.",
     "docs": [
       {
-        "t": "Tamper protection overview - Microsoft Defender for Endpoint",
+        "t": "Visão geral da proteção contra adulteração - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/tamper-protection-overview"
       },
       {
-        "t": "Manage antivirus settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de antivírus com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/antivirus"
       }
     ]
@@ -6506,15 +6506,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **App config / app protection / compliance:** não distribuem certificados.\n- **PKCS imported / PKCS / SCEP:** emitem certificados finais e dependem do perfil de raiz.",
     "docs": [
       {
-        "t": "Types of certificate that are supported by Microsoft Intune - Microsoft Intune",
+        "t": "Tipos de certificado com suporte no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/certificates/overview"
       },
       {
-        "t": "Microsoft Cloud PKI for Microsoft Intune - Microsoft Intune",
+        "t": "Microsoft Cloud PKI para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/cloud-pki/"
       },
       {
-        "t": "Configure Microsoft Cloud PKI root and issuing CA for Microsoft Intune - Microsoft Intune",
+        "t": "Configurar ACs raiz e emissora do Microsoft Cloud PKI para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/cloud-pki/configure-ca"
       }
     ]
@@ -6555,15 +6555,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Group4 ou Group5 sem tag:** o computador entra só no primeiro grupo (rank) que corresponder.\n- **Vários grupos com tag:** idem; a regra do Group1 (tag demo + Windows 10) tem o menor rank.",
     "docs": [
       {
-        "t": "Create and manage device groups in Microsoft Defender for Endpoint - Microsoft Defender for Endpoint",
+        "t": "Criar e gerenciar grupos de dispositivos no Microsoft Defender for Endpoint - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/machine-groups"
       },
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -6624,11 +6624,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App provisioning profile:** é para apps LOB.\n- **Device features:** AirPrint, Home screen etc.\n- **Update policy:** instala versões; não adia notificações.",
     "docs": [
       {
-        "t": "Use Microsoft Intune to manage software updates for supervised iOS/iPadOS devices - Microsoft Intune",
+        "t": "Usar o Microsoft Intune para gerenciar atualizações de software de dispositivos iOS/iPadOS supervisionados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/deprecated-mdm-policies-ios"
       },
       {
-        "t": "Configure Update Policies for Apple Devices - Microsoft Intune",
+        "t": "Configurar políticas de atualização para dispositivos Apple - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/apple/"
       }
     ]
@@ -6724,7 +6724,7 @@ SIM.registerQuestions("MD-102", [
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/enroll-devices"
       },
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       }
     ]
@@ -6787,15 +6787,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 no Device1:** Sim. Windows + MDM scope.\n- **User1 no Device2:** Não. A inscrição automática por escopo é para Windows; Android usa o Company Portal.\n- **User2 no Device1:** Não. Está só no escopo MAM.",
     "docs": [
       {
-        "t": "Enable MDM automatic enrollment for Windows - Microsoft Intune",
+        "t": "Habilitar a inscrição automática de MDM para Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm"
       },
       {
-        "t": "Set up automatic enrollment in Intune - Microsoft Intune",
+        "t": "Configurar a inscrição automática no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/quickstart-automatic-mdm"
       },
       {
-        "t": "Enroll a Windows device automatically using Group Policy",
+        "t": "Inscrever um dispositivo Windows automaticamente usando a Política de Grupo",
         "u": "https://learn.microsoft.com/en-us/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy"
       }
     ]
@@ -6836,11 +6836,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Block / Warn:** nenhum perfil define esses valores.\n- **Office executável = Disable:** os dois perfis concordam em Audit.\n- **Win32 API = Audit:** há conflito; nenhum valor do Intune é aplicado e fica o local (Disabled).\n\n**Dica de prova:** Conflitos aparecem no relatório do perfil como \"Conflict\"; resolva consolidando as regras numa política só.",
     "docs": [
       {
-        "t": "Manage attack surface reduction settings with Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de redução da superfície de ataque com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/attack-surface-reduction"
       },
       {
-        "t": "ASR rules reference - Microsoft Defender for Endpoint",
+        "t": "Referência de regras de redução da superfície de ataque (ASR) - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference"
       }
     ]
@@ -6873,7 +6873,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Sequência**\n- **Compliance policy / scope tag / assign the policy:** não fazem parte da migração de configuração.\n- **Import ADMX:** só para templates de terceiros; os do Office já existem no Intune.\n\n**Dica de prova:** O Group Policy analytics do Intune importa o XML da GPO e mostra o que é suportado em MDM.",
     "docs": [
       {
-        "t": "Use ADMX templates on Windows devices in Microsoft Intune - Microsoft Intune",
+        "t": "Usar modelos ADMX em dispositivos Windows no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/configure-admx-templates-windows"
       },
       {
@@ -6911,7 +6911,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Compliance / app config:** não alteram grupos locais.\n\n**Dica de prova:** Use a ação \"Remove (Update)\" para tirar só o User1, sem substituir o grupo inteiro.",
     "docs": [
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -6963,19 +6963,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Wi-Fi removido:** o Autopilot Reset preserva o Wi-Fi para o dispositivo voltar à rede.\n- **App1 reinstalado/retido:** apps do usuário são removidos; só os atribuídos pelo Intune voltam depois.\n- **VPN mantida:** configurações pessoais são removidas.",
     "docs": [
       {
-        "t": "Windows Autopilot Reset",
+        "t": "Redefinição do Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/windows-autopilot-reset"
       },
       {
-        "t": "Device Action: Sync - Microsoft Intune",
+        "t": "Ação de dispositivo: sincronizar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/sync"
       },
       {
-        "t": "Wipe devices with Microsoft Intune - Microsoft Intune",
+        "t": "Apagar dispositivos com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/wipe"
       },
       {
-        "t": "Device Action: Restart - Microsoft Intune",
+        "t": "Ação de dispositivo: reiniciar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/restart"
       }
     ]
@@ -7001,7 +7001,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Set-PSSessionConfiguration -AccessMode Local:** aceitaria só sessões locais.\n- **Enable-PSRemoting -Force:** em rede pública ainda falha na checagem de perfil.\n- **Set-NetFirewallRule ... Any:** abriria para qualquer origem.",
     "docs": [
       {
-        "t": "Security considerations for PowerShell Remoting using WinRM - PowerShell",
+        "t": "Considerações de segurança para comunicação remota do PowerShell usando o WinRM - PowerShell",
         "u": "https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/winrm-security"
       },
       {
@@ -7054,11 +7054,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **WHfB para Research:** só Windows.\n- **TAP:** temporário, para onboarding e recuperação.\n- **FIDO2 para Sales:** o requisito é \"pelo celular\".",
     "docs": [
       {
-        "t": "Passkeys (FIDO2) authentication method in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Método de autenticação com chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       },
       {
-        "t": "Configure a tenant-wide Windows Hello for Business policy with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar uma política do Windows Hello para Empresas para todo o tenant com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/identity-protection/configure-tenant-wide-policy"
       },
       {
@@ -7103,11 +7103,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Data protection:** transferência de dados.\n- **Scope:** não existe como seção de configuração da política.\n- **Access requirements para versão / conditional launch para PIN:** invertidos.",
     "docs": [
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ],
@@ -7139,11 +7139,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Configuration profiles:** perfis, não o update ring.\n- **Audit logs:** alterações administrativas.\n- **Device compliance:** conformidade.\n\n**Dica de prova:** Os relatórios do Windows Update for Business (Windows Autopatch reports) dão mais detalhe por dispositivo.",
     "docs": [
       {
-        "t": "Reports for Windows Feature Update Policies - Microsoft Intune",
+        "t": "Relatórios de políticas de atualização de recursos do Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/windows/monitor-feature-updates"
       },
       {
-        "t": "Reports for Windows Quality Update Policies - Microsoft Intune",
+        "t": "Relatórios de políticas de atualização de qualidade do Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/windows/monitor-quality-updates"
       }
     ]
@@ -7183,15 +7183,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Purview:** compliance.\n- **Azure Policy:** recursos do Azure.\n- **Compliance policy / device restrictions:** não distribuem o Exploit Guard.\n\n**Dica de prova:** Hoje: Endpoint security > ASR (Exploit protection) com o XML importado.",
     "docs": [
       {
-        "t": "Apply mitigations to help prevent attacks through vulnerabilities - Microsoft Defender for Endpoint",
+        "t": "Aplicar mitigações para ajudar a prevenir ataques por meio de vulnerabilidades - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/exploit-protection"
       },
       {
-        "t": "Manage attack surface reduction settings with Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de redução da superfície de ataque com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/attack-surface-reduction"
       },
       {
-        "t": "ASR rules reference - Microsoft Defender for Endpoint",
+        "t": "Referência de regras de redução da superfície de ataque (ASR) - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference"
       }
     ]
@@ -7218,15 +7218,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **1 CNAME:** cada sufixo de UPN precisa do próprio registro.\n- **TXT:** a descoberta usa CNAME, não TXT.\n\n**Dica de prova:** Registros: EnterpriseEnrollment.<sufixo> → enterpriseenrollment-s.manage.microsoft.com (e EnterpriseRegistration → enterpriseregistration.windows.net).",
     "docs": [
       {
-        "t": "Enable MDM automatic enrollment for Windows - Microsoft Intune",
+        "t": "Habilitar a inscrição automática de MDM para Windows - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/enable-automatic-mdm"
       },
       {
-        "t": "Set up automatic enrollment in Intune - Microsoft Intune",
+        "t": "Configurar a inscrição automática no Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/quickstart-automatic-mdm"
       },
       {
-        "t": "Enroll a Windows device automatically using Group Policy",
+        "t": "Inscrever um dispositivo Windows automaticamente usando a Política de Grupo",
         "u": "https://learn.microsoft.com/en-us/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy"
       }
     ]
@@ -7271,7 +7271,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Corporate identifiers:** marcam ownership.\n- **Android/Apple/Windows enrollment:** configuram os métodos de inscrição, não restringem versões nem grupos.\n\n**Dica de prova:** Restrições de plataforma também podem bloquear dispositivos pessoais (personally owned).",
     "docs": [
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -7326,15 +7326,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Cryptsetup / EFS:** não são os mecanismos de disco inteiro gerenciados pelo Intune.\n- **Application Manager / Policy and Profile Manager / Intune Role Administrator:** não são o mínimo para rotacionar e consultar chaves.\n\n**Dica de prova:** Ver chaves de recuperação do BitLocker exige a permissão \"Read BitLocker keys\" (Remote tasks).",
     "docs": [
       {
-        "t": "Encrypt Windows devices with BitLocker using Intune - Microsoft Intune",
+        "t": "Criptografar dispositivos Windows com o BitLocker usando o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/encrypt-bitlocker-windows"
       },
       {
-        "t": "View report details for encryption status of devices managed with Microsoft Intune - Microsoft Intune",
+        "t": "Exibir detalhes de relatórios do status de criptografia de dispositivos gerenciados com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/monitor-encryption"
       },
       {
-        "t": "Microsoft Intune endpoint security disk encryption policy - Microsoft Intune",
+        "t": "Política de criptografia de disco de segurança de ponto de extremidade do Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/disk-encryption"
       }
     ]
@@ -7409,11 +7409,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Group Policy / scripts VDI para macOS ou Linux:** são métodos só de Windows.\n\n**Dica de prova:** Para macOS também servem JAMF, outro MDM ou script local; para Linux, script, Puppet, Ansible ou Chef.",
     "docs": [
       {
-        "t": "Configure Microsoft Defender for Endpoint with Intune and onboard devices - Microsoft Intune",
+        "t": "Configurar o Microsoft Defender for Endpoint com o Intune e integrar dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/configure-integration"
       },
       {
-        "t": "Onboard devices to Microsoft Defender for Endpoint - Microsoft Defender for Endpoint",
+        "t": "Integrar dispositivos ao Microsoft Defender for Endpoint - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/onboarding"
       }
     ]
@@ -7439,19 +7439,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Shared multi-user device:** PCs compartilhados com várias contas, sem app único em tela cheia.\n- **Device restrictions / Endpoint protection:** não criam o quiosque.\n\n**Dica de prova:** O Kiosk single-app aceita app UWP, Edge ou um app Win32 (com Assigned Access).",
     "docs": [
       {
-        "t": "Kiosk settings for Windows and Holographic devices in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de quiosque para dispositivos Windows e Holographic no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-kiosk"
       },
       {
-        "t": "Windows Holographic Business device settings - Microsoft Intune",
+        "t": "Configurações de dispositivos Windows Holographic Business - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-windows-holographic"
       },
       {
-        "t": "Surface Hub Windows 10 Team device restrictions in Microsoft Intune - Microsoft Intune",
+        "t": "Restrições de dispositivos Surface Hub com Windows 10 Team no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-surface-hub"
       },
       {
-        "t": "Deploy OEMConfig profiles to Zebra devices using Microsoft Intune - Microsoft Intune",
+        "t": "Implantar perfis OEMConfig em dispositivos Zebra usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/deploy-oemconfig-zebra-android"
       }
     ]
@@ -7477,15 +7477,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Assignments do Policy1:** atribuições separadas podem divergir das do set.\n- **Configurações do Policy1:** não vinculam ao set.\n- **Assignments do Set1:** definem quem recebe, mas o Policy1 precisa estar dentro do set.",
     "docs": [
       {
-        "t": "Policy Sets - Microsoft Intune",
+        "t": "Conjuntos de políticas - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/policy-sets"
       },
       {
-        "t": "Create assignment filters in Microsoft Intune - Microsoft Intune",
+        "t": "Criar filtros de atribuição no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/filters/overview"
       },
       {
-        "t": "Assignment Filter Performance Tips for Intune - Microsoft Intune",
+        "t": "Dicas de desempenho de filtros de atribuição do Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/filters/performance-recommendations"
       }
     ]
@@ -7526,11 +7526,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Device1 também do Device4:** o Device4 está em outra sub-rede e outro site.\n- **Device2 de algum peer:** com restrição por sub-rede, ele não tem peers na 10.20.x.\n\n**Dica de prova:** Group (2) usa o AD site ou o domínio por padrão; o Group ID permite definir grupos personalizados.",
     "docs": [
       {
-        "t": "Windows Delivery Optimization settings in Microsoft Intune - Microsoft Intune",
+        "t": "Configurações de Otimização de Entrega do Windows no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-delivery-optimization-windows"
       },
       {
-        "t": "What is Delivery Optimization?",
+        "t": "O que é a Otimização de Entrega?",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/do/waas-delivery-optimization"
       }
     ],
@@ -7611,11 +7611,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Workloads / Log Analytics / Security baselines:** não calculam os scores do Endpoint analytics.\n- **1 / 5 / 25:** o mínimo para scores e baselines é 10 dispositivos.",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ]
@@ -7643,11 +7643,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Android / iOS:** o Endpoint analytics só coleta de Windows.\n\n**Dica de prova:** As edições Home não são suportadas.",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ]
@@ -7675,11 +7675,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Todos os quatro:** o gabarito considera \"Mac OS X\" (10.x) fora do suporte.\n\n**Dica de prova:** Hoje o MDE suporta as três últimas versões do macOS, Linux, Android, iOS e Windows Server.",
     "docs": [
       {
-        "t": "Integrate Microsoft Defender for Endpoint with Intune for Device Compliance - Microsoft Intune",
+        "t": "Integrar o Microsoft Defender for Endpoint ao Intune para conformidade de dispositivos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/microsoft-defender/overview"
       },
       {
-        "t": "Deploy endpoint detection and response policy with Intune - Microsoft Intune",
+        "t": "Implantar uma política de detecção e resposta de pontos de extremidade com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/deploy-edr"
       }
     ]
@@ -7705,11 +7705,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App configuration:** configura apps.\n- **Configuration profile / compliance:** exigem inscrição; o cenário é MAM.\n\n**Dica de prova:** Hoje use \"Require app protection policy\" (o \"Require approved client app\" foi aposentado).",
     "docs": [
       {
-        "t": "Use app-based Conditional Access policies with Intune - Microsoft Intune",
+        "t": "Usar políticas de Acesso Condicional baseadas em aplicativos com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/app-based-policies"
       },
       {
-        "t": "How to Require Device Compliance with Conditional Access - Microsoft Entra ID",
+        "t": "Como exigir a conformidade de dispositivos com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance"
       }
     ]
@@ -7735,7 +7735,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Registrar no Entra:** é para autenticação, não para distribuição.\n- **Lojas públicas:** qualquer um baixaria.\n- **MDT:** implantação de imagem Windows.\n\n**Dica de prova:** Para Android Enterprise, publique como app privado do Managed Google Play e atribua ao grupo dinâmico de finanças.",
     "docs": [
       {
-        "t": "Assign Apps to Groups in Microsoft Intune - Microsoft Intune",
+        "t": "Atribuir aplicativos a grupos no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/assign-groups"
       },
       {
@@ -7786,15 +7786,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **App configuration no Windows:** no Windows inscrito, o Edge é configurado por perfis (ADMX).\n- **Configuration profile no mobile:** no Android e iOS, o Edge é configurado por app configuration (managed apps ou managed devices).",
     "docs": [
       {
-        "t": "Manage Microsoft Edge on iOS and Android With Intune - Microsoft Intune",
+        "t": "Gerenciar o Microsoft Edge no iOS e no Android com o Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-edge-ios-android"
       },
       {
-        "t": "App Configuration Policies for Microsoft Intune - Microsoft Intune",
+        "t": "Políticas de configuração de aplicativos para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/overview"
       },
       {
-        "t": "Add App Configuration Policies for Managed iOS/iPadOS Devices - Microsoft Intune",
+        "t": "Adicionar políticas de configuração de aplicativos para dispositivos iOS/iPadOS gerenciados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-ios"
       }
     ]
@@ -7823,11 +7823,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **User1 com .ods:** Sim. Policy1 (prioridade 0, Group1).\n- **User2 com .xlsb:** Não. Também está no Group1 (aninhado), e a Policy1 vence.\n- **User3 com .xlsx:** Não. Recebe a Policy1 (.ods).\n\n**Dica de prova:** Diferente do Intune, as Office Cloud Policies resolvem conflito por prioridade e consideram grupos aninhados.",
     "docs": [
       {
-        "t": "Overview of Cloud Policy service for Microsoft 365 - Microsoft 365 Apps",
+        "t": "Visão geral do serviço de Política de Nuvem para o Microsoft 365 - Aplicativos do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/overview-cloud-policy"
       },
       {
-        "t": "Use ADMX templates on Windows devices in Microsoft Intune - Microsoft Intune",
+        "t": "Usar modelos ADMX em dispositivos Windows no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/configure-admx-templates-windows"
       }
     ]
@@ -8078,7 +8078,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **\"Device Owners\":** não é um grupo local padrão.\n- **\"Contoso\\User1\" / \"User1@Contoso.com\":** contas do Entra exigem o prefixo AzureAD\\.\n\n**Dica de prova:** Em escala, use Account protection > Local user group membership (Remote Desktop Users).",
     "docs": [
       {
-        "t": "Enable Remote Desktop on your PC",
+        "t": "Habilitar a Área de Trabalho Remota no seu computador",
         "u": "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access"
       },
       {
@@ -8153,7 +8153,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Enable-MMAgent:** Memory Manager.\n- **Allow Remote Shell Access:** controla o WinRS, mas não habilita o WinRM.\n- **Turn on Script Execution:** política de execução local.",
     "docs": [
       {
-        "t": "Security considerations for PowerShell Remoting using WinRM - PowerShell",
+        "t": "Considerações de segurança para comunicação remota do PowerShell usando o WinRM - PowerShell",
         "u": "https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/winrm-security"
       },
       {
@@ -8191,7 +8191,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App configuration / app protection:** sem relação com o provisionamento.\n- **Platform restriction:** bloqueia plataformas na inscrição.",
     "docs": [
       {
-        "t": "Set up the Enrollment Status Page in the admin center copy - Microsoft Intune",
+        "t": "Configurar a Página de Status da Inscrição no centro de administração (cópia) - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/windows/setup-status-page"
       }
     ]
@@ -8259,19 +8259,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Ativação / licença / quality updates:** não concluem o registro do hybrid join.\n\n**Dica de prova:** dsregcmd /status mostra o estado; o evento 304/305 no log User Device Registration ajuda no diagnóstico.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra hybrid join - Microsoft Entra ID",
+        "t": "Configurar o ingresso híbrido no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join"
       },
       {
-        "t": "What is device identity in Microsoft Entra ID? - Microsoft Entra ID",
+        "t": "O que é a identidade de dispositivo no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/overview"
       },
       {
-        "t": "What is a Microsoft Entra joined device? - Microsoft Entra ID",
+        "t": "O que é um dispositivo ingressado no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join"
       },
       {
-        "t": "What is a Microsoft Entra hybrid joined device? - Microsoft Entra ID",
+        "t": "O que é um dispositivo com ingresso híbrido no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-hybrid-join"
       }
     ]
@@ -8299,11 +8299,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Combinações parciais:** o Intune gerencia atualizações das quatro plataformas, cada uma com a sua política.",
     "docs": [
       {
-        "t": "Windows Update Management Overview - Microsoft Intune",
+        "t": "Visão geral do gerenciamento do Windows Update - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-updates/windows/"
       },
       {
-        "t": "Quick guide to Windows as a service",
+        "t": "Guia rápido do Windows como serviço",
         "u": "https://learn.microsoft.com/en-us/windows/deployment/update/waas-quick-start"
       }
     ]
@@ -8331,15 +8331,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Server1 (DC) / Server4 (NDES):** não são a raiz da cadeia.\n- **Server3 (sub CA):** o gabarito do dump marca, mas o campo pede o certificado raiz confiável.\n\n**Dica de prova:** Distribua a raiz e as intermediárias como trusted certificates; o perfil SCEP referencia o da raiz.",
     "docs": [
       {
-        "t": "Configure infrastructure to support SCEP certificate profiles with Microsoft Intune - Microsoft Intune",
+        "t": "Configurar a infraestrutura para dar suporte a perfis de certificado SCEP com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/fundamentals/certificates/scep-infrastructure"
       },
       {
-        "t": "Microsoft Cloud PKI for Microsoft Intune - Microsoft Intune",
+        "t": "Microsoft Cloud PKI para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/cloud-pki/"
       },
       {
-        "t": "Configure Microsoft Cloud PKI root and issuing CA for Microsoft Intune - Microsoft Intune",
+        "t": "Configurar ACs raiz e emissora do Microsoft Cloud PKI para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/cloud-pki/configure-ca"
       }
     ]
@@ -8465,7 +8465,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Edge Browser:** configurações do Edge legado.\n- **Network proxy / Privacy / Search / Start etc.:** não bloqueiam sites suspeitos nem escaneiam scripts.",
     "docs": [
       {
-        "t": "Restrict devices features using policy in Microsoft Intune - Microsoft Intune",
+        "t": "Restringir recursos de dispositivos usando políticas no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/configure-device-restrictions"
       },
       {
@@ -8520,15 +8520,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Wipe no Device4:** iOS em User Enrollment não suporta wipe.\n- **Reter a inscrição em Android/iOS:** a opção \"Retain enrollment state\" existe só no Windows.",
     "docs": [
       {
-        "t": "Wipe devices with Microsoft Intune - Microsoft Intune",
+        "t": "Apagar dispositivos com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/wipe"
       },
       {
-        "t": "Device Action: Sync - Microsoft Intune",
+        "t": "Ação de dispositivo: sincronizar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/sync"
       },
       {
-        "t": "Device Action: Restart - Microsoft Intune",
+        "t": "Ação de dispositivo: reiniciar - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/actions/restart"
       }
     ]
@@ -8596,11 +8596,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Web link / Android store app / built-in:** não suportam managed configurations.\n\n**Dica de prova:** As Android Enterprise system apps são apps pré-instalados habilitados pelo Intune em dispositivos dedicados ou fully managed.",
     "docs": [
       {
-        "t": "App Configuration Policies for Microsoft Intune - Microsoft Intune",
+        "t": "Políticas de configuração de aplicativos para o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/overview"
       },
       {
-        "t": "Add App Configuration Policies for Managed iOS/iPadOS Devices - Microsoft Intune",
+        "t": "Adicionar políticas de configuração de aplicativos para dispositivos iOS/iPadOS gerenciados - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-ios"
       }
     ]
@@ -8628,7 +8628,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Device4 (Ubuntu):** o Intune não implanta apps em Linux (só compliance e scripts).\n- **Combinações sem Android ou iOS:** as duas plataformas recebem apps.",
     "docs": [
       {
-        "t": "Add Apps to Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar aplicativos ao Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/"
       },
       {
@@ -8669,7 +8669,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Excel instalado:** o gabarito diz Sim, mas a documentação indica que só a primeira atribuição de M365 Apps vale por dispositivo.\n\n**Dica de prova:** Na prática, use um único app Microsoft 365 Apps com todos os apps necessários por dispositivo.",
     "docs": [
       {
-        "t": "Add Microsoft 365 Apps to Windows Devices Using Microsoft Intune - Microsoft Intune",
+        "t": "Adicionar Aplicativos do Microsoft 365 a dispositivos Windows usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-microsoft-365-windows"
       }
     ]
@@ -8708,11 +8708,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Compliance policies / Device diagnostics:** não medem tempo de boot por modelo.\n- **M365 Apps admin center / Entra:** o Endpoint analytics fica no Intune admin center.",
     "docs": [
       {
-        "t": "Endpoint analytics overview - Microsoft Intune",
+        "t": "Visão geral da Análise de Pontos de Extremidade - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/endpoint-analytics/"
       },
       {
-        "t": "Use Remediations to Detect and Fix Support Issues - Microsoft Intune",
+        "t": "Usar Remediações para detectar e corrigir problemas de suporte - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-management/tools/deploy-remediations"
       }
     ]
@@ -8758,15 +8758,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Hybrid join:** exige linha de visada para um DC (VNet com conectividade on-premises).\n- **Rede hospedada pela Microsoft:** não alcança a VNet1.\n- **Frontline:** acesso por turno, com limite de sessões simultâneas.",
     "docs": [
       {
-        "t": "Create provisioning policies for Windows 365",
+        "t": "Criar políticas de provisionamento para o Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy"
       },
       {
-        "t": "Azure network connection overview",
+        "t": "Visão geral das conexões de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/azure-network-connections"
       },
       {
-        "t": "Device images in Windows 365",
+        "t": "Imagens de dispositivos no Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/device-images"
       }
     ]
@@ -8827,11 +8827,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **App configuration:** configura o app.\n- **App provisioning profile:** assinatura de apps.\n- **Policies for Office apps:** políticas de nuvem do Office (configurações), não DLP entre apps.",
     "docs": [
       {
-        "t": "App Protection Policies Overview - Microsoft Intune",
+        "t": "Visão geral das políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
       },
       {
-        "t": "Create and Deploy App Protection Policies - Microsoft Intune",
+        "t": "Criar e implantar políticas de proteção de aplicativos - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/protection/create-policy"
       }
     ]
@@ -8973,11 +8973,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **ASR / account protection:** não impedem desligar o Defender.\n- **CA:** reage ao acesso; não protege o agente.",
     "docs": [
       {
-        "t": "Tamper protection overview - Microsoft Defender for Endpoint",
+        "t": "Visão geral da proteção contra adulteração - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/tamper-protection-overview"
       },
       {
-        "t": "Manage antivirus settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de antivírus com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/antivirus"
       }
     ]
@@ -9004,15 +9004,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Dynamically expanding:** o Azure exige disco de tamanho fixo.\n- **Geração 1:** o Windows 365 exige Geração 2.\n- **Aumentar o disco:** 64 GB já atende.\n\n**Dica de prova:** Comando: Convert-VHD -Path VM1.vhdx -DestinationPath VM1.vhd -VHDType Fixed; depois, sysprep /generalize /oobe.",
     "docs": [
       {
-        "t": "Create provisioning policies for Windows 365",
+        "t": "Criar políticas de provisionamento para o Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy"
       },
       {
-        "t": "Azure network connection overview",
+        "t": "Visão geral das conexões de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/azure-network-connections"
       },
       {
-        "t": "Device images in Windows 365",
+        "t": "Imagens de dispositivos no Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/device-images"
       }
     ]
@@ -9051,7 +9051,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Enroll / exportar hash no Server1:** o servidor só hospeda o conector.\n- **Delegar no Admin1 / Server1 como recurso:** a permissão de criar computadores é delegada na OU de destino.",
     "docs": [
       {
-        "t": "Enrollment for Microsoft Entra hybrid joined devices - Windows Autopilot",
+        "t": "Inscrição de dispositivos com ingresso híbrido no Microsoft Entra - Windows Autopilot",
         "u": "https://learn.microsoft.com/en-us/autopilot/windows-autopilot-hybrid"
       },
       {
@@ -9092,19 +9092,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Provisioning policy primeiro:** ela precisa de uma ANC para hybrid join.\n- **Configuration profile / custom image:** opcionais.",
     "docs": [
       {
-        "t": "Create Azure network connections for Windows 365",
+        "t": "Criar conexões de rede do Azure para o Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/create-azure-network-connection"
       },
       {
-        "t": "Create provisioning policies for Windows 365",
+        "t": "Criar políticas de provisionamento para o Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy"
       },
       {
-        "t": "Azure network connection overview",
+        "t": "Visão geral das conexões de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/azure-network-connections"
       },
       {
-        "t": "Device images in Windows 365",
+        "t": "Imagens de dispositivos no Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/device-images"
       }
     ],
@@ -9135,15 +9135,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **VNet2:** sem gateway e com Azure DNS; não resolve nem alcança o DC.\n- **VNet3:** tem gateway, mas não está conectada e usa Azure DNS.",
     "docs": [
       {
-        "t": "Create provisioning policies for Windows 365",
+        "t": "Criar políticas de provisionamento para o Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/create-provisioning-policy"
       },
       {
-        "t": "Azure network connection overview",
+        "t": "Visão geral das conexões de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/azure-network-connections"
       },
       {
-        "t": "Device images in Windows 365",
+        "t": "Imagens de dispositivos no Windows 365",
         "u": "https://learn.microsoft.com/en-us/windows-365/enterprise/device-images"
       }
     ]
@@ -9173,7 +9173,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Sequência**\n- **CA / ASR / custom notification:** não enviam e-mail por não conformidade.\n\n**Dica de prova:** Na prática, crie o template de notificação antes e selecione-o na ação \"Send email to end user\".",
     "docs": [
       {
-        "t": "Configure compliance policies with actions for noncompliance in Microsoft Intune - Microsoft Intune",
+        "t": "Configurar políticas de conformidade com ações para não conformidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/compliance/configure-noncompliance-actions"
       },
       {
@@ -9228,19 +9228,19 @@ SIM.registerQuestions("MD-102", [
     "details": "**Item a item**\n- **Device restrictions (Windows 10 Team):** tem opções do Surface Hub; o gabarito usa Identity/Endpoint protection.\n- **Defender for Endpoint (desktop) / health monitoring:** não configuram WHfB nem SmartScreen.",
     "docs": [
       {
-        "t": "Manage Surface Hub with an MDM provider - Surface Hub",
+        "t": "Gerenciar o Surface Hub com um provedor de MDM - Surface Hub",
         "u": "https://learn.microsoft.com/en-us/surface-hub/manage-settings-with-mdm-for-surface-hub"
       },
       {
-        "t": "Windows Holographic Business device settings - Microsoft Intune",
+        "t": "Configurações de dispositivos Windows Holographic Business - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-windows-holographic"
       },
       {
-        "t": "Surface Hub Windows 10 Team device restrictions in Microsoft Intune - Microsoft Intune",
+        "t": "Restrições de dispositivos Surface Hub com Windows 10 Team no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-surface-hub"
       },
       {
-        "t": "Deploy OEMConfig profiles to Zebra devices using Microsoft Intune - Microsoft Intune",
+        "t": "Implantar perfis OEMConfig em dispositivos Zebra usando o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/templates/deploy-oemconfig-zebra-android"
       }
     ]
@@ -9313,7 +9313,7 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Android Enterprise / iOS Platform:** já estão permitidas.\n- **Versões do Android Enterprise / device admin:** o requisito de Android é o tipo, não a versão.\n- **macOS / Windows:** fora do escopo.",
     "docs": [
       {
-        "t": "Overview of enrollment restrictions - Microsoft Intune",
+        "t": "Visão geral das restrições de inscrição - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-enrollment/restrictions"
       },
       {
@@ -9343,15 +9343,15 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Configuration profile:** possível via Settings catalog/OMA-URI, mas o caminho dedicado é Account protection.\n- **App protection / compliance:** sem relação.\n\n**Dica de prova:** O LAPS no Entra exige habilitar \"Enable Microsoft Entra Local Administrator Password Solution\" em Device settings.",
     "docs": [
       {
-        "t": "Overview of Windows LAPS with Microsoft Intune - Microsoft Intune",
+        "t": "Visão geral do Windows LAPS com o Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/laps/overview"
       },
       {
-        "t": "Deploy Intune policies to manage Windows LAPS - Microsoft Intune",
+        "t": "Implantar políticas do Intune para gerenciar o Windows LAPS - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-security/laps/deploy-policy"
       },
       {
-        "t": "Windows LAPS Overview: Manage Admin Passwords",
+        "t": "Visão geral do Windows LAPS: gerenciar senhas de administrador",
         "u": "https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-overview"
       }
     ],
@@ -9380,11 +9380,11 @@ SIM.registerQuestions("MD-102", [
     "details": "**Por que não as outras**\n- **Security baseline:** pode conter tamper protection em versões recentes, mas o gabarito usa a política de Antivirus.\n- **CA / compliance:** não impedem a desativação.",
     "docs": [
       {
-        "t": "Tamper protection overview - Microsoft Defender for Endpoint",
+        "t": "Visão geral da proteção contra adulteração - Microsoft Defender for Endpoint",
         "u": "https://learn.microsoft.com/en-us/defender-endpoint/tamper-protection-overview"
       },
       {
-        "t": "Manage antivirus settings with endpoint security policies in Microsoft Intune - Microsoft Intune",
+        "t": "Gerenciar configurações de antivírus com políticas de segurança de ponto de extremidade no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/antivirus"
       }
     ]
@@ -9449,7 +9449,7 @@ SIM.registerQuestions("MD-102", [
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/win32"
       },
       {
-        "t": "Prepare a Win32 App to Be Uploaded to Microsoft Intune - Microsoft Intune",
+        "t": "Preparar um aplicativo Win32 para carregamento no Microsoft Intune - Microsoft Intune",
         "u": "https://learn.microsoft.com/en-us/intune/app-management/deployment/create-win32-package"
       },
       {

@@ -33,11 +33,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Management groups:** agrupam assinaturas para aplicar Policy/RBAC em escala; não rotulam VMs dentro de um RG.\n- **Um resource group por departamento:** reorganiza o ciclo de vida e as permissões só para identificar o dono; dá trabalho e não resolve recursos compartilhados.\n- **Modificar configurações da VM:** nenhuma configuração da VM guarda metadados organizacionais.\n\n**Dica de prova:** Tags não são herdadas do resource group; para herdar, use a Azure Policy \"Inherit a tag from the resource group\".",
     "docs": [
       {
-        "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+        "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       },
       {
-        "t": "Policy definitions for tagging resources - Azure Resource Manager",
+        "t": "Definições de políticas para marcação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies"
       }
     ],
@@ -67,19 +67,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **New-AzureRmVm:** módulo AzureRM, aposentado. Mesmo o New-AzVM só aplicaria a CA com custom data/extensão, e a questão pede o comando que aceita cloud-init direto.\n- **New-AzVM:** cria a VM, mas o caminho documentado para cloud-init em Linux é az vm create --custom-data.\n- **Create-AzVM:** cmdlet que não existe.\n\n**Dica de prova:** Custom data/cloud-init só roda no primeiro boot. Para configurar depois, use a Custom Script Extension.",
     "docs": [
       {
-        "t": "Tutorial - Customize a Linux VM with cloud-init in Azure - Azure Virtual Machines",
+        "t": "Tutorial: personalizar uma VM Linux com cloud-init no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-automate-vm-deployment"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       },
       {
-        "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+        "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
       }
     ],
@@ -108,11 +108,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **GRS:** replica para a região par, mas a secundária só pode ser lida depois de um failover.\n- **ZRS:** três zonas de uma única região; não atende \"locais geográficos separados\".\n- **LRS:** três cópias em um único datacenter.\n\n**Dica de prova:** \"Ler na secundária\" sempre aponta para RA-GRS ou RA-GZRS.",
     "docs": [
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       },
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       }
     ],
@@ -144,15 +144,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** só o blade do **Resource group** (Deployments) mostra o template de uma implantação com vários recursos. VM e Container não guardam histórico de implantação.\n\n**Dica de prova:** Em Deployments também dá para reimplantar e ver os parâmetros usados. \"Export template\" do RG gera o estado atual, que é diferente do template original.",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ],
@@ -184,15 +184,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** **Resource group > Settings > Deployments** abre cada implantação, com **Template**, **Parameters** e **Inputs**. É a resposta certa da série; VM e Container não servem.\n\n**Dica de prova:** Implantações no escopo da assinatura aparecem em Subscription > Deployments.",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ],
@@ -224,15 +224,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** o container de blob só guarda dados. Revisar o template usado = **Resource group > Deployments**.",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ],
@@ -261,15 +261,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Parar apenas uma VM:** as outras continuam alocadas e prendem o availability set ao cluster atual, que não tem o novo tamanho.\n- **Parar duas VMs:** mesmo motivo; basta uma VM ligada para o conjunto ficar no cluster atual.\n- **Remover a VM do availability set:** não é possível; a associação ao availability set só é definida na criação da VM.\n\n**Dica de prova:** Antes, confira se o tamanho está disponível no cluster atual (lista de tamanhos com a VM ligada). Se estiver, dá para redimensionar sem parar as outras.",
     "docs": [
       {
-        "t": "Resize virtual machines | Microsoft Azure Blog",
+        "t": "Redimensionar máquinas virtuais | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/resize-virtual-machines/"
       },
       {
-        "t": "Virtual machine sizes overview - Azure Virtual Machines",
+        "t": "Visão geral dos tamanhos de máquinas virtuais - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview"
       },
       {
-        "t": "Resize a virtual machine - Azure Virtual Machines",
+        "t": "Redimensionar uma máquina virtual - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
       }
     ],
@@ -299,19 +299,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Parar a VM de origem:** desnecessário; discos de dados suportam hot detach.\n- **Parar a VM de destino:** anexar disco de dados também é feito a quente.\n- **Excluir a VM:** destrutivo e desnecessário.\n\n**Dica de prova:** Disco de SO não pode ser desanexado com a VM ligada; isso vale só para discos de dados.",
     "docs": [
       {
-        "t": "How to detach a data disk from a Windows virtual machine - Azure Virtual Machines",
+        "t": "Como desanexar um disco de dados de uma máquina virtual Windows - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/detach-disk"
       },
       {
-        "t": "Overview of Azure Disk Storage - Azure Virtual Machines",
+        "t": "Visão geral do Azure Disk Storage - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
       },
       {
-        "t": "Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines",
+        "t": "Selecionar um tipo de disco para VMs IaaS do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
       },
       {
-        "t": "Attach a managed data disk to a Windows VM by using the Azure portal - Azure Virtual Machines",
+        "t": "Anexar um disco de dados gerenciado a uma VM Windows usando o portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal"
       }
     ],
@@ -423,19 +423,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Storage account:** guardar a senha em blob a deixaria legível; storage não é um cofre de segredos.\n- **Identity Protection:** trata risco de entrada de usuários; não guarda segredos.\n- **Azure Policy / backup policy:** não armazenam nem protegem a senha usada no template.\n\n**Dica de prova:** O Key Vault precisa da opção **enabledForTemplateDeployment**. Quem implanta precisa de **Microsoft.KeyVault/vaults/deploy/action** (ex.: Key Vault Contributor ou uma função customizada).",
     "docs": [
       {
-        "t": "Key Vault secret with template - Azure Resource Manager",
+        "t": "Segredo do Key Vault com modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       },
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       }
     ]
@@ -461,19 +461,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Add-AzVM:** não existe para upload (VMs são criadas com New-AzVM).\n- **Add-AzImage:** não existe; a imagem é criada com New-AzImageConfig + New-AzImage a partir do VHD enviado.\n- **Add-AzImageDataDisk:** só acrescenta um disco de dados a uma configuração de imagem.\n\n**Dica de prova:** O VHD precisa ser de tamanho fixo (não dinâmico) e alinhado em MB. Add-AzVhd converte o VHDX automaticamente.",
     "docs": [
       {
-        "t": "Upload a VHD to Azure or copy a disk across regions - Azure PowerShell - Azure Virtual Machines",
+        "t": "Carregar um VHD no Azure ou copiar um disco entre regiões - Azure PowerShell - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell"
       },
       {
-        "t": "Overview of Azure Disk Storage - Azure Virtual Machines",
+        "t": "Visão geral do Azure Disk Storage - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
       },
       {
-        "t": "Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines",
+        "t": "Selecionar um tipo de disco para VMs IaaS do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
       },
       {
-        "t": "Attach a managed data disk to a Windows VM by using the Azure portal - Azure Virtual Machines",
+        "t": "Anexar um disco de dados gerenciado a uma VM Windows usando o portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal"
       }
     ],
@@ -505,7 +505,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (listener do Always On):** só **Floating IP habilitado** atende. O probe precisa ser **TCP** numa porta dedicada (ex.: 59999), não HTTP na 1433, e a persistência fica em **None**.\n\n**Dica de prova:** A regra do LB usa a porta do listener (1433) como frontend e backend, com Floating IP. O probe usa outra porta, que só responde no nó primário.",
     "docs": [
       {
-        "t": "Azure Load Balancer Floating IP configuration",
+        "t": "Configuração de IP flutuante do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-floating-ip"
       },
       {
@@ -546,11 +546,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Session persistence Client IP não é requisito do listener; o necessário é **Floating IP** na regra e um probe **TCP** dedicado.\n\n**Dica de prova:** Hoje, em VMs com SQL em uma única sub-rede, a Microsoft recomenda usar **multi-subnet** ou **DNN** no lugar do load balancer.",
     "docs": [
       {
-        "t": "Azure Load Balancer Floating IP configuration",
+        "t": "Configuração de IP flutuante do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-floating-ip"
       },
       {
-        "t": "Configure a Load Balancer & Availability Group Listener (Azure Portal) - SQL Server on Azure VMs",
+        "t": "Configurar um balanceador de carga e um ouvinte de grupo de disponibilidade (portal do Azure) - SQL Server em VMs do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/availability-group-load-balancer-portal-configure"
       },
       {
@@ -590,7 +590,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Floating IP (Direct Server Return) é obrigatório porque o IP do listener está configurado no cluster e só o nó primário responde a ele.\n\n**Dica de prova:** Probe HTTP na 1433 e Client IP aparecem como distratores na mesma série.",
     "docs": [
       {
-        "t": "Azure Load Balancer Floating IP configuration",
+        "t": "Configuração de IP flutuante do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-floating-ip"
       },
       {
@@ -636,7 +636,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       }
     ]
@@ -670,7 +670,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ]
@@ -766,15 +766,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Traffic Analytics:** analisa fluxos de rede dos flow logs, não métricas de desempenho.\n- **Activity Log:** registra operações de plano de controle (quem criou ou parou o quê), não desempenho.\n- **Advisor:** dá recomendações, não investiga métricas em tempo real.\n\n**Dica de prova:** Métricas são numéricas e quase em tempo real (Metrics explorer). Logs são consultados com KQL no Log Analytics.",
     "docs": [
       {
-        "t": "Azure Monitor data platform - Azure Monitor",
+        "t": "Plataforma de dados do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-platform"
       },
       {
-        "t": "Metrics in Azure Monitor - Azure Monitor",
+        "t": "Métricas no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics"
       },
       {
-        "t": "Analyze metrics with Azure Monitor metrics explorer - Azure Monitor",
+        "t": "Analisar métricas com o explorador de métricas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/analyze-metrics"
       }
     ],
@@ -810,11 +810,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que todas valem:** o backup de VM é feito no nível do disco (snapshot), então não depende de a VM estar ligada. VM desligada gera ponto **crash-consistent**; VM ligada gera ponto **application-consistent** no Windows (VSS) ou **file-consistent** no Linux.\n\n**Dica de prova:** Windows cliente 64-bit e distros Linux endossadas (Debian, Ubuntu, RHEL…) são suportados. SO 32-bit não é.",
     "docs": [
       {
-        "t": "Support matrix for Azure VM backups - Azure Backup",
+        "t": "Matriz de suporte para backups de VMs do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix-iaas"
       },
       {
-        "t": "Linux distributions endorsed on Azure - Azure Virtual Machines",
+        "t": "Distribuições Linux aprovadas no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros"
       },
       {
@@ -855,7 +855,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (500 convidados):** Bulk create cria **membros** (UPN do tenant), não convidados. O certo é **Users > Bulk operations > Bulk invite** (CSV com e-mail e redirect URL) ou **New-MgInvitation** em loop no PowerShell.\n\n**Dica de prova:** Bulk invite envia o convite por e-mail; o convidado aparece com UserType = Guest até resgatar o convite.",
     "docs": [
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
@@ -863,7 +863,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
@@ -948,7 +948,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Security group (atribuído ou dinâmico):** a política de expiração só se aplica a grupos Microsoft 365.\n- **Grupo de segurança Dynamic Device:** nem expira nem serve para dar acesso de usuários ao SharePoint.\n\n**Dica de prova:** O dono recebe aviso 30, 15 e 1 dia antes de expirar. Grupo com atividade (Outlook, SharePoint, Teams) é renovado automaticamente.",
     "docs": [
       {
-        "t": "Microsoft 365 group expiration policy",
+        "t": "Política de expiração de grupos do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/microsoft-365-groups-expiration-policy"
       },
       {
@@ -997,11 +997,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Criar VNet na Subscription1:** Não. O *Not allowed resource types* (virtualNetworks) aplicado no Tenant Root Group é herdado por todas as assinaturas.\n- **Criar VM na Subscription2:** Não. Com *Allowed resource types* = virtualNetworks no MG12, todo o resto é negado.\n- **Mover a Subscription1 para o MG11:** Sim. A política não bloqueia mover assinaturas entre management groups; é preciso permissão nos MGs de origem e destino.\n\n**Dica de prova:** Políticas são herdadas de cima para baixo e o deny vence; escopos-filhos não conseguem \"liberar\" o que o pai nega.",
     "docs": [
       {
-        "t": "Organize your resources with management groups - Azure Governance - Azure governance",
+        "t": "Organizar recursos com grupos de gerenciamento - Azure Governance - Governança do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
       },
       {
-        "t": "Manage your Azure subscriptions at scale with management groups - Azure Governance - Azure governance",
+        "t": "Gerenciar assinaturas do Azure em escala com grupos de gerenciamento - Azure Governance - Governança do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/manage"
       },
       {
@@ -1039,7 +1039,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Bloqueia SQL em toda a assinatura:** ignora as Exclusions da atribuição.\n- **Bloqueia só no ContosoRG1:** é o inverso; o RG excluído é o único liberado.\n- **Permite em qualquer RG:** a política nega em todos os RGs fora da exclusão.\n\n**Dica de prova:** Exclusions ficam na **atribuição**; exemptions são um recurso separado, com motivo e validade.",
     "docs": [
       {
-        "t": "Details of the policy assignment structure - Azure Policy",
+        "t": "Detalhes da estrutura de atribuição de políticas - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/assignment-structure"
       },
       {
@@ -1051,7 +1051,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
-        "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+        "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
       }
     ]
@@ -1097,11 +1097,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VNET1 recebe Label:** o efeito só age em criação/atualização. Recursos existentes só recebem a tag com **tarefa de remediação** (efeito modify).\n- **VNET recebe RGroup: RG6:** tags do resource group não são herdadas.\n\n**Dica de prova:** Para herdar a tag do RG, use a política \"Inherit a tag from the resource group\" (modify) e faça remediação nos recursos existentes.",
     "docs": [
       {
-        "t": "Policy definitions for tagging resources - Azure Resource Manager",
+        "t": "Definições de políticas para marcação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies"
       },
       {
-        "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+        "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       }
     ],
@@ -1130,19 +1130,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Excluir o RVAULT1:** o Recovery Services vault pode ser movido entre assinaturas (com as restrições da documentação).\n- **Só a VM e o disco:** storage account e VNet também suportam move.\n- **Só o vault:** VMs, discos, storage e VNets também são movíveis.\n\n**Dica de prova:** Recursos dependentes precisam ir juntos (VM + NIC + discos + VNet), e o move não muda a região.",
     "docs": [
       {
-        "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+        "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
       },
       {
-        "t": "Create a Microsoft Customer Agreement subscription - Azure Cost Management + Billing",
+        "t": "Criar uma assinatura do Contrato de Cliente da Microsoft - Azure Cost Management + Billing",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription"
       },
       {
-        "t": "Transfer an Azure subscription to a different Microsoft Entra directory",
+        "t": "Transferir uma assinatura do Azure para outro diretório do Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/transfer-subscription"
       },
       {
-        "t": "View quotas - Azure Quotas",
+        "t": "Exibir cotas - Azure Quotas",
         "u": "https://learn.microsoft.com/en-us/azure/quotas/view-quotas"
       }
     ],
@@ -1171,7 +1171,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Set-AzApiManagementSubscription:** cuida de assinaturas do API Management, não dos termos do Marketplace.\n- **Registrar o provider Microsoft.Marketplace:** o erro é de termos legais, não de provider.\n- **Billing administrator:** função de cobrança; não aceita os termos da imagem para a assinatura.\n\n**Dica de prova:** Alternativas: Get-AzMarketplaceTerms … | Set-AzMarketplaceTerms -Accept, ou az vm image terms accept --urn.",
     "docs": [
       {
-        "t": "Find and use marketplace purchase plan information using PowerShell - Azure Virtual Machines",
+        "t": "Localizar e usar informações do plano de compra do Marketplace usando o PowerShell - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage"
       },
       {
@@ -1179,11 +1179,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/az.marketplaceordering/set-azmarketplaceterms"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       }
     ],
@@ -1211,7 +1211,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Licenses:** atribuir licença não dá função administrativa.\n- **Groups:** entrar num grupo só dá função se o grupo for role-assignable e tiver a função; aqui o caminho direto é Assigned roles.\n\n**Dica de prova:** Funções podem ser atribuídas a grupos se o grupo for criado com \"Microsoft Entra roles can be assigned to the group\" = Yes.",
     "docs": [
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       },
       {
@@ -1252,7 +1252,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Convidar para um grupo:** a associação só ajuda se o grupo tiver a licença (licenciamento por grupo); só convidar não licencia.\n- **Adicionar enterprise application:** não tem relação com licença P2.\n- **Directory role:** função administrativa não é licença.\n\n**Dica de prova:** O usuário precisa de **Usage location** preenchido antes de receber licença.",
     "docs": [
       {
-        "t": "Assign or unassign licenses for users in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de usuários no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users"
       },
       {
@@ -1285,7 +1285,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Automation runbook:** poderia chamar APIs, mas não é a integração nativa nem o primeiro passo.\n- **Function app:** código customizado; desnecessário com o ITSMC.\n- **Notification:** e-mail/SMS do action group não cria incidente no Service Manager.\n\n**Dica de prova:** Ordem: ITSMC (conexão com o SCSM) → action group com ação ITSM → regra de alerta de métrica (Available Memory < 10%).",
     "docs": [
       {
-        "t": "IT Service Management integration - Azure Monitor",
+        "t": "Integração do Gerenciamento de Serviços de TI - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/itsmc-overview"
       },
       {
@@ -1334,7 +1334,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 (Cloud device administrator) adicionar Device2 ao Group1:** Não. A função gerencia dispositivos (habilitar, desabilitar, BitLocker), não associação de grupos.\n- **User2 (dono do Group1) adicionar Device1:** Sim. Dono de grupo atribuído gerencia membros, inclusive dispositivos.\n- **User2 adicionar ao Group2:** Não. Grupo dinâmico não aceita membros manuais.\n\n**Dica de prova:** Grupos dinâmicos são de usuários **ou** de dispositivos, nunca mistos.",
     "docs": [
       {
-        "t": "What is device identity in Microsoft Entra ID? - Microsoft Entra ID",
+        "t": "O que é a identidade de dispositivo no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/overview"
       },
       {
@@ -1375,11 +1375,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Excluir VM1 / parar VM1 / excluir sa001:** nenhum desses recursos impede a exclusão; o bloqueio é o vault com item protegido.\n\n**Dica de prova:** Com soft delete, os dados de backup ficam retidos 14 dias. Para excluir o vault antes disso, desabilite o soft delete e exclua os itens em soft delete.",
     "docs": [
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ]
@@ -1405,7 +1405,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Remover Reader/Security Reader:** tirar permissões não dá direito de atribuir funções.\n- **Network Contributor (VNet1 ou RG1):** gerencia rede, mas não tem Microsoft.Authorization/roleAssignments/write.\n\n**Dica de prova:** Hoje existe também o **Role Based Access Control Administrator**, que atribui funções com condições (ex.: só Reader). É a opção de menor privilégio em questões novas.",
     "docs": [
       {
-        "t": "What is Azure role-based access control (Azure RBAC)?",
+        "t": "O que é o controle de acesso baseado em função do Azure (Azure RBAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
@@ -1442,7 +1442,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **NSEC / RRSIG:** registros de DNSSEC.\n- **PTR:** DNS reverso.\n\n**Dica de prova:** TXT (MS=msXXXXXXXX) é o padrão; MX é a alternativa quando o provedor DNS não aceita TXT. A verificação só sai depois da propagação.",
     "docs": [
       {
-        "t": "Tutorial: Create Custom Azure DNS Records For a Web App",
+        "t": "Tutorial: criar registros personalizados do Azure DNS para um aplicativo Web",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain"
       },
       {
@@ -1490,7 +1490,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Secure Access and Data in Workflows - Azure Logic Apps",
+        "t": "Proteger o acesso e os dados em fluxos de trabalho - Azure Logic Apps",
         "u": "https://learn.microsoft.com/en-us/azure/logic-apps/set-up-security-permissions"
       },
       {
@@ -1531,7 +1531,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Secure Access and Data in Workflows - Azure Logic Apps",
+        "t": "Proteger o acesso e os dados em fluxos de trabalho - Azure Logic Apps",
         "u": "https://learn.microsoft.com/en-us/azure/logic-apps/set-up-security-permissions"
       },
       {
@@ -1603,15 +1603,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Tag em cada resource group:** os recursos de um departamento estão espalhados em vários RGs, e as tags do RG não chegam aos recursos.\n- **Resource costs de cada RG:** mostra o custo por RG, não por departamento.\n\n**Dica de prova:** Cost analysis permite agrupar e filtrar por tag; os custos só refletem as tags a partir de quando foram aplicadas.",
     "docs": [
       {
-        "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+        "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       },
       {
-        "t": "Overview of Billing - Microsoft Cost Management",
+        "t": "Visão geral do faturamento - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview"
       },
       {
-        "t": "Policy definitions for tagging resources - Azure Resource Manager",
+        "t": "Definições de políticas para marcação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies"
       }
     ],
@@ -1641,19 +1641,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Get-Event …:** sintaxe de PowerShell, não KQL.\n- **select * from …:** sintaxe SQL.\n- **… where EventType -eq \"error\":** -eq é PowerShell; em KQL o operador é ==.\n\n**Dica de prova:** Em KQL, tudo começa pela tabela ou por search, encadeado com |. Na tabela Event, o campo é EventLevelName == \"Error\".",
     "docs": [
       {
-        "t": "Tutorial: Learn Common Kusto Query Language Operators - Kusto",
+        "t": "Tutorial: conhecer operadores comuns da Linguagem de Consulta Kusto - Kusto",
         "u": "https://learn.microsoft.com/en-us/kusto/query/tutorials/learn-common-operators"
       },
       {
-        "t": "Log Analytics Tutorial: Query and Analyze Log Data - Azure Monitor",
+        "t": "Tutorial do Log Analytics: consultar e analisar dados de log - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial"
       },
       {
-        "t": "search operator - Kusto",
+        "t": "Operador search - Kusto",
         "u": "https://learn.microsoft.com/en-us/kusto/query/search-operator"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ],
@@ -1687,7 +1687,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Conectar ao VNET1:** Sim. As VMs e o VNET1 estão na mesma região, e as zonas não restringem a VNet, que abrange toda a região.\n- **Perda de um datacenter:** Sim. As VMs estão em zonas diferentes.\n- **Perda da região:** Não. Para isso é preciso outra região (ex.: Site Recovery).",
     "docs": [
       {
-        "t": "Reliability in Azure",
+        "t": "Confiabilidade no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/overview"
       },
       {
@@ -1728,15 +1728,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **App Service plan muda para North Europe:** mover de RG nunca muda a região do recurso.\n- **Policy1 continua valendo:** a política do RG de origem deixa de se aplicar; vale a do RG de destino.\n\n**Dica de prova:** A localização do RG é só onde ficam os metadados dele; os recursos podem estar em outras regiões.",
     "docs": [
       {
-        "t": "Manage an App Service Plan - Azure App Service",
+        "t": "Gerenciar um plano do App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
       },
       {
-        "t": "Use the Azure portal and Azure Resource Manager to Manage Resource Groups - Azure Resource Manager",
+        "t": "Usar o portal do Azure e o Azure Resource Manager para gerenciar grupos de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
       },
       {
-        "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+        "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
       }
     ],
@@ -1782,19 +1782,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **assignableScopes \"/\":** escopo raiz; só para funções que valem no tenant todo (e exige privilégio elevado).\n- **.../resourceGroups:** não é um escopo válido.\n- **Microsoft.Resources/*:** bloquearia a gestão de deployments e de RGs, não as permissões de acesso.\n- **Microsoft.Security/*:** trata do Defender for Cloud.\n\n**Dica de prova:** Actions = \"*\" com NotActions = Microsoft.Authorization/* é a definição da função Contributor.",
     "docs": [
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       },
       {
-        "t": "Azure permissions - Azure RBAC",
+        "t": "Permissões do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations"
       },
       {
-        "t": "Understand scope for Azure RBAC",
+        "t": "Entender o escopo do Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       }
     ],
@@ -1832,7 +1832,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "What is Azure Application Gateway",
+        "t": "O que é o Azure Application Gateway",
         "u": "https://learn.microsoft.com/en-us/azure/application-gateway/overview"
       },
       {
@@ -1871,15 +1871,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Monitor:** mostra métricas, mas não aponta sozinho quais VMs reduzir.\n- **Metrics:** exigiria analisar VM por VM; não é \"rápido\".\n- **Customer insights:** não é um blade de otimização do Azure.\n\n**Dica de prova:** O Advisor considera CPU e rede abaixo do limite (padrão 5%) por 7 dias; o limite é ajustável nas configurações do Advisor.",
     "docs": [
       {
-        "t": "Optimize virtual machine (VM) or virtual machine scale set (VMSS) spend by resizing or shutting down underutilized instances - Azure Advisor",
+        "t": "Otimizar os gastos de máquinas virtuais (VMs) ou conjuntos de dimensionamento de máquinas virtuais (VMSS) redimensionando ou desligando instâncias subutilizadas - Azure Advisor",
         "u": "https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations"
       },
       {
-        "t": "Tutorial - Create and manage budgets - Microsoft Cost Management",
+        "t": "Tutorial: criar e gerenciar orçamentos - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
       },
       {
-        "t": "Monitor usage and spending with cost alerts in Cost Management - Microsoft Cost Management",
+        "t": "Monitorar o uso e os gastos com alertas de custo no Gerenciamento de Custos - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending"
       }
     ],
@@ -1908,11 +1908,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Custom domain:** não tem relação com convidar contas Microsoft externas.\n- **Identity provider:** contas Microsoft (outlook.com) já são suportadas nativamente no B2B.\n- **Security administrator:** não dá permissão de convite; o User administrator já pode convidar se as configurações permitirem.\n\n**Dica de prova:** Confira também a allow/deny list de domínios e as cross-tenant access settings, que também bloqueiam convites.",
     "docs": [
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
@@ -1946,11 +1946,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Owner da assinatura + Conditional Access:** CA não dá acesso ao root management group.\n- **Owner da assinatura + Access management:** o toggle \"Access management for Azure resources\" só aparece para Global Administrator.\n- **Novo management group:** ser dono de um MG filho não permite atribuir política no Tenant Root Group.\n\n**Dica de prova:** Depois de elevar, o Global Admin vira User Access Administrator no escopo \"/\". Remova a elevação ao terminar.",
     "docs": [
       {
-        "t": "Elevate access to manage all Azure subscriptions and management groups",
+        "t": "Elevar o acesso para gerenciar todas as assinaturas e grupos de gerenciamento do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin"
       },
       {
-        "t": "Organize your resources with management groups - Azure Governance - Azure governance",
+        "t": "Organizar recursos com grupos de gerenciamento - Azure Governance - Governança do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
       }
     ],
@@ -2092,11 +2092,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (habilitar Traffic Analytics):** atendem **Owner**, **Contributor** e **Network Contributor**. Reader e Traffic Manager Contributor não atendem.\n\n**Dica de prova:** Traffic Analytics também exige um workspace do Log Analytics e flow logs (de VNet; os de NSG estão sendo aposentados).",
     "docs": [
       {
-        "t": "Azure RBAC Permissions - Azure Network Watcher",
+        "t": "Permissões do Azure RBAC - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/rbac-permissions"
       },
       {
-        "t": "Network Watcher Frequently Asked Questions (FAQ)",
+        "t": "Perguntas frequentes sobre o Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
@@ -2136,11 +2136,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Owner atende. Também atendem Contributor e Network Contributor; Reader e Traffic Manager Contributor, não.",
     "docs": [
       {
-        "t": "Azure RBAC Permissions - Azure Network Watcher",
+        "t": "Permissões do Azure RBAC - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/rbac-permissions"
       },
       {
-        "t": "Network Watcher Frequently Asked Questions (FAQ)",
+        "t": "Perguntas frequentes sobre o Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
@@ -2181,11 +2181,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Reader só lê. Configurar flow logs e Traffic Analytics exige escrita em Network Watcher, na storage e no workspace.\n\n**Dica de prova:** A documentação antiga citava Reader porque misturava \"ver\" com \"habilitar\". Na prova atual, Reader = Não.",
     "docs": [
       {
-        "t": "Azure RBAC Permissions - Azure Network Watcher",
+        "t": "Permissões do Azure RBAC - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/rbac-permissions"
       },
       {
-        "t": "Network Watcher Frequently Asked Questions (FAQ)",
+        "t": "Perguntas frequentes sobre o Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
@@ -2263,11 +2263,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Admin1 adicionar Admin2 como Owner:** Sim. O toggle de elevação dá User Access Administrator na raiz.\n- **Admin3 adicionar Admin2:** Sim. O Admin3 é Owner da assinatura.\n- **Admin2 criar RG:** Não. Global Admin no Entra não dá acesso a recursos do Azure sem elevação ou atribuição.\n\n**Dica de prova:** Funções do Entra (diretório) e funções do Azure RBAC (recursos) são sistemas separados.",
     "docs": [
       {
-        "t": "Elevate access to manage all Azure subscriptions and management groups",
+        "t": "Elevar o acesso para gerenciar todas as assinaturas e grupos de gerenciamento do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin"
       },
       {
-        "t": "Organize your resources with management groups - Azure Governance - Azure governance",
+        "t": "Organizar recursos com grupos de gerenciamento - Azure Governance - Governança do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
       }
     ],
@@ -2296,19 +2296,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **IAM do RG1 primeiro:** só dá para escolher a VM como principal depois que a identidade dela existe.\n- **IAM da VM1:** controla quem gerencia a VM, não o que a VM acessa.\n- **Policies do RG1:** Azure Policy não concede acesso.\n\n**Dica de prova:** Sequência: Identity > System assigned = On → RG1 > Access control > Add role assignment > Managed identity → VM1.",
     "docs": [
       {
-        "t": "Configure managed identities on Azure virtual machines (VMs) - Managed identities for Azure resources",
+        "t": "Configurar identidades gerenciadas em máquinas virtuais (VMs) do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities"
       },
       {
-        "t": "Understand scope for Azure RBAC",
+        "t": "Entender o escopo do Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       }
     ],
@@ -2338,11 +2338,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Mudar o tipo do lock:** ReadOnly também bloqueia exclusão; é preciso **remover** o lock.\n- **Desligar a VM1:** VM desligada ou ligada não muda nada na exclusão do RG.\n- **Só apagar os dados do vault:** falta remover o lock do VNET1.\n\n**Dica de prova:** Em vaults com soft delete, os itens excluídos ficam 14 dias e continuam bloqueando a exclusão do vault.",
     "docs": [
       {
-        "t": "Delete Resource Groups and Resources - Azure Resource Manager",
+        "t": "Excluir grupos de recursos e recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group"
       },
       {
-        "t": "Lock your Azure resources to protect your infrastructure - Azure Resource Manager",
+        "t": "Bloquear recursos do Azure para proteger sua infraestrutura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources"
       }
     ],
@@ -2371,7 +2371,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **PTR:** DNS reverso; não delega.\n- **Modificar o SOA:** o SOA descreve a zona atual; não delega subdomínios.\n- **A *.research:** wildcard resolve nomes, mas não delega a autoridade.\n\n**Dica de prova:** No Azure, crie a zona filha (research.adatum.com) e copie os 4 name servers dela para o NS \"research\" da zona pai.",
     "docs": [
       {
-        "t": "Delegate a subdomain - Azure DNS",
+        "t": "Delegar um subdomínio - Azure DNS",
         "u": "https://learn.microsoft.com/en-us/azure/dns/delegate-subdomain"
       },
       {
@@ -2418,7 +2418,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Add an Azure AD tenant:** o tenant já existe; o domínio é acrescentado a ele.\n- **Configure company branding:** só personaliza a tela de login.\n- **Create an Azure DNS zone:** o DNS público está no registrador; não é preciso hospedá-lo no Azure.\n\n**Dica de prova:** Só depois da verificação o domínio pode ser definido como primário e usado no UPN.",
     "docs": [
       {
-        "t": "Tutorial: Create Custom Azure DNS Records For a Web App",
+        "t": "Tutorial: criar registros personalizados do Azure DNS para um aplicativo Web",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain"
       },
       {
@@ -2459,7 +2459,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Criar NS na zona do Azure:** a zona já tem os NS dela; o que falta é a delegação no registrador.\n- **SOA no registrador:** o registrador só guarda a delegação (NS), não o SOA.\n- **Criar SOA:** o Azure DNS cria o SOA automaticamente.\n\n**Dica de prova:** Teste com nslookup -type=NS contoso.com; depois da propagação, a resposta deve listar ns1-0x.azure-dns.com/.net/.org/.info.",
     "docs": [
       {
-        "t": "Tutorial: Host your domain in Azure DNS",
+        "t": "Tutorial: hospedar seu domínio no Azure DNS",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
       },
       {
@@ -2503,15 +2503,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 (sincronizado):** Sim. É identidade híbrida, autenticável pelo AD DS.\n- **Computer1:** Não. Contas de computador não sincronizam como principais atribuíveis para funções de share.\n- **User2 (só nuvem):** Sim, a atribuição é aceita no IAM, mas ele não autentica no share via AD DS.\n\n**Dica de prova:** Com AD DS, as permissões de share (RBAC) se somam às ACLs NTFS (Windows ACLs) no nível de arquivo.",
     "docs": [
       {
-        "t": "Assign Share-Level Permissions for Azure Files",
+        "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
       },
       {
-        "t": "Overview - Azure Files Identity-Based Authentication",
+        "t": "Visão geral da autenticação baseada em identidade do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
       },
       {
-        "t": "Enable AD DS Authentication for Azure Files",
+        "t": "Habilitar a autenticação do AD DS para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
       }
     ],
@@ -2562,7 +2562,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure permissions - Azure RBAC",
+        "t": "Permissões do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations"
       },
       {
@@ -2613,11 +2613,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Locks em management groups:** não são suportados (nem no Tenant Root Group).\n- **Tags em management groups:** o gabarito considera tags só em assinatura, resource group e recurso.\n\n**Dica de prova:** Lock na assinatura ou no RG é herdado por todos os recursos abaixo.",
     "docs": [
       {
-        "t": "Lock your Azure resources to protect your infrastructure - Azure Resource Manager",
+        "t": "Bloquear recursos do Azure para proteger sua infraestrutura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources"
       },
       {
-        "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+        "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       }
     ],
@@ -2648,7 +2648,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Usage location / display name:** não identificam o usuário de forma única; o modelo de Bulk delete pede só o UPN.\n\n**Dica de prova:** Baixe sempre o modelo CSV do próprio portal; as duas primeiras linhas (versão e cabeçalho) não podem ser removidas.",
     "docs": [
       {
-        "t": "Bulk delete users in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Excluir usuários em massa no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-delete"
       },
       {
@@ -2697,7 +2697,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **RG1 só com Tag2:IT:** Sim. A definição \"Append a tag…to resources\" não avalia resource groups (há uma versão separada para RGs).\n- **Storage1 com as quatro tags:** Não. Tag1 (da assinatura) e Tag2 (do RG) não são herdadas; fica Tag3:value1 + Tag4:value4.\n- **VNET1:** Não. Está excluído da política e fica só com Tag3:value2.\n\n**Dica de prova:** Append só altera recursos criados ou atualizados depois da atribuição.",
     "docs": [
       {
-        "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+        "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       },
       {
@@ -2709,7 +2709,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
-        "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+        "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
       }
     ],
@@ -2741,11 +2741,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Traffic Manager Contributor gerencia perfis DNS do Traffic Manager. Para Traffic Analytics: Owner, Contributor ou Network Contributor.",
     "docs": [
       {
-        "t": "Azure RBAC Permissions - Azure Network Watcher",
+        "t": "Permissões do Azure RBAC - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/rbac-permissions"
       },
       {
-        "t": "Network Watcher Frequently Asked Questions (FAQ)",
+        "t": "Perguntas frequentes sobre o Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
@@ -2782,7 +2782,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Funções do Entra sem escopo:** o User administrator global gerenciaria todos os usuários do tenant.\n- **Access packages:** dão acesso a recursos (grupos, apps, sites), não delegam administração.\n- **Funções do Azure:** atuam em recursos do Azure, não em usuários do Entra.\n\n**Dica de prova:** Administrative units exigem Entra ID P1 para os administradores delegados; a AU pode ter associação dinâmica.",
     "docs": [
       {
-        "t": "Administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units"
       },
       {
@@ -2880,11 +2880,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       },
       {
-        "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+        "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
       },
       {
-        "t": "List Azure role assignments using the Azure portal - Azure RBAC",
+        "t": "Listar atribuições de funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal"
       }
     ],
@@ -2918,7 +2918,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       },
       {
-        "t": "What is Azure role-based access control (Azure RBAC)?",
+        "t": "O que é o controle de acesso baseado em função do Azure (Azure RBAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
@@ -2975,7 +2975,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **actions / notActions:** permissões de plano de controle (gerenciar a VM), não login.\n- **notDataActions:** exclui data actions; não concede.\n- **roletype:** não é seção de permissões.\n\n**Dica de prova:** As funções built-in são **Virtual Machine Administrator Login** e **Virtual Machine User Login**; a VM precisa da extensão AADLoginForWindows/Linux.",
     "docs": [
       {
-        "t": "Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entrar em uma máquina virtual Windows no Azure usando o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
@@ -2983,11 +2983,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
-        "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+        "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
       }
     ],
@@ -3018,19 +3018,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Permissões de share pelo Explorer:** as permissões de share são RBAC no Azure; pelo Explorer se definem ACLs NTFS, e só depois de existir a identidade.\n- **Montar o share:** montar com a chave não habilita a autenticação por identidade.\n- **Private endpoint:** é rede, não identidade.\n\n**Dica de prova:** Ordem: habilitar a fonte de identidade (AD DS / Entra Kerberos) → função de share → ACLs NTFS → montar com credencial de domínio.",
     "docs": [
       {
-        "t": "Use Microsoft Entra Domain Services with Azure Files",
+        "t": "Usar o Microsoft Entra Domain Services com o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-domain-services-enable"
       },
       {
-        "t": "Overview - Azure Files Identity-Based Authentication",
+        "t": "Visão geral da autenticação baseada em identidade do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
       },
       {
-        "t": "Enable AD DS Authentication for Azure Files",
+        "t": "Habilitar a autenticação do AD DS para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
       },
       {
-        "t": "Assign Share-Level Permissions for Azure Files",
+        "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
       }
     ],
@@ -3063,11 +3063,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       },
       {
-        "t": "Organize your resources with management groups - Azure Governance - Azure governance",
+        "t": "Organizar recursos com grupos de gerenciamento - Azure Governance - Governança do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
       },
       {
-        "t": "Elevate access to manage all Azure subscriptions and management groups",
+        "t": "Elevar o acesso para gerenciar todas as assinaturas e grupos de gerenciamento do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin"
       }
     ],
@@ -3118,11 +3118,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Atribuir em VM1:** o portal não oferece um recurso individual como escopo de atribuição.\n- **Excluir o Tenant Root Group:** a exclusão precisa estar abaixo do escopo atribuído; não dá para excluir o próprio topo.\n\n**Dica de prova:** Para \"isentar\" um recurso específico com motivo e validade, use **Policy exemptions** (Waiver ou Mitigated).",
     "docs": [
       {
-        "t": "Details of the policy assignment structure - Azure Policy",
+        "t": "Detalhes da estrutura de atribuição de políticas - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/assignment-structure"
       },
       {
-        "t": "Details of the policy exemption structure - Azure Policy",
+        "t": "Detalhes da estrutura de isenção de políticas - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/exemption-structure"
       },
       {
@@ -3163,7 +3163,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (usuários no tenant novo):** só o **User1**, que criou o tenant, é Global Administrator lá. User2 (Global Admin do tenant antigo), User3 (User Admin) e User4 (Owner da assinatura) não têm acesso.\n\n**Dica de prova:** Cada tenant do Entra é isolado: funções não atravessam tenants. Os outros só entram por convite (B2B) ou com conta criada no novo tenant.",
     "docs": [
       {
-        "t": "Quickstart - Access and create new tenant - Microsoft Entra",
+        "t": "Início rápido: acessar e criar um novo tenant - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
@@ -3207,7 +3207,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Owner de assinatura é uma função do Azure RBAC e não dá poder no diretório, nem no tenant atual nem no novo.",
     "docs": [
       {
-        "t": "Quickstart - Access and create new tenant - Microsoft Entra",
+        "t": "Início rápido: acessar e criar um novo tenant - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
@@ -3251,7 +3251,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** o User administrator de contoso.onmicrosoft.com não tem escopo em external.contoso.onmicrosoft.com.",
     "docs": [
       {
-        "t": "Quickstart - Access and create new tenant - Microsoft Entra",
+        "t": "Início rápido: acessar e criar um novo tenant - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
@@ -3292,15 +3292,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Duas funções novas:** duplica a manutenção sem necessidade.\n- **Nova função para Sub1 com Sub2 nos escopos:** funcionaria, mas cria uma função a mais em vez de editar a existente.\n- **Sub1 nos escopos + nova função para Sub2:** também duplica.\n\n**Dica de prova:** Uma função customizada pode ter vários assignableScopes (assinaturas, RGs ou um management group).",
     "docs": [
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       },
       {
-        "t": "Understand scope for Azure RBAC",
+        "t": "Entender o escopo do Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       }
     ],
@@ -3337,19 +3337,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Atribuir funções a User2:** exige Owner, User Access Administrator ou RBAC Administrator.\n- **Modificar o firewall:** escrita no plano de controle (Contributor/Storage Account Contributor).\n- **Ver file shares:** Storage Blob Data * só cobre blobs; arquivos exigem Storage File Data * ou a chave.\n\n**Dica de prova:** Plano de controle (actions) ≠ plano de dados (dataActions). Reader não lê blobs pelo Entra ID.",
     "docs": [
       {
-        "t": "Assign an Azure Role for Blob Data Access - Azure Storage",
+        "t": "Atribuir uma função do Azure para acesso a dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       },
       {
-        "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+        "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
       }
     ]
@@ -3399,7 +3399,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ],
@@ -3447,11 +3447,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Access keys:** segredo com acesso total e sem expiração; viola \"minimizar segredos\".\n- **Advanced security:** é o Defender for Storage, não concede acesso.\n- **IAM para o App2:** a atribuição de função não expira sozinha (sem PIM), então não atende o prazo de 30 dias.\n\n**Dica de prova:** Prefira **user delegation SAS** (assinada com credenciais do Entra) a SAS de conta assinada com a chave.",
     "docs": [
       {
-        "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+        "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
-        "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+        "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
       }
     ],
@@ -3494,11 +3494,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **FileStorage:** só Premium Files.\n- **Storage (GPv1):** sem tiers de acesso de blob.\n- **Standard_LRS:** não sobrevive a desastre regional.\n- **Standard_RAGRS:** atende, mas custa mais e o requisito não pede leitura na secundária.\n- **Premium_LRS:** sem tier archive e sem replicação geográfica.",
     "docs": [
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       },
       {
-        "t": "Access tiers for blob data - Azure Storage",
+        "t": "Camadas de acesso para dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
@@ -3544,7 +3544,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Mover VNET1 para RG2:** Não. O move gera uma escrita no destino, que a política nega.\n- **VM1 desalocada:** Não. Políticas de deny não alteram recursos existentes, só os marcam como não conformes.\n- **Modificar VNET2:** Não. Atualizar um tipo de recurso proibido também passa pela avaliação e é negado.\n\n**Dica de prova:** Deny avalia criação e atualização (PUT/PATCH); não age sobre recursos existentes que não são tocados.",
     "docs": [
       {
-        "t": "Azure Policy definitions deny effect - Azure Policy",
+        "t": "Efeito de negação das definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deny"
       },
       {
@@ -3556,7 +3556,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
-        "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+        "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
       }
     ]
@@ -3599,15 +3599,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Formato:** `\\\\<conta>.file.core.windows.net\\<share>`. Para montar: `net use Z: \\\\contosostorage.file.core.windows.net\\data /user:localhost\\contosostorage <chave>`.\n\n**Dica de prova:** A porta TCP 445 precisa estar liberada de saída (muitos ISPs bloqueiam). Se não estiver, use VPN ou Azure File Sync.",
     "docs": [
       {
-        "t": "Mount SMB Azure File Share on Windows",
+        "t": "Montar um compartilhamento de arquivos SMB do Azure no Windows",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
       },
       {
-        "t": "Create a classic file share - Azure Files",
+        "t": "Criar um compartilhamento de arquivos clássico - Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
       },
       {
-        "t": "Plan an Azure Files deployment",
+        "t": "Planejar uma implantação do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning"
       }
     ],
@@ -3652,7 +3652,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **sync / copy:** copiam dados; não criam o container.\n- **dfs:** endpoint do Data Lake Gen2. queue, table e file são outros serviços. \"images\" não existe.\n\n**Dica de prova:** Para enviar o VHD depois: azcopy copy disco.vhd 'https://…blob.core.windows.net/vmimages/disco.vhd?<SAS>' --blob-type PageBlob.",
     "docs": [
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -3695,19 +3695,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **10.2.9.0/24 \"always\" ou \"during a backup\":** só as sub-redes listadas (com service endpoint) e os IPs liberados acessam; não existe exceção temporária.\n- **Backup \"during a backup\":** sem a exceção **Allow trusted Microsoft services**, o Azure Backup não passa pelo firewall em momento nenhum.\n\n**Dica de prova:** Ao restringir o storage, marque a exceção de serviços confiáveis se usar Backup, Site Recovery ou Monitor.",
     "docs": [
       {
-        "t": "Mount SMB Azure File Share on Windows",
+        "t": "Montar um compartilhamento de arquivos SMB do Azure no Windows",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
       },
       {
-        "t": "Azure Backup now supports storage accounts secured with Azure Storage Firewalls and Virtual Networks | Microsoft Azure Blog",
+        "t": "O Azure Backup agora oferece suporte a contas de armazenamento protegidas com firewalls e redes virtuais do Azure Storage | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/azure-backup-now-supports-storage-accounts-secured-with-azure-storage-firewalls-and-virtual-networks/"
       },
       {
-        "t": "Azure Storage firewall rules and network access",
+        "t": "Regras de firewall e acesso à rede do Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
       },
       {
-        "t": "Create an IP network rule for Azure Storage",
+        "t": "Criar uma regra de rede IP para o Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-ip-address-range"
       }
     ],
@@ -3737,11 +3737,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **storage1:** GPv1 Premium não converte para ZRS.\n- **storage3:** Premium com RA-GRS não é uma combinação de conversão para ZRS.\n- **storage4:** conta BlobStorage não suporta ZRS; precisaria virar GPv2 antes.\n\n**Dica de prova:** Hoje a conversão LRS↔ZRS também pode ser **solicitada pelo portal** (Redundancy), sem abrir chamado.",
     "docs": [
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       },
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       }
     ],
@@ -3778,11 +3778,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Allow trusted Microsoft services:** libera serviços do Azure em geral; não é necessário e amplia o acesso.\n- **Adicionar VNet1 / service endpoint:** a VM usa os discos pela plataforma (host), não pela rede da VNet; liberar a VNet só ampliaria o acesso.\n\n**Dica de prova:** Regras de IP no firewall do storage aceitam só IPs públicos; para acesso a partir da VNet usam-se service endpoints ou private endpoints.",
     "docs": [
       {
-        "t": "Azure Storage firewall rules and network access",
+        "t": "Regras de firewall e acesso à rede do Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
       },
       {
-        "t": "Create an IP network rule for Azure Storage",
+        "t": "Criar uma regra de rede IP para o Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-ip-address-range"
       }
     ],
@@ -3825,11 +3825,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **GRS / RA-GRS:** replicação assíncrona para outra região.\n- **LRS:** síncrono, mas dentro de um único datacenter.\n- **Blob storage / GPv1:** tipos legados que não suportam ZRS.\n\n**Dica de prova:** Para zona + região juntos: GZRS ou RA-GZRS.",
     "docs": [
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       },
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       }
     ],
@@ -3859,15 +3859,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Excluir os dados primeiro:** o portal exige parar a proteção antes (Stop backup > Delete backup data); a exclusão de dados faz parte dessa mesma ação.\n- **Propriedades de disaster recovery:** tratam do Site Recovery, não do backup.\n- **Locks das VMs:** não impedem excluir o vault.\n\n**Dica de prova:** Com soft delete, os itens ficam 14 dias em estado \"soft deleted\" e continuam bloqueando a exclusão do vault.",
     "docs": [
       {
-        "t": "Delete a Microsoft Azure Recovery Services Vault - Azure Backup",
+        "t": "Excluir um cofre dos Serviços de Recuperação do Microsoft Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-delete-vault"
       },
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ],
@@ -3913,7 +3913,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Vault1 com share1/SQL1/blob1:** o share1 está em outra região. SQL Database (PaaS) tem backup automático próprio, e blobs usam o **Backup vault**.\n- **Vault2 com storage1 inteiro ou blob1:** o Recovery Services vault protege file shares, não a conta toda nem os blobs.\n\n**Dica de prova:** Recovery Services vault = VMs, Azure Files, SQL/SAP HANA em VM e MARS. Backup vault = blobs, discos, PostgreSQL e AKS.",
     "docs": [
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
@@ -3921,7 +3921,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ],
@@ -3966,11 +3966,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **1, 2 ou 4 cópias:** LRS mantém sempre 3 réplicas síncronas no mesmo datacenter.\n- **Performance / Account kind / Replication:** não reduzem o custo de dados pouco acessados; quem faz isso é o access tier (Hot → Cool/Cold).\n\n**Dica de prova:** O tier padrão da conta só aceita Hot, Cool ou Cold; Archive é definido por blob.",
     "docs": [
       {
-        "t": "Access tiers for blob data - Azure Storage",
+        "t": "Camadas de acesso para dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
-        "t": "Blob rehydration from the archive tier",
+        "t": "Reidratação de blobs da camada de arquivos",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
       }
     ],
@@ -4001,7 +4001,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Table / Queue:** o AzCopy v10 não suporta (tabelas exigiam a versão 7.x legada).\n\n**Dica de prova:** O AzCopy também copia entre contas (serviço a serviço) e de S3/Google Cloud Storage para blob.",
     "docs": [
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -4051,7 +4051,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Access keys:** o AzCopy não recebe a chave diretamente; usa login do Entra (azcopy login) ou SAS na URL.\n- **Files só com Entra ID:** o suporte a Entra ID em Files no AzCopy é recente e limitado; o gabarito considera só SAS.\n\n**Dica de prova:** Para blob com Entra ID, a identidade precisa de uma função de dados (ex.: Storage Blob Data Contributor), não só Contributor.",
     "docs": [
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -4084,19 +4084,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Blob storage:** o ACI não monta containers de blob como volume.\n- **Queue / Table:** não são sistemas de arquivos.\n\n**Dica de prova:** Volumes do ACI: Azure Files, emptyDir, gitRepo (preterido) e secret. Montar Azure Files só funciona em containers Linux.",
     "docs": [
       {
-        "t": "Mount Azure Files volume to container group - Azure Container Instances",
+        "t": "Montar um volume do Azure Files em um grupo de contêineres - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
       },
       {
-        "t": "Persistent Docker volumes with Azure File Storage | Microsoft Azure Blog",
+        "t": "Volumes persistentes do Docker com o Azure File Storage | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/persistent-docker-volumes-with-azure-file-storage/"
       },
       {
-        "t": "Serverless containers in Azure - Azure Container Instances",
+        "t": "Contêineres sem servidor no Azure - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
       },
       {
-        "t": "Introduction to container groups - Azure Container Instances",
+        "t": "Introdução aos grupos de contêineres - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
       }
     ],
@@ -4126,7 +4126,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Um update domain:** as duas VMs reiniciariam juntas na manutenção.\n- **Fault domains (1 ou 2):** protegem contra falha de hardware/rack, não contra manutenção planejada.\n\n**Dica de prova:** \"Planned maintenance\" → update domains; \"rack/power failure\" → fault domains.",
     "docs": [
       {
-        "t": "Deploy VMs in an availability set using Azure PowerShell",
+        "t": "Implantar VMs em um conjunto de disponibilidade usando o Azure PowerShell",
         "u": "https://learn.microsoft.com/en-us/previous-versions/azure/virtual-machines/windows/tutorial-availability-sets"
       },
       {
@@ -4187,11 +4187,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Storage em outra região:** o diagnostic setting exige storage account na mesma região do recurso monitorado.\n- **Só o Analytics3:** o destino Log Analytics pode estar em qualquer região.\n\n**Dica de prova:** Event Hubs, como o storage, também precisa estar na mesma região do recurso.",
     "docs": [
       {
-        "t": "Configure Azure Backup reports - Azure Backup",
+        "t": "Configurar relatórios do Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/configure-reports"
       },
       {
-        "t": "Monitor Azure Backup protected workloads - Azure Backup",
+        "t": "Monitorar cargas de trabalho protegidas pelo Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-built-in-monitor"
       }
     ],
@@ -4241,11 +4241,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Premium file share em GPv2/GPv1:** shares Premium (SSD) só em contas FileStorage. GPv2 tem shares Standard (transaction optimized, hot, cool).\n- **Archive em GPv1 (contoso102):** GPv1 não tem access tiers.\n- **Archive em FileStorage:** a conta não tem blobs.",
     "docs": [
       {
-        "t": "Create a classic file share - Azure Files",
+        "t": "Criar um compartilhamento de arquivos clássico - Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
       },
       {
-        "t": "Access tiers for blob data - Azure Storage",
+        "t": "Camadas de acesso para dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
@@ -4302,7 +4302,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **IP 193.77.134.1:** fora do intervalo permitido no SAS (…134.10 a …134.50), então **sem acesso**.\n- **net use com SAS:** o SMB autentica com a chave da conta ou identidade (AD DS / Entra Kerberos); SAS só vale em REST/HTTPS.\n\n**Dica de prova:** O SAS também falha fora do período Start/Expiry e com protocolo diferente do permitido (HTTPS only).",
     "docs": [
       {
-        "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+        "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
@@ -4310,7 +4310,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       },
       {
-        "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+        "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
       }
     ],
@@ -4340,7 +4340,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Backup no RSV2 direto:** a VM2 aparece como já protegida e não pode ser escolhida.\n- **Disaster recovery > Replication:** é o Site Recovery, não o backup.\n- **Exportar o job:** não libera a VM.\n\n**Dica de prova:** Ao parar, escolha **Retain** (mantém os pontos antigos no RSV1) ou **Delete** backup data.",
     "docs": [
       {
-        "t": "Back Up an Azure VM from the VM settings - Azure Backup",
+        "t": "Fazer backup de uma VM do Azure nas configurações da VM - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
       },
       {
@@ -4381,11 +4381,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Nova storage account:** obrigaria copiar os dados; mais esforço e custo.\n- **Object replication:** copia blobs para outra conta, não muda a redundância; e GPv1 não suporta.\n- **Mudar a replicação direto:** a GPv1 não oferece ZRS.\n\n**Dica de prova:** O upgrade GPv1 → GPv2 é imediato, sem downtime e irreversível; revise o custo de transações.",
     "docs": [
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       },
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       }
     ],
@@ -4419,7 +4419,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ],
@@ -4448,15 +4448,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **80 / 443:** HTTP(S) servem a REST/portal/Storage Explorer, não para mapear unidade.\n- **3389:** porta do RDP.\n\n**Dica de prova:** Teste com Test-NetConnection <conta>.file.core.windows.net -Port 445.",
     "docs": [
       {
-        "t": "Mount SMB Azure File Share on Windows",
+        "t": "Montar um compartilhamento de arquivos SMB do Azure no Windows",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
       },
       {
-        "t": "Create a classic file share - Azure Files",
+        "t": "Criar um compartilhamento de arquivos clássico - Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
       },
       {
-        "t": "Plan an Azure Files deployment",
+        "t": "Planejar uma implantação do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning"
       }
     ],
@@ -4488,11 +4488,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Acesso pelo IP 131.107.103.10:** Sim. defaultAction Allow libera qualquer origem.\n- **Blob em Archive:** Sim. StorageV2 permite tier por blob.\n- **Global Admin acessar share com credenciais do Entra:** Não. Exige identity-based auth (AD DS, Entra DS ou Entra Kerberos) e função de share; Global Admin não tem acesso a dados automaticamente.",
     "docs": [
       {
-        "t": "Point-in-time restore for block blobs - Azure Storage",
+        "t": "Restauração pontual de blobs de blocos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/point-in-time-restore-overview"
       },
       {
-        "t": "Microsoft.Storage/storageAccounts - Bicep, ARM template & Terraform AzAPI reference",
+        "t": "Microsoft.Storage/storageAccounts - Referência de Bicep, modelos ARM e Terraform AzAPI",
         "u": "https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts"
       },
       {
@@ -4529,7 +4529,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só Device1 / combinações parciais:** o AzCopy v10 tem binário para Windows, Linux e macOS.\n\n**Dica de prova:** Não precisa instalar: basta baixar e executar o binário.",
     "docs": [
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -4559,15 +4559,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Access tier:** muda custo/latência, não impede alteração.\n- **IAM:** quem tem permissão de escrita ainda alteraria os blobs; RBAC não garante WORM.\n- **Access level:** nível de acesso anônimo (Private, Blob, Container).\n\n**Dica de prova:** A política pode ficar **unlocked** (testes) ou **locked** (conformidade, irreversível). Também existe legal hold, sem prazo.",
     "docs": [
       {
-        "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+        "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       }
     ],
@@ -4608,7 +4608,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -4638,19 +4638,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Storage Account Contributor / Contributor:** plano de controle amplo (inclui as chaves); excede o necessário.\n- **Storage Blob Data Reader:** só lê, não faz upload.\n\n**Dica de prova:** No portal, mude o método de autenticação para \"Microsoft Entra user account\"; sem permissão de listar chaves, o portal já usa o Entra.",
     "docs": [
       {
-        "t": "Assign an Azure Role for Blob Data Access - Azure Storage",
+        "t": "Atribuir uma função do Azure para acesso a dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       },
       {
-        "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+        "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
       }
     ],
@@ -4694,11 +4694,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **FileStorage:** object replication é só para block blobs.\n- **File share / Table / Queue:** object replication só replica containers de blob.\n\n**Dica de prova:** Requisitos: versionamento nas duas contas, change feed na origem e mesmo tipo de conta (GPv2 com GPv2, Premium block blob com Premium block blob).",
     "docs": [
       {
-        "t": "Object replication overview - Azure Storage",
+        "t": "Visão geral da replicação de objetos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
       },
       {
-        "t": "Configure object replication - Azure Storage",
+        "t": "Configurar a replicação de objetos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-configure"
       }
     ],
@@ -4727,7 +4727,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só a URL:** não é um comando.\n- **azcopy sync com --snapshot:** --snapshot não é opção do sync. Além disso, o sync só cria a primeira cópia; serve para manter em sincronia.\n- **az storage blob copy start-batch:** copia de blob para blob, não de pasta local.\n\n**Dica de prova:** O destino precisa de autorização: SAS na URL ou azcopy login.",
     "docs": [
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -4769,7 +4769,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ],
@@ -4808,7 +4808,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Entra ID na origem ou no destino:** o gabarito considera SAS nos dois lados para a cópia blob → Files.\n- **Access key:** o AzCopy não aceita a chave diretamente.\n\n**Dica de prova:** Cópia serviço a serviço (S2S) não passa pela máquina local; a largura de banda é a do Azure.",
     "docs": [
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -4841,15 +4841,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **SAS:** delega acesso; não define chave de criptografia.\n- **TLS mínimo:** protege dados em trânsito, não em repouso.\n- **Rotacionar access keys:** chaves de acesso não são chaves de criptografia de dados.\n\n**Dica de prova:** O encryption scope pode usar chave gerenciada pela Microsoft ou pelo cliente (Key Vault). Dá para impor o scope a todo o container.",
     "docs": [
       {
-        "t": "Encryption scopes for Blob storage - Azure Storage",
+        "t": "Escopos de criptografia do Armazenamento de Blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview"
       },
       {
-        "t": "Azure Storage encryption for data at rest",
+        "t": "Criptografia de dados em repouso no Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
       },
       {
-        "t": "Customer-managed keys for account encryption - Azure Storage",
+        "t": "Chaves gerenciadas pelo cliente para criptografia de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
       }
     ],
@@ -4937,15 +4937,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Desanexar ou mover a NIC:** uma NIC não troca de VNet, e a VM precisa sempre de pelo menos uma NIC.\n- **Mover a VM1 para o RG2:** mudar de RG não muda a VNet.\n- **Criar NIC no RG2 e anexar:** a NIC nova precisaria estar na VNet2, e a VM não pode ter NICs em VNets diferentes.\n\n**Dica de prova:** Ao excluir a VM, os discos ficam (a menos que se marque \"delete with VM\"). Crie a VM nova com \"Attach existing OS disk\".",
     "docs": [
       {
-        "t": "Attach a managed data disk to a Windows VM by using the Azure portal - Azure Virtual Machines",
+        "t": "Anexar um disco de dados gerenciado a uma VM Windows usando o portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal"
       },
       {
-        "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+        "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
       },
       {
-        "t": "Move Azure VMs across regions with Azure Resource Mover",
+        "t": "Mover VMs do Azure entre regiões com o Azure Resource Mover",
         "u": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines"
       }
     ],
@@ -4975,19 +4975,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Storage account + access policy:** senha em arquivo de storage não é cofre de segredos.\n- **Recovery Services vault:** guarda backups, não segredos.\n- **Identity Protection + Azure Policy:** nada a ver com segredos de template.\n\n**Dica de prova:** O parâmetro do template deve ser do tipo **securestring**. No arquivo de parâmetros, use \"reference\": { \"keyVault\": { \"id\": … }, \"secretName\": … }.",
     "docs": [
       {
-        "t": "Key Vault secret with template - Azure Resource Manager",
+        "t": "Segredo do Key Vault com modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       },
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       }
     ],
@@ -5033,15 +5033,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **ASP2 para o WebApp1:** está em outra região; o app sempre fica na região do plano.\n- **ASP3 para o WebApp2:** ASP.NET 4.x (Framework) só roda em plano Windows.\n\n**Dica de prova:** O SO do plano é escolhido na criação e não muda depois.",
     "docs": [
       {
-        "t": "Quickstart: Deploy an ASP.NET web app - Azure App Service",
+        "t": "Início rápido: implantar um aplicativo Web ASP.NET - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore"
       },
       {
-        "t": "Manage an App Service Plan - Azure App Service",
+        "t": "Gerenciar um plano do App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
       },
       {
-        "t": "Azure App Service Plans - Azure App Service",
+        "t": "Planos do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
       }
     ],
@@ -5088,19 +5088,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **85% → 10 ou 20 VMs:** cada disparo da regra soma só +2 (com cooldown entre ações).\n- **25% → 4 VMs:** a regra de redução pede −4, mas o mínimo de 2 limita.\n- **50%:** não atinge o limite de nenhuma das duas regras, então nada acontece.\n\n**Dica de prova:** Autoscale sempre respeita min/max; a contagem inicial é o \"default\".",
     "docs": [
       {
-        "t": "Autoscale in Azure Monitor - Azure Monitor",
+        "t": "Dimensionamento automático no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
       },
       {
-        "t": "Best practices for autoscale - Azure Monitor",
+        "t": "Práticas recomendadas para dimensionamento automático - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-best-practices"
       },
       {
-        "t": "Overview of common autoscale patterns - Azure Monitor",
+        "t": "Visão geral dos padrões comuns de dimensionamento automático - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-common-scale-patterns"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       }
     ],
@@ -5139,19 +5139,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Automation account:** com DSC funcionaria, mas não é o par pedido (script + extensionProfile).\n- **Azure Policy:** audita ou impõe configuração; não instala o IIS no provisionamento.\n- **Criar scale set pelo portal:** é manual e não faz parte da automação do template.\n\n**Dica de prova:** As extensões no extensionProfile rodam em toda instância nova, inclusive nas criadas pelo autoscale.",
     "docs": [
       {
-        "t": "Azure Custom Script Extension for Windows - Azure Virtual Machines",
+        "t": "Extensão de Script Personalizado do Azure para Windows - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows"
       },
       {
-        "t": "Using Desired State Configuration With Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Usar a Configuração de Estado Desejado com Conjuntos de Dimensionamento de Máquinas Virtuais - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-dsc"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       },
       {
-        "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+        "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
       }
     ],
@@ -5179,11 +5179,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Escolher West US na implantação:** o parâmetro de location não é usado pelo recurso, que tem o valor fixo.\n- **Alterar a variável:** o recurso também não referencia a variável.\n\n**Dica de prova:** Boa prática: \"location\": \"[parameters('location')]\" com defaultValue \"[resourceGroup().location]\".",
     "docs": [
       {
-        "t": "Template structure and syntax - Azure Resource Manager",
+        "t": "Estrutura e sintaxe de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax"
       },
       {
-        "t": "Bicep file structure and syntax - Azure Resource Manager",
+        "t": "Estrutura e sintaxe de arquivos Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file"
       }
     ]
@@ -5209,11 +5209,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application settings:** configuração do app; não habilita slots.\n- **Custom domain:** não tem relação com slots.\n- **Scale out:** aumenta instâncias, mas mantém o tier; slots dependem do tier (scale up).\n\n**Dica de prova:** Limites: Standard = 5 slots, Premium = 20, Isolated = 20. Free, Shared e Basic não têm slots.",
     "docs": [
       {
-        "t": "Set Up Staging Environments - Azure App Service",
+        "t": "Configurar ambientes de preparo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
       },
       {
-        "t": "Scale Up Features and Capacities - Azure App Service",
+        "t": "Aumentar recursos e capacidades verticalmente - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
       }
     ],
@@ -5327,19 +5327,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (sair do host imediatamente):** só **Redeploy** atende. Mover de assinatura e habilitar Update Management não trocam o host.\n\n**Dica de prova:** Redeploy perde o conteúdo do disco temporário (D: no Windows) e pode mudar o IP público dinâmico.",
     "docs": [
       {
-        "t": "Redeploy Windows virtual machines in Azure - Virtual Machines",
+        "t": "Reimplantar máquinas virtuais Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/redeploy-to-new-node-windows"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       },
       {
-        "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+        "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
       }
     ],
@@ -5371,19 +5371,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Redeploy desliga a VM, move para um novo host e liga de novo. Outras opções para manutenção: **Maintenance > Start maintenance** (self-service) ou uma Maintenance Configuration.",
     "docs": [
       {
-        "t": "Redeploy Windows virtual machines in Azure - Virtual Machines",
+        "t": "Reimplantar máquinas virtuais Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/redeploy-to-new-node-windows"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       },
       {
-        "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+        "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
       }
     ],
@@ -5415,19 +5415,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Update Management (hoje **Azure Update Manager**) aplica patches do SO convidado; não tem relação com o host físico.",
     "docs": [
       {
-        "t": "Redeploy Windows virtual machines in Azure - Virtual Machines",
+        "t": "Reimplantar máquinas virtuais Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/redeploy-to-new-node-windows"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       },
       {
-        "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+        "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
       }
     ],
@@ -5456,11 +5456,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Connection string:** configuração de banco do app.\n- **Certificado:** só é necessário para HTTPS, depois que o domínio existe (ou use o certificado gerenciado gratuito).\n- **Parar o app:** desnecessário.\n\n**Dica de prova:** Além do CNAME/A, o App Service pede o TXT asuid.<sub> com o Custom Domain Verification ID.",
     "docs": [
       {
-        "t": "Set Up an Existing Custom Domain Name for Your App - Azure App Service",
+        "t": "Configurar um nome de domínio personalizado existente para seu aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/Azure/app-service/app-service-web-tutorial-custom-domain"
       },
       {
-        "t": "Set Up an Existing Custom Domain Name for Your App - Azure App Service",
+        "t": "Configurar um nome de domínio personalizado existente para seu aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
       }
     ],
@@ -5492,11 +5492,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (VM1 para a VNET2):** a VNET2 está em **outra região**, e NIC, VM e VNet precisam estar na mesma região. Só **excluir e recriar a VM** atende.\n\n**Dica de prova:** Para levar a VM entre regiões, use Azure Resource Mover ou Site Recovery, ou recrie a VM a partir de um snapshot copiado.",
     "docs": [
       {
-        "t": "Add network interfaces to or remove from Azure VMs",
+        "t": "Adicionar interfaces de rede a VMs do Azure ou removê-las",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm"
       },
       {
-        "t": "Virtual networks and virtual machines in Azure",
+        "t": "Redes virtuais e máquinas virtuais no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
@@ -5536,11 +5536,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** recriar a VM é o caminho. Para manter os dados, crie snapshots dos discos, copie-os para a região da VNET2 e crie a VM a partir deles.",
     "docs": [
       {
-        "t": "Add network interfaces to or remove from Azure VMs",
+        "t": "Adicionar interfaces de rede a VMs do Azure ou removê-las",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm"
       },
       {
-        "t": "Virtual networks and virtual machines in Azure",
+        "t": "Redes virtuais e máquinas virtuais no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
@@ -5580,11 +5580,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** todas as NICs de uma VM ficam na mesma VNet. Mesmo desligada, a VM não aceita uma NIC de outra VNet nem de outra região.",
     "docs": [
       {
-        "t": "Add network interfaces to or remove from Azure VMs",
+        "t": "Adicionar interfaces de rede a VMs do Azure ou removê-las",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm"
       },
       {
-        "t": "Virtual networks and virtual machines in Azure",
+        "t": "Redes virtuais e máquinas virtuais no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
@@ -5624,15 +5624,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM3:** Sim. 18 + 1 = 19 ≤ 20.\n- **VM4 / VM5:** Não. Estouram a cota **Total Regional vCPUs**, mesmo que a cota da família permitisse.\n\n**Dica de prova:** VM parada e **desalocada** ainda conta na cota. Para liberar a cota, exclua a VM ou peça aumento em Quotas.",
     "docs": [
       {
-        "t": "vCPU quotas - Azure Virtual Machines",
+        "t": "Cotas de vCPU - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/quotas"
       },
       {
-        "t": "Virtual machine sizes overview - Azure Virtual Machines",
+        "t": "Visão geral dos tamanhos de máquinas virtuais - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview"
       },
       {
-        "t": "Resize a virtual machine - Azure Virtual Machines",
+        "t": "Redimensionar uma máquina virtual - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
       }
     ],
@@ -5714,11 +5714,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application Gateway (1 ou 5) / Traffic Manager:** são opcionais; o pré-requisito é o plano.\n- **10 App Service plans:** funcionaria, mas multiplica o custo.\n\n**Dica de prova:** Você paga pelo plano (instâncias), não pelo número de apps; muitos apps no mesmo plano dividem CPU e memória.",
     "docs": [
       {
-        "t": "Azure App Service Plans - Azure App Service",
+        "t": "Planos do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
       },
       {
-        "t": "Manage an App Service Plan - Azure App Service",
+        "t": "Gerenciar um plano do App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
       }
     ],
@@ -5760,15 +5760,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Não conectar / só Windows:** o IP é público, e o cliente acessa por HTTP de qualquer SO.\n- **Reinício manual / reimplantar:** OnFailure reinicia automaticamente quando o processo sai com erro.\n\n**Dica de prova:** restartPolicy: Always (padrão), OnFailure ou Never.",
     "docs": [
       {
-        "t": "Restart policy for run-once tasks - Azure Container Instances",
+        "t": "Política de reinicialização para tarefas de execução única - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy"
       },
       {
-        "t": "Serverless containers in Azure - Azure Container Instances",
+        "t": "Contêineres sem servidor no Azure - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
       },
       {
-        "t": "Introduction to container groups - Azure Container Instances",
+        "t": "Introdução aos grupos de contêineres - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
       }
     ]
@@ -5794,15 +5794,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Desired State Configuration / Puppet Agent:** extensões são instaladas com a VM em execução.\n- **Disco de 500 GB:** discos de dados são anexados a quente.\n\n**Dica de prova:** Redimensionar sempre reinicia a VM. Se o tamanho não estiver no cluster atual, é preciso desalocar antes.",
     "docs": [
       {
-        "t": "Resize virtual machines | Microsoft Azure Blog",
+        "t": "Redimensionar máquinas virtuais | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/resize-virtual-machines/"
       },
       {
-        "t": "Virtual machine sizes overview - Azure Virtual Machines",
+        "t": "Visão geral dos tamanhos de máquinas virtuais - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview"
       },
       {
-        "t": "Resize a virtual machine - Azure Virtual Machines",
+        "t": "Redimensionar uma máquina virtual - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
       }
     ],
@@ -5835,7 +5835,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Implantar direto em prod:** os usuários veriam a atualização antes do teste.\n- **Parar prod / parar test:** não ajuda a testar nem a publicar.\n\n**Dica de prova:** \"Swap with preview\" aplica as configurações do destino e permite validar antes de concluir a troca.",
     "docs": [
       {
-        "t": "Set Up Staging Environments - Azure App Service",
+        "t": "Configurar ambientes de preparo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
       }
     ]
@@ -5876,7 +5876,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       },
       {
-        "t": "Tutorial: Log Network Traffic - Azure Network Watcher",
+        "t": "Tutorial: registrar o tráfego de rede - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-tutorial"
       },
       {
@@ -5913,15 +5913,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **5 VMs avulsas (zonas ou tamanho):** mais lento e manual.\n- **Modo VM (Flexible):** em versões antigas exigia criar as VMs separadamente; o gabarito escolhe o modo Uniform (ScaleSetVM).\n\n**Dica de prova:** Hoje o modo **Flexible** é o padrão e o recomendado para cargas novas: mistura tamanhos e suporta zonas e availability sets.",
     "docs": [
       {
-        "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+        "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       },
       {
-        "t": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral do dimensionamento automático com Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview"
       }
     ],
@@ -5951,11 +5951,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **1 plano:** um plano não roda Windows e Linux ao mesmo tempo.\n- **3 ou 4 planos:** apps do mesmo SO e região podem dividir o plano.\n\n**Dica de prova:** .NET Framework (4.x) = Windows. Ruby = Linux. .NET Core/.NET 8, PHP, Node e Python rodam nos dois.",
     "docs": [
       {
-        "t": "Azure App Service Plans - Azure App Service",
+        "t": "Planos do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
       },
       {
-        "t": "Manage an App Service Plan - Azure App Service",
+        "t": "Gerenciar um plano do App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
       }
     ]
@@ -5995,15 +5995,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VMs desligadas:** budget não desliga nada sozinho; seria preciso uma automação no action group (runbook ou Logic App).\n- **Dois ou três e-mails:** só o limite de 50% é atingido pelo custo do RG1; o VM2 está fora do escopo.\n\n**Dica de prova:** Budgets avaliam o custo real ou previsto (forecast); os alertas podem levar algumas horas para disparar.",
     "docs": [
       {
-        "t": "Monitor usage and spending with cost alerts in Cost Management - Microsoft Cost Management",
+        "t": "Monitorar o uso e os gastos com alertas de custo no Gerenciamento de Custos - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending"
       },
       {
-        "t": "Tutorial - Create and manage budgets - Microsoft Cost Management",
+        "t": "Tutorial: criar e gerenciar orçamentos - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
       },
       {
-        "t": "Optimize virtual machine (VM) or virtual machine scale set (VMSS) spend by resizing or shutting down underutilized instances - Azure Advisor",
+        "t": "Otimizar os gastos de máquinas virtuais (VMs) ou conjuntos de dimensionamento de máquinas virtuais (VMSS) redimensionando ou desligando instâncias subutilizadas - Azure Advisor",
         "u": "https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations"
       }
     ],
@@ -6036,19 +6036,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (data e hora de criação no RG1):** Programmatic deployment e Resource providers **não** servem. **RG1 > Deployments** mostra cada implantação com data e hora (o Activity Log também, por 90 dias).",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Tutorial - Create and deploy template - Azure Resource Manager",
+        "t": "Tutorial: criar e implantar um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ],
@@ -6080,11 +6080,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** uma NIC criada na VNET2 fica na região da VNET2, e a VM1 não pode usar NIC de outra região. Recriar a VM é o caminho.",
     "docs": [
       {
-        "t": "Add network interfaces to or remove from Azure VMs",
+        "t": "Adicionar interfaces de rede a VMs do Azure ou removê-las",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm"
       },
       {
-        "t": "Virtual networks and virtual machines in Azure",
+        "t": "Redes virtuais e máquinas virtuais no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
@@ -6124,19 +6124,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **RG2 (ReadOnly):** Não. O move escreve no RG de destino, e ReadOnly bloqueia qualquer escrita.\n- **RG3 (Delete lock):** Sim. O lock Delete só bloqueia exclusão.\n- **RG4:** Sim. Sem lock, e App Service suporta move entre assinaturas (o plano vai junto).\n\n**Dica de prova:** Locks no RG de origem também contam: ReadOnly na origem impede tirar recursos de lá.",
     "docs": [
       {
-        "t": "Relocate Azure App Services to another region - Azure Resource Manager",
+        "t": "Realocar serviços do Azure App Service para outra região - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/relocation/relocation-app-service"
       },
       {
-        "t": "Move Azure App Service resources across resource groups or subscriptions - Azure Resource Manager",
+        "t": "Mover recursos do Azure App Service entre grupos de recursos ou assinaturas - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-limitations/app-service-move-limitations"
       },
       {
-        "t": "Use the Azure portal and Azure Resource Manager to Manage Resource Groups - Azure Resource Manager",
+        "t": "Usar o portal do Azure e o Azure Resource Manager para gerenciar grupos de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
       },
       {
-        "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+        "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
       }
     ],
@@ -6180,7 +6180,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **RG1 com tag2:** a definição para recursos não avalia resource groups.\n- **storage1 sem tag2:** o storage foi criado depois da atribuição, então o append adiciona tag2.\n- **storage1 com tag1:** tags do RG não são herdadas.",
     "docs": [
       {
-        "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+        "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       },
       {
@@ -6192,7 +6192,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
-        "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+        "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
       }
     ],
@@ -6276,11 +6276,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VM1 só / VM1 e VM3:** VMs de outro resource group (VMA, VMC) também podem usar o vault, desde que estejam na mesma região.\n- **Todas:** VM2 e VMB estão em outra região.\n\n**Dica de prova:** Para outra região, crie um vault nela. Cross Region Restore só se aplica à restauração, não à proteção.",
     "docs": [
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ],
@@ -6309,11 +6309,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Proximity1 / Proximity3:** estão em outras regiões; o PPG define a proximidade dentro de um datacenter da mesma região.\n\n**Dica de prova:** O PPG reduz a latência entre VMs, mas limita a disponibilidade de tamanhos; combine com zonas com cuidado.",
     "docs": [
       {
-        "t": "Proximity placement groups - Azure Virtual Machines",
+        "t": "Grupos de posicionamento por proximidade - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/co-location"
       },
       {
-        "t": "Introducing proximity placement groups | Microsoft Azure Blog",
+        "t": "Apresentação dos grupos de posicionamento por proximidade | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/introducing-proximity-placement-groups/"
       },
       {
@@ -6353,15 +6353,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Resource providers só lista os namespaces registrados. Para data e hora de criação: **RG1 > Deployments** ou o Activity Log.",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ]
@@ -6390,19 +6390,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Automation script, hoje **Export template**, gera o template do estado atual e não mostra datas. Só **Deployments** (e o Activity Log) mostram data e hora.",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Tutorial - Create and deploy template - Azure Resource Manager",
+        "t": "Tutorial: criar e implantar um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ],
@@ -6434,19 +6434,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Deployments é a resposta. Também mostra a correlação, a duração e as operações de cada recurso implantado.",
     "docs": [
       {
-        "t": "Deployment history - Azure Resource Manager",
+        "t": "Histórico de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history"
       },
       {
-        "t": "Tutorial - Create and deploy template - Azure Resource Manager",
+        "t": "Tutorial: criar e implantar um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template"
       },
       {
-        "t": "Export template in Azure portal - Azure Resource Manager",
+        "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
       },
       {
-        "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+        "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
       }
     ],
@@ -6479,15 +6479,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Azure Compute - Linux diagnostic extension 4.0 - Azure Virtual Machines",
+        "t": "Computação do Azure - Extensão de diagnóstico do Linux 4.0 - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/diagnostics-linux"
       },
       {
-        "t": "Monitor virtual machines in Azure - Azure Monitor",
+        "t": "Monitorar máquinas virtuais no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
       },
       {
-        "t": "Monitor Azure Storage services with Azure Monitor Storage insights",
+        "t": "Monitorar serviços do Azure Storage com os insights de armazenamento do Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview"
       }
     ],
@@ -6572,7 +6572,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "Deploy VMs in an availability set using Azure PowerShell",
+        "t": "Implantar VMs em um conjunto de disponibilidade usando o Azure PowerShell",
         "u": "https://learn.microsoft.com/en-us/previous-versions/azure/virtual-machines/windows/tutorial-availability-sets"
       },
       {
@@ -6612,15 +6612,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Performance Diagnostics:** só coleta diagnóstico.\n- **Scale set:** escala horizontal, e o app não aceita várias instâncias ativas.\n- **Cota de vCPU:** é pré-requisito em alguns casos, mas não aumenta a CPU da VM.\n- **DSC:** configura o SO, não o hardware.\n\n**Dica de prova:** Redimensionar reinicia a VM; agende a mudança antes da janela do relatório.",
     "docs": [
       {
-        "t": "Resize a virtual machine - Azure Virtual Machines",
+        "t": "Redimensionar uma máquina virtual - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
       },
       {
-        "t": "Azure Quickstart - Configure a VM with Desired State Configuration",
+        "t": "Início rápido do Azure: configurar uma VM com a Configuração de Estado Desejado",
         "u": "https://learn.microsoft.com/en-us/azure/automation/quickstarts/dsc-configuration"
       },
       {
-        "t": "Virtual machine sizes overview - Azure Virtual Machines",
+        "t": "Visão geral dos tamanhos de máquinas virtuais - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview"
       }
     ],
@@ -6649,19 +6649,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Deployment Center:** CI/CD do App Service, não de VMs.\n- **New-AzConfigurationAssignment:** atribui configurações de manutenção (Maintenance Configuration), não instala software.\n- **Intune:** gerencia dispositivos de usuários, não servidores em scale set.\n\n**Dica de prova:** Custom Script Extension também resolveria. O que importa é que a configuração fique no **modelo** do scale set.",
     "docs": [
       {
-        "t": "Azure Custom Script Extension for Windows - Azure Virtual Machines",
+        "t": "Extensão de Script Personalizado do Azure para Windows - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       },
       {
-        "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+        "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
       },
       {
-        "t": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral do dimensionamento automático com Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview"
       }
     ],
@@ -6690,15 +6690,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Owner:** excede o menor privilégio.\n- **Credenciais FTPS (app ou usuário):** são credenciais de publicação do App Service, não do Entra ID.\n\n**Dica de prova:** Desabilitar a \"basic authentication\" de FTP/WebDeploy força a publicação somente com Entra ID.",
     "docs": [
       {
-        "t": "Manage Deployment Credentials - Azure App Service",
+        "t": "Gerenciar credenciais de implantação - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/deploy-configure-credentials"
       },
       {
-        "t": "Overview of Azure App Service - Azure App Service",
+        "t": "Visão geral do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview"
       },
       {
-        "t": "Quickstart: Deploy an ASP.NET web app - Azure App Service",
+        "t": "Início rápido: implantar um aplicativo Web ASP.NET - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore"
       }
     ]
@@ -6728,7 +6728,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (500 convidados):** **Bulk invite** é o recurso certo. **Bulk create** cria membros e não convidados. O CSV precisa de *Email address to invite* e *Redirection url*.\n\n**Dica de prova:** Pelo PowerShell: Import-Csv + New-MgInvitation -InvitedUserEmailAddress … -InviteRedirectUrl … -SendInvitationMessage.",
     "docs": [
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
@@ -6736,7 +6736,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
@@ -6787,11 +6787,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Role3 só de built-ins:** o Azure RBAC também permite clonar funções customizadas (Role1).\n- **Role4 de built-ins do Entra:** as funções built-in do Entra não podem ser clonadas no portal; só as customizadas.\n\n**Dica de prova:** Funções customizadas do Entra exigem P1 e só aceitam permissões de alguns recursos (ex.: app registrations).",
     "docs": [
       {
-        "t": "Create or update Azure custom roles using the Azure portal - Azure RBAC",
+        "t": "Criar ou atualizar funções personalizadas do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
@@ -6863,7 +6863,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application security group:** agrupa NICs de VMs, não representa os IPs do Key Vault.\n- **IP address range:** exige manter a lista de IPs à mão.\n\n**Dica de prova:** A service tag regional (AzureKeyVault.EastUS) é ainda mais restrita. Outra opção: private endpoint, que dispensa regra de internet.",
     "docs": [
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       },
       {
@@ -6930,7 +6930,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -6959,7 +6959,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Rollback após 7 dias:** o restorePolicy de 6 dias limita o point-in-time restore a 6 dias.\n- **Só usuários de East US:** a região do storage não restringe clientes; o firewall está em Allow.\n- **3 cópias:** Sim. LRS = 3 réplicas síncronas.\n\n**Dica de prova:** O point-in-time restore exige versionamento, change feed e soft delete, este último com retenção maior que a janela de restore.",
     "docs": [
       {
-        "t": "Point-in-time restore for block blobs - Azure Storage",
+        "t": "Restauração pontual de blobs de blocos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/point-in-time-restore-overview"
       },
       {
@@ -6971,7 +6971,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ]
@@ -7014,7 +7014,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -7045,11 +7045,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Replication policy:** é do Site Recovery, não do backup.\n- **LRS:** fica num só datacenter; não atende \"três zonas\".\n\n**Dica de prova:** A redundância do vault (LRS, ZRS ou GRS) só pode ser alterada **antes** de proteger o primeiro item.",
     "docs": [
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ]
@@ -7080,7 +7080,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       },
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       }
     ]
@@ -7129,11 +7129,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Access keys / SAS:** dariam escrita, mas sem identidade do Entra e sem menor privilégio; o pedido é para o usuário User1.\n- **Data protection / Object replication:** soft delete e versionamento; não fazem failover.\n- **Networking:** firewall; não dá permissão de dados.\n\n**Dica de prova:** O failover iniciado pelo cliente converte a conta em LRS na nova primária; reconfigure a geo-redundância depois.",
     "docs": [
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       },
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       }
     ]
@@ -7160,15 +7160,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Chaves EC (P-384/P-521):** o Azure Storage não usa curvas elípticas para envelopar a chave de dados.\n- **Só RSA 4096:** 2048 e 3072 também são aceitas.\n\n**Dica de prova:** O Key Vault precisa de soft delete e purge protection, e a identidade da conta precisa de acesso à chave (Key Vault Crypto Service Encryption User).",
     "docs": [
       {
-        "t": "Customer-managed keys for account encryption - Azure Storage",
+        "t": "Chaves gerenciadas pelo cliente para criptografia de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
       },
       {
-        "t": "Azure Storage encryption for data at rest",
+        "t": "Criptografia de dados em repouso no Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
       },
       {
-        "t": "Encryption scopes for Blob storage - Azure Storage",
+        "t": "Escopos de criptografia do Armazenamento de Blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview"
       }
     ]
@@ -7197,7 +7197,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Group2 dentro do Group1:** Não. Grupos role-assignable não aceitam grupos aninhados.\n- **Group3 dentro do Group1:** Não, pelo mesmo motivo.\n- **Owner direto no Group3:** Sim. Azure RBAC aceita atribuir a qualquer grupo de segurança, e o User3 herda.\n\n**Dica de prova:** \"Microsoft Entra roles can be assigned to the group\" só pode ser definido na criação do grupo.",
     "docs": [
       {
-        "t": "Use Microsoft Entra groups to manage role assignments - Microsoft Entra ID",
+        "t": "Usar grupos do Microsoft Entra para gerenciar atribuições de funções - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept"
       },
       {
@@ -7256,11 +7256,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **key1 com permissão parcial:** a chave da conta ignora RBAC e dá acesso total.\n- **SAS1 com container1 ou folder1:** o SAS de conta só tem o serviço Table marcado.\n\n**Dica de prova:** As funções RBAC do User1 só valem se ele se autenticar com o Entra ID, e não é o caso com chave ou SAS.",
     "docs": [
       {
-        "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+        "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
-        "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+        "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
       }
     ]
@@ -7303,11 +7303,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Stored access policies:** o máximo é 5 por container; com 2 já criadas, cabem 3.\n- **Imutabilidade:** uma time-based retention por container e legal holds. O gabarito considera mais 1.\n\n**Dica de prova:** Revogar um SAS ligado a uma stored access policy é só editar ou excluir a política. SAS ad hoc só se revoga girando a chave.",
     "docs": [
       {
-        "t": "Configure immutability policies for containers - Azure Storage",
+        "t": "Configurar políticas de imutabilidade para contêineres - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-policy-configure-container-scope"
       },
       {
-        "t": "Define a stored access policy - Azure Storage",
+        "t": "Definir uma política de acesso armazenada - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
       }
     ]
@@ -7337,7 +7337,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -7380,7 +7380,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Lifecycle só em algumas contas:** GPv2, BlobStorage e Premium block blob suportam.\n- **Archive em storage com ZRS:** Archive não é suportado em contas ZRS, GZRS ou RA-GZRS, nem em Premium.\n\n**Dica de prova:** Para usar Archive com resiliência de zona, não há opção: use LRS, GRS ou RA-GRS.",
     "docs": [
       {
-        "t": "Access tiers for blob data - Azure Storage",
+        "t": "Camadas de acesso para dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
@@ -7388,7 +7388,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -7414,11 +7414,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application Gateway:** balanceador web; não leva tráfego privado até o storage.\n- **NSG:** filtra, mas não muda o caminho do tráfego.\n- **Virtual WAN:** hub de conectividade; não dá IP privado ao storage.\n\n**Dica de prova:** Service endpoints também usam o backbone, mas mantêm o IP público do storage. Private endpoint é a resposta de \"IP privado\".",
     "docs": [
       {
-        "t": "What is a private endpoint? - Azure Private Link",
+        "t": "O que é um ponto de extremidade privado? - Azure Private Link",
         "u": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
       },
       {
-        "t": "Use private endpoints - Azure Storage",
+        "t": "Usar pontos de extremidade privados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
       }
     ]
@@ -7447,15 +7447,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Criar storage no RG1:** Sim. Storage Account Contributor herdado no RG1.\n- **DNS da NIC:** Não. A permissão está no NSG, e a NIC é outro recurso.\n- **Regra de entrada no NSG1:** Sim. Contributor no NSG1.\n\n**Dica de prova:** Associar um NSG a uma NIC exige permissão nos dois recursos (join action no NSG + write na NIC).",
     "docs": [
       {
-        "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+        "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
       },
       {
-        "t": "List Azure role assignments using the Azure portal - Azure RBAC",
+        "t": "Listar atribuições de funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal"
       },
       {
-        "t": "Understand Azure role definitions - Azure RBAC",
+        "t": "Entender as definições de funções do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-definitions"
       }
     ]
@@ -7498,7 +7498,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -7527,15 +7527,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Group1 vê as functions:** Sim. Reader no MG1 é herdado pelas assinaturas, RGs e recursos abaixo.\n- **User1 atribui Owner no RG1:** Sim. User Access Administrator herdado do MG1.\n- **User1 cria RG e VM:** Não. Virtual Machine Contributor não tem Microsoft.Resources/subscriptions/resourceGroups/write.\n\n**Dica de prova:** Funções atribuídas no management group valem para todas as assinaturas membro, inclusive as futuras.",
     "docs": [
       {
-        "t": "Understand scope for Azure RBAC",
+        "t": "Entender o escopo do Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       }
     ]
@@ -7562,15 +7562,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Security profile:** ajusta protocolos e criptografia do SMB, não habilita identidade.\n- **Default to Azure AD authorization:** muda o padrão do portal para blobs/filas; não habilita o SMB com identidade.\n- **IAM do share1:** a função pode ser atribuída, mas não terá efeito sem a fonte de identidade habilitada; não é o primeiro passo.",
     "docs": [
       {
-        "t": "Overview - Azure Files Identity-Based Authentication",
+        "t": "Visão geral da autenticação baseada em identidade do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
       },
       {
-        "t": "Enable AD DS Authentication for Azure Files",
+        "t": "Habilitar a autenticação do AD DS para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
       },
       {
-        "t": "Assign Share-Level Permissions for Azure Files",
+        "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
       }
     ]
@@ -7596,19 +7596,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Standard (LRS ou ZRS):** o SMB Multichannel não está disponível em shares Standard.\n- **Premium GRS:** Premium Files não oferece GRS (só LRS e ZRS).\n\n**Dica de prova:** O Multichannel melhora o throughput com várias conexões TCP; precisa ser habilitado na conta e suportado no cliente (Windows).",
     "docs": [
       {
-        "t": "Improve SMB Azure File Share Performance",
+        "t": "Melhorar o desempenho de compartilhamentos de arquivos SMB do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/smb-performance"
       },
       {
-        "t": "Create a classic file share - Azure Files",
+        "t": "Criar um compartilhamento de arquivos clássico - Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
       },
       {
-        "t": "Plan an Azure Files deployment",
+        "t": "Planejar uma implantação do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning"
       },
       {
-        "t": "Mount SMB Azure File Share on Windows",
+        "t": "Montar um compartilhamento de arquivos SMB do Azure no Windows",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
       }
     ]
@@ -7637,19 +7637,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só containers:** filas também suportam condições.\n- **File shares / tables:** ainda não suportam condições de atribuição (ABAC).\n\n**Dica de prova:** Condições comuns: filtrar por nome do container, caminho do blob ou blob index tags.",
     "docs": [
       {
-        "t": "What is Azure attribute-based access control (Azure ABAC)?",
+        "t": "O que é o controle de acesso baseado em atributos do Azure (Azure ABAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       },
       {
-        "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+        "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
       }
     ]
@@ -7729,7 +7729,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Endpoint type / Location / Network connectivity / Performance:** não mudam o custo de saída de rede. O routing tier muda (Internet routing é mais barato que Microsoft routing).\n- **Infrastructure encryption / CMK para tabelas e filas / Premium:** só podem ser definidos na criação da conta.\n\n**Dica de prova:** O tipo de chave (Microsoft-managed ↔ customer-managed) pode ser trocado a qualquer momento em Encryption.",
     "docs": [
       {
-        "t": "Network routing preference - Azure Storage",
+        "t": "Preferência de roteamento de rede - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/network-routing-preference"
       },
       {
@@ -7741,7 +7741,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ]
@@ -7781,15 +7781,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **AES / 3DES:** como CMK, o Storage aceita só chaves RSA (ou RSA-HSM), que envelopam a chave AES-256 interna de dados.\n- **8192 bits:** acima do máximo suportado pelo Key Vault e pelo Storage.",
     "docs": [
       {
-        "t": "Customer-managed keys for account encryption - Azure Storage",
+        "t": "Chaves gerenciadas pelo cliente para criptografia de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
       },
       {
-        "t": "Azure Storage encryption for data at rest",
+        "t": "Criptografia de dados em repouso no Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
       },
       {
-        "t": "Encryption scopes for Blob storage - Azure Storage",
+        "t": "Escopos de criptografia do Armazenamento de Blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview"
       }
     ]
@@ -7818,7 +7818,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (500 convidados):** New-MgUser cria **membros**. Atende: **New-MgInvitation** em script ou **Bulk invite** no portal.",
     "docs": [
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
@@ -7826,7 +7826,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
@@ -7859,7 +7859,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** New-MgInvitation cria o objeto guest e, opcionalmente, envia o e-mail (-SendInvitationMessage). É a forma programática do Bulk invite.",
     "docs": [
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
@@ -7867,7 +7867,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
@@ -7898,19 +7898,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Stored access policy:** só define permissão e validade de SAS; não filtra blobs por tag.\n- **JIT VM access:** recurso do Defender for Cloud para portas de VM.\n- **SAS:** dá acesso a um container ou blob, sem critério de tag.\n\n**Dica de prova:** A condição usa @Resource[Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags:Projeto] StringEquals 'X'.",
     "docs": [
       {
-        "t": "Authorize access to Azure Blob Storage using Azure role assignment conditions - Azure Storage",
+        "t": "Autorizar o acesso ao Azure Blob Storage usando condições de atribuição de funções do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-auth-abac"
       },
       {
-        "t": "Manage and find Azure Blob data with blob index tags",
+        "t": "Gerenciar e localizar dados de blobs do Azure com marcas de índice de blobs",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       }
     ]
@@ -7938,15 +7938,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **File shares / tables / queues:** encryption scopes são só do Blob storage (container ou blob).\n\n**Dica de prova:** O scope pode ser o padrão do container e pode ser imposto a todos os blobs dele (sem override por blob).",
     "docs": [
       {
-        "t": "Azure Storage encryption for data at rest",
+        "t": "Criptografia de dados em repouso no Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
       },
       {
-        "t": "Customer-managed keys for account encryption - Azure Storage",
+        "t": "Chaves gerenciadas pelo cliente para criptografia de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
       },
       {
-        "t": "Encryption scopes for Blob storage - Azure Storage",
+        "t": "Escopos de criptografia do Armazenamento de Blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview"
       }
     ]
@@ -7982,15 +7982,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Delete:** apagaria o usuário e o acesso dele.\n- **Reset password:** convidado não tem senha no seu tenant.\n- **Revoke sessions:** só invalida tokens; não troca a identidade de login.\n- **Identities:** só exibe as identidades; não troca a de login do B2B.\n\n**Dica de prova:** Reset redemption status mantém o objectId, os grupos e o acesso do convidado; só pede novo resgate.",
     "docs": [
       {
-        "t": "Reset guest redemption status - Microsoft Entra External ID",
+        "t": "Redefinir o status de resgate de convidados - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/reset-redemption-status"
       },
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
@@ -8020,19 +8020,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Storage Account Contributor / Contributor:** plano de controle (gerenciam a conta, listam chaves); não são funções de dados.\n- **Reader and Data Access:** lê as chaves (acesso total via chave); não é menor privilégio nem RBAC de dados.\n\n**Dica de prova:** O \"Workspace1\" aqui usa a managed identity dele como principal da atribuição.",
     "docs": [
       {
-        "t": "Assign an Azure Role for Blob Data Access - Azure Storage",
+        "t": "Atribuir uma função do Azure para acesso a dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       },
       {
-        "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+        "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
       }
     ]
@@ -8152,7 +8152,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Restrict non-admin users from creating tenants:** impede criar tenants, não service principals.\n- **Users can create security groups:** trata de grupos.\n- **Guest user access restrictions:** trata de convidados.\n- **LinkedIn / Show keep user signed in:** não tratam de apps nem do portal.\n\n**Dica de prova:** \"Restrict access to Microsoft Entra admin center\" não bloqueia PowerShell nem Graph; só o portal.",
     "docs": [
       {
-        "t": "Default user permissions - Microsoft Entra",
+        "t": "Permissões padrão de usuários - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
@@ -8198,19 +8198,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 lê blob2 / blob3:** Não. A condição permite leitura só em cont1.\n- **User2 lê blob1:** Sim. A Condition2 só restringe escrita; leitura segue a função Blob Data Owner.\n\n**Dica de prova:** Na condição, cada ação (read, write…) tem sua própria regra; ações sem regra seguem a função.",
     "docs": [
       {
-        "t": "Authorize access to Azure Blob Storage using Azure role assignment conditions - Azure Storage",
+        "t": "Autorizar o acesso ao Azure Blob Storage usando condições de atribuição de funções do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-auth-abac"
       },
       {
-        "t": "What is Azure attribute-based access control (Azure ABAC)?",
+        "t": "O que é o controle de acesso baseado em atributos do Azure (Azure ABAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       }
     ]
@@ -8249,15 +8249,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **virtualNetworks/delete ou /write:** cobrem só uma ação; \"todas as ações\" = /*.\n- **storageAccounts/*:** daria também escrita e listKeys (acesso aos dados); excede.\n- **blob/read:** é uma dataAction (dados do blob), não a configuração da conta.\n\n**Dica de prova:** listKeys/action está sob storageAccounts/*, por isso o wildcard no storage é perigoso.",
     "docs": [
       {
-        "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+        "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
       },
       {
-        "t": "List Azure role assignments using the Azure portal - Azure RBAC",
+        "t": "Listar atribuições de funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal"
       },
       {
-        "t": "Understand Azure role definitions - Azure RBAC",
+        "t": "Entender as definições de funções do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-definitions"
       }
     ]
@@ -8301,19 +8301,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Premium SSD LRS / Standard SSD:** LRS não sobrevive à queda de um datacenter, e Standard tem latência maior.\n- **Cache Read/Write:** escritas em cache no host podem se perder se o host falhar.\n- **Cache None:** seguro, mas Read-only melhora a latência de leitura sem risco de perda.\n\n**Dica de prova:** Disco ZRS pode ser anexado a uma VM em qualquer zona da região; disco compartilhado ZRS permite failover entre zonas.",
     "docs": [
       {
-        "t": "Redundancy options for Azure managed disks - Azure Virtual Machines",
+        "t": "Opções de redundância para discos gerenciados do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy"
       },
       {
-        "t": "Azure premium storage: Design for high performance - Azure Virtual Machines",
+        "t": "Armazenamento Premium do Azure: projetar para alto desempenho - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/premium-storage-performance"
       },
       {
-        "t": "Overview of Azure Disk Storage - Azure Virtual Machines",
+        "t": "Visão geral do Azure Disk Storage - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
       },
       {
-        "t": "Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines",
+        "t": "Selecionar um tipo de disco para VMs IaaS do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
       }
     ]
@@ -8343,15 +8343,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Azure Virtual Machines for deployment:** serve para a VM obter certificados do vault, não para o ADE.\n- **Secret:** o ADE grava o próprio segredo (BEK); o que você cria é a chave KEK.\n- **Rotation policy:** opcional; não é pré-requisito.\n\n**Dica de prova:** Comando: Set-AzVMDiskEncryptionExtension … -KeyEncryptionKeyUrl <kek> -KeyEncryptionKeyVaultId <vault>. O vault precisa estar na mesma região da VM.",
     "docs": [
       {
-        "t": "Creating and configuring a key vault for Azure Disk Encryption on a Windows VM - Azure Virtual Machines",
+        "t": "Criar e configurar um cofre de chaves para o Azure Disk Encryption em uma VM Windows - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-key-vault"
       },
       {
-        "t": "Overview of managed disk encryption options - Azure Virtual Machines",
+        "t": "Visão geral das opções de criptografia de discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview"
       },
       {
-        "t": "Enable end-to-end encryption using encryption at host - Azure portal - managed disks - Azure Virtual Machines",
+        "t": "Habilitar a criptografia de ponta a ponta usando criptografia no host - Portal do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal"
       }
     ]
@@ -8377,15 +8377,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Customer-managed keys (SSE):** criptografa no storage; o VHD baixado sai descriptografado.\n- **Confidential disk encryption:** só para VMs confidenciais (tamanhos específicos).\n- **Encryption at host:** também é do lado do servidor; o download sai descriptografado.\n\n**Dica de prova:** O ADE será aposentado em 15/09/2028. A Microsoft recomenda migrar para encryption at host, mas este requisito específico (VHD baixado continua criptografado) só o ADE atende.",
     "docs": [
       {
-        "t": "Overview of managed disk encryption options - Azure Virtual Machines",
+        "t": "Visão geral das opções de criptografia de discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview"
       },
       {
-        "t": "Enable Azure Disk Encryption for Windows VMs - Azure Virtual Machines",
+        "t": "Habilitar o Azure Disk Encryption para VMs Windows - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-overview"
       },
       {
-        "t": "Enable end-to-end encryption using encryption at host - Azure portal - managed disks - Azure Virtual Machines",
+        "t": "Habilitar a criptografia de ponta a ponta usando criptografia no host - Portal do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal"
       }
     ]
@@ -8422,11 +8422,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Service / Container:** permitiriam operações no serviço ou no container, além de blobs individuais.\n- **List:** permite enumerar nomes; o requisito é baixar por nome conhecido.\n- **Write / Delete / Add / Create:** excedem \"só download\".\n\n**Dica de prova:** \"Securely\" também implica Allowed protocols = HTTPS only.",
     "docs": [
       {
-        "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+        "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
-        "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+        "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
       }
     ]
@@ -8460,11 +8460,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Três RGs:** Não. São 4: o loop copy (2) + 2 recursos individuais.\n- **RGroup5:** Não. O nome usa length(obj1) = 4, então é RGroup4.\n- **Todos em East US:** Sim. O parâmetro/variável de location resolve para eastus, mesmo com -Location westus (que é só onde fica o registro da implantação).\n\n**Dica de prova:** Em New-AzDeployment (escopo de assinatura), -Location é a região dos metadados da implantação, não dos recursos.",
     "docs": [
       {
-        "t": "Template structure and syntax - Azure Resource Manager",
+        "t": "Estrutura e sintaxe de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax"
       },
       {
-        "t": "Bicep file structure and syntax - Azure Resource Manager",
+        "t": "Estrutura e sintaxe de arquivos Bicep - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file"
       }
     ]
@@ -8490,11 +8490,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Access policy:** sozinha não concede acesso; só define parâmetros para SAS ligados a ela.\n- **CDN:** entrega conteúdo público em cache; não controla permissões.\n- **Access keys:** acesso total, não só leitura.\n\n**Dica de prova:** Para permitir HTTP, o storage precisa estar com \"Secure transfer required\" desabilitado.",
     "docs": [
       {
-        "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+        "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
-        "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+        "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
       }
     ]
@@ -8533,7 +8533,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ]
@@ -8559,11 +8559,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application Proxy:** publica apps web on-premises para usuários externos.\n- **NSG:** filtra, mas não muda a rota.\n- **Azure Firewall:** inspeciona tráfego; não faz o storage ser alcançado pelo backbone.\n\n**Dica de prova:** Service endpoint: o storage continua com IP público, mas aceita a sub-rede como origem (regra de VNet no firewall do storage).",
     "docs": [
       {
-        "t": "Azure virtual network service endpoints",
+        "t": "Pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
       },
       {
-        "t": "Azure virtual network service endpoint policies",
+        "t": "Políticas de pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview"
       }
     ]
@@ -8601,7 +8601,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -8627,11 +8627,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **storage1 (GPv1):** precisa virar GPv2 antes.\n- **storage3 (RA-GRS):** a conversão seria para RA-GZRS, não para ZRS.\n- **storage4 (BlobStorage):** tipo legado sem ZRS.",
     "docs": [
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       },
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       }
     ]
@@ -8662,7 +8662,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       },
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       }
     ]
@@ -8703,11 +8703,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **1, 2 ou 4:** LRS = 3 cópias síncronas no mesmo datacenter (ZRS = 3 cópias em 3 zonas; GRS = 6 cópias no total).\n- **Performance / Account kind / Replication:** não reduzem o custo de armazenar dados pouco acessados.",
     "docs": [
       {
-        "t": "Access tiers for blob data - Azure Storage",
+        "t": "Camadas de acesso para dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
-        "t": "Blob rehydration from the archive tier",
+        "t": "Reidratação de blobs da camada de arquivos",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
       }
     ]
@@ -8746,19 +8746,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **appendBlob / pageBlob:** imagens são block blobs; page blobs são discos.\n- **container1/*:** o wildcard não é sintaxe de prefixMatch.\n- **finance (sem o container):** o prefixo precisa começar pelo nome do container.\n\n**Dica de prova:** O relatório de inventário (CSV ou Parquet) é gravado num container de destino configurado na política.",
     "docs": [
       {
-        "t": "Azure Storage blob inventory",
+        "t": "Inventário de blobs do Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/blob-inventory"
       },
       {
-        "t": "Introduction to Blob (object) Storage - Azure Storage",
+        "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
       },
       {
-        "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+        "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
       },
       {
-        "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+        "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
       }
     ]
@@ -8796,11 +8796,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Service:** amplia o escopo para todo o serviço Blob.\n- **Write / Delete / Add / Create:** excedem \"enumerar e baixar\".\n- **List:** é o que permite enumerar. O gabarito do dump a omite, mas sem List não há listagem; se a prova pedir 3, pense em Container + List + Read (service SAS de container).\n\n**Dica de prova:** Um **service SAS** no nível do container com permissões r + l é a forma mais limpa de \"listar e baixar só do container1\".",
     "docs": [
       {
-        "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+        "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
-        "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+        "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
       }
     ]
@@ -8833,7 +8833,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "Configure a lifecycle management policy - Azure Blob Storage",
+        "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
       }
     ]
@@ -8916,11 +8916,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Data protection:** soft delete e versionamento; não tratam da rota de rede.\n- **Public network access:** restringe origens, mas o acesso continua pelo endpoint público.\n- **SAS:** autorização, não rede.\n\n**Dica de prova:** Com private endpoint, crie a zona privatelink.blob.core.windows.net (ou use a integração com Private DNS) para o nome resolver o IP privado.",
     "docs": [
       {
-        "t": "What is a private endpoint? - Azure Private Link",
+        "t": "O que é um ponto de extremidade privado? - Azure Private Link",
         "u": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
       },
       {
-        "t": "Use private endpoints - Azure Storage",
+        "t": "Usar pontos de extremidade privados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
       }
     ]
@@ -8954,11 +8954,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 (Reader):** Não. Reader não tem dataActions e não lista chaves.\n- **User2 (Storage Account Contributor):** Não. Ele leria via listKeys, mas o acesso por chave está desabilitado.\n- **User3 com a chave:** Não. allowSharedKeyAccess = false bloqueia chave e SAS assinado com chave.\n\n**Dica de prova:** Com shared key desabilitado, só o Entra ID funciona; dê Storage Blob/File Data Reader ou Contributor.",
     "docs": [
       {
-        "t": "Manage account access keys - Azure Storage",
+        "t": "Gerenciar chaves de acesso de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
       },
       {
-        "t": "Prevent authorization with Shared Key - Azure Storage",
+        "t": "Impedir a autorização com Chave Compartilhada - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent"
       }
     ]
@@ -9005,15 +9005,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Caso 1 = 1, 3, 4 ou 5:** só os 5 minutos finais passam de 85%; uma ação de +1 a partir de 1 instância dá 2.\n- **Caso 2 = 1, 2, 3 ou 5:** depois de chegar a 5, os 9 minutos abaixo de 25% permitem só um scale-in (5 min de janela + 5 de cooldown), então ficam 4.\n\n**Dica de prova:** Autoscale usa a estatística configurada (Max ou Average) sobre a janela de duração, e o cooldown começa após cada ação.",
     "docs": [
       {
-        "t": "Autoscale Azure resources based on data or schedule - Azure Monitor",
+        "t": "Dimensionar recursos do Azure automaticamente com base em dados ou agendamento - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/previous-versions/azure/azure-monitor/autoscale/tutorial-autoscale-performance-schedule"
       },
       {
-        "t": "Scale Up Features and Capacities - Azure App Service",
+        "t": "Aumentar recursos e capacidades verticalmente - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
       },
       {
-        "t": "Get started with autoscale in Azure - Azure Monitor",
+        "t": "Introdução ao dimensionamento automático no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started"
       }
     ],
@@ -9042,15 +9042,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Arquivos no C::** ficam no disco de SO gerenciado, que é persistente.\n- **Proteção de tela / papel de parede:** ficam no perfil do usuário, no C:.\n\n**Dica de prova:** O disco temporário também é apagado em resize, desalocação e manutenção com mudança de host. Nunca guarde dados ali (o pagefile é o uso ideal).",
     "docs": [
       {
-        "t": "Overview of Azure Disk Storage - Azure Virtual Machines",
+        "t": "Visão geral do Azure Disk Storage - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
       },
       {
-        "t": "Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines",
+        "t": "Selecionar um tipo de disco para VMs IaaS do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
       },
       {
-        "t": "Attach a managed data disk to a Windows VM by using the Azure portal - Azure Virtual Machines",
+        "t": "Anexar um disco de dados gerenciado a uma VM Windows usando o portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal"
       }
     ]
@@ -9077,19 +9077,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Memória / processador:** definidos pelo tamanho da VM no Azure, não pelo VHD.\n- **Placas de rede:** o Azure cria a NIC; a configuração local não importa.\n- **Integration Services:** pode ser preparado, mas o bloqueio é o formato VHDX.\n\n**Dica de prova:** Requisitos: VHD fixo, tamanho alinhado a 1 MB, Geração 1 ou 2 conforme o caso, e sysprep para imagem generalizada. Convert-VHD -VHDType Fixed resolve.",
     "docs": [
       {
-        "t": "Prepare a Windows VHD to upload to Azure - Azure Virtual Machines",
+        "t": "Preparar um VHD do Windows para carregamento no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image"
       },
       {
-        "t": "Overview of Azure Disk Storage - Azure Virtual Machines",
+        "t": "Visão geral do Azure Disk Storage - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
       },
       {
-        "t": "Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines",
+        "t": "Selecionar um tipo de disco para VMs IaaS do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
       },
       {
-        "t": "Attach a managed data disk to a Windows VM by using the Azure portal - Azure Virtual Machines",
+        "t": "Anexar um disco de dados gerenciado a uma VM Windows usando o portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal"
       }
     ],
@@ -9137,19 +9137,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Tamanho em 0, 1 ou 2 VMs:** com a política Automatic, a mudança do modelo vai para todas as instâncias ao mesmo tempo, com downtime.\n- **Imagem em 0, 2 ou 4 VMs:** o automatic OS image upgrade usa lotes de até 20% (mínimo 1).\n\n**Dica de prova:** Upgrade policy **Rolling** aplica as mudanças do modelo em lotes, com health probe/extensão de health.",
     "docs": [
       {
-        "t": "Upgrade policy modes for Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Modos de política de atualização para Conjuntos de Dimensionamento de Máquinas Virtuais - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-policy"
       },
       {
-        "t": "Modify an Azure Virtual Machine Scale Set - Azure Virtual Machine Scale Sets",
+        "t": "Modificar um Conjunto de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set"
       },
       {
-        "t": "Automatic OS image upgrades with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Atualizações automáticas de imagem do sistema operacional com Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       }
     ],
@@ -9179,7 +9179,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Redeploy:** em App Service não existe \"redeploy\" que restaure a versão anterior; demoraria mais.\n- **Clone:** cria outro app; não reverte o atual.\n- **Restaurar backup:** funciona, mas é mais lento e sobrescreve conteúdo.\n\n**Dica de prova:** O swap também carrega as configurações marcadas como \"slot setting\", que ficam presas ao slot.",
     "docs": [
       {
-        "t": "Set Up Staging Environments - Azure App Service",
+        "t": "Configurar ambientes de preparo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
       }
     ],
@@ -9265,7 +9265,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VM parada:** o backup de VM desligada é suportado (crash-consistent).\n- **Disco não gerenciado:** também é suportado.\n- **Vault indisponível:** geraria erro, não warning.\n\n**Dica de prova:** Status do Pre-Check: Passed, Warning (pode falhar) e Critical (vai falhar). Conectividade de saída e o VM Agent são as causas comuns.",
     "docs": [
       {
-        "t": "Introducing Backup Pre-Checks for Backup of Azure VMs | Microsoft Azure Blog",
+        "t": "Apresentação das verificações prévias de backup para VMs do Azure | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/azure-vm-backup-pre-checks/"
       },
       {
@@ -9309,19 +9309,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (trocar de host):** mudar de RG ou de assinatura não move a VM fisicamente. Só **Redeploy** (ou a manutenção self-service) atende.",
     "docs": [
       {
-        "t": "Redeploy Windows virtual machines in Azure - Virtual Machines",
+        "t": "Reimplantar máquinas virtuais Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/redeploy-to-new-node-windows"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       },
       {
-        "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+        "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
       }
     ],
@@ -9470,19 +9470,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **9:15 com 2:** a regra já disparou às 9:10 (10 min acima de 75%).\n- **9:15 com 4 ou 5:** o próximo disparo precisa de outra janela completa mais o cooldown.\n- **11:00 com 2 a 4:** em 60 minutos a redução acontece várias vezes, até chegar ao mínimo de 1.",
     "docs": [
       {
-        "t": "Autoscale Virtual Machine Scale Sets in the Azure portal - Azure Virtual Machine Scale Sets",
+        "t": "Dimensionar Conjuntos de Dimensionamento de Máquinas Virtuais automaticamente no portal do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       },
       {
-        "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+        "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
       },
       {
-        "t": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral do dimensionamento automático com Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview"
       }
     ],
@@ -9511,11 +9511,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só uma região:** não há restrição de região para planos Linux entre essas.\n\n**Dica de prova:** A antiga limitação (Windows e Linux no mesmo RG e região) foi removida na maioria dos cenários.",
     "docs": [
       {
-        "t": "Manage an App Service Plan - Azure App Service",
+        "t": "Gerenciar um plano do App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
       },
       {
-        "t": "Azure App Service Plans - Azure App Service",
+        "t": "Planos do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
       }
     ],
@@ -9563,15 +9563,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroupdeployment"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       },
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       }
     ],
@@ -9690,7 +9690,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Windows Server Backup:** o MARS não depende dele, e ele não lê o vault.\n- **MARS na VM1:** a VM1 já tem o agente; a restauração acontece na VM2.\n\n**Dica de prova:** Na VM2: registre no mesmo vault com as credenciais e use Recover Data > Another server, informando a passphrase de criptografia da VM1.",
     "docs": [
       {
-        "t": "Restore files to Windows Server using the MARS Agent - Azure Backup",
+        "t": "Restaurar arquivos no Windows Server usando o Agente MARS - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-windows-server"
       },
       {
@@ -9744,19 +9744,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **copyIndex como propriedade:** copyIndex() é uma função usada dentro do loop, não a declaração.\n- **dependsOn:** define ordem de implantação, não repetição.\n- **\"[copy\":** copy é um elemento, não uma função de expressão.\n\n**Dica de prova:** Copy de propriedade: { \"name\": \"dataDisks\", \"count\": N, \"input\": { \"lun\": \"[copyIndex('dataDisks')]\" … } }.",
     "docs": [
       {
-        "t": "Define multiple instances of a property - Azure Resource Manager",
+        "t": "Definir várias instâncias de uma propriedade - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-properties"
       },
       {
-        "t": "Template functions - Azure Resource Manager",
+        "t": "Funções de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
       },
       {
-        "t": "Deploy multiple instances of resources - Azure Resource Manager",
+        "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
       },
       {
-        "t": "Set deployment order for resources - Azure Resource Manager",
+        "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
       }
     ]
@@ -9785,7 +9785,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (NIC2 para a VM1):** vale qualquer RG, desde que a NIC fique na **mesma região** da VM e da VNet (West US). RG1/West US e RG2/West US atendem; Central US, não.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
@@ -9825,7 +9825,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Central US ≠ West US. NIC, VM e VNet precisam estar na mesma região.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
@@ -9865,7 +9865,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** RG2 + West US atende. A NIC pode ficar em outro RG, mas a VM precisa estar desalocada para anexar a nova NIC.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
@@ -9903,15 +9903,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **New-AzResource:** cria um recurso só, sem template.\n- **New-AzResourceGroupDeployment:** exige um RG existente como escopo e não cria RGs.\n- **New-AzTenantDeployment:** escopo do tenant (ex.: management groups); excessivo.\n\n**Dica de prova:** Escopos: RG → New-AzResourceGroupDeployment; assinatura → New-AzDeployment (New-AzSubscriptionDeployment); MG → New-AzManagementGroupDeployment; tenant → New-AzTenantDeployment.",
     "docs": [
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       }
     ],
@@ -9955,7 +9955,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Backup vault / Recovery Services vault:** o backup customizado do App Service grava num storage account seu.\n- **Resource group:** já existe junto com o app.\n- **Backup policy / lock / WebJob:** não excluem pastas do backup.\n\n**Dica de prova:** Além do backup customizado (com storage seu), existe o backup automático da plataforma; o _backup.filter vale para o backup customizado.",
     "docs": [
       {
-        "t": "Back Up an App - Azure App Service",
+        "t": "Fazer backup de um aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
       }
     ],
@@ -9984,19 +9984,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Publish-AzVMDscConfiguration:** só publica o pacote DSC no storage; sozinho não aplica nada nas instâncias.\n- **Application Insights:** monitora aplicações; não instala software.\n- **Endpoint Manager (Intune):** gerencia dispositivos de usuários, não instâncias de scale set.\n\n**Dica de prova:** Atualize o modelo do scale set com a extensão. Instâncias existentes só recebem a mudança conforme a upgrade policy.",
     "docs": [
       {
-        "t": "Azure Custom Script Extension for Windows - Azure Virtual Machines",
+        "t": "Extensão de Script Personalizado do Azure para Windows - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows"
       },
       {
-        "t": "Tutorial - Install applications in a scale set with Azure CLI - Azure Virtual Machine Scale Sets",
+        "t": "Tutorial: instalar aplicativos em um conjunto de dimensionamento com a CLI do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/tutorial-install-apps-cli"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       },
       {
-        "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+        "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
       }
     ],
@@ -10038,19 +10038,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **\"Extensions\" / \"Microsoft.Compute/VirtualMachines\":** o tipo completo do recurso filho é Microsoft.Compute/virtualMachines/extensions.\n- **\"Settings\":** fica visível na definição e no portal; não é lugar de senha.\n- **\"Statuses\":** é saída (instance view), não entrada.\n\n**Dica de prova:** JsonADDomainExtension: settings = Name, OUPath, User, Restart, Options (3); protectedSettings = Password.",
     "docs": [
       {
-        "t": "Use a template to join a Windows VM to Microsoft Entra Domain Services - Microsoft Entra ID",
+        "t": "Usar um modelo para ingressar uma VM Windows no Microsoft Entra Domain Services - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/domain-services/join-windows-vm-template"
       },
       {
-        "t": "Template functions - Azure Resource Manager",
+        "t": "Funções de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
       },
       {
-        "t": "Deploy multiple instances of resources - Azure Resource Manager",
+        "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
       },
       {
-        "t": "Set deployment order for resources - Azure Resource Manager",
+        "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
       }
     ],
@@ -10096,7 +10096,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Application Gateway Standard/WAF para o tráfego interno:** funcionaria, mas é mais caro e desnecessário entre camadas (L4 basta).\n- **NSG:** filtra portas, mas não inspeciona SQL injection nem balanceia.\n- **Public load balancer:** expõe na internet; a camada de negócio é interna.\n\n**Dica de prova:** WAF também existe no Azure Front Door. Para \"SQL injection/XSS\", pense em WAF (OWASP).",
     "docs": [
       {
-        "t": "What Is Azure Web Application Firewall on Azure Application Gateway?",
+        "t": "O que é o Firewall de Aplicativo Web do Azure no Azure Application Gateway?",
         "u": "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview"
       },
       {
@@ -10137,7 +10137,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Load balancing rule:** distribui no pool; não mapeia RDP para uma VM específica.\n- **Health probe / backend pool:** não resolvem o conflito de porta 3389 duplicada no mesmo frontend.\n\n**Dica de prova:** Alternativa sem novo IP: portas diferentes no frontend (ex.: 50001 → VM1:3389 e 50002 → VM2:3389). O requisito aqui exige a porta 3389 nos dois.",
     "docs": [
       {
-        "t": "Inbound NAT rules - Azure Load Balancer",
+        "t": "Regras NAT de entrada - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/inbound-nat-rules"
       },
       {
@@ -10190,7 +10190,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Só IP público / IP público e privado:** zonas privadas registram apenas IPs privados.\n- **None para a VM com sufixo diferente:** o sufixo DNS configurado no Windows não interfere no auto registration.\n\n**Dica de prova:** Uma VNet pode ter auto registration ligado em **apenas uma** zona privada (mas pode ser vinculada para resolução em várias).",
     "docs": [
       {
-        "t": "What is autoregistration feature in Azure DNS private zones?",
+        "t": "O que é o recurso de registro automático nas zonas DNS privadas do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
@@ -10198,7 +10198,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Scenarios for Azure Private DNS zones",
+        "t": "Cenários para zonas do DNS Privado do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-scenarios"
       },
       {
@@ -10249,15 +10249,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Event Grid:** roteia eventos de recursos; não guarda dados para consulta interativa.\n- **Storage account:** guarda os flow logs, mas não permite consulta interativa no portal (KQL).\n- **Diagnóstico no ILB1:** o LB Basic não tem logs de conexão por IP; as métricas do Standard também não listam IPs de clientes.\n- **Diagnóstico nas VMs:** não captura o fluxo de rede do NSG.\n\n**Dica de prova:** Hoje: VNet flow logs → Traffic Analytics → workspace (os NSG flow logs estão sendo aposentados).",
     "docs": [
       {
-        "t": "NSG Flow Logs Overview - Azure Network Watcher",
+        "t": "Visão geral dos logs de fluxo de NSG - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview"
       },
       {
-        "t": "Create a Log Analytics Workspace - Azure Monitor",
+        "t": "Criar um workspace do Log Analytics - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace"
       },
       {
-        "t": "Load Balancer Diagnostics - Azure Load Balancer",
+        "t": "Diagnóstico do balanceador de carga - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-diagnostics"
       },
       {
@@ -10291,11 +10291,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VNet2:** o espaço dela (10.11.0.0/17) se sobrepõe ao da VNet1 (10.11.0.0/16).\n- **Só VNet2 / VNet2 e VNet3:** a VNet4, em outra região, aceita global peering.\n\n**Dica de prova:** Antes de qualquer peering, confira a sobreposição de address spaces; não dá para emparelhar VNets que se sobrepõem.",
     "docs": [
       {
-        "t": "Tutorial: Connect virtual networks with peering",
+        "t": "Tutorial: conectar redes virtuais com emparelhamento",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-connect-virtual-networks"
       },
       {
-        "t": "Azure Virtual Network FAQ",
+        "t": "Perguntas frequentes sobre o Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
@@ -10339,7 +10339,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Basic load balancer:** não tem HA ports nem SLA; está aposentado.\n- **HA ports com Floating IP desabilitado:** o gabarito considera o Floating IP necessário porque os dois serviços usam o mesmo backend com IPs diferentes.\n- **Um backend pool só:** o gabarito usa dois pools (um por serviço/regra).\n\n**Dica de prova:** HA ports = regra com protocolo All e porta 0, que balanceia todas as portas TCP/UDP; só existe em LB interno Standard.",
     "docs": [
       {
-        "t": "High availability ports overview in Azure - Azure Load Balancer",
+        "t": "Visão geral das portas de alta disponibilidade no Azure - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview"
       },
       {
@@ -10347,7 +10347,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Multiple frontends - Azure Load Balancer",
+        "t": "Vários front-ends - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-multivip-overview"
       },
       {
@@ -10384,7 +10384,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 / VM2 (VNET2 com auto registration):** Sim. Todas as VMs da VNet vinculada são registradas, seja qual for o sufixo DNS do Windows.\n- **VM3 em adatum.com:** Não. Zonas públicas não têm auto registration nem virtual network links.",
     "docs": [
       {
-        "t": "What is autoregistration feature in Azure DNS private zones?",
+        "t": "O que é o recurso de registro automático nas zonas DNS privadas do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
@@ -10427,11 +10427,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VNet1 / VNet2:** estão em outra região.\n- **Todas:** o NSG é um recurso regional.\n\n**Dica de prova:** O RG não importa; a assinatura e a região sim. NICs também precisam estar na mesma região do NSG.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Network Security Groups",
+        "t": "Criar, alterar ou excluir grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group"
       },
       {
-        "t": "Plan Azure virtual networks",
+        "t": "Planejar redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-plan-design-arm"
       },
       {
@@ -10475,7 +10475,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Remover ou recriar a VNet1:** destrutivo e desnecessário.\n- **Gateway transit:** compartilha o gateway de VPN via peering; não tem relação com address space.\n\n**Dica de prova:** Hoje: adicione o espaço no VNet1 emparelhado e clique em **Sync** no peering do lado remoto, sem removê-lo.",
     "docs": [
       {
-        "t": "Update the address space for a peered virtual network - Azure portal",
+        "t": "Atualizar o espaço de endereço de uma rede virtual emparelhada - Portal do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/update-virtual-network-peering-address-space"
       },
       {
@@ -10520,19 +10520,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **storage1 para RG2:** Sim. Storage account suporta move.\n- **NIC1 para RG2:** Sim. Entre RGs da mesma assinatura, recursos dependentes não precisam ir juntos (o portal avisa).\n- **IP2 muda de região:** Não. O move de RG nunca muda a região.\n\n**Dica de prova:** Para trocar de assinatura, VM, NIC, discos e IP público precisam ir juntos (o IP público Basic com SKU específica tem restrições).",
     "docs": [
       {
-        "t": "Azure resource types for move operations - Azure Resource Manager",
+        "t": "Tipos de recursos do Azure para operações de movimentação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-support-resources"
       },
       {
-        "t": "Move resources to another region with Azure Resource Mover",
+        "t": "Mover recursos para outra região com o Azure Resource Mover",
         "u": "https://learn.microsoft.com/en-us/azure/resource-mover/move-region-within-resource-group"
       },
       {
-        "t": "Use the Azure portal and Azure Resource Manager to Manage Resource Groups - Azure Resource Manager",
+        "t": "Usar o portal do Azure e o Azure Resource Manager para gerenciar grupos de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
       },
       {
-        "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+        "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
       }
     ],
@@ -10563,11 +10563,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Internal load balancer:** balanceia VMs, mas não dá ao App Service acesso à VNet.\n- **Peering:** conecta VNets entre si; o web app não está em nenhuma VNet.\n- **Application Gateway:** atende tráfego de **entrada** para o app, não de saída do app para a VM.\n\n**Dica de prova:** VNet integration = saída do app para a VNet. Private endpoint = entrada privada no app.",
     "docs": [
       {
-        "t": "Integrate your app with an Azure virtual network - Azure App Service",
+        "t": "Integrar seu aplicativo a uma rede virtual do Azure - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration"
       },
       {
-        "t": "Networking Features - Azure App Service",
+        "t": "Recursos de rede - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/networking-features"
       }
     ]
@@ -10593,19 +10593,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Conectar na VM1:** com a VM desalocada, não há como conectar.\n- **Snapshot:** não é pré-requisito.\n- **DNS name:** não tem relação com extensões.\n\n**Dica de prova:** Extensões só são instaladas com a VM em execução (VM Agent em Ready). Isso vale para DSC, Custom Script e AMA.",
     "docs": [
       {
-        "t": "Azure Desired State Configuration Extension Handler - Azure Virtual Machines",
+        "t": "Manipulador da extensão de Configuração de Estado Desejado do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-windows"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       },
       {
-        "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+        "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
       }
     ],
@@ -10634,7 +10634,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Floating IP (habilitado ou desabilitado):** trata de DSR (o IP do frontend chega à VM), não de afinidade.\n- **Session persistence None:** é o padrão (hash de 5 tuplas), que espalha as requisições.\n\n**Dica de prova:** Client IP = hash de 2 tuplas (IP de origem e de destino); Client IP and protocol = 3 tuplas.",
     "docs": [
       {
-        "t": "Azure Load Balancer distribution modes",
+        "t": "Modos de distribuição do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/distribution-mode-concepts"
       },
       {
@@ -10679,7 +10679,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (RDP para a VM1):** com NSG na sub-rede e na NIC, o tráfego precisa passar **nos dois**. Atendem: regra TCP 3389 no NSG-Subnet1 **e** remover o NSG-VM1, ou regra TCP 3389 nos dois NSGs. Não atende liberar só UDP.\n\n**Dica de prova:** Use o **IP flow verify** ou as **effective security rules** do Network Watcher para ver qual NSG bloqueia.",
     "docs": [
       {
-        "t": "Cannot connect with RDP to a Windows VM in Azure - Virtual Machines",
+        "t": "Não é possível conectar via RDP a uma VM Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/troubleshoot-rdp-connection"
       },
       {
@@ -10719,7 +10719,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** o RDP usa TCP 3389 (o UDP é opcional, para desempenho). Sem TCP liberado nos dois NSGs não há conexão.",
     "docs": [
       {
-        "t": "Cannot connect with RDP to a Windows VM in Azure - Virtual Machines",
+        "t": "Não é possível conectar via RDP a uma VM Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/troubleshoot-rdp-connection"
       },
       {
@@ -10759,7 +10759,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** regra TCP 3389 no NSG da sub-rede **e** no da NIC atende. A tag VirtualNetwork como destino inclui o IP privado da VM, que é o alvo após o NAT do IP público.",
     "docs": [
       {
-        "t": "Cannot connect with RDP to a Windows VM in Azure - Virtual Machines",
+        "t": "Não é possível conectar via RDP a uma VM Windows no Azure - Máquinas Virtuais",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/troubleshoot-rdp-connection"
       },
       {
@@ -10817,7 +10817,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Adicionar NIC para 192.168.1.0/24:** a NIC precisa de uma sub-rede, e a sub-rede de um address space que ainda não existe.\n- **Adicionar só sub-rede para 192.168.1.0/24:** a sub-rede precisa estar dentro de um address space da VNet.\n- **Adicionar address space para 10.2.1.0/24:** o espaço 10.2.0.0/16 já cobre esse intervalo.\n- **Excluir sub-rede ou espaço:** desnecessário e destrutivo.\n\n**Dica de prova:** Ordem: address space → sub-rede → NIC/VM. Para 192.168.1.0/24 serão necessários os dois primeiros passos.",
     "docs": [
       {
-        "t": "Create, change, or delete an Azure virtual network - Azure Virtual Network",
+        "t": "Criar, alterar ou excluir uma rede virtual do Azure - Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-virtual-network"
       },
       {
@@ -10829,7 +10829,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       }
     ],
@@ -10867,7 +10867,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ],
@@ -10896,11 +10896,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Template ARM:** o deny também vale para implantações via template.\n- **Sub-rede nova:** não resolve o bloqueio da VM.\n- **Remover virtualNetworks da política:** a VNET1 já existe; não é preciso criar outra.\n\n**Dica de prova:** A política bloqueia **criar e alterar** VNets. Se conectar a VM exigisse alterar a VNet (ex.: nova sub-rede), virtualNetworks também precisaria sair.",
     "docs": [
       {
-        "t": "Azure Policy definitions deny effect - Azure Policy",
+        "t": "Efeito de negação das definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deny"
       },
       {
-        "t": "Index of Azure Policy built-in definitions and initiatives - Azure Policy",
+        "t": "Índice de definições e iniciativas internas do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/"
       },
       {
@@ -10938,7 +10938,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Azure PowerShell:** não tem cmdlet de importação de arquivo de zona.\n- **Portal:** recriaria os 1.000 registros à mão.\n- **DNS Manager:** gerencia o DNS do Windows, não o Azure DNS.\n\n**Dica de prova:** Exporte com dnscmd Server1 /ZoneExport adatum.com adatum.com.txt e importe com az network dns zone import -g RG -n adatum.com -f adatum.com.txt.",
     "docs": [
       {
-        "t": "Import and export a domain zone file - Azure CLI - Azure DNS",
+        "t": "Importar e exportar um arquivo de zona de domínio - CLI do Azure - Azure DNS",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-import-export"
       },
       {
@@ -10979,11 +10979,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Novo LB para a VM3:** desnecessário; o mesmo LB faz NAT.\n- **Frontend IP:** o frontend já existe.\n- **Load balancing rule:** distribuiria o RDP para o pool inteiro.\n\n**Dica de prova:** Inbound NAT rules agora também suportam um intervalo de portas de frontend mapeado para um backend pool (portas por instância).",
     "docs": [
       {
-        "t": "Inbound NAT rules - Azure Load Balancer",
+        "t": "Regras NAT de entrada - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/inbound-nat-rules"
       },
       {
-        "t": "Tutorial: Create a single virtual machine inbound NAT rule - Azure portal - Azure Load Balancer",
+        "t": "Tutorial: criar uma regra NAT de entrada para uma única máquina virtual - Portal do Azure - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal"
       },
       {
@@ -11073,7 +11073,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Desassociar de uma NIC:** o NSG não está associado a nada.\n- **Alterar a regra inbound Port_80:** o problema é saída (navegação), não entrada.\n- **Alterar a DenyWebSites:** a regra já está correta; só falta associar o NSG.\n\n**Dica de prova:** Effective security rules da NIC mostram se algum NSG está realmente aplicado.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Network Security Groups",
+        "t": "Criar, alterar ou excluir grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group"
       },
       {
@@ -11085,7 +11085,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ],
@@ -11118,11 +11118,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **OS disk type:** HDD, SSD e Premium suportam zona; o tipo não impede.\n- **Size:** os tamanhos comuns suportam zonas na região.\n- **Image:** a imagem não restringe zonas.\n\n**Dica de prova:** Discos não gerenciados (VHD em storage account) não suportam zonas nem são recomendados; estão sendo aposentados.",
     "docs": [
       {
-        "t": "Move virtual machines to an Azure region with availability zones using Azure Site Recovery - Azure Site Recovery",
+        "t": "Mover máquinas virtuais para uma região do Azure com zonas de disponibilidade usando o Azure Site Recovery - Azure Site Recovery",
         "u": "https://learn.microsoft.com/en-us/azure/site-recovery/move-azure-vms-avset-azone"
       },
       {
-        "t": "Create zonal VMs with the Azure portal - Azure Virtual Machines",
+        "t": "Criar VMs zonais com o portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/create-portal-availability-zone"
       },
       {
@@ -11175,15 +11175,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Só um RG:** no modo Flexible, a VM pode ficar em qualquer RG da mesma assinatura.\n- **Central US / East US:** a VM precisa estar na mesma região do scale set.\n\n**Dica de prova:** No Flexible, não dá para adicionar uma VM já existente: ela entra no scale set no momento da criação (parâmetro virtualMachineScaleSet).",
     "docs": [
       {
-        "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+        "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
       },
       {
-        "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
       },
       {
-        "t": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+        "t": "Visão geral do dimensionamento automático com Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview"
       }
     ],
@@ -11261,7 +11261,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (bloquear 8080 em todo NSG novo):** só uma **Azure Policy customizada** (modify/append/deny na regra do NSG) atende. Lock, desregistrar provider e política built-in não atendem.\n\n**Dica de prova:** Lock protege contra exclusão ou alteração do recurso; não adiciona configuração.",
     "docs": [
       {
-        "t": "Tutorial: Create a custom policy definition - Azure Policy",
+        "t": "Tutorial: criar uma definição de política personalizada - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition"
       },
       {
@@ -11273,7 +11273,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
-        "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+        "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
       }
     ]
@@ -11307,11 +11307,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "IP Flow Verify Overview - Azure Network Watcher",
+        "t": "Visão geral da verificação de fluxo de IP - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
       },
       {
-        "t": "Connection Troubleshoot Overview - Azure Network Watcher",
+        "t": "Visão geral da solução de problemas de conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       }
     ],
@@ -11344,7 +11344,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure virtual network service endpoints",
+        "t": "Pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
       },
       {
@@ -11385,7 +11385,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **NSG1 limita a VM1:** Não. As regras visam a sub-rede da VM2.\n- **NSG1 se aplica à VM2:** Sim. O destino das regras é 172.16.2.0/24.\n- **Mesma VNet:** Não, pelo gabarito (as sub-redes indicam VNets distintas, conectadas por peering).\n\n**Dica de prova:** Connection troubleshoot mostra o salto e o NSG que bloqueou; next hop mostra a rota usada.",
     "docs": [
       {
-        "t": "Connection Troubleshoot Overview - Azure Network Watcher",
+        "t": "Visão geral da solução de problemas de conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       },
       {
@@ -11397,7 +11397,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "IP Flow Verify Overview - Azure Network Watcher",
+        "t": "Visão geral da verificação de fluxo de IP - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
       }
     ],
@@ -11426,7 +11426,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Address space do local network gateway:** altera o roteamento da VPN, não filtra RDP da internet.\n- **Remover os IPs públicos:** quebraria o acesso dos usuários à porta 443.\n- **Address space da Subnet1:** não tem relação com filtragem.\n\n**Dica de prova:** Melhor ainda: tire o RDP público e use Azure Bastion ou JIT.",
     "docs": [
       {
-        "t": "Azure network security best practices",
+        "t": "Práticas recomendadas de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/security/fundamentals/network-best-practices"
       },
       {
@@ -11438,7 +11438,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ],
@@ -11474,7 +11474,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ],
@@ -11601,7 +11601,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **North Europe / West Europe:** não há VNet nessas regiões; a NIC precisa de uma sub-rede da mesma região.\n\n**Dica de prova:** A NIC pode ficar em qualquer RG, mas tem de estar na região da VNet e da VM em que será usada.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
@@ -11639,7 +11639,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Sufixo DNS na VM1:** não faz a internet conhecer a zona.\n- **SRV em contoso.com:** zona privada, não ligada a adatum.com.\n- **IAM do link1:** o link1 é da zona privada; não tem relação com a resolução pública.\n\n**Dica de prova:** O resolvedor do Azure (168.63.129.16) segue a delegação pública, que só existe depois de configurar o NS no registrador.",
     "docs": [
       {
-        "t": "Tutorial: Host your domain in Azure DNS",
+        "t": "Tutorial: hospedar seu domínio no Azure DNS",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
       },
       {
@@ -11697,11 +11697,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Next hop:** mostra a rota, não qual regra bloqueia.\n- **Packet capture:** captura pacotes; não aponta a regra.\n- **Security group view:** lista as regras efetivas, mas não testa um pacote específico.\n- **NSG flow logs / Traffic Analytics:** dados históricos, não um teste de conectividade.\n\n**Dica de prova:** IP flow verify informa a regra exata (nome do NSG e da regra) que permitiu ou negou.",
     "docs": [
       {
-        "t": "IP Flow Verify Overview - Azure Network Watcher",
+        "t": "Visão geral da verificação de fluxo de IP - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
       },
       {
-        "t": "Connection Troubleshoot Overview - Azure Network Watcher",
+        "t": "Visão geral da solução de problemas de conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       },
       {
@@ -11741,7 +11741,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 com 193.77.134.10:** Sim. A NIC não tem DNS próprio e herda o da VNet.\n- **VM2 com 193.77.134.10:** Não. A NIC dela define 192.168.10.15, que tem precedência.\n- **VM3 com 192.168.10.15:** Sim. Mesmo motivo.\n\n**Dica de prova:** Mudanças de DNS na VNet só valem para a VM após renovar o DHCP ou reiniciá-la.",
     "docs": [
       {
-        "t": "Azure Virtual Network FAQ",
+        "t": "Perguntas frequentes sobre o Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
@@ -11785,15 +11785,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (VM1 e VM2 no backend do Standard LB):** atende quando **nenhuma VM tem IP público Basic**: remover o IP Basic da VM2, ou pôr IP público **Standard** nas duas. IP Basic na VM1, ou só parar a VM2, não resolvem.\n\n**Dica de prova:** Os IPs públicos Basic foram aposentados em 30/09/2025; hoje só existe o Standard.",
     "docs": [
       {
-        "t": "Backend Pool Management - Azure Load Balancer",
+        "t": "Gerenciamento de pools de back-end - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
       },
       {
-        "t": "Troubleshoot common problems with Azure Load Balancer - Azure",
+        "t": "Solucionar problemas comuns do Azure Load Balancer - Azure",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/troubleshoot-common-problems/load-balancer-troubleshoot"
       },
       {
-        "t": "Azure Load Balancer health probes",
+        "t": "Investigações de integridade do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
       }
     ],
@@ -11825,15 +11825,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** parar a VM não remove o IP Basic da NIC dela. A VM2 continua incompatível.",
     "docs": [
       {
-        "t": "Backend Pool Management - Azure Load Balancer",
+        "t": "Gerenciamento de pools de back-end - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
       },
       {
-        "t": "Troubleshoot common problems with Azure Load Balancer - Azure",
+        "t": "Solucionar problemas comuns do Azure Load Balancer - Azure",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/troubleshoot-common-problems/load-balancer-troubleshoot"
       },
       {
-        "t": "Azure Load Balancer health probes",
+        "t": "Investigações de integridade do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
       }
     ],
@@ -11865,15 +11865,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** IP público Standard nas duas VMs é compatível com o Standard LB. Também funcionaria só remover o IP Basic da VM2.",
     "docs": [
       {
-        "t": "Backend Pool Management - Azure Load Balancer",
+        "t": "Gerenciamento de pools de back-end - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
       },
       {
-        "t": "Troubleshoot common problems with Azure Load Balancer - Azure",
+        "t": "Solucionar problemas comuns do Azure Load Balancer - Azure",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/troubleshoot-common-problems/load-balancer-troubleshoot"
       },
       {
-        "t": "Azure Load Balancer health probes",
+        "t": "Investigações de integridade do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
       }
     ],
@@ -11942,11 +11942,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Microsoft.ClassicNetwork é o modelo clássico (ASM). NSGs do ARM ficam em Microsoft.Network. Desregistrar não cria regras.",
     "docs": [
       {
-        "t": "Tutorial: Create a custom policy definition - Azure Policy",
+        "t": "Tutorial: criar uma definição de política personalizada - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition"
       },
       {
-        "t": "Details of Azure Policy definition structure basics - Azure Policy",
+        "t": "Detalhes dos conceitos básicos da estrutura de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
       },
       {
@@ -11991,7 +11991,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **S2S entre VNET1 e VNET2:** Sim. Uma conexão VNet-to-VNet via VPN gateway é possível.\n- **Peering VNET1-VNET2:** Sim. Global peering, com espaços sem sobreposição.\n- **Peering VNET1-VNETA:** Sim. Assinaturas diferentes e outra região não impedem, e os espaços não se sobrepõem.\n\n**Dica de prova:** Peering entre tenants também é possível, com permissões nos dois lados.",
     "docs": [
       {
-        "t": "VNet-to-VNet: Connecting Virtual Networks in Azure across Different Regions | Microsoft Azure Blog",
+        "t": "VNet para VNet: conectar redes virtuais no Azure entre regiões diferentes | Blog do Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/"
       },
       {
@@ -12104,11 +12104,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** não há built-in que injete \"deny 8080 entre VNets\". É preciso uma **definição customizada** (modify/append ou deny).",
     "docs": [
       {
-        "t": "Tutorial: Create a custom policy definition - Azure Policy",
+        "t": "Tutorial: criar uma definição de política personalizada - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition"
       },
       {
-        "t": "Details of Azure Policy definition structure basics - Azure Policy",
+        "t": "Detalhes dos conceitos básicos da estrutura de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
       },
       {
@@ -12149,15 +12149,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** sem IP público Basic em nenhuma VM, as duas entram no backend do Standard LB. Atende.",
     "docs": [
       {
-        "t": "Backend Pool Management - Azure Load Balancer",
+        "t": "Gerenciamento de pools de back-end - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
       },
       {
-        "t": "Troubleshoot common problems with Azure Load Balancer - Azure",
+        "t": "Solucionar problemas comuns do Azure Load Balancer - Azure",
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/troubleshoot-common-problems/load-balancer-troubleshoot"
       },
       {
-        "t": "Azure Load Balancer health probes",
+        "t": "Investigações de integridade do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
       }
     ]
@@ -12186,11 +12186,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** custom policy atribuída à assinatura atende e vale para todos os RGs.\n\n**Dica de prova:** O efeito **append** só adiciona a regra se o NSG for criado sem ela; **deny** recusa NSGs sem a regra; **modify** pode corrigir os existentes com remediação.",
     "docs": [
       {
-        "t": "Tutorial: Create a custom policy definition - Azure Policy",
+        "t": "Tutorial: criar uma definição de política personalizada - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition"
       },
       {
-        "t": "Details of Azure Policy definition structure basics - Azure Policy",
+        "t": "Detalhes dos conceitos básicos da estrutura de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
       },
       {
@@ -12347,11 +12347,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Auto registration no Link2:** Sim. A VNET2 ainda não registra em nenhuma zona.\n- **Link da VNET1 com a Zone3:** Sim. A zona privada é global, e links só de resolução são ilimitados (até o limite de links por zona).\n- **VNET2 com registro na Zone1:** Sim. Uma zona pode ter várias VNets de registro (a limitação é a VNet registrar em só uma zona).",
     "docs": [
       {
-        "t": "What is a virtual network link subresource of Azure DNS private zones",
+        "t": "O que é um sub-recurso de vínculo de rede virtual das zonas DNS privadas do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links"
       },
       {
-        "t": "What is autoregistration feature in Azure DNS private zones?",
+        "t": "O que é o recurso de registro automático nas zonas DNS privadas do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
@@ -12443,7 +12443,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (inspecionar todo o tráfego VM1 → VM2 por 3 h):** só o **packet capture** atende. Connection monitor, Data Collector Set e métricas Network In/Out não capturam o conteúdo.\n\n**Dica de prova:** O packet capture usa a extensão Network Watcher Agent na VM, grava um .cap no storage ou localmente, e tem limites de tamanho e de tempo (até 5 h).",
     "docs": [
       {
-        "t": "Packet Capture Overview - Azure Network Watcher",
+        "t": "Visão geral da captura de pacotes - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
@@ -12488,7 +12488,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** o connection monitor testa alcance e latência com sondas sintéticas; não inspeciona os pacotes reais.",
     "docs": [
       {
-        "t": "Packet Capture Overview - Azure Network Watcher",
+        "t": "Visão geral da captura de pacotes - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
@@ -12532,7 +12532,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** o DCS do Performance Monitor coleta contadores. Para pacotes no SO existe pktmon/netsh trace, mas a resposta da prova é o **packet capture** do Network Watcher.",
     "docs": [
       {
-        "t": "Packet Capture Overview - Azure Network Watcher",
+        "t": "Visão geral da captura de pacotes - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
@@ -12578,7 +12578,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Remover o nsg1:** o NSG já permite 443; removê-lo não é pré-requisito (e no Standard LB a VM precisa de NSG permitindo o tráfego).\n- **Availability set:** não é exigido para o backend de um Standard LB.\n\n**Dica de prova:** O backend do Standard LB aceita qualquer VM ou scale set da mesma VNet.",
     "docs": [
       {
-        "t": "Quickstart: Create a public load balancer - Azure portal - Azure Load Balancer",
+        "t": "Início rápido: criar um balanceador de carga público - Portal do Azure - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal"
       },
       {
@@ -12622,7 +12622,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** métricas Network In/Out mostram só bytes agregados; não permitem inspecionar o tráfego.",
     "docs": [
       {
-        "t": "Packet Capture Overview - Azure Network Watcher",
+        "t": "Visão geral da captura de pacotes - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
@@ -12745,7 +12745,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       },
       {
-        "t": "Azure Virtual Network FAQ",
+        "t": "Perguntas frequentes sobre o Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
@@ -12892,7 +12892,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **IP1 / IP2:** IPs Basic não são aceitos no frontend de um Standard LB.\n\n**Dica de prova:** O SKU do IP público precisa ser igual ao do load balancer. Standard é sempre estático e zone-redundant por padrão.",
     "docs": [
       {
-        "t": "Public IP addresses in Azure - Azure Virtual Network",
+        "t": "Endereços IP públicos no Azure - Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
       },
       {
@@ -12955,15 +12955,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **10.0.1.0/24:** cobre só a Subnet1 (onde está o NVA); o requisito é toda a VNet.\n- **10.0.254.0/24:** é a própria GatewaySubnet.\n- **Next hop Virtual network / Virtual network gateway:** não passariam pela VM1.\n- **Associar à Subnet0 / Subnet1-2:** controla o tráfego que **sai** delas, não o que entra pelo gateway.\n\n**Dica de prova:** Também é preciso habilitar IP forwarding na NIC da VM1 (e roteamento no SO). Não associe à GatewaySubnet uma rota 0.0.0.0/0 para um NVA.",
     "docs": [
       {
-        "t": "Azure VPN Gateway configuration settings",
+        "t": "Configurações do Azure VPN Gateway",
         "u": "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings"
       },
       {
-        "t": "Azure virtual network traffic routing",
+        "t": "Roteamento de tráfego de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
       },
       {
-        "t": "Tutorial: Route network traffic with a route table",
+        "t": "Tutorial: rotear tráfego de rede com uma tabela de rotas",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table"
       }
     ]
@@ -13108,11 +13108,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **vm1 em contoso.com (pública):** Não. Zonas públicas não têm auto registration, e RBAC para VMs não cria registros.\n- **vm1 / vm2 em fabrikam.com:** Sim. A zona privada com link e auto registration registra os IPs privados.\n\n**Dica de prova:** Registros automáticos só existem com o IP privado; são removidos quando a VM é excluída.",
     "docs": [
       {
-        "t": "What is autoregistration feature in Azure DNS private zones?",
+        "t": "O que é o recurso de registro automático nas zonas DNS privadas do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
-        "t": "DNS Zones and Records Overview",
+        "t": "Visão geral de zonas e registros DNS",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
       },
       {
@@ -13198,11 +13198,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM3 → VM1:** Sim. A VM3 está ligada e roteia.\n- **VM2 → VM1 com a VM3 desligada:** Não. A UDR continua apontando para o IP da VM3, e o tráfego é descartado.\n- **VM1 → VM2:** Sim. Passa pela VM3 ligada.\n\n**Dica de prova:** Para alta disponibilidade de NVAs, use um par de NVAs atrás de um LB interno com HA ports e aponte a UDR para o IP do LB.",
     "docs": [
       {
-        "t": "Azure virtual network traffic routing",
+        "t": "Roteamento de tráfego de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
       },
       {
-        "t": "Tutorial: Route network traffic with a route table",
+        "t": "Tutorial: rotear tráfego de rede com uma tabela de rotas",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table"
       }
     ],
@@ -13232,11 +13232,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Excluir VMs desligadas por auto-shutdown:** o backup funciona com a VM desligada (crash-consistent).\n- **Excluir Windows 10 / Ubuntu:** Windows cliente 64-bit e distros endossadas são suportados.\n\n**Dica de prova:** Se o auto-shutdown coincidir com o horário do backup, ele ainda roda; só a consistência muda.",
     "docs": [
       {
-        "t": "Support matrix for Azure VM backups - Azure Backup",
+        "t": "Matriz de suporte para backups de VMs do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix-iaas"
       },
       {
-        "t": "Linux distributions endorsed on Azure - Azure Virtual Machines",
+        "t": "Distribuições Linux aprovadas no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros"
       },
       {
@@ -13274,11 +13274,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Storage account:** o Recovery Services vault tem storage próprio.\n- **Extensões das VMs:** o Azure Backup instala a extensão ao habilitar o backup.\n- **Nova política:** não resolve a região diferente.\n\n**Dica de prova:** Um vault por região (e assinatura) que tenha VMs a proteger.",
     "docs": [
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ],
@@ -13409,15 +13409,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **5 ou 8 em 8/1:** conte os diários (5 dias de retenção) mais o mensal do dia 2; o semanal de domingo coincide com um diário.\n- **5, 17 ou 19 em 15/1:** 5 diários + semanal (4/1) + mensal (2/1) + anual (9/1) = 8.\n\n**Dica de prova:** Um mesmo ponto de recuperação vale para várias retenções (diária, semanal…); só conta uma vez.",
     "docs": [
       {
-        "t": "Back Up an Azure VM from the VM settings - Azure Backup",
+        "t": "Fazer backup de uma VM do Azure nas configurações da VM - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
       },
       {
-        "t": "Back Up Azure VMs in a Recovery Services Vault - Azure Backup",
+        "t": "Fazer backup de VMs do Azure em um cofre dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare"
       },
       {
-        "t": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+        "t": "Fazer backup de VMs do Azure com a política aprimorada - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
       }
     ],
@@ -13450,7 +13450,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "About the Azure Virtual Machine restore process - Azure Backup",
+        "t": "Sobre o processo de restauração de Máquinas Virtuais do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/about-azure-vm-restore"
       },
       {
@@ -13499,7 +13499,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset FAQ - Microsoft Entra ID",
+        "t": "Perguntas frequentes sobre redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/passwords-faq"
       },
       {
@@ -13541,7 +13541,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **App1 com um backup:** Não. Retenção 0 = manter indefinidamente; ficam todos os backups diários.\n- **Backup do slot de teste do App2:** Não. Só o slot de produção foi configurado.\n- **Restaurar backup de produção no slot de teste:** Sim. É permitido restaurar em outro slot ou em outro app.\n\n**Dica de prova:** Backups customizados têm limite de tamanho (10 GB de app + banco). Para mais, use o backup automático ou outra estratégia.",
     "docs": [
       {
-        "t": "Back Up an App - Azure App Service",
+        "t": "Fazer backup de um aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
       }
     ]
@@ -13611,7 +13611,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (usuários no tenant novo):** só o **User1**, criador e Global Admin do novo tenant, atende. Funções no tenant antigo ou na assinatura não valem lá.",
     "docs": [
       {
-        "t": "Quickstart - Access and create new tenant - Microsoft Entra",
+        "t": "Início rápido: acessar e criar um novo tenant - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
@@ -13666,19 +13666,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Uma, seis ou 24 vezes:** com a granularidade automática de 6 h no intervalo de 30 dias, são 4 pontos por dia.\n- **Scale down:** com CPU perto de 100%, reduziria o desempenho.\n- **Scale out:** adiciona instâncias; ajuda se o app escalar horizontalmente, mas o gabarito pede instância maior (scale up) para CPU saturada.\n\n**Dica de prova:** A granularidade do gráfico de métricas muda com o intervalo; ajuste-a em \"Time granularity\" para ver picos.",
     "docs": [
       {
-        "t": "Scale Up Features and Capacities - Azure App Service",
+        "t": "Aumentar recursos e capacidades verticalmente - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
       },
       {
-        "t": "Troubleshooting Azure Monitor metric charts - Azure Monitor",
+        "t": "Solucionar problemas de gráficos de métricas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-troubleshoot"
       },
       {
-        "t": "Scaling Out vs Scaling Up | Microsoft Azure",
+        "t": "Dimensionamento horizontal versus dimensionamento vertical | Microsoft Azure",
         "u": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/scaling-out-vs-scaling-up/"
       },
       {
-        "t": "Get started with autoscale in Azure - Azure Monitor",
+        "t": "Introdução ao dimensionamento automático no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started"
       }
     ],
@@ -13720,7 +13720,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up and recover Azure VMs with PowerShell - Azure Backup",
+        "t": "Fazer backup e recuperar VMs do Azure com PowerShell - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-automation"
       },
       {
@@ -13773,15 +13773,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Blob container / file share / storage account:** o Azure Backup de VM guarda os dados no vault (storage gerenciado pelo serviço).\n- **Batch job / batch schedule:** são do Azure Batch.\n- **Recovery plan:** é do Site Recovery (ordem de failover).\n\n**Dica de prova:** A política default (DefaultPolicy) faz backup diário com retenção de 30 dias. Ajuste o horário para 01:00.",
     "docs": [
       {
-        "t": "Back Up an Azure VM from the VM settings - Azure Backup",
+        "t": "Fazer backup de uma VM do Azure nas configurações da VM - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
       },
       {
-        "t": "Back Up Azure VMs in a Recovery Services Vault - Azure Backup",
+        "t": "Fazer backup de VMs do Azure em um cofre dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare"
       },
       {
-        "t": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+        "t": "Fazer backup de VMs do Azure com a política aprimorada - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
       }
     ],
@@ -13814,7 +13814,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Understand and Configure Azure Monitor",
+        "t": "Entender e configurar o Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/windows-server/storage/storage-spaces/configure-azure-monitor"
       },
       {
@@ -13851,15 +13851,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Cost Analysis:** mostra gastos, mas não aponta discos órfãos.\n- **Mudar a configuração do Advisor:** só ajusta regras e limites.\n- **Storage Explorer:** lista discos, mas não indica quais estão sem anexo nem recomenda exclusão.\n\n**Dica de prova:** Também dá para filtrar Disks por \"Disk state = Unattached\" no portal ou usar o Azure Resource Graph.",
     "docs": [
       {
-        "t": "Optimize virtual machine (VM) or virtual machine scale set (VMSS) spend by resizing or shutting down underutilized instances - Azure Advisor",
+        "t": "Otimizar os gastos de máquinas virtuais (VMs) ou conjuntos de dimensionamento de máquinas virtuais (VMSS) redimensionando ou desligando instâncias subutilizadas - Azure Advisor",
         "u": "https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations"
       },
       {
-        "t": "Tutorial - Create and manage budgets - Microsoft Cost Management",
+        "t": "Tutorial: criar e gerenciar orçamentos - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
       },
       {
-        "t": "Monitor usage and spending with cost alerts in Cost Management - Microsoft Cost Management",
+        "t": "Monitorar o uso e os gastos com alertas de custo no Gerenciamento de Custos - Microsoft Cost Management",
         "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending"
       }
     ],
@@ -13888,15 +13888,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Workbook:** visualiza dados existentes; não cria logs.\n- **Service Health alert:** avisa sobre incidentes da plataforma, não sobre erros do seu app.\n- **Application Logging:** grava só o que o código escreve (trace); os detalhes HTTP vêm do web server log.\n\n**Dica de prova:** Também ajuda o **Detailed error messages** e o **Failed request tracing** para os 500. O Log stream mostra em tempo real.",
     "docs": [
       {
-        "t": "Enable Diagnostic Logs - Azure App Service",
+        "t": "Habilitar logs de diagnóstico - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs"
       },
       {
-        "t": "Overview of Azure App Service - Azure App Service",
+        "t": "Visão geral do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview"
       },
       {
-        "t": "Quickstart: Deploy an ASP.NET web app - Azure App Service",
+        "t": "Início rápido: implantar um aplicativo Web ASP.NET - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore"
       }
     ]
@@ -13937,11 +13937,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Heartbeat / NetworkMonitoring / Perf:** não registram operações nem eventos da assinatura.\n- **extend / join / print:** extend cria colunas, join combina tabelas e print gera uma linha avulsa. Para escolher colunas, use project.\n\n**Dica de prova:** Exemplo: AzureActivity | where Level == \"Error\" | project TimeGenerated, OperationNameValue, _ResourceId.",
     "docs": [
       {
-        "t": "Log Analytics Tutorial: Query and Analyze Log Data - Azure Monitor",
+        "t": "Tutorial do Log Analytics: consultar e analisar dados de log - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ],
@@ -14022,11 +14022,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **storage1 / DB1 como fonte:** recursos PaaS enviam logs por diagnostic settings, não por DCR do agente.\n- **Workspace como fonte:** é destino, não fonte.\n- **storage1 / DB1 como destino:** DCRs de agente enviam para workspaces do Log Analytics ou para Azure Monitor Metrics.\n\n**Dica de prova:** DCRs também alimentam tabelas customizadas pela Logs Ingestion API.",
     "docs": [
       {
-        "t": "Collect log data from virtual machines with Azure Monitor - Azure Monitor",
+        "t": "Coletar dados de log de máquinas virtuais com o Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection"
       },
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
@@ -14034,7 +14034,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+        "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
       }
     ],
@@ -14080,15 +14080,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Owner da VM1 só com o User3:** o User1 também herda Owner da assinatura.\n- **User4 como Owner da VM1:** Contributor no RG1 não é Owner.\n- **User2 criar VM no RG1:** o User2 é Owner do RG2, não do RG1.\n- **User3 criar VM no RG1:** Owner só da VM1 não permite criar recursos no RG.",
     "docs": [
       {
-        "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+        "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
       },
       {
-        "t": "List Azure role assignments using the Azure portal - Azure RBAC",
+        "t": "Listar atribuições de funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal"
       },
       {
-        "t": "Understand Azure role definitions - Azure RBAC",
+        "t": "Entender as definições de funções do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-definitions"
       }
     ]
@@ -14122,15 +14122,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Atribuir Role1 a outros:** Não. Microsoft.Authorization/*/Write está em NotActions.\n- **Implantar VMs:** Sim. Tem compute, discos, NIC e subnets/join/action.\n- **IP estático:** Sim. networkInterfaces/* permite alterar a configuração de IP da NIC.\n\n**Dica de prova:** Leia as funções customizadas como: Actions − NotActions = permissões efetivas.",
     "docs": [
       {
-        "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+        "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
       },
       {
-        "t": "List Azure role assignments using the Azure portal - Azure RBAC",
+        "t": "Listar atribuições de funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal"
       },
       {
-        "t": "Understand Azure role definitions - Azure RBAC",
+        "t": "Entender as definições de funções do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-definitions"
       }
     ]
@@ -14202,15 +14202,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 entra na VM1:** Não. O acesso dele é na Sub2, e a VM1 está na Sub1.\n- **User2 gerencia discos e snapshots da VM1 / VM3:** Não. O escopo é o MG2, e Virtual Machine Contributor não inclui snapshots.\n\n**Dica de prova:** Logins com Entra ID: Virtual Machine Administrator Login (admin) ou Virtual Machine User Login (usuário comum).",
     "docs": [
       {
-        "t": "Understand scope for Azure RBAC",
+        "t": "Entender o escopo do Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       }
     ]
@@ -14236,11 +14236,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application Insights Profiler:** perfila desempenho de código.\n- **Access reviews:** revisão periódica de acessos, não monitoramento de atividade.\n- **Activity log filters:** o filtro do portal é por assinatura e com retenção de 90 dias; não centraliza.\n\n**Dica de prova:** Use diagnostic settings na assinatura (Activity log) → workspace central. Com Azure Policy, dá para padronizar em todas as assinaturas.",
     "docs": [
       {
-        "t": "Activity Log in Azure Monitor - Azure Monitor",
+        "t": "Log de atividades no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/activity-log"
       },
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
@@ -14248,7 +14248,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+        "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
       }
     ]
@@ -14284,19 +14284,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Recovery Services vault:** o backup de discos gerenciados avulsos usa o Backup vault.\n- **Configurar managed identity:** o Backup vault já tem identidade system-assigned; o passo é dar as permissões a ela.\n\n**Dica de prova:** Permissões: Disk Backup Reader no disco e Disk Snapshot Contributor no RG onde ficam os snapshots.",
     "docs": [
       {
-        "t": "Overview of Azure Disk Backup - Azure Backup",
+        "t": "Visão geral do Backup de Disco do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/disk-backup-overview"
       },
       {
-        "t": "Back up Azure Managed Disks - Azure Backup",
+        "t": "Fazer backup de discos gerenciados do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-managed-disks"
       },
       {
-        "t": "Overview of the Backup vaults - Azure Backup",
+        "t": "Visão geral dos cofres de Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview"
       },
       {
-        "t": "Create and delete Backup vaults - Azure Backup",
+        "t": "Criar e excluir cofres de Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/create-manage-backup-vault"
       }
     ]
@@ -14322,7 +14322,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application security group:** representa NICs suas, não serviços do Azure.\n- **IP addresses:** os IPs do portal mudam; manter a lista à mão é inviável.\n- **Any:** bloquearia toda a internet.\n\n**Dica de prova:** Regra de saída com destino AzurePortal (ou AzureCloud, mais amplo), Deny, prioridade antes da AllowInternetOutBound.",
     "docs": [
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       },
       {
@@ -14378,19 +14378,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **1 ou 2 vaults:** os vaults são regionais, e há recursos em 3 regiões.\n- **4 ou 7 vaults:** VM e file share da mesma região cabem no mesmo vault.\n- **1 a 5 políticas:** as políticas são por vault e por tipo de workload (VM ≠ Azure Files).",
     "docs": [
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Guidance and best practices - Azure Backup",
+        "t": "Orientações e práticas recomendadas - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/guidance-best-practices"
       },
       {
-        "t": "Back Up Azure VMs in a Recovery Services Vault - Azure Backup",
+        "t": "Fazer backup de VMs do Azure em um cofre dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare"
       },
       {
-        "t": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+        "t": "Fazer backup de VMs do Azure com a política aprimorada - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
       }
     ],
@@ -14434,7 +14434,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Diagnostic settings:** enviam logs e métricas da plataforma, não contadores do SO convidado.\n- **Azure SQL database:** não tem relação com o alerta.\n\n**Dica de prova:** Hoje: Azure Monitor Agent + DCR coletando `LogicalDisk(*)/% Free Space` → alerta de log, ou métrica de convidado via DCR (Azure Monitor Metrics).",
     "docs": [
       {
-        "t": "Collect performance counters with Azure Monitor Agent - Azure Monitor",
+        "t": "Coletar contadores de desempenho com o Agente do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-performance"
       },
       {
@@ -14499,7 +14499,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
-        "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+        "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
       }
     ],
@@ -14532,15 +14532,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Hierarchical namespace:** é recurso de blob (ADLS Gen2), não de file share.\n- **Mudar storage1/4 para GPv2:** não habilita identidade no storage2.\n- **SAS:** não é RBAC e não funciona com SMB.\n\n**Dica de prova:** A fonte de identidade do Azure Files é por **conta**; todas as shares dela usam a mesma.",
     "docs": [
       {
-        "t": "Overview - Azure Files Identity-Based Authentication",
+        "t": "Visão geral da autenticação baseada em identidade do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
       },
       {
-        "t": "Enable AD DS Authentication for Azure Files",
+        "t": "Habilitar a autenticação do AD DS para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
       },
       {
-        "t": "Assign Share-Level Permissions for Azure Files",
+        "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
       }
     ],
@@ -14573,15 +14573,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Recovery plan:** é do Site Recovery.\n- **Azure Backup Server (MABS):** é para workloads on-premises.\n- **Backup policy:** é criada dentro do vault, que precisa existir antes.",
     "docs": [
       {
-        "t": "Quickstart - Back up a VM with the Azure portal by using Azure Backup - Azure Backup",
+        "t": "Início rápido: fazer backup de uma VM com o portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/quick-backup-vm-portal"
       },
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ],
@@ -14614,11 +14614,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Chave + mapear unidade:** mapear funciona com Azure Files (SMB), não com blob.\n- **Import/Export:** envio de discos físicos; o requisito é pela internet.\n- **SAS + mapear unidade:** SAS não monta unidade SMB.\n\n**Dica de prova:** AzCopy também atende e é mais rápido para volumes grandes.",
     "docs": [
       {
-        "t": "Manage Azure Blob Storage resources with Storage Explorer",
+        "t": "Gerenciar recursos do Azure Blob Storage com o Gerenciador de Armazenamento",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-explorer-blobs"
       },
       {
-        "t": "Copy or move data to Azure Storage by using AzCopy v10",
+        "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
@@ -14666,7 +14666,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ]
@@ -14713,7 +14713,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **container1 em storage1 (GPv1):** sem tiers.\n- **container1 em storage4 (FileStorage):** sem blobs.\n- **share1 em BlobStorage / FileStorage:** BlobStorage não tem Files; FileStorage é Premium (sem tier Cool).\n\n**Dica de prova:** Os tiers de Azure Files Standard são Transaction optimized, Hot e Cool, e só existem em GPv2.",
     "docs": [
       {
-        "t": "Access tiers for blob data - Azure Storage",
+        "t": "Camadas de acesso para dados de blobs - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
@@ -14721,7 +14721,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Blob rehydration from the archive tier",
+        "t": "Reidratação de blobs da camada de arquivos",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
       }
     ],
@@ -14770,11 +14770,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **BlobStorage / BlockBlobStorage:** são válidos para object replication só em pares do mesmo tipo; o gabarito pede GPv2 para casar com o storage2.\n- **GPv1:** não suporta object replication.\n- **Outros destinos:** precisam ser GPv2 com versionamento; o storage2 é o compatível.",
     "docs": [
       {
-        "t": "Configure object replication - Azure Storage",
+        "t": "Configurar a replicação de objetos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-configure"
       },
       {
-        "t": "Object replication overview - Azure Storage",
+        "t": "Visão geral da replicação de objetos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
       }
     ],
@@ -14812,7 +14812,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
-        "t": "NSG Flow Logs Overview - Azure Network Watcher",
+        "t": "Visão geral dos logs de fluxo de NSG - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview"
       },
       {
@@ -14855,7 +14855,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Diagram da VNet:** mostra a topologia, não testa regras.\n- **Diagnostic settings:** enviam logs; não testam um fluxo.\n- **Traffic Manager:** balanceamento DNS, sem relação com NSG.\n- **Advisor:** recomendações gerais; não diagnostica um fluxo.\n\n**Dica de prova:** IP flow verify: VM3, direção Outbound, TCP, IP e porta remotos (8080). O resultado mostra Allow/Deny e o nome da regra.",
     "docs": [
       {
-        "t": "IP Flow Verify Overview - Azure Network Watcher",
+        "t": "Visão geral da verificação de fluxo de IP - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
       },
       {
@@ -14963,7 +14963,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       }
     ],
@@ -15004,7 +15004,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ]
@@ -15094,7 +15094,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Find-RoleCapability:** é do JEA (PowerShell), não do Azure RBAC.\n- **Get-AzureADDirectoryRole:** funções do Entra (diretório), e o módulo AzureAD foi aposentado.\n- **Get-AzResourceProvider:** lista provedores, não definições de função.\n- **ConvertFrom-Json / ConvertFrom-String / ConvertTo-Xml:** o arquivo de entrada de New-AzRoleDefinition é JSON gerado com ConvertTo-Json.\n\n**Dica de prova:** No JSON exportado, remova o Id, mude Name/IsCustom e ajuste AssignableScopes antes de criar.",
     "docs": [
       {
-        "t": "Create or update Azure custom roles using Azure PowerShell - Azure RBAC",
+        "t": "Criar ou atualizar funções personalizadas do Azure usando o Azure PowerShell - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-powershell"
       },
       {
@@ -15131,15 +15131,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **4 recursos:** Sim. O RG1 + 3 storage accounts do loop copy.\n- **West US:** Não. Os recursos usam resourceGroup().location, que é Central US.\n- **Prefixo 0:** Sim. copyIndex() começa em 0 (sem offset).\n\n**Dica de prova:** copyIndex(1) começa em 1; útil para nomes como vm1, vm2…",
     "docs": [
       {
-        "t": "Deploy multiple instances of resources - Azure Resource Manager",
+        "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
       },
       {
-        "t": "Template functions - Azure Resource Manager",
+        "t": "Funções de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
       },
       {
-        "t": "Set deployment order for resources - Azure Resource Manager",
+        "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
       }
     ]
@@ -15179,15 +15179,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **-Name:** nome da implantação, não o RG de destino.\n- **-QueryString / -Tag:** não definem o escopo.\n- **All / Incremental:** All não existe. Incremental mantém os recursos que não estão no template.\n\n**Dica de prova:** Complete apaga recursos do RG que não estão no template. Use what-if (-WhatIf) antes.",
     "docs": [
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       }
     ]
@@ -15229,11 +15229,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **1, 3, 4 ou 5 instâncias:** a primeira ação acontece aos 10 min; aos 15, ainda está em cooldown.\n- **1, 5 ou 10 minutos:** o gabarito considera cooldown (5) + nova janela (10) = 15 min.\n\n**Dica de prova:** O cooldown é contado a partir da ação; depois dele, o autoscale reavalia a janela de duração.",
     "docs": [
       {
-        "t": "Scale Up Features and Capacities - Azure App Service",
+        "t": "Aumentar recursos e capacidades verticalmente - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
       },
       {
-        "t": "Get started with autoscale in Azure - Azure Monitor",
+        "t": "Introdução ao dimensionamento automático no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started"
       }
     ]
@@ -15260,15 +15260,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **TestSubnet1:** o ASR não escolhe pela faixa de IP.\n- **RecoverySubnetA/B:** vêm depois de DemoSubnet1 em ordem alfabética.\n\n**Dica de prova:** Para controlar a sub-rede, configure o \"test failover network\"/target subnet nas propriedades de rede da VM replicada.",
     "docs": [
       {
-        "t": "Map virtual networks between two regions in Azure Site Recovery - Azure Site Recovery",
+        "t": "Mapear redes virtuais entre duas regiões no Azure Site Recovery - Azure Site Recovery",
         "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-network-mapping"
       },
       {
-        "t": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+        "t": "Tutorial: executar o failover de VMs do Azure para uma região secundária para recuperação de desastre com o Azure Site Recovery - Azure Site Recovery",
         "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
       },
       {
-        "t": "Tutorial to run an Azure VM disaster recovery drill with Azure Site Recovery - Azure Site Recovery",
+        "t": "Tutorial: executar um teste de recuperação de desastre de VMs do Azure com o Azure Site Recovery - Azure Site Recovery",
         "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill"
       }
     ]
@@ -15294,7 +15294,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **22:** SSH do Bastion para VMs Linux, liberado na sub-rede das VMs (origem AzureBastionSubnet), não do usuário.\n- **389:** LDAP, sem relação.\n- **8080:** não é usada pelo Bastion.\n\n**Dica de prova:** As regras exigidas no NSG da AzureBastionSubnet incluem 443 de entrada da Internet e do GatewayManager, e 22/3389 de saída para a VirtualNetwork.",
     "docs": [
       {
-        "t": "Configure NSG rules for Azure Bastion",
+        "t": "Configurar regras de NSG para o Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-nsg"
       },
       {
@@ -15351,7 +15351,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Usar 10.0.1.3:** os endereços .0 a .3 de cada sub-rede são reservados.\n- **Usar 10.0.2.1 / 192.168.2.1:** fora da Subnet1.\n- **DNS padrão do Azure:** não conhece as zonas e os SRV do AD.\n- **Private/public DNS zone:** não aceitam o registro dinâmico (DDNS) do AD.\n\n**Dica de prova:** Depois de promover o DC, defina a VNet para usar o IP do DC como DNS e reinicie as VMs membro.",
     "docs": [
       {
-        "t": "Deploy AD DS in an Azure Virtual Network - Azure Architecture Center",
+        "t": "Implantar o AD DS em uma rede virtual do Azure - Centro de Arquitetura do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/identity/adds-extend-domain"
       },
       {
@@ -15426,7 +15426,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Sub-rede VNET1/netname:** Não. \"netname\" é o nome da variável; o valor é APP1.\n- **Só no RG da VNET1:** Sim. resourceId sem RG resolve no RG da implantação.\n- **sku como parâmetro:** Não. Variáveis não podem ser sobrescritas na implantação.\n\n**Dica de prova:** Para referenciar uma VNet de outro RG, use resourceId('outroRG', 'Microsoft.Network/virtualNetworks/subnets', 'VNET1', 'APP1').",
     "docs": [
       {
-        "t": "Template functions - resources - Azure Resource Manager",
+        "t": "Funções de modelos - Recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-resource"
       },
       {
@@ -15464,7 +15464,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Private endpoints:** dão acesso privado a partir da VNet, não da internet.\n- **Firewall rules:** restringem origens; não mudam a rota.\n- **Load balancing:** não se aplica ao endpoint do storage.\n\n**Dica de prova:** Microsoft network routing (padrão) entra no POP mais próximo do usuário. Internet routing entra perto da região do storage e é mais barato.",
     "docs": [
       {
-        "t": "Network routing preference - Azure Storage",
+        "t": "Preferência de roteamento de rede - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/network-routing-preference"
       },
       {
@@ -15476,7 +15476,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
-        "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+        "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
       }
     ]
@@ -15510,7 +15510,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
-        "t": "Azure service tags overview",
+        "t": "Visão geral das marcas de serviço do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       }
     ]
@@ -15536,11 +15536,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Hybrid Connection Manager:** é para App Service Hybrid Connections.\n- **Premium no ASP1:** não muda o roteamento da VNET1.\n- **Network Watcher:** diagnóstico, não roteamento.\n\n**Dica de prova:** Associe a route table às sub-redes de trabalho, nunca à AzureFirewallSubnet.",
     "docs": [
       {
-        "t": "Azure virtual network traffic routing",
+        "t": "Roteamento de tráfego de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
       },
       {
-        "t": "Tutorial: Route network traffic with a route table",
+        "t": "Tutorial: rotear tráfego de rede com uma tabela de rotas",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table"
       }
     ]
@@ -15567,7 +15567,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **storage1 / storage3:** outra região ou Premium; aumentam o custo (egress entre regiões ou SSD).\n- **storage4 (FileStorage):** não tem blobs.\n\n**Dica de prova:** O storage account precisa estar na mesma assinatura do app; com firewall, o app precisa acessar via VNet integration ou com exceções.",
     "docs": [
       {
-        "t": "Back Up an App - Azure App Service",
+        "t": "Fazer backup de um aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
       }
     ]
@@ -15612,7 +15612,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Só Alert2 para o User1:** anexar o disco altera a VM1 (write), que está dentro do escopo do RG1 também.\n- **Nenhum / só um para o User2:** a tag foi aplicada no RG1 **e** na VM1.\n\n**Dica de prova:** Alertas de activity log filtram por escopo, categoria (Administrative) e, opcionalmente, operação e status.",
     "docs": [
       {
-        "t": "Create an activity log, service health, or resource health alert rule - Azure Monitor",
+        "t": "Criar uma regra de alerta de log de atividades, integridade do serviço ou integridade do recurso - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-activity-log-alert-rule"
       },
       {
@@ -15651,11 +15651,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **1 endpoint:** o Microsoft.Storage não cobre o Entra ID.\n- **3 ou 5:** um endpoint por **serviço** basta (storage1 e storage2 usam o mesmo); VNet ↔ VNet não usa service endpoint.\n\n**Dica de prova:** Service endpoints são por sub-rede e por serviço; private endpoints são por recurso.",
     "docs": [
       {
-        "t": "Azure virtual network service endpoints",
+        "t": "Pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
       },
       {
-        "t": "Azure virtual network service endpoint policies",
+        "t": "Políticas de pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview"
       }
     ]
@@ -15682,7 +15682,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **A records:** www normalmente usa CNAME; o A seria para o domínio raiz, junto com o TXT asuid.\n- **CNAME asuid:** a verificação exige TXT, não CNAME.\n- **TXT www com o host do app:** o TXT de verificação se chama asuid.www e contém o ID, não o hostname.\n\n**Dica de prova:** O Custom Domain Verification ID aparece em App > Custom domains e é único por assinatura.",
     "docs": [
       {
-        "t": "Set Up an Existing Custom Domain Name for Your App - Azure App Service",
+        "t": "Configurar um nome de domínio personalizado existente para seu aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
       }
     ]
@@ -15708,19 +15708,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Connection Monitor:** testa conectividade; não detecta tráfego malicioso.\n- **Data collection endpoints:** servem para a ingestão do AMA/Logs API, não para tráfego de rede.\n- **Private link:** acesso privado a serviços; não gera dados de tráfego.\n\n**Dica de prova:** Fluxo: flow logs → Traffic Analytics (workspace) → Network Insights/alertas sobre IPs maliciosos.",
     "docs": [
       {
-        "t": "Traffic Analytics Overview - Azure Network Watcher",
+        "t": "Visão geral da Análise de Tráfego - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics"
       },
       {
-        "t": "Monitor virtual machines in Azure - Azure Monitor",
+        "t": "Monitorar máquinas virtuais no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
       },
       {
-        "t": "Monitor Azure Storage services with Azure Monitor Storage insights",
+        "t": "Monitorar serviços do Azure Storage com os insights de armazenamento do Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview"
       },
       {
-        "t": "Network Insights",
+        "t": "Insights de rede",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-insights-overview"
       }
     ]
@@ -15784,11 +15784,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Instâncias Windows:** o ACI não suporta grupos com vários containers Windows.\n- **Combinações com Windows:** um container group tem um único SO.\n\n**Dica de prova:** Containers de um mesmo grupo compartilham IP, rede (localhost), volumes e ciclo de vida, como um pod.",
     "docs": [
       {
-        "t": "Introduction to container groups - Azure Container Instances",
+        "t": "Introdução aos grupos de contêineres - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
       },
       {
-        "t": "Serverless containers in Azure - Azure Container Instances",
+        "t": "Contêineres sem servidor no Azure - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
       }
     ]
@@ -15850,11 +15850,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Operational backup:** protege blobs na própria conta (point-in-time), não cria cópia em outra região.\n- **GRS:** replica para a região **par** (North Europe → West Europe), não para East US.\n- **Lifecycle rule:** move tiers e exclui; não copia.\n\n**Dica de prova:** Object replication é assíncrono e exige versionamento nas duas contas e change feed na origem.",
     "docs": [
       {
-        "t": "Object replication overview - Azure Storage",
+        "t": "Visão geral da replicação de objetos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
       },
       {
-        "t": "Configure object replication - Azure Storage",
+        "t": "Configurar a replicação de objetos - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-configure"
       }
     ]
@@ -15883,11 +15883,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+        "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
       }
     ]
@@ -15947,15 +15947,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **DCR:** define coleta de dados do agente; não gera topologia.\n- **Network Watcher:** oferece diagnósticos (a topologia avulsa existe), mas o painel com métricas e topologia é o Network Insights.\n- **Log Analytics:** consulta dados; não oferece painel de topologia pronto.\n\n**Dica de prova:** Network Insights fica em Azure Monitor > Insights > Networks.",
     "docs": [
       {
-        "t": "Network Insights",
+        "t": "Insights de rede",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-insights-overview"
       },
       {
-        "t": "Monitor virtual machines in Azure - Azure Monitor",
+        "t": "Monitorar máquinas virtuais no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
       },
       {
-        "t": "Monitor Azure Storage services with Azure Monitor Storage insights",
+        "t": "Monitorar serviços do Azure Storage com os insights de armazenamento do Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview"
       }
     ]
@@ -15989,11 +15989,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Virtual Network Manager:** gerencia conectividade e regras de segurança em escala; não diagnostica um fluxo.\n- **Network Insights:** painel geral de saúde.\n- **Effective security rules:** lista as regras da NIC, mas não testa a conexão na porta 33000 de ponta a ponta.\n\n**Dica de prova:** Combine os dois: IP flow verify para o NSG da origem e do destino; connection troubleshoot para ver o caminho completo.",
     "docs": [
       {
-        "t": "IP Flow Verify Overview - Azure Network Watcher",
+        "t": "Visão geral da verificação de fluxo de IP - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
       },
       {
-        "t": "Connection Troubleshoot Overview - Azure Network Watcher",
+        "t": "Visão geral da solução de problemas de conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       },
       {
@@ -16023,7 +16023,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Redimensionar a sub-rede:** a /26 já suporta host scaling.\n- **Host scaling:** só existe no Standard ou superior; o upgrade vem primeiro.\n- **NSG:** não aumenta a capacidade.\n\n**Dica de prova:** Cada instância de scale unit suporta cerca de 20 RDP ou 40 SSH concorrentes; 100 SSH pedem pelo menos 3 instâncias.",
     "docs": [
       {
-        "t": "Configure host scaling - Azure Bastion",
+        "t": "Configurar o dimensionamento de hosts - Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configure-host-scaling"
       },
       {
@@ -16061,7 +16061,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Microsoft 365 group:** não é um destino de alerta do Azure Monitor.\n- **Log Analytics workspace:** o alerta de activity log não precisa de workspace.\n- **Data collection endpoint / ASG:** não têm relação.\n\n**Dica de prova:** Sinal: \"Delete management locks\" (Microsoft.Authorization/locks/delete).",
     "docs": [
       {
-        "t": "Create an activity log, service health, or resource health alert rule - Azure Monitor",
+        "t": "Criar uma regra de alerta de log de atividades, integridade do serviço ou integridade do recurso - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-activity-log-alert-rule"
       },
       {
@@ -16105,7 +16105,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Kerberos no Bastion:** opcional; não habilita o cliente nativo.\n- **JIT na VM1:** trata de portas públicas da VM; o Bastion não precisa dele.\n- **mstsc.exe direto:** sem IP público, o mstsc sozinho não alcança a VM; o az network bastion rdp abre o túnel e chama o mstsc.\n\n**Dica de prova:** Para usar o cliente nativo, o usuário precisa de Reader na VM, na NIC e no Bastion.",
     "docs": [
       {
-        "t": "Connect to a VM using Bastion - Windows native client - Azure Bastion",
+        "t": "Conectar a uma VM usando o Bastion - Cliente nativo do Windows - Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/connect-vm-native-client-windows"
       },
       {
@@ -16157,19 +16157,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **reference:** retorna o estado de runtime do recurso (propriedades); não serve para declarar dependência por id.\n- **union:** combina objetos ou arrays.\n- **Array / Image / vmId:** a propriedade correta é imageReference (ou image.id para imagem customizada dentro de imageReference).\n\n**Dica de prova:** O dependsOn aceita o nome simples do recurso no mesmo template, mas resourceId evita ambiguidade.",
     "docs": [
       {
-        "t": "Microsoft.Compute/virtualMachines - Bicep, ARM template & Terraform AzAPI reference",
+        "t": "Microsoft.Compute/virtualMachines - Referência de Bicep, modelos ARM e Terraform AzAPI",
         "u": "https://learn.microsoft.com/en-us/azure/templates/microsoft.compute/virtualmachines"
       },
       {
-        "t": "Template functions - Azure Resource Manager",
+        "t": "Funções de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
       },
       {
-        "t": "Deploy multiple instances of resources - Azure Resource Manager",
+        "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
       },
       {
-        "t": "Set deployment order for resources - Azure Resource Manager",
+        "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
       }
     ]
@@ -16231,15 +16231,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Sem a VNet1:** no move entre assinaturas, a VNet da NIC precisa ir junto (com todos os recursos dependentes dela).\n- **Com o storage1:** não é dependência da VM (a menos que houvesse discos não gerenciados nele).\n\n**Dica de prova:** Use \"Validate move\" (POST validateMoveResources) antes; o portal lista os dependentes que faltam.",
     "docs": [
       {
-        "t": "Special cases to move Azure VMs to new subscription or resource group - Azure Resource Manager",
+        "t": "Casos especiais para mover VMs do Azure para uma nova assinatura ou grupo de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-limitations/virtual-machines-move-limitations"
       },
       {
-        "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+        "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
       },
       {
-        "t": "Move Azure VMs across regions with Azure Resource Mover",
+        "t": "Mover VMs do Azure entre regiões com o Azure Resource Mover",
         "u": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines"
       }
     ]
@@ -16284,7 +16284,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Não pode ser alterado / só uma opção:** o user response é livre entre New, Acknowledged e Closed, nos dois sentidos.\n\n**Dica de prova:** O monitor condition (Fired/Resolved) é definido pelo sistema; o user response é manual.",
     "docs": [
       {
-        "t": "Manage your alert instances - Azure Monitor",
+        "t": "Gerenciar suas instâncias de alerta - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances"
       },
       {
@@ -16337,7 +16337,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Free / Shared / Basic:** não têm autoscale. Basic chega a 3 instâncias manuais, e Free/Shared não aceitam escala.\n- **A / AAAA / PTR:** o A aponta o domínio raiz, mas a **verificação** de posse é feita pelo TXT asuid.\n\n**Dica de prova:** O mínimo para custom domain com TLS (SNI) é Basic; para autoscale e slots, Standard.",
     "docs": [
       {
-        "t": "Set Up an Existing Custom Domain Name for Your App - Azure App Service",
+        "t": "Configurar um nome de domínio personalizado existente para seu aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
       }
     ]
@@ -16363,15 +16363,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Administrative unit:** restringe a administração do Entra, não operações do vault.\n- **Managed identity:** não protege operações críticas.\n- **Função customizada:** não implementa a aprovação por outro usuário.\n\n**Dica de prova:** Operações críticas (desabilitar soft delete, reduzir retenção…) exigem a permissão no Resource Guard, de preferência via PIM, com outro aprovador.",
     "docs": [
       {
-        "t": "Multiuser Authorization Using Resource Guard - Azure Backup",
+        "t": "Autorização de vários usuários usando o Resource Guard - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/multi-user-authorization-concept"
       },
       {
-        "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+        "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Overview of Recovery Services vaults - Azure Backup",
+        "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
       }
     ]
@@ -16439,19 +16439,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 (Gen2):** Não. A definição é Gen1 (V1), e a geração precisa casar.\n- **VM2 / VM3 (Gen1):** Sim. Recomendações de vCPU e memória não são impostas, e a região da origem não impede.\n\n**Dica de prova:** A definição também fixa o SO (Windows/Linux), o estado (Generalized/Specialized) e o tipo de segurança (Trusted launch).",
     "docs": [
       {
-        "t": "Overview of Azure Compute Gallery - Azure Virtual Machines",
+        "t": "Visão geral da Galeria de Computação do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery"
       },
       {
-        "t": "Create an image definition and image version - Azure Virtual Machines",
+        "t": "Criar uma definição de imagem e uma versão de imagem - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/image-version"
       },
       {
-        "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+        "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
       },
       {
-        "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+        "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
       }
     ]
@@ -16477,11 +16477,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **1 plano:** um plano não roda Windows e Linux ao mesmo tempo.\n- **3 ou 4:** apps do mesmo SO e região podem compartilhar o plano.",
     "docs": [
       {
-        "t": "Azure App Service Plans - Azure App Service",
+        "t": "Planos do Azure App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
       },
       {
-        "t": "Manage an App Service Plan - Azure App Service",
+        "t": "Gerenciar um plano do App Service - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
       }
     ]
@@ -16510,15 +16510,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **RG0 em East US:** Sim. A location vem do template (eastus).\n- **4 RGs:** Sim. O loop copy com count 4 gera RG0 a RG3.\n- **RG3 em West US:** Não. O -Location westus só define onde ficam os metadados da implantação.",
     "docs": [
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       }
     ]
@@ -16545,11 +16545,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **2:** a regra dispara com 80% de memória, acima do limite de 70%.\n- **3 ou 4:** em 30 min há tempo para três ações (15 min + cooldowns curtos), até o máximo de 5.\n\n**Dica de prova:** Autoscale nunca ultrapassa o Maximum configurado nem o limite do tier (Standard 10, Premium 30).",
     "docs": [
       {
-        "t": "Scale Up Features and Capacities - Azure App Service",
+        "t": "Aumentar recursos e capacidades verticalmente - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
       },
       {
-        "t": "Get started with autoscale in Azure - Azure Monitor",
+        "t": "Introdução ao dimensionamento automático no Azure - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started"
       }
     ]
@@ -16592,15 +16592,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Image1 (Windows) no Container Apps:** o Container Apps só roda Linux.\n- **Image2 (Linux) só em parte:** os três serviços rodam Linux.\n\n**Dica de prova:** O App Service roda containers Windows nos planos Premium v3 (Windows Containers) e containers Linux em planos Linux.",
     "docs": [
       {
-        "t": "Containers in Azure Container Apps",
+        "t": "Contêineres no Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/containers"
       },
       {
-        "t": "Azure Container Apps overview",
+        "t": "Visão geral do Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/overview"
       },
       {
-        "t": "Networking in an Azure Container Apps Environment",
+        "t": "Rede em um ambiente do Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/networking"
       }
     ]
@@ -16626,11 +16626,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Managed identity no App1:** é o caminho no modelo RBAC; com access policy, o principal exigido é o Microsoft Azure App Service.\n- **Mudar o KV1 para RBAC:** também funcionaria, mas não é o \"primeiro passo\" esperado.\n- **Access policy para o User1:** o usuário importa, mas quem lê o segredo depois é o principal do App Service.\n\n**Dica de prova:** No modelo RBAC, dê **Key Vault Secrets User** ao principal Microsoft Azure App Service (ou à identidade do app).",
     "docs": [
       {
-        "t": "Install a TLS/SSL Certificate for Your App - Azure App Service",
+        "t": "Instalar um certificado TLS/SSL para seu aplicativo - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate"
       },
       {
-        "t": "Secure Your Domain with TLS/SSL - Azure App Service",
+        "t": "Proteger seu domínio com TLS/SSL - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings"
       }
     ]
@@ -16675,15 +16675,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **/16 / /23 / /24:** maiores que o necessário (o /23 era o mínimo do ambiente Consumption-only legado).\n- **/28:** abaixo do mínimo de /27 do ambiente com workload profiles.\n\n**Dica de prova:** A sub-rede do ambiente precisa ser **dedicada** e delegada a Microsoft.App/environments.",
     "docs": [
       {
-        "t": "Networking in an Azure Container Apps Environment",
+        "t": "Rede em um ambiente do Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/networking"
       },
       {
-        "t": "Configure Virtual Networks in Azure Container Apps Environments",
+        "t": "Configurar redes virtuais em ambientes do Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/custom-virtual-networks"
       },
       {
-        "t": "Azure Container Apps overview",
+        "t": "Visão geral do Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/overview"
       }
     ]
@@ -16789,11 +16789,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Policy1 na Subnet3:** Sim. Mesma região da política (South Central US).\n- **VNet2 restrita a storage1 e storage2:** Não. Sem política aplicada, não há restrição.\n- **VNet3 só storage2:** Sim, pelo gabarito. O endpoint e a política filtram para a conta acessível na região.\n\n**Dica de prova:** Service endpoint policies só suportam Azure Storage e precisam estar na região da VNet.",
     "docs": [
       {
-        "t": "Azure virtual network service endpoint policies",
+        "t": "Políticas de pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview"
       },
       {
-        "t": "Azure virtual network service endpoints",
+        "t": "Pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
       }
     ]
@@ -16819,15 +16819,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Rede privada:** em VNet não há DNS name label público.\n- **Nova sub-rede:** é para o modo privado.\n- **SKU confidential:** trata de isolamento de hardware, não de DNS.\n\n**Dica de prova:** Opções de reuso: Unsecure, Tenant, Subscription, ResourceGroup e NoReuse; elas evitam o \"takeover\" do nome.",
     "docs": [
       {
-        "t": "Quickstart - Deploy Docker container to container instance - Portal - Azure Container Instances",
+        "t": "Início rápido: implantar um contêiner Docker em uma instância de contêiner - Portal - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal"
       },
       {
-        "t": "Serverless containers in Azure - Azure Container Instances",
+        "t": "Contêineres sem servidor no Azure - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
       },
       {
-        "t": "Introduction to container groups - Azure Container Instances",
+        "t": "Introdução aos grupos de contêineres - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
       }
     ]
@@ -16900,15 +16900,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que essa ordem:** cada recurso depende do anterior: a NIC precisa da sub-rede da VNet, a VM precisa da NIC, e a extensão precisa da VM existente.\n\n**Dica de prova:** No template, isso se expressa com dependsOn; o ARM paraleliza o que não tem dependência.",
     "docs": [
       {
-        "t": "Set deployment order for resources - Azure Resource Manager",
+        "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
       },
       {
-        "t": "Template functions - Azure Resource Manager",
+        "t": "Funções de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
       },
       {
-        "t": "Deploy multiple instances of resources - Azure Resource Manager",
+        "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
       }
     ]
@@ -16983,15 +16983,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **1/3 com 30 dias, 10 semanas ou 36 meses:** o ponto coincide com o anual, e vale a maior retenção (10 anos).\n- **1/11 com 30 dias, 10 semanas ou 10 anos:** é o ponto mensal (dia 1) e não é o anual, então valem 36 meses.\n\n**Dica de prova:** Quando um ponto é diário, semanal, mensal e anual ao mesmo tempo, ele fica pela maior retenção.",
     "docs": [
       {
-        "t": "Back Up an Azure VM from the VM settings - Azure Backup",
+        "t": "Fazer backup de uma VM do Azure nas configurações da VM - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
       },
       {
-        "t": "Back Up Azure VMs in a Recovery Services Vault - Azure Backup",
+        "t": "Fazer backup de VMs do Azure em um cofre dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare"
       },
       {
-        "t": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+        "t": "Fazer backup de VMs do Azure com a política aprimorada - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
       }
     ]
@@ -17020,11 +17020,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 com Policy1 (Standard):** Sim. A política Standard suporta VMs com ADE.\n- **VM2 com Policy3:** Não. A Policy3 é de Backup vault, que não protege VMs.\n- **VM2 com Policy2 (Enhanced):** Sim. Trusted launch exige a política Enhanced.\n\n**Dica de prova:** A política Enhanced permite vários backups por dia (a cada 4 h) e é obrigatória para Trusted launch e discos Premium SSD v2/Ultra.",
     "docs": [
       {
-        "t": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+        "t": "Fazer backup de VMs do Azure com a política aprimorada - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
       },
       {
-        "t": "Back Up Azure VMs in a Recovery Services Vault - Azure Backup",
+        "t": "Fazer backup de VMs do Azure em um cofre dos Serviços de Recuperação - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare"
       }
     ]
@@ -17050,11 +17050,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **DCR:** define o que coletar, não o caminho de rede.\n- **Workspace:** já pode existir; o isolamento de rede vem do AMPLS.\n- **Private endpoint primeiro:** o private endpoint do Azure Monitor é criado **para** um AMPLS.\n\n**Dica de prova:** O AMPLS afeta o DNS de toda a VNet (e das que compartilham DNS); planeje para não quebrar outros workspaces.",
     "docs": [
       {
-        "t": "Use Azure Private Link to connect networks to Azure Monitor - Azure Monitor",
+        "t": "Usar o Azure Private Link para conectar redes ao Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/private-link-security"
       },
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
@@ -17062,7 +17062,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+        "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
       }
     ]
@@ -17103,19 +17103,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **cont1 no Recovery Services vault:** blobs usam Backup vault (operacional ou vaulted).\n- **share1 no Backup vault:** Azure Files usa Recovery Services vault.\n- **Não pode ser protegido:** os dois são suportados, cada um no seu vault.",
     "docs": [
       {
-        "t": "Overview of Azure Blobs backup - Azure Backup",
+        "t": "Visão geral do backup de blobs do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/blob-backup-overview"
       },
       {
-        "t": "About Azure Files backup - Azure Backup",
+        "t": "Sobre o backup do Azure Files - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/azure-file-share-backup-overview"
       },
       {
-        "t": "Overview of the Backup vaults - Azure Backup",
+        "t": "Visão geral dos cofres de Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview"
       },
       {
-        "t": "Create and delete Backup vaults - Azure Backup",
+        "t": "Criar e excluir cofres de Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/create-manage-backup-vault"
       }
     ]
@@ -17141,15 +17141,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VNET1 / IP1 / NSG1:** são dependências da NIC, não diretas da VM.\n\n**Dica de prova:** Listar dependências indiretas no dependsOn da VM não quebra nada, mas a resposta mínima é a NIC.",
     "docs": [
       {
-        "t": "Set deployment order for resources - Azure Resource Manager",
+        "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
       },
       {
-        "t": "Template functions - Azure Resource Manager",
+        "t": "Funções de modelos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
       },
       {
-        "t": "Deploy multiple instances of resources - Azure Resource Manager",
+        "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
       }
     ]
@@ -17174,7 +17174,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Storage account:** arquivamento barato, sem consulta KQL.\n- **Event Hub:** streaming para SIEMs ou ferramentas externas.\n\n**Dica de prova:** Para SQL, o \"Database Watcher\" ou o SQL Insights complementam; na AZ-104, a resposta é o workspace.",
     "docs": [
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
@@ -17182,7 +17182,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+        "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
       }
     ]
@@ -17207,11 +17207,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **SQL / KQL:** KQL até é usado em transformações da DCR (transformKql), mas o filtro de eventos na origem é XPath.\n\n**Dica de prova:** XPath: System!*[System[(EventID=1001)]]; teste antes com Get-WinEvent -FilterXPath.",
     "docs": [
       {
-        "t": "Collect Windows events from virtual machines with Azure Monitor Agent - Azure Monitor",
+        "t": "Coletar eventos do Windows de máquinas virtuais com o Agente do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-windows-events"
       },
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
@@ -17219,7 +17219,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+        "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
       }
     ]
@@ -17279,7 +17279,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Diagnostic settings da VM / do NSG:** não geram dados de fluxo para o Traffic Analytics.\n- **Insights da VM:** é o VM Insights (desempenho e dependências), não o Traffic Analytics.\n\n**Dica de prova:** Os NSG flow logs não podem mais ser criados (a partir de 30/06/2025); hoje habilite VNet flow logs na VNet1.",
     "docs": [
       {
-        "t": "Traffic Analytics Overview - Azure Network Watcher",
+        "t": "Visão geral da Análise de Tráfego - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics"
       },
       {
@@ -17318,15 +17318,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **AMPLS / private endpoint:** isolamento de rede, opcional.\n- **Diagnostic settings:** são para logs da plataforma, não arquivos de log do SO.\n- **VM insights:** desempenho e dependências, não IIS.\n\n**Dica de prova:** Logs de texto e do IIS na DCR exigem DCE na mesma região; o AMA lê os arquivos W3C.",
     "docs": [
       {
-        "t": "Collect IIS logs from virtual machine with Azure Monitor - Azure Monitor",
+        "t": "Coletar logs do IIS de uma máquina virtual com o Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-iis"
       },
       {
-        "t": "Data collection endpoints in Azure Monitor - Azure Monitor",
+        "t": "Pontos de extremidade de coleta de dados no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-endpoint-overview"
       },
       {
-        "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+        "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
@@ -17357,15 +17357,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **New-AzManagementGroupDeployment / New-AzTenantDeployment:** escopos acima do necessário.\n- **New-AzResourceGroupDeployment:** exige um RG existente e não cria RGs.",
     "docs": [
       {
-        "t": "Deploy resources to subscription - Azure Resource Manager",
+        "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
       },
       {
-        "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+        "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
       },
       {
-        "t": "Deployment modes - Azure Resource Manager",
+        "t": "Modos de implantação - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
       }
     ]
@@ -17394,7 +17394,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM no RG1:** Sim. O lock CanNotDelete só bloqueia exclusão.\n- **VM no RG2:** Não. ReadOnly bloqueia criar e alterar recursos.\n- **Criar RG3 manualmente:** Sim. Locks de RG não afetam outros RGs da assinatura.\n\n**Dica de prova:** ReadOnly também bloqueia operações POST \"inofensivas\", como listar chaves de storage.",
     "docs": [
       {
-        "t": "Lock your Azure resources to protect your infrastructure - Azure Resource Manager",
+        "t": "Bloquear recursos do Azure para proteger sua infraestrutura - Azure Resource Manager",
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources"
       }
     ]
@@ -17420,7 +17420,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Proximity2 / Proximity3:** estão em outras regiões.\n\n**Dica de prova:** Em outras versões desta questão, o PPG correto muda; confira a região do VMSS na tabela.",
     "docs": [
       {
-        "t": "Proximity placement groups - Azure Virtual Machines",
+        "t": "Grupos de posicionamento por proximidade - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/co-location"
       },
       {
@@ -17514,11 +17514,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 → contoso102:** Não. A policy só permite contoso101 via endpoint.\n- **VM2 → contoso101:** Sim. A Subnet2 não tem endpoint nem policy, e o acesso público continua liberado.\n- **VM2 com IP privado para o Entra:** Não. Service endpoints não dão IP privado, e o Entra não usa endpoint.\n\n**Dica de prova:** Mesmo com service endpoint, o destino continua com IP público; o que muda é a identidade da origem e a rota pelo backbone.",
     "docs": [
       {
-        "t": "Azure virtual network service endpoint policies",
+        "t": "Políticas de pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview"
       },
       {
-        "t": "Azure virtual network service endpoints",
+        "t": "Pontos de extremidade de serviço de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
       }
     ]
@@ -17548,7 +17548,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Workbook:** visualização opcional; não é pré-requisito.\n- **Sentinel:** consome dados, mas não é necessário.\n- **DCR:** é usada pelo AMA, não pelos flow logs.\n\n**Dica de prova:** O storage dos flow logs precisa estar na mesma região das VNets ou NSGs monitorados.",
     "docs": [
       {
-        "t": "Traffic Analytics Overview - Azure Network Watcher",
+        "t": "Visão geral da Análise de Tráfego - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics"
       },
       {
@@ -17628,15 +17628,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **WebApp1 → VM2:** Sim. A VNet integration dá saída para a VNet1, e o peering leva à VM2.\n- **NSG1 controla a entrada do WebApp1:** Não. A integração é só de saída; a entrada no app passa pelos access restrictions ou por um private endpoint.\n- **WebApp2 (ASE) → VM1:** Sim. O ASE vive na sub-rede da VNet emparelhada.",
     "docs": [
       {
-        "t": "App Service Environment Overview - Azure App Service Environment",
+        "t": "Visão geral do Ambiente do Serviço de Aplicativo - Ambiente do Serviço de Aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/environment/overview"
       },
       {
-        "t": "Networking Features - Azure App Service",
+        "t": "Recursos de rede - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/networking-features"
       },
       {
-        "t": "Integrate your app with an Azure virtual network - Azure App Service",
+        "t": "Integrar seu aplicativo a uma rede virtual do Azure - Azure App Service",
         "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration"
       }
     ]
@@ -17663,15 +17663,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **root / admin / administrator:** o usuário do admin user é sempre o nome do registry.\n\n**Dica de prova:** O admin user é desabilitado por padrão e não é recomendado; prefira tokens com escopo, managed identity ou service principal com AcrPull.",
     "docs": [
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       }
     ]
@@ -17730,15 +17730,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Memory / CPU:** não habilitam a rede privada.\n- **Networking type:** é justamente a opção bloqueada; a causa é o SO.\n- **SKU:** Standard já suporta VNet; Confidential não muda isso.\n\n**Dica de prova:** O suporte a VNet para containers Windows no ACI chegou depois; a resposta de prova clássica é trocar para Linux.",
     "docs": [
       {
-        "t": "Deploy container group to Azure virtual network - Azure Container Instances",
+        "t": "Implantar um grupo de contêineres em uma rede virtual do Azure - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-vnet"
       },
       {
-        "t": "Serverless containers in Azure - Azure Container Instances",
+        "t": "Contêineres sem servidor no Azure - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
       },
       {
-        "t": "Introduction to container groups - Azure Container Instances",
+        "t": "Introdução aos grupos de contêineres - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
       }
     ]
@@ -17767,15 +17767,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 redimensiona a VM1:** Sim. Contributor no MG2 é herdado até a VM1.\n- **User2 cria storage no RG1:** Não. A função está no **recurso** storage1, não no RG.\n- **User3 atribui Owner no RG3:** Sim. User Access Administrator na raiz é herdado em todo lugar.",
     "docs": [
       {
-        "t": "Understand scope for Azure RBAC",
+        "t": "Entender o escopo do Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       }
     ]
@@ -17841,15 +17841,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Backup vault / Recovery Services vault:** protegem dados, não giram chaves.\n- **Redundância:** replicação, sem relação com chaves.\n- **Lifecycle management:** gerencia tiers e exclusão de blobs.\n\n**Dica de prova:** Alternativa sem Key Vault: Key expiration policy (lembrete) + script ou Automation para regenerar. O ideal é eliminar o uso de chaves (Entra ID).",
     "docs": [
       {
-        "t": "Authorize operations for data access - Azure Storage",
+        "t": "Autorizar operações de acesso a dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
       },
       {
-        "t": "Manage account access keys - Azure Storage",
+        "t": "Gerenciar chaves de acesso de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
       },
       {
-        "t": "Prevent authorization with Shared Key - Azure Storage",
+        "t": "Impedir a autorização com Chave Compartilhada - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent"
       }
     ]
@@ -17878,19 +17878,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 (só nuvem) em share1:** Não. O AD DS autentica só identidades que existem no AD.\n- **User2 em share2:** Sim. A permissão padrão de share cobre usuários autenticados.\n- **share3 (contoso2025):** Não. Essa conta não tem acesso por identidade configurado.\n\n**Dica de prova:** Para identidades só de nuvem, use **Entra Kerberos** em clientes Entra-joined (e híbridos).",
     "docs": [
       {
-        "t": "On-Premises AD DS Authentication for Azure Files",
+        "t": "Autenticação do AD DS local para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-overview"
       },
       {
-        "t": "Overview - Azure Files Identity-Based Authentication",
+        "t": "Visão geral da autenticação baseada em identidade do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
       },
       {
-        "t": "Enable AD DS Authentication for Azure Files",
+        "t": "Habilitar a autenticação do AD DS para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
       },
       {
-        "t": "Assign Share-Level Permissions for Azure Files",
+        "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
       }
     ]
@@ -17916,19 +17916,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **CMK:** criptografia em repouso, não assinatura de imagem.\n- **Connected registry:** réplica on-premises/edge do ACR.\n- **Token:** autenticação com escopo de repositório; não assina.\n\n**Dica de prova:** O Docker Content Trust (DCT) no ACR está sendo aposentado; o caminho atual é o Notation/Notary Project com Key Vault.",
     "docs": [
       {
-        "t": "Manage Signed Images with Docker Content Trust in Azure Container Registry - Azure Container Registry",
+        "t": "Gerenciar imagens assinadas com o Docker Content Trust no Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-content-trust"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -17967,15 +17967,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **ACR Tasks só no Premium:** Tasks existe em Basic, Standard e Premium.\n- **Private endpoints em Basic/Standard:** Private Link, geo-replication e firewall de rede são exclusivos do Premium.",
     "docs": [
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -18002,11 +18002,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só ACI:** o ACI não escala sozinho (só manualmente ou via orquestração externa).\n- **Opções com ACI:** pelo mesmo motivo.\n\n**Dica de prova:** O Container Apps escala por HTTP, filas e CPU via KEDA, inclusive até zero réplicas.",
     "docs": [
       {
-        "t": "Scaling in Azure Container Apps",
+        "t": "Dimensionamento no Azure Container Apps",
         "u": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
       },
       {
-        "t": "Resource availability & quota limits for Azure Container Instances (ACI) - Azure Container Instances",
+        "t": "Disponibilidade de recursos e limites de cota do Azure Container Instances (ACI) - Azure Container Instances",
         "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-resource-and-quota-limits"
       }
     ]
@@ -18047,19 +18047,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **az acr build:** compila e envia na nuvem; aqui a imagem já existe localmente.\n- **az container create / docker create:** criam containers, não registries.\n- **docker pull:** baixa, não envia.\n\n**Dica de prova:** Sequência: az acr create → az acr login -n reg → docker tag image1 reg.azurecr.io/image1:v1 → docker push.",
     "docs": [
       {
-        "t": "Quickstart - Create Registry - Azure CLI - Azure Container Registry",
+        "t": "Início rápido: criar um registro - CLI do Azure - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -18086,7 +18086,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **24 / 25:** não correspondem a nenhuma conta de sub-rede.\n- **128:** ignora os 5 endereços reservados (rede, gateway .1, DNS .2 e .3, broadcast).\n- **251:** seria uma /24 inteira.\n\n**Dica de prova:** Fórmula: 2^(32−prefixo) − 5. O Azure aceita sub-redes até /29 (3 IPs utilizáveis).",
     "docs": [
       {
-        "t": "Azure Virtual Network FAQ",
+        "t": "Perguntas frequentes sobre o Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
@@ -18098,7 +18098,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
-        "t": "Create, Change, or Delete Azure Network Interfaces",
+        "t": "Criar, alterar ou excluir interfaces de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       }
     ]
@@ -18159,15 +18159,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 (no AD, sem sincronizar):** Sim. A permissão padrão para usuários autenticados vale para quem autentica no AD DS, mesmo sem sincronizar.\n- **User2:** Sim. Tem SMB Share Reader.\n- **User3 (só nuvem):** Não. Não existe no AD DS.\n\n**Dica de prova:** A permissão padrão no nível do share é a forma de dar acesso a identidades do AD que não estão no Entra.",
     "docs": [
       {
-        "t": "Assign Share-Level Permissions for Azure Files",
+        "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
       },
       {
-        "t": "Overview - Azure Files Identity-Based Authentication",
+        "t": "Visão geral da autenticação baseada em identidade do Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
       },
       {
-        "t": "Enable AD DS Authentication for Azure Files",
+        "t": "Habilitar a autenticação do AD DS para o Azure Files",
         "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
       }
     ]
@@ -18196,19 +18196,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (erro ao implantar imagem do ACR):** sem a mensagem de erro, a série é ambígua. Na prática, o ACI precisa de credenciais para o registry: admin user, service principal ou managed identity com **AcrPull**.\n\n**Dica de prova:** Dedicated data endpoints e private endpoints são de rede; só ajudam se o erro for de firewall.",
     "docs": [
       {
-        "t": "Azure Container Registry Entra permissions and role assignments overview - Azure Container Registry",
+        "t": "Visão geral das permissões do Entra e atribuições de funções do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-rbac-built-in-roles-overview"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -18237,19 +18237,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** dedicated data endpoint muda os FQDNs de dados (para regras de firewall do cliente). Não autoriza o ACI.",
     "docs": [
       {
-        "t": "Dedicated data endpoints for Azure Container Registry - Azure Container Registry",
+        "t": "Pontos de extremidade de dados dedicados para o Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-dedicated-data-endpoints"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -18278,19 +18278,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** com private endpoint, o ACI precisaria estar na VNet, e o acesso público poderia ser bloqueado; não resolve a autorização.",
     "docs": [
       {
-        "t": "Set Up Private Endpoint with Private Link for ACR - Azure Container Registry",
+        "t": "Configurar um ponto de extremidade privado com o Private Link para o ACR - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-private-endpoints"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -18337,19 +18337,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Overview / IAM / Access keys / Identity / Encryption:** não mudam o tier nem habilitam o endpoint.\n- **Connected registries:** é outro recurso (registry on-premises).\n- **Geo-replications:** também é Premium, mas não é o que se pede.\n\n**Dica de prova:** Upgrade de tier é feito em Properties (ou Overview > Update) e é imediato, sem downtime.",
     "docs": [
       {
-        "t": "Dedicated data endpoints for Azure Container Registry - Azure Container Registry",
+        "t": "Pontos de extremidade de dados dedicados para o Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-dedicated-data-endpoints"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       },
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       }
     ]
@@ -18376,15 +18376,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VNet1 / NIC1:** route tables só se associam a sub-redes.\n\n**Dica de prova:** Uma route table pode ser associada a várias sub-redes da mesma região e assinatura; cada sub-rede tem no máximo uma.",
     "docs": [
       {
-        "t": "Create, change, or delete an Azure route table - Azure Virtual Network",
+        "t": "Criar, alterar ou excluir uma tabela de rotas do Azure - Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-route-table"
       },
       {
-        "t": "Azure virtual network traffic routing",
+        "t": "Roteamento de tráfego de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
       },
       {
-        "t": "Tutorial: Route network traffic with a route table",
+        "t": "Tutorial: rotear tráfego de rede com uma tabela de rotas",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table"
       }
     ]
@@ -18411,11 +18411,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Internet / Virtual network gateway / Virtual network:** o próximo salto é implícito; não se informa IP.\n\n**Dica de prova:** Também existe o next hop \"None\", que descarta o tráfego (blackhole).",
     "docs": [
       {
-        "t": "Azure virtual network traffic routing",
+        "t": "Roteamento de tráfego de rede virtual do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
       },
       {
-        "t": "Tutorial: Route network traffic with a route table",
+        "t": "Tutorial: rotear tráfego de rede com uma tabela de rotas",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table"
       }
     ]
@@ -18511,11 +18511,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Private endpoint:** atende só redes privadas; o home office ainda precisaria de VPN, o que dá mais esforço.\n- **Internet routing:** preferência de rota, não acesso.\n- **IAM:** autorização, não filtro de rede.\n\n**Dica de prova:** O IP do home office precisa ser **público** e de fora da região do storage.",
     "docs": [
       {
-        "t": "Azure Storage firewall rules and network access",
+        "t": "Regras de firewall e acesso à rede do Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
       },
       {
-        "t": "Create an IP network rule for Azure Storage",
+        "t": "Criar uma regra de rede IP para o Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-ip-address-range"
       }
     ]
@@ -18548,7 +18548,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Sufixo:** o formato pede o atributo antes do nome (prefixo).\n- **String:** inseriria um texto fixo, não o departamento do usuário.\n- **Company branding:** personaliza a tela de login.\n\n**Dica de prova:** A naming policy vale para grupos Microsoft 365 criados por usuários (Outlook, Teams…); administradores com certas funções ficam isentos.",
     "docs": [
       {
-        "t": "Enforce a group naming policy in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Impor uma política de nomenclatura de grupos no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-naming-policy"
       },
       {
@@ -18587,11 +18587,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **storage2 (RA-GRS):** a conversão iria para RA-GZRS.\n- **storage3 (BlobStorage):** tipo legado sem ZRS.\n\n**Dica de prova:** Mudar a redundância em GPv2 é feito em Redundancy no portal; LRS↔ZRS faz uma conversão (migração em segundo plano).",
     "docs": [
       {
-        "t": "Change how a storage account is replicated - Azure Storage",
+        "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
       },
       {
-        "t": "Data redundancy - Azure Storage",
+        "t": "Redundância de dados - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
       }
     ]
@@ -18620,15 +18620,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (listar e regenerar chaves):** Reader and Data Access só **lista**; regenerar exige a ação regenerateKey. Atendem **Storage Account Key Operator Service Role**, Storage Account Contributor e Contributor.",
     "docs": [
       {
-        "t": "Azure built-in roles for Storage - Azure RBAC",
+        "t": "Funções internas do Azure para Armazenamento - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/storage"
       },
       {
-        "t": "Manage account access keys - Azure Storage",
+        "t": "Gerenciar chaves de acesso de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
       },
       {
-        "t": "Prevent authorization with Shared Key - Azure Storage",
+        "t": "Impedir a autorização com Chave Compartilhada - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent"
       }
     ]
@@ -18657,15 +18657,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Storage Account Key Operator Service Role é a função de menor privilégio que tem listKeys e regenerateKey.",
     "docs": [
       {
-        "t": "Azure built-in roles for Storage - Azure RBAC",
+        "t": "Funções internas do Azure para Armazenamento - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/storage"
       },
       {
-        "t": "Manage account access keys - Azure Storage",
+        "t": "Gerenciar chaves de acesso de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
       },
       {
-        "t": "Prevent authorization with Shared Key - Azure Storage",
+        "t": "Impedir a autorização com Chave Compartilhada - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent"
       }
     ]
@@ -18694,15 +18694,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Encryption Scope Contributor só gerencia encryption scopes, sem acesso a chaves.",
     "docs": [
       {
-        "t": "Azure built-in roles for Storage - Azure RBAC",
+        "t": "Funções internas do Azure para Armazenamento - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/storage"
       },
       {
-        "t": "Manage account access keys - Azure Storage",
+        "t": "Gerenciar chaves de acesso de contas - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
       },
       {
-        "t": "Prevent authorization with Shared Key - Azure Storage",
+        "t": "Impedir a autorização com Chave Compartilhada - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent"
       }
     ]
@@ -18731,15 +18731,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** sem o erro, é ambígua; o gabarito marca Não. Para o ACI puxar a imagem, ele precisa de credenciais, e o admin user dá uma credencial, mas não é a solução recomendada.",
     "docs": [
       {
-        "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+        "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
       },
       {
-        "t": "Introduction to Azure Container Registry - Azure Container Registry",
+        "t": "Introdução ao Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
       },
       {
-        "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+        "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
         "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
       }
     ]
@@ -18765,11 +18765,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Proximity placement group:** restringe ainda mais o posicionamento; não ajuda.\n- **Converter para managed (aligned):** trata do alinhamento de discos, não da disponibilidade de tamanho.\n- **Desligar outras VMs (pelo SO):** VM desligada pelo SO continua alocada.\n\n**Dica de prova:** Em availability set, para mudar para um tamanho fora do cluster, desaloque **todas** as VMs do set, redimensione e inicie.",
     "docs": [
       {
-        "t": "Virtual machine sizes overview - Azure Virtual Machines",
+        "t": "Visão geral dos tamanhos de máquinas virtuais - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview"
       },
       {
-        "t": "Resize a virtual machine - Azure Virtual Machines",
+        "t": "Redimensionar uma máquina virtual - Máquinas Virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
       }
     ]
@@ -18799,7 +18799,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **VM1:** o IP público é associado à NIC da VM, não à VM.\n- **VPN1:** o gateway exige o IP na criação; não é associado depois como recurso avulso (e exige SKU/zona específicos).\n- **VNet1:** VNets não têm IP público.\n\n**Dica de prova:** Também aceitam IP público: Application Gateway, Azure Firewall, Bastion e NAT gateway.",
     "docs": [
       {
-        "t": "Public IP addresses in Azure - Azure Virtual Network",
+        "t": "Endereços IP públicos no Azure - Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
       }
     ]
@@ -18828,15 +18828,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1:** Sim. A Subnet1 tem service endpoint e a regra de VNet a libera.\n- **VM2 com IP público na lista:** Não. IP rules não se aplicam a clientes na mesma região do storage (o tráfego usa IP privado).\n- **VM3 precisa usar IP privado:** Não. O cliente usa o endpoint público do storage; o service endpoint só muda a identidade da origem.\n\n**Dica de prova:** Para clientes na mesma região, use regras de VNet (service endpoint) ou private endpoint, nunca IP rules.",
     "docs": [
       {
-        "t": "Guidelines & limitations: Azure Storage firewall",
+        "t": "Diretrizes e limitações: firewall do Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations"
       },
       {
-        "t": "Azure Storage firewall rules and network access",
+        "t": "Regras de firewall e acesso à rede do Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
       },
       {
-        "t": "Create an IP network rule for Azure Storage",
+        "t": "Criar uma regra de rede IP para o Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-ip-address-range"
       }
     ]

@@ -110,3 +110,10 @@ A interface passou a preferir `pt-br` nos links de `learn.microsoft.com`, `docs.
 - Amostras externas: páginas do Learn sobre administradores locais e criação de usuários abriram em português. Requisições HTTP ao antigo endereço de tags do Azure em `docs.microsoft.com` e ao artigo de coleções do My Apps em `support.microsoft.com` retornaram 200, com redirecionamentos e idioma HTML `pt-br`. Não foram testados todos os links; o conteúdo disponível depende da Microsoft.
 
 Evidências locais: `../Certificados-102-validacao/links-ptbr.cjs` e `links-ptbr.json`. Backup dos arquivos antes da alteração: `../Certificados-102-backups/antes-links-ptbr-bc84383.zip`.
+
+## Tradução dos títulos de documentação — 22/10/2026
+
+- Catálogo ampliado com 682 títulos em português brasileiro, aplicado às três provas em 2.131 ocorrências adicionais.
+- Auditoria: 3.617 ocorrências traduzidas, zero títulos pendentes e 20 ocorrências de nomes de cmdlets preservadas.
+- Validador estrutural aprovado: 1.026 questões, IDs, tipos, alternativas, gabaritos, URLs, código e imagens preservados; sintaxe JavaScript válida.
+- Alteração restrita aos títulos dos links, sem mudança de layout ou comportamento da interface.

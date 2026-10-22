@@ -64,11 +64,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar usuários externos",
           "docs": [
             {
-              "t": "Add B2B collaboration users - Microsoft Entra External ID",
+              "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
               "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
             },
             {
-              "t": "Bulk invite B2B users - Microsoft Entra External ID",
+              "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
               "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
             },
             {
@@ -114,15 +114,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Atribuir funções em diferentes escopos",
           "docs": [
             {
-              "t": "Understand scope for Azure RBAC",
+              "t": "Entender o escopo do Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
             },
             {
-              "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+              "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
             },
             {
-              "t": "Azure custom roles - Azure RBAC",
+              "t": "Funções personalizadas do Azure - Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
             }
           ]
@@ -131,15 +131,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Interpretar atribuições de acesso",
           "docs": [
             {
-              "t": "Quickstart - Check access for a user to a single Azure resource - Azure RBAC",
+              "t": "Início rápido: verificar o acesso de um usuário a um recurso do Azure - Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/check-access"
             },
             {
-              "t": "List Azure role assignments using the Azure portal - Azure RBAC",
+              "t": "Listar atribuições de funções do Azure usando o portal do Azure - Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal"
             },
             {
-              "t": "Understand Azure role definitions - Azure RBAC",
+              "t": "Entender as definições de funções do Azure - Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-definitions"
             }
           ]
@@ -163,7 +163,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
             },
             {
-              "t": "Quickstart: Create policy assignment using Azure portal - Azure Policy",
+              "t": "Início rápido: criar uma atribuição de política usando o portal do Azure - Azure Policy",
               "u": "https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal"
             }
           ]
@@ -172,7 +172,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar bloqueios de recursos",
           "docs": [
             {
-              "t": "Lock your Azure resources to protect your infrastructure - Azure Resource Manager",
+              "t": "Bloquear recursos do Azure para proteger sua infraestrutura - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources"
             }
           ]
@@ -181,11 +181,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Aplicar e gerenciar marcas em recursos",
           "docs": [
             {
-              "t": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+              "t": "Usar marcas para organizar recursos do Azure e a hierarquia de gerenciamento - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
             },
             {
-              "t": "Policy definitions for tagging resources - Azure Resource Manager",
+              "t": "Definições de políticas para marcação de recursos - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies"
             }
           ]
@@ -194,11 +194,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar grupos de recursos",
           "docs": [
             {
-              "t": "Use the Azure portal and Azure Resource Manager to Manage Resource Groups - Azure Resource Manager",
+              "t": "Usar o portal do Azure e o Azure Resource Manager para gerenciar grupos de recursos - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
             },
             {
-              "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+              "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
             }
           ]
@@ -207,15 +207,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar assinaturas",
           "docs": [
             {
-              "t": "Create a Microsoft Customer Agreement subscription - Azure Cost Management + Billing",
+              "t": "Criar uma assinatura do Contrato de Cliente da Microsoft - Azure Cost Management + Billing",
               "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription"
             },
             {
-              "t": "Transfer an Azure subscription to a different Microsoft Entra directory",
+              "t": "Transferir uma assinatura do Azure para outro diretório do Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/transfer-subscription"
             },
             {
-              "t": "View quotas - Azure Quotas",
+              "t": "Exibir cotas - Azure Quotas",
               "u": "https://learn.microsoft.com/en-us/azure/quotas/view-quotas"
             }
           ]
@@ -224,15 +224,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar custos usando alertas, orçamentos e recomendações do Azure Advisor",
           "docs": [
             {
-              "t": "Tutorial - Create and manage budgets - Microsoft Cost Management",
+              "t": "Tutorial: criar e gerenciar orçamentos - Microsoft Cost Management",
               "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
             },
             {
-              "t": "Monitor usage and spending with cost alerts in Cost Management - Microsoft Cost Management",
+              "t": "Monitorar o uso e os gastos com alertas de custo no Gerenciamento de Custos - Microsoft Cost Management",
               "u": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending"
             },
             {
-              "t": "Optimize virtual machine (VM) or virtual machine scale set (VMSS) spend by resizing or shutting down underutilized instances - Azure Advisor",
+              "t": "Otimizar os gastos de máquinas virtuais (VMs) ou conjuntos de dimensionamento de máquinas virtuais (VMSS) redimensionando ou desligando instâncias subutilizadas - Azure Advisor",
               "u": "https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations"
             }
           ]
@@ -241,11 +241,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar grupos de gerenciamento",
           "docs": [
             {
-              "t": "Organize your resources with management groups - Azure Governance - Azure governance",
+              "t": "Organizar recursos com grupos de gerenciamento - Azure Governance - Governança do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
             },
             {
-              "t": "Elevate access to manage all Azure subscriptions and management groups",
+              "t": "Elevar o acesso para gerenciar todas as assinaturas e grupos de gerenciamento do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin"
             }
           ]
@@ -261,11 +261,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar firewalls e redes virtuais do Azure Storage",
           "docs": [
             {
-              "t": "Azure Storage firewall rules and network access",
+              "t": "Regras de firewall e acesso à rede do Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
             },
             {
-              "t": "Create an IP network rule for Azure Storage",
+              "t": "Criar uma regra de rede IP para o Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-ip-address-range"
             }
           ]
@@ -274,11 +274,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e usar tokens de assinatura de acesso compartilhado (SAS)",
           "docs": [
             {
-              "t": "Grant limited access to data with shared access signatures (SAS) - Azure Storage",
+              "t": "Conceder acesso limitado a dados com assinaturas de acesso compartilhado (SAS) - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
             },
             {
-              "t": "Create a service SAS for a container or blob with .NET - Azure Storage",
+              "t": "Criar uma SAS de serviço para um contêiner ou blob com .NET - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet"
             }
           ]
@@ -287,7 +287,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar políticas de acesso armazenadas",
           "docs": [
             {
-              "t": "Define a stored access policy - Azure Storage",
+              "t": "Definir uma política de acesso armazenada - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
             }
           ]
@@ -296,11 +296,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar chaves de acesso",
           "docs": [
             {
-              "t": "Manage account access keys - Azure Storage",
+              "t": "Gerenciar chaves de acesso de contas - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
             },
             {
-              "t": "Prevent authorization with Shared Key - Azure Storage",
+              "t": "Impedir a autorização com Chave Compartilhada - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent"
             }
           ]
@@ -309,15 +309,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o acesso baseado em identidade para o Azure Files",
           "docs": [
             {
-              "t": "Overview - Azure Files Identity-Based Authentication",
+              "t": "Visão geral da autenticação baseada em identidade do Azure Files",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
             },
             {
-              "t": "Enable AD DS Authentication for Azure Files",
+              "t": "Habilitar a autenticação do AD DS para o Azure Files",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable"
             },
             {
-              "t": "Assign Share-Level Permissions for Azure Files",
+              "t": "Atribuir permissões no nível de compartilhamento para o Azure Files",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
             }
           ]
@@ -341,7 +341,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
             },
             {
-              "t": "Upgrade to a general-purpose v2 storage account - Azure Storage",
+              "t": "Atualizar para uma conta de armazenamento de uso geral v2 - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade"
             }
           ]
@@ -350,11 +350,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar a redundância do Azure Storage",
           "docs": [
             {
-              "t": "Data redundancy - Azure Storage",
+              "t": "Redundância de dados - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
             },
             {
-              "t": "Change how a storage account is replicated - Azure Storage",
+              "t": "Alterar a forma de replicação de uma conta de armazenamento - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration"
             }
           ]
@@ -363,11 +363,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar a replicação de objetos",
           "docs": [
             {
-              "t": "Object replication overview - Azure Storage",
+              "t": "Visão geral da replicação de objetos - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
             },
             {
-              "t": "Configure object replication - Azure Storage",
+              "t": "Configurar a replicação de objetos - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-configure"
             }
           ]
@@ -376,15 +376,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar a criptografia de contas de armazenamento",
           "docs": [
             {
-              "t": "Azure Storage encryption for data at rest",
+              "t": "Criptografia de dados em repouso no Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
             },
             {
-              "t": "Customer-managed keys for account encryption - Azure Storage",
+              "t": "Chaves gerenciadas pelo cliente para criptografia de contas - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
             },
             {
-              "t": "Encryption scopes for Blob storage - Azure Storage",
+              "t": "Escopos de criptografia do Armazenamento de Blobs - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview"
             }
           ]
@@ -393,7 +393,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar dados usando o Azure Storage Explorer e o AzCopy",
           "docs": [
             {
-              "t": "Copy or move data to Azure Storage by using AzCopy v10",
+              "t": "Copiar ou mover dados para o Azure Storage usando o AzCopy v10",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
             },
             {
@@ -413,15 +413,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar um compartilhamento de arquivos no Azure Files",
           "docs": [
             {
-              "t": "Create a classic file share - Azure Files",
+              "t": "Criar um compartilhamento de arquivos clássico - Azure Files",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
             },
             {
-              "t": "Plan an Azure Files deployment",
+              "t": "Planejar uma implantação do Azure Files",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning"
             },
             {
-              "t": "Mount SMB Azure File Share on Windows",
+              "t": "Montar um compartilhamento de arquivos SMB do Azure no Windows",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
             }
           ]
@@ -430,15 +430,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar um contêiner no Azure Blob Storage",
           "docs": [
             {
-              "t": "Introduction to Blob (object) Storage - Azure Storage",
+              "t": "Introdução ao Armazenamento de Blobs (objetos) - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
             },
             {
-              "t": "Quickstart: Upload, download, and list blobs - Azure portal - Azure Storage",
+              "t": "Início rápido: carregar, baixar e listar blobs - Portal do Azure - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
             },
             {
-              "t": "Immutable Storage for Blob Data Overview - Azure Storage",
+              "t": "Visão geral do armazenamento imutável de dados de blobs - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview"
             }
           ]
@@ -447,11 +447,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar camadas de armazenamento",
           "docs": [
             {
-              "t": "Access tiers for blob data - Azure Storage",
+              "t": "Camadas de acesso para dados de blobs - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
             },
             {
-              "t": "Blob rehydration from the archive tier",
+              "t": "Reidratação de blobs da camada de arquivos",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
             }
           ]
@@ -460,11 +460,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar a exclusão reversível de blobs e contêineres",
           "docs": [
             {
-              "t": "Soft Delete for Blobs to Recover Data - Azure Storage",
+              "t": "Exclusão reversível de blobs para recuperação de dados - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview"
             },
             {
-              "t": "Soft Delete for Containers in Azure Storage - Azure Storage",
+              "t": "Exclusão reversível de contêineres no Azure Storage - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview"
             }
           ]
@@ -473,11 +473,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar snapshots e exclusão reversível para o Azure Files",
           "docs": [
             {
-              "t": "Use Azure Files Share Snapshots",
+              "t": "Usar instantâneos de compartilhamentos do Azure Files",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
             },
             {
-              "t": "Azure File Share Soft Delete",
+              "t": "Exclusão reversível de compartilhamentos de arquivos do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
             }
           ]
@@ -490,7 +490,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
             },
             {
-              "t": "Configure a lifecycle management policy - Azure Blob Storage",
+              "t": "Configurar uma política de gerenciamento do ciclo de vida - Azure Blob Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure"
             }
           ]
@@ -499,7 +499,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o controle de versão de blobs",
           "docs": [
             {
-              "t": "Blob Versioning in Azure Storage - Azure Storage",
+              "t": "Controle de versão de blobs no Azure Storage - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview"
             }
           ]
@@ -515,11 +515,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Interpretar um modelo do Azure Resource Manager ou um arquivo Bicep",
           "docs": [
             {
-              "t": "Template structure and syntax - Azure Resource Manager",
+              "t": "Estrutura e sintaxe de modelos - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax"
             },
             {
-              "t": "Bicep file structure and syntax - Azure Resource Manager",
+              "t": "Estrutura e sintaxe de arquivos Bicep - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file"
             }
           ]
@@ -528,15 +528,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Modificar um modelo existente do Azure Resource Manager",
           "docs": [
             {
-              "t": "Template functions - Azure Resource Manager",
+              "t": "Funções de modelos - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions"
             },
             {
-              "t": "Deploy multiple instances of resources - Azure Resource Manager",
+              "t": "Implantar várias instâncias de recursos - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/copy-resources"
             },
             {
-              "t": "Set deployment order for resources - Azure Resource Manager",
+              "t": "Definir a ordem de implantação de recursos - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/resource-dependency"
             }
           ]
@@ -545,11 +545,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Modificar um arquivo Bicep existente",
           "docs": [
             {
-              "t": "What is Bicep? - Azure Resource Manager",
+              "t": "O que é Bicep? - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview"
             },
             {
-              "t": "Iterative loops in Bicep - Azure Resource Manager",
+              "t": "Loops iterativos no Bicep - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/loops"
             }
           ]
@@ -558,15 +558,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Implantar recursos usando um modelo do Azure Resource Manager ou um arquivo Bicep",
           "docs": [
             {
-              "t": "Deploy resources with PowerShell and template - Azure Resource Manager",
+              "t": "Implantar recursos com PowerShell e um modelo - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
             },
             {
-              "t": "Deploy resources to subscription - Azure Resource Manager",
+              "t": "Implantar recursos em uma assinatura - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
             },
             {
-              "t": "Deployment modes - Azure Resource Manager",
+              "t": "Modos de implantação - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
             }
           ]
@@ -575,11 +575,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Exportar uma implantação como modelo do Azure Resource Manager ou converter um modelo do Azure Resource Manager em arquivo Bicep",
           "docs": [
             {
-              "t": "Export template in Azure portal - Azure Resource Manager",
+              "t": "Exportar um modelo no portal do Azure - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
             },
             {
-              "t": "Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager",
+              "t": "Descompilar um modelo JSON do Azure Resource Manager para Bicep - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile"
             }
           ]
@@ -595,15 +595,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar uma máquina virtual",
           "docs": [
             {
-              "t": "Quickstart - Create a Windows VM in the Azure portal - Azure Virtual Machines",
+              "t": "Início rápido: criar uma VM Windows no portal do Azure - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal"
             },
             {
-              "t": "Overview of cloud-init support for Linux VMs in Azure - Azure Virtual Machines",
+              "t": "Visão geral do suporte ao cloud-init para VMs Linux no Azure - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init"
             },
             {
-              "t": "Azure virtual machine extensions and features - Azure Virtual Machines",
+              "t": "Extensões e recursos de máquinas virtuais do Azure - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview"
             }
           ]
@@ -612,11 +612,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar a criptografia no host para máquinas virtuais do Azure",
           "docs": [
             {
-              "t": "Overview of managed disk encryption options - Azure Virtual Machines",
+              "t": "Visão geral das opções de criptografia de discos gerenciados - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview"
             },
             {
-              "t": "Enable end-to-end encryption using encryption at host - Azure portal - managed disks - Azure Virtual Machines",
+              "t": "Habilitar a criptografia de ponta a ponta usando criptografia no host - Portal do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal"
             }
           ]
@@ -625,11 +625,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Mover uma máquina virtual para outro grupo de recursos, assinatura ou região",
           "docs": [
             {
-              "t": "Move Azure resources to a new resource group or subscription - Azure Resource Manager",
+              "t": "Mover recursos do Azure para um novo grupo de recursos ou assinatura - Azure Resource Manager",
               "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
             },
             {
-              "t": "Move Azure VMs across regions with Azure Resource Mover",
+              "t": "Mover VMs do Azure entre regiões com o Azure Resource Mover",
               "u": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines"
             }
           ]
@@ -638,11 +638,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar tamanhos de máquinas virtuais",
           "docs": [
             {
-              "t": "Virtual machine sizes overview - Azure Virtual Machines",
+              "t": "Visão geral dos tamanhos de máquinas virtuais - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview"
             },
             {
-              "t": "Resize a virtual machine - Azure Virtual Machines",
+              "t": "Redimensionar uma máquina virtual - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
             }
           ]
@@ -651,15 +651,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar discos de máquinas virtuais",
           "docs": [
             {
-              "t": "Overview of Azure Disk Storage - Azure Virtual Machines",
+              "t": "Visão geral do Azure Disk Storage - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
             },
             {
-              "t": "Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines",
+              "t": "Selecionar um tipo de disco para VMs IaaS do Azure - Discos gerenciados - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
             },
             {
-              "t": "Attach a managed data disk to a Windows VM by using the Azure portal - Azure Virtual Machines",
+              "t": "Anexar um disco de dados gerenciado a uma VM Windows usando o portal do Azure - Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal"
             }
           ]
@@ -685,15 +685,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Implantar e configurar o Azure Virtual Machine Scale Sets",
           "docs": [
             {
-              "t": "Azure Virtual Machine Scale Sets overview - Azure Virtual Machine Scale Sets",
+              "t": "Visão geral dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
             },
             {
-              "t": "Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets",
+              "t": "Modos de orquestração dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
             },
             {
-              "t": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+              "t": "Visão geral do dimensionamento automático com Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Conjuntos de Dimensionamento de Máquinas Virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview"
             }
           ]
@@ -709,15 +709,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e gerenciar um Azure Container Registry",
           "docs": [
             {
-              "t": "Introduction to Azure Container Registry - Azure Container Registry",
+              "t": "Introdução ao Azure Container Registry - Azure Container Registry",
               "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro"
             },
             {
-              "t": "Azure Container Registry SKU Features and Limits - Azure Container Registry",
+              "t": "Recursos e limites das SKUs do Azure Container Registry - Azure Container Registry",
               "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
             },
             {
-              "t": "Azure Container Registry Authentication Options Explained - Azure Container Registry",
+              "t": "Opções de autenticação do Azure Container Registry explicadas - Azure Container Registry",
               "u": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication"
             }
           ]
@@ -726,11 +726,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Provisionar um contêiner usando o Azure Container Instances",
           "docs": [
             {
-              "t": "Serverless containers in Azure - Azure Container Instances",
+              "t": "Contêineres sem servidor no Azure - Azure Container Instances",
               "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
             },
             {
-              "t": "Introduction to container groups - Azure Container Instances",
+              "t": "Introdução aos grupos de contêineres - Azure Container Instances",
               "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
             }
           ]
@@ -739,11 +739,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Provisionar um contêiner usando o Azure Container Apps",
           "docs": [
             {
-              "t": "Azure Container Apps overview",
+              "t": "Visão geral do Azure Container Apps",
               "u": "https://learn.microsoft.com/en-us/azure/container-apps/overview"
             },
             {
-              "t": "Networking in an Azure Container Apps Environment",
+              "t": "Rede em um ambiente do Azure Container Apps",
               "u": "https://learn.microsoft.com/en-us/azure/container-apps/networking"
             }
           ]
@@ -752,11 +752,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar o dimensionamento e a escala de contêineres, incluindo Azure Container Instances e Azure Container Apps",
           "docs": [
             {
-              "t": "Scaling in Azure Container Apps",
+              "t": "Dimensionamento no Azure Container Apps",
               "u": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
             },
             {
-              "t": "Resource availability & quota limits for Azure Container Instances (ACI) - Azure Container Instances",
+              "t": "Disponibilidade de recursos e limites de cota do Azure Container Instances (ACI) - Azure Container Instances",
               "u": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-resource-and-quota-limits"
             }
           ]
@@ -772,11 +772,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Provisionar um plano do App Service",
           "docs": [
             {
-              "t": "Azure App Service Plans - Azure App Service",
+              "t": "Planos do Azure App Service - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
             },
             {
-              "t": "Manage an App Service Plan - Azure App Service",
+              "t": "Gerenciar um plano do App Service - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
             }
           ]
@@ -785,11 +785,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o dimensionamento de um plano do App Service",
           "docs": [
             {
-              "t": "Scale Up Features and Capacities - Azure App Service",
+              "t": "Aumentar recursos e capacidades verticalmente - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
             },
             {
-              "t": "Get started with autoscale in Azure - Azure Monitor",
+              "t": "Introdução ao dimensionamento automático no Azure - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started"
             }
           ]
@@ -798,11 +798,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar um App Service",
           "docs": [
             {
-              "t": "Overview of Azure App Service - Azure App Service",
+              "t": "Visão geral do Azure App Service - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/overview"
             },
             {
-              "t": "Quickstart: Deploy an ASP.NET web app - Azure App Service",
+              "t": "Início rápido: implantar um aplicativo Web ASP.NET - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore"
             }
           ]
@@ -811,11 +811,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar certificados e Transport Layer Security (TLS) para um App Service",
           "docs": [
             {
-              "t": "Install a TLS/SSL Certificate for Your App - Azure App Service",
+              "t": "Instalar um certificado TLS/SSL para seu aplicativo - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate"
             },
             {
-              "t": "Secure Your Domain with TLS/SSL - Azure App Service",
+              "t": "Proteger seu domínio com TLS/SSL - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings"
             }
           ]
@@ -824,7 +824,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Mapear um nome DNS personalizado existente para um App Service",
           "docs": [
             {
-              "t": "Set Up an Existing Custom Domain Name for Your App - Azure App Service",
+              "t": "Configurar um nome de domínio personalizado existente para seu aplicativo - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
             }
           ]
@@ -833,7 +833,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o backup de um App Service",
           "docs": [
             {
-              "t": "Back Up an App - Azure App Service",
+              "t": "Fazer backup de um aplicativo - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
             }
           ]
@@ -842,11 +842,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Definir configurações de rede para um App Service",
           "docs": [
             {
-              "t": "Networking Features - Azure App Service",
+              "t": "Recursos de rede - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/networking-features"
             },
             {
-              "t": "Integrate your app with an Azure virtual network - Azure App Service",
+              "t": "Integrar seu aplicativo a uma rede virtual do Azure - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration"
             }
           ]
@@ -855,7 +855,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar slots de implantação para um App Service",
           "docs": [
             {
-              "t": "Set Up Staging Environments - Azure App Service",
+              "t": "Configurar ambientes de preparo - Azure App Service",
               "u": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
             }
           ]
@@ -879,7 +879,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
             },
             {
-              "t": "Create, Change, or Delete Azure Network Interfaces",
+              "t": "Criar, alterar ou excluir interfaces de rede do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
             }
           ]
@@ -901,11 +901,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar endereços IP públicos",
           "docs": [
             {
-              "t": "Public IP addresses in Azure - Azure Virtual Network",
+              "t": "Endereços IP públicos no Azure - Azure Virtual Network",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
             },
             {
-              "t": "Public IP addresses in Azure - Azure Virtual Network",
+              "t": "Endereços IP públicos no Azure - Azure Virtual Network",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
             }
           ]
@@ -914,11 +914,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar rotas definidas pelo usuário",
           "docs": [
             {
-              "t": "Azure virtual network traffic routing",
+              "t": "Roteamento de tráfego de rede virtual do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
             },
             {
-              "t": "Tutorial: Route network traffic with a route table",
+              "t": "Tutorial: rotear tráfego de rede com uma tabela de rotas",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table"
             }
           ]
@@ -931,11 +931,11 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
             },
             {
-              "t": "IP Flow Verify Overview - Azure Network Watcher",
+              "t": "Visão geral da verificação de fluxo de IP - Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
             },
             {
-              "t": "Connection Troubleshoot Overview - Azure Network Watcher",
+              "t": "Visão geral da solução de problemas de conexão - Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
             }
           ]
@@ -959,7 +959,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
             },
             {
-              "t": "Azure service tags overview",
+              "t": "Visão geral das marcas de serviço do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
             }
           ]
@@ -998,11 +998,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar endpoints de serviço para a plataforma como serviço (PaaS) do Azure",
           "docs": [
             {
-              "t": "Azure virtual network service endpoints",
+              "t": "Pontos de extremidade de serviço de rede virtual do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
             },
             {
-              "t": "Azure virtual network service endpoint policies",
+              "t": "Políticas de pontos de extremidade de serviço de rede virtual do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview"
             }
           ]
@@ -1011,11 +1011,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar endpoints privados para PaaS do Azure",
           "docs": [
             {
-              "t": "What is a private endpoint? - Azure Private Link",
+              "t": "O que é um ponto de extremidade privado? - Azure Private Link",
               "u": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
             },
             {
-              "t": "Use private endpoints - Azure Storage",
+              "t": "Usar pontos de extremidade privados - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
             }
           ]
@@ -1065,11 +1065,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Solucionar problemas de balanceamento de carga",
           "docs": [
             {
-              "t": "Troubleshoot common problems with Azure Load Balancer - Azure",
+              "t": "Solucionar problemas comuns do Azure Load Balancer - Azure",
               "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/troubleshoot-common-problems/load-balancer-troubleshoot"
             },
             {
-              "t": "Azure Load Balancer health probes",
+              "t": "Investigações de integridade do Azure Load Balancer",
               "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
             }
           ]
@@ -1085,11 +1085,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Interpretar métricas no Azure Monitor",
           "docs": [
             {
-              "t": "Metrics in Azure Monitor - Azure Monitor",
+              "t": "Métricas no Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics"
             },
             {
-              "t": "Analyze metrics with Azure Monitor metrics explorer - Azure Monitor",
+              "t": "Analisar métricas com o explorador de métricas do Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/analyze-metrics"
             }
           ]
@@ -1098,7 +1098,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Definir configurações de log no Azure Monitor",
           "docs": [
             {
-              "t": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+              "t": "Configurações de diagnóstico no Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
             },
             {
@@ -1106,7 +1106,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
             },
             {
-              "t": "Data Collection Rules in Azure Monitor - Azure Monitor",
+              "t": "Regras de coleta de dados no Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
             }
           ]
@@ -1115,11 +1115,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Consultar e analisar logs no Azure Monitor",
           "docs": [
             {
-              "t": "Log Analytics Tutorial: Query and Analyze Log Data - Azure Monitor",
+              "t": "Tutorial do Log Analytics: consultar e analisar dados de log - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial"
             },
             {
-              "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+              "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
             }
           ]
@@ -1145,15 +1145,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar e interpretar o monitoramento de máquinas virtuais, contas de armazenamento e redes usando o Azure Monitor Insights",
           "docs": [
             {
-              "t": "Monitor virtual machines in Azure - Azure Monitor",
+              "t": "Monitorar máquinas virtuais no Azure - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
             },
             {
-              "t": "Monitor Azure Storage services with Azure Monitor Storage insights",
+              "t": "Monitorar serviços do Azure Storage com os insights de armazenamento do Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview"
             },
             {
-              "t": "Network Insights",
+              "t": "Insights de rede",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-insights-overview"
             }
           ]
@@ -1186,11 +1186,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar um cofre dos Serviços de Recuperação",
           "docs": [
             {
-              "t": "Create and Configure Recovery Services Vaults - Azure Backup",
+              "t": "Criar e configurar cofres dos Serviços de Recuperação - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
             },
             {
-              "t": "Overview of Recovery Services vaults - Azure Backup",
+              "t": "Visão geral dos cofres dos Serviços de Recuperação - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-recovery-services-vault-overview"
             }
           ]
@@ -1199,11 +1199,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar um cofre do Azure Backup",
           "docs": [
             {
-              "t": "Overview of the Backup vaults - Azure Backup",
+              "t": "Visão geral dos cofres de Backup - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview"
             },
             {
-              "t": "Create and delete Backup vaults - Azure Backup",
+              "t": "Criar e excluir cofres de Backup - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/create-manage-backup-vault"
             }
           ]
@@ -1212,11 +1212,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar uma política de backup",
           "docs": [
             {
-              "t": "Back Up Azure VMs in a Recovery Services Vault - Azure Backup",
+              "t": "Fazer backup de VMs do Azure em um cofre dos Serviços de Recuperação - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare"
             },
             {
-              "t": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+              "t": "Fazer backup de VMs do Azure com a política aprimorada - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
             }
           ]
@@ -1242,11 +1242,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o Azure Site Recovery para recursos do Azure",
           "docs": [
             {
-              "t": "Tutorial to set up Azure VM disaster recovery with Azure Site Recovery - Azure Site Recovery",
+              "t": "Tutorial: configurar a recuperação de desastre de VMs do Azure com o Azure Site Recovery - Azure Site Recovery",
               "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication"
             },
             {
-              "t": "Azure to Azure disaster recovery architecture in Azure Site Recovery - Azure Site Recovery",
+              "t": "Arquitetura de recuperação de desastre entre regiões do Azure no Azure Site Recovery - Azure Site Recovery",
               "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-architecture"
             }
           ]
@@ -1255,11 +1255,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Executar um failover para uma região secundária usando o Site Recovery",
           "docs": [
             {
-              "t": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+              "t": "Tutorial: executar o failover de VMs do Azure para uma região secundária para recuperação de desastre com o Azure Site Recovery - Azure Site Recovery",
               "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
             },
             {
-              "t": "Tutorial to run an Azure VM disaster recovery drill with Azure Site Recovery - Azure Site Recovery",
+              "t": "Tutorial: executar um teste de recuperação de desastre de VMs do Azure com o Azure Site Recovery - Azure Site Recovery",
               "u": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill"
             }
           ]
@@ -1268,11 +1268,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar e interpretar relatórios e alertas de backups",
           "docs": [
             {
-              "t": "Configure Azure Backup reports - Azure Backup",
+              "t": "Configurar relatórios do Azure Backup - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/configure-reports"
             },
             {
-              "t": "Monitor Azure Backup protected workloads - Azure Backup",
+              "t": "Monitorar cargas de trabalho protegidas pelo Azure Backup - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-built-in-monitor"
             }
           ]

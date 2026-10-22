@@ -66,11 +66,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Set-MsolDomainFederationSettings / Update-MsolFederatedDomain:** tratam de federação (AD FS), não de sign-up.\n- **Set-MsolDomain:** altera propriedades do domínio, não a política de sign-up.\n\n**Dica de prova:** Hoje: Update-MgPolicyAuthorizationPolicy -AllowEmailVerifiedUsersToJoinOrganization:$false e -AllowedToSignUpEmailBasedSubscriptions:$false.",
     "docs": [
       {
-        "t": "Self-service sign up for email-verified users - Microsoft Entra ID",
+        "t": "Inscrição por autoatendimento para usuários com email verificado - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/directory-self-service-signup"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
@@ -78,7 +78,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       }
     ],
@@ -107,7 +107,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 (já guest):** quem já resgatou o convite usa o método existente.\n- **User3 / outros:** contas com Entra ID, Microsoft account ou federação (SAML/Google) não recebem OTP.\n\n**Dica de prova:** O OTP é o fallback para convidados sem nenhum provedor de identidade; os códigos valem por 30 minutos.",
     "docs": [
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       },
       {
@@ -115,7 +115,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       }
     ],
@@ -152,7 +152,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Assign or unassign licenses for users in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de usuários no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users"
       },
       {
@@ -192,7 +192,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
-        "t": "Allow or block invitations - Microsoft Entra External ID",
+        "t": "Permitir ou bloquear convites - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list"
       }
     ]
@@ -222,15 +222,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **username / password:** o convidado usa a própria identidade; não se definem credenciais.\n- **shared key:** não existe no B2B.\n\n**Dica de prova:** Colunas opcionais: mensagem do convite, envio do e-mail (TRUE/FALSE) e CC.",
     "docs": [
       {
-        "t": "Bulk invite B2B users - Microsoft Entra External ID",
+        "t": "Convidar usuários B2B em massa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
-        "t": "Add B2B collaboration users - Microsoft Entra External ID",
+        "t": "Adicionar usuários de colaboração B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Microsoft Entra B2B collaboration invitation redemption - Microsoft Entra External ID",
+        "t": "Resgate de convites de colaboração B2B do Microsoft Entra - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/redemption-experience"
       }
     ],
@@ -304,15 +304,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Sequência**\n- **Adicionar ou remover o domínio no admin center:** no takeover interno, o próprio fluxo \"Become the admin\" pede o TXT; não se adiciona o domínio antes.\n\n**Dica de prova:** O takeover **externo** (domínio movido para outro tenant gerenciado) é feito adicionando o domínio no seu tenant e verificando o TXT.",
     "docs": [
       {
-        "t": "Admin takeover of an unmanaged directory - Microsoft Entra ID",
+        "t": "Assumir o controle administrativo de um diretório não gerenciado - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/domains-admin-takeover"
       },
       {
-        "t": "Add your custom domain - Microsoft Entra",
+        "t": "Adicionar seu domínio personalizado - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain"
       },
       {
-        "t": "Add and verify custom domain names - Microsoft Entra ID",
+        "t": "Adicionar e verificar nomes de domínio personalizados - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/domains-manage"
       }
     ],
@@ -399,15 +399,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (bloquear na hora o usuário desabilitado no AD):** só **pass-through authentication** (ou federação) atende. Password writeback, Conditional Access e Password Protection não atendem.\n\n**Dica de prova:** Com PHS, a mudança de estado chega no próximo ciclo de sync (30 min); com PTA, o DC valida em tempo real.",
     "docs": [
       {
-        "t": "Authentication for Microsoft Entra hybrid identity solutions - Microsoft Entra ID",
+        "t": "Autenticação para soluções de identidade híbrida do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn"
       },
       {
-        "t": "Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entender as etapas de migração da autenticação de aplicativos do AD FS para o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-apps-stages"
       },
       {
-        "t": "Migrate from federation to cloud authentication in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Migrar da federação para a autenticação na nuvem no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication"
       }
     ],
@@ -439,15 +439,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** PTA valida a senha e o estado da conta no AD on-premises a cada login. Contas desabilitadas, expiradas ou bloqueadas falham imediatamente.",
     "docs": [
       {
-        "t": "Authentication for Microsoft Entra hybrid identity solutions - Microsoft Entra ID",
+        "t": "Autenticação para soluções de identidade híbrida do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn"
       },
       {
-        "t": "Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entender as etapas de migração da autenticação de aplicativos do AD FS para o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-apps-stages"
       },
       {
-        "t": "Migrate from federation to cloud authentication in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Migrar da federação para a autenticação na nuvem no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication"
       }
     ],
@@ -479,15 +479,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** Conditional Access avalia sinais da nuvem; não sabe que a conta foi desabilitada no AD até o sync.",
     "docs": [
       {
-        "t": "Authentication for Microsoft Entra hybrid identity solutions - Microsoft Entra ID",
+        "t": "Autenticação para soluções de identidade híbrida do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn"
       },
       {
-        "t": "Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entender as etapas de migração da autenticação de aplicativos do AD FS para o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-apps-stages"
       },
       {
-        "t": "Migrate from federation to cloud authentication in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Migrar da federação para a autenticação na nuvem no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication"
       }
     ],
@@ -549,7 +549,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **New-AzADUser:** cria usuário **membro** com credencial do seu tenant.\n- **External collaboration settings:** controlam quem pode convidar, mas sozinhos não criam o acesso.\n- **WS-Fed IdP:** só é necessário se o parceiro usar federação WS-Fed; a fabrikam.com pode usar Entra ID.\n\n**Dica de prova:** Depois do convite, atribua o guest ao App1 (Users and groups do enterprise app).",
     "docs": [
       {
-        "t": "Reset guest redemption status - Microsoft Entra External ID",
+        "t": "Redefinir o status de resgate de convidados - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/reset-redemption-status"
       },
       {
@@ -557,7 +557,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "Quickstart: Add a guest user and send an invitation - Microsoft Entra External ID",
+        "t": "Início rápido: adicionar um usuário convidado e enviar um convite - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/b2b-quickstart-add-guest-users-portal"
       },
       {
@@ -590,19 +590,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Regra inbound no conector do Entra ID:** atua no fluxo nuvem → metaverso, não filtra objetos do AD.\n- **Full Import / Export run profile:** são execuções do ciclo, não filtros.\n\n**Dica de prova:** Na regra: Precedence menor que as padrão, Scoping filter extensionAttribute15 EQUAL NoSync, Transformation cloudFiltered = True.",
     "docs": [
       {
-        "t": "Microsoft Entra Connect Sync: Make a change to the default configuration - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect Sync: alterar a configuração padrão - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-change-the-configuration"
       },
       {
-        "t": "What is Microsoft Entra Connect and Connect Health. - Microsoft Entra ID",
+        "t": "O que são o Microsoft Entra Connect e o Connect Health? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect"
       },
       {
-        "t": "Understand Microsoft Entra Connect Sync - Microsoft Entra ID",
+        "t": "Entender o Microsoft Entra Connect Sync - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis"
       },
       {
-        "t": "Microsoft Entra Connect Sync: Configure filtering - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect Sync: configurar a filtragem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering"
       }
     ],
@@ -631,15 +631,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User2 entra:** Não. Com PTA, usuários sincronizados precisam do agente on-premises alcançável.\n- **Só User1:** guests (User3) autenticam no tenant de origem e não dependem do seu AD.\n\n**Dica de prova:** Configure PHS como backup; a troca para PHS é manual (mudar o método de login), não automática.",
     "docs": [
       {
-        "t": "Microsoft Entra Connect: Pass-through Authentication - Current limitations - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: autenticação de passagem - Limitações atuais - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta-current-limitations"
       },
       {
-        "t": "Microsoft Entra Connect: Pass-through Authentication - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: autenticação de passagem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta"
       },
       {
-        "t": "Microsoft Entra pass-through authentication - Quickstart - Microsoft Entra ID",
+        "t": "Autenticação de passagem do Microsoft Entra - Início rápido - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta-quick-start"
       }
     ],
@@ -671,15 +671,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** o Password Protection bane senhas fracas; não controla o estado da conta.",
     "docs": [
       {
-        "t": "Authentication for Microsoft Entra hybrid identity solutions - Microsoft Entra ID",
+        "t": "Autenticação para soluções de identidade híbrida do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn"
       },
       {
-        "t": "Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entender as etapas de migração da autenticação de aplicativos do AD FS para o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-apps-stages"
       },
       {
-        "t": "Migrate from federation to cloud authentication in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Migrar da federação para a autenticação na nuvem no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication"
       }
     ]
@@ -708,19 +708,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1:** Sim. Membro direto do grupo de filtro e dentro da OU selecionada.\n- **User2:** Não. Membro só de grupo aninhado, e a filtragem por grupo não é recursiva.\n- **Group2:** Sim. É membro direto do grupo de filtro (o objeto grupo sincroniza; os membros dele, não).\n\n**Dica de prova:** A filtragem por grupo é recomendada só para pilotos; em produção, use filtragem por domínio/OU ou por atributo.",
     "docs": [
       {
-        "t": "Customize an installation of Microsoft Entra Connect - Microsoft Entra ID",
+        "t": "Personalizar uma instalação do Microsoft Entra Connect - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-custom"
       },
       {
-        "t": "What is Microsoft Entra Connect and Connect Health. - Microsoft Entra ID",
+        "t": "O que são o Microsoft Entra Connect e o Connect Health? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect"
       },
       {
-        "t": "Understand Microsoft Entra Connect Sync - Microsoft Entra ID",
+        "t": "Entender o Microsoft Entra Connect Sync - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis"
       },
       {
-        "t": "Microsoft Entra Connect Sync: Configure filtering - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect Sync: configurar a filtragem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering"
       }
     ],
@@ -749,19 +749,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User flow:** define o fluxo de cadastro, não a cobrança.\n- **Terms of use:** termos de aceite.\n- **Access review:** governança de acesso.\n\n**Dica de prova:** O vínculo é feito em External Identities > Linked subscriptions; as primeiras 50.000 MAU são gratuitas.",
     "docs": [
       {
-        "t": "External ID Pricing - Microsoft Entra External ID",
+        "t": "Preços do External ID - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing"
       },
       {
-        "t": "Identity providers for workforce tenants - Microsoft Entra External ID",
+        "t": "Provedores de identidade para tenants de força de trabalho - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/identity-providers"
       },
       {
-        "t": "Add a SAML/WS-Fed identity provider - Microsoft Entra External ID",
+        "t": "Adicionar um provedor de identidade SAML/WS-Fed - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/direct-federation"
       },
       {
-        "t": "Google identity provider - Microsoft Entra External ID",
+        "t": "Provedor de identidade do Google - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/google-federation"
       }
     ],
@@ -796,15 +796,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Sequência**\n- **Excluir contoso.onmicrosoft.com:** o domínio inicial não pode ser removido.\n\n**Dica de prova:** A propagação do TXT pode levar até 72 h. Depois de verificado, defina o domínio como padrão em Domain names.",
     "docs": [
       {
-        "t": "Add your custom domain - Microsoft Entra",
+        "t": "Adicionar seu domínio personalizado - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain"
       },
       {
-        "t": "Add and verify custom domain names - Microsoft Entra ID",
+        "t": "Adicionar e verificar nomes de domínio personalizados - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/domains-manage"
       },
       {
-        "t": "Admin takeover of an unmanaged directory - Microsoft Entra ID",
+        "t": "Assumir o controle administrativo de um diretório não gerenciado - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/domains-admin-takeover"
       }
     ],
@@ -841,11 +841,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Mais 4 dispositivos:** Não. O limite (5) soma joined + registered; ele tem 4, e cabe 1.\n- **Admin1 (Cloud Device Admin) mudar a exigência de MFA:** Não. Device settings exige Global Admin (ou função com permissão nas configurações de dispositivo).\n- **Admin2 admin local no Device3:** Não. Os administradores locais adicionais valem só em dispositivos **Entra joined**.\n\n**Dica de prova:** A configuração \"Require MFA to join\" foi substituída por uma ação de usuário no Conditional Access (Register or join devices).",
     "docs": [
       {
-        "t": "Manage devices in Microsoft Entra ID using the Microsoft Entra admin center - Microsoft Entra ID",
+        "t": "Gerenciar dispositivos no Microsoft Entra ID usando o centro de administração do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities"
       },
       {
-        "t": "Default user permissions - Microsoft Entra",
+        "t": "Permissões padrão de usuários - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
@@ -853,7 +853,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Enforce a group naming policy in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Impor uma política de nomenclatura de grupos no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-naming-policy"
       }
     ],
@@ -896,7 +896,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 em outro portal:** funções do Entra (inclusive Identity Governance Administrator) são atribuídas no Entra admin center.\n- **User2 no Entra:** Records Management e Quarantine Administrator são role groups do Exchange/Purview.\n- **User3 no Entra:** funções do Intune (RBAC do Intune) são atribuídas no Intune admin center.",
     "docs": [
       {
-        "t": "Microsoft 365 admin center - Overview - Microsoft 365 admin",
+        "t": "Centro de administração do Microsoft 365 - Visão geral - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview"
       },
       {
@@ -904,11 +904,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       }
     ]
@@ -934,11 +934,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **DCs (Server1/Server2):** a política proíbe DC com acesso à internet.\n- **Server3:** pela tabela, não atende os requisitos (ex.: sem saída para a internet ou com softwares não exigidos).\n\n**Dica de prova:** Recomendação: três agentes PTA no total, em servidores membro Windows Server 2016+ com saída na 443.",
     "docs": [
       {
-        "t": "Microsoft Entra pass-through authentication - Quickstart - Microsoft Entra ID",
+        "t": "Autenticação de passagem do Microsoft Entra - Início rápido - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta-quick-start"
       },
       {
-        "t": "Microsoft Entra Connect: Pass-through Authentication - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: autenticação de passagem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta"
       }
     ],
@@ -967,7 +967,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **External collaboration settings:** não criam o convidado.\n- **WS-Fed IdP:** não é necessário para uma conta Entra/Microsoft.\n- **Entra Connect:** sincroniza o **seu** AD; não traz contas de outra organização.\n\n**Dica de prova:** Equivalente atual: New-MgInvitation -InvitedUserEmailAddress contractor@fabrikam.com -InviteRedirectUrl https://myapps.microsoft.com.",
     "docs": [
       {
-        "t": "Reset guest redemption status - Microsoft Entra External ID",
+        "t": "Redefinir o status de resgate de convidados - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/reset-redemption-status"
       },
       {
@@ -975,7 +975,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "Quickstart: Add a guest user and send an invitation - Microsoft Entra External ID",
+        "t": "Início rápido: adicionar um usuário convidado e enviar um convite - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/b2b-quickstart-add-guest-users-portal"
       },
       {
@@ -1061,15 +1061,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Linked subscription:** é sobre cobrança MAU.\n- **PIM:** acesso privilegiado.\n- **External collaboration settings:** controlam convites, não o método OTP de cadastro (o OTP é habilitado em All identity providers).\n- **Access reviews / access package / tenant properties:** não definem os campos do cadastro.\n\n**Dica de prova:** O user flow também é associado ao app (Applications no user flow) para disparar o cadastro.",
     "docs": [
       {
-        "t": "Self-service sign up for email-verified users - Microsoft Entra ID",
+        "t": "Inscrição por autoatendimento para usuários com email verificado - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/directory-self-service-signup"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
-        "t": "Identity providers for workforce tenants - Microsoft Entra External ID",
+        "t": "Provedores de identidade para tenants de força de trabalho - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/identity-providers"
       },
       {
@@ -1103,15 +1103,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **identityIssuer / userType:** não são colunas obrigatórias do modelo.\n- **givenName / surname:** opcionais.\n- **usageLocation:** opcional no CSV (necessário só para licenças).\n\n**Dica de prova:** O CSV do portal pede: Name, User name, Initial password e Block sign in (Yes/No).",
     "docs": [
       {
-        "t": "Bulk create users in the Azure portal - Microsoft Entra ID",
+        "t": "Criar usuários em massa no portal do Azure - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-add"
       },
       {
-        "t": "Bulk add group members by uploading a CSV file - Microsoft Entra ID",
+        "t": "Adicionar membros de grupos em massa carregando um arquivo CSV - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-bulk-import-members"
       },
       {
-        "t": "Microsoft Graph PowerShell SDK overview",
+        "t": "Visão geral do SDK do Microsoft Graph PowerShell",
         "u": "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview"
       }
     ],
@@ -1140,11 +1140,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-in options do Settings:** configuram Windows Hello/PIN, não o SSO.\n- **Enterprise State Roaming:** sincroniza configurações, não autenticação.\n- **Authentication Agent:** é do PTA, não do Seamless SSO.\n\n**Dica de prova:** A GPO usada é \"Site to Zone Assignment List\" com https://autologon.microsoftazuread-sso.com = 1 (Intranet).",
     "docs": [
       {
-        "t": "Quickstart: Microsoft Entra seamless single sign-on - Microsoft Entra ID",
+        "t": "Início rápido: logon único contínuo do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-quick-start"
       },
       {
-        "t": "Microsoft Entra Connect: Seamless single sign-on - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: logon único contínuo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso"
       }
     ],
@@ -1200,7 +1200,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "Restore or permanently remove recently deleted user - Microsoft Entra",
+        "t": "Restaurar ou remover permanentemente um usuário excluído recentemente - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-restore"
       }
     ],
@@ -1230,7 +1230,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Groups administrator / Service support administrator:** não delegam a criação de catálogos.\n- **Funções do General catalog:** dão papéis só naquele catálogo, não a criação de novos.\n\n**Dica de prova:** Catalog creator pode criar catálogos e adicionar recursos que ele já possui (grupos, apps, sites).",
     "docs": [
       {
-        "t": "Create and manage a catalog of resources in entitlement management - Microsoft Entra ID Governance",
+        "t": "Criar e gerenciar um catálogo de recursos no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create"
       },
       {
@@ -1272,11 +1272,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-in options / Enterprise State Roaming / Authentication Agent:** nenhum deles adiciona a URL à zona Intranet.\n\n**Dica de prova:** O Seamless SSO exige Kerberos: o dispositivo precisa estar no domínio e alcançar um DC.",
     "docs": [
       {
-        "t": "Quickstart: Microsoft Entra seamless single sign-on - Microsoft Entra ID",
+        "t": "Início rápido: logon único contínuo do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-quick-start"
       },
       {
-        "t": "Microsoft Entra Connect: Seamless single sign-on - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: logon único contínuo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso"
       }
     ],
@@ -1305,15 +1305,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Application Proxy:** publica apps on-premises; o SharePoint Online já está na nuvem.\n- **Segundo Entra Connect (ou o mesmo) sincronizando para o West:** cria contas **membros** duplicadas, que precisariam de licença no West.\n\n**Dica de prova:** Cross-tenant synchronization automatiza a criação dos B2B; os convidados usam a licença do tenant de origem (o SharePoint B2B não exige licença extra).",
     "docs": [
       {
-        "t": "Common considerations for multitenant user management in Microsoft Entra ID - Microsoft Entra",
+        "t": "Considerações comuns para o gerenciamento de usuários em vários tenants no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/multi-tenant-common-considerations"
       },
       {
-        "t": "Cross-tenant access overview - Microsoft Entra External ID",
+        "t": "Visão geral do acesso entre tenants - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview"
       },
       {
-        "t": "Cross-tenant access settings - Microsoft Entra External ID",
+        "t": "Configurações de acesso entre tenants - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-settings-b2b-collaboration"
       }
     ],
@@ -1380,7 +1380,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Named location:** é condição, não método de autenticação.\n- **Authenticator:** exige celular, que é proibido.\n- **Windows Hello for Business:** fica preso ao dispositivo (TPM); com PCs compartilhados, o usuário teria que provisionar em cada um, e sem biometria só restaria PIN por máquina.\n\n**Dica de prova:** FIDO2 funciona em qualquer PC (USB/NFC) e é resistente a phishing.",
     "docs": [
       {
-        "t": "Passkeys (FIDO2) authentication method in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Método de autenticação com chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       },
       {
@@ -1421,19 +1421,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Cloud apps or actions:** escolhe o recurso, não o protocolo do cliente.\n- **User risk / sign-in risk:** tratam de risco do ID Protection.\n\n**Dica de prova:** Hoje, use o template \"Block legacy authentication\"; sem MFA possível em protocolos legados, bloquear é o caminho.",
     "docs": [
       {
-        "t": "Block legacy authentication with Conditional Access - Microsoft Entra ID",
+        "t": "Bloquear a autenticação herdada com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-legacy-authentication"
       },
       {
-        "t": "Microsoft Entra Conditional Access: Zero Trust Policy Engine - Microsoft Entra ID",
+        "t": "Acesso Condicional do Microsoft Entra: mecanismo de políticas de Confiança Zero - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
       },
       {
-        "t": "Plan Your Microsoft Entra Conditional Access Deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do Acesso Condicional do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access"
       },
       {
-        "t": "Build Conditional Access policies in Microsoft Entra - Microsoft Entra ID",
+        "t": "Criar políticas de Acesso Condicional no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies"
       }
     ],
@@ -1499,15 +1499,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Activity policy do MDCA:** alerta ou governa depois do fato; não impede o download em tempo real.\n- **CA com client apps:** escolhe browser/clientes, mas sozinho não bloqueia download.\n- **App discovery policy:** trata de Shadow IT.\n\n**Dica de prova:** \"Use app enforced restrictions\" no SharePoint permite acesso limitado (somente web, sem download) a dispositivos não gerenciados.",
     "docs": [
       {
-        "t": "Conditional Access app control - Microsoft Defender for Cloud Apps",
+        "t": "Controle de aplicativos de Acesso Condicional - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/proxy-intro-aad"
       },
       {
-        "t": "Conditional Access adaptive session lifetime policies - Microsoft Entra ID",
+        "t": "Políticas adaptáveis de tempo de vida de sessão do Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime"
       },
       {
-        "t": "Configure adaptive session lifetime policies - Microsoft Entra ID",
+        "t": "Configurar políticas adaptáveis de tempo de vida de sessão - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-session-lifetime"
       }
     ],
@@ -1536,7 +1536,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Application Proxy:** publica apps web, não VPN RADIUS.\n- **Password Protection proxy:** trata de senhas banidas.\n- **PTA proxy:** não existe; o agente PTA não faz MFA para VPN.\n\n**Dica de prova:** A extensão NPS envia a 2ª etapa ao Entra MFA. O usuário precisa estar sincronizado e ter MFA registrado.",
     "docs": [
       {
-        "t": "VPN with Microsoft Entra multifactor authentication using the NPS extension - Microsoft Entra ID",
+        "t": "VPN com autenticação multifator do Microsoft Entra usando a extensão NPS - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-nps-extension-vpn"
       },
       {
@@ -1577,19 +1577,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Entra Connect:** sincronização; não serve ao Password Protection.\n- **Application Proxy / PCNS:** sem relação.\n\n**Dica de prova:** Arquitetura: agente DC em todos os DCs (sem internet) + 2 ou mais proxies em servidores membro com saída na 443.",
     "docs": [
       {
-        "t": "Deploy on-premises Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Implantar a Proteção por Senha do Microsoft Entra no ambiente local - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-ban-bad-on-premises-deploy"
       },
       {
-        "t": "Password protection in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Proteção por senha no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
       },
       {
-        "t": "Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Proteção por senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-on-premises"
       },
       {
-        "t": "Prevent Attacks Using Smart Lockout - Microsoft Entra ID",
+        "t": "Prevenir ataques usando o bloqueio inteligente - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout"
       }
     ],
@@ -1618,7 +1618,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Notificação do Authenticator / SMS:** exigem celular conectado.\n- **App password:** credencial legada para apps sem MFA; não é método de MFA.\n\n**Dica de prova:** O WHfB conta como MFA porque combina posse (TPM do dispositivo) e conhecimento ou biometria (PIN/Hello).",
     "docs": [
       {
-        "t": "Microsoft Entra authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication"
       },
       {
@@ -1905,19 +1905,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin1 redefine senha de User3/User4:** Não. Eles não são membros da AU; ser membro de um grupo da AU não os coloca no escopo.\n- **Admin1 adiciona User1 ao Group2:** Sim. O User administrator com escopo na AU gerencia os grupos dela.\n- **Admin2 redefine senha do User1:** Sim. O escopo do Admin2 é o diretório.\n\n**Dica de prova:** Adicionar um grupo à AU não adiciona os membros do grupo à AU.",
     "docs": [
       {
-        "t": "Administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units"
       },
       {
-        "t": "Create or delete administrative units - Microsoft Entra ID",
+        "t": "Criar ou excluir unidades administrativas - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
       },
       {
-        "t": "Add users, groups, or devices to an administrative unit - Microsoft Entra ID",
+        "t": "Adicionar usuários, grupos ou dispositivos a uma unidade administrativa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-members-add"
       },
       {
-        "t": "Restricted management administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas de gerenciamento restrito no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management"
       }
     ],
@@ -1986,7 +1986,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Notificação do Authenticator:** precisa de conectividade no celular.\n- **E-mail:** não é método de MFA para login (só para SSPR).\n- **Perguntas de segurança:** só SSPR.\n\n**Dica de prova:** O código TOTP (30 s) funciona offline porque deriva do relógio e de um segredo local.",
     "docs": [
       {
-        "t": "Microsoft Authenticator authentication method - Microsoft Entra ID",
+        "t": "Método de autenticação do Microsoft Authenticator - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-authenticator-app"
       },
       {
@@ -2042,19 +2042,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **HighRiskCountries como cloud app / grant / session:** locais são **condições** da política.\n- **Sign-in frequency como condição / grant:** é controle de **sessão**.\n\n**Dica de prova:** Configurar a sign-in frequency para \"Every time\" exige reautenticação a cada acesso (em cenários suportados).",
     "docs": [
       {
-        "t": "Conditional Access Policy: Using Network Signals - Microsoft Entra ID",
+        "t": "Política de Acesso Condicional: usar sinais de rede - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network"
       },
       {
-        "t": "Conditional Access: Manage Session Controls Effectively - Microsoft Entra ID",
+        "t": "Acesso Condicional: gerenciar controles de sessão com eficiência - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-session"
       },
       {
-        "t": "Microsoft Entra Conditional Access: Zero Trust Policy Engine - Microsoft Entra ID",
+        "t": "Acesso Condicional do Microsoft Entra: mecanismo de políticas de Confiança Zero - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
       },
       {
-        "t": "Plan Your Microsoft Entra Conditional Access Deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do Acesso Condicional do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access"
       }
     ],
@@ -2102,15 +2102,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **5 / 10 / 11:** repetir a mesma senha errada não conta de novo enquanto ela estiver entre as 3 últimas.\n- **Limpar cache / InPrivate:** o bloqueio é no servidor (Entra), não no navegador.\n\n**Dica de prova:** O smart lockout padrão é de 10 tentativas e 60 s de bloqueio; o desbloqueio também acontece com uma troca de senha bem-sucedida.",
     "docs": [
       {
-        "t": "Prevent Attacks Using Smart Lockout - Microsoft Entra ID",
+        "t": "Prevenir ataques usando o bloqueio inteligente - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout"
       },
       {
-        "t": "Password protection in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Proteção por senha no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
       },
       {
-        "t": "Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Proteção por senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-on-premises"
       }
     ],
@@ -2156,19 +2156,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **MFA em Conditions / Users / Sessions:** exigir MFA é um **grant control**.\n- **8 h em Conditions / Grant:** frequência de login é **session control**.\n- **Enable policy:** só liga ou desliga a política (On / Report-only / Off).",
     "docs": [
       {
-        "t": "Require MFA for all users with Conditional Access - Microsoft Entra ID",
+        "t": "Exigir MFA para todos os usuários com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength"
       },
       {
-        "t": "Microsoft Entra Conditional Access: Zero Trust Policy Engine - Microsoft Entra ID",
+        "t": "Acesso Condicional do Microsoft Entra: mecanismo de políticas de Confiança Zero - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
       },
       {
-        "t": "Plan Your Microsoft Entra Conditional Access Deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do Acesso Condicional do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access"
       },
       {
-        "t": "Build Conditional Access policies in Microsoft Entra - Microsoft Entra ID",
+        "t": "Criar políticas de Acesso Condicional no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies"
       }
     ],
@@ -2201,11 +2201,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       }
     ],
@@ -2235,15 +2235,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Alguma aprovada:** depois da normalização (ex.: Pr0jectlitw@re → projectlitware), os termos banidos valem 1 ponto e sobram poucos caracteres; nenhuma chega a 5 pontos.\n\n**Dica de prova:** A lista global da Microsoft é sempre aplicada; a lista customizada aceita até 1.000 termos e faz correspondência aproximada (fuzzy, distância de edição 1).",
     "docs": [
       {
-        "t": "Password protection in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Proteção por senha no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
       },
       {
-        "t": "Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Proteção por senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-on-premises"
       },
       {
-        "t": "Prevent Attacks Using Smart Lockout - Microsoft Entra ID",
+        "t": "Prevenir ataques usando o bloqueio inteligente - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout"
       }
     ],
@@ -2272,7 +2272,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Perguntas de segurança:** não são método de MFA.\n- **Voz / SMS:** exigem sinal de celular.",
     "docs": [
       {
-        "t": "Microsoft Entra authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication"
       },
       {
@@ -2370,7 +2370,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Teams chat:** não é método de SSPR.\n- **Notificação do app:** com 1 método exigido, o SSPR só aceita o **código** do app.\n- **FIDO2:** não serve para redefinir senha.\n\n**Dica de prova:** Métodos de SSPR: código ou notificação do app, SMS, voz (comercial/celular), e-mail alternativo, perguntas de segurança.",
     "docs": [
       {
-        "t": "Self-service password reset deep dive - Microsoft Entra ID",
+        "t": "Análise aprofundada da redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
       },
       {
@@ -2382,7 +2382,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ],
@@ -2411,7 +2411,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Política com limite médio ou baixo:** afeta todos os usuários; mais esforço e mais impacto.\n- **Resetar o registro de MFA:** não força a troca de senha.\n- **Sign-in risk policy:** risco de entrada pede MFA, não troca de senha.\n\n**Dica de prova:** \"Confirm compromised\" também alimenta o aprendizado do ID Protection.",
     "docs": [
       {
-        "t": "Provide risk feedback in Microsoft Entra ID Protection - Microsoft Entra ID Protection",
+        "t": "Fornecer comentários sobre riscos no Microsoft Entra ID Protection - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-risk-feedback"
       },
       {
@@ -2460,7 +2460,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1:** Sim. Está só na política de risco de usuário (bloqueio), e o IP anônimo é risco de entrada.\n- **User2:** Não. A política de risco de entrada exige MFA, e ele não tem MFA registrado, então é bloqueado.\n- **User3:** Sim. Cumpre o MFA e remedia o risco de entrada.\n\n**Dica de prova:** Quem não tem MFA registrado não consegue autorremediar o risco de entrada; daí a política de registro de MFA.",
     "docs": [
       {
-        "t": "Risk-based user sign-in protection in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Proteção de entrada de usuários baseada em risco no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-risk-based-sspr-mfa"
       },
       {
@@ -2509,7 +2509,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ],
@@ -2539,7 +2539,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User2 / User3:** estão habilitados para outros métodos (SMS, FIDO2…), que não usam number matching.\n\n**Dica de prova:** O number matching é obrigatório em todas as notificações push do Authenticator desde 2023.",
     "docs": [
       {
-        "t": "Passkeys (FIDO2) authentication method in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Método de autenticação com chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       },
       {
@@ -2580,15 +2580,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access reviews:** revisam acessos, não simulam políticas.\n- **Identity Secure Score:** dá recomendações de postura.\n- **Teste de conectividade do M365:** é de rede.\n\n**Dica de prova:** O What If não gera login real; o modo report-only mostra o efeito em logins reais.",
     "docs": [
       {
-        "t": "Microsoft Entra Conditional Access: Zero Trust Policy Engine - Microsoft Entra ID",
+        "t": "Acesso Condicional do Microsoft Entra: mecanismo de políticas de Confiança Zero - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
       },
       {
-        "t": "Plan Your Microsoft Entra Conditional Access Deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do Acesso Condicional do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access"
       },
       {
-        "t": "Build Conditional Access policies in Microsoft Entra - Microsoft Entra ID",
+        "t": "Criar políticas de Acesso Condicional no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies"
       }
     ],
@@ -2617,7 +2617,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **App password:** legado, não é MFA.\n- **Voz:** exige celular.\n- **Perguntas de segurança:** não são MFA.",
     "docs": [
       {
-        "t": "Microsoft Authenticator authentication method - Microsoft Entra ID",
+        "t": "Método de autenticação do Microsoft Authenticator - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-authenticator-app"
       },
       {
@@ -2658,15 +2658,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-in logs:** mostram logins reais; não permitem simular risco ou país.\n- **MDCA activity log:** atividade em apps conectados.\n- **Access reviews:** governança.\n\n**Dica de prova:** O What If permite definir: usuário, app, IP/país, plataforma, client app, sign-in risk, user risk e estado do dispositivo.",
     "docs": [
       {
-        "t": "Microsoft Entra Conditional Access: Zero Trust Policy Engine - Microsoft Entra ID",
+        "t": "Acesso Condicional do Microsoft Entra: mecanismo de políticas de Confiança Zero - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
       },
       {
-        "t": "Plan Your Microsoft Entra Conditional Access Deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do Acesso Condicional do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access"
       },
       {
-        "t": "Build Conditional Access policies in Microsoft Entra - Microsoft Entra ID",
+        "t": "Criar políticas de Acesso Condicional no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies"
       }
     ],
@@ -2703,7 +2703,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 de 10.10.0.150:** Não. A named location com IP privado nunca casa (o Entra vê o IP público de NAT), então a CA não se aplica e ele não tem MFA por usuário.\n- **User2 da Location1:** Sim. O IP público não é confiável, e o MFA por usuário está imposto.\n- **User2 da Location2:** Não. O IP 193.17.17.x está nos trusted IPs do MFA, que dispensam o MFA por usuário.\n\n**Dica de prova:** Named locations usam sempre IPs **públicos**. \"All trusted locations\" inclui os trusted IPs do MFA legado e as named locations marcadas como confiáveis.",
     "docs": [
       {
-        "t": "Conditional Access Policy: Using Network Signals - Microsoft Entra ID",
+        "t": "Política de Acesso Condicional: usar sinais de rede - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network"
       },
       {
@@ -2711,11 +2711,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Conditional Access Setup: Users, Groups, Agents, and Workload Identities - Microsoft Entra ID",
+        "t": "Configuração do Acesso Condicional: usuários, grupos, agentes e identidades de carga de trabalho - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-users-groups"
       },
       {
-        "t": "Targeting Resources in Conditional Access Policies - Microsoft Entra ID",
+        "t": "Selecionar recursos de destino em políticas de Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps"
       }
     ],
@@ -2761,7 +2761,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Guest1 (conta Entra) / Guest2 (Microsoft account):** autenticam com a própria conta.\n- **60 min / 24 h / 48 h:** o código vale 30 minutos.\n\n**Dica de prova:** Se o OTP estiver desabilitado, convidados sem conta são orientados a criar uma Microsoft account.",
     "docs": [
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       },
       {
@@ -2769,7 +2769,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       }
     ],
@@ -2862,7 +2862,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Microsoft.Compute:** é de VMs; o Container Apps fica em Microsoft.App.\n- **Microsoft.Management:** management groups.\n- **Microsoft.Network:** as regras de NSG ficam em Network, mas o recurso adaptive network hardening é do Defender (Microsoft.Security).\n\n**Dica de prova:** Para achar o provedor de um serviço: Get-AzResourceProvider -ListAvailable, ou a página \"Azure resource provider operations\".",
     "docs": [
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       },
       {
@@ -2919,15 +2919,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Função customizada:** funções customizadas do Entra não cobrem gestão de métodos de MFA.\n- **Dynamic group / M365 group:** grupos não delimitam escopo de administração.\n- **Helpdesk / Password administrator:** redefinem senha, mas não gerenciam métodos de MFA.\n- **Groups administrator:** gerencia grupos.\n\n**Dica de prova:** A AU pode ter associação dinâmica (ex.: jobTitle = Executive).",
     "docs": [
       {
-        "t": "Create or delete administrative units - Microsoft Entra ID",
+        "t": "Criar ou excluir unidades administrativas - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
       },
       {
-        "t": "Add users, groups, or devices to an administrative unit - Microsoft Entra ID",
+        "t": "Adicionar usuários, grupos ou dispositivos a uma unidade administrativa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-members-add"
       },
       {
-        "t": "Restricted management administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas de gerenciamento restrito no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management"
       }
     ]
@@ -2953,15 +2953,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 / User4:** estão no escopo só como membros do Group1, ou fora da AU.\n\n**Dica de prova:** Para incluir os membros, adicione os usuários na AU (ou use regra dinâmica na AU).",
     "docs": [
       {
-        "t": "Create or delete administrative units - Microsoft Entra ID",
+        "t": "Criar ou excluir unidades administrativas - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
       },
       {
-        "t": "Add users, groups, or devices to an administrative unit - Microsoft Entra ID",
+        "t": "Adicionar usuários, grupos ou dispositivos a uma unidade administrativa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-members-add"
       },
       {
-        "t": "Restricted management administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas de gerenciamento restrito no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management"
       }
     ]
@@ -3027,11 +3027,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       }
     ]
@@ -3139,15 +3139,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **AD FS:** também autentica no on-premises, mas é infraestrutura muito maior (farm + WAP); PTA é o recomendado.\n- **PHS para a autenticação:** valida na nuvem, não no DC.\n- **Device/Group writeback / PHS para o SSPR:** não gravam a senha nova no AD.\n\n**Dica de prova:** Password writeback exige Entra ID P1. Com Cloud Sync, ele também é suportado.",
     "docs": [
       {
-        "t": "Authentication for Microsoft Entra hybrid identity solutions - Microsoft Entra ID",
+        "t": "Autenticação para soluções de identidade híbrida do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn"
       },
       {
-        "t": "Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entender as etapas de migração da autenticação de aplicativos do AD FS para o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-apps-stages"
       },
       {
-        "t": "Migrate from federation to cloud authentication in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Migrar da federação para a autenticação na nuvem no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication"
       }
     ]
@@ -3173,15 +3173,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **OAuth policy do MDCA:** trata de apps OAuth com permissões excessivas.\n- **Compliance policy do Intune:** avalia dispositivos.\n- **Application control:** controla executáveis no Windows.\n\n**Dica de prova:** A Microsoft já desabilitou a basic auth no Exchange Online para a maioria dos protocolos (2022); o CA continua sendo o controle de prova.",
     "docs": [
       {
-        "t": "Microsoft Entra Conditional Access: Zero Trust Policy Engine - Microsoft Entra ID",
+        "t": "Acesso Condicional do Microsoft Entra: mecanismo de políticas de Confiança Zero - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
       },
       {
-        "t": "Plan Your Microsoft Entra Conditional Access Deployment - Microsoft Entra ID",
+        "t": "Planejar a implantação do Acesso Condicional do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access"
       },
       {
-        "t": "Build Conditional Access policies in Microsoft Entra - Microsoft Entra ID",
+        "t": "Criar políticas de Acesso Condicional no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies"
       }
     ]
@@ -3242,7 +3242,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Só Role2 / só built-ins:** o portal permite clonar ambas as origens (built-in e customizadas do Azure).\n- **Built-ins do Entra / Role1:** funções de diretório não servem de base para funções do Azure RBAC.\n\n**Dica de prova:** Clonar = começar de uma definição existente, ajustar as permissões e definir os assignableScopes.",
     "docs": [
       {
-        "t": "What is Azure role-based access control (Azure RBAC)?",
+        "t": "O que é o controle de acesso baseado em função do Azure (Azure RBAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
@@ -3292,7 +3292,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
-        "t": "How to enable passkeys (FIDO2) in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Como habilitar chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
       }
     ]
@@ -3330,7 +3330,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
-        "t": "How to enable passkeys (FIDO2) in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Como habilitar chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
       }
     ]
@@ -3396,7 +3396,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin1 recupera o Secret1:** Sim. Está em soft delete (10 dias), e o Key Vault Administrator recupera.\n- **Admin2 / Admin3 expurgam o Certificate1:** Não. Com purge protection, ninguém expurga antes de terminar a retenção.\n\n**Dica de prova:** A purge protection, uma vez habilitada, não pode ser desabilitada; a retenção de soft delete vai de 7 a 90 dias (padrão 90).",
     "docs": [
       {
-        "t": "Azure Key Vault soft-delete",
+        "t": "Exclusão reversível do Azure Key Vault",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview"
       },
       {
@@ -3476,7 +3476,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ]
@@ -3538,7 +3538,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin1 precisa de aprovação:** Sim. A função exige aprovação na ativação.\n- **Admin2 ativa por 2 h:** Sim. Está dentro da duração máxima configurada.\n- **Admin3 com MFA duas vezes:** Não, pelo gabarito. Se o login já satisfez o MFA, a ativação no PIM aceita a mesma sessão.\n\n**Dica de prova:** Para exigir MFA \"fresco\" na ativação, use authentication context no PIM + CA.",
     "docs": [
       {
-        "t": "Targeting Resources in Conditional Access Policies - Microsoft Entra ID",
+        "t": "Selecionar recursos de destino em políticas de Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps"
       },
       {
@@ -3618,7 +3618,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Application developer:** registra apps, mas vira owner automaticamente.\n- **Cloud application administrator:** igual ao Application administrator, **sem** o Application Proxy.\n- **Service support administrator:** abre chamados de suporte.",
     "docs": [
       {
-        "t": "Add app roles and get them from a token - Microsoft identity platform",
+        "t": "Adicionar funções de aplicativo e obtê-las de um token - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps"
       }
     ]
@@ -3660,7 +3660,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entrar em uma máquina virtual Windows no Azure usando o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
@@ -3731,7 +3731,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (atualizar o status no Identity Secure Score):** escrita = Global, Security, **Exchange** ou SharePoint administrator. User administrator e funções de leitura não atendem.\n\n**Dica de prova:** Funções de leitura (Global reader, Security reader, Security operator) veem o score, mas não mudam status.",
     "docs": [
       {
-        "t": "What is the Identity Secure Score? - Microsoft Entra ID",
+        "t": "O que é a Pontuação de Segurança de Identidade? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score"
       }
     ]
@@ -3760,7 +3760,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** User administrator não tem permissão no Secure Score.",
     "docs": [
       {
-        "t": "What is the Identity Secure Score? - Microsoft Entra ID",
+        "t": "O que é a Pontuação de Segurança de Identidade? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score"
       }
     ]
@@ -3798,7 +3798,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
-        "t": "How to enable passkeys (FIDO2) in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Como habilitar chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
       }
     ]
@@ -3842,7 +3842,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **OU1 / OU2 (sincronizadas):** uma falha no AD ou na federação impediria o login de emergência.\n- **Billing admin / Owner / Privileged Role Administrator:** o break-glass precisa de Global Administrator permanente (Owner é do Azure RBAC).\n\n**Dica de prova:** Recomendações: 2 contas, excluídas do CA (exceto passkey/FIDO2 resistente a phishing), senha longa guardada offline, alertas de login monitorados.",
     "docs": [
       {
-        "t": "Manage emergency access admin accounts - Microsoft Entra ID",
+        "t": "Gerenciar contas de administrador de acesso de emergência - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access"
       }
     ]
@@ -3913,7 +3913,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Microsoft.App:** Container Apps.\n- **Microsoft.Compute:** VMs e discos.\n- **Microsoft.Security:** Defender for Cloud.\n- **Microsoft.Management:** management groups.\n\n**Dica de prova:** ASGs: Microsoft.Network/applicationSecurityGroups/*; Firewall: Microsoft.Network/azureFirewalls/*.",
     "docs": [
       {
-        "t": "Azure custom roles - Azure RBAC",
+        "t": "Funções personalizadas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       },
       {
@@ -3963,7 +3963,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
-        "t": "How to enable passkeys (FIDO2) in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Como habilitar chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
       }
     ]
@@ -4000,11 +4000,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Sequência**\n- **Session policy antes da CA:** o app só aparece no MDCA depois que o tráfego passa pelo proxy (CA com App Control + primeiro login).\n- **Connected apps antes da CA:** o app ainda não foi roteado pelo App Control.\n\n**Dica de prova:** Apps da galeria com SSO SAML/OIDC são onboarded automaticamente; apps customizados exigem o primeiro login para aparecer.",
     "docs": [
       {
-        "t": "Conditional Access app control - Microsoft Defender for Cloud Apps",
+        "t": "Controle de aplicativos de Acesso Condicional - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/proxy-intro-aad"
       },
       {
-        "t": "Onboard non-Microsoft IdP catalog apps for Conditional Access app control - Microsoft Defender for Cloud Apps",
+        "t": "Integrar aplicativos do catálogo de IdPs de terceiros ao controle de aplicativos de Acesso Condicional - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/proxy-deployment-featured-idp"
       }
     ]
@@ -4049,15 +4049,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Custom role:** não delimita escopo de usuários por filial; quem faz isso é a AU.\n- **Dynamic group:** não limita onde um admin atua.\n- **OU / ADAC / AD PowerShell:** são do AD on-premises e não controlam a administração no Entra.\n- **Purview:** compliance.\n\n**Dica de prova:** A função License administrator pode ser atribuída com escopo de AU.",
     "docs": [
       {
-        "t": "Create or delete administrative units - Microsoft Entra ID",
+        "t": "Criar ou excluir unidades administrativas - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
       },
       {
-        "t": "Add users, groups, or devices to an administrative unit - Microsoft Entra ID",
+        "t": "Adicionar usuários, grupos ou dispositivos a uma unidade administrativa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-members-add"
       },
       {
-        "t": "Restricted management administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas de gerenciamento restrito no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management"
       }
     ]
@@ -4087,11 +4087,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User settings:** registro de apps e acesso ao portal; não tratam de limite de dispositivos.\n- **Access reviews:** revisão de acessos.\n- **Security defaults:** MFA básico.\n\n**Dica de prova:** Maximum number of devices per user vale para joined + registered; dispositivos hybrid joined não contam.",
     "docs": [
       {
-        "t": "Manage devices in Microsoft Entra ID using the Microsoft Entra admin center - Microsoft Entra ID",
+        "t": "Gerenciar dispositivos no Microsoft Entra ID usando o centro de administração do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities"
       },
       {
-        "t": "Default user permissions - Microsoft Entra",
+        "t": "Permissões padrão de usuários - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
@@ -4099,7 +4099,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Enforce a group naming policy in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Impor uma política de nomenclatura de grupos no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-naming-policy"
       }
     ]
@@ -4129,15 +4129,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Mudar para Dynamic User/Device:** grupos role-assignable não podem ser dinâmicos, e a propriedade não muda depois.\n- **Adicionar owner:** não torna o grupo atribuível a funções.\n\n**Dica de prova:** Grupos role-assignable só aceitam associação atribuída, não aceitam grupos aninhados, e só Privileged Role Admin ou Global Admin os gerenciam.",
     "docs": [
       {
-        "t": "Use Microsoft Entra groups to manage role assignments - Microsoft Entra ID",
+        "t": "Usar grupos do Microsoft Entra para gerenciar atribuições de funções - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept"
       },
       {
-        "t": "List Microsoft Entra role assignments - Microsoft Entra ID",
+        "t": "Listar atribuições de funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/view-assignments"
       },
       {
-        "t": "Least privileged roles by task - Microsoft Entra ID",
+        "t": "Funções de menor privilégio por tarefa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task"
       }
     ]
@@ -4166,11 +4166,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Incluir litware.com no Entra Connect existente:** o Connect exige conectividade (e trust/credenciais) com a floresta; sem trust, o caminho leve é o Cloud Sync.\n- **Staging mode:** servidor de reserva; não sincroniza.\n\n**Dica de prova:** O Cloud Sync usa agentes leves (alta disponibilidade com vários agentes) e é gerenciado na nuvem.",
     "docs": [
       {
-        "t": "What is Microsoft Entra Cloud Sync? - Microsoft Entra ID",
+        "t": "O que é o Microsoft Entra Cloud Sync? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync"
       },
       {
-        "t": "What is the provisioning agent? - Microsoft Entra ID",
+        "t": "O que é o agente de provisionamento? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-provisioning-agent"
       }
     ]
@@ -4229,7 +4229,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ]
@@ -4273,15 +4273,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Authentication method policy:** define quais métodos são permitidos, não força o registro com adiamento.\n- **Conditional Access:** pode exigir MFA, mas não tem período de carência de registro.\n- **MFA Server:** produto on-premises aposentado.\n- **7 ou 28 dias:** o período fixo da política é de 14 dias.\n\n**Dica de prova:** Registration campaigns (Authenticator) permitem adiar o registro por até 14 dias e limitar o número de adiamentos.",
     "docs": [
       {
-        "t": "Run a Registration Campaign to Set Up a Passkey or Microsoft Authenticator - Microsoft Entra ID",
+        "t": "Executar uma campanha de registro para configurar uma chave de acesso ou o Microsoft Authenticator - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign"
       },
       {
-        "t": "Combined registration for SSPR and Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Registro combinado de SSPR e autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-registration-mfa-sspr-combined"
       },
       {
-        "t": "Configure the MFA registration policy - Microsoft Entra ID Protection",
+        "t": "Configurar a política de registro de MFA - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-mfa-policy"
       }
     ]
@@ -4359,7 +4359,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Respostas sem Group1:** Azure RBAC aceita grupos de segurança, inclusive dinâmicos.\n- **Respostas sem App1 / VM1:** service principals e managed identities também são principals válidos.\n\n**Dica de prova:** Grupos M365 sem securityEnabled não aparecem como principal no RBAC.",
     "docs": [
       {
-        "t": "What is Azure role-based access control (Azure RBAC)?",
+        "t": "O que é o controle de acesso baseado em função do Azure (Azure RBAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
@@ -4423,7 +4423,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
-        "t": "Allow or block invitations - Microsoft Entra External ID",
+        "t": "Permitir ou bloquear convites - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list"
       }
     ]
@@ -4486,7 +4486,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (atualizar o status no Identity Secure Score):** escrita = Global, Security, Exchange ou SharePoint administrator. Security operator só lê.",
     "docs": [
       {
-        "t": "What is the Identity Secure Score? - Microsoft Entra ID",
+        "t": "O que é a Pontuação de Segurança de Identidade? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score"
       }
     ]
@@ -4515,7 +4515,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** o SharePoint administrator tem escrita no Secure Score (o mesmo vale para Exchange, Security e Global administrator).",
     "docs": [
       {
-        "t": "What is the Identity Secure Score? - Microsoft Entra ID",
+        "t": "O que é a Pontuação de Segurança de Identidade? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score"
       }
     ]
@@ -4541,7 +4541,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Administrative unit:** limita escopo, não define permissões.\n- **PIM:** torna atribuições just-in-time; não cria o conjunto de permissões.\n- **Helpdesk administrator:** inclui redefinir senhas; excede \"somente\".\n\n**Dica de prova:** Se Service Support Administrator estivesse nas opções, seria a resposta (exatamente essas três tarefas).",
     "docs": [
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
@@ -4549,7 +4549,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       }
     ]
@@ -4590,11 +4590,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Password protection:** senhas banidas.\n- **Cross-tenant sync:** B2B entre tenants.\n- **PHS:** valida o hash na nuvem.\n- **MIM / Entra admin center / Purview:** o método de login híbrido é configurado no assistente do Entra Connect.",
     "docs": [
       {
-        "t": "Microsoft Entra Connect: Pass-through Authentication - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: autenticação de passagem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta"
       },
       {
-        "t": "Microsoft Entra pass-through authentication - Quickstart - Microsoft Entra ID",
+        "t": "Autenticação de passagem do Microsoft Entra - Início rápido - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta-quick-start"
       }
     ]
@@ -4620,15 +4620,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Log Analytics:** exigiria enviar os logs antes; mais esforço.\n- **Audit logs:** mudanças de configuração, não falhas de login.\n- **Provisioning logs:** provisionamento em apps (SCIM).\n\n**Dica de prova:** No sign-in log, abra a entrada e veja Failure reason, Conditional Access e o código AADSTS.",
     "docs": [
       {
-        "t": "Sign-in logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de entrada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins"
       },
       {
-        "t": "Learn about the audit logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Conhecer os logs de auditoria no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs"
       },
       {
-        "t": "User provisioning logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de provisionamento de usuários no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs"
       }
     ]
@@ -4700,7 +4700,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
-        "t": "How to enable passkeys (FIDO2) in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Como habilitar chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
       }
     ]
@@ -4802,15 +4802,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 usa SSPR:** Sim. Está sincronizado, e o password writeback está habilitado.\n- **User1 autenticado por DC:** Sim. PTA valida no AD on-premises.\n- **User2 como membro no SharePoint:** Não. A OU2 não está sincronizada, então o User2 não existe no Entra.",
     "docs": [
       {
-        "t": "What is Microsoft Entra Connect and Connect Health. - Microsoft Entra ID",
+        "t": "O que são o Microsoft Entra Connect e o Connect Health? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect"
       },
       {
-        "t": "Understand Microsoft Entra Connect Sync - Microsoft Entra ID",
+        "t": "Entender o Microsoft Entra Connect Sync - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis"
       },
       {
-        "t": "Microsoft Entra Connect Sync: Configure filtering - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect Sync: configurar a filtragem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering"
       }
     ]
@@ -4874,11 +4874,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       }
     ]
@@ -4904,11 +4904,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Update-MgOrganization / Update-MgDomain / Update-MgDomainFederationConfiguration:** não tratam do self-service sign-up.\n- **Update-MgPolicyPermissionGrantPolicyExclude:** é de consentimento de apps; o gabarito do dump está errado e nenhuma opção corresponde.\n\n**Dica de prova:** Correto hoje: Update-MgPolicyAuthorizationPolicy -AllowedToSignUpEmailBasedSubscriptions:$false -AllowEmailVerifiedUsersToJoinOrganization:$false.",
     "docs": [
       {
-        "t": "Self-service sign up for email-verified users - Microsoft Entra ID",
+        "t": "Inscrição por autoatendimento para usuários com email verificado - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/directory-self-service-signup"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
@@ -4916,7 +4916,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       }
     ]
@@ -4950,7 +4950,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ]
@@ -5028,7 +5028,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ]
@@ -5054,15 +5054,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Authentication strengths:** combinações de métodos para o CA.\n- **User / sign-in risk policies:** ID Protection.\n\n**Dica de prova:** Lockout threshold (padrão 10) e lockout duration (padrão 60 s) ficam em Password protection.",
     "docs": [
       {
-        "t": "Prevent Attacks Using Smart Lockout - Microsoft Entra ID",
+        "t": "Prevenir ataques usando o bloqueio inteligente - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout"
       },
       {
-        "t": "Password protection in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Proteção por senha no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
       },
       {
-        "t": "Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Proteção por senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-on-premises"
       }
     ]
@@ -5173,15 +5173,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **FIDO2 / Windows Hello:** registrados em Security info (modo gerenciar) ou no próprio Windows, não no fluxo de interrupção.\n- **Hardware token (OATH):** é importado pelo administrador, não registrado pelo usuário no fluxo.\n\n**Dica de prova:** No modo interrupt, o usuário registra o que as políticas exigem: Authenticator, telefone, e-mail (SSPR) etc.",
     "docs": [
       {
-        "t": "Combined registration for SSPR and Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Registro combinado de SSPR e autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-registration-mfa-sspr-combined"
       },
       {
-        "t": "Run a Registration Campaign to Set Up a Passkey or Microsoft Authenticator - Microsoft Entra ID",
+        "t": "Executar uma campanha de registro para configurar uma chave de acesso ou o Microsoft Authenticator - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign"
       },
       {
-        "t": "Configure the MFA registration policy - Microsoft Entra ID Protection",
+        "t": "Configurar a política de registro de MFA - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-mfa-policy"
       }
     ]
@@ -5221,7 +5221,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Include = usuários específicos:** templates começam com All users.\n- **Exclude = None:** o template exclui automaticamente quem cria a política, como proteção contra lockout.\n\n**Dica de prova:** Políticas criadas a partir de template entram em report-only por padrão; revise antes de ligar.",
     "docs": [
       {
-        "t": "Conditional Access Templates: Simplify Security - Microsoft Entra ID",
+        "t": "Modelos de Acesso Condicional: simplificar a segurança - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common"
       }
     ]
@@ -5260,19 +5260,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Cross-tenant access settings:** controlam a confiança e o B2B **com outros tenants Entra** específicos, não os convites em geral.\n- **All identity providers:** provedores (Google, SAML, OTP).\n- **User flows / custom attributes / API connectors:** self-service sign-up.\n- **Terms of use / access reviews:** governança.\n\n**Dica de prova:** B2B collaboration tem duas camadas: External collaboration settings (convites) e cross-tenant access (inbound/outbound).",
     "docs": [
       {
-        "t": "Identity providers for workforce tenants - Microsoft Entra External ID",
+        "t": "Provedores de identidade para tenants de força de trabalho - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/identity-providers"
       },
       {
-        "t": "Add a SAML/WS-Fed identity provider - Microsoft Entra External ID",
+        "t": "Adicionar um provedor de identidade SAML/WS-Fed - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/direct-federation"
       },
       {
-        "t": "Google identity provider - Microsoft Entra External ID",
+        "t": "Provedor de identidade do Google - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/google-federation"
       },
       {
-        "t": "External ID Pricing - Microsoft Entra External ID",
+        "t": "Preços do External ID - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing"
       }
     ]
@@ -5298,7 +5298,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Métodos de autenticação:** o guest autentica no tenant de origem.\n- **Reset de senha:** o guest não tem senha no seu tenant.\n- **Revogar sessões:** não troca a identidade de login.\n\n**Dica de prova:** O reset de redemption pode ser feito pelo portal ou pela API de convite (resetRedemption = true).",
     "docs": [
       {
-        "t": "Reset guest redemption status - Microsoft Entra External ID",
+        "t": "Redefinir o status de resgate de convidados - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/reset-redemption-status"
       },
       {
@@ -5310,7 +5310,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       }
     ]
@@ -5340,7 +5340,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
-        "t": "Allow or block invitations - Microsoft Entra External ID",
+        "t": "Permitir ou bloquear convites - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list"
       }
     ]
@@ -5404,15 +5404,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin1 redefine senha de User3/User4:** Não. Estão fora da AU.\n- **Admin1 adiciona User1 ao Group3:** Não. O Group3 não está na AU.\n- **Admin3 redefine senha do User1:** Sim. Escopo no tenant inteiro.",
     "docs": [
       {
-        "t": "Create or delete administrative units - Microsoft Entra ID",
+        "t": "Criar ou excluir unidades administrativas - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
       },
       {
-        "t": "Add users, groups, or devices to an administrative unit - Microsoft Entra ID",
+        "t": "Adicionar usuários, grupos ou dispositivos a uma unidade administrativa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-members-add"
       },
       {
-        "t": "Restricted management administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas de gerenciamento restrito no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management"
       }
     ]
@@ -5446,19 +5446,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Adicionar o User1 ao Group1:** Sim. Grupos de nuvem aceitam usuários sincronizados como membros.\n- **User2 entra no Server1:** Sim. Desabilitar no Entra não afeta o AD.\n- **User3 entra no M365:** Não. A conta está desabilitada no AD, que é a fonte de autoridade, e a federação valida no AD.\n\n**Dica de prova:** O próximo ciclo de sync reescreve o accountEnabled no Entra com o valor do AD.",
     "docs": [
       {
-        "t": "Microsoft Entra Connect Sync service features and configuration - Microsoft Entra ID",
+        "t": "Recursos e configuração do serviço Microsoft Entra Connect Sync - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-syncservice-features"
       },
       {
-        "t": "What is Microsoft Entra Connect and Connect Health. - Microsoft Entra ID",
+        "t": "O que são o Microsoft Entra Connect e o Connect Health? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect"
       },
       {
-        "t": "Understand Microsoft Entra Connect Sync - Microsoft Entra ID",
+        "t": "Entender o Microsoft Entra Connect Sync - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis"
       },
       {
-        "t": "Microsoft Entra Connect Sync: Configure filtering - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect Sync: configurar a filtragem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering"
       }
     ]
@@ -5484,7 +5484,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **1 atribuição:** nenhuma função única dá \"ler tudo + reiniciar VMs\" na assinatura **e** \"criar só no RG1\".\n- **3 ou 4:** dá para combinar tudo em duas atribuições (uma por escopo).\n\n**Dica de prova:** Funções podem ser customizadas com várias ações; o escopo é que obriga a separar.",
     "docs": [
       {
-        "t": "What is Azure role-based access control (Azure RBAC)?",
+        "t": "O que é o controle de acesso baseado em função do Azure (Azure RBAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
@@ -5526,7 +5526,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
-        "t": "Allow or block invitations - Microsoft Entra External ID",
+        "t": "Permitir ou bloquear convites - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list"
       }
     ]
@@ -5601,11 +5601,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Notifications:** avisos de reset para usuários e admins.\n- **Properties:** habilita o SSPR (None/Selected/All).\n- **Registration:** exige registro e define o reconfirmar.\n- **AD FS / PTA / PHS:** não gravam a senha no AD; só o writeback grava.\n\n**Dica de prova:** A notificação do app só fica disponível quando \"Number of methods required to reset\" é 2; com 1, apenas o código do app é aceito.",
     "docs": [
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       },
       {
-        "t": "Security questions authentication method - Microsoft Entra ID",
+        "t": "Método de autenticação com perguntas de segurança - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-security-questions"
       },
       {
@@ -5651,7 +5651,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create snapshot cloud discovery reports - Microsoft Defender for Cloud Apps",
+        "t": "Criar relatórios instantâneos de descoberta de nuvem - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/create-snapshot-cloud-discovery-reports"
       },
       {
@@ -5699,11 +5699,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Password Protection DC agent / proxy:** senhas banidas.\n- **Web Application Proxy (Windows):** é do AD FS, não do Entra App Proxy.\n- **Entrada HTTPS / IPsec:** o conector não precisa de portas de entrada.\n\n**Dica de prova:** O conector precisa alcançar o App1 (interno) e *.msappproxy.net na 443 de saída. Instale 2 ou mais conectores para alta disponibilidade.",
     "docs": [
       {
-        "t": "Publish on-premises apps with Microsoft Entra application proxy - Microsoft Entra ID",
+        "t": "Publicar aplicativos locais com o proxy de aplicativo do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/overview-what-is-app-proxy"
       },
       {
-        "t": "Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy - Microsoft Entra ID",
+        "t": "Delegação restrita de Kerberos para logon único (SSO) em aplicativos com proxy de aplicativo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/how-to-configure-sso-with-kcd"
       }
     ],
@@ -5749,15 +5749,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin2 (Application developer) atribuir ao App1:** ele só gerencia apps de que é owner.\n- **User1 atribuir:** usuário comum não atribui.\n- **Registrar só admins:** com \"Users can register applications = Yes\" (padrão), qualquer membro registra.\n\n**Dica de prova:** Considere desabilitar \"Users can register applications\" e usar a função Application developer.",
     "docs": [
       {
-        "t": "How and why apps are added to Microsoft Entra ID - Microsoft identity platform",
+        "t": "Como e por que os aplicativos são adicionados ao Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-applications-are-added"
       },
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ],
@@ -5806,19 +5806,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Homepage para atribuídos / owners / ninguém:** com assignment required = No, qualquer usuário do tenant acessa.\n- **Launcher para todos / ninguém / owners:** com Visible = Yes, o app aparece no My Apps só para usuários atribuídos.\n\n**Dica de prova:** Para mostrar a todos no My Apps, atribua um grupo grande (ex.: All users dinâmico).",
     "docs": [
       {
-        "t": "Manage users and groups assignment to an application - Microsoft Entra ID",
+        "t": "Gerenciar a atribuição de usuários e grupos a um aplicativo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal"
       },
       {
-        "t": "Quickstart: Add an enterprise application - Microsoft Entra ID",
+        "t": "Início rápido: adicionar um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal"
       },
       {
-        "t": "Properties of an enterprise application - Microsoft Entra ID",
+        "t": "Propriedades de um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties"
       },
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       }
     ],
@@ -5847,19 +5847,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Configurar SSO:** o SSO já está configurado; o problema é a atribuição.\n- **Assignment required = No:** liberaria o acesso, mas os usuários ainda não veriam o app no My Apps sem atribuição.\n- **Permissões de consentimento:** sem relação com a visibilidade.\n\n**Dica de prova:** Coleções só organizam apps já visíveis ao usuário; não concedem acesso.",
     "docs": [
       {
-        "t": "Manage users and groups assignment to an application - Microsoft Entra ID",
+        "t": "Gerenciar a atribuição de usuários e grupos a um aplicativo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal"
       },
       {
-        "t": "Quickstart: Add an enterprise application - Microsoft Entra ID",
+        "t": "Início rápido: adicionar um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal"
       },
       {
-        "t": "Properties of an enterprise application - Microsoft Entra ID",
+        "t": "Propriedades de um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties"
       },
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       }
     ],
@@ -5889,11 +5889,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Managed Application Contributor / App Configuration Data Owner:** são funções do Azure RBAC, não do diretório.\n- **Cloud application administrator:** registra, mas é mais amplo (gerencia todos os apps).\n\n**Dica de prova:** O Application developer vira owner dos apps que cria, e só deles.",
     "docs": [
       {
-        "t": "Delegate application management administrator permissions - Microsoft Entra ID",
+        "t": "Delegar permissões de administrador de gerenciamento de aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles"
       },
       {
-        "t": "Add app roles and get them from a token - Microsoft identity platform",
+        "t": "Adicionar funções de aplicativo e obtê-las de um token - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps"
       }
     ],
@@ -5930,15 +5930,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Group3 sem aprovação:** Não. Membros de grupo aninhado não herdam a atribuição do app.\n- **User1 vira owner do Group1:** Não. O self-service pode usar o grupo, mas não muda os donos.\n- **App1 no launcher do User4:** Não. Visible to users = No.\n\n**Dica de prova:** O self-service application access está sendo substituído por access packages (entitlement management).",
     "docs": [
       {
-        "t": "Enable self-service application assignment - Microsoft Entra ID",
+        "t": "Habilitar a atribuição de aplicativos por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/manage-self-service-access"
       },
       {
-        "t": "Manage users and groups assignment to an application - Microsoft Entra ID",
+        "t": "Gerenciar a atribuição de usuários e grupos a um aplicativo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal"
       },
       {
-        "t": "Add app roles and get them from a token - Microsoft identity platform",
+        "t": "Adicionar funções de aplicativo e obtê-las de um token - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps"
       }
     ],
@@ -5968,7 +5968,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access reviews:** governança, não risco.\n- **Password Protection:** senhas banidas.\n- **SSPR:** é a remediação de risco de **usuário** (troca de senha), não de entrada.\n\n**Dica de prova:** Combine com uma política de registro de MFA (ou registration campaign) para todos estarem prontos.",
     "docs": [
       {
-        "t": "Remediate risks and unblock users - Microsoft Entra ID Protection",
+        "t": "Corrigir riscos e desbloquear usuários - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock"
       },
       {
@@ -6025,19 +6025,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **App registration:** é para apps que você desenvolve; app da galeria entra como enterprise app.\n- **Application Proxy:** publica apps on-premises; o Service1 é SaaS.\n- **Managed identity:** identidade de recursos do Azure.\n- **Compliance policy:** avalia o dispositivo, mas quem bloqueia é o CA.\n- **OAuth policy:** governança de apps no MDCA.",
     "docs": [
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       },
       {
-        "t": "How and why apps are added to Microsoft Entra ID - Microsoft identity platform",
+        "t": "Como e por que os aplicativos são adicionados ao Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-applications-are-added"
       },
       {
-        "t": "How to Configure Grant Controls in Microsoft Entra - Microsoft Entra ID",
+        "t": "Como configurar controles de concessão no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-grant"
       },
       {
-        "t": "Enable SAML single sign-on for an enterprise application - Microsoft Entra ID",
+        "t": "Habilitar o logon único SAML para um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso"
       }
     ],
@@ -6067,19 +6067,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Provisioning:** cria contas no app (SCIM).\n- **Application proxy:** publicação on-premises.\n- **Roles and administrators:** funções de gestão do app.\n\n**Dica de prova:** No self-service, defina se exige aprovação, os aprovadores e o grupo para onde vão os aprovados.",
     "docs": [
       {
-        "t": "Enable self-service application assignment - Microsoft Entra ID",
+        "t": "Habilitar a atribuição de aplicativos por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/manage-self-service-access"
       },
       {
-        "t": "Quickstart: Add an enterprise application - Microsoft Entra ID",
+        "t": "Início rápido: adicionar um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal"
       },
       {
-        "t": "Properties of an enterprise application - Microsoft Entra ID",
+        "t": "Propriedades de um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties"
       },
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       }
     ],
@@ -6118,19 +6118,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Sequência**\n- **Group claim:** emite grupos no token; não dá acesso ao Graph.\n- **Delegated permissions:** exigem um usuário logado; o web service lê sem usuário (application permission).\n\n**Dica de prova:** Permissões de aplicação sempre exigem admin consent; o app usa o client credentials flow.",
     "docs": [
       {
-        "t": "Microsoft Graph permissions reference  - Microsoft Graph",
+        "t": "Referência de permissões do Microsoft Graph - Microsoft Graph",
         "u": "https://learn.microsoft.com/en-us/graph/permissions-reference"
       },
       {
-        "t": "Authentication and authorization basics - Microsoft Graph",
+        "t": "Noções básicas de autenticação e autorização - Microsoft Graph",
         "u": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts"
       },
       {
-        "t": "Overview of permissions and consent in the Microsoft identity platform - Microsoft identity platform",
+        "t": "Visão geral de permissões e consentimento na plataforma de identidade da Microsoft - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview"
       },
       {
-        "t": "Web API app registration and API permissions - Microsoft identity platform",
+        "t": "Registro de aplicativos de API Web e permissões de API - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis"
       }
     ],
@@ -6159,15 +6159,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Tags / naming policies / dynamic groups:** não organizam o My Apps em seções.\n\n**Dica de prova:** Coleções são criadas em Enterprise applications > App launchers (ou pelo próprio usuário no My Apps).",
     "docs": [
       {
-        "t": "Quickstart: Add an enterprise application - Microsoft Entra ID",
+        "t": "Início rápido: adicionar um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal"
       },
       {
-        "t": "Properties of an enterprise application - Microsoft Entra ID",
+        "t": "Propriedades de um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties"
       },
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       }
     ],
@@ -6197,19 +6197,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Group2 (distribuição):** grupos sem segurança não são atribuíveis a apps.\n- **Group4:** o gabarito considera mail-enabled security group não elegível (comportamento discutido).\n\n**Dica de prova:** Grupos aninhados não herdam a atribuição de app; atribua o grupo que contém os usuários diretamente.",
     "docs": [
       {
-        "t": "Use a group to manage access to SaaS apps - Microsoft Entra ID",
+        "t": "Usar um grupo para gerenciar o acesso a aplicativos SaaS - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-saasapps"
       },
       {
-        "t": "Quickstart: Add an enterprise application - Microsoft Entra ID",
+        "t": "Início rápido: adicionar um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal"
       },
       {
-        "t": "Properties of an enterprise application - Microsoft Entra ID",
+        "t": "Propriedades de um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties"
       },
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       }
     ],
@@ -6238,15 +6238,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1:** o consentimento de usuário está desabilitado.\n- **User2 / Admin2:** como revisores, só podem aprovar se tiverem função de Global, Cloud application ou Application administrator; sem a função, apenas revisam ou bloqueiam.\n\n**Dica de prova:** O admin consent workflow notifica os revisores por e-mail; as solicitações expiram conforme configurado (padrão 30 dias).",
     "docs": [
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       },
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       }
     ],
@@ -6275,7 +6275,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access policy do MDCA:** controla a sessão; não exibe os termos do Entra.\n- **Terms and conditions do Intune:** são aceitos no Company Portal (registro do dispositivo), não no acesso a apps.\n- **Compliance policy:** avalia dispositivos.\n\n**Dica de prova:** A política pode exigir aceite por dispositivo e expiração periódica.",
     "docs": [
       {
-        "t": "Set Up Microsoft Entra Terms of Use with Conditional Access - Microsoft Entra ID",
+        "t": "Configurar os Termos de Uso do Microsoft Entra com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use"
       }
     ],
@@ -6397,7 +6397,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Plan a Privileged Identity Management deployment - Microsoft Entra ID Governance",
+        "t": "Planejar uma implantação do Privileged Identity Management - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan"
       },
       {
@@ -6434,7 +6434,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Device1 em 20/11:** Sim. Ainda não aceitou nesse dispositivo.\n- **Device2 em 11/12:** Sim. Registra o dispositivo e aceita.\n- **Device3 em 7/12:** Não. Já aceitou em 15/11, e a expiração só começa em 10/12.\n\n**Dica de prova:** \"Require users to consent on every device\" exige que o dispositivo seja registrado ou joined no Entra; alguns clientes não suportam.",
     "docs": [
       {
-        "t": "Set Up Microsoft Entra Terms of Use with Conditional Access - Microsoft Entra ID",
+        "t": "Configurar os Termos de Uso do Microsoft Entra com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use"
       }
     ],
@@ -6500,7 +6500,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access package (dentro ou fora do diretório):** concede acesso; o requisito é revisar periodicamente o acesso existente.\n- **Revisão baseada em aplicação:** o acesso ao EAC vem de uma função ou grupo, não de atribuição de app.\n\n**Dica de prova:** Com auto-apply e \"If reviewers don't respond = Remove access\", o acesso é bloqueado automaticamente.",
     "docs": [
       {
-        "t": "What are access reviews? - Microsoft Entra - Microsoft Entra ID Governance",
+        "t": "O que são revisões de acesso? - Microsoft Entra - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
@@ -6645,7 +6645,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **PIM para o Global Admin de emergência:** a ativação depende do próprio Entra e de aprovação; pode falhar na crise.\n- **CA por local:** se a rede corporativa cair, a conta fica inacessível.\n- **CA exigindo MFA:** o MFA pode ser justamente o serviço com falha (a recomendação atual é exigir FIDO2/passkey para break-glass, mas o gabarito é monitorar).\n\n**Dica de prova:** Crie alertas no Log Analytics para logins e alterações nas contas de emergência e teste-as periodicamente.",
     "docs": [
       {
-        "t": "Manage emergency access admin accounts - Microsoft Entra ID",
+        "t": "Gerenciar contas de administrador de acesso de emergência - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access"
       }
     ]
@@ -6671,7 +6671,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access packages:** definem o acesso, não o ciclo de vida global dos externos.\n- **Terms of use / access reviews settings:** não removem convidados após expirar.\n\n**Dica de prova:** A remoção só vale para externos que entraram por access package e perderam a última atribuição.",
     "docs": [
       {
-        "t": "Govern access for external users in entitlement management - Microsoft Entra ID Governance",
+        "t": "Controlar o acesso de usuários externos no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users"
       },
       {
@@ -6708,19 +6708,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **14 dias:** não é um período de retenção do Entra.\n- **90 / 365 dias:** exigem enviar para Log Analytics ou storage.\n\n**Dica de prova:** Retenção no portal: Free = 7 dias; P1/P2 = 30 dias (audit e sign-in).",
     "docs": [
       {
-        "t": "Microsoft Entra data retention - Microsoft Entra ID",
+        "t": "Retenção de dados do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-reports-data-retention"
       },
       {
-        "t": "Sign-in logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de entrada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins"
       },
       {
-        "t": "Learn about the audit logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Conhecer os logs de auditoria no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs"
       },
       {
-        "t": "User provisioning logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de provisionamento de usuários no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs"
       }
     ],
@@ -6753,7 +6753,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       },
       {
-        "t": "What are access reviews? - Microsoft Entra - Microsoft Entra ID Governance",
+        "t": "O que são revisões de acesso? - Microsoft Entra - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
@@ -6787,15 +6787,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-ins (CSV/JSON):** registram logins, não alterações em políticas.\n- **Audit logs em CSV:** também contém a mudança; o gabarito prefere JSON, que preserva a estrutura (modifiedProperties) para o SIEM.\n\n**Dica de prova:** Para integração contínua com SIEM, use diagnostic settings → Event Hub.",
     "docs": [
       {
-        "t": "Learn about the audit logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Conhecer os logs de auditoria no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs"
       },
       {
-        "t": "Sign-in logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de entrada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins"
       },
       {
-        "t": "User provisioning logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de provisionamento de usuários no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs"
       }
     ],
@@ -6860,7 +6860,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Identity1 (service principal / managed identity):** não pode ativar funções; só recebe atribuição ativa.\n- **Só User1:** guests também podem ser elegíveis.\n\n**Dica de prova:** Grupos role-assignable também podem ser elegíveis (ou usar PIM for Groups).",
     "docs": [
       {
-        "t": "Plan a Privileged Identity Management deployment - Microsoft Entra ID Governance",
+        "t": "Planejar uma implantação do Privileged Identity Management - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan"
       },
       {
@@ -6909,7 +6909,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 em 5/02:** Não. A instância de janeiro terminou em 29/01, e a próxima só começaria em 15/02, quando a série termina.\n- **User2 em 25/01:** Sim. Revisões ativas permitem mudar a resposta até o fim.\n- **User3 (owner):** Não. Os revisores são os próprios membros (self).",
     "docs": [
       {
-        "t": "Review your access to groups & apps in access reviews - Microsoft Entra ID Governance",
+        "t": "Revisar seu acesso a grupos e aplicativos nas revisões de acesso - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/review-your-access"
       },
       {
@@ -6961,11 +6961,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Assignment / CA / external collaboration para liberar:** a política do access package é que define quem pode solicitar (organização conectada).\n- **Policy / assignment / CA para bloquear litwareinc.com:** a deny list de domínios em External collaboration impede o convite desse domínio.\n\n**Dica de prova:** Organizações conectadas podem conter vários domínios; o filtro por domínio é feito fora do pacote.",
     "docs": [
       {
-        "t": "Change request settings for an access package in entitlement management - Microsoft Entra - Microsoft Entra ID Governance",
+        "t": "Alterar configurações de solicitação de um pacote de acesso no gerenciamento de direitos - Microsoft Entra - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-request-policy"
       },
       {
-        "t": "Create an access package in entitlement management - Microsoft Entra ID Governance",
+        "t": "Criar um pacote de acesso no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create"
       },
       {
@@ -7003,19 +7003,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Notify settings do ID Protection:** e-mails para admins.\n- **Playbook:** automação de resposta (vem depois do incidente).\n- **Diagnostic settings do Entra:** enviam logs (inclusive RiskyUsers), mas a geração de incidentes vem das regras e do conector.\n\n**Dica de prova:** Hoje, os alertas do ID Protection chegam ao Sentinel pelo conector Microsoft Defender XDR.",
     "docs": [
       {
-        "t": "Advanced multistage attack detection in Microsoft Sentinel",
+        "t": "Detecção avançada de ataques em vários estágios no Microsoft Sentinel",
         "u": "https://learn.microsoft.com/en-us/azure/sentinel/fusion"
       },
       {
-        "t": "Find your Microsoft Sentinel data connector",
+        "t": "Encontrar seu conector de dados do Microsoft Sentinel",
         "u": "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors-reference"
       },
       {
-        "t": "How to configure Microsoft Entra diagnostic settings - Microsoft Entra ID",
+        "t": "Como configurar as definições de diagnóstico do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-configure-diagnostic-settings"
       },
       {
-        "t": "Integrate Microsoft Entra logs with Azure Monitor logs - Microsoft Entra ID",
+        "t": "Integrar logs do Microsoft Entra aos logs do Azure Monitor - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs"
       }
     ],
@@ -7051,11 +7051,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Analyze activity logs using Log Analytics - Microsoft Entra ID",
+        "t": "Analisar logs de atividades usando o Log Analytics - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ]
@@ -7089,11 +7089,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Analyze activity logs using Log Analytics - Microsoft Entra ID",
+        "t": "Analisar logs de atividades usando o Log Analytics - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ]
@@ -7126,11 +7126,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Analyze activity logs using Log Analytics - Microsoft Entra ID",
+        "t": "Analisar logs de atividades usando o Log Analytics - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ]
@@ -7156,11 +7156,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Set-AzureADTenantDetail:** altera propriedades do tenant; sem relação com logs.\n- **Workbook:** precisa dos dados no workspace antes.\n- **Get-AzureADAuditDirectoryLogs:** consulta pontual; não integra com o Azure Monitor.\n\n**Dica de prova:** Selecione as categorias AuditLogs, SignInLogs, NonInteractiveUserSignInLogs etc. no diagnostic setting.",
     "docs": [
       {
-        "t": "Integrate Microsoft Entra logs with Azure Monitor logs - Microsoft Entra ID",
+        "t": "Integrar logs do Microsoft Entra aos logs do Azure Monitor - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs"
       },
       {
-        "t": "How to configure Microsoft Entra diagnostic settings - Microsoft Entra ID",
+        "t": "Como configurar as definições de diagnóstico do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-configure-diagnostic-settings"
       }
     ],
@@ -7264,11 +7264,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Analyze activity logs using Log Analytics - Microsoft Entra ID",
+        "t": "Analisar logs de atividades usando o Log Analytics - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ]
@@ -7302,7 +7302,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 removido do Group1:** Não. A revisão é do Group3, e o User1 é membro indireto (via Group1).\n- **User2 removido do Group3:** Não. Não é membro direto, e grupos sincronizados do AD não têm membros alterados pela revisão.\n- **User3 removido do Group2:** Não. Não é membro.\n\n**Dica de prova:** Access reviews só aplicam remoção em grupos gerenciados na nuvem.",
     "docs": [
       {
-        "t": "What are access reviews? - Microsoft Entra - Microsoft Entra ID Governance",
+        "t": "O que são revisões de acesso? - Microsoft Entra - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
@@ -7390,15 +7390,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **525:** os guests não exigem licença por usuário no modelo MAU.\n- **1 para o Group1:** na auto-revisão, cada membro interno revisor precisa de licença.\n- **100 / 295 / 395 no Group2:** só o dono revisor (interno) precisa de licença.",
     "docs": [
       {
-        "t": "Microsoft Entra ID Governance licensing fundamentals - Microsoft Entra ID Governance",
+        "t": "Conceitos básicos de licenciamento do Microsoft Entra ID Governance - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals"
       },
       {
-        "t": "What are access reviews? - Microsoft Entra - Microsoft Entra ID Governance",
+        "t": "O que são revisões de acesso? - Microsoft Entra - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
-        "t": "Plan a Microsoft Entra access reviews deployment - Microsoft Entra ID Governance",
+        "t": "Planejar uma implantação de revisões de acesso do Microsoft Entra - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/deploy-access-reviews"
       }
     ],
@@ -7430,15 +7430,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Guest1 em 5/05:** Não. Removido 30 dias após perder a última atribuição; ter uma função de diretório não impede.\n- **Guest2:** Não. Mesmo motivo.\n- **Guest3:** Sim. Foi convidado fora do access package, e a regra não se aplica a ele.\n\n**Dica de prova:** A configuração vale para \"external users brought in by entitlement management\".",
     "docs": [
       {
-        "t": "Change lifecycle settings for an access package in entitlement management - Microsoft Entra ID Governance",
+        "t": "Alterar configurações de ciclo de vida de um pacote de acesso no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-lifecycle-policy"
       },
       {
-        "t": "Govern access for external users in entitlement management - Microsoft Entra ID Governance",
+        "t": "Controlar o acesso de usuários externos no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users"
       },
       {
-        "t": "Understanding lifecycle workflows - Microsoft Entra ID Governance",
+        "t": "Entender os fluxos de trabalho de ciclo de vida - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/understanding-lifecycle-workflows"
       }
     ],
@@ -7468,7 +7468,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-in logs:** logins, não aceites de termos.\n- **Usage and Insights:** uso de apps e métodos.\n- **Provisioning logs:** SCIM.\n\n**Dica de prova:** No portal: Terms of use > selecionar Terms1 > Accepted / Declined.",
     "docs": [
       {
-        "t": "Set Up Microsoft Entra Terms of Use with Conditional Access - Microsoft Entra ID",
+        "t": "Configurar os Termos de Uso do Microsoft Entra com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use"
       }
     ],
@@ -7539,11 +7539,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 ativo automaticamente:** Não. A atribuição dele é elegível e exige ativação com aprovação.\n- **Só User3 aprova o User2:** Sim. O aprovador não pode aprovar a própria solicitação.\n- **User1 até 04:00:** Não. A ativação é cortada no fim da atribuição elegível.",
     "docs": [
       {
-        "t": "Approve or deny requests for Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Aprovar ou negar solicitações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow"
       },
       {
-        "t": "Activate Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Ativar funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role"
       }
     ]
@@ -7623,7 +7623,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
-        "t": "Administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units"
       },
       {
@@ -7660,15 +7660,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Set-ADSyncScheduler:** muda o intervalo do ciclo.\n- **Start-ADSyncSyncCycle:** força um ciclo, mas a OU continua fora do escopo.\n- **Change user sign-in:** altera PHS/PTA/federação.\n\n**Dica de prova:** Depois de mudar a filtragem por OU, o assistente roda um Full sync automaticamente.",
     "docs": [
       {
-        "t": "What is Microsoft Entra Connect and Connect Health. - Microsoft Entra ID",
+        "t": "O que são o Microsoft Entra Connect e o Connect Health? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect"
       },
       {
-        "t": "Understand Microsoft Entra Connect Sync - Microsoft Entra ID",
+        "t": "Entender o Microsoft Entra Connect Sync - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis"
       },
       {
-        "t": "Microsoft Entra Connect Sync: Configure filtering - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect Sync: configurar a filtragem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering"
       }
     ]
@@ -7749,7 +7749,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Password Protection:** bane senhas fracas; não detecta vazamento.\n- **Authentication method policy:** define métodos permitidos.\n- **Federação com PingFederate:** não sincroniza hashes.\n\n**Dica de prova:** O PHS pode ficar habilitado como \"recurso secundário\" mesmo com federação ou PTA; também serve de fallback de login.",
     "docs": [
       {
-        "t": "Secure your Microsoft Entra identity infrastructure - Microsoft Entra ID",
+        "t": "Proteger sua infraestrutura de identidade do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity"
       },
       {
@@ -7809,11 +7809,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Global administrator:** funciona nos dois casos, mas viola o menor privilégio.\n- **Security administrator:** não atribui funções.\n- **User Access Administrator para funções do Entra / Privileged role administrator para funções do Azure:** cada um vale para um sistema (Azure RBAC ≠ funções do diretório).",
     "docs": [
       {
-        "t": "Least privileged roles by task - Microsoft Entra ID",
+        "t": "Funções de menor privilégio por tarefa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task"
       },
       {
-        "t": "Assign Azure roles using the Azure portal - Azure RBAC",
+        "t": "Atribuir funções do Azure usando o portal do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
@@ -7821,7 +7821,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       }
     ],
@@ -7927,7 +7927,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Registrar no SSPR primeiro:** a remediação da política de risco usa MFA + troca de senha; o pré-requisito é o registro de MFA.\n- **Consentimento de apps:** sem relação.\n- **Sign-in risk policy:** trata do risco do login, não da identidade comprometida.\n- **Password Protection:** senhas banidas, não comprometimento.",
     "docs": [
       {
-        "t": "Microsoft Entra ID Protection risk-based access policies - Microsoft Entra ID Protection",
+        "t": "Políticas de acesso baseadas em risco do Microsoft Entra ID Protection - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies"
       },
       {
@@ -7972,15 +7972,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **IP privado:** o Entra nunca vê IPs privados de origem.\n- **Trusted IPs (público ou privado):** recurso do MFA por usuário legado; o caminho atual é named location em CA.\n\n**Dica de prova:** Marque a named location como \"trusted\" para usá-la em \"All trusted locations\" e no ID Protection.",
     "docs": [
       {
-        "t": "Conditional Access Policy: Using Network Signals - Microsoft Entra ID",
+        "t": "Política de Acesso Condicional: usar sinais de rede - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network"
       },
       {
-        "t": "Conditional Access Setup: Users, Groups, Agents, and Workload Identities - Microsoft Entra ID",
+        "t": "Configuração do Acesso Condicional: usuários, grupos, agentes e identidades de carga de trabalho - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-users-groups"
       },
       {
-        "t": "Targeting Resources in Conditional Access Policies - Microsoft Entra ID",
+        "t": "Selecionar recursos de destino em políticas de Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps"
       }
     ],
@@ -8027,15 +8027,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Authentication method policy:** define métodos, não exige o MFA.\n- **MFA registration policy:** o gabarito desta variante prefere o CA (requisito de \"via Conditional Access\"); compare com a Q106.\n- **MFA Server:** aposentado.\n- **7 ou 28 dias:** o adiamento de registro é de 14 dias.",
     "docs": [
       {
-        "t": "Run a Registration Campaign to Set Up a Passkey or Microsoft Authenticator - Microsoft Entra ID",
+        "t": "Executar uma campanha de registro para configurar uma chave de acesso ou o Microsoft Authenticator - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign"
       },
       {
-        "t": "Combined registration for SSPR and Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Registro combinado de SSPR e autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-registration-mfa-sspr-combined"
       },
       {
-        "t": "Configure the MFA registration policy - Microsoft Entra ID Protection",
+        "t": "Configurar a política de registro de MFA - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-mfa-policy"
       }
     ],
@@ -8068,11 +8068,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Policy set / app configuration policy do Intune:** tratam de dispositivos e apps móveis.\n- **Application Proxy:** o App1 não é on-premises.\n\n**Dica de prova:** No registro: redirect URI, tipo de conta suportado, segredo/certificado e permissões do Graph.",
     "docs": [
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ],
@@ -8118,19 +8118,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Cloud App Security policies:** o MDCA não publica apps on-premises; o App Proxy sim (e daí o CA aplica MFA).\n- **User consent settings:** consentimento a apps, não restrição de sessão.\n- **Publicar o SharePoint pelo App Proxy:** o SharePoint Online já está na nuvem.\n\n**Dica de prova:** App-enforced restrictions exigem configurar também o SharePoint (Unmanaged devices = limited, web-only).",
     "docs": [
       {
-        "t": "Enable remote access to SharePoint - Microsoft Entra application proxy - Microsoft Entra ID",
+        "t": "Habilitar o acesso remoto ao SharePoint - Proxy de aplicativo do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-integrate-with-sharepoint-server"
       },
       {
-        "t": "Use app-enforced restrictions - SharePoint in Microsoft 365",
+        "t": "Usar restrições impostas por aplicativos - SharePoint no Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/sharepoint/app-enforced-restrictions"
       },
       {
-        "t": "Conditional Access: Manage Session Controls Effectively - Microsoft Entra ID",
+        "t": "Acesso Condicional: gerenciar controles de sessão com eficiência - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-session"
       },
       {
-        "t": "Publish on-premises apps with Microsoft Entra application proxy - Microsoft Entra ID",
+        "t": "Publicar aplicativos locais com o proxy de aplicativo do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/overview-what-is-app-proxy"
       }
     ],
@@ -8177,15 +8177,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Consent settings:** tratam de consentimento, não de registro.\n- **Application / Cloud application administrator:** mais amplos que o necessário para só registrar.",
     "docs": [
       {
-        "t": "Delegate application management administrator permissions - Microsoft Entra ID",
+        "t": "Delegar permissões de administrador de gerenciamento de aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles"
       },
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ],
@@ -8236,19 +8236,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Proxy em DC1:** o proxy não deve rodar em DC (DCs sem internet).\n- **Proxy no SERVER1:** conflita com o conector do Application Proxy (Agent Updater incompatível).\n- **Lista em DC1/servidores:** a lista customizada é gerenciada no Entra e baixada pelos agentes.",
     "docs": [
       {
-        "t": "Deploy on-premises Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Implantar a Proteção por Senha do Microsoft Entra no ambiente local - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-ban-bad-on-premises-deploy"
       },
       {
-        "t": "Password protection in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Proteção por senha no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
       },
       {
-        "t": "Microsoft Entra Password Protection - Microsoft Entra ID",
+        "t": "Proteção por senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad-on-premises"
       },
       {
-        "t": "Prevent Attacks Using Smart Lockout - Microsoft Entra ID",
+        "t": "Prevenir ataques usando o bloqueio inteligente - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout"
       }
     ],
@@ -8282,15 +8282,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Company branding / External Identities / App registrations:** não enviam logs.\n\n**Dica de prova:** Inclua AuditLogs e SignInLogs; a retenção passa a ser a do workspace.",
     "docs": [
       {
-        "t": "What is Microsoft Entra monitoring and health? - Microsoft Entra ID",
+        "t": "O que são monitoramento e integridade do Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-monitoring-health"
       },
       {
-        "t": "How to configure Microsoft Entra diagnostic settings - Microsoft Entra ID",
+        "t": "Como configurar as definições de diagnóstico do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-configure-diagnostic-settings"
       },
       {
-        "t": "Integrate Microsoft Entra logs with Azure Monitor logs - Microsoft Entra ID",
+        "t": "Integrar logs do Microsoft Entra aos logs do Azure Monitor - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs"
       }
     ],
@@ -8336,7 +8336,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Access review:** revisa acessos existentes.\n- **CA:** não concede acesso nem tem fluxo de aprovação.\n- **Accepted domain / custom domain:** conceitos de Exchange/Entra para domínios próprios, não de parceiros.\n\n**Dica de prova:** A organização conectada permite que usuários da Fabrikam solicitem o pacote mesmo sem conta guest prévia.",
     "docs": [
       {
-        "t": "Manage connected organizations in entitlement management - Microsoft Entra ID Governance",
+        "t": "Gerenciar organizações conectadas no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-organization"
       },
       {
@@ -8468,19 +8468,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Workbook:** visualiza, mas não detecta.\n- **Data connectors:** já existem.\n- **Playbook:** resposta automatizada.\n\n**Dica de prova:** Fusion é habilitado por padrão; ajuste as fontes e os cenários na regra \"Advanced Multistage Attack Detection\".",
     "docs": [
       {
-        "t": "Advanced multistage attack detection in Microsoft Sentinel",
+        "t": "Detecção avançada de ataques em vários estágios no Microsoft Sentinel",
         "u": "https://learn.microsoft.com/en-us/azure/sentinel/fusion"
       },
       {
-        "t": "Find your Microsoft Sentinel data connector",
+        "t": "Encontrar seu conector de dados do Microsoft Sentinel",
         "u": "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors-reference"
       },
       {
-        "t": "How to configure Microsoft Entra diagnostic settings - Microsoft Entra ID",
+        "t": "Como configurar as definições de diagnóstico do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-configure-diagnostic-settings"
       },
       {
-        "t": "Integrate Microsoft Entra logs with Azure Monitor logs - Microsoft Entra ID",
+        "t": "Integrar logs do Microsoft Entra aos logs do Azure Monitor - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs"
       }
     ]
@@ -8579,15 +8579,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Admin3 (Security administrator):** não pode aprovar consentimento.\n- **User1 (owner):** ser owner do enterprise app não dá direito de conceder admin consent tenant-wide.\n- **Só Admin1:** o Admin2 também tem função elegível pela tabela.",
     "docs": [
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       },
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       }
     ]
@@ -8750,15 +8750,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 / User3 / User4:** as permissões dos apps deles são delegadas (agem só no próprio calendário) ou não incluem calendário.\n\n**Dica de prova:** Permissões de aplicação permitem acessar dados de todos os usuários; restrinja com Application Access Policy do Exchange (RBAC for Applications).",
     "docs": [
       {
-        "t": "Overview of permissions and consent in the Microsoft identity platform - Microsoft identity platform",
+        "t": "Visão geral de permissões e consentimento na plataforma de identidade da Microsoft - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview"
       },
       {
-        "t": "Web API app registration and API permissions - Microsoft identity platform",
+        "t": "Registro de aplicativos de API Web e permissões de API - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis"
       },
       {
-        "t": "Microsoft Graph permissions reference  - Microsoft Graph",
+        "t": "Referência de permissões do Microsoft Graph - Microsoft Graph",
         "u": "https://learn.microsoft.com/en-us/graph/permissions-reference"
       }
     ]
@@ -8799,7 +8799,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **15 / 90 / 180 dias:** o período de soft delete de usuários é de 30 dias.\n- **Network / Domain name / Helpdesk administrator:** não restauram usuários.\n\n**Dica de prova:** Depois de restaurado, o usuário volta com grupos, licenças e atributos.",
     "docs": [
       {
-        "t": "Restore or permanently remove recently deleted user - Microsoft Entra",
+        "t": "Restaurar ou remover permanentemente um usuário excluído recentemente - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-restore"
       },
       {
@@ -8888,15 +8888,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Dynamic User / Dynamic Device:** grupos role-assignable não aceitam associação dinâmica.\n\n**Dica de prova:** A opção \"Microsoft Entra roles can be assigned to the group\" só aparece na criação e exige P1.",
     "docs": [
       {
-        "t": "Use Microsoft Entra groups to manage role assignments - Microsoft Entra ID",
+        "t": "Usar grupos do Microsoft Entra para gerenciar atribuições de funções - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept"
       },
       {
-        "t": "List Microsoft Entra role assignments - Microsoft Entra ID",
+        "t": "Listar atribuições de funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/view-assignments"
       },
       {
-        "t": "Least privileged roles by task - Microsoft Entra ID",
+        "t": "Funções de menor privilégio por tarefa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task"
       }
     ]
@@ -8935,15 +8935,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Audit logs para IPs:** os IPs e locais estão nos sign-in logs.\n- **Sign-in logs para mudanças:** alterações em objetos ficam nos audit logs.\n- **Secure Score para mudanças:** o score avalia a configuração, não registra eventos.",
     "docs": [
       {
-        "t": "Sign-in logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de entrada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins"
       },
       {
-        "t": "Learn about the audit logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Conhecer os logs de auditoria no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs"
       },
       {
-        "t": "User provisioning logs in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Logs de provisionamento de usuários no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs"
       }
     ]
@@ -8969,11 +8969,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **14 / 60 / 180 dias:** apps excluídos ficam 30 dias em Deleted applications.\n\n**Dica de prova:** Para restaurar, use App registrations > Deleted applications ou Restore-MgDirectoryDeletedItem.",
     "docs": [
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ]
@@ -9016,11 +9016,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Identity Protection / Identity Governance / Endpoint Manager:** não monitoram permissões de apps OAuth.\n- **App discovery / app protection / CA / risk:** não avaliam permissões concedidas a apps.\n\n**Dica de prova:** Filtre por permissão Mail.ReadWrite e nível alto; a ação pode revogar o app automaticamente.",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -9050,15 +9050,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Authentication methods:** tratam de MFA.\n- **Access packages:** concedem acesso a recursos.\n- **Application proxy:** publicação de apps.\n\n**Dica de prova:** Combine \"Do not allow user consent\" com o admin consent workflow para não travar os usuários.",
     "docs": [
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       },
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       }
     ]
@@ -9128,7 +9128,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
-        "t": "Allow or block invitations - Microsoft Entra External ID",
+        "t": "Permitir ou bloquear convites - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list"
       }
     ]
@@ -9197,15 +9197,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Collection / access review / access package:** não restringem o tipo de permissão consentida.\n\n**Dica de prova:** Permissões classificadas como \"Low\" (ex.: User.Read, openid, profile, email) entram no consentimento do usuário.",
     "docs": [
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       },
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       }
     ]
@@ -9249,11 +9249,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Application Administrator:** também dá acesso, mas inclui o Application Proxy; não é o menor.\n- **Application Developer:** não acessa o app governance.\n- **M365 admin center / MDCA / Purview:** o dashboard fica no portal do Microsoft Defender (security.microsoft.com).",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -9279,15 +9279,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **OAuth 2.0:** autorização/SSO, não provisionamento.\n- **WS-Fed:** SSO federado.\n- **LDAP 3:** protocolo de diretório on-premises.\n\n**Dica de prova:** O provisionamento usa um enterprise app com Provisioning = Automatic, URL do tenant SCIM e token secreto.",
     "docs": [
       {
-        "t": "What is automated app user provisioning in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "O que é o provisionamento automatizado de usuários de aplicativos no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning"
       },
       {
-        "t": "Enable SAML single sign-on for an enterprise application - Microsoft Entra ID",
+        "t": "Habilitar o logon único SAML para um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso"
       },
       {
-        "t": "SaaS App configuration guides for Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Guias de configuração de aplicativos SaaS para o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list"
       }
     ]
@@ -9352,11 +9352,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Aprovação automática para o User1:** Não. O único aprovador é ele mesmo, e ninguém aprova a própria solicitação.\n- **User1 aprova a Role2:** Não. A Role2 não exige aprovação.\n- **Justificativa ao aprovar:** Sim. O PIM pede justificativa do aprovador.\n\n**Dica de prova:** Defina pelo menos dois aprovadores para evitar solicitações travadas.",
     "docs": [
       {
-        "t": "Approve or deny requests for Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Aprovar ou negar solicitações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow"
       },
       {
-        "t": "Activate Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Ativar funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role"
       }
     ]
@@ -9401,11 +9401,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin1 / Admin3 / Admin4:** pela tabela, não têm Application Administrator (ou têm funções mais amplas, como Global).\n- **Cloud Application Administrator para o conector:** essa função não gerencia o Application Proxy.\n- **Application/Cloud Application Administrator ou Global para o User1:** mais amplos que o necessário para registrar.\n\n**Dica de prova:** O conector é registrado no tenant com as credenciais de quem instala.",
     "docs": [
       {
-        "t": "Publish on-premises apps with Microsoft Entra application proxy - Microsoft Entra ID",
+        "t": "Publicar aplicativos locais com o proxy de aplicativo do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/overview-what-is-app-proxy"
       },
       {
-        "t": "Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy - Microsoft Entra ID",
+        "t": "Delegação restrita de Kerberos para logon único (SSO) em aplicativos com proxy de aplicativo - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/how-to-configure-sso-with-kcd"
       }
     ]
@@ -9452,7 +9452,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 incluindo o User2:** o User2 é Global Reader, e o Password Administrator não redefine senha de Global Reader.\n- **User4 com User1/User2:** administradores com escopo de AU não gerenciam usuários que têm funções atribuídas.\n\n**Dica de prova:** A tabela \"Who can reset passwords\" na documentação de funções privilegiadas define exatamente quem cada função atinge.",
     "docs": [
       {
-        "t": "Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID",
+        "t": "Funções e permissões privilegiadas no Microsoft Entra ID (versão prévia) - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions"
       },
       {
@@ -9460,11 +9460,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Create a custom role in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Criar uma função personalizada no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Assign Microsoft Entra roles - Microsoft Entra ID",
+        "t": "Atribuir funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       }
     ]
@@ -9525,15 +9525,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-in logs:** exigiriam filtrar e calcular a taxa à mão.\n- **Access reviews / audit logs:** não mostram estatísticas de login.\n\n**Dica de prova:** Usage & insights também mostra o uso de métodos de autenticação e a atividade de service principals.",
     "docs": [
       {
-        "t": "Usage and insights report - Microsoft Entra ID",
+        "t": "Relatório de uso e insights - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-usage-insights-report"
       },
       {
-        "t": "What are Microsoft Entra workbooks? - Microsoft Entra ID",
+        "t": "O que são pastas de trabalho do Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-workbooks"
       },
       {
-        "t": "How to use Microsoft Entra workbooks - Microsoft Entra ID",
+        "t": "Como usar pastas de trabalho do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-use-workbooks"
       }
     ]
@@ -9559,15 +9559,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Management group / resource group:** escopos do Azure RBAC, não de usuários do Entra.\n- **Microsoft 365 group:** não delimita a administração.\n\n**Dica de prova:** Depois de criar a AU, atribua User administrator com escopo nela (e use associação dinâmica por department -eq \"Marketing\").",
     "docs": [
       {
-        "t": "Create or delete administrative units - Microsoft Entra ID",
+        "t": "Criar ou excluir unidades administrativas - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
       },
       {
-        "t": "Add users, groups, or devices to an administrative unit - Microsoft Entra ID",
+        "t": "Adicionar usuários, grupos ou dispositivos a uma unidade administrativa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-members-add"
       },
       {
-        "t": "Restricted management administrative units in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Unidades administrativas de gerenciamento restrito no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management"
       }
     ]
@@ -9640,11 +9640,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **extend / project / print:** não agregam contagem.\n- **render no primeiro / summarize no segundo:** summarize agrega e render desenha.\n\n**Dica de prova:** Exemplo completo: SigninLogs | where ResultType == 0 | summarize login_count = count() by Identity | render columnchart.",
     "docs": [
       {
-        "t": "Analyze activity logs using Log Analytics - Microsoft Entra ID",
+        "t": "Analisar logs de atividades usando o Log Analytics - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics"
       },
       {
-        "t": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+        "t": "Introdução às consultas de log nos Logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
       }
     ]
@@ -9830,11 +9830,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 no Device1:** Não. Dispositivo não registrado não tem atributos, então o filtro de exclusão não casa e o bloqueio se aplica.\n- **User2 no Device2:** Sim. A CAPolicy2 exige MFA, e ele a cumpre.\n- **User3 no Device3:** Sim. O dispositivo registrado casa com o filtro e fica fora do bloqueio.\n\n**Dica de prova:** Em filtros de dispositivo, \"exclude\" com operador positivo **aplica** a política a dispositivos sem atributos.",
     "docs": [
       {
-        "t": "Filter for devices as a condition in Conditional Access policy - Microsoft Entra ID",
+        "t": "Filtrar dispositivos como condição em uma política de Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices"
       },
       {
-        "t": "How to Require Device Compliance with Conditional Access - Microsoft Entra ID",
+        "t": "Como exigir a conformidade de dispositivos com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance"
       }
     ]
@@ -9861,7 +9861,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 (Device1 joined, mas não conforme):** o SharePoint considera gerenciado só o conforme ou hybrid joined.\n- **User3 (dispositivo desconhecido):** acesso limitado (web-only).\n- **Combinações com User1/User3:** não têm dispositivo gerenciado.",
     "docs": [
       {
-        "t": "Conditional Access: Manage Session Controls Effectively - Microsoft Entra ID",
+        "t": "Acesso Condicional: gerenciar controles de sessão com eficiência - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-session"
       }
     ]
@@ -9931,11 +9931,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que esses cmdlets:** Get-AzVM retorna o objeto da VM para o Update-AzVM habilitar a identidade. Get-AzADServicePrincipal acha o service principal com o nome da VM, que é o que entra no grupo.\n\n**Dica de prova:** Hoje, para adicionar ao grupo: New-MgGroupMember -GroupId $g.Id -DirectoryObjectId $sp.Id.",
     "docs": [
       {
-        "t": "Configure managed identities on Azure virtual machines (VMs) - Managed identities for Azure resources",
+        "t": "Configurar identidades gerenciadas em máquinas virtuais (VMs) do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities"
       },
       {
-        "t": "Managed identities for Azure resources frequently asked questions - Managed identities for Azure resources",
+        "t": "Perguntas frequentes sobre identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identities-faq"
       }
     ]
@@ -9961,11 +9961,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Executable name / bundle ID / package name:** identificam apps desktop ou mobile (iOS/Android), não web.\n\n**Dica de prova:** Em ASP.NET Core, o padrão do redirect é https://<host>/signin-oidc.",
     "docs": [
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ]
@@ -9991,15 +9991,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Anomaly detection do MDCA:** detecta comportamento; não cria um processo de aprovação.\n- **App connector:** integra apps ao MDCA.\n- **Access review:** revisa acessos existentes.\n\n**Dica de prova:** Combine com permission classifications para permitir só consentimentos de baixo impacto.",
     "docs": [
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       },
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       }
     ]
@@ -10026,11 +10026,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **MDCA portal / M365 admin / Entra / Purview:** a integração do app governance fica no portal unificado do Defender.",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -10094,11 +10094,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Policy set / app configuration do Intune:** dispositivos e apps móveis.\n- **Application Proxy:** o App1 roda no Azure (não é on-premises).",
     "docs": [
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ]
@@ -10128,11 +10128,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (monitorar OAuth no MDCA):** atende o conector com **Microsoft 365, Google Workspace ou Salesforce**. Azure, AWS e GitHub não atendem.",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -10161,11 +10161,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** o conector do Azure traz atividades do Azure, não apps OAuth.",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -10195,11 +10195,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** o conector da AWS traz auditoria e postura (CSPM), não OAuth.",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -10259,11 +10259,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Update-MgOrganization / Update-MgDomain:** alteram propriedades do tenant ou do domínio.\n- **Workbook:** só funciona depois que os dados chegam ao workspace.",
     "docs": [
       {
-        "t": "How to configure Microsoft Entra diagnostic settings - Microsoft Entra ID",
+        "t": "Como configurar as definições de diagnóstico do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-configure-diagnostic-settings"
       },
       {
-        "t": "Integrate Microsoft Entra logs with Azure Monitor logs - Microsoft Entra ID",
+        "t": "Integrar logs do Microsoft Entra aos logs do Azure Monitor - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs"
       }
     ]
@@ -10291,15 +10291,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 (Global) / User2 (User admin):** funções isentas da naming policy.\n- **User3 isolado / User2 incluído:** o Groups administrator **não** é isento; a isenção vale para Global, User administrator e algumas outras.\n\n**Dica de prova:** A naming policy exige Entra ID P1 para os usuários afetados.",
     "docs": [
       {
-        "t": "Enforce a group naming policy in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Impor uma política de nomenclatura de grupos no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-naming-policy"
       },
       {
-        "t": "Default user permissions - Microsoft Entra",
+        "t": "Permissões padrão de usuários - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
-        "t": "Manage devices in Microsoft Entra ID using the Microsoft Entra admin center - Microsoft Entra ID",
+        "t": "Gerenciar dispositivos no Microsoft Entra ID usando o centro de administração do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities"
       },
       {
@@ -10329,15 +10329,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Designar revisores primeiro:** os revisores são definidos na mesma configuração, ao habilitar as solicitações.\n- **Conceder admin consent direto:** resolve o App1, mas não cria o processo de solicitação (e exige privilégio maior).\n- **CA:** não habilita o pedido de consentimento.",
     "docs": [
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       },
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       }
     ]
@@ -10363,7 +10363,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Cloud App Security Administrator:** gerencia o MDCA.\n- **Cloud Application / Application Administrator:** registram, mas gerenciam todos os apps; não são o menor privilégio.",
     "docs": [
       {
-        "t": "Add app roles and get them from a token - Microsoft identity platform",
+        "t": "Adicionar funções de aplicativo e obtê-las de um token - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps"
       }
     ]
@@ -10535,15 +10535,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Excluir algum app:** todos estão dentro dos 30 dias de soft delete em 16/04.\n- **Restaurar users/groups e self-service:** essas configurações são do service principal, que é recriado e perde atribuições.\n\n**Dica de prova:** Restaurar o app registration (Deleted applications) traz o mesmo appId e as credenciais.",
     "docs": [
       {
-        "t": "Restore a soft deleted enterprise application - Microsoft Entra ID",
+        "t": "Restaurar um aplicativo empresarial excluído de forma reversível - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/restore-application"
       },
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       },
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       }
     ]
@@ -10572,11 +10572,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** o conector do GitHub não oferece o recurso de OAuth apps.",
     "docs": [
       {
-        "t": "Create policies to control OAuth apps - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas para controlar aplicativos OAuth - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-permission-policy"
       },
       {
-        "t": "App governance in Microsoft Defender for Cloud Apps and Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
+        "t": "Governança de aplicativos no Microsoft Defender for Cloud Apps e no Microsoft Defender XDR - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
       }
     ]
@@ -10835,7 +10835,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
-        "t": "How to enable passkeys (FIDO2) in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Como habilitar chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
       }
     ]
@@ -10910,11 +10910,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       },
       {
-        "t": "Assign Azure resource roles in Privileged Identity Management - Microsoft Entra ID Governance",
+        "t": "Atribuir funções de recursos do Azure no Privileged Identity Management - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-assign-roles"
       },
       {
-        "t": "Configure Azure resource role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Configurar definições de funções de recursos do Azure no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings"
       }
     ]
@@ -10975,11 +10975,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Group2 (dinâmico) / Group4 (sincronizado):** o PIM for Groups exige associação atribuída e grupo de nuvem.\n\n**Dica de prova:** PIM for Groups permite tornar membership ou ownership elegíveis, inclusive para grupos role-assignable.",
     "docs": [
       {
-        "t": "Privileged Identity Management (PIM) for Groups - Microsoft Entra ID Governance",
+        "t": "Privileged Identity Management (PIM) para Grupos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups"
       },
       {
-        "t": "Assign eligibility for a group in Privileged Identity Management - Microsoft Entra ID Governance",
+        "t": "Atribuir elegibilidade para um grupo no Privileged Identity Management - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-assign-member-owner"
       }
     ]
@@ -11005,7 +11005,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 (já guest):** usa o método de resgate existente.\n- **User3 (membro):** não é externo.\n\n**Dica de prova:** Domínios com Entra ID recebem o login do próprio Entra, não OTP.",
     "docs": [
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       },
       {
@@ -11013,7 +11013,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       }
     ]
@@ -11178,7 +11178,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Reader / Contributor / Virtual Machine Contributor:** funções de plano de controle não suportam condições ABAC (exceto as condições de delegação do RBAC Administrator).\n\n**Dica de prova:** As condições ABAC atuam em ações de dados de Blob e Queue (ex.: tags de índice e nome do container).",
     "docs": [
       {
-        "t": "What is Azure attribute-based access control (Azure ABAC)?",
+        "t": "O que é o controle de acesso baseado em atributos do Azure (Azure ABAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
@@ -11282,15 +11282,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **M365 Apps admin center / Defender / Purview:** não controlam consentimento de apps.\n\n**Dica de prova:** O consentimento de usuários também pode ser desabilitado no Entra (Enterprise apps > Consent and permissions > User consent settings).",
     "docs": [
       {
-        "t": "Overview of user and admin consent - Microsoft Entra ID",
+        "t": "Visão geral do consentimento de usuários e administradores - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview"
       },
       {
-        "t": "Configure How Users Consent to Applications - Microsoft Entra ID",
+        "t": "Configurar como os usuários consentem com aplicativos - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent"
       },
       {
-        "t": "Configure the admin consent workflow - Microsoft Entra ID",
+        "t": "Configurar o fluxo de trabalho de consentimento do administrador - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
       }
     ]
@@ -11317,15 +11317,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Application permissions:** dariam acesso a todos os calendários, sem usuário; excede.\n- **Funções RBAC:** são do Azure, não do Graph.\n\n**Dica de prova:** Calendars.ReadWrite delegada: o app age em nome do usuário logado, e o usuário pode consentir.",
     "docs": [
       {
-        "t": "Overview of permissions and consent in the Microsoft identity platform - Microsoft identity platform",
+        "t": "Visão geral de permissões e consentimento na plataforma de identidade da Microsoft - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview"
       },
       {
-        "t": "Web API app registration and API permissions - Microsoft identity platform",
+        "t": "Registro de aplicativos de API Web e permissões de API - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis"
       },
       {
-        "t": "Microsoft Graph permissions reference  - Microsoft Graph",
+        "t": "Referência de permissões do Microsoft Graph - Microsoft Graph",
         "u": "https://learn.microsoft.com/en-us/graph/permissions-reference"
       }
     ]
@@ -11352,7 +11352,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Sign-in risk policy:** ID Protection.\n- **Access review:** governança.\n- **Admin consent:** consentimento de apps.\n\n**Dica de prova:** O CAE é habilitado por padrão; a política de CA serve para customizar (strict location) ou desabilitar.",
     "docs": [
       {
-        "t": "Continuous access evaluation in Microsoft Entra - Microsoft Entra ID",
+        "t": "Avaliação contínua de acesso no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
       }
     ]
@@ -11395,19 +11395,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Security Administrator com escopo de AU:** não é suportado; só funções de gestão de usuários, grupos e dispositivos têm escopo de AU.\n- **User Administrator só na AU1 ou só no tenant:** os dois escopos são possíveis.\n\n**Dica de prova:** Funções com escopo de AU: User, Groups, Helpdesk, Password, Authentication, License, Printer, Cloud Device administrator, entre outras.",
     "docs": [
       {
-        "t": "Overview of Microsoft Entra role-based access control (RBAC) - Microsoft Entra ID",
+        "t": "Visão geral do controle de acesso baseado em função (RBAC) do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
       },
       {
-        "t": "List Microsoft Entra role assignments - Microsoft Entra ID",
+        "t": "Listar atribuições de funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/view-assignments"
       },
       {
-        "t": "Use Microsoft Entra groups to manage role assignments - Microsoft Entra ID",
+        "t": "Usar grupos do Microsoft Entra para gerenciar atribuições de funções - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept"
       },
       {
-        "t": "Least privileged roles by task - Microsoft Entra ID",
+        "t": "Funções de menor privilégio por tarefa - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task"
       }
     ]
@@ -11437,7 +11437,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Authenticator / SMS:** o requisito \"sem senha\" + MFA fora de banda aponta para métodos passwordless suportados no fluxo do az ssh.\n- **Windows Hello:** só em Windows.\n\n**Dica de prova:** O login do Entra em Linux usa az ssh vm com certificados de curta duração; os métodos aceitos dependem do CA.",
     "docs": [
       {
-        "t": "Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH - Microsoft Entra ID",
+        "t": "Entrar em uma máquina virtual Linux no Azure usando o Microsoft Entra ID e o OpenSSH - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-linux"
       },
       {
@@ -11505,7 +11505,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Conditions:** condições de aplicação.\n- **Session:** controles de sessão.\n- **Target resources:** apps alvo.\n\n**Dica de prova:** Os termos aparecem como opção no Grant depois de criados em Terms of use.",
     "docs": [
       {
-        "t": "Set Up Microsoft Entra Terms of Use with Conditional Access - Microsoft Entra ID",
+        "t": "Configurar os Termos de Uso do Microsoft Entra com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use"
       }
     ]
@@ -11573,11 +11573,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 vê \"Stay signed in\":** Não. \"Never persistent\" suprime o prompt.\n- **User2 / User3 a cada 2 h:** Não. Estão no Group2, excluído da Policy2.\n\n**Dica de prova:** A sign-in frequency vale para apps cliente e navegador; a sessão persistente só afeta o navegador.",
     "docs": [
       {
-        "t": "Conditional Access adaptive session lifetime policies - Microsoft Entra ID",
+        "t": "Políticas adaptáveis de tempo de vida de sessão do Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-session-lifetime"
       },
       {
-        "t": "Configure adaptive session lifetime policies - Microsoft Entra ID",
+        "t": "Configurar políticas adaptáveis de tempo de vida de sessão - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-session-lifetime"
       }
     ]
@@ -11658,7 +11658,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Admin1 redefine a senha do Admin2 em 15/11:** Sim. O Admin2 só é elegível (sem função ativa).\n- **Admin2 administra o Exchange em 15/10:** Não. É elegível; precisa ativar no PIM.\n- **Admin3 redefine a senha do Admin1 em 1/09:** Sim. User Administrator pode redefinir a de outro User Administrator.",
     "docs": [
       {
-        "t": "List Microsoft Entra role assignments - Microsoft Entra ID",
+        "t": "Listar atribuições de funções do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/view-assignments"
       },
       {
@@ -11804,11 +11804,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1:** Não. Membro de grupo aninhado; o escopo por grupo não é recursivo.\n- **User2:** Sim. Membro direto do Group2.\n- **User3:** Sim. Atribuído diretamente ao escopo.",
     "docs": [
       {
-        "t": "What is cross-tenant synchronization in Microsoft Entra ID? - Microsoft Entra ID",
+        "t": "O que é a sincronização entre tenants no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview"
       },
       {
-        "t": "Configure cross-tenant synchronization - Microsoft Entra ID",
+        "t": "Configurar a sincronização entre tenants - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure"
       }
     ]
@@ -11834,11 +11834,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Update-MgDomain / Update-MgDomainFederationConfiguration:** domínio e federação.\n- **Update-MgPolicyPermissionGrantPolicyExclude:** consentimento de apps.",
     "docs": [
       {
-        "t": "Self-service sign up for email-verified users - Microsoft Entra ID",
+        "t": "Inscrição por autoatendimento para usuários com email verificado - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/directory-self-service-signup"
       },
       {
-        "t": "Self-service sign-up - Microsoft Entra External ID",
+        "t": "Inscrição por autoatendimento - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
@@ -11846,7 +11846,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       }
     ]
@@ -11872,15 +11872,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Ambígua:** o gabarito considera User1 e User3 (usuários sem o app). O User2 é o aprovador.\n\n**Dica de prova:** O self-service de apps tende a ser substituído por access packages (entitlement management).",
     "docs": [
       {
-        "t": "Quickstart: Add an enterprise application - Microsoft Entra ID",
+        "t": "Início rápido: adicionar um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal"
       },
       {
-        "t": "Properties of an enterprise application - Microsoft Entra ID",
+        "t": "Propriedades de um aplicativo empresarial - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties"
       },
       {
-        "t": "Plan a single sign-on deployment - Microsoft Entra ID",
+        "t": "Planejar uma implantação de logon único - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment"
       }
     ]
@@ -11936,7 +11936,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Excluir Admin4:** o template exclui quem cria a política (Admin4) e pode nascer em report-only. O gabarito do dump ignora isso.\n\n**Dica de prova:** Na prova atual, considere: template = All users incluídos, o criador excluído, estado report-only até você ligar.",
     "docs": [
       {
-        "t": "Conditional Access Templates: Simplify Security - Microsoft Entra ID",
+        "t": "Modelos de Acesso Condicional: simplificar a segurança - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common"
       }
     ]
@@ -11965,11 +11965,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1:** Sim. Membro do Group1, que pode solicitar.\n- **User2:** Não. Fora do Group1.\n- **User3 aprova a si mesmo:** Não. Ninguém aprova a própria solicitação; outro aprovador do estágio (membro do Team1) precisa aprovar.\n\n**Dica de prova:** Com \"Users can request specific timeline\", o solicitante escolhe as datas dentro do limite de 7 dias.",
     "docs": [
       {
-        "t": "Create an access package in entitlement management - Microsoft Entra ID Governance",
+        "t": "Criar um pacote de acesso no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create"
       },
       {
-        "t": "Change lifecycle settings for an access package in entitlement management - Microsoft Entra ID Governance",
+        "t": "Alterar configurações de ciclo de vida de um pacote de acesso no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-lifecycle-policy"
       }
     ]
@@ -12102,15 +12102,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Voz / SMS / e-mail OTP:** phishable.\n- **CBA de fator único:** não conta como MFA.\n- **Microsoft Authenticator (push):** não é resistente a phishing (a passkey no Authenticator é, mas a opção se refere ao push).\n\n**Dica de prova:** Use a authentication strength built-in \"Phishing-resistant MFA\" na política de CA para admins.",
     "docs": [
       {
-        "t": "Overview of Conditional Access Authentication Strengths - Microsoft Entra ID",
+        "t": "Visão geral das intensidades de autenticação do Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths"
       },
       {
-        "t": "Microsoft Entra authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication"
       },
       {
-        "t": "Passkeys (FIDO2) authentication method in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Método de autenticação com chaves de acesso (FIDO2) no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       }
     ]
@@ -12136,11 +12136,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Seamless SSO:** só evita digitar a senha; não aplica bloqueio.\n- **Cloud Sync / PHS:** a validação na nuvem usa o smart lockout do Entra, não a política do AD.\n\n**Dica de prova:** Configure o smart lockout do Entra com limite **menor** que o do AD para evitar que ataques bloqueiem contas no AD.",
     "docs": [
       {
-        "t": "Microsoft Entra Connect: Pass-through Authentication - Microsoft Entra ID",
+        "t": "Microsoft Entra Connect: autenticação de passagem - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta"
       },
       {
-        "t": "Microsoft Entra pass-through authentication - Quickstart - Microsoft Entra ID",
+        "t": "Autenticação de passagem do Microsoft Entra - Início rápido - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta-quick-start"
       }
     ]
@@ -12166,7 +12166,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **HTML / RTF / DOCX:** não são aceitos; só PDF.\n\n**Dica de prova:** É possível enviar versões em vários idiomas (um PDF por idioma).",
     "docs": [
       {
-        "t": "Set Up Microsoft Entra Terms of Use with Conditional Access - Microsoft Entra ID",
+        "t": "Configurar os Termos de Uso do Microsoft Entra com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use"
       }
     ]
@@ -12192,7 +12192,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access package:** termos podem ser exigidos no pacote, mas para todo login a resposta é o CA.\n- **Lifecycle workflow / authentication method:** não exibem termos.",
     "docs": [
       {
-        "t": "Set Up Microsoft Entra Terms of Use with Conditional Access - Microsoft Entra ID",
+        "t": "Configurar os Termos de Uso do Microsoft Entra com o Acesso Condicional - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use"
       }
     ]
@@ -12240,19 +12240,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 (Global Admin):** não tem permissão de atributos de segurança por padrão.\n- **User3:** pela tabela, não tem Attribute Definition Administrator.\n- **Grupos:** não suportam custom security attributes.\n\n**Dica de prova:** Funções: Attribute Definition Administrator/Reader (definições) e Attribute Assignment Administrator/Reader (valores).",
     "docs": [
       {
-        "t": "Manage access to custom security attributes in Microsoft Entra ID - Microsoft Entra",
+        "t": "Gerenciar o acesso a atributos de segurança personalizados no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-manage"
       },
       {
-        "t": "What are custom security attributes in Microsoft Entra ID? - Microsoft Entra",
+        "t": "O que são atributos de segurança personalizados no Microsoft Entra ID? - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview"
       },
       {
-        "t": "Add or deactivate custom security attribute definitions in Microsoft Entra ID - Microsoft Entra",
+        "t": "Adicionar ou desativar definições de atributos de segurança personalizados no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-add"
       },
       {
-        "t": "Assign, update, list, or remove custom security attributes for a user - Microsoft Entra ID",
+        "t": "Atribuir, atualizar, listar ou remover atributos de segurança personalizados de um usuário - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/users-custom-security-attributes"
       }
     ]
@@ -12278,11 +12278,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Grupos:** a cross-tenant sync provisiona apenas usuários (B2B members).\n\n**Dica de prova:** Use grupos no escopo para escolher usuários; a associação aos grupos não é replicada no destino.",
     "docs": [
       {
-        "t": "What is cross-tenant synchronization in Microsoft Entra ID? - Microsoft Entra ID",
+        "t": "O que é a sincronização entre tenants no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview"
       },
       {
-        "t": "Configure cross-tenant synchronization - Microsoft Entra ID",
+        "t": "Configurar a sincronização entre tenants - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure"
       }
     ]
@@ -12308,7 +12308,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **New-MgUser:** cria membro com senha no seu tenant.\n- **External collaboration:** não cria o convidado.\n- **Entra Connect:** sincroniza o seu AD, não usuários de outra organização.",
     "docs": [
       {
-        "t": "Reset guest redemption status - Microsoft Entra External ID",
+        "t": "Redefinir o status de resgate de convidados - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/reset-redemption-status"
       },
       {
@@ -12320,7 +12320,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
-        "t": "Email one-time passcode authentication - Microsoft Entra External ID",
+        "t": "Autenticação com senha de uso único por email - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       }
     ]
@@ -12355,7 +12355,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra Password Writeback - Microsoft Entra ID",
+        "t": "Habilitar o write-back de senha do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback"
       }
     ]
@@ -12442,7 +12442,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User2 em VM1 / VM2:** pela tabela, tem só Virtual Machine Contributor (gerencia, não faz login).\n- **User3 na VM2:** a função dele está só no escopo da VM1.\n\n**Dica de prova:** O login exige a extensão AADLoginForWindows na VM e o cliente RDP com a opção de \"Web account\" ou dispositivo joined/registered.",
     "docs": [
       {
-        "t": "Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entrar em uma máquina virtual Windows no Azure usando o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
@@ -12485,11 +12485,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Sequência**\n- **App protection policy:** Intune MAM.\n- **Remote network:** para filiais sem cliente GSA; não define o bloqueio.\n- **Ordem:** política de filtro → security profile (com prioridade) → CA que aplica o profile aos usuários.",
     "docs": [
       {
-        "t": "How to configure Global Secure Access web content filtering - Global Secure Access",
+        "t": "Como configurar a filtragem de conteúdo da Web do Global Secure Access - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-web-content-filtering"
       },
       {
-        "t": "Learn about Microsoft Entra Internet Access - Global Secure Access",
+        "t": "Conhecer o Microsoft Entra Internet Access - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-internet-access"
       }
     ]
@@ -12515,15 +12515,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Remote networks:** conectam filiais.\n- **Security profiles:** Internet Access (filtragem).\n- **Connectors:** são os conectores do Private Access, mas o perfil é habilitado em Traffic forwarding.\n\n**Dica de prova:** Depois, publique o App1 em Enterprise applications (Global Secure Access app) ou use o Quick Access.",
     "docs": [
       {
-        "t": "Install the Global Secure Access Client for Windows - Global Secure Access",
+        "t": "Instalar o cliente do Global Secure Access para Windows - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client"
       },
       {
-        "t": "Enable Compliant Network Check with Conditional Access - Global Secure Access",
+        "t": "Habilitar a verificação de rede em conformidade com o Acesso Condicional - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network"
       },
       {
-        "t": "What is Global Secure Access? - Global Secure Access",
+        "t": "O que é o Global Secure Access? - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
       }
     ]
@@ -12566,7 +12566,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 (Reader):** não lê dados e não lista chaves.\n- **User2 no File2:** Blob Data Reader não cobre Azure Files.\n\n**Dica de prova:** Desabilitar Shared Key (allowSharedKeyAccess = false) cortaria o acesso do User3 via chave.",
     "docs": [
       {
-        "t": "Authorize Blob Access with Microsoft Entra ID - Azure Storage",
+        "t": "Autorizar o acesso a blobs com o Microsoft Entra ID - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory"
       },
       {
@@ -12604,7 +12604,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Excluir registros de dispositivo:** não resolve a falta de conectividade.\n- **Revogar o PRT:** piora a situação.\n- **OpenSSH:** para Linux / az ssh.\n\n**Dica de prova:** Endpoints exigidos: login.microsoftonline.com, enterpriseregistration.windows.net, device.login.microsoftonline.com, pas.windows.net.",
     "docs": [
       {
-        "t": "Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entrar em uma máquina virtual Windows no Azure usando o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
@@ -12650,7 +12650,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 (Local User Login):** Não. Essa função não existe para login com conta Entra; o login exige VM User/Administrator Login.\n- **User2:** Sim. Virtual Machine User Login no RG1.\n- **User3 (VM Contributor):** Não. Gerencia, mas não faz login.",
     "docs": [
       {
-        "t": "Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Entrar em uma máquina virtual Windows no Azure usando o Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
@@ -12688,7 +12688,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Vault1 / VM1 / App1:** as condições ABAC não são suportadas nesses serviços (só Blob e Queue).",
     "docs": [
       {
-        "t": "What is Azure attribute-based access control (Azure ABAC)?",
+        "t": "O que é o controle de acesso baseado em atributos do Azure (Azure ABAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
@@ -12730,11 +12730,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Managed identity:** não funciona entre tenants (é do tenant de origem e só para recursos do Azure).\n- **User account / OTP:** não são credenciais de aplicativo.\n\n**Dica de prova:** Prefira certificados (ou federated identity credentials) a segredos.",
     "docs": [
       {
-        "t": "Add and manage app credentials in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Adicionar e gerenciar credenciais de aplicativos no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
       },
       {
-        "t": "How to Register an App in Microsoft Entra ID\" - Microsoft identity platform",
+        "t": "Como registrar um aplicativo no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app"
       }
     ]
@@ -12877,19 +12877,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Intune Connector for AD:** só para Autopilot hybrid join (dispositivos novos).\n- **Provisioning agent:** é do Cloud Sync, que não configura hybrid join de computadores.\n- **Autopilot device preparation:** não se aplica a máquinas já no domínio.\n- **WIP scope:** Windows Information Protection, aposentado.\n\n**Dica de prova:** A inscrição automática também exige a GPO \"Enable automatic MDM enrollment using default Azure AD credentials\".",
     "docs": [
       {
-        "t": "Configure Microsoft Entra hybrid join - Microsoft Entra ID",
+        "t": "Configurar o ingresso híbrido no Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join"
       },
       {
-        "t": "What is device identity in Microsoft Entra ID? - Microsoft Entra ID",
+        "t": "O que é a identidade de dispositivo no Microsoft Entra ID? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/overview"
       },
       {
-        "t": "What is a Microsoft Entra joined device? - Microsoft Entra ID",
+        "t": "O que é um dispositivo ingressado no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join"
       },
       {
-        "t": "What is a Microsoft Entra hybrid joined device? - Microsoft Entra ID",
+        "t": "O que é um dispositivo com ingresso híbrido no Microsoft Entra? - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-hybrid-join"
       }
     ]
@@ -12915,7 +12915,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Usage location:** licenciamento.\n- **Session management do GSA:** sem relação.\n- **Conditional Access:** não altera o idioma da página.\n\n**Dica de prova:** Crie uma customização por idioma (es-ES) em Company branding > Customize > Add language.",
     "docs": [
       {
-        "t": "Add company branding to your organization's sign-in page - Microsoft Entra",
+        "t": "Adicionar a identidade visual da empresa à página de entrada da organização - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
       }
     ]
@@ -12942,15 +12942,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Device1 / Device3 (Windows só registrados):** o cliente GSA para Windows exige joined ou hybrid joined.\n- **Todos:** o tipo de vínculo e o SO importam.\n\n**Dica de prova:** Clientes GSA existem para Windows, macOS, Android e iOS, cada um com seus requisitos.",
     "docs": [
       {
-        "t": "Install the Global Secure Access Client for Windows - Global Secure Access",
+        "t": "Instalar o cliente do Global Secure Access para Windows - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client"
       },
       {
-        "t": "Enable Compliant Network Check with Conditional Access - Global Secure Access",
+        "t": "Habilitar a verificação de rede em conformidade com o Acesso Condicional - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network"
       },
       {
-        "t": "What is Global Secure Access? - Global Secure Access",
+        "t": "O que é o Global Secure Access? - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
       }
     ]
@@ -12977,15 +12977,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Tagging de tenant restrictions:** outro recurso do GSA (bloquear tenants externos).\n- **Named location:** o \"compliant network\" é uma condição própria, que depende do signaling.\n- **Remote network:** conecta filiais sem cliente.",
     "docs": [
       {
-        "t": "Install the Global Secure Access Client for Windows - Global Secure Access",
+        "t": "Instalar o cliente do Global Secure Access para Windows - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client"
       },
       {
-        "t": "Enable Compliant Network Check with Conditional Access - Global Secure Access",
+        "t": "Habilitar a verificação de rede em conformidade com o Acesso Condicional - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network"
       },
       {
-        "t": "What is Global Secure Access? - Global Secure Access",
+        "t": "O que é o Global Secure Access? - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
       }
     ]
@@ -13012,15 +13012,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Dispositivos registrados:** o cliente GSA para Windows não suporta só registro.\n\n**Dica de prova:** O dispositivo também precisa do cliente instalado e do usuário com licença Entra Internet/Private Access.",
     "docs": [
       {
-        "t": "Install the Global Secure Access Client for Windows - Global Secure Access",
+        "t": "Instalar o cliente do Global Secure Access para Windows - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client"
       },
       {
-        "t": "Enable Compliant Network Check with Conditional Access - Global Secure Access",
+        "t": "Habilitar a verificação de rede em conformidade com o Acesso Condicional - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network"
       },
       {
-        "t": "What is Global Secure Access? - Global Secure Access",
+        "t": "O que é o Global Secure Access? - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
       }
     ]
@@ -13048,15 +13048,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User3 (Privileged Role Administrator):** atribui funções, mas não administra o GSA.\n- **Só User1:** o Global Secure Access Administrator (User2) também gerencia.",
     "docs": [
       {
-        "t": "Install the Global Secure Access Client for Windows - Global Secure Access",
+        "t": "Instalar o cliente do Global Secure Access para Windows - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client"
       },
       {
-        "t": "Enable Compliant Network Check with Conditional Access - Global Secure Access",
+        "t": "Habilitar a verificação de rede em conformidade com o Acesso Condicional - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network"
       },
       {
-        "t": "What is Global Secure Access? - Global Secure Access",
+        "t": "O que é o Global Secure Access? - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
       }
     ]
@@ -13117,15 +13117,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Funções RBAC:** são do Azure, não do Graph.\n- **Delegated:** exigem um usuário logado.\n\n**Dica de prova:** Para ler sign-ins: AuditLog.Read.All + Directory.Read.All (application), com admin consent.",
     "docs": [
       {
-        "t": "Overview of permissions and consent in the Microsoft identity platform - Microsoft identity platform",
+        "t": "Visão geral de permissões e consentimento na plataforma de identidade da Microsoft - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview"
       },
       {
-        "t": "Web API app registration and API permissions - Microsoft identity platform",
+        "t": "Registro de aplicativos de API Web e permissões de API - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis"
       },
       {
-        "t": "Microsoft Graph permissions reference  - Microsoft Graph",
+        "t": "Referência de permissões do Microsoft Graph - Microsoft Graph",
         "u": "https://learn.microsoft.com/en-us/graph/permissions-reference"
       }
     ]
@@ -13151,11 +13151,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Event Hub:** streaming para SIEMs externos.\n- **SQL Database:** não é destino de diagnostic settings.\n- **Storage:** arquivamento, sem KQL.",
     "docs": [
       {
-        "t": "How to configure Microsoft Entra diagnostic settings - Microsoft Entra ID",
+        "t": "Como configurar as definições de diagnóstico do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-configure-diagnostic-settings"
       },
       {
-        "t": "Integrate Microsoft Entra logs with Azure Monitor logs - Microsoft Entra ID",
+        "t": "Integrar logs do Microsoft Entra aos logs do Azure Monitor - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs"
       }
     ]
@@ -13184,7 +13184,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 lê blob2:** Não. A leitura é limitada ao container cont1.\n- **User1 lê blob3:** Sim. Está num container chamado cont1 (no storage2).\n- **User2 lê blob1:** Sim. A condição dele restringe só a escrita.\n\n**Dica de prova:** Condições avaliam o nome do container independentemente da conta, se o escopo da atribuição cobrir as duas.",
     "docs": [
       {
-        "t": "What is Azure attribute-based access control (Azure ABAC)?",
+        "t": "O que é o controle de acesso baseado em atributos do Azure (Azure ABAC)?",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
@@ -13225,19 +13225,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 (Global) altera o Secure1:** Não. Precisa de Attribute Definition Administrator.\n- **User2 vê os valores do Secure2:** Não. Attribute Definition Administrator não lê valores, e ainda está restrito ao Set1.\n- **User3 vê o Secure3:** Sim. É Attribute Assignment Administrator no tenant.",
     "docs": [
       {
-        "t": "Manage access to custom security attributes in Microsoft Entra ID - Microsoft Entra",
+        "t": "Gerenciar o acesso a atributos de segurança personalizados no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-manage"
       },
       {
-        "t": "What are custom security attributes in Microsoft Entra ID? - Microsoft Entra",
+        "t": "O que são atributos de segurança personalizados no Microsoft Entra ID? - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview"
       },
       {
-        "t": "Add or deactivate custom security attribute definitions in Microsoft Entra ID - Microsoft Entra",
+        "t": "Adicionar ou desativar definições de atributos de segurança personalizados no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-add"
       },
       {
-        "t": "Assign, update, list, or remove custom security attributes for a user - Microsoft Entra ID",
+        "t": "Atribuir, atualizar, listar ou remover atributos de segurança personalizados de um usuário - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/users-custom-security-attributes"
       }
     ]
@@ -13293,15 +13293,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Named location / adaptive access / NSG:** não filtram URLs por palavra.\n\n**Dica de prova:** A filtragem por FQDN ou categoria é feita na web content filtering policy; palavras em URL exigem regra por FQDN/URL conforme os recursos suportados.",
     "docs": [
       {
-        "t": "Install the Global Secure Access Client for Windows - Global Secure Access",
+        "t": "Instalar o cliente do Global Secure Access para Windows - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client"
       },
       {
-        "t": "Enable Compliant Network Check with Conditional Access - Global Secure Access",
+        "t": "Habilitar a verificação de rede em conformidade com o Acesso Condicional - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network"
       },
       {
-        "t": "What is Global Secure Access? - Global Secure Access",
+        "t": "O que é o Global Secure Access? - Global Secure Access",
         "u": "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access"
       }
     ]
@@ -13329,11 +13329,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Só Group2:** regra antiga dos \"privileged access groups\" (exigia role-assignable).\n\n**Dica de prova:** Hoje o PIM for Groups aceita grupos de segurança e Microsoft 365 com associação atribuída (não dinâmicos nem sincronizados). Confira os tipos na tabela da questão.",
     "docs": [
       {
-        "t": "Privileged Identity Management (PIM) for Groups - Microsoft Entra ID Governance",
+        "t": "Privileged Identity Management (PIM) para Grupos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups"
       },
       {
-        "t": "Assign eligibility for a group in Privileged Identity Management - Microsoft Entra ID Governance",
+        "t": "Atribuir elegibilidade para um grupo no Privileged Identity Management - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-assign-member-owner"
       }
     ]

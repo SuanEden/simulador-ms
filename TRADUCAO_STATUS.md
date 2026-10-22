@@ -6,15 +6,15 @@ Status: **em andamento; tradução integral ainda não concluída**.
 
 | Prova | Enunciados e campos de resposta traduzidos | Ainda pendentes | Imagens com tradução textual |
 |---|---:|---:|---:|
-| MD-102 | 241/241 | 0 enunciados; explicações/detalhes e links ainda exigem revisão | 12/12 |
+| MD-102 | 241/241 | 0 enunciados; explicações/detalhes ainda exigem revisão | 12/12 |
 | SC-300 | 20/337 | 317, começando em Q021 | 14/163 |
 | AZ-104 | 20/448 | 428, começando em Q037 | 0/319 |
 
-Total: **281 enunciados e campos de resposta traduzidos; 745 pendentes**. Isso não significa que 281 questões tenham todos os seus materiais revisados. Há **682 títulos de documentos** ainda pendentes, **468 imagens** sem tradução textual e revisão terminológica dos **89 corpos de laboratórios**, explicações/detalhes e materiais auxiliares.
+Total: **281 enunciados e campos de resposta traduzidos; 745 pendentes**. Isso não significa que 281 questões tenham todos os seus materiais revisados. Não há títulos de documentos pendentes nos bancos e competências. Ainda há **468 imagens** sem tradução textual e revisão terminológica dos **89 corpos de laboratórios**, explicações/detalhes e materiais auxiliares.
 
-Já traduzidos: interface, 14 domínios, oito estudos de caso, 44 competências e seus 263 itens, títulos dos 89 laboratórios e três ambientes, cabeçalhos das 16 fontes Markdown e 99 títulos de documentação em 1.486 ocorrências. Quatro títulos que são nomes de cmdlets (20 ocorrências) são preservados intencionalmente.
+Já traduzidos: interface, 14 domínios, oito estudos de caso, 44 competências e seus 263 itens, títulos dos 89 laboratórios e três ambientes, cabeçalhos das 16 fontes Markdown e 781 títulos de documentação em 3.617 ocorrências. Quatro títulos que são nomes de cmdlets (20 ocorrências) são preservados intencionalmente.
 
-Links de estudo: por solicitação posterior, a interface passou a abrir os destinos de `learn.microsoft.com`, `docs.microsoft.com` e `support.microsoft.com` em `pt-br`, preservando caminho do artigo, parâmetros e fragmentos. Abrange documentação das questões, referências, textos Markdown, competências, guias e laboratórios das três provas, além do botão Microsoft Learn do simulado. Os URLs originais dos bancos e os comandos/cenários foram preservados; esse ajuste não traduz os títulos de documentos ainda pendentes nem garante tradução de todo artigo externo. Cópia dos arquivos antes desse ajuste: `../Certificados-102-backups/antes-links-ptbr-bc84383.zip`.
+Links de estudo: por solicitação posterior, a interface passou a abrir os destinos de `learn.microsoft.com`, `docs.microsoft.com` e `support.microsoft.com` em `pt-br`, preservando caminho do artigo, parâmetros e fragmentos. Abrange documentação das questões, referências, textos Markdown, competências, guias e laboratórios das três provas, além do botão Microsoft Learn do simulado. Os URLs originais dos bancos e os comandos/cenários foram preservados; os títulos exibidos foram traduzidos em uma etapa posterior, mas isso não garante tradução de todo artigo externo. Cópia dos arquivos antes desse ajuste: `../Certificados-102-backups/antes-links-ptbr-bc84383.zip`.
 
 Lista exata e reutilizável: `tools/traducao/TRADUCAO_PENDENCIAS.json`. Termos preservados: `tools/traducao/TERMOS_PRESERVADOS.md`. Resultados de testes: `TRADUCAO_VERIFICACOES.md`. Observações técnicas sem mudança de gabarito: `QUESTOES_PARA_REVISAO.md`.
 
@@ -104,3 +104,7 @@ Nenhuma das três certificações está marcada como integralmente traduzida. O 
 ## Validação prevista
 
 Comparação estrutural com o commit original; sintaxe JavaScript/JSON/Python; busca de inglês residual; execução no navegador dos seis tipos, três provas, explicações, documentação, laboratórios, correção e persistência. Browser plugin não disponível nesta sessão; usar Playwright com Chrome já instalado, sem alterar dependências do projeto.
+
+## Títulos de documentação concluídos — 22/10/2026
+
+Traduzidos os 682 títulos restantes em 2.131 ocorrências nas competências e nos links de questões de MD-102, SC-300 e AZ-104, incluindo todos os títulos da seção de ingresso de dispositivos no Microsoft Entra ID. O catálogo reaplicável contém 781 traduções, usadas em 3.617 ocorrências. A auditoria aponta zero títulos pendentes; quatro nomes de cmdlets continuam preservados em 20 ocorrências. URLs, IDs, alternativas e gabaritos foram preservados. A tradução integral dos demais conteúdos continua em andamento conforme as pendências acima.
