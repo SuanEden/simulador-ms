@@ -1,4 +1,4 @@
-=== L08 | Métodos de autenticação, TAP e authentication strengths | A | 60
+=== L08 | Métodos de autenticação, TAP e intensidades de autenticação | A | 60
 questions: Q062,Q035,Q042,Q050,Q056,Q064,Q080,Q081,Q095,Q099,Q118,Q133,Q358,Q288,Q254
 predict: Q062
 ## overview
@@ -71,7 +71,7 @@ Apague a política de CA, o TAP pendente e restaure os alvos dos métodos.
 - https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass
 - https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-certificate-based-authentication
 
-=== L09 | Configurações de MFA, campanha de registro e security defaults | A | 45
+=== L09 | Configurações de MFA, campanha de registro e padrões de segurança | A | 45
 questions: Q049,Q043,Q044,Q045,Q106,Q207,Q034,Q057,Q129,Q257,Q039
 predict: Q049
 ## overview
@@ -130,7 +130,7 @@ Dispense o risco de sc-user03 (Risky users > Dismiss user risk), desligue a camp
 - https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign
 - https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults
 
-=== L10 | Self-service password reset (SSPR) | A | 40
+=== L10 | Redefinição de senha por autoatendimento (SSPR) | A | 40
 questions: Q127,Q058,Q061,Q085,Q125,Q372,Q105,Q146
 predict: Q127
 ## overview
@@ -183,7 +183,7 @@ Volte o SSPR à configuração anterior; apague o grupo SC300-L10-*.
 - https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr
 - https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy
 
-=== L11 | Password protection e smart lockout | B | 75
+=== L11 | Proteção de senha e bloqueio inteligente | B | 75
 questions: Q055,Q040,Q052,Q128,Q211
 predict: Q055
 ## overview
@@ -250,7 +250,7 @@ Volte o Mode para Audit (ou desligue); desinstale os agentes se não for manter;
 - https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-ban-bad-on-premises-deploy
 - https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout
 
-=== L12 | Conditional Access: condições, grant, localizações e What If | A | 60
+=== L12 | Acesso Condicional: condições, concessão, localizações e ferramenta E se | A | 60
 questions: Q053,Q036,Q051,Q063,Q065,Q077,Q066,Q206,Q134,Q352,Q255
 predict: Q053
 ## overview
@@ -320,7 +320,7 @@ Apague as políticas SC300-L12-* e a named location.
 - https://learn.microsoft.com/en-us/entra/identity/conditional-access/what-if-tool
 - https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network
 
-=== L13 | Conditional Access: controles de sessão e continuous access evaluation | A | 45
+=== L13 | Acesso Condicional: controles de sessão e avaliação contínua de acesso | A | 45
 questions: Q332,Q038,Q311,Q256,Q100,Q209
 predict: Q332
 ## overview
@@ -509,7 +509,7 @@ Apague as políticas de CA, o perfil e a política de filtragem SC300-L15-*; dei
 - https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-web-content-filtering
 - https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client
 
-=== L16 | Logs, diagnostic settings, KQL e alertas | B | 60
+=== L16 | Logs, configurações de diagnóstico, KQL e alertas | B | 60
 questions: Q188,Q185,Q212,Q269,Q404,Q248,Q116,Q174,Q176,Q230,Q245,Q182,Q183,Q184,Q181,Q218
 predict: Q188
 ## overview

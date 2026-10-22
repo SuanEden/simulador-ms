@@ -84,7 +84,7 @@ Apague as regras de alerta, a alert processing rule, a diagnostic setting da ass
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
 - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries
 
-=== L28 | Network Watcher, flow logs e Traffic Analytics | B | 75
+=== L28 | Network Watcher, logs de fluxo e Traffic Analytics | B | 75
 questions: Q634,Q939,Q616,Q831,Q668,Q688,Q686,Q690,Q694,Q892,Q1073,Q180,Q829,Q911,Q937,Q1075,Q1103,Q073,Q074,Q075,Q089,Q552
 predict: Q688
 ## overview
@@ -233,7 +233,7 @@ az group delete -n rg-az104-l29 --yes --no-wait
 - https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm
 - https://learn.microsoft.com/en-us/azure/backup/multi-user-authorization
 
-=== L30 | Backup vault, Azure Files, MARS e Site Recovery | B | 90
+=== L30 | Cofre de backup, Azure Files, MARS e Site Recovery | B | 90
 questions: Q1059,Q799,Q524,Q877,Q123,Q811,Q133
 predict: Q1059
 ## overview

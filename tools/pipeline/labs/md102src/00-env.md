@@ -1,4 +1,4 @@
-=== ENV | Ambiente de referência dos labs
+=== ENV | Ambiente de referência dos laboratórios
 ## overview
 Todos os labs assumem o seu lab híbrido. Os nomes abaixo são os do seu ambiente; troque se algo mudou.
 

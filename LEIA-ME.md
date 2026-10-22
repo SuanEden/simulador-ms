@@ -2,6 +2,8 @@
 
 Simulador de provas de certificação que roda localmente no navegador. Para abrir, dê **duplo clique em `index.html`** (Edge ou Chrome). Não precisa de servidor, instalação nem internet.
 
+A tradução integral para português brasileiro está em andamento. Consulte `TRADUCAO_STATUS.md` para saber quais lotes foram aplicados e quais conteúdos ainda estão pendentes. Os nomes oficiais de produtos, comandos, URLs, caminhos e identificadores dos cenários são preservados.
+
 O app é genérico: ele não sabe nada sobre nenhuma prova específica. Cada prova é uma pasta em `exams/`, e o app lê o que estiver lá.
 
 ```
@@ -94,7 +96,7 @@ A pasta do app pode ser copiada livremente entre máquinas.
 
 - **Distribuição por domínio**: usa o ponto médio de cada faixa do Skills at a Glance, normalizado para o número de questões. Por exemplo, na MD-102 com 50 questões a distribuição fica 12 / 14 / 9 / 9 / 6. Há uma opção para sortear o peso dentro das faixas.
 - **Estudo de caso**: um por simulado, com as questões do caso contando para os domínios delas. Fica numa seção própria; ao sair dela, não dá para voltar.
-- **Série "Does this meet the goal?"**: uma por simulado. Cada questão trava depois de respondida e não aparece na tela de revisão.
+- **Série "Isso atende ao objetivo?"**: uma por simulado. Cada questão trava depois de respondida e não aparece na tela de revisão.
 - **Prioridade**: questões nunca vistas e as que você errou da última vez têm mais chance de sair.
 - **Nota**: escala linear de 0 a 1000, com aprovação em 700. É uma estimativa, porque a Microsoft não usa escala linear.
 - **Tempo**: o padrão vem do `exam.js` e é proporcional ao número de questões. O cronômetro continua correndo mesmo se você fechar o navegador.
@@ -144,16 +146,16 @@ A pasta `tools\modelo-prova` tem um exemplo funcional de cada tipo.
 
 ---
 
-## Labs práticos
+## Laboratórios práticos
 
 Uma prova pode ter um arquivo opcional `labs.js` na pasta dela (`exams\<CODIGO>\labs.js`). Quando ele existe:
 
-- aparece o botão **Labs** no topo e um card **Labs práticos** na tela da prova;
-- a explicação de cada questão coberta ganha o link **Lab prático: Lxx**, que abre o lab;
+- aparece o botão **Laboratórios** no topo e um cartão **Laboratórios práticos** na tela da prova;
+- a explicação de cada questão coberta ganha o link **Laboratório prático: Lxx**, que abre o laboratório;
 - cada lab tem: o que ele testa, pré-requisitos, montagem passo a passo (com os caminhos do portal), como testar, onde conferir, resultado esperado, variações (as outras alternativas da questão), um jeito de quebrar de propósito e a limpeza;
 - o status de cada lab (não iniciado, em andamento, concluído) e as suas anotações ficam salvos no navegador, junto com o histórico.
 
-Comece pela página **Ambiente de referência dos labs** (o primeiro item da lista).
+Comece pela página **Ambiente de referência dos laboratórios** (o primeiro item da lista).
 
 Sintaxe extra que os labs usam no texto:
 
@@ -173,9 +175,9 @@ Ao clicar em **Verificar** no modo treino (ou ao revisar uma prova), a explicaç
 - a **explicação** curta da resposta;
 - **Detalhes**: por que as outras alternativas estão erradas (ou o motivo de cada item, em hot area e sim/não) e, quando ajuda, uma **Dica de prova**;
 - **Documentação (Microsoft Learn)**: até 4 links vigentes, verificados no Learn;
-- a **Skill** do Skills Measured a que a questão pertence (clique para abrir a skill na documentação);
-- o **Lab prático**, quando houver.
+- a **Competência** avaliada a que a questão pertence (clique para abrir a competência na documentação);
+- o **Laboratório prático**, quando houver.
 
-O botão **Documentação** no topo (e o card na tela da prova) abre a seção **Documentação por skill**. Ela é organizada por domínio → skill → itens do Skills Measured, com os links de cada item, um filtro por domínio, uma busca e o botão **Treinar esta skill**, que monta um treino só com as questões daquela skill.
+O botão **Documentação** no topo (e o cartão na tela da prova) abre a seção **Documentação por competência**. Ela é organizada por domínio → competência → itens das competências avaliadas, com os links de cada item, um filtro por domínio, uma busca e o botão **Treinar esta competência**, que monta um treino só com as questões daquela competência.
 
 Esses dados vêm do `docs.js` e dos campos `skill`, `details` e `docs` do `questions.js`. O processo completo para gerar isso em uma prova nova está em `tools\pipeline\PROCESSO.md`.

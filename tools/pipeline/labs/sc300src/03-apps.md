@@ -1,4 +1,4 @@
-=== L17 | Registro de apps, permissões de API e consentimento | A | 60
+=== L17 | Registro de aplicativos, permissões de API e consentimento | A | 60
 questions: Q157,Q149,Q208,Q210,Q231,Q259,Q264,Q160,Q221,Q233,Q237,Q261,Q272,Q306,Q226,Q307,Q403,Q089,Q152,Q274,Q386,Q278
 predict: Q157
 ## overview
@@ -85,7 +85,7 @@ Volte *Users can register applications* e o consentimento do usuário aos valore
 - https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent
 - https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow
 
-=== L18 | Enterprise apps: atribuição, visibilidade, self-service, SSO e Application Proxy | B | 75
+=== L18 | Aplicativos empresariais: atribuição, visibilidade, autoatendimento, SSO e Application Proxy | B | 75
 questions: Q151,Q156,Q158,Q159,Q350,Q150,Q153,Q155,Q239,Q148,Q242
 predict: Q150
 ## overview
@@ -160,7 +160,7 @@ Apague SC300-L18-* (apps, collection, grupos).
 - https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/manage-self-service-access
 - https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-add-on-premises-application
 
-=== L19 | Managed identities | B | 75
+=== L19 | Identidades gerenciadas | B | 75
 questions: Q285,Q078,Q082,Q275,Q282,Q283,Q284,Q296,Q300,Q330,Q333,Q344,Q346,Q357,Q387,Q305,Q345,Q258
 predict: Q285
 ## overview
@@ -234,7 +234,7 @@ Apague o grupo de recursos RG-SC300 (cofre em soft delete: purge se quiser reapr
 - https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide
 - https://learn.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation
 
-=== L20 | Azure RBAC, Key Vault, ABAC e login do Entra em VMs | B | 90
+=== L20 | Azure RBAC, Key Vault, ABAC e entrada do Entra em VMs | B | 90
 questions: Q375,Q079,Q108,Q143,Q069,Q098,Q090,Q132,Q293,Q374,Q379,Q304,Q385,Q407,Q380,Q383,Q318,Q083
 predict: Q375
 ## overview
@@ -309,7 +309,7 @@ Apague o RG-SC300 (VM e storage geram custo) e a função personalizada.
 - https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal
 - https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview
 
-=== L21 | Defender for Cloud Apps: Cloud Discovery e Conditional Access App Control | B | 75
+=== L21 | Defender for Cloud Apps: descoberta de nuvem e Controle de Aplicativos de Acesso Condicional | B | 75
 questions: Q220,Q117,Q147,Q222,Q223,Q224,Q249,Q263,Q268,Q276,Q402,Q100
 predict: Q220
 ## overview
@@ -378,7 +378,7 @@ Apague as políticas SC300-L21-* (Defender e CA) e o snapshot report.
 - https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad
 - https://learn.microsoft.com/en-us/defender-cloud-apps/create-snapshot-cloud-discovery-reports
 
-=== L22 | OAuth apps e app governance | A | 40
+=== L22 | Aplicativos OAuth e governança de aplicativos | A | 40
 questions: Q225,Q232,Q265,Q266,Q267,Q279,Q356,Q238,Q262
 predict: Q225
 ## overview

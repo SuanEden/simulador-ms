@@ -17,7 +17,7 @@ SIM.registerDocs("SC-300", {
           "t": "Configurar e gerenciar funções internas e personalizadas do Microsoft Entra",
           "docs": [
             {
-              "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+              "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
             },
             {
@@ -111,7 +111,7 @@ SIM.registerDocs("SC-300", {
               "u": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities"
             },
             {
-              "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+              "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
             },
             {
@@ -131,11 +131,11 @@ SIM.registerDocs("SC-300", {
           "t": "Criar, configurar e gerenciar usuários",
           "docs": [
             {
-              "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+              "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
             },
             {
-              "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+              "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
             },
             {
@@ -148,15 +148,15 @@ SIM.registerDocs("SC-300", {
           "t": "Criar, configurar e gerenciar grupos",
           "docs": [
             {
-              "t": "How to manage groups - Microsoft Entra",
+              "t": "Como gerenciar grupos - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
             },
             {
-              "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+              "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
             },
             {
-              "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+              "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
             }
           ]
@@ -220,15 +220,15 @@ SIM.registerDocs("SC-300", {
           "t": "Atribuir e modificar licenças e gerar relatórios sobre elas",
           "docs": [
             {
-              "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+              "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
               "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
             },
             {
-              "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+              "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
               "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
             },
             {
-              "t": "Microsoft Entra licensing - Microsoft Entra",
+              "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
             }
           ]
@@ -244,7 +244,7 @@ SIM.registerDocs("SC-300", {
           "t": "Gerenciar as configurações de colaboração externa no Microsoft Entra ID",
           "docs": [
             {
-              "t": "Configure external collaboration - Microsoft Entra External ID",
+              "t": "Configurar a colaboração externa - Microsoft Entra External ID",
               "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
             },
             {
@@ -274,7 +274,7 @@ SIM.registerDocs("SC-300", {
           "t": "Gerenciar contas de usuários externos no Microsoft Entra ID",
           "docs": [
             {
-              "t": "B2B guest user properties - Microsoft Entra External ID",
+              "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
               "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
             },
             {
@@ -468,15 +468,15 @@ SIM.registerDocs("SC-300", {
           "t": "Implementar e gerenciar métodos de autenticação, incluindo autenticação baseada em certificado, Passe de Acesso Temporário, Microsoft Authenticator e chaves de acesso (FIDO2)",
           "docs": [
             {
-              "t": "Manage authentication methods - Microsoft Entra ID",
+              "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
             },
             {
-              "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+              "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
             },
             {
-              "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+              "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
             },
             {
@@ -489,15 +489,15 @@ SIM.registerDocs("SC-300", {
           "t": "Implementar e gerenciar configurações de autenticação multifator (MFA) para todo o tenant",
           "docs": [
             {
-              "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+              "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
             },
             {
-              "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+              "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
             },
             {
-              "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+              "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
             }
           ]
@@ -506,11 +506,11 @@ SIM.registerDocs("SC-300", {
           "t": "Configurar e implantar a redefinição de senha por autoatendimento (SSPR)",
           "docs": [
             {
-              "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+              "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
             },
             {
-              "t": "Self-service password reset policies - Microsoft Entra ID",
+              "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
             },
             {
@@ -523,7 +523,7 @@ SIM.registerDocs("SC-300", {
           "t": "Implementar e gerenciar o Windows Hello for Business",
           "docs": [
             {
-              "t": "Windows Hello for Business overview",
+              "t": "Visão geral do Windows Hello for Business",
               "u": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/"
             },
             {
@@ -723,15 +723,15 @@ SIM.registerDocs("SC-300", {
           "t": "Implementar e gerenciar o risco do usuário usando o Microsoft Entra ID Protection ou políticas de Acesso Condicional",
           "docs": [
             {
-              "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+              "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
               "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
             },
             {
-              "t": "What are risk detections? - Microsoft Entra ID Protection",
+              "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
               "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
             },
             {
-              "t": "Risk policies - Microsoft Entra ID Protection",
+              "t": "Políticas de risco - Microsoft Entra ID Protection",
               "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
             }
           ]
@@ -744,7 +744,7 @@ SIM.registerDocs("SC-300", {
               "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies"
             },
             {
-              "t": "Risk policies - Microsoft Entra ID Protection",
+              "t": "Políticas de risco - Microsoft Entra ID Protection",
               "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
             }
           ]
@@ -858,15 +858,15 @@ SIM.registerDocs("SC-300", {
           "t": "Selecionar identidades apropriadas para aplicativos e cargas de trabalho do Azure, incluindo identidades gerenciadas, entidades de serviço, contas de usuário e contas de serviço gerenciadas",
           "docs": [
             {
-              "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+              "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
               "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
             },
             {
-              "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+              "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
               "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
             },
             {
-              "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+              "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
             }
           ]
@@ -897,15 +897,15 @@ SIM.registerDocs("SC-300", {
           "t": "Usar uma identidade gerenciada atribuída a um recurso do Azure para acessar outros recursos do Azure",
           "docs": [
             {
-              "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+              "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
               "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
             },
             {
-              "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+              "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
               "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
             },
             {
-              "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+              "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
             }
           ]
@@ -942,7 +942,7 @@ SIM.registerDocs("SC-300", {
               "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles"
             },
             {
-              "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+              "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
             }
           ]
@@ -1151,15 +1151,15 @@ SIM.registerDocs("SC-300", {
           "t": "Criar políticas de acesso e de sessão no Defender for Cloud Apps",
           "docs": [
             {
-              "t": "Create access policies - Microsoft Defender for Cloud Apps",
+              "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
               "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
             },
             {
-              "t": "Create session policies - Microsoft Defender for Cloud Apps",
+              "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
               "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
             },
             {
-              "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+              "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
               "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
             }
           ]
@@ -1201,11 +1201,11 @@ SIM.registerDocs("SC-300", {
           "t": "Planejar direitos",
           "docs": [
             {
-              "t": "What is entitlement management? - Microsoft Entra ID Governance",
+              "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
             },
             {
-              "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+              "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
             }
           ]
@@ -1300,11 +1300,11 @@ SIM.registerDocs("SC-300", {
           "t": "Criar e configurar revisões de acesso",
           "docs": [
             {
-              "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+              "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
             },
             {
-              "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+              "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
             }
           ]
@@ -1346,15 +1346,15 @@ SIM.registerDocs("SC-300", {
           "t": "Planejar e gerenciar funções do Microsoft Entra no Microsoft Entra Privileged Identity Management (PIM), incluindo configurações e atribuições",
           "docs": [
             {
-              "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+              "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
             },
             {
-              "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+              "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
             },
             {
-              "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+              "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
               "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
             }
           ]

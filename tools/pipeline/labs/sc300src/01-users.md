@@ -170,7 +170,7 @@ Remova as atribuições, apague a AU e os grupos SC300-L02-*.
 - https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions
 - https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept
 
-=== L03 | Colaboração externa (B2B): convites, restrições e one-time passcode | C | 60
+=== L03 | Colaboração externa (B2B): convites, restrições e senha de uso único | C | 60
 questions: Q005,Q109,Q137,Q144,Q235,Q003,Q067,Q299,Q014,Q024,Q136,Q370,Q006,Q019,Q135,Q026,Q033
 predict: Q067
 ## overview
@@ -309,7 +309,7 @@ Pare e apague a configuração de sincronização; remova as organizações das 
 - https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure
 - https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-settings-b2b-collaboration
 
-=== L05 | Entra Connect: filtros, PTA, writeback e Seamless SSO | B | 120
+=== L05 | Entra Connect: filtros, PTA, write-back e SSO contínuo | B | 120
 questions: Q011,Q010,Q012,Q017,Q076,Q016,Q023,Q114,Q361,Q015,Q018,Q198,Q104,Q121,Q140,Q028,Q032,Q146,Q394
 predict: Q011
 ## overview
@@ -399,7 +399,7 @@ Instale o agente de PTA num servidor sem saída para a internet (bloqueie no fir
 - https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback
 - https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-quick-start
 
-=== L06 | Domínios, branding e tenants não gerenciados | A | 40
+=== L06 | Domínios, identidade visual e tenants não gerenciados | A | 40
 questions: Q020,Q396,Q008,Q002,Q124,Q349,Q022
 predict: Q020
 ## overview
@@ -463,7 +463,7 @@ Volte o domínio primário para o anterior (remova o domínio só se nenhum obje
 - https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding
 - https://learn.microsoft.com/en-us/entra/identity/users/directory-self-service-signup
 
-=== L07 | Custom security attributes | A | 30
+=== L07 | Atributos de segurança personalizados | A | 30
 questions: Q368,Q408
 predict: Q408
 ## overview

@@ -106,7 +106,7 @@ Volte o "no compliance policy" para o valor anotado; apague MD102-L16-* (políti
 - https://learn.microsoft.com/en-us/intune/intune-service/protect/actions-for-noncompliance
 - https://learn.microsoft.com/en-us/intune/intune-service/protect/compliance-use-custom-settings
 
-=== L17 | Conditional Access com dispositivo em conformidade | A | 45
+=== L17 | Acesso Condicional com dispositivo em conformidade | A | 45
 questions: Q179,Q176,Q012,Q140,Q219
 predict: Q179
 ## overview
@@ -319,7 +319,7 @@ Apague as políticas MD102-L19-*; desligue o RDP; restaure a VM.
 - https://learn.microsoft.com/en-us/entra/identity/devices/howto-manage-local-admin-passwords
 - https://learn.microsoft.com/en-us/intune/intune-service/protect/endpoint-security-account-protection-policy
 
-=== L20 | Windows Hello for Business e passwordless | A | 45
+=== L20 | Windows Hello for Business e autenticação sem senha | A | 45
 questions: Q061,Q059,Q060,Q107,Q102,Q203
 predict: Q061
 ## overview
@@ -380,7 +380,7 @@ Volte as opções de inscrição do Windows Hello aos valores anteriores; restau
 - https://learn.microsoft.com/en-us/intune/intune-service/protect/windows-hello
 - https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-phone
 
-=== L21 | Defender for Endpoint: conexão, onboarding, tamper protection e antivírus | B | 90
+=== L21 | Defender for Endpoint: conexão, integração, proteção contra adulteração e antivírus | B | 90
 questions: Q026,Q023,Q097,Q184,Q185,Q257,Q267,Q021,Q096,Q189,Q218,Q211,Q020
 predict: Q026
 ## overview
@@ -469,7 +469,7 @@ Desligue a conexão do passo 2 e crie a política de EDR. Sem o conector, o "Aut
 - https://learn.microsoft.com/en-us/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection
 - https://learn.microsoft.com/en-us/defender-endpoint/machine-groups
 
-=== L22 | ASR, Controlled folder access e Exploit protection | A | 60
+=== L22 | ASR, Acesso controlado a pastas e Proteção contra explorações | A | 60
 questions: Q001,Q130,Q196,Q100,Q206,Q144
 predict: Q001
 ## overview
@@ -550,7 +550,7 @@ Apague MD102-L22-*; `Set-MpPreference -EnableControlledFolderAccess Disabled` se
 - https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference
 - https://learn.microsoft.com/en-us/defender-endpoint/customize-exploit-protection
 
-=== L23 | Certificados: raiz confiável e PKCS com a PKI do lab | B | 120
+=== L23 | Certificados: raiz confiável e PKCS com a PKI do laboratório | B | 120
 questions: Q098,Q188,Q239
 predict: Q098
 ## overview

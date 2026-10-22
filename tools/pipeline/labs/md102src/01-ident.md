@@ -1,4 +1,4 @@
-=== L01 | Entra join e administradores locais | A | 40
+=== L01 | Ingresso no Entra e administradores locais | A | 40
 questions: Q042,Q101,Q109,Q180,Q232,Q041,Q175
 predict: Q042
 ## overview
@@ -82,7 +82,7 @@ Em Device settings, mude **Users may join devices to Microsoft Entra** para **Se
 - https://learn.microsoft.com/en-us/entra/identity/devices/assign-local-admin
 - https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan
 
-=== L02 | Inscrição automática no Intune (MDM e MAM user scope) | A | 45
+=== L02 | Inscrição automática no Intune (escopos de usuário MDM e MAM) | A | 45
 questions: Q113,Q149,Q195,Q136,Q152
 predict: Q149
 ## overview
@@ -229,7 +229,7 @@ Dê prioridade 1 a uma restrição com **Device limit: 15** para "All users" e p
 - https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-manager-enroll
 - https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-group-mapping
 
-=== L04 | Hybrid join, inscrição por GPO e co-management com o MECM | B | 120
+=== L04 | Ingresso híbrido, inscrição por GPO e cogerenciamento com o MECM | B | 120
 questions: Q142,Q237,Q193,Q055
 predict: Q142
 ## overview
@@ -322,7 +322,7 @@ No cliente: `gpupdate /force`, faça logoff e logon com o usuário do domínio.
 - https://learn.microsoft.com/en-us/intune/configmgr/comanage/how-to-enable
 - https://learn.microsoft.com/en-us/intune/configmgr/comanage/how-to-switch-workloads
 
-=== L05 | Subscription activation e upgrade de edição | B | 60
+=== L05 | Ativação de assinatura e atualização de edição | B | 60
 questions: Q068,Q073,Q117,Q124,Q160,Q173,Q129,Q169,Q233,Q077
 predict: Q073
 ## overview
@@ -391,7 +391,7 @@ Remova a licença E5 do user01 e faça logon de novo depois de algumas horas. A 
 - https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation
 - https://learn.microsoft.com/en-us/intune/intune-service/configuration/edition-upgrade-windows-settings
 
-=== L06 | Provisioning package (Windows Configuration Designer) | B | 60
+=== L06 | Pacote de provisionamento (Windows Configuration Designer) | B | 60
 questions: Q135,Q058,Q120
 predict: Q135
 ## overview
@@ -447,7 +447,7 @@ Apague a conta package_ no Entra (ou use um pacote com token vencido) e aplique 
 - https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-bulk-enroll
 - https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-create-package
 
-=== L07 | Lógica de atribuição: grupos, exclusões, filtros, scope tags e policy sets | A | 50
+=== L07 | Lógica de atribuição: grupos, exclusões, filtros, marcas de escopo e conjuntos de políticas | A | 50
 questions: Q143,Q004,Q022,Q099,Q037,Q147,Q095,Q213,Q264
 predict: Q143
 ## overview
@@ -531,7 +531,7 @@ Apague MD102-L07-* (rings, perfil, filtro, scope tag, policy set, grupos).
 - https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/filters
 - https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/policy-sets
 
-=== L08 | RBAC do Intune, scope tags e funções do Entra | A | 45
+=== L08 | RBAC do Intune, marcas de escopo e funções do Entra | A | 45
 questions: Q177,Q104,Q110,Q209,Q154
 predict: Q177
 ## overview

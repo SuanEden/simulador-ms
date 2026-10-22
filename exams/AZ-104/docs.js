@@ -17,15 +17,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar usuários e grupos",
           "docs": [
             {
-              "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+              "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
             },
             {
-              "t": "How to manage groups - Microsoft Entra",
+              "t": "Como gerenciar grupos - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
             },
             {
-              "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+              "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
             }
           ]
@@ -34,15 +34,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar propriedades de usuários e grupos",
           "docs": [
             {
-              "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+              "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
               "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
             },
             {
-              "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+              "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
             },
             {
-              "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+              "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
             }
           ]
@@ -51,11 +51,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar licenças no Microsoft Entra ID",
           "docs": [
             {
-              "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+              "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
               "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
             },
             {
-              "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+              "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
               "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
             }
           ]
@@ -72,7 +72,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
             },
             {
-              "t": "Configure external collaboration - Microsoft Entra External ID",
+              "t": "Configurar a colaboração externa - Microsoft Entra External ID",
               "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
             }
           ]
@@ -81,11 +81,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar a redefinição de senha por autoatendimento (SSPR)",
           "docs": [
             {
-              "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+              "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
             },
             {
-              "t": "Self-service password reset policies - Microsoft Entra ID",
+              "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
               "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
             }
           ]
@@ -101,11 +101,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Gerenciar funções internas do Azure",
           "docs": [
             {
-              "t": "Azure built-in roles - Azure RBAC",
+              "t": "Funções internas do Azure - Azure RBAC",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
             },
             {
-              "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+              "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
               "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
             }
           ]
@@ -155,11 +155,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Implementar e gerenciar o Azure Policy",
           "docs": [
             {
-              "t": "Overview of Azure Policy - Azure Policy",
+              "t": "Visão geral do Azure Policy - Azure Policy",
               "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
             },
             {
-              "t": "Azure Policy definitions effect basics - Azure Policy",
+              "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
               "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
             },
             {
@@ -333,11 +333,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar contas de armazenamento",
           "docs": [
             {
-              "t": "Storage Account Overview - Azure Storage",
+              "t": "Visão geral das contas de armazenamento - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
             },
             {
-              "t": "Create an Azure Storage Account - Azure Storage",
+              "t": "Criar uma conta do Azure Storage - Azure Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
             },
             {
@@ -397,7 +397,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
             },
             {
-              "t": "Get started with Storage Explorer",
+              "t": "Introdução ao Storage Explorer",
               "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
             }
           ]
@@ -486,7 +486,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o gerenciamento do ciclo de vida de blobs",
           "docs": [
             {
-              "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+              "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
               "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
             },
             {
@@ -668,15 +668,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Implantar máquinas virtuais em zonas e conjuntos de disponibilidade",
           "docs": [
             {
-              "t": "Availability sets overview - Azure Virtual Machines",
+              "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
             },
             {
-              "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+              "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
             },
             {
-              "t": "What are Azure Availability Zones?",
+              "t": "O que são as Zonas de Disponibilidade do Azure?",
               "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
             }
           ]
@@ -871,11 +871,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar redes virtuais e sub-redes",
           "docs": [
             {
-              "t": "What is Azure Virtual Network?",
+              "t": "O que é o Azure Virtual Network?",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
             },
             {
-              "t": "Add, change, or delete a subnet",
+              "t": "Adicionar, alterar ou excluir uma sub-rede",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
             },
             {
@@ -888,11 +888,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar o emparelhamento de redes virtuais",
           "docs": [
             {
-              "t": "Azure Virtual Network Peering",
+              "t": "Emparelhamento de redes virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
             },
             {
-              "t": "Create, Change, or Delete Azure Virtual Network Peering",
+              "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
             }
           ]
@@ -927,7 +927,7 @@ SIM.registerDocs("AZ-104", {
           "t": "Solucionar problemas de conectividade de rede",
           "docs": [
             {
-              "t": "Azure Network Watcher Overview",
+              "t": "Visão geral do Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
             },
             {
@@ -951,11 +951,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Criar e configurar grupos de segurança de rede (NSGs) e grupos de segurança de aplicativo",
           "docs": [
             {
-              "t": "Azure network security groups overview",
+              "t": "Visão geral dos grupos de segurança de rede do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
             },
             {
-              "t": "Azure Application Security Groups Overview",
+              "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
             },
             {
@@ -968,11 +968,11 @@ SIM.registerDocs("AZ-104", {
           "t": "Avaliar regras de segurança efetivas em NSGs",
           "docs": [
             {
-              "t": "How Network Security Groups Filter Network Traffic in Azure",
+              "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
             },
             {
-              "t": "Effective Security Rules Overview - Azure Network Watcher",
+              "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
             }
           ]
@@ -981,15 +981,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Implementar o Azure Bastion",
           "docs": [
             {
-              "t": "What is Azure Bastion?",
+              "t": "O que é o Azure Bastion?",
               "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
             },
             {
-              "t": "About Azure Bastion configuration settings",
+              "t": "Sobre as configurações do Azure Bastion",
               "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
             },
             {
-              "t": "VNet peering and Azure Bastion architecture",
+              "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
               "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
             }
           ]
@@ -1031,15 +1031,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar o Azure DNS",
           "docs": [
             {
-              "t": "Azure DNS Overview: Hosting and Resolution",
+              "t": "Visão geral do Azure DNS: hospedagem e resolução",
               "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
             },
             {
-              "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+              "t": "Azure Private DNS: DNS seguro para redes virtuais",
               "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
             },
             {
-              "t": "Azure Virtual Network Name Resolution Guide",
+              "t": "Guia de resolução de nomes do Azure Virtual Network",
               "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
             }
           ]
@@ -1048,15 +1048,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar um balanceador de carga interno ou público",
           "docs": [
             {
-              "t": "What is Azure Load Balancer? - Azure Load Balancer",
+              "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
               "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
             },
             {
-              "t": "Azure Load Balancer Components Overview",
+              "t": "Visão geral dos componentes do Azure Load Balancer",
               "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
             },
             {
-              "t": "Azure Load Balancer SKUs",
+              "t": "SKUs do Azure Load Balancer",
               "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
             }
           ]
@@ -1102,7 +1102,7 @@ SIM.registerDocs("AZ-104", {
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
             },
             {
-              "t": "Azure Monitor Agent Overview - Azure Monitor",
+              "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
             },
             {
@@ -1128,15 +1128,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Configurar regras de alerta, grupos de ações e regras de processamento de alertas no Azure Monitor",
           "docs": [
             {
-              "t": "Overview of Azure Monitor alerts - Azure Monitor",
+              "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
             },
             {
-              "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+              "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
             },
             {
-              "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+              "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
               "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
             }
           ]
@@ -1162,15 +1162,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Usar o Azure Network Watcher e o Monitor de Conexão",
           "docs": [
             {
-              "t": "Azure Network Watcher Overview",
+              "t": "Visão geral do Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
             },
             {
-              "t": "Connection Monitor Overview - Azure Network Watcher",
+              "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
             },
             {
-              "t": "Virtual Network Flow Logs - Azure Network Watcher",
+              "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
               "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
             }
           ]
@@ -1225,15 +1225,15 @@ SIM.registerDocs("AZ-104", {
           "t": "Executar operações de backup e restauração usando o Azure Backup",
           "docs": [
             {
-              "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+              "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
             },
             {
-              "t": "Recover files and folders from Azure VM backup - Azure Backup",
+              "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
             },
             {
-              "t": "Back up Azure Files in the Azure portal - Azure Backup",
+              "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
               "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
             }
           ]

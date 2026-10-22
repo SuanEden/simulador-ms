@@ -274,7 +274,7 @@ Desligue **Access management for Azure resources**, mova a Sub-Lab de volta para
 - https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin
 - https://learn.microsoft.com/en-us/azure/governance/management-groups/overview
 
-=== L04 | Funções customizadas | A | 40
+=== L04 | Funções personalizadas | A | 40
 questions: Q065,Q101,Q261,Q094,Q789,Q207,Q845
 predict: Q065
 ## overview
@@ -444,7 +444,7 @@ Remova as três atribuições e a custom definition; apague os RGs.
 - https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effects
 - https://learn.microsoft.com/en-us/azure/governance/policy/concepts/assignment-structure
 
-=== L06 | Locks e movimentação de recursos | A | 45
+=== L06 | Bloqueios e movimentação de recursos | A | 45
 questions: Q086,Q187,Q1093,Q079,Q048,Q980,Q566,Q064
 predict: Q187
 ## overview
@@ -505,7 +505,7 @@ for g in a b c; do az group delete -n rg-az104-l06$g --yes --no-wait; done
 - https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources
 - https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription
 
-=== L07 | Custos: tags, budgets e Advisor | A | 30
+=== L07 | Custos: marcas, orçamentos e Advisor | A | 30
 questions: Q067,Q775,Q183,Q061,Q001
 predict: Q183
 ## overview

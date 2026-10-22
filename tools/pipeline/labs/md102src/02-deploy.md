@@ -1,4 +1,4 @@
-=== L09 | Windows Autopilot user-driven com Enrollment Status Page | B | 120
+=== L09 | Windows Autopilot controlado pelo usuário com Página de Status de Inscrição | B | 120
 questions: Q162,Q064,Q078,Q123,Q168,Q225,Q226,Q227,Q052,Q235,Q076,Q044
 predict: Q162
 ## overview
@@ -103,7 +103,7 @@ Ligue a VM antes do Profile status ficar **Assigned**. O OOBE segue o fluxo norm
 - https://learn.microsoft.com/en-us/autopilot/tutorial/user-driven/azure-ad-join-workflow
 - https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enrollment-status
 
-=== L10 | Autopilot para dispositivos existentes, self-deploying e Autopilot Reset | B | 90
+=== L10 | Autopilot para dispositivos existentes, autoimplantação e redefinição do Autopilot | B | 90
 questions: Q048,Q002,Q244,Q115,Q170,Q200,Q114
 predict: Q048
 ## overview
@@ -175,7 +175,7 @@ Desabilite o Windows RE (`reagentc /disable`) e peça um Autopilot Reset remoto.
 - https://learn.microsoft.com/en-us/autopilot/self-deploying
 - https://learn.microsoft.com/en-us/autopilot/windows-autopilot-reset
 
-=== L11 | Autopilot com hybrid join (Intune Connector for Active Directory) | B | 120
+=== L11 | Autopilot com ingresso híbrido (Intune Connector for Active Directory) | B | 120
 questions: Q259,Q150,Q171
 predict: Q259
 ## overview
@@ -242,7 +242,7 @@ Remova a delegação da OU e repita a implantação. O ODJConnectorService regis
 - https://learn.microsoft.com/en-us/autopilot/windows-autopilot-hybrid
 - https://learn.microsoft.com/en-us/autopilot/tutorial/user-driven/hybrid-azure-ad-join-intune-connector
 
-=== L12 | Ações remotas: Retire, Wipe, Delete e Fresh Start | A | 60
+=== L12 | Ações remotas: Desativar, Apagar, Excluir e Recomeço | A | 60
 questions: Q015,Q243,Q254,Q114
 predict: Q015
 ## overview
@@ -299,7 +299,7 @@ Restaure os checkpoints "12-Antes" e apague os registros que sobraram no Intune 
 - https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/devices-wipe
 - https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/device-fresh-start
 
-=== L13 | Perfis de configuração: Settings catalog, templates, OMA-URI, conflitos e GPO | A | 60
+=== L13 | Perfis de configuração: Catálogo de Configurações, modelos, OMA-URI, conflitos e GPO | A | 60
 questions: Q192,Q146,Q024,Q128,Q215,Q197,Q092,Q194,Q196,Q022,Q242,Q145,Q151
 predict: Q192
 ## overview
@@ -389,7 +389,7 @@ Apague os perfis MD102-L13-* e a GPO de teste; restaure a W11-LAB01 (para desfaz
 - https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-controlpolicyconflict
 - https://learn.microsoft.com/en-us/intune/intune-service/configuration/group-policy-analytics
 
-=== L14 | Windows Update for Business: rings, pausa, desinstalação e feature updates | A | 60
+=== L14 | Windows Update for Business: anéis, pausa, desinstalação e atualizações de recursos | A | 60
 questions: Q137,Q017,Q091,Q139,Q183,Q255,Q264,Q205,Q088,Q086,Q033,Q050,Q054,Q159,Q075,Q252,Q187
 predict: Q137
 ## overview
@@ -466,7 +466,7 @@ Resume (despause), apague MD102-L14-* e restaure as VMs se o feature update não
 - https://learn.microsoft.com/en-us/intune/intune-service/protect/windows-10-feature-updates
 - https://learn.microsoft.com/en-us/windows/deployment/update/waas-wu-settings
 
-=== L15 | Delivery Optimization | A | 45
+=== L15 | Otimização de Entrega | A | 45
 questions: Q214,Q029,Q034,Q134,Q033
 predict: Q214
 ## overview

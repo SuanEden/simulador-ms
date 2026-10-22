@@ -18,13 +18,13 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.2",
     "topic": "Licenciamento por grupo",
     "type": "single",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the following objects:\n\n- A device named Device1\n- Users named User1, User2, User3, User4, and User5\n- Groups named Group1, Group2, Group3, Group4, and Group5\n\nThe groups are configured as shown in the following table.\n\n![Exhibit](img/S001-stem-1.png){w=589}\n\nTo which groups can you assign a Microsoft Office 365 Enterprise E5 license directly?",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) que contém os seguintes objetos:\n\n- Um dispositivo chamado Device1\n- Usuários chamados User1, User2, User3, User4 e User5\n- Grupos chamados Group1, Group2, Group3, Group4 e Group5\n\nOs grupos estão configurados conforme a tabela a seguir.\n\n![Imagem](img/S001-stem-1.png){w=589}\n\n### Tradução do texto da imagem\n\n| Nome | Tipo | Tipo de associação | Membros |\n|---|---|---|---|\n| Group1 | Segurança | Atribuído | User1, User3, Group2, Group3 |\n| Group2 | Segurança | Usuário Dinâmico | User2 |\n| Group3 | Segurança | Dispositivo Dinâmico | Device1 |\n| Group4 | Microsoft 365 | Atribuído | User4 |\n| Group5 | Microsoft 365 | Usuário Dinâmico | User5 |\n\nA quais grupos você pode atribuir diretamente uma licença do Microsoft Office 365 Enterprise E5?",
     "options": [
-      "Group1 and Group4 only",
-      "Group1, Group2, Group3, Group4, and Group5",
-      "Group1 and Group2 only",
-      "Group1 only",
-      "Group1, Group2, Group4, and Group5 only"
+      "Somente Group1 e Group4",
+      "Group1, Group2, Group3, Group4 e Group5",
+      "Somente Group1 e Group2",
+      "Somente Group1",
+      "Somente Group1, Group2, Group4 e Group5"
     ],
     "answer": 2,
     "scope": "in",
@@ -33,11 +33,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Group3 / Group4 / Group5:** pela tabela, são grupos de dispositivos, distribuição ou M365 sem securityEnabled, que não aceitam licenciamento por grupo.\n- **Todos os grupos:** grupos com associação de dispositivos não consomem licença de usuário.\n\n**Dica de prova:** Licenciamento por grupo exige Entra ID P1 (ou E3/A3/Business Premium) no tenant.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ],
@@ -50,9 +50,9 @@ SIM.registerQuestions("SC-300", [
     "src": 2,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Self-service sign-up",
+    "topic": "Cadastro por autoatendimento",
     "type": "single",
-    "stem": "You have a Microsoft Exchange organization that uses an SMTP address space of contoso.com.\n\nSeveral users use their contoso.com email address for self-service sign-up to Azure Active Directory (Azure AD).\n\nYou gain global administrator privileges to the Azure AD tenant that contains the self-signed users.\n\nYou need to prevent the users from creating user accounts in the contoso.com Azure AD tenant for self-service sign-up to Microsoft 365 services. Which PowerShell cmdlet should you run?",
+    "stem": "Você tem uma organização do Microsoft Exchange que usa o espaço de endereços SMTP contoso.com.\n\nVários usuários usam seus endereços de email contoso.com para se cadastrar por autoatendimento no Azure Active Directory (Azure AD).\n\nVocê obtém privilégios de administrador global no tenant do Azure AD que contém esses usuários cadastrados por autoatendimento.\n\nVocê precisa impedir que os usuários criem contas de usuário no tenant contoso.com do Azure AD para se cadastrar por autoatendimento nos serviços do Microsoft 365. Qual cmdlet do PowerShell você deve executar?",
     "options": [
       "Set-MsolCompanySettings",
       "Set-MsolDomainFederationSettings",
@@ -74,7 +74,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -91,14 +91,14 @@ SIM.registerQuestions("SC-300", [
     "src": 3,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Email one-time passcode",
+    "topic": "Senha de uso único por email",
     "type": "single",
-    "stem": "You have a Microsoft 365 tenant that uses the domain named fabrikam.com. The Guest invite settings for Azure Active Directory (Azure AD) are configured as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S003-stem-1.png){w=611}\n\nA user in fabrikam.com shares a Microsoft SharePoint Online document library to the users shown in the following table.\n\n![Exhibit](img/S003-stem-2.png){w=594}\n\nWhich users will be emailed a passcode?",
+    "stem": "Você tem um tenant do Microsoft 365 que usa o domínio chamado fabrikam.com. As configurações de convite de convidados do Azure Active Directory (Azure AD) estão definidas conforme a imagem. (Clique na aba Imagem.)\n\n![Imagem](img/S003-stem-1.png){w=611}\n\n### Tradução do texto da primeira imagem\n\n**Acesso de usuário convidado — Restrições de acesso de usuário convidado (versão prévia)**\n\n- Usuários convidados têm o mesmo acesso que membros (mais inclusivo; não selecionado).\n- Usuários convidados têm acesso limitado às propriedades e associações de objetos de diretório (selecionado).\n- O acesso de usuários convidados é restrito às propriedades e associações de seus próprios objetos de diretório (mais restritivo; não selecionado).\n\n**Configurações de convite de convidados**\n\n| Configuração | Valor selecionado |\n|---|---|\n| Administradores e usuários com a função de Emissor de Convites podem convidar | Sim |\n| Membros podem convidar | Sim |\n| Convidados podem convidar | Não |\n| Senha de uso único por email para convidados | Sim |\n| Habilitar cadastro por autoatendimento de convidados por fluxos de usuário (versão prévia) | Sim |\n\nOs seletores também oferecem a opção oposta Sim/Não. Links informativos: Saiba mais.\n\n**Restrições de colaboração**\n\n- Permitir o envio de convites para qualquer domínio (mais inclusivo; selecionado).\n- Negar convites para os domínios especificados (não selecionado).\n- Permitir convites somente para os domínios especificados (mais restritivo; não selecionado).\n\nUm usuário em fabrikam.com compartilha uma biblioteca de documentos do Microsoft SharePoint Online com os usuários mostrados na tabela a seguir.\n\n![Imagem](img/S003-stem-2.png){w=594}\n\n### Tradução do texto da segunda imagem\n\n| Nome | Email | Descrição |\n|---|---|---|\n| User1 | User1@contoso.com | Um usuário convidado em fabrikam.com |\n| User2 | User2@outlook.com | Um usuário que nunca acessou recursos em fabrikam.com |\n| User3 | User3@fabrikam.com | Um usuário em fabrikam.com |\n\nQuais usuários receberão uma senha de uso único por email?",
     "options": [
-      "User2 only",
-      "User1 only",
-      "User1 and User2 only",
-      "User1, User2, and User3"
+      "Somente User2",
+      "Somente User1",
+      "Somente User1 e User2",
+      "User1, User2 e User3"
     ],
     "answer": 0,
     "scope": "in",
@@ -111,7 +111,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -130,12 +130,12 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.2",
     "topic": "Licenciamento",
     "type": "single",
-    "stem": "You have 2,500 users who are assigned Microsoft Office 365 Enterprise E3 licenses. The licenses are assigned to individual users.\n\nFrom the Groups blade in the Azure Active Directory admin center, you assign Microsoft 365 Enterprise E5 licenses to the users.\n\nYou need to remove the Office 365 Enterprise E3 licenses from the users by using the least amount of administrative effort.\n\nWhat should you use?",
+    "stem": "Você tem 2.500 usuários com licenças do Microsoft Office 365 Enterprise E3 atribuídas. As licenças são atribuídas individualmente aos usuários.\n\nNo painel Grupos do centro de administração do Azure Active Directory, você atribui licenças do Microsoft 365 Enterprise E5 aos usuários.\n\nVocê precisa remover as licenças do Office 365 Enterprise E3 dos usuários com o menor esforço administrativo possível.\n\nO que você deve usar?",
     "options": [
-      "the Identity Governance blade in the Azure Active Directory admin center",
-      "the Set-AzureAdUser cmdlet",
-      "the Licenses blade in the Azure Active Directory admin center",
-      "the Set-WindowsProductKey cmdlet"
+      "o painel Governança de Identidade do centro de administração do Azure Active Directory",
+      "o cmdlet Set-AzureAdUser",
+      "o painel Licenças do centro de administração do Azure Active Directory",
+      "o cmdlet Set-WindowsProductKey"
     ],
     "answer": 2,
     "scope": "in",
@@ -144,7 +144,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Identity Governance:** access reviews e entitlement; não remove licenças.\n- **Set-AzureADUser:** altera propriedades do usuário, não licenças (e o módulo foi aposentado).\n- **Set-WindowsProductKey:** chave do Windows; não tem relação.\n\n**Dica de prova:** Em Licenses > All products > Office 365 E3 > Licensed users, selecione todos e remova a licença em massa.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -156,7 +156,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ],
@@ -171,11 +171,11 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.3",
     "topic": "Colaboração externa",
     "type": "yesno",
-    "stem": "You have a Microsoft 365 tenant named contoso.com.\n\nGuest user access is enabled.\n\nUsers are invited to collaborate with contoso.com as shown in the following table.\n\n![Exhibit](img/S005-stem-1.png){w=541}\n\nFrom the External collaboration settings in the Azure Active Directory admin center, you configure the Collaboration restrictions settings as shown in the following exhibit.\n\n![Exhibit](img/S005-stem-2.png){w=485}\n\nFrom a Microsoft SharePoint Online site, a user invites User3 to the site.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Microsoft 365 chamado contoso.com.\n\nO acesso de usuários convidados está habilitado.\n\nOs usuários são convidados a colaborar com contoso.com conforme a tabela a seguir.\n\n![Imagem](img/S005-stem-1.png){w=541}\n\n### Tradução do texto da primeira imagem\n\n| Email do usuário | Tipo de usuário | Convite aceito | Recurso compartilhado |\n|---|---|---|---|\n| User1@outlook.com | Convidado | Não | Aplicativo empresarial |\n| User2@fabrikam.com | Convidado | Sim | Aplicativo empresarial |\n\nNas Configurações de colaboração externa do centro de administração do Azure Active Directory, você define as Restrições de colaboração conforme a imagem a seguir.\n\n![Imagem](img/S005-stem-2.png){w=485}\n\n### Tradução do texto da segunda imagem\n\n**Restrições de colaboração**\n\n- Permitir o envio de convites para qualquer domínio (mais inclusivo; não selecionado).\n- Negar convites para os domínios especificados (não selecionado).\n- Permitir convites somente para os domínios especificados (mais restritivo; selecionado).\n\nControle: Excluir. Tabela: DOMÍNIOS DE DESTINO; Outlook.com.\n\nEm um site do Microsoft SharePoint Online, um usuário convida User3 para o site.\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "User1 can accept the invitation and gain access to the enterprise application.",
-      "User2 can access the enterprise application.",
-      "User3 can accept the invitation and gain access to the SharePoint site."
+      "User1 pode aceitar o convite e obter acesso ao aplicativo empresarial.",
+      "User2 pode acessar o aplicativo empresarial.",
+      "User3 pode aceitar o convite e obter acesso ao site do SharePoint."
     ],
     "answer": [
       true,
@@ -188,7 +188,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 (outlook.com):** Sim. Está na allow list.\n- **User2:** Sim. O convite foi resgatado antes da restrição; mudar a allow list não remove acessos existentes.\n- **User3:** Não. O domínio não está permitido, e o convite falha.\n\n**Dica de prova:** A allow/deny list vale para **novos convites**; revise contas existentes com access reviews.",
     "docs": [
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
@@ -204,13 +204,13 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.3",
     "topic": "B2B em massa",
     "type": "multi",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com. You plan to bulk invite Azure AD business-to-business (B2B) collaboration users. Which two parameters must you include when you create the bulk invite? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) chamado contoso.com. Você planeja convidar em massa usuários de colaboração business-to-business (B2B) do Azure AD. Quais dois parâmetros você deve incluir ao criar o convite em massa? Cada resposta correta apresenta parte da solução.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "email address",
-      "redirection URL",
-      "username",
-      "shared key",
-      "password"
+      "endereço de email",
+      "URL de redirecionamento",
+      "nome de usuário",
+      "chave compartilhada",
+      "senha"
     ],
     "answer": [
       0,
@@ -245,13 +245,13 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.2",
     "topic": "Grupos",
     "type": "single",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the objects shown in the following table.\n\n![Exhibit](img/S007-stem-1.png){w=589}\n\nWhich objects can you add as members to Group3?",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) que contém os objetos mostrados na tabela a seguir.\n\n![Imagem](img/S007-stem-1.png){w=589}\n\n### Tradução do texto da imagem\n\n| Nome | Tipo | Licença atribuída diretamente |\n|---|---|---|\n| User1 | Usuário | Nenhuma |\n| User2 | Usuário | Microsoft Office 365 Enterprise E5 |\n| Group1 | Grupo de segurança | Microsoft Office 365 Enterprise E5 |\n| Group2 | Grupo do Microsoft 365 | Nenhuma |\n| Group3 | Grupo de segurança habilitado para email | Nenhuma |\n\nQuais objetos você pode adicionar como membros a Group3?",
     "options": [
-      "User2 and Group2 only",
-      "User2, Group1, and Group2 only",
-      "User1, User2, Group1 and Group2",
-      "User1 and User2 only",
-      "User2 only"
+      "Somente User2 e Group2",
+      "Somente User2, Group1 e Group2",
+      "User1, User2, Group1 e Group2",
+      "Somente User1 e User2",
+      "Somente User2"
     ],
     "answer": 4,
     "scope": "in",
@@ -260,15 +260,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1:** sem caixa de correio (sem licença), não é destinatário do Exchange.\n- **Group1 / Group2:** grupos de segurança comuns ou M365 não podem ser membros de um mail-enabled security group pelo Entra.\n\n**Dica de prova:** Mail-enabled security groups e listas de distribuição são gerenciados no Exchange admin center.",
     "docs": [
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -281,16 +281,16 @@ SIM.registerQuestions("SC-300", [
     "src": 8,
     "domain": 1,
     "skill": "1.1",
-    "topic": "Admin takeover",
+    "topic": "Tomada de controle administrativo",
     "type": "order",
-    "stem": "You have an on-premises Microsoft Exchange organization that uses an SMTP address space of contoso.com.\n\nYou discover that users use their email address for self-service sign-up to Microsoft 365 services.\n\nYou need to gain global administrator privileges to the Azure Active Directory (Azure AD) tenant that contains the self-signed users.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "stem": "Você tem uma organização local do Microsoft Exchange que usa o espaço de endereços SMTP contoso.com.\n\nVocê descobre que os usuários usam seus endereços de email para se cadastrar por autoatendimento nos serviços do Microsoft 365.\n\nVocê precisa obter privilégios de administrador global no tenant do Azure Active Directory (Azure AD) que contém esses usuários cadastrados por autoatendimento.\n\nQuais quatro ações você deve executar em sequência? Para responder, mova as ações apropriadas da lista de ações para a área de resposta e organize-as na ordem correta.",
     "pool": [
-      "Sign in to the Microsoft 365 admin center.",
-      "Create a self-signed user account in the Azure AD tenant.",
-      "From the Microsoft 365 admin center, add the domain name.",
-      "Respond to the Become the admin message.",
-      "From the Microsoft 365 admin center, remove the domain name.",
-      "Create a TXT record in the contoso.com DNS zone."
+      "Entrar no centro de administração do Microsoft 365.",
+      "Criar uma conta de usuário por autoatendimento no tenant do Azure AD.",
+      "No centro de administração do Microsoft 365, adicionar o nome de domínio.",
+      "Responder à mensagem Torne-se o administrador.",
+      "No centro de administração do Microsoft 365, remover o nome de domínio.",
+      "Criar um registro TXT na zona DNS contoso.com."
     ],
     "answer": [
       1,
@@ -327,28 +327,28 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.2",
     "topic": "Grupos",
     "type": "hotarea",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant that contains a user named User1 and the groups shown in the following table.\n\n![Exhibit](img/S009-stem-1.png){w=430}\n\nIn the tenant, you create the groups shown in the following table.\n\n![Exhibit](img/S009-stem-2.png){w=429}\n\nWhich members can you add to GroupA and GroupB? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) que contém um usuário chamado User1 e os grupos mostrados na tabela a seguir.\n\n![Imagem](img/S009-stem-1.png){w=430}\n\n### Tradução do texto da primeira imagem\n\n| Nome | Tipo | Tipo de associação |\n|---|---|---|\n| Group1 | Segurança | Atribuído |\n| Group2 | Segurança | Usuário Dinâmico |\n| Group3 | Segurança | Dispositivo Dinâmico |\n| Group4 | Microsoft 365 | Atribuído |\n\nNo tenant, você cria os grupos mostrados na tabela a seguir.\n\n![Imagem](img/S009-stem-2.png){w=429}\n\n### Tradução do texto da segunda imagem\n\n| Nome | Tipo | Tipo de associação |\n|---|---|---|\n| GroupA | Segurança | Atribuído |\n| GroupB | Microsoft 365 | Atribuído |\n\nQuais membros você pode adicionar a GroupA e GroupB? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
         "label": "GroupA:",
         "options": [
-          "User1 only",
-          "User1 and Group1 only",
-          "User1, Group1, and Group2 only",
-          "User1, Group1, and Group4 only",
-          "User1, Group1, Group2, and Group3 only",
-          "User1, Group1, Group2, Group3, and Group4"
+          "Somente User1",
+          "Somente User1 e Group1",
+          "Somente User1, Group1 e Group2",
+          "Somente User1, Group1 e Group4",
+          "Somente User1, Group1, Group2 e Group3",
+          "User1, Group1, Group2, Group3 e Group4"
         ],
         "answer": 4
       },
       {
         "label": "GroupB:",
         "options": [
-          "User1 only",
-          "User1 and Group4 only",
-          "User1, Group1, and Group3 only",
-          "User1, Group1, Group2, and Group4 only",
-          "User1, Group1, Group2, Group3, and Group4"
+          "Somente User1",
+          "Somente User1 e Group4",
+          "Somente User1, Group1 e Group3",
+          "Somente User1, Group1, Group2 e Group4",
+          "User1, Group1, Group2, Group3 e Group4"
         ],
         "answer": 0
       }
@@ -359,15 +359,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **GroupA (segurança) com Group4:** Group4 é M365; grupos M365 não podem ser aninhados em grupos de segurança.\n- **GroupB (M365) com grupos:** grupos Microsoft 365 só aceitam usuários.\n\n**Dica de prova:** Grupos de segurança aceitam usuários, dispositivos, service principals e outros grupos de segurança.",
     "docs": [
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -386,10 +386,10 @@ SIM.registerQuestions("SC-300", [
       "kind": "series",
       "id": "DISABLED"
     },
-    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Active Directory forest that syncs to an Azure Active Directory (Azure AD) tenant.\n\nYou discover that when a user account is disabled in Active Directory, the disabled user can still authenticate to Azure AD for up to 30 minutes. You need to ensure that when a user account is disabled in Active Directory, the user account is immediately prevented from authenticating to Azure AD.\n\nSolution: You configure password writeback.\n\nDoes this meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam o mesmo cenário. Cada questão da série contém uma solução diferente que pode atender aos objetivos declarados. Algumas séries podem ter mais de uma solução correta, enquanto outras podem não ter nenhuma.\n\nDepois de responder a uma questão desta seção, você NÃO poderá voltar a ela. Por isso, essas questões não aparecerão na tela de revisão.\n\nVocê tem uma floresta do Active Directory que é sincronizada com um tenant do Azure Active Directory (Azure AD).\n\nVocê descobre que, quando uma conta de usuário é desabilitada no Active Directory, o usuário desabilitado ainda pode se autenticar no Azure AD por até 30 minutos. Você precisa garantir que, quando uma conta de usuário for desabilitada no Active Directory, ela seja imediatamente impedida de se autenticar no Azure AD.\n\nSolução: você configura o write-back de senha.\n\nIsso atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -426,10 +426,10 @@ SIM.registerQuestions("SC-300", [
       "kind": "series",
       "id": "DISABLED"
     },
-    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Active Directory forest that syncs to an Azure Active Directory (Azure AD) tenant.\n\nYou discover that when a user account is disabled in Active Directory, the disabled user can still authenticate to Azure AD for up to 30 minutes. You need to ensure that when a user account is disabled in Active Directory, the user account is immediately prevented from authenticating to Azure AD.\n\nSolution: You configure pass-through authentication.\n\nDoes this meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam o mesmo cenário. Cada questão da série contém uma solução diferente que pode atender aos objetivos declarados. Algumas séries podem ter mais de uma solução correta, enquanto outras podem não ter nenhuma.\n\nDepois de responder a uma questão desta seção, você NÃO poderá voltar a ela. Por isso, essas questões não aparecerão na tela de revisão.\n\nVocê tem uma floresta do Active Directory que é sincronizada com um tenant do Azure Active Directory (Azure AD).\n\nVocê descobre que, quando uma conta de usuário é desabilitada no Active Directory, o usuário desabilitado ainda pode se autenticar no Azure AD por até 30 minutos. Você precisa garantir que, quando uma conta de usuário for desabilitada no Active Directory, ela seja imediatamente impedida de se autenticar no Azure AD.\n\nSolução: você configura a autenticação de passagem.\n\nIsso atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 0,
     "shuffle": false,
@@ -466,10 +466,10 @@ SIM.registerQuestions("SC-300", [
       "kind": "series",
       "id": "DISABLED"
     },
-    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Active Directory (Azure AD) tenant that syncs to an Active Directory forest.\n\nYou discover that when a user account is disabled in Active Directory, the disabled user can still authenticate to Azure AD for up to 30 minutes. You need to ensure that when a user account is disabled in Active Directory, the user account is immediately prevented from authenticating to Azure AD.\n\nSolution: You configure conditional access policies.\n\nDoes this meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam o mesmo cenário. Cada questão da série contém uma solução diferente que pode atender aos objetivos declarados. Algumas séries podem ter mais de uma solução correta, enquanto outras podem não ter nenhuma.\n\nDepois de responder a uma questão desta seção, você NÃO poderá voltar a ela. Por isso, essas questões não aparecerão na tela de revisão.\n\nVocê tem um tenant do Azure Active Directory (Azure AD) que é sincronizado com uma floresta do Active Directory.\n\nVocê descobre que, quando uma conta de usuário é desabilitada no Active Directory, o usuário desabilitado ainda pode se autenticar no Azure AD por até 30 minutos. Você precisa garantir que, quando uma conta de usuário for desabilitada no Active Directory, ela seja imediatamente impedida de se autenticar no Azure AD.\n\nSolução: você configura políticas de Acesso Condicional.\n\nIsso atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -502,7 +502,7 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.2",
     "topic": "Licenciamento por grupo",
     "type": "single",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the following objects.\n\n- A device named Device1\n- Users named User1, User2, User3, User4, and User5\n\nFive groups named Group1, Group2, Group3, Group4, and Group5\n\nThe groups are configured as shown in the following table.\n\n![Exhibit](img/S013-stem-1.png){w=569}\n\nHow many licenses are used if you assign the Microsoft 365 Enterprise E5 license to Group1?",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) que contém os seguintes objetos.\n\n- Um dispositivo chamado Device1\n- Usuários chamados User1, User2, User3, User4 e User5\n\nCinco grupos chamados Group1, Group2, Group3, Group4 e Group5\n\nOs grupos estão configurados conforme a tabela a seguir.\n\n![Imagem](img/S013-stem-1.png){w=569}\n\n### Tradução do texto da imagem\n\n| Nome | Tipo | Tipo de associação | Membros |\n|---|---|---|---|\n| Group1 | Segurança | Atribuído | User1, User3, Group2, Group4 |\n| Group2 | Segurança | Usuário Dinâmico | User2 |\n| Group3 | Segurança | Dispositivo Dinâmico | Device1 |\n| Group4 | Microsoft 365 | Atribuído | User4 |\n| Group5 | Microsoft 365 | Atribuído | User5 |\n\nQuantas licenças serão usadas se você atribuir a licença do Microsoft 365 Enterprise E5 a Group1?",
     "options": [
       "0",
       "2",
@@ -516,11 +516,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **0:** os membros diretos do Group1 consomem licença.\n- **3 ou 4:** membros de grupos aninhados não herdam; a contagem é só de usuários diretos (pela tabela, 2).\n\n**Dica de prova:** Dispositivos membros também não consomem licença.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ],
@@ -535,12 +535,12 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.3",
     "topic": "Usuários convidados",
     "type": "single",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com that contains an Azure AD enterprise application named App1.\n\nA contractor uses the credentials of contractor@fabrikam.com.\n\nYou need to ensure that you can provide the contractor with access to App1. The contractor must be able to authenticate as contractor@fabrikam.com.\n\nWhat should you do?",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) chamado contoso.com que contém um aplicativo empresarial do Azure AD chamado App1.\n\nUm prestador de serviço usa as credenciais de contractor@fabrikam.com.\n\nVocê precisa garantir que possa fornecer ao prestador acesso a App1. O prestador deve poder se autenticar como contractor@fabrikam.com.\n\nO que você deve fazer?",
     "options": [
-      "Run the New-AzADUser cmdlet.",
-      "Configure the External collaboration settings.",
-      "Add a WS-Fed identity provider.",
-      "Create a guest user account in contoso.com."
+      "Executar o cmdlet New-AzADUser.",
+      "Definir as Configurações de colaboração externa.",
+      "Adicionar um provedor de identidade WS-Fed.",
+      "Criar uma conta de usuário convidado em contoso.com."
     ],
     "answer": 3,
     "scope": "in",
@@ -561,7 +561,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/b2b-quickstart-add-guest-users-portal"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       }
     ],
@@ -576,12 +576,12 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.4",
     "topic": "Entra Connect Sync",
     "type": "single",
-    "stem": "Your network contains an Active Directory forest named contoso.com that is linked to an Azure Active Directory (Azure AD) tenant named contoso.com by using\n\nAzure AD Connect.\n\nYou need to prevent the synchronization of users who have the extensionAttribute15 attribute set to NoSync.\n\nWhat should you do in Azure AD Connect?",
+    "stem": "Sua rede contém uma floresta do Active Directory chamada contoso.com, vinculada a um tenant do Azure Active Directory (Azure AD) chamado contoso.com usando o Azure AD Connect.\n\nVocê precisa impedir a sincronização de usuários cujo atributo extensionAttribute15 esteja definido como NoSync.\n\nO que você deve fazer no Azure AD Connect?",
     "options": [
-      "Create an inbound synchronization rule for the Windows Azure Active Directory connector.",
-      "Configure a Full Import run profile.",
-      "Create an inbound synchronization rule for the Active Directory Domain Services connector.",
-      "Configure an Export run profile."
+      "Criar uma regra de sincronização de entrada para o conector do Windows Azure Active Directory.",
+      "Configurar um perfil de execução de Importação Completa.",
+      "Criar uma regra de sincronização de entrada para o conector do Active Directory Domain Services.",
+      "Configurar um perfil de execução de Exportação."
     ],
     "answer": 2,
     "scope": "in",
@@ -615,14 +615,14 @@ SIM.registerQuestions("SC-300", [
     "src": 16,
     "domain": 1,
     "skill": "1.4",
-    "topic": "Pass-through authentication",
+    "topic": "Autenticação de passagem",
     "type": "single",
-    "stem": "Your network contains an on-premises Active Directory domain that syncs to an Azure Active Directory (Azure AD) tenant. The tenant contains the users shown in the following table.\n\n![Exhibit](img/S016-stem-1.png){w=359}\n\nAll the users work remotely.\n\nAzure AD Connect is configured in Azure AD as shown in the following exhibit.\n\n![Exhibit](img/S016-stem-2.png){w=585}\n\nConnectivity from the on-premises domain to the internet is lost. Which users can sign in to Azure AD?",
+    "stem": "Sua rede contém um domínio do Active Directory local, sincronizado com um tenant do Azure Active Directory (Azure AD). O tenant contém os usuários mostrados na tabela a seguir.\n\n![Imagem](img/S016-stem-1.png){w=359}\n\n### Tradução do texto da primeira imagem\n\n| Nome | Tipo | Sincronizado com o diretório |\n|---|---|---|\n| User1 | Usuário | Não |\n| User2 | Usuário | Sim |\n| User3 | Convidado | Não |\n\nTodos os usuários trabalham remotamente.\n\nO Azure AD Connect está configurado no Azure AD conforme a imagem a seguir.\n\n![Imagem](img/S016-stem-2.png){w=585}\n\n### Tradução do texto da segunda imagem\n\n**Provisionamento a partir do Active Directory**\n\nProvisionamento na nuvem do Azure AD Connect: este recurso permite gerenciar o provisionamento pela nuvem. Gerenciar provisionamento (versão prévia).\n\n**Sincronização do Azure AD Connect**\n\n| Configuração | Valor |\n|---|---|\n| Status da sincronização | Habilitado |\n| Última sincronização | Há menos de 1 hora |\n| Sincronização de hash de senha | Habilitada |\n\n**Entrada do usuário**\n\n| Configuração | Status | Quantidade |\n|---|---|---|\n| Federação | Desabilitada | 0 domínios |\n| Logon único contínuo | Desabilitado | 0 domínios |\n| Autenticação de passagem | Habilitada | 2 agentes |\n\nA conectividade do domínio local com a internet é perdida. Quais usuários podem entrar no Azure AD?",
     "options": [
-      "User1 and User3 only",
-      "User1 only",
-      "User1, User2, and User3",
-      "User1 and User2 only"
+      "Somente User1 e User3",
+      "Somente User1",
+      "User1, User2 e User3",
+      "Somente User1 e User2"
     ],
     "answer": 0,
     "scope": "in",
@@ -658,10 +658,10 @@ SIM.registerQuestions("SC-300", [
       "kind": "series",
       "id": "DISABLED"
     },
-    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Active Directory forest that syncs to an Azure Active Directory (Azure AD) tenant.\n\nYou discover that when a user account is disabled in Active Directory, the disabled user can still authenticate to Azure AD for up to 30 minutes. You need to ensure that when a user account is disabled in Active Directory, the user account is immediately prevented from authenticating to Azure AD.\n\nSolution: You configure Azure AD Password Protection.\n\nDoes this meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam o mesmo cenário. Cada questão da série contém uma solução diferente que pode atender aos objetivos declarados. Algumas séries podem ter mais de uma solução correta, enquanto outras podem não ter nenhuma.\n\nDepois de responder a uma questão desta seção, você NÃO poderá voltar a ela. Por isso, essas questões não aparecerão na tela de revisão.\n\nVocê tem uma floresta do Active Directory que é sincronizada com um tenant do Azure Active Directory (Azure AD).\n\nVocê descobre que, quando uma conta de usuário é desabilitada no Active Directory, o usuário desabilitado ainda pode se autenticar no Azure AD por até 30 minutos. Você precisa garantir que, quando uma conta de usuário for desabilitada no Active Directory, ela seja imediatamente impedida de se autenticar no Azure AD.\n\nSolução: você configura o Azure AD Password Protection.\n\nIsso atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -691,11 +691,11 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.4",
     "topic": "Entra Connect Sync",
     "type": "yesno",
-    "stem": "Your network contains an on-premises Active Directory domain named contoso.com. The domain contains the objects shown in the following table.\n\n![Exhibit](img/S018-stem-1.png){w=603}\n\nYou install Azure AD Connect. You configure the Domain and OU filtering settings as shown in the Domain and OU Filtering exhibit. (Click the Domain and OU Filtering tab.)\n\n![Exhibit](img/S018-stem-2.png){w=611}\n\nYou configure the Filter users and devices settings as shown in the Filter Users and Devices exhibit. (Click the Filter Users and Devices tab.)\n\n![Exhibit](img/S018-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Sua rede contém um domínio do Active Directory local chamado contoso.com. O domínio contém os objetos mostrados na tabela a seguir.\n\n![Imagem](img/S018-stem-1.png){w=603}\n\n### Tradução do texto da primeira imagem\n\n| Nome | Tipo | Na unidade organizacional (OU) | Descrição |\n|---|---|---|---|\n| User1 | Usuário | OU1 | User1 é membro de Group1. |\n| User2 | Usuário | OU1 | User2 não é membro de nenhum grupo. |\n| Group1 | Grupo de segurança | OU2 | User1 e Group2 são membros de Group1. |\n| Group2 | Grupo de segurança | OU1 | Group2 é membro de Group1. |\n\nVocê instala o Azure AD Connect. Define as configurações de Filtragem de domínio e OU conforme a imagem Filtragem de domínio e OU. (Clique na aba Filtragem de domínio e OU.)\n\n![Imagem](img/S018-stem-2.png){w=611}\n\n### Tradução do texto da segunda imagem\n\n**Microsoft Azure Active Directory Connect — Filtragem de domínio e OU**\n\nSe você alterar a configuração de filtragem de OU de um diretório, o próximo ciclo de sincronização executará automaticamente uma importação completa nesse diretório.\n\nDiretório: contoso.com. Controle: Atualizar Domínios.\n\n- Sincronizar todos os domínios e OUs (não selecionado).\n- Sincronizar domínios e OUs selecionados (selecionado).\n\nNa árvore de contoso.com, OU1 e OU2 estão marcadas. As entradas Builtin, Computers, Domain Controllers, ForeignSecurityPrincipals, Infrastructure, LostAndFound, Managed Service Accounts, Program Data, System e Users estão desmarcadas. Esses são os nomes dos contêineres exibidos.\n\nMenu lateral: Boas-vindas; Tarefas; Conectado ao Azure AD; Sincronização; Conectar Diretórios; Filtragem de Domínio/OU; Filtragem; Recursos Opcionais; Configurar. Botões: Anterior; Avançar.\n\nVocê define as configurações de Filtrar usuários e dispositivos conforme a imagem Filtrar Usuários e Dispositivos. (Clique na aba Filtrar Usuários e Dispositivos.)\n\n![Imagem](img/S018-stem-3.png){w=611}\n\n### Tradução do texto da terceira imagem\n\n**Microsoft Azure Active Directory Connect — Filtrar usuários e dispositivos**\n\nPara uma implantação piloto, especifique um grupo que contenha os usuários e dispositivos que serão sincronizados. Grupos aninhados não são compatíveis e serão ignorados.\n\n- Sincronizar todos os usuários e dispositivos (não selecionado).\n- Sincronizar selecionados (selecionado).\n\nFloresta: contoso.com. Grupo: CN=Group1,OU=OU2,DC=contoso,DC=com. Controle: Resolver (marca de verificação exibida).\n\nMenu lateral: Boas-vindas; Tarefas; Conectado ao Azure AD; Sincronização; Conectar Diretórios; Filtragem de Domínio/OU; Filtragem; Recursos Opcionais; Configurar. Botões: Anterior; Avançar.\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "User1 syncs to Azure AD.",
-      "User2 syncs to Azure AD.",
-      "Group2 syncs to Azure AD."
+      "User1 é sincronizado com o Azure AD.",
+      "User2 é sincronizado com o Azure AD.",
+      "Group2 é sincronizado com o Azure AD."
     ],
     "answer": [
       true,
@@ -735,12 +735,12 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.3",
     "topic": "External ID — cobrança",
     "type": "single",
-    "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com. You need to ensure that Azure AD External Identities pricing is based on monthly active users (MAU).\n\nWhat should you configure?",
+    "stem": "Você tem um tenant do Azure Active Directory (Azure AD) chamado contoso.com. Você precisa garantir que o preço do Azure AD External Identities seja baseado em usuários ativos mensais (MAU).\n\nO que você deve configurar?",
     "options": [
-      "a user flow",
-      "the terms of use",
-      "a linked subscription",
-      "an access review"
+      "um fluxo de usuário",
+      "os termos de uso",
+      "uma assinatura vinculada",
+      "uma revisão de acesso"
     ],
     "answer": 2,
     "scope": "in",
@@ -776,13 +776,13 @@ SIM.registerQuestions("SC-300", [
     "skill": "1.1",
     "topic": "Domínios personalizados",
     "type": "order",
-    "stem": "You have a new Microsoft 365 tenant that uses a domain name of contoso.onmicrosoft.com.\n\nYou register the name contoso.com with a domain registrar.\n\nYou need to use contoso.com as the default domain name for new Microsoft 365 users.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "stem": "Você tem um novo tenant do Microsoft 365 que usa o nome de domínio contoso.onmicrosoft.com.\n\nVocê registra o nome contoso.com com um registrador de domínios.\n\nVocê precisa usar contoso.com como nome de domínio padrão para novos usuários do Microsoft 365.\n\nQuais quatro ações você deve executar em sequência? Para responder, mova as ações apropriadas da lista de ações para a área de resposta e organize-as na ordem correta.",
     "pool": [
-      "Delete the contoso.ommicrosoft.com domain.",
-      "Add a custom domain name of contoso.com.",
-      "Set the domain to primary.",
-      "Create a new TXT record in DNS.",
-      "Successfully verify the domain name."
+      "Excluir o domínio contoso.ommicrosoft.com.",
+      "Adicionar o nome de domínio personalizado contoso.com.",
+      "Definir o domínio como primário.",
+      "Criar um novo registro TXT no DNS.",
+      "Verificar com êxito o nome de domínio."
     ],
     "answer": [
       1,
@@ -849,7 +849,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
@@ -900,7 +900,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview"
       },
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -918,7 +918,7 @@ SIM.registerQuestions("SC-300", [
     "src": 23,
     "domain": 1,
     "skill": "1.4",
-    "topic": "Pass-through authentication",
+    "topic": "Autenticação de passagem",
     "type": "single",
     "stem": "You have an Active Directory forest that syncs to an Azure Active Directory (Azure AD) tenant. The tenant uses pass-through authentication. A corporate security policy states the following:\n\n- Domain controllers must never communicate directly to the internet.\n- Only required software must be installed on servers.\n\nThe Active Directory domain contains the on-premises servers shown in the following table.\n\n![Exhibit](img/S023-stem-1.png){w=555}\n\nYou need to ensure that users can authenticate to Azure AD if a server fails. On which server should you install an additional pass-through authentication agent?",
     "options": [
@@ -979,7 +979,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/b2b-quickstart-add-guest-users-portal"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       }
     ],
@@ -1009,7 +1009,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Administrative units:** delimitam escopo de administração; não removem licenças.\n- **Set-AzureADUser:** não gerencia licenças.\n- **Groups blade:** as licenças E3 são diretas, e o blade de grupos não remove licenças diretas.\n\n**Dica de prova:** Hoje: Get-MgUser -All | ForEach-Object { Set-MgUserLicense -UserId $_.Id -RemoveLicenses @($skuE3) -AddLicenses @() }.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -1017,7 +1017,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ],
@@ -1030,7 +1030,7 @@ SIM.registerQuestions("SC-300", [
     "src": 26,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Self-service sign-up",
+    "topic": "Cadastro por autoatendimento",
     "type": "hotarea",
     "stem": "You have an Azure Active Directory (Azure AD) tenant and an Azure web app named App1.\n\nYou need to provide guest users with self-service sign-up for App1. The solution must meet the following requirements:\n\n- Guest users must be able to sign up by using a one-time password.\n- The users must provide their first name, last name, city, and email address during the sign-up process.\n\nWhat should you configure in the Azure Active Directory admin center for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -1073,7 +1073,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/identity-providers"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       }
     ],
@@ -1124,7 +1124,7 @@ SIM.registerQuestions("SC-300", [
     "src": 28,
     "domain": 1,
     "skill": "1.4",
-    "topic": "Seamless SSO",
+    "topic": "SSO contínuo",
     "type": "single",
     "stem": "Your network contains an on-premises Active Directory domain that syncs to an Azure Active Directory (Azure AD) tenant.\n\nUsers sign in to computers that run Windows 10 and are joined to the domain. You plan to implement Azure AD Seamless Single Sign-On (Azure AD Seamless SSO).\n\nYou need to configure the Windows 10 computers to support Azure AD Seamless SSO.\n\nWhat should you do?",
     "options": [
@@ -1192,11 +1192,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Job title do User1 (sincronizado):** o AD on-premises é a fonte de autoridade.\n- **Usage location só para alguns:** é atributo de nuvem e pode ser editado em todos, inclusive convidados.\n\n**Dica de prova:** Em usuários sincronizados, o Entra mostra o campo desabilitado com a nota \"source of authority: Windows Server AD\".",
     "docs": [
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
@@ -1214,7 +1214,7 @@ SIM.registerQuestions("SC-300", [
     "src": 31,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that: contains a user named User1.\n\nYou need to ensure that User1 can create new catalogs and add1 resources to the catalogs they own.\n\nWhat should you do?",
     "options": [
@@ -1234,15 +1234,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create"
       },
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ],
@@ -1256,7 +1256,7 @@ SIM.registerQuestions("SC-300", [
     "src": 32,
     "domain": 1,
     "skill": "1.4",
-    "topic": "Seamless SSO",
+    "topic": "SSO contínuo",
     "type": "single",
     "stem": "Your network contains an on-premises Active Directory domain that syncs to an Azure Active Directory (Azure AD) tenant.\n\nUsers sign in to computers that run Windows 10 and are joined to the domain. You plan to implement Azure AD Seamless Single Sign-On (Azure AD Seamless SSO).\n\nYou need to configure the Windows 10 computers to support Azure AD Seamless SSO.\n\nWhat should you do?",
     "options": [
@@ -1327,7 +1327,7 @@ SIM.registerQuestions("SC-300", [
     "src": 34,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Security defaults",
+    "topic": "Padrões de segurança",
     "type": "single",
     "stem": "You configure a new Microsoft 365 tenant to use a default domain name of contoso.com.\n\nYou need to ensure that you can control access to Microsoft 365 resources by using conditional access policies.\n\nWhat should you do first?",
     "options": [
@@ -1343,15 +1343,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User consent settings:** tratam de consentimento a apps.\n- **MFA registration policy:** é do ID Protection e não libera o CA.\n- **Password protection on-premises:** sem relação com CA.\n\n**Dica de prova:** Também é preciso Entra ID P1 para criar políticas de Conditional Access.",
     "docs": [
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -1384,15 +1384,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       }
     ],
@@ -1405,7 +1405,7 @@ SIM.registerQuestions("SC-300", [
     "src": 36,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access",
+    "topic": "Acesso Condicional",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com. All users who run applications registered in Azure AD are subject to conditional access policies.\n\nYou need to prevent the users from using legacy authentication. What should you include in the conditional access policies to filter out legacy authentication attempts?",
     "options": [
@@ -1462,15 +1462,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Impossible travel / atypical travel / anonymous IP:** são detecções de risco de **entrada** (sign-in).\n\n**Dica de prova:** Outras detecções de risco de usuário: Microsoft Entra threat intelligence (usuário), possible attempt to access PRT e anomalous user activity.",
     "docs": [
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -1483,7 +1483,7 @@ SIM.registerQuestions("SC-300", [
     "src": 38,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access — sessão",
+    "topic": "Acesso Condicional — sessão",
     "type": "single",
     "stem": "You have a Microsoft 365 tenant.\n\nAll users have computers that run Windows 10. Most computers are company- owned and joined to Azure Active Directory (Azure AD). Some computers are user- owned and are only registered in Azure AD.\n\nYou need to prevent users who connect to Microsoft SharePoint Online on their user-owned computer from downloading or syncing files. Other users must NOT be restricted.\n\nWhich policy type should you create?",
     "options": [
@@ -1540,15 +1540,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-nps-extension-vpn"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -1561,7 +1561,7 @@ SIM.registerQuestions("SC-300", [
     "src": 40,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Password protection",
+    "topic": "Proteção de senha",
     "type": "single",
     "stem": "You have a Microsoft 365 tenant.\n\nThe Azure Active Directory (Azure AD) tenant is configured to sync with an on- premises Active Directory domain. The domain contains the servers shown in the following table.\n\n![Exhibit](img/S040-stem-1.png){w=611}\n\nThe domain controllers are prevented from communicating to the internet. You implement Azure AD Password Protection on Server1 and Server2. You deploy a new server named Server4 that runs Windows Server 2019. You need to ensure that Azure AD Password Protection will continue to work if a single server fails.\n\nWhat should you implement on Server4?",
     "options": [
@@ -1622,15 +1622,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication"
       },
       {
-        "t": "Windows Hello for Business overview",
+        "t": "Visão geral do Windows Hello for Business",
         "u": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       }
     ],
@@ -1644,7 +1644,7 @@ SIM.registerQuestions("SC-300", [
     "src": 43,
     "domain": 2,
     "skill": "2.1",
-    "topic": "MFA — fraud alert",
+    "topic": "MFA — alerta de fraude",
     "type": "single",
     "group": {
       "kind": "series",
@@ -1663,15 +1663,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (bloquear quem reporta MFA não iniciado):** só **Fraud alert** com bloqueio automático atende. Notifications, Account lockout e Block/unblock users não atendem.\n\n**Dica de prova:** O substituto moderno é **Report suspicious activity** (Authentication methods > Settings), que marca o usuário como alto risco para o ID Protection.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -1684,7 +1684,7 @@ SIM.registerQuestions("SC-300", [
     "src": 44,
     "domain": 2,
     "skill": "2.1",
-    "topic": "MFA — fraud alert",
+    "topic": "MFA — alerta de fraude",
     "type": "single",
     "group": {
       "kind": "series",
@@ -1703,15 +1703,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** Account lockout conta negações seguidas de MFA (ex.: 10 em 5 min); não reage ao \"reportar fraude\".",
     "docs": [
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -1724,7 +1724,7 @@ SIM.registerQuestions("SC-300", [
     "src": 45,
     "domain": 2,
     "skill": "2.1",
-    "topic": "MFA — fraud alert",
+    "topic": "MFA — alerta de fraude",
     "type": "single",
     "group": {
       "kind": "series",
@@ -1743,15 +1743,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** Block/unblock users é uma ação manual do administrador; o requisito é automático.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -1806,15 +1806,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **PIM / Identity Governance / SSPR:** não detectam credenciais vazadas.\n- **Sign-in risk:** leaked credentials é risco de **usuário**.\n- **Client apps / device state / location:** não são sinais de risco.\n- **Block access / app enforced restrictions / app protection:** não remediam a credencial comprometida (o requisito pede manter o acesso).\n\n**Dica de prova:** A troca de senha segura exige que o usuário já tenha MFA registrado (e SSPR habilitado, para híbridos com writeback).",
     "docs": [
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -1860,15 +1860,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Configurar a política com Security operator/reader:** só **Security administrator** (ou superior) altera políticas.\n- **Ver o relatório só com o Security admin:** Security operator, Security reader e Global reader também veem usuários de risco.\n\n**Dica de prova:** As políticas de risco legadas do ID Protection estão sendo substituídas por políticas de Conditional Access baseadas em risco.",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -1930,7 +1930,7 @@ SIM.registerQuestions("SC-300", [
     "src": 49,
     "domain": 2,
     "skill": "2.1",
-    "topic": "MFA — fraud alert",
+    "topic": "MFA — alerta de fraude",
     "type": "single",
     "group": {
       "kind": "series",
@@ -1949,15 +1949,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** **Fraud alert** atende: \"Allow users to submit fraud alerts\" + \"Automatically block users who report fraud\". O usuário bloqueado fica 90 dias bloqueado para MFA ou até um admin desbloquear.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -1990,15 +1990,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-authenticator-app"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       }
     ],
@@ -2011,7 +2011,7 @@ SIM.registerQuestions("SC-300", [
     "src": 51,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access",
+    "topic": "Acesso Condicional",
     "type": "hotarea",
     "stem": "You have a Microsoft 365 tenant.\n\nYou create a named location named HighRiskCountries that contains a list of high-risk countries.\n\nYou need to limit the amount of time a user can stay authenticated when connecting from a high-risk country.\n\nWhat should you configure in a conditional access policy? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -2068,7 +2068,7 @@ SIM.registerQuestions("SC-300", [
     "src": 52,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Smart lockout",
+    "topic": "Bloqueio inteligente",
     "type": "hotarea",
     "stem": "A user named User1 attempts to sign in to the tenant by entering the following incorrect passwords:\n\n- Pa55w0rd12\n- Pa55w0rd12\n- Pa55w0rd12\n- Pa55w.rd12\n- Pa55w.rd123\n- Pa55w.rd123\n- Pa55w.rd123\n- Pa55word12\n- Pa55word12\n- Pa55word12\n- Pa55w.rd12\n\nYou need to identify how many sign-in attempts were tracked for User1, and how User1 can unlock her account before the 300-second lockout duration expires.\n\nWhat should identify? To answer, select the appropriate\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -2123,7 +2123,7 @@ SIM.registerQuestions("SC-300", [
     "src": 53,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access",
+    "topic": "Acesso Condicional",
     "type": "hotarea",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that has Security defaults disabled.\n\nYou are creating a conditional access policy as shown in the following exhibit.\n\n![Exhibit](img/S053-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -2197,7 +2197,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Authentication administrator:** também redefine senha, mas gerencia métodos de autenticação; mais amplo que o necessário.\n- **Privileged authentication administrator:** atua inclusive sobre admins; excessivo.\n- **Security operator:** investiga riscos, mas não redefine senha.\n\n**Dica de prova:** Security administrator sozinho não redefine senhas.",
     "docs": [
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -2218,7 +2218,7 @@ SIM.registerQuestions("SC-300", [
     "src": 55,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Password protection",
+    "topic": "Proteção de senha",
     "type": "single",
     "stem": "You configure Azure Active Directory (Azure AD) Password Protection as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S055-stem-1.png){w=611}\n\nYou are evaluating the following passwords:\n\n- Pr0jectlitw@re\n- T@ilw1nd\n- C0nt0s0\n\nWhich passwords will be blocked?",
     "options": [
@@ -2276,15 +2276,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       }
     ],
@@ -2297,7 +2297,7 @@ SIM.registerQuestions("SC-300", [
     "src": 57,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Security defaults",
+    "topic": "Padrões de segurança",
     "type": "hotarea",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the users shown in the following table.\n\n![Exhibit](img/S057-stem-1.png){w=551}\n\nUser2 reports that he can only configure multi-factor authentication (MFA) to use the Microsoft Authenticator app.\n\nYou need to ensure that User2 can configure alternate MFA methods. Which configuration is required, and which user should perform the configuration? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -2329,19 +2329,19 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Access reviews / PIM:** não liberam métodos de MFA.\n- **User2 / User3:** o próprio usuário não altera configurações do tenant; um Privileged Authentication Administrator gerencia métodos de **usuários**, não os security defaults.\n\n**Dica de prova:** Security defaults podem ser alterados por Security administrator, Conditional Access administrator ou Global administrator.",
     "docs": [
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ],
@@ -2374,11 +2374,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
       },
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
@@ -2415,15 +2415,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-risk-feedback"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -2464,15 +2464,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-risk-based-sspr-mfa"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -2501,11 +2501,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Smartcard / FIDO2:** não são métodos de SSPR.\n- **Teams chat:** não existe como método.\n\n**Dica de prova:** O e-mail alternativo precisa ser **externo** à organização; endereços do próprio tenant não são indicados.",
     "docs": [
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
@@ -2543,15 +2543,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       }
     ],
@@ -2564,7 +2564,7 @@ SIM.registerQuestions("SC-300", [
     "src": 63,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access",
+    "topic": "Acesso Condicional",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains a user named User1 and the conditional access policies shown in the following table.\n\n![Exhibit](img/S063-stem-1.png){w=611}\n\nYou need to evaluate which policies will be applied to User1 when User1 attempts to sign-in from various IP addresses.\n\nWhich feature should you use?",
     "options": [
@@ -2621,15 +2621,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-authenticator-app"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       }
     ],
@@ -2642,7 +2642,7 @@ SIM.registerQuestions("SC-300", [
     "src": 65,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access",
+    "topic": "Acesso Condicional",
     "type": "single",
     "stem": "You create a conditional access policy that blocks access when a user triggers a high-severity sign-in alert.\n\nYou need to test the policy under the following conditions:\n\n- A user signs in from another country.\n- A user triggers a sign-in risk.\n\nWhat should you use to complete the test?",
     "options": [
@@ -2679,7 +2679,7 @@ SIM.registerQuestions("SC-300", [
     "src": 66,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Localizações e trusted IPs",
+    "topic": "Localizações e IPs confiáveis",
     "type": "yesno",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the users shown in the following table.\n\n![Exhibit](img/S066-stem-1.png){w=611}\n\nYou have the locations shown in the following table.\n\n![Exhibit](img/S066-stem-2.png){w=611}\n\nThe tenant contains a named location that has the following configurations:\n\n- Name: Location1\n- Mark as trusted location: Enabled\n\nIPv4 range: 10.10.0.0/16 -\n\nMFA has a trusted IP address range of 193.17.17.0/24.\n\n- Name: CAPolicy1\n- Assignments\n- Users or workload identities: Group1\n- Cloud apps or actions: All cloud apps\n- Conditions\n- Locations: All trusted locations\n- Access controls\n- Grant\n- Grant access: Require multi-factor authentication\n- Session: 0 controls selected\n- Enable policy: On\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -2707,7 +2707,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
@@ -2728,7 +2728,7 @@ SIM.registerQuestions("SC-300", [
     "src": 67,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Email one-time passcode",
+    "topic": "Senha de uso único por email",
     "type": "hotarea",
     "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com that has Email one-time passcode for guests set to Yes.\n\nYou invite the guest users shown in the following table.\n\n![Exhibit](img/S067-stem-1.png){w=611}\n\nWhich users will receive a one-time passcode, and how long will the passcode be valid? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -2765,7 +2765,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -2782,7 +2782,7 @@ SIM.registerQuestions("SC-300", [
     "src": 68,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews — funções",
+    "topic": "Revisões de acesso — funções",
     "type": "match",
     "stem": "You have a Microsoft 365 E5 subscription that contains two users named User1 and User2.\n\nYou need to ensure that User1 can create access reviews for groups, and that User2 can review the history report for all the completed access reviews. The solution must use the principle of least privilege.\n\nWhich role should you assign to each user? To answer, drag the appropriate roles to the correct users. Each role may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
     "pool": [
@@ -2813,11 +2813,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Global administrator para o User1:** funciona, mas viola o menor privilégio.\n- **Global reader para o User2:** também lê, mas o gabarito considera Security reader (que lê relatórios de governança).\n\n**Dica de prova:** Identity Governance Administrator é a função específica para access reviews de grupos e apps; se aparecer nas opções, prefira-a.",
     "docs": [
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       },
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       }
     ]
@@ -2866,15 +2866,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -2989,15 +2989,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Só User1 / User2 / User3 isolados:** lembre a precedência: -and antes de -or.\n- **Incluir User3:** pela tabela, ele não atende nenhum dos dois lados do -or.\n\n**Dica de prova:** Use parênteses explícitos nas regras; o validador do portal (Validate rules) testa usuários específicos.",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ]
@@ -3023,7 +3023,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Helpdesk administrator:** redefine senhas, mas não atribui licenças.\n- **Billing administrator:** compra e cobrança, não atribuição.\n- **License administrator:** atribui licenças, mas não redefine senhas.",
     "docs": [
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -3057,7 +3057,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Set-AzureADGroup:** altera propriedades de grupo, não licenças diretas.\n- **Set-WindowsProductKey:** sem relação.\n- **Administrative units:** escopo de administração.\n\n**Dica de prova:** Também resolveria o blade Licenses > Office 365 E3 > selecionar todos > Remove license.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -3065,7 +3065,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -3091,7 +3091,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Set-AzureADGroup / Identity Governance / Set-WindowsProductKey:** nenhum remove licenças atribuídas diretamente aos usuários.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -3099,7 +3099,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -3157,7 +3157,7 @@ SIM.registerQuestions("SC-300", [
     "src": 77,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access",
+    "topic": "Acesso Condicional",
     "type": "single",
     "stem": "You have a Microsoft 365 tenant.\n\nYou currently allow email clients that use Basic authentication to connect to Microsoft Exchange Online.\n\nYou need to ensure that users can connect to Exchange only from email clients that use Modern authentication protocols.\n\nWhat should you implement?",
     "options": [
@@ -3191,7 +3191,7 @@ SIM.registerQuestions("SC-300", [
     "src": 78,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains an Azure SQL database named db1.\n\nYou deploy an Azure App Service web app named App1 that provides product information to users that connect to App1 anonymously.\n\nYou need to provide App1 with access to db1. The solution must meet the following requirements:\n\n- Credentials must only be available to App1.\n- Administrative effort must be minimized.\n\nWhich type of credentials should you use?",
     "options": [
@@ -3207,15 +3207,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Conta de usuário do Entra:** exigiria senha/segredo e não é exclusiva do app.\n- **Conta SQL:** segredo na connection string.\n- **User-assigned:** funciona, mas pode ser compartilhada entre recursos e exige gerenciar o ciclo de vida separado.\n\n**Dica de prova:** No SQL, crie o usuário: CREATE USER [App1] FROM EXTERNAL PROVIDER; e dê os papéis necessários.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -3246,15 +3246,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -3280,15 +3280,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **App password / perguntas de segurança / e-mail:** não são métodos de MFA para login interativo.",
     "docs": [
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
@@ -3318,15 +3318,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Voz:** exige linha de celular.\n- **E-mail / perguntas:** não são MFA de login.",
     "docs": [
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
@@ -3340,7 +3340,7 @@ SIM.registerQuestions("SC-300", [
     "src": 82,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "yesno",
     "stem": "You have an Azure subscription that contains the following virtual machine:\n\n- Name: V1\n- Azure region: East US\n- System-assigned managed identity: Disabled\n\nYou create the managed identities shown in the following table.\n\n![Exhibit](img/S082-stem-1.png){w=356}\n\nYou perform the following actions:\n\n- Assign Managed1 to V1.\n- Create a resource group named RG1 in the West US region.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -3359,15 +3359,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Managed2 e Managed3 no V1:** Sim. Identidades user-assigned podem ser usadas por recursos de qualquer região.\n- **Owner para \"VM1\" no RG1:** Não. A VM não tem identidade system-assigned habilitada (e o nome nem confere), então não há principal.\n\n**Dica de prova:** Identidades user-assigned são recursos regionais, mas o uso delas é cross-region.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -3400,15 +3400,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -3434,15 +3434,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Password spray / anonymous IP / unfamiliar sign-in properties:** são riscos de entrada.\n\n**Dica de prova:** Riscos de usuário avaliam a identidade (credencial vazada, inteligência de ameaças), não um login específico.",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -3468,11 +3468,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Smartcard:** não é método de SSPR.\n- **Notificação do app:** não é permitida quando só 1 método é exigido.\n- **E-mail externo:** também é válido; a questão tem duas corretas e o gabarito escolhe o código do app.",
     "docs": [
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
@@ -3501,15 +3501,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User risk policy:** trata da identidade comprometida, não de um login de IP anônimo.\n- **MFA registration policy:** só força o registro do MFA.\n\n**Dica de prova:** Hoje, crie uma política de CA com a condição Sign-in risk = Medium+ e o grant Require MFA (as políticas legadas do ID Protection estão sendo descontinuadas).",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -3519,7 +3519,7 @@ SIM.registerQuestions("SC-300", [
     "src": 87,
     "domain": 4,
     "skill": "4.3",
-    "topic": "PIM e Conditional Access",
+    "topic": "PIM e Acesso Condicional",
     "type": "yesno",
     "stem": "You have a Microsoft 365 tenant.\n\nYou configure a conditional access policy as shown in the Conditional Access policy exhibit. (Click the Conditional Access policy tab.)\n\n![Exhibit](img/S087-stem-1.png){w=611}\n\nYou view the User administrator role settings as shown in the Role setting details exhibit. (Click the Role setting details tab.)\n\n![Exhibit](img/S087-stem-2.png){w=611}\n\nYou view the User administrator role assignments as shown in the Role assignments exhibit. (Click the Role assignments tab.)\n\n![Exhibit](img/S087-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -3542,15 +3542,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -3584,15 +3584,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 / User2 entram com MFA:** Não. Confirmados como comprometidos (risco alto) e com a política de usuário em Block, MFA não remedia um bloqueio.\n- **User3 de IP anônimo:** Sim. Risco descartado; o IP anônimo gera risco de entrada médio, e a política só bloqueia High.\n\n**Dica de prova:** Para desbloquear, o admin redefine a senha ou descarta o risco (dismiss).",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -3656,7 +3656,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Funções do Entra para criar VMs:** funções de diretório não dão permissão em recursos do Azure.\n- **Funções do Entra para login em VM:** o login com conta Entra é autorizado por Azure RBAC (VM User/Administrator Login).\n\n**Dica de prova:** Além da função, a VM precisa da extensão AADLoginForWindows (ou AADSSHLoginForLinux).",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
@@ -3664,11 +3664,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -3694,7 +3694,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Groups blade:** não remove licenças atribuídas diretamente.\n- **Set-AzureADGroup / Identity Governance:** não gerenciam licenças de usuário.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -3702,7 +3702,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -3786,15 +3786,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Notificação do Authenticator / SMS:** precisam de celular conectado.\n- **E-mail:** não é método de MFA de login.",
     "docs": [
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
@@ -3852,7 +3852,7 @@ SIM.registerQuestions("SC-300", [
     "src": 97,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription that contains a Microsoft SharePoint Online site named Site1.\n\nYou need to ensure that users can request access to Site1. The solution must meet the following requirements:\n\n- Automatically approve requests from users based on their group membership.\n- Automatically remove the access after 30 days.\n\nWhat should you do?",
     "options": [
@@ -3868,11 +3868,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Conditional Access:** controla a forma de acesso, não concede nem expira acesso.\n- **PIM role settings:** são para funções privilegiadas ou PIM for Groups.\n- **MDCA access policy:** controla a sessão; não concede.\n\n**Dica de prova:** A política do access package pode ter \"For users in your directory: specific groups\", aprovação \"No\" e expiração de 30 dias.",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -3917,15 +3917,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -3951,15 +3951,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Voz:** exige linha de celular.\n- **App password:** legado, não é MFA.\n- **Perguntas de segurança:** só SSPR.",
     "docs": [
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
@@ -3973,7 +3973,7 @@ SIM.registerQuestions("SC-300", [
     "src": 100,
     "domain": 2,
     "skill": "3.4",
-    "topic": "Conditional Access App Control",
+    "topic": "Controle de Aplicativos de Acesso Condicional",
     "type": "order",
     "stem": "You have a Microsoft 365 E5 tenant.\n\nYou purchase a cloud app named App1.\n\nYou need to enable real-time session-level monitoring of App1 by using Microsoft Defender for Cloud Apps.\n\nIn which order should you perform the actions? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
     "pool": [
@@ -4095,7 +4095,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
@@ -4221,11 +4221,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **1 método / com perguntas de segurança:** administradores sempre usam a política de dois métodos, sem perguntas, independentemente da configuração.\n\n**Dica de prova:** Funções privilegiadas (User admin, Helpdesk, Password admin, Global etc.) caem na política de administrador.",
     "docs": [
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
@@ -4324,15 +4324,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Leaked credentials com sign-in risk:** o vazamento afeta a identidade (user risk).\n- **Navegador suspeito / IP anônimo com user risk:** são sinais do login específico (sign-in risk).\n\n**Dica de prova:** Detecções offline (como leaked credentials) são calculadas depois; detecções em tempo real afetam o login atual.",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -4363,15 +4363,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -4419,7 +4419,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Same access / limited access:** guests ainda veriam propriedades de outros usuários (inclusive e-mails).\n- **Anyone / Member users can invite:** permitiriam convites por não admins.\n- **No one can invite:** impediria também o User1.\n- **Self-service sign-up = Yes:** guests entrariam sem convite.\n\n**Dica de prova:** O User administrator está entre as funções que podem convidar com a opção \"specific admin roles\" (ao lado de Guest Inviter).",
     "docs": [
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
@@ -4449,7 +4449,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Groups blade:** não remove licenças diretas.\n- **Set-AzureADUser:** não gerencia licença (e o módulo foi aposentado).\n- **Identity Governance:** governança, não licenças.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -4457,7 +4457,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -4545,7 +4545,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -4559,7 +4559,7 @@ SIM.registerQuestions("SC-300", [
     "src": 114,
     "domain": 1,
     "skill": "1.4",
-    "topic": "Pass-through authentication",
+    "topic": "Autenticação de passagem",
     "type": "hotarea",
     "stem": "Your network contains an on-premises Active Directory Domain Services (AD DS) domain that syncs with an Azure AD tenant.\n\nYou need to ensure that user authentication always occurs by validating passwords against the AD DS domain.\n\nWhat should you configure, and what should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -4654,15 +4654,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Activity policy / anomaly detection:** alertam ou suspendem depois do evento; não bloqueiam o login em tempo real.\n- **Unsanction:** marca o app como não autorizado (Shadow IT), mas não controla o login de usuários corporativos.\n\n**Dica de prova:** Access policies no MDCA dependem da CA com \"Use Conditional Access App Control\" para o app.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -4688,15 +4688,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **SMS:** exige sinal de celular.\n- **E-mail / perguntas:** não são MFA de login.",
     "docs": [
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
@@ -4726,15 +4726,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Impossible travel / anonymous IP / malicious IP:** são riscos de entrada.\n\n**Dica de prova:** A mesma detecção de threat intelligence existe em versão de usuário e de entrada; nas questões, ela costuma ser a opção de \"user risk\".",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -4760,7 +4760,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Administrative units / Groups blade / Set-WindowsProductKey:** nenhum remove licenças diretas em massa.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -4768,7 +4768,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -4836,7 +4836,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Update-MgGroup:** altera propriedades do grupo, não licenças diretas de usuários.\n- **Set-WindowsProductKey / Administrative units:** sem relação.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -4844,7 +4844,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -4870,7 +4870,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Defender / Purview:** não comparam funções administrativas.\n- **Entra admin center:** lista as funções, mas a comparação lado a lado de funções é recurso do M365 admin center (Roles > Compare roles).",
     "docs": [
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -4888,7 +4888,7 @@ SIM.registerQuestions("SC-300", [
     "src": 124,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Self-service sign-up",
+    "topic": "Cadastro por autoatendimento",
     "type": "single",
     "stem": "You have a Microsoft Exchange organization that uses an SMTP address space of contoso.com.\n\nSeveral users use their contoso.com email address for self-service sign-up to Azure AD.\n\nYou gain global administrator privileges to the Azure AD tenant that contains the self-signed users.\n\nYou need to prevent the users from creating user accounts in the contoso.com Azure AD tenant for self-service sign-up to Microsoft 365 services. Which PowerShell cmdlet should you run?",
     "options": [
@@ -4912,7 +4912,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -4942,11 +4942,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **FIDO2 / Windows Hello PIN:** não são métodos de SSPR.\n- **Teams:** não existe como método.",
     "docs": [
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
@@ -4960,7 +4960,7 @@ SIM.registerQuestions("SC-300", [
     "src": 126,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "hotarea",
     "stem": "You have an Azure subscription.\n\nFrom Entitlement management, you plan to create a catalog named Catalog1 that will contain a custom extension.\n\nWhat should you create first, and what should you use to distribute Catalog1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -4989,11 +4989,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Managed account / Automation account:** custom extensions chamam Logic Apps, não runbooks.\n- **Playbook / workflow:** playbooks são do Sentinel; workflows são do lifecycle workflows.\n\n**Dica de prova:** A Logic App recebe o contexto (usuário, pacote, estágio) e pode chamar sistemas externos (ex.: ServiceNow).",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -5020,11 +5020,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Só User4 / outras combinações:** os usuários com função administrativa (User administrator, Password administrator) **não** usam perguntas de segurança; os demais seguem a política.\n- **Todos:** administradores ficam na política de dois métodos.",
     "docs": [
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
@@ -5038,7 +5038,7 @@ SIM.registerQuestions("SC-300", [
     "src": 128,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Smart lockout",
+    "topic": "Bloqueio inteligente",
     "type": "single",
     "stem": "You have an Azure AD tenant.\n\nYou need to implement smart lockout with a lockout threshold of 10 failed sign- ins.\n\nWhat should you configure in the Azure AD admin center?",
     "options": [
@@ -5072,7 +5072,7 @@ SIM.registerQuestions("SC-300", [
     "src": 129,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Security defaults",
+    "topic": "Padrões de segurança",
     "type": "single",
     "stem": "You configure a new Microsoft 365 tenant to use a default domain name of contoso.com.\n\nYou need to ensure that you can control access to Microsoft 365 resources by using conditional access policies.\n\nWhat should you do first?",
     "options": [
@@ -5088,15 +5088,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Password protection / MFA registration policy / user consent:** nenhum libera a criação de políticas de CA.\n\n**Dica de prova:** Antes de desativar os security defaults, prepare políticas de CA equivalentes (MFA para todos e para admins, bloquear legacy auth).",
     "docs": [
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ]
@@ -5135,15 +5135,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 com Certificates/Secrets Officer:** não gerenciam chaves.\n- **User2 com Crypto/Secrets Officer:** não gerenciam certificados.\n\n**Dica de prova:** Para apenas **ler** o certificado, Key Vault Certificate User seria ainda mais restrito.",
     "docs": [
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -5191,7 +5191,7 @@ SIM.registerQuestions("SC-300", [
     "src": 134,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Templates de Conditional Access",
+    "topic": "Modelos de Acesso Condicional",
     "type": "match",
     "stem": "You have an Azure AD tenant that contains a user named Admin1. Admin1 uses the Require password change for high-risk users policy template to create a new Conditional Access policy.\n\nWho is included and excluded by default in the policy assignment? To answer, drag the appropriate options to the correct target. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point",
     "pool": [
@@ -5231,7 +5231,7 @@ SIM.registerQuestions("SC-300", [
     "src": 135,
     "domain": 1,
     "skill": "1.3",
-    "topic": "External Identities",
+    "topic": "Identidades externas",
     "type": "multi",
     "layout": "panel",
     "panelTitle": "External Identities",
@@ -5306,7 +5306,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -5336,7 +5336,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **All identity providers:** define como o guest autentica, não quais domínios podem ser convidados.\n- **Cross-tenant access settings:** controlam organizações Entra específicas (inbound/outbound), não uma lista simples de domínios para convite.\n- **Linked subscriptions:** cobrança.\n\n**Dica de prova:** A allow list e a deny list são mutuamente exclusivas; vale uma ou outra.",
     "docs": [
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
@@ -5350,7 +5350,7 @@ SIM.registerQuestions("SC-300", [
     "src": 138,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have an Azure AD tenant that contains a user named User1 and a Microsoft 365 group named Group1. User1 is the owner of Group1.\n\nYou need to ensure that User1 is notified every three months to validate the guest membership of Group1.\n\nWhat should you do?",
     "options": [
@@ -5366,11 +5366,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **External collaboration settings:** convites.\n- **Access package:** concede acesso; a revisão periódica de membros existentes é feita por access review.\n- **Expiration policy:** expira o grupo, não revisa os convidados.\n\n**Dica de prova:** Na revisão: escopo \"Guest users only\", revisor \"Group owner(s)\", recorrência trimestral, auto-apply e ação para quem não responder.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -5488,15 +5488,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -5522,7 +5522,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Guest invite settings:** definem **quem** pode convidar, não quais domínios.\n- **Verifiable credentials:** identidade descentralizada.\n- **Named locations:** condição de CA.\n\n**Dica de prova:** Se adatum.com estiver bloqueado também em cross-tenant access (inbound), ajuste lá também.",
     "docs": [
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
@@ -5552,15 +5552,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **60 / 90 / 180 dias:** o gabarito considera 30 dias para a atividade de usuários de risco (sem exportação).\n\n**Dica de prova:** Para retenção maior, envie RiskyUsers e UserRiskEvents a um workspace via diagnostic settings.",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -5609,11 +5609,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-security-questions"
       },
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       }
     ],
@@ -5643,11 +5643,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Application Insights:** monitora apps seus.\n- **Access reviews:** revisa acessos.\n- **Enterprise applications:** lista apps integrados ao Entra, não Shadow IT.\n\n**Dica de prova:** Use snapshot reports (upload manual) ou o log collector (Docker) para análise contínua.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
@@ -5655,7 +5655,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/create-snapshot-cloud-discovery-reports"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ],
@@ -5771,7 +5771,7 @@ SIM.registerQuestions("SC-300", [
     "src": 150,
     "domain": 3,
     "skill": "3.2",
-    "topic": "Propriedades de enterprise app",
+    "topic": "Propriedades de aplicativo empresarial",
     "type": "hotarea",
     "stem": "You have a custom cloud app named App1 that is registered in Azure Active Directory (Azure AD).\n\nApp1 is configured as shown in the following exhibit.\n\n![Exhibit](img/S150-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -5906,7 +5906,7 @@ SIM.registerQuestions("SC-300", [
     "src": 153,
     "domain": 3,
     "skill": "3.2",
-    "topic": "Self-service de aplicativos",
+    "topic": "Autoatendimento de aplicativos",
     "type": "yesno",
     "stem": "You have a Microsoft 365 tenant that contains a group named Group1 as shown in the Group1 exhibit. (Click the Group1 tab.)\n\n![Exhibit](img/S153-stem-1.png){w=611}\n\nYou create an enterprise application named App1 as shown in the App1 Properties exhibit. (Click the App1 Properties tab.)\n\n![Exhibit](img/S153-stem-2.png){w=611}\n\nYou configure self-service for App1 as shown in the App1 Self-service exhibit. (Click the App1 Self-service tab.)\n\n![Exhibit](img/S153-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -5972,15 +5972,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -5994,7 +5994,7 @@ SIM.registerQuestions("SC-300", [
     "src": 155,
     "domain": 3,
     "skill": "3.2",
-    "topic": "SSO e Conditional Access",
+    "topic": "SSO e Acesso Condicional",
     "type": "hotarea",
     "stem": "Your company has a Microsoft 365 tenant.\n\nAll users have computers that run Windows 10 and are joined to the Azure Active Directory (Azure AD) tenant.\n\nThe company subscribes to a third-party cloud service named Service1. Service1 supports Azure AD authentication and authorization based on OAuth. Service1 is published to the Azure AD gallery.\n\nYou need to recommend a solution to ensure that the users can connect to Service1 without being prompted for authentication. The solution must ensure that the users can access Service1 only from Azure AD-joined computers. The solution must minimize administrative effort.\n\nWhat should you recommend for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -6259,7 +6259,7 @@ SIM.registerQuestions("SC-300", [
     "src": 162,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Terms of use",
+    "topic": "Termos de uso",
     "type": "single",
     "stem": "You have a Microsoft 365 tenant.\n\nIn Azure Active Directory (Azure AD), you configure the terms of use. You need to ensure that only users who accept the terms of use can access the resources in the tenant. Other users must be denied access.\n\nWhat should you configure?",
     "options": [
@@ -6288,7 +6288,7 @@ SIM.registerQuestions("SC-300", [
     "src": 163,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the groups shown in the following table.\n\n![Exhibit](img/S163-stem-1.png){w=430}\n\nFor which groups can you create an access review?",
     "options": [
@@ -6305,11 +6305,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Group3 (dispositivos):** access reviews revisam pessoas, não dispositivos.\n- **Combinações sem grupos M365 ou dinâmicos:** os dois tipos são suportados.\n\n**Dica de prova:** Access reviews exigem licença Entra ID P2 (ou Entra ID Governance) para os revisores e os revisados.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6322,7 +6322,7 @@ SIM.registerQuestions("SC-300", [
     "src": 164,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the users shown in the following table.\n\n![Exhibit](img/S164-stem-1.png){w=374}\n\nUser1 is the owner of Group1.\n\nYou create an access review that has the following settings:\n\n- Users to review: Members of a group\n- Scope: Everyone\n- Group: Group1\n- Reviewers: Members (self)\n\nWhich users can perform access reviews for User3?",
     "options": [
@@ -6338,11 +6338,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 (owner):** com Members (self), o owner não revisa os outros.\n- **User2:** cada membro revisa só a si mesmo.\n\n**Dica de prova:** Outras opções de revisor: Group owner(s), usuários ou grupos específicos e Managers (com fallback).",
     "docs": [
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       },
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       }
     ],
@@ -6389,11 +6389,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **MFA a cada 15 dias ou 1 mês:** o MFA é pedido a cada ativação, e a ativação dura no máximo 8 h.\n- **Só Global / só Privileged Role / User admin permanente:** sem aprovadores definidos, o padrão é Global Administrator **ou** Privileged Role Administrator.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
@@ -6401,7 +6401,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ],
@@ -6463,15 +6463,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Expirar atribuições elegíveis / ativas:** mantém o modelo de acesso permanente até expirar.\n- **Active:** é o estado atual, que é o problema.\n\n**Dica de prova:** Ao converter para Eligible, configure também MFA na ativação, justificativa e duração máxima.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ],
@@ -6484,7 +6484,7 @@ SIM.registerQuestions("SC-300", [
     "src": 168,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have a Microsoft 365 tenant.\n\nThe Sign-ins activity report shows that an external contractor signed in to the Exchange admin center.\n\nYou need to review access to the Exchange admin center at the end of each month and block sign-ins if required.\n\nWhat should you create?",
     "options": [
@@ -6504,11 +6504,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6521,7 +6521,7 @@ SIM.registerQuestions("SC-300", [
     "src": 169,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "group": {
       "kind": "series",
@@ -6540,11 +6540,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (revisão deve ir ao gerente de cada departamento):** só **preencher o Manager** dos usuários atende. Revisões separadas por função, Members (self) e gerentes como fallback não atendem.\n\n**Dica de prova:** Fallback reviewers recebem as revisões de usuários **sem** gerente definido.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6557,7 +6557,7 @@ SIM.registerQuestions("SC-300", [
     "src": 170,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "group": {
       "kind": "series",
@@ -6576,11 +6576,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** com Reviewers = Managers, a revisão segue o atributo manager do usuário. Preenchido (no Entra ou sincronizado do AD), cada gerente recebe a sua equipe.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6593,7 +6593,7 @@ SIM.registerQuestions("SC-300", [
     "src": 171,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "group": {
       "kind": "series",
@@ -6612,11 +6612,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** Members (self) tira o gerente do processo, e o requisito é que o gerente revise.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6655,7 +6655,7 @@ SIM.registerQuestions("SC-300", [
     "src": 173,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com. You implement entitlement management to provide resource access to users at a company named Fabrikam, Inc. Fabrikam uses a domain named fabrikam.com. Fabrikam users must be removed automatically from the tenant when access is no longer required.\n\nYou need to configure the following settings:\n\n- Block external user from signing in to this directory: No\n- Remove external user: Yes\n- Number of days before removing external user from this directory: 90 What should you configure on the Identity Governance blade?",
     "options": [
@@ -6675,11 +6675,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users"
       },
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ],
@@ -6733,7 +6733,7 @@ SIM.registerQuestions("SC-300", [
     "src": 175,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S175-stem-1.png){w=578}\n\nFor which resources can you create an access review?",
     "options": [
@@ -6749,7 +6749,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Combinações sem App1:** atribuições de enterprise apps também são revisáveis.\n- **Só Group1 / só funções:** as access reviews cobrem os quatro tipos.\n\n**Dica de prova:** Revisões de funções do Entra e do Azure são criadas pelo PIM.",
     "docs": [
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       },
       {
@@ -6757,7 +6757,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       }
     ],
@@ -6808,7 +6808,7 @@ SIM.registerQuestions("SC-300", [
     "src": 177,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "group": {
       "kind": "series",
@@ -6827,11 +6827,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** um fallback reviewer só recebe a revisão de quem não tem manager, e com vários gerentes como fallback todos receberiam tudo.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6864,15 +6864,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ],
@@ -6885,7 +6885,7 @@ SIM.registerQuestions("SC-300", [
     "src": 179,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "yesno",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the following group:\n\n- Name: Group1\n- Members: User1, User2\n- Owner: User3\n\nOn January 15, 2021, you create an access review as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S179-stem-1.png){w=611}\n\nUsers answer the Review1 question as shown in the following table.\n\n![Exhibit](img/S179-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -6913,11 +6913,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/review-your-access"
       },
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -6930,7 +6930,7 @@ SIM.registerQuestions("SC-300", [
     "src": 180,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "hotarea",
     "stem": "Your company has an Azure Active Directory (Azure AD) tenant named contoso.com. The company has a business partner named Fabrikam, Inc. Fabrikam uses Azure AD and has two verified domain names of fabrikam.com and litwareinc.com. Both domain names are used for Fabrikam email addresses. You plan to create an access package named package1 that will be accessible only to the users at Fabrikam.\n\nYou create a connected organization for Fabrikam.\n\nYou need to ensure that the package1 will be accessible only to users who have fabrikam.com email addresses.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -6969,11 +6969,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create"
       },
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ],
@@ -7047,7 +7047,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\" (trocar o destinatário dos alertas):** só **mudar o action group** atende. Funções do Entra, diagnostic settings e DCR não definem destinatários.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
@@ -7085,7 +7085,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** diagnostic settings definem para onde os logs vão; o e-mail de alerta vem do action group da regra.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
@@ -7122,7 +7122,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** DCR define coleta de agentes (VMs). Os destinatários do alerta continuam no action group.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
@@ -7140,7 +7140,7 @@ SIM.registerQuestions("SC-300", [
     "src": 185,
     "domain": 4,
     "skill": "4.4",
-    "topic": "Diagnostic settings",
+    "topic": "Configurações de diagnóstico",
     "type": "single",
     "stem": "You have an Azure Active Directory Premium P2 tenant.\n\nYou create a Log Analytics workspace.\n\nYou need to ensure that you can view Azure Active Directory (Azure AD) audit log information by using Azure Monitor.\n\nWhat should you do first?",
     "options": [
@@ -7192,15 +7192,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 com MFA na ativação:** Sim. A opção está habilitada.\n- **User2 aprova:** Não. Aprovação não exigida.\n- **User2 e User3 editam a atribuição:** Não. Privileged Authentication Administrator não gerencia funções; isso exige Privileged Role Administrator ou Global Administrator.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -7210,7 +7210,7 @@ SIM.registerQuestions("SC-300", [
     "src": 187,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have a Microsoft 365 subscription that contains the following:\n\n- An Azure Active Directory (Azure AD) tenant that has an Azure Active Directory Premium P2 license\n- A Microsoft SharePoint Online site named Site1\n- A Microsoft Teams team named Team1\n\nYou need to create an entitlement management workflow to manage Site1 and Team1.\n\nWhat should you do first?",
     "options": [
@@ -7226,11 +7226,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **App registration / administrative unit:** não fazem parte do entitlement management.\n- **Catálogo:** o General já existe; o gabarito considera o access package como primeiro passo (a comunidade se divide).\n\n**Dica de prova:** Boa prática: um catálogo por projeto/área, com catalog owners delegados.",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -7260,7 +7260,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Série \"Solution\":** o action group define e-mail, SMS e outras ações. Trocar o destinatário ali atende.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
@@ -7278,7 +7278,7 @@ SIM.registerQuestions("SC-300", [
     "src": 189,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "yesno",
     "stem": "Your network contains an on-premises Active Directory domain that syncs to an Azure Active Directory (Azure AD) tenant.\n\nThe tenant contains the groups shown in the following table.\n\n![Exhibit](img/S189-stem-1.png){w=611}\n\nThe tenant contains the users shown in the following table.\n\n![Exhibit](img/S189-stem-2.png){w=611}\n\nYou create an access review as shown in the following table.\n\n![Exhibit](img/S189-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -7306,11 +7306,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
       },
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -7323,7 +7323,7 @@ SIM.registerQuestions("SC-300", [
     "src": 190,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription that contains a web app named App1. Guest users are regularly granted access to App1.\n\nYou need to ensure that the guest users that have NOT accessed App1 during the past 30 days have their access removed. The solution must minimize administrative effort.\n\nWhat should you configure?",
     "options": [
@@ -7339,11 +7339,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Conditional Access:** não remove acessos inativos.\n- **Compliance policy:** Intune.\n- **Revisão de grupo de guests:** o acesso é ao App1 (atribuição de app), não a um grupo.\n\n**Dica de prova:** Ative \"No sign-in within 30 days\" como recomendação + auto-apply + \"If reviewers don't respond = Take recommendations\".",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -7356,7 +7356,7 @@ SIM.registerQuestions("SC-300", [
     "src": 191,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Licenciamento de access reviews",
+    "topic": "Licenciamento de revisões de acesso",
     "type": "hotarea",
     "stem": "You have an Azure Active Directory (Azure AD) ten-ant: that contains the groups shown in the following table.\n\n![Exhibit](img/S191-stem-1.png){w=593}\n\nYou create an access review for Group1 as shown in the following table.\n\n![Exhibit](img/S191-stem-2.png){w=452}\n\nYou create an access review for Group2 as shown in the following table.\n\n![Exhibit](img/S191-stem-3.png){w=488}\n\nWhat is the minimum member of Azure Active Directory Premium P2 licenses required for each group? To answer, select the appropriate, options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -7411,7 +7411,7 @@ SIM.registerQuestions("SC-300", [
     "src": 192,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management — ciclo de vida de externos",
+    "topic": "Gerenciamento de direitos — ciclo de vida de usuários externos",
     "type": "yesno",
     "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.com that contains a group named All Company and has the following Identity Governance settings:\n\n- Block external users from signing in to this directory: Yes\n- Remove external user. Yes\n- Number of days before removing external user from this directory: 30\n\nOn February 28, 2022, you create an access package named Package1 that has the following settings:\n\n- Resource roles 1. Name: All Company 2. Type: Group and Team 3. Role: Member\n- Lifecycle 1. Access package assignment expire: On date 2. Assignment expiration date: April 1, 2022\n\nOn March 1, 2022, you assign Package1 to the guest users shown in the following table.\n\n![Exhibit](img/S192-stem-1.png){w=389}\n\nOn March 2, 2022, you assign the Reports reader role to Guest1. On April 1, 2022, you invite a guest user named Guest3 to contoso.com. On April 4, 2022, you add Guest3 to the All Company group.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -7452,7 +7452,7 @@ SIM.registerQuestions("SC-300", [
     "src": 193,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Terms of use",
+    "topic": "Termos de uso",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant named Contoso that contains a terms of use (Toll) named Terms1 and an access package. Contoso users collaborate with an external organization named Fabrikam. Fabrikam users must accept Terms1 before being allowed to use the access package. You need to identify which users accepted or declined Terms1.\n\nWhat should you use?",
     "options": [
@@ -7481,7 +7481,7 @@ SIM.registerQuestions("SC-300", [
     "src": 194,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have an Azure Active Directory (Azure AD) tenant that contains the users shown in the following table.\n\n![Exhibit](img/S194-stem-1.png){w=333}\n\nUser1 is the owner of Group1.\n\nYou create an access review that has the following settings:\n\n- What to review: Teams + Groups\n- Scope: All users\n- Group: Group1\n- Reviewers: Users review their own access\n\nWhich users can perform access reviews for User3?",
     "options": [
@@ -7498,11 +7498,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User1 (owner):** com \"Users review their own access\", o owner não revisa os outros.\n- **User2:** cada um revisa a si mesmo.\n\n**Dica de prova:** Guests B2B comuns podem fazer a autorrevisão; usuários B2B direct connect (canais compartilhados) não.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -7553,7 +7553,7 @@ SIM.registerQuestions("SC-300", [
     "src": 196,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews — configurações",
+    "topic": "Revisões de acesso — configurações",
     "type": "multi",
     "layout": "panel",
     "panelTitle": "Access review settings",
@@ -7581,11 +7581,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Auto apply:** já está habilitado (pelo exhibit).\n- **Ação para guests negados / notificações / lembretes / recomendações / justificativa:** não removem quem não responde.\n\n**Dica de prova:** \"If reviewers don't respond\" aceita: No change, Remove access, Approve access, Take recommendations.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ],
@@ -7619,7 +7619,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Distribution group:** não recebe licença.\n- **OU:** AD on-premises; não licencia no Entra.\n- **Administrative unit:** delimita o escopo de administração, não atribui licença.\n\n**Dica de prova:** A regra dinâmica pode usar companyName -eq \"ADatum\" ou o domínio do UPN.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -7627,7 +7627,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ],
@@ -7711,15 +7711,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Domain filtering:** escolhe domínios e OUs, não atributos.\n- **Optional features:** habilita writeback, PHS etc. (inclui o checkbox de directory extensions, mas a página que escolhe o atributo é Directory Extensions).\n- **Grupo atribuído ou com aninhados:** não automatiza; grupos aninhados não herdam licença.\n\n**Dica de prova:** O atributo aparece no Entra como extension_<appId>_LWLicenses e pode ser usado na regra dinâmica.",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -7753,15 +7753,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/security/fundamentals/steps-secure-identity"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -7817,7 +7817,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
       },
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -7872,15 +7872,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **\"Guest\"/\"Member\" no objectId:** objectId é um GUID; a comparação com null é o que serve de \"todos os objetos\".\n- **userType \"Guest\":** incluiria só convidados.\n\n**Dica de prova:** O padrão \"(user.objectId -ne null)\" é usado para criar grupos \"todos os usuários\".",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ]
@@ -7931,15 +7931,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies"
       },
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ],
@@ -7952,7 +7952,7 @@ SIM.registerQuestions("SC-300", [
     "src": 206,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access — localizações",
+    "topic": "Acesso Condicional — localizações",
     "type": "single",
     "group": {
       "kind": "case",
@@ -8198,7 +8198,7 @@ SIM.registerQuestions("SC-300", [
     "src": 211,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Password Protection",
+    "topic": "Proteção de senha",
     "type": "hotarea",
     "group": {
       "kind": "case",
@@ -8262,7 +8262,7 @@ SIM.registerQuestions("SC-300", [
     "src": 212,
     "domain": 4,
     "skill": "4.4",
-    "topic": "Diagnostic settings",
+    "topic": "Configurações de diagnóstico",
     "type": "single",
     "group": {
       "kind": "case",
@@ -8303,7 +8303,7 @@ SIM.registerQuestions("SC-300", [
     "src": 213,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "hotarea",
     "group": {
       "kind": "case",
@@ -8340,11 +8340,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-organization"
       },
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ],
@@ -8378,15 +8378,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access review:** revisa atribuições; não exige justificativa na ativação.\n- **Administrative unit:** delimita escopo.\n- **Active assignments:** não passam por ativação.",
     "docs": [
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       }
     ],
@@ -8427,15 +8427,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Ticket information:** não é requisito do caso.\n- **Expire eligible assignments:** não é o pedido aqui.\n- **Active:** com atribuições ativas não há ativação, então não há justificativa.",
     "docs": [
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ],
@@ -8490,7 +8490,7 @@ SIM.registerQuestions("SC-300", [
     "src": 219,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "group": {
       "kind": "case",
@@ -8510,11 +8510,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User consent / admin consent settings:** tratam de consentimento.\n- **Program:** conceito antigo de access reviews.\n\n**Dica de prova:** O catálogo agrupa recursos (grupos, apps, sites) e define quem pode criar pacotes (catalog owners/access package managers).",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ],
@@ -8544,15 +8544,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User monitoring / App onboarding / continuous report:** não são pré-requisito da session policy; o roteamento pelo App Control vem do CA.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -8613,15 +8613,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Session policy:** controla ações em tempo real, não conta volume.\n- **File policy:** analisa arquivos (conteúdo, compartilhamento).\n- **Anomaly detection:** detecções embutidas por ML (ex.: mass download), sem o limite exato configurável.\n\n**Dica de prova:** Na activity policy, use \"Repeated activity\" com o mínimo de 50 em 1 minuto.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -8647,15 +8647,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Activity policy:** alerta depois do fato.\n- **Access policy:** permite ou bloqueia a entrada no app, não ações dentro da sessão.\n- **File policy:** governa arquivos armazenados, não a impressão no navegador.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -8681,15 +8681,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **OAuth app policy:** avalia apps conectados por OAuth.\n- **Anomaly detection / activity policy:** alertam; não bloqueiam o login em tempo real.\n\n**Dica de prova:** A alternativa nativa é uma política de CA com user risk = High → Block.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -8716,15 +8716,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Anomaly detection:** detecções embutidas, sem filtro de permissões nem contagem.\n- **Access / activity policy:** não avaliam permissões de apps OAuth.\n\n**Dica de prova:** Hoje as políticas de OAuth estão em app governance (Defender XDR).",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -8803,11 +8803,11 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-restore"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       }
     ]
@@ -8850,15 +8850,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Managed identity em grupos dinâmicos, sincronizados ou M365:** só grupos de segurança atribuídos de nuvem aceitam service principals.\n- **Usuário de nuvem no Group3 (dinâmico) / Group4 (sincronizado):** não se adicionam membros manuais nesses grupos.",
     "docs": [
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ]
@@ -9068,7 +9068,7 @@ SIM.registerQuestions("SC-300", [
     "src": 234,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "group": {
       "kind": "case",
@@ -9090,11 +9090,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Combinações só com o User4:** pela tabela do caso, o User4 não tem função no catálogo nem de Identity Governance.\n\n**Dica de prova:** Quem cria revisões de access packages: Global, Identity Governance administrator, catalog owner e access package manager.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -9124,7 +9124,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **CAE:** revoga sessões em tempo quase real.\n- **CA:** não controla quem pode convidar.\n- **Access reviews settings:** governança de revisões.",
     "docs": [
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       },
       {
@@ -9162,15 +9162,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Require justification / ticket:** o caso pede limite de tempo e solicitação, não justificativa ou ticket.\n- **Set Active:** elimina a solicitação (não há ativação).\n\n**Dica de prova:** \"Expire eligible assignments after\" aceita 15 dias, 1, 3, 6 meses ou 1 ano.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -9215,7 +9215,7 @@ SIM.registerQuestions("SC-300", [
     "src": 238,
     "domain": 3,
     "skill": "3.4",
-    "topic": "App governance",
+    "topic": "Governança de aplicativos",
     "type": "hotarea",
     "stem": "You have a Microsoft 365 E5 subscription that contains a user named User1. You configure app governance integration.\n\nUser1 needs to view the App governance dashboard. The solution must use the principle of the least privilege.\n\nWhich role should you assign to User1, and which portal should User1 use to view the dashboard? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -9297,7 +9297,7 @@ SIM.registerQuestions("SC-300", [
     "src": 240,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription that contains a user named User1. You need to ensure that User1 can create access reviews for Azure AD roles. The solution must use the principle of least privilege.\n\nWhich role should you assign to User1?",
     "options": [
@@ -9314,11 +9314,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Identity Governance Administrator:** gerencia revisões de grupos e apps, não de funções do Entra.\n- **User administrator:** não gerencia funções privilegiadas.\n- **User Access Administrator:** é do Azure RBAC.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -9456,7 +9456,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions"
       },
       {
-        "t": "Microsoft Entra Built-in Roles - Microsoft Entra ID",
+        "t": "Funções internas do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference"
       },
       {
@@ -9490,15 +9490,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Defender for Cloud Apps / M365 admin center / Defender portal:** não fazem a ativação de funções do PIM.\n\n**Dica de prova:** Atalho: My roles (https://aka.ms/myroles) ou PIM > My roles > Eligible assignments > Activate.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -9577,7 +9577,7 @@ SIM.registerQuestions("SC-300", [
     "src": 247,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have an Azure AD tenant that contains an access package named Package1 and a user named User1. Package1 is configured as shown in the following exhibit.\n\n![Exhibit](img/S247-stem-1.png){w=611}\n\nYou need to ensure that User1 can modify the review frequency of Package1. The solution must use the principle of least privilege.\n\nWhich role should you assign to User1?",
     "options": [
@@ -9593,11 +9593,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Security / Privileged Role / External Identity Provider administrator:** não gerenciam access packages.\n- **User administrator:** o gabarito antigo marca, mas o correto hoje é Identity Governance administrator (ou papéis do catálogo).\n\n**Dica de prova:** Papéis do catálogo: Catalog owner, Catalog reader, Access package manager e Access package assignment manager.",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -9670,15 +9670,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **CA / access policy:** exigiriam rotear todo o tráfego pelo proxy; mais esforço.\n- **App configuration do Intune:** configura apps móveis.\n\n**Dica de prova:** Marcar como unsanctioned também permite gerar um script de bloqueio para firewalls ou proxies, ou bloquear via integração com o Defender for Endpoint.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -9705,15 +9705,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Azure resources:** funções do Azure RBAC.\n- **Privileged access groups:** PIM for Groups.\n- **Review access:** access reviews.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -9754,15 +9754,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **-ne:** pegaria quem **tem** departamento.\n- **-match / -notIn:** comparam padrões ou listas, não vazio.\n- **\"\" / $null / \"null\":** a sintaxe das regras usa null sem aspas nem $.",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ]
@@ -9772,7 +9772,7 @@ SIM.registerQuestions("SC-300", [
     "src": 254,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Security defaults",
+    "topic": "Padrões de segurança",
     "type": "single",
     "stem": "You plan to deploy a new Azure AD tenant.\n\nWhich multifactor authentication (MFA) method will be enabled by default for the tenant?",
     "options": [
@@ -9788,15 +9788,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **SMS / voz / e-mail OTP:** não são habilitados pelos security defaults (que usam o Authenticator).\n\n**Dica de prova:** Os security defaults também bloqueiam autenticação legada e exigem MFA para administradores em todo login.",
     "docs": [
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ]
@@ -9806,7 +9806,7 @@ SIM.registerQuestions("SC-300", [
     "src": 255,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access — filtro de dispositivos",
+    "topic": "Acesso Condicional — filtro de dispositivos",
     "type": "yesno",
     "stem": "You have a Microsoft 365 E5 subscription that contains a Microsoft SharePoint Online site named Site1 and the users shown in the following table.\n\n![Exhibit](img/S255-stem-1.png){w=277}\n\nThe users have the devices shown in the following table.\n\n![Exhibit](img/S255-stem-2.png){w=456}\n\nYou create the following two Conditional Access policies:\n\n- Name: CAPolicy1\n- Assignments o Users or workload identities: Group1 o Cloud apps or actions: Office 365 SharePoint Online o Conditions\n\nFilter for devices: Exclude filtered devices from the policy\n\nRule syntax: device.displayName -startsWith \"Device\" o Access controls\n\nGrant: Block access\n\nSession: 0 controls selected o Enable policy: On\n\n- Name: CAPolicy2\n- Assignments o Users or workload identities: Group2 o Cloud apps or actions: Office 365 SharePoint Online o Conditions: 0 conditions selected\n- Access controls o Grant: Grant access\n\nRequire multifactor authentication o Session: 0 controls selected\n\n- Enable policy: On\n\nAll users confirm that they can successfully authenticate using MFA. For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -9871,7 +9871,7 @@ SIM.registerQuestions("SC-300", [
     "src": 257,
     "domain": 2,
     "skill": "2.1",
-    "topic": "Security defaults",
+    "topic": "Padrões de segurança",
     "type": "single",
     "stem": "You have an Azure AD tenant named contoso.com that contains the resources shown in the following table.\n\n![Exhibit](img/S257-stem-1.png){w=303}\n\nYou create a user named Admin1.\n\nYou need to ensure that Admin1 can enable Security defaults for contoso.com. What should you do first?",
     "options": [
@@ -9887,15 +9887,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Excluir o Package1:** access packages não impedem os security defaults.\n- **Authentication Administrator na Au1:** não habilita security defaults (exige Security admin, CA admin ou Global).\n- **Identity Governance:** sem relação.",
     "docs": [
       {
-        "t": "Configure Security Defaults for Microsoft Entra ID - Microsoft Entra",
+        "t": "Configurar Padrões de segurança para o Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults"
       },
       {
-        "t": "Configure Microsoft Entra multifactor authentication - Microsoft Entra ID",
+        "t": "Configurar a autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-mfasettings"
       },
       {
-        "t": "Microsoft Entra multifactor authentication overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação multifator do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
       }
     ]
@@ -9905,7 +9905,7 @@ SIM.registerQuestions("SC-300", [
     "src": 258,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities via PowerShell",
+    "topic": "Identidades gerenciadas via PowerShell",
     "type": "match",
     "stem": "You have an Azure subscription that is linked to an Azure AD tenant named contoso.com. The subscription contains a group named Group1 and a virtual machine named VM1.\n\nYou need to meet the following requirements:\n\n- Enable a system-assigned managed identity for VM1.\n- Add VM1 to Group1.\n\nHow should you complete the PowerShell script? To answer, drag the appropriate cmdlets to the correct targets. Each cmdlet may be used once, more than once or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
     "pool": [
@@ -10009,7 +10009,7 @@ SIM.registerQuestions("SC-300", [
     "src": 262,
     "domain": 3,
     "skill": "3.4",
-    "topic": "App governance",
+    "topic": "Governança de aplicativos",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription.\n\nYou purchase the app governance add-on license.\n\nYou need to enable app governance integration.\n\nWhich portal should you use?",
     "options": [
@@ -10056,15 +10056,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **App-enforced restrictions:** são para SharePoint/Exchange, não roteiam pelo proxy do MDCA.\n- **Token configuration / API permission:** configuram o app registration, não o controle de sessão.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -10225,15 +10225,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Require app protection policy:** é do Intune MAM, não roteia pelo MDCA.\n- **Cloud Application Administrator:** não é necessária para o MDCA.\n- **Cloud App Security Administrator:** o Security Administrator já tem acesso total.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -10243,7 +10243,7 @@ SIM.registerQuestions("SC-300", [
     "src": 269,
     "domain": 4,
     "skill": "4.4",
-    "topic": "Diagnostic settings",
+    "topic": "Configurações de diagnóstico",
     "type": "single",
     "stem": "You have an Azure AD Premium P2 tenant.\n\nYou create a Log Analytics workspace.\n\nYou need to ensure that you can view Azure AD audit log information by using Azure Monitor.\n\nWhat should you do first?",
     "options": [
@@ -10303,7 +10303,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       }
     ]
@@ -10373,7 +10373,7 @@ SIM.registerQuestions("SC-300", [
     "src": 275,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "hotarea",
     "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S275-stem-1.png){w=611}\n\nThe subscription contains the virtual machines shown in the following table.\n\n![Exhibit](img/S275-stem-2.png){w=611}\n\nWhich identities can be assigned the Owner role for RG1, and to which virtual machines can you assign Managed2? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -10409,15 +10409,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Owner para a VM3:** a VM3 não tem identidade system-assigned (usa só a Managed1).\n- **Owner só para Managed1:** user-assigned e system-assigned habilitadas são todas principals válidas.\n- **Managed2 só para algumas VMs:** user-assigned atravessa regiões.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -10443,15 +10443,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Cloud app catalog:** avalia apps em geral, não os descobertos no seu ambiente (o gabarito prefere a consulta de apps descobertos).\n- **OAuth policy:** apps conectados por OAuth.\n- **Snapshot report:** análise pontual de logs enviados manualmente.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -10480,15 +10480,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Admin1 / Admin2:** funções clássicas (Account/Service Administrator, Co-Administrator) não são gerenciadas pelo PIM.\n\n**Dica de prova:** Migre administradores clássicos para Azure RBAC (Owner) e, então, para o PIM.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -10603,15 +10603,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Só Global ou só funções do Entra:** o PIM também gerencia funções de recursos do Azure (Security Contributor) e grupos.\n- **Account Administrator:** função clássica, sem suporte no PIM.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -10621,7 +10621,7 @@ SIM.registerQuestions("SC-300", [
     "src": 281,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have a Microsoft 365 subscription that contains a Microsoft SharePoint Online site named Site1 and a Microsoft 365 group named Group1. You need to ensure that the members of Group1 can access Site1 for 90 days. The solution must minimize administrative effort.\n\nWhat should you use?",
     "options": [
@@ -10637,11 +10637,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access review:** revisa, mas não concede nem expira acesso.\n- **Lifecycle workflow:** automatiza joiner/mover/leaver, não acessos temporários a sites.\n- **Conditional Access:** controla a forma de acesso, não concede permissão ao site.\n\n**Dica de prova:** Na política do pacote: \"For users in your directory\" → specific groups (Group1) e expiração de 90 dias.",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -10651,7 +10651,7 @@ SIM.registerQuestions("SC-300", [
     "src": 282,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "hotarea",
     "stem": "You have a Microsoft Entra tenant that contains multiple storage accounts. You plan to deploy multiple Azure App Service apps that will require access to the storage accounts.\n\nYou need to recommend an identity solution to provide the apps with access to the storage accounts. The solution must minimize administrative effort. Which type of identity should you recommend, and what should you recommend using to control access to the storage accounts? To answer, select the appropriate options in the answer area.",
     "slots": [
@@ -10686,15 +10686,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Usuário do Entra:** exigiria senha e MFA; não é identidade de workload.\n- **Service principal:** exige gerenciar segredo ou certificado.\n- **System-assigned:** uma por app; mais atribuições para gerenciar.\n- **Domain Services / SAS / certificados:** não são o controle de acesso baseado em identidade com menor esforço.\n\n**Dica de prova:** Uma user-assigned pode ser associada a vários App Services e receber Storage Blob Data Contributor em cada conta.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -10704,7 +10704,7 @@ SIM.registerQuestions("SC-300", [
     "src": 283,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription named Sub1 that contains a resource group named RG1. RG1 contains an Azure Cosmos DB database named DB1 and an Azure Kubernetes Service (AKS) cluster named AKS1. AKS1 uses a managed identity.\n\nYou need to ensure that AKS1 can access DB1. The solution must meet the following requirements:\n\n- Ensure that AKS1 uses the managed identity to access DB1.\n- Follow the principle of least privilege.\n\nWhich role should you assign to the managed identity of AKS1?",
     "options": [
@@ -10720,15 +10720,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Owner na Sub1:** excessivo.\n- **Account Reader no DB1:** lê só metadados da conta, não os dados.\n- **Reader no RG1:** plano de controle, sem dados.\n\n**Dica de prova:** O Cosmos DB tem RBAC próprio de plano de dados (Built-in Data Reader/Contributor), atribuído via az cosmosdb sql role assignment.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -10738,7 +10738,7 @@ SIM.registerQuestions("SC-300", [
     "src": 284,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains a storage account named storage1 and a web app named WebApp1. WebApp1 uses a system-assigned managed identity.\n\nYou need to ensure that WebApp1 can read and write files to storage1 by using the system-assigned managed identity.\n\nWhat should you configure for storage1 in the Azure portal?",
     "options": [
@@ -10755,15 +10755,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Data protection:** soft delete e versionamento.\n- **SAS / access keys:** segredos; não usam a managed identity.\n- **File share settings:** configuram o share, não dão acesso à identidade.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -10773,7 +10773,7 @@ SIM.registerQuestions("SC-300", [
     "src": 285,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains an Azure Automation account named Automation1 and an Azure key vault named Vault1. Vault1 contains a secret named Secret1.\n\nYou enable a system-assigned managed identity for Automation1. You need to ensure that Automation1 can read the contents of Secret1. The solution must meet the following requirements:\n\n- Prevent Automation1 from accessing other secrets stored in Vault1.\n- Follow the principle of least privilege.\n\nWhat should you do?",
     "options": [
@@ -10789,15 +10789,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **IAM do Vault1:** daria acesso a todos os segredos.\n- **Identity settings do Automation1:** a identidade já está habilitada; falta a permissão.\n- **Run as accounts:** aposentadas e baseadas em certificado.\n\n**Dica de prova:** Atribuição no escopo de um único segredo só funciona no modelo de permissões Azure RBAC (não em access policies).",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -10823,15 +10823,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Key Vault:** não é usado pela CBA do Entra.\n- **Auto-enrollment:** distribui certificados, mas a confiança no Entra vem antes.\n- **Windows Hello for Business:** outro método.\n\n**Dica de prova:** Depois: habilite o método Certificate-based authentication, configure as regras de binding (UPN/SKI) e defina se é de fator único ou múltiplo.",
     "docs": [
       {
-        "t": "Microsoft Entra CBA Overview - Microsoft Entra ID",
+        "t": "Visão geral da autenticação baseada em certificado do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication"
       },
       {
-        "t": "Manage authentication methods - Microsoft Entra ID",
+        "t": "Gerenciar métodos de autenticação - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
       },
       {
-        "t": "Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods - Microsoft Entra ID",
+        "t": "Configurar um Passe de Acesso Temporário no Microsoft Entra ID para registrar métodos de autenticação sem senha - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
       },
       {
@@ -10861,15 +10861,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Global Secure Access:** acesso à rede (SSE).\n- **Permissions Management:** gerencia permissões em multicloud (CIEM), e foi descontinuado.\n- **Verified ID:** credenciais verificáveis.\n\n**Dica de prova:** O \"Discovery and insights\" do PIM mostra contas com funções permanentes e sugere a conversão para elegível.",
     "docs": [
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -10906,7 +10906,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Access policies:** não são gerenciáveis pelo PIM.\n- **Secrets Officer para o User2:** daria também escrita.\n- **Key Vault Administrator / Contributor:** amplos demais (Contributor nem lê segredos no modelo RBAC).",
     "docs": [
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       },
       {
@@ -10924,7 +10924,7 @@ SIM.registerQuestions("SC-300", [
     "src": 296,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains a user-assigned managed identity named Managed1 in the East US Azure region. The subscription contains the resources shown in the following table.\n\n![Exhibit](img/S296-stem-1.png){w=380}\n\nWhich resources can use Managed1 as their identity?",
     "options": [
@@ -10940,15 +10940,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Só WebApp1 / sem VM1 ou storage1:** VMs, App Service e storage (para CMK, por exemplo) suportam user-assigned em qualquer região.\n\n**Dica de prova:** A identidade user-assigned é um recurso regional, mas o uso dela atravessa regiões.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -10989,7 +10989,7 @@ SIM.registerQuestions("SC-300", [
     "src": 299,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Email one-time passcode",
+    "topic": "Senha de uso único por email",
     "type": "single",
     "stem": "You have a Microsoft 365 tenant that uses the domain name fabrikam.com. The External collaboration settings are configured as shown in the Collaboration exhibit. (Click the Collaboration tab.)\n\n![Exhibit](img/S299-stem-1.png){w=606}\n\nThe Email one-time passcode for guests setting is enabled for the tenant. A user in fabrikam.com shares a Microsoft SharePoint Online document library to the users shown in the following table.\n\n![Exhibit](img/S299-stem-2.png){w=555}\n\nWhich users will be emailed a passcode?",
     "options": [
@@ -11009,7 +11009,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -11023,7 +11023,7 @@ SIM.registerQuestions("SC-300", [
     "src": 300,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription named Sub1 that contains a virtual machine named VM1.\n\nYou need to enable Microsoft Entra login for VM1 and configure VM1 to access the resources in Sub1.\n\nWhich type of identity should you assign to VM1?",
     "options": [
@@ -11039,15 +11039,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Usuário do Entra:** não é identidade de recurso.\n- **User-assigned:** o login do Entra na VM depende da system-assigned (a extensão a usa).\n- **Automation account:** não é um tipo de identidade.\n\n**Dica de prova:** Usuários precisam de Virtual Machine Administrator/User Login no escopo da VM.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11073,7 +11073,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Set-WindowsProductKey:** chave do Windows.\n- **Update-MgGroup / Update-MgUser:** não removem licenças.\n\n**Dica de prova:** Exemplo: Set-MgUserLicense -UserId $id -RemoveLicenses @($skuIdE3) -AddLicenses @().",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -11081,7 +11081,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -11107,7 +11107,7 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Administrative units / Identity Governance:** não gerenciam licenças.\n- **Update-MgUser:** não altera licenças.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
@@ -11115,7 +11115,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense"
       },
       {
-        "t": "Microsoft Entra licensing - Microsoft Entra",
+        "t": "Licenciamento do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
       }
     ]
@@ -11144,15 +11144,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1:** Sim. Está incluído, com risco alto (≥ Medium).\n- **User2:** Não. Está só no grupo excluído.\n- **User3:** Não. A exclusão prevalece sobre a inclusão.\n\n**Dica de prova:** Exclusões vencem sempre, em CA e nas políticas do ID Protection.",
     "docs": [
       {
-        "t": "What is Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
+        "t": "O que é o Microsoft Entra ID Protection? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
       },
       {
-        "t": "What are risk detections? - Microsoft Entra ID Protection",
+        "t": "O que são detecções de risco? - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
       },
       {
-        "t": "Risk policies - Microsoft Entra ID Protection",
+        "t": "Políticas de risco - Microsoft Entra ID Protection",
         "u": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
       }
     ]
@@ -11182,15 +11182,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -11233,15 +11233,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **App1 com managed identity:** o app registrado já tem service principal; a identidade dele é essa.\n- **App2 com system-assigned:** cada VM teria a própria identidade (não seria \"uma só\").\n- **Usuário ou grupo do Entra:** não são identidades de workload.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11335,7 +11335,7 @@ SIM.registerQuestions("SC-300", [
     "src": 311,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Continuous access evaluation",
+    "topic": "Avaliação contínua de acesso",
     "type": "single",
     "stem": "You have a Microsoft Entra tenant.\n\nYou need to configure continuous access evaluation for app sign-ins and assign the configuration to users that are assigned the Application Administrator role. What should you configure?",
     "options": [
@@ -11441,15 +11441,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-linux"
       },
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11459,7 +11459,7 @@ SIM.registerQuestions("SC-300", [
     "src": 319,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription.\n\nYou create an access review named Review1. Review1 requires that every six months, Microsoft 365 group owners review guest user access to their groups. You need to ensure that if the group owners fail to review the membership of Review1, guest users are removed automatically.\n\nWhich settings should you configure for Review1?",
     "options": [
@@ -11475,11 +11475,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Scheduling:** define frequência e duração.\n- **General:** nome e descrição.\n- **Reviewers:** quem revisa.\n\n**Dica de prova:** Em \"Upon completion\": Auto apply = On; \"If reviewers don't respond\" = Remove access.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -11489,7 +11489,7 @@ SIM.registerQuestions("SC-300", [
     "src": 329,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Terms of use",
+    "topic": "Termos de uso",
     "type": "single",
     "stem": "You have a Microsoft Entra tenant that contains a terms of use (ToU) named Terms1.\n\nYou create a Conditional Access policy named Policy1 to deploy Terms1. You need to configure Policy1 to require users to accept Terms1. Which settings should you configure for Policy1?",
     "options": [
@@ -11515,7 +11515,7 @@ SIM.registerQuestions("SC-300", [
     "src": 330,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains a virtual machine named VM1 and an Azure key vault named Vault1. VM1 has a system-assigned managed identity. You need to ensure that VM1 can retrieve the values of secrets stored in Vault1. The solution must minimize administrative effort.\n\nWhat should you do first?",
     "options": [
@@ -11531,15 +11531,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Resource access settings:** tratam de templates e VMs no modelo de access policy.\n- **Permissions model:** o novo cofre já usa RBAC por padrão.\n- **User-assigned:** a VM já tem a system-assigned.\n\n**Dica de prova:** A função é Key Vault Secrets User no Vault1 (ou no segredo).",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11549,7 +11549,7 @@ SIM.registerQuestions("SC-300", [
     "src": 332,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access — sessão",
+    "topic": "Acesso Condicional — sessão",
     "type": "yesno",
     "stem": "You have a Microsoft 365 E5 subscription that contains two groups named Group1 and Group2. The subscription contains the users shown in the following table.\n\n![Exhibit](img/S332-stem-1.png){w=537}\n\nYou create the following Conditional Access policies:\n\n- Name: Policy1\n- Users:\n  - Include: Group1 o Exclude: Group2\n- Target resources:\n  - Include: All cloud apps\n- Grant:\n  - Grant access: Require multi-factor authentication\n- Session:\n  - Persistent browser session: Never persistent\n- Name: Policy2\n- Users:\n  - Include:\n- Directory roles: Global Administrator\n- Users and groups: User3 o Exclude: Group2\n- Target resources:\n  - Include: All cloud apps\n- Session:\n  - Sign-in frequency:\n- Periodic authentication: 2 hours\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -11587,7 +11587,7 @@ SIM.registerQuestions("SC-300", [
     "src": 333,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "hotarea",
     "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n| Name | Type | Identity |\n|---|---|---|\n| VM1 | Virtual machine | Managed1 (system-assigned) |\n| App1 | Azure App Service web app | None |\n| Managed1 | Managed identity (system-assigned) | VM1 |\n| Managed2 | Managed identity (user-assigned) | Not applicable |\n\nYou create a Microsoft Entra user named User1.\n\nWhich identities can you add to VM1 and App1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
     "slots": [
@@ -11621,15 +11621,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 em VM ou App:** usuários do Entra não são identidades de recurso.\n- **Managed1 no App1:** já é a system-assigned da VM1 e não pode ser reaproveitada.\n\n**Dica de prova:** Um recurso pode ter uma system-assigned e várias user-assigned.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11662,15 +11662,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/view-assignments"
       },
       {
-        "t": "What is Privileged Identity Management? - Microsoft Entra ID Governance",
+        "t": "O que é o Privileged Identity Management? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
       },
       {
-        "t": "Configure Microsoft Entra role settings in PIM - Microsoft Entra ID Governance",
+        "t": "Definir as configurações de funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
       },
       {
-        "t": "Assign Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Atribuir funções do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user"
       }
     ]
@@ -11680,7 +11680,7 @@ SIM.registerQuestions("SC-300", [
     "src": 344,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains a storage account named storage1. You plan to deploy an app named App1 that will be hosted on multiple virtual machines. The virtual machines will authenticate to a third-party API by using secrets.\n\nYou need to recommend an authentication solution for the virtual machines. The solution must meet the following requirements:\n\n- Securely store secrets.\n- Ensure that credentials do NOT need to be stored in the App1 code.\n- Ensure that the virtual machines can access Azure resources by using Microsoft Entra authentication\n- Minimize administrative effort.\n\nWhat should you include in the recommendation?",
     "options": [
@@ -11696,15 +11696,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **User accounts:** exigem senha e MFA, o que não é próprio de VMs.\n- **Storage Service Encryption:** criptografia em repouso, não guarda segredos de API.\n- **System-assigned:** uma por VM, o que exige mais atribuições (o gabarito prefere user-assigned compartilhada).",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11714,7 +11714,7 @@ SIM.registerQuestions("SC-300", [
     "src": 345,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities e Key Vault",
+    "topic": "Identidades gerenciadas e Key Vault",
     "type": "yesno",
     "stem": "You have an Azure subscription named Sub1 that contains the resources shown in the following table.\n\n![Exhibit](img/S345-stem-1.png){w=394}\n\nSub1 contains the managed identities shown in the following table.\n\n![Exhibit](img/S345-stem-2.png){w=254}\n\nSub1 has the role-based access control (RBAC) role assignments shown in the following table.\n\n![Exhibit](img/S345-stem-3.png){w=369}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -11733,15 +11733,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **Automation1 lê o Vault1:** Não. A Identity1 só tem acesso no RG2.\n- **Identity2 no Automation2:** Sim. Acesso na Sub1 inteira.\n- **VM1:** Sim. A Identity3 tem acesso no RG1, onde fica o Vault1.",
     "docs": [
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -11751,7 +11751,7 @@ SIM.registerQuestions("SC-300", [
     "src": 346,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains an Azure Automation account named Automation1.\n\nYou need to grant Automation1 access to Azure resources. The solution must meet the following requirements:\n\n- Ensure that any permissions granted to Automation1 are removed when the account is deleted.\n- Minimize administrative effort.\n\nWhat should you use?",
     "options": [
@@ -11767,15 +11767,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Client secret / certificado:** precisam de rotação e não somem com a conta.\n- **User-assigned:** sobrevive à exclusão da conta (e suas permissões também).",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -11785,7 +11785,7 @@ SIM.registerQuestions("SC-300", [
     "src": 348,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Cross-tenant synchronization",
+    "topic": "Sincronização entre tenants",
     "type": "yesno",
     "stem": "You have two Microsoft Entra tenants named contoso.com and fabrikam.com. Contoso.com contains the users shown in the following table.\n\n![Exhibit](img/S348-stem-1.png){w=153}\n\nContoso.com contains the groups shown in the following table.\n\n![Exhibit](img/S348-stem-2.png){w=322}\n\nYou configure cross-tenant synchronization from contoso.com to fabrikam.com and enable cross-tenant synchronization for User3 and Group2.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -11818,7 +11818,7 @@ SIM.registerQuestions("SC-300", [
     "src": 349,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Self-service sign-up",
+    "topic": "Cadastro por autoatendimento",
     "type": "single",
     "stem": "You have a Microsoft Exchange organization that uses an SMTP address space of contoso.com.\n\nSeveral users use their contoso.com email address for self-service sign-up to Microsoft Entra.\n\nYou gain global administrator privileges to the Microsoft Entra tenant that contains the self-signed users.\n\nYou need to prevent the users from creating user accounts in the contoso.com Microsoft Entra tenant for self-service sign-up to Microsoft 365 services. Which PowerShell cmdlet should you run?",
     "options": [
@@ -11842,7 +11842,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/self-service-sign-up-overview"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -11890,7 +11890,7 @@ SIM.registerQuestions("SC-300", [
     "src": 351,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription that contains a user named User1. You need to ensure that User1 can create access reviews for Microsoft Entra roles. The solution must use the principle of least privilege. Which role should you assign to User1?",
     "options": [
@@ -11906,11 +11906,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Identity Governance Administrator:** revisões de grupos e apps, não de funções do Entra.\n- **User Access Administrator:** Azure RBAC.\n- **User Administrator:** não gerencia funções privilegiadas.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -11920,7 +11920,7 @@ SIM.registerQuestions("SC-300", [
     "src": 352,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Conditional Access — templates",
+    "topic": "Acesso Condicional — modelos",
     "type": "single",
     "stem": "You have a Microsoft Entra tenant that contains the users shown in the following table.\n\n![Exhibit](img/S352-stem-1.png){w=355}\n\nAdmin4 creates a Conditional Access policy named Policy1 by using the Require multifactor authentication for Azure management template.\n\nWhich users will be required to use multi-factor authentication (MFA) the next time they sign in?",
     "options": [
@@ -11946,7 +11946,7 @@ SIM.registerQuestions("SC-300", [
     "src": 353,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Access packages",
+    "topic": "Pacotes de acesso",
     "type": "yesno",
     "stem": "You have a Microsoft 365 E5 subscription that contains a Microsoft Teams team named Team1 and two Microsoft 365 groups named Group1 and Group2. The subscription contains the users shown in the following table.\n\n![Exhibit](img/S353-stem-1.png){w=346}\n\nYou create an access package that has the following settings:\n\n- Name: Package1\n- Resource roles:\n  - Team1: Owner\n- Users who can request access: For users in your directory o Specific Users and Groups: Group1\n- Require approval: Yes o Require requestor justification: No o How many stages: 1 o First Approver: Team1, User3 o Require approver justification: Yes\n- Enable new requests: Yes\n- Expiration:\n  - Access package assignments expire: 7 days o Users can request specific timeline: Yes\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -11979,7 +11979,7 @@ SIM.registerQuestions("SC-300", [
     "src": 354,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription that contains a Microsoft SharePoint Online site named Site1 and a Microsoft Teams team named Team1. The subscription contains five security groups named Group1, Group2, Group3, Group4, and Group5.\n\nYou need to implement access packages for Site1 and Team1. The solution must meet the following requirements:\n\n- Members of Group3 must be able to request access to Site1 only.\n- Members of Group1 must be able to request access to Site1 and Team1.\n- Members of Group4 must be able to request access to Site1 and Team1.\n- Only members of Group2 must be able to approve access package requests from Group1 members.\n- Only members of Groups must be able to approve access package requests from Group3 and Group4 members.\n\nWhat h the minimum number of access packages you should create?",
     "options": [
@@ -11996,11 +11996,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **3, 4 ou 5 pacotes:** um pacote aceita várias políticas, cada uma com solicitantes e aprovadores próprios.\n\n**Dica de prova:** Separe pacotes por **conjunto de recursos**, e políticas por **quem solicita e quem aprova**.",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -12026,15 +12026,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Access policy:** controla o login de usuários em apps.\n- **App permission policy:** é o nome antigo das OAuth policies; a resposta canônica é OAuth app policy.\n- **Endpoint protection:** Intune/Defender for Endpoint.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -12044,7 +12044,7 @@ SIM.registerQuestions("SC-300", [
     "src": 357,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains a virtual machine named VM1. VM1 has the following configurations:\n\n- Private IP address: 172.16.1.5\n- Public IP address: 108.143.161.25\n- System-assigned managed identity status: On\n\nYou install an app named App1 on VM1.\n\nYou need to configure App1 to request a managed identity app-only access token.\n\nWhich IP address should App1 use for the request?",
     "options": [
@@ -12060,15 +12060,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **IP público:** o IMDS não é exposto externamente.\n- **127.0.0.1:** localhost não é o endpoint do IMDS.\n- **IP privado da VM:** não atende requisições de token.\n\n**Dica de prova:** Exemplo: curl -H \"Metadata:true\" \"http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/\".",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -12120,7 +12120,7 @@ SIM.registerQuestions("SC-300", [
     "src": 361,
     "domain": 1,
     "skill": "1.4",
-    "topic": "Pass-through authentication",
+    "topic": "Autenticação de passagem",
     "type": "single",
     "stem": "Your network contains an on-premises Active Directory Domain Services (AD DS) domain that syncs user accounts with a Microsoft 365 E5 subscription. You need to ensure that on-premises account lockout policies are applied to Microsoft Entra sign-ins.\n\nWhat should you configure?",
     "options": [
@@ -12150,7 +12150,7 @@ SIM.registerQuestions("SC-300", [
     "src": 365,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Terms of use",
+    "topic": "Termos de uso",
     "type": "single",
     "stem": "You have a Microsoft Entra tenant that uses Microsoft Entra ID Premium licenses.\n\nYou plan to configure a terms of use (ToU) for the tenant.\n\nYou need to upload the ToU document.\n\nWhich format should you use for the document?",
     "options": [
@@ -12176,7 +12176,7 @@ SIM.registerQuestions("SC-300", [
     "src": 366,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Terms of use",
+    "topic": "Termos de uso",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription.\n\nYou need to ensure that users are prompted to accept a custom terms of use (ToU) agreement when they sign in to the subscription.\n\nWhat should you configure?",
     "options": [
@@ -12202,7 +12202,7 @@ SIM.registerQuestions("SC-300", [
     "src": 368,
     "domain": 1,
     "skill": "1.2",
-    "topic": "Custom security attributes",
+    "topic": "Atributos de segurança personalizados",
     "type": "hotarea",
     "stem": "You have a Microsoft Entra tenant that contains the users shown in the following table.\n\n![Exhibit](img/S368-stem-1.png){w=334}\n\nThe tenant contains the identities shown in the following table.\n\n![Exhibit](img/S368-stem-2.png){w=261}\n\nWhich users can create custom security attributes, and to which identities can the attributes be assigned? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -12316,7 +12316,7 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mginvitation"
       },
       {
-        "t": "B2B guest user properties - Microsoft Entra External ID",
+        "t": "Propriedades de usuários convidados B2B - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/user-properties"
       },
       {
@@ -12347,11 +12347,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Notificação do app:** exige 2 métodos para ser oferecida.\n- **FIDO2 / Teams:** não são métodos de SSPR.",
     "docs": [
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
@@ -12389,15 +12389,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 lê segredos do Vault1:** Não. Reader não lê conteúdo, e o Secrets User dele está no RG2.\n- **User2 lê o Vault2:** Sim. Tem Secrets User no RG2.\n- **User3 atualiza a VM1:** Sim. É Owner do RG1.",
     "docs": [
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       }
     ]
@@ -12446,15 +12446,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -12570,15 +12570,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -12608,15 +12608,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -12654,15 +12654,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -12692,15 +12692,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -12744,7 +12744,7 @@ SIM.registerQuestions("SC-300", [
     "src": 387,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Managed identities",
+    "topic": "Identidades gerenciadas",
     "type": "single",
     "stem": "You have an Azure subscription that contains two virtual machines named VM1 and VM2 and an Azure SQL managed instance named SQL1.\n\nYou need to ensure that VM1 and VM2 can retrieve data from SQL1. The solution must minimize administrative effort.\n\nWhat should you create first?",
     "options": [
@@ -12760,15 +12760,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Certificado:** precisa de gestão e rotação.\n- **SAS:** é de Storage, não de SQL.\n- **Usuário do Entra:** exige senha/MFA, o que não é próprio de VMs.\n\n**Dica de prova:** No SQL MI: CREATE USER [nome-da-identidade] FROM EXTERNAL PROVIDER.",
     "docs": [
       {
-        "t": "Managed identities for Azure resources - Managed identities for Azure resources",
+        "t": "Identidades gerenciadas para recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
       },
       {
-        "t": "Apps & service principals in Microsoft Entra ID - Microsoft identity platform",
+        "t": "Aplicativos e entidades de serviço no Microsoft Entra ID - Plataforma de identidade da Microsoft",
         "u": "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals"
       },
       {
-        "t": "Introduction to Active Directory service accounts - Microsoft Entra",
+        "t": "Introdução às contas de serviço do Active Directory - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-on-premises"
       }
     ]
@@ -12778,7 +12778,7 @@ SIM.registerQuestions("SC-300", [
     "src": 389,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "yesno",
     "stem": "You have a Microsoft Entra tenant that contains two groups named Group1 and Group2 and the users shown in the following table.\n\n![Exhibit](img/S389-stem-1.png){w=504}\n\nGroup2 is a member of Group1.\n\nYou configure an access review that has the following settings:\n\n- Name: Review1\n- Select what to review: Teams + Groups\n- Review scope: Select Teams + groups\n- Group: Group1\n- Scope: Guest users only\n- Select reviewers: Group owners(s)\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -12797,11 +12797,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User3 revisa o User1 / User4:** Não. São membros (não guests), fora do escopo \"Guest users only\".\n- **User3 revisa o User5:** Sim. Guest indireto (via Group2) e o User3 é dono do Group1.\n\n**Dica de prova:** Membros indiretos aparecem na revisão, mas a remoção só ocorre em membros diretos.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -12811,7 +12811,7 @@ SIM.registerQuestions("SC-300", [
     "src": 391,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "yesno",
     "stem": "You have a Microsoft Entra tenant that contains the identities shown in the following table.\n\n![Exhibit](img/S391-stem-1.png){w=346}\n\nGroup1 has the following configurations:\n\n- Owners: User1, User4\n- Members: User1, Managed2, Group2\n\nYou create an access review that has the following settings:\n\n- Name: Review1\n- Review scope: Select Teams + Groups\n- Group: Group1\n- Scope: All users\n- Select reviewers: Group owner(s)\n\nThe Fallback reviewers setting is NOT configured.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -12830,11 +12830,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que todos são Sim:** o owner revisor (User1) vê todos os membros no escopo All users: ele mesmo, o service principal (Managed2) e o membro indireto (User3).\n\n**Dica de prova:** Revisores podem revisar o próprio acesso se forem membros; configure \"Prevent reviewers from reviewing their own access\" se necessário.",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]
@@ -12844,7 +12844,7 @@ SIM.registerQuestions("SC-300", [
     "src": 394,
     "domain": 1,
     "skill": "1.2",
-    "topic": "Hybrid join e Intune",
+    "topic": "Ingresso híbrido e Intune",
     "type": "hotarea",
     "stem": "Your on-premises network contains an Active Directory Domain Services (AD DS) domain. The domain contains computers that run Windows 11.\n\nYou have a Microsoft 365 E5 subscription.\n\nYou plan to enable hybrid join and enroll the computers in Microsoft Intune. You need to recommend the software that should be deployed to the domain, and the actions that should be performed in Intune.\n\nWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
     "slots": [
@@ -12899,7 +12899,7 @@ SIM.registerQuestions("SC-300", [
     "src": 396,
     "domain": 1,
     "skill": "1.1",
-    "topic": "Company branding",
+    "topic": "Identidade visual da empresa",
     "type": "single",
     "stem": "You have a Microsoft 365 subscription.\n\nYou need to ensure that when users access the Microsoft 365 portal from Microsoft Edge and have their browser language set to Spanish, they are presented with a Spanish sign-in form.\n\nWhat should you do in the Microsoft Entra admin center?",
     "options": [
@@ -13083,15 +13083,15 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Cloud discovery:** identifica apps não gerenciados; não habilita sessão.\n- **OAuth app policy:** governa apps OAuth.\n- **Traffic forwarding profile:** é do GSA, não do MDCA.\n\n**Dica de prova:** Depois do SSO: CA com \"Use Conditional Access App Control\" → session policies no MDCA.",
     "docs": [
       {
-        "t": "Create session policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de sessão - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/session-policy-aad"
       },
       {
-        "t": "Control cloud apps with policies - Microsoft Defender for Cloud Apps",
+        "t": "Controlar aplicativos de nuvem com políticas - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies"
       },
       {
-        "t": "Create access policies - Microsoft Defender for Cloud Apps",
+        "t": "Criar políticas de acesso - Microsoft Defender for Cloud Apps",
         "u": "https://learn.microsoft.com/en-us/defender-cloud-apps/access-policy-aad"
       }
     ]
@@ -13135,7 +13135,7 @@ SIM.registerQuestions("SC-300", [
     "src": 404,
     "domain": 4,
     "skill": "4.4",
-    "topic": "Diagnostic settings",
+    "topic": "Configurações de diagnóstico",
     "type": "single",
     "stem": "You have a Microsoft 365 E5 subscription and an Azure subscription. You plan to analyze Microsoft Entra sign-in logs by using Azure Monitor. You need to configure diagnostic settings for Microsoft Entra. Which destination should you configure for the sign-in logs?",
     "options": [
@@ -13188,15 +13188,15 @@ SIM.registerQuestions("SC-300", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview"
       },
       {
-        "t": "Tutorial - Use a Windows VM/VMSS to access Azure resources - Managed identities for Azure resources",
+        "t": "Tutorial - Usar uma VM/VMSS Windows para acessar recursos do Azure - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-windows-managed-identities-vm-access"
       },
       {
-        "t": "Use managed identities on a virtual machine to acquire access token - Managed identities for Azure resources",
+        "t": "Usar identidades gerenciadas em uma máquina virtual para obter um token de acesso - Identidades gerenciadas para recursos do Azure",
         "u": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-use-vm-token"
       },
       {
-        "t": "Grant permission to applications to access an Azure key vault using Azure RBAC",
+        "t": "Conceder permissão a aplicativos para acessar um cofre de chaves do Azure usando o Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
       }
     ]
@@ -13206,7 +13206,7 @@ SIM.registerQuestions("SC-300", [
     "src": 408,
     "domain": 1,
     "skill": "1.2",
-    "topic": "Custom security attributes",
+    "topic": "Atributos de segurança personalizados",
     "type": "yesno",
     "stem": "You have a Microsoft 365 E5 subscription that contains two attribute sets named Set1 and Set2. The subscription contains the users shown in the following table.\n\n![Exhibit](img/S408-stem-1.png){w=506}\n\nYou have the custom security attributes shown in the following table.\n\n![Exhibit](img/S408-stem-2.png){w=530}\n\nYou assign User2 the Attribute Definition Administrator role for Set1. For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -13247,7 +13247,7 @@ SIM.registerQuestions("SC-300", [
     "src": 409,
     "domain": 4,
     "skill": "4.1",
-    "topic": "Entitlement management",
+    "topic": "Gerenciamento de direitos",
     "type": "single",
     "stem": "You have a Microsoft Entra tenant that contains an access package named Package1 and a user named User1. Package1 is configured as shown in the following exhibit.\n\n![Exhibit](img/S409-stem-1.png){w=611}\n\nYou need to ensure that User1 can modify the review frequency of Package1. The solution must use the principle of least privilege.\n\nWhich role should you assign to User1?",
     "options": [
@@ -13263,11 +13263,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Por que não as outras**\n- **Privileged Role / External IdP / Security Administrator:** não gerenciam access packages.\n\n**Dica de prova:** Alternativas de menor escopo: Catalog owner ou Access package manager do catálogo do Package1.",
     "docs": [
       {
-        "t": "What is entitlement management? - Microsoft Entra ID Governance",
+        "t": "O que é o gerenciamento de direitos? - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview"
       },
       {
-        "t": "Common scenarios in entitlement management - Microsoft Entra ID Governance",
+        "t": "Cenários comuns no gerenciamento de direitos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-scenarios"
       }
     ]
@@ -13343,7 +13343,7 @@ SIM.registerQuestions("SC-300", [
     "src": 413,
     "domain": 4,
     "skill": "4.2",
-    "topic": "Access reviews",
+    "topic": "Revisões de acesso",
     "type": "yesno",
     "stem": "You have a Microsoft Entra tenant that contains the users shown in the following table.\n\n![Exhibit](img/S413-stem-1.png){w=217}\n\nThe tenant contains the Microsoft 365 groups shown in the following table.\n\n![Exhibit](img/S413-stem-2.png){w=597}\n\nYou create an access review named Access1 that has the following settings:\n\n- Select what to review: Teams + Groups\n- Review scope: All Microsoft groups with guest users\n- Scope: Guest users only\n- Select reviewers: Users review their own access\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
     "statements": [
@@ -13362,11 +13362,11 @@ SIM.registerQuestions("SC-300", [
     "details": "**Item a item**\n- **User1 / User3:** membros não fazem a autorrevisão num escopo \"Guest users only\".\n- **User2 no Group3:** grupos dinâmicos não entram na revisão (a associação é definida pela regra).",
     "docs": [
       {
-        "t": "Create an access review of groups and applications - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de grupos e aplicativos - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
       },
       {
-        "t": "Create an access review of Azure resource and Microsoft Entra roles in PIM - Microsoft Entra ID Governance",
+        "t": "Criar uma revisão de acesso de funções de recursos do Azure e do Microsoft Entra no PIM - Microsoft Entra ID Governance",
         "u": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
       }
     ]

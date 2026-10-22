@@ -1,4 +1,4 @@
-=== L21 | VNets, sub-redes, NICs e peering | A | 60
+=== L21 | VNets, sub-redes, NICs e emparelhamento | A | 60
 questions: Q032,Q1133,Q580,Q528,Q530,Q532,Q630,Q1152,Q554,Q702,Q564,Q604,Q833,Q624,Q1142,Q1143,Q1116,Q652,Q155,Q170,Q171,Q172,Q185
 predict: Q604
 ## overview
@@ -67,7 +67,7 @@ Tente criar a sub-rede 10.21.1.0/24 duas vezes na mesma VNet: conflito de endere
 - https://learn.microsoft.com/en-us/azure/virtual-network/update-virtual-network-peering-address-space
 - https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface
 
-=== L22 | NSG e application security groups | A | 60
+=== L22 | NSG e grupos de segurança de aplicativo | A | 60
 questions: Q033,Q582,Q574,Q576,Q578,Q720,Q596,Q618,Q898,Q648,Q706,Q198,Q731,Q791,Q841,Q839,Q837,Q562,Q209,Q801,Q620,Q656,Q658,Q696,Q1001
 predict: Q731
 ## overview
@@ -203,7 +203,7 @@ Desligue o IP forwarding da NIC da vm3: os pacotes chegam ao NVA e são descarta
 - https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview
 - https://learn.microsoft.com/en-us/azure/network-watcher/next-hop-overview
 
-=== L24 | Azure DNS: zonas públicas, privadas e DNS customizado | A | 60
+=== L24 | Azure DNS: zonas públicas, privadas e DNS personalizado | A | 60
 questions: Q080,Q083,Q586,Q632,Q704,Q550,Q560,Q592,Q680,Q682,Q727,Q614,Q636,Q674,Q700,Q726,Q1045,Q886
 predict: Q700
 ## overview

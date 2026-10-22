@@ -1,4 +1,4 @@
-=== L15 | ARM templates e Bicep | A | 60
+=== L15 | Modelos ARM e Bicep | A | 60
 questions: Q013,Q014,Q015,Q184,Q194,Q195,Q196,Q162,Q516,Q534,Q1089,Q1026,Q873,Q870,Q268,Q972,Q526,Q1067,Q1047,Q540,Q020,Q156,Q049
 predict: Q534
 ## overview
@@ -186,7 +186,7 @@ Crie a VM com `--custom-data` apontando para um YAML inválido: a VM sobe, mas o
 - https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/redeploy-to-new-node-windows
 - https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview
 
-=== L17 | Availability sets, zonas e proximity placement groups | A | 45
+=== L17 | Conjuntos de disponibilidade, zonas e grupos de posicionamento por proximidade | A | 45
 questions: Q018,Q019,Q129,Q164,Q174,Q506,Q063,Q199,Q600,Q193,Q1095
 predict: Q174
 ## overview
@@ -383,7 +383,7 @@ Apague o registro TXT asuid e tente validar o domínio: a verificação falha.
 - https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain
 - https://learn.microsoft.com/en-us/azure/app-service/manage-backup
 
-=== L20 | Containers: ACR, Container Instances e Container Apps | A | 60
+=== L20 | Contêineres: ACR, Container Instances e Container Apps | A | 60
 questions: Q1114,Q1150,Q1127,Q1132,Q1136,Q1137,Q1138,Q1139,Q1128,Q1043,Q128,Q924,Q1120,Q177,Q1131,Q1030,Q1034
 predict: Q1114
 ## overview

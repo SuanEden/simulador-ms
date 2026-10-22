@@ -1,4 +1,4 @@
-=== L23 | Entitlement management: catálogos, access packages e externos | B | 75
+=== L23 | Gerenciamento de direitos: catálogos, pacotes de acesso e usuários externos | B | 75
 questions: Q354,Q031,Q097,Q126,Q173,Q180,Q187,Q213,Q219,Q247,Q281,Q409,Q192,Q353
 predict: Q354
 ## overview
@@ -69,7 +69,7 @@ Remova as atribuições, apague o pacote, o catálogo e a connected organization
 - https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users
 - https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate
 
-=== L24 | Access reviews | B | 75
+=== L24 | Revisões de acesso | B | 75
 questions: Q179,Q138,Q163,Q164,Q168,Q169,Q170,Q171,Q175,Q177,Q189,Q190,Q191,Q194,Q196,Q234,Q240,Q319,Q351,Q389,Q391,Q413,Q068
 predict: Q179
 ## overview
@@ -203,7 +203,7 @@ Volte as Role settings do User Administrator ao padrão; remova as atribuições
 - https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role
 - https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups
 
-=== L26 | Terms of use | A | 30
+=== L26 | Termos de uso | A | 30
 questions: Q162,Q193,Q329,Q365,Q366,Q166
 predict: Q329
 ## overview

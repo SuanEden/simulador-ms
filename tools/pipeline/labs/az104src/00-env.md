@@ -1,4 +1,4 @@
-=== ENV | Ambiente de referência dos labs
+=== ENV | Ambiente de referência dos laboratórios
 ## overview
 Os labs da AZ-104 rodam na sua assinatura Azure de laboratório (MSDN/Visual Studio) vinculada ao tenant de lab. Quase tudo é feito pelo portal e pela Cloud Shell. Troque os nomes se algo mudou.
 

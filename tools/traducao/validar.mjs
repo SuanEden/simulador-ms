@@ -56,6 +56,13 @@ for (const codigo of ['MD-102','SC-300','AZ-104']) {
     const hash = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex');
     assert.equal(hash,blobs.get(arquivo),`Imagem alterada: ${arquivo}`);
   }
+  const fontes = `tools/pipeline/labs/${codigo.toLowerCase().replace('-','')}src`;
+  const normalizarTitulos = t => t.replace(/^=== (ENV|L\d+) \| [^|\r\n]+/gm,'=== $1 | TITULO').replace(/\r\n/g,'\n');
+  for (const nome of fs.readdirSync(fontes).filter(n => n.endsWith('.md'))) {
+    const arquivo = `${fontes}/${nome}`;
+    const original = execFileSync('git',['show',`${base}:${arquivo}`],{encoding:'utf8',maxBuffer:2*1024*1024});
+    assert.equal(normalizarTitulos(fs.readFileSync(arquivo,'utf8')),normalizarTitulos(original),`Corpo da fonte de laboratório alterado fora do lote de títulos: ${arquivo}`);
+  }
 }
 const html = fs.readFileSync('index.html','utf8');
 for (const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(m[1]);

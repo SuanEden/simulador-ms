@@ -768,7 +768,7 @@ function vHome(app){
   const sess = DB.session;
   app.innerHTML = topbar() + `<div class="wrap">
     <h1>Escolha a prova</h1>
-    <p class="sub">Cada prova é uma pasta em <code>exams/</code>. O app é o mesmo para todas.</p>
+    <p class="sub">Escolha uma certificação para iniciar um simulado, treinar ou consultar os materiais de estudo.</p>
     ${SIM._errors.length ? `<div class="notice bad" style="margin-bottom:16px"><b>Problemas ao carregar:</b><ul class="vlist">${SIM._errors.map(e=>`<li>${esc(e)}</li>`).join("")}</ul></div>` : ""}
     ${sess && SIM.exams[sess.exam] ? `<div class="notice info row" style="margin-bottom:16px;justify-content:space-between"><span>Há um simulado de <b>${esc(sess.exam)}</b> em andamento (iniciado ${fmtDate(sess.created)}).</span><span class="row"><button class="btn sm primary" id="resume">Retomar</button><button class="btn sm danger" id="discard">Descartar</button></span></div>` : ""}
     <div class="grid g3">
@@ -825,7 +825,7 @@ function vExamHome(app){
         </div>
         <div style="margin-top:10px">
           <label class="chk"><input type="checkbox" id="s-cases" ${s.cases?"checked":""}><span>Incluir estudo de caso<small>Uma seção de caso; ao sair dela, não dá para voltar.</small></span></label>
-          <label class="chk"><input type="checkbox" id="s-series" ${s.series?"checked":""}><span>Incluir série "Does this meet the goal?"<small>Cada questão da série trava depois de respondida.</small></span></label>
+          <label class="chk"><input type="checkbox" id="s-series" ${s.series?"checked":""}><span>Incluir série "Isso atende ao objetivo?"<small>Cada questão da série trava depois de respondida.</small></span></label>
         </div>
         <details class="adv"><summary>Mais opções</summary>
           <div class="set" style="margin-top:8px">
@@ -1485,7 +1485,7 @@ function vLab(app){
           <textarea id="lab-notes" class="inp" rows="5" style="margin-top:5px;resize:vertical" placeholder="O que você observou, valores, erros…">${esc(st.notes||"")}</textarea>
         </div>
         <div class="card toc"><h3>Seções</h3>${secs.map(([k,t]) => `<a href="#ls-${k}" data-anchor="ls-${k}">${t}</a>`).join("")}</div>
-        ${qs.length ? `<div class="card"><h3>Questões do lab</h3><p class="muted" style="font-size:13px;margin:0 0 10px">Treine todas depois de fazer o lab.</p>
+        ${qs.length ? `<div class="card"><h3>Questões do laboratório</h3><p class="muted" style="font-size:13px;margin:0 0 10px">Treine todas depois de fazer o laboratório.</p>
           <div class="row" style="gap:6px;margin-bottom:12px">${qs.map(qid => `<button class="pill" style="cursor:pointer;background:none" data-q1="${esc(qid)}">${esc(qid)}</button>`).join("")}</div>
           <button class="btn sm" id="lab-train">Treinar as ${qs.length} questões</button></div>` : ""}
       </aside>

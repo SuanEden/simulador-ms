@@ -49,16 +49,25 @@ Status: **em andamento; tradução integral ainda não concluída**.
 - `lote-05-casos-sc300.json` e `lote-06-casos-az104.json`: todas as abas e textos dos seis estudos de caso SC-300/AZ-104. Os oito estudos de caso das três provas estão traduzidos; revisão final ainda necessária.
 - `competencias.json` + `node tools/traducao/competencias.mjs`: as 44 competências e seus 263 itens, nas três provas. Os títulos dos documentos vinculados ainda estão em inglês. Os snapshots dos guias oficiais continuam originais.
 - Imagens MD-102 Q005, Q017, Q028, Q044, Q085 e Q094: capturas inspecionadas; tradução dos rótulos e valores acrescentada ao enunciado, sem comentários sobre o gabarito. URLs presentes nas capturas foram reproduzidas literalmente e constam como adições permitidas no validador.
+- `lote-08-sc300-q001-q020.json`: 20 enunciados e campos de resposta SC-300; 14 capturas inspecionadas e traduzidas textualmente junto às imagens, incluindo tabelas e telas do Azure AD Connect.
+- `lote-09-az104-q001-q036.json`: os primeiros 20 enunciados e campos de resposta AZ-104 (os IDs não são contíguos).
+- `rotulos.json` + `node tools/traducao/rotulos.mjs`: 320 ocorrências de tópicos descritivos traduzidas por correspondência exata de campo; títulos dos 89 laboratórios e dos três ambientes, com cabeçalhos das 16 fontes Markdown sincronizados. **Corpos dos laboratórios ainda pendentes de revisão terminológica.**
+- `titulos-documentos.json` + `node tools/traducao/titulos-documentos.mjs`: 99 títulos de documentação traduzidos, em 1.486 ocorrências nos três bancos e catálogos; um título que é apenas nome de cmdlet preservado. Os demais títulos continuam pendentes.
+- `lote-10-md102-q113-q154.json`, `lote-11-md102-imagens-restantes.json` e `lote-12-md102-q155-q212.json`: total MD-102 de **191/241** enunciados e campos de resposta traduzidos. **Todas as 12 imagens MD-102** inspecionadas e acompanhadas de tradução textual. Há uma questão traduzida adiantada, Q214; não retraduzir.
+- `README.md`, `LEIA-ME.md` e `tools/pipeline/PROCESSO.md`: instruções e rótulos atualizados; tradução parcial sinalizada e processo de reaplicação documentado.
 
 ## Verificações realizadas
 
 - `node tools/traducao/validar.mjs`: aprovado após os lotes 01 e 02. As 1.026 questões mantêm IDs, ordem, tipos, número/ordem estrutural das alternativas, gabaritos atuais e originais, pesos, referências, vínculos e bytes das imagens. Comandos em blocos, URLs e marcadores funcionais preservados. Sintaxe do JavaScript da interface e dos registros válida.
 - Playwright/Chrome, abertura direta por `file:///`, 1440 × 1000: três certificações selecionáveis; bancos com 241/337/448 linhas, zero erros estruturais e nenhuma imagem ausente. Q005 exibe a imagem e sua tradução textual. Nenhuma exceção JavaScript.
 - Evidência e scripts temporários de navegador: `../Certificados-102-validacao/` (fora da distribuição).
+- E2E Playwright/Chrome: seis tipos respondidos pela interface em treino; correção, explicação, detalhes, documentação e competência exibidos; 50% ao acertar um de dois itens. Três simulados de cinco questões concluídos com 1000/1000, revisão e histórico funcionando. Retomada após recarregar; persistência de respostas, estatísticas, estado e anotações de laboratório com acentos. Nenhuma exceção ou erro/aviso de console. As fontes remotas foram substituídas por CSS vazio somente no teste para validar sem depender do Google Fonts.
+- Capturas inspecionadas em 1440 × 1000 e tela inicial em 390 × 844; tela inicial móvel sem rolagem horizontal. Outros fluxos móveis ainda não foram testados.
+- A conferência dos Markdown detectou e permitiu corrigir um erro no script de atualização de cabeçalhos ENV antes do commit. O validador agora compara também os corpos e a estrutura dessas fontes com o original, aceitando apenas os títulos deste lote.
 
 ## Próxima etapa
 
-Continuar MD-102 a partir de Q113 (índice 100 do banco). Iniciar os lotes de enunciados/alternativas SC-300 e AZ-104. Traduzir os títulos dos links dos três catálogos e das explicações; revisar os tópicos, as explicações/detalhes, laboratórios/fontes Markdown e todas as imagens restantes. Nenhum banco está marcado como integralmente concluído.
+Continuar MD-102 a partir de Q213 (índice 190), pulando Q214 já traduzida. Continuar SC-300 a partir de Q021 e AZ-104 a partir de Q037 (sempre usar os IDs realmente presentes). Traduzir os títulos de links restantes; revisar os tópicos, as explicações/detalhes e os corpos dos laboratórios/fontes Markdown. Inspecionar e transcrever as imagens SC-300 restantes e todas as AZ-104. Nenhum banco está marcado como integralmente concluído.
 
 ## Validação prevista
 

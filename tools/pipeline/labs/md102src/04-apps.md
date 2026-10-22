@@ -1,4 +1,4 @@
-=== L24 | Apps Win32: empacotamento, detecção, dependências e supersedência | A | 60
+=== L24 | Aplicativos Win32: empacotamento, detecção, dependências e supersedência | A | 60
 questions: Q009,Q084,Q223,Q269,Q127,Q156,Q247
 predict: Q009
 ## overview
@@ -86,7 +86,7 @@ Desinstale (atribuição Uninstall) e apague MD102-L24-*.
 - https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-win32-add
 - https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-win32-supersedence
 
-=== L25 | Microsoft 365 Apps: Intune, ODT, OCT e Cloud Policy | B | 90
+=== L25 | Microsoft 365 Apps: Intune, ODT, OCT e Política de Nuvem | B | 90
 questions: Q006,Q014,Q085,Q248,Q013,Q154,Q083,Q222,Q197
 predict: Q006
 ## overview
@@ -161,7 +161,7 @@ Desinstale o Office (atribuição Uninstall ou ODT com Remove), apague a Cloud P
 - https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool
 - https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/overview-cloud-policy
 
-=== L26 | Proteção de apps (MAM) e configuração de apps | C | 60
+=== L26 | Proteção de aplicativos (MAM) e configuração de aplicativos | C | 60
 questions: Q157,Q005,Q008,Q081,Q153,Q204,Q253,Q219,Q155,Q221,Q007,Q010,Q082,Q125,Q246
 predict: Q157
 ## overview
@@ -288,7 +288,7 @@ Restaure o checkpoint da W11-LAB03 (o mais rápido) e apague o perfil.
 - https://learn.microsoft.com/en-us/intune/intune-service/configuration/kiosk-settings-windows
 - https://learn.microsoft.com/en-us/deployedge/microsoft-edge-configure-kiosk-mode
 
-=== L28 | Scripts e Remediations (extra) | A | 40
+=== L28 | Scripts e Correções (extra) | A | 40
 questions:
 predict:
 ## overview
@@ -344,7 +344,7 @@ Apague MD102-L28-* e a chave `HKLM\SOFTWARE\MD102`.
 ## refs
 - https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/remediations
 
-=== L29 | Endpoint analytics, relatórios e Log Analytics do Intune | A | 60
+=== L29 | Análise de endpoint, relatórios e Log Analytics do Intune | A | 60
 questions: Q087,Q016,Q093,Q132,Q216,Q217,Q249,Q141,Q155,Q190,Q254,Q031,Q210
 predict: Q087
 ## overview
@@ -550,7 +550,7 @@ Retire o celular pessoal do Intune; desvincule o Managed Google Play se não for
 - https://learn.microsoft.com/en-us/intune/intune-service/enrollment/connect-intune-android-enterprise
 - https://learn.microsoft.com/en-us/intune/intune-service/protect/software-updates-ios
 
-=== L32 | Windows 365 (sem licença no lab) | D | 20
+=== L32 | Windows 365 (sem licença no laboratório) | D | 20
 questions: Q250,Q258,Q260,Q261
 predict: Q260
 ## overview

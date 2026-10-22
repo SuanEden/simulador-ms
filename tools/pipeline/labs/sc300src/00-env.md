@@ -1,4 +1,4 @@
-=== ENV | Ambiente de referência dos labs
+=== ENV | Ambiente de referência dos laboratórios
 ## overview
 Os labs da SC-300 usam o seu tenant de lab e a infraestrutura híbrida que já existe. Troque os nomes se algo mudou.
 

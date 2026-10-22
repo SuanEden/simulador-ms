@@ -1,5 +1,11 @@
 # Processo padrão — nova prova no SimuladorMS
 
+## Manutenção da tradução para português brasileiro
+
+A tradução da distribuição é feita em lotes registrados em `tools/traducao/`. Os snapshots e as fontes históricas da curadoria preservam o idioma original. Depois de regenerar um banco, reaplique os lotes na ordem indicada em `TRADUCAO_STATUS.md` e execute o validador antes de usar a distribuição.
+
+Os gabaritos do estado anterior à tradução são preservados. Suspeitas de erro devem ser registradas separadamente, sem correção automática durante a tradução. O relatório de pendências distingue conteúdo ainda não traduzido de produtos, comandos, URLs, caminhos e propriedades mantidos intencionalmente.
+
 Toda prova nova passa pelas mesmas cinco etapas. Esta pasta guarda as ferramentas e os insumos usados nas provas já feitas (MD-102, SC-300 e AZ-104), para que qualquer atualização futura parta do mesmo ponto.
 
 > Para o Claude, numa sessão nova: peça ao Newton o `SimuladorMS.zip` atual e o dump novo. Descompacte o app em `/home/claude/SimuladorMS` e copie `tools/pipeline/enrich` para `/home/claude/enrich`. Os scripts usam esses caminhos.

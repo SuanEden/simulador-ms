@@ -1,4 +1,4 @@
-=== L08 | Storage accounts: tipos, redundância e tiers | A | 45
+=== L08 | Contas de armazenamento: tipos, redundância e camadas | A | 45
 questions: Q012,Q117,Q120,Q137,Q276,Q1146,Q104,Q134,Q148,Q107,Q270,Q125,Q278,Q238,Q823,Q825,Q244,Q896,Q141,Q213
 predict: Q276
 ## overview
@@ -71,7 +71,7 @@ Tente criar uma conta **Premium** com **GRS**: a opção não existe (Premium s�
 - https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy
 - https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration
 
-=== L09 | Firewall do storage, service endpoints e private endpoints | B | 60
+=== L09 | Firewall de armazenamento, endpoints de serviço e endpoints privados | B | 60
 questions: Q115,Q118,Q1144,Q1153,Q229,Q283,Q272,Q907,Q1101,Q1040
 predict: Q1153
 ## overview
@@ -145,7 +145,7 @@ Remova o service endpoint da snet-se mantendo a regra de VNet: o portal avisa e 
 - https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints
 - https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview
 
-=== L10 | Acesso a dados: chaves, SAS, stored access policies e RBAC | A | 60
+=== L10 | Acesso a dados: chaves, SAS, políticas de acesso armazenadas e RBAC | A | 60
 questions: Q223,Q269,Q135,Q266,Q280,Q224,Q102,Q255,Q145,Q106,Q284,Q1147,Q1148,Q1149,Q240,Q249,Q260,Q219,Q1125
 predict: Q284
 ## overview
@@ -236,7 +236,7 @@ Gere um SAS com hora de início no futuro e teste na hora: "Signature not valid 
 - https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory
 - https://learn.microsoft.com/en-us/azure/storage/blobs/storage-auth-abac
 
-=== L11 | Blob: lifecycle, versionamento, imutabilidade e replicação | B | 60
+=== L11 | Blob: ciclo de vida, controle de versão, imutabilidade e replicação | B | 60
 questions: Q138,Q144,Q212,Q226,Q281,Q215,Q232,Q227,Q275,Q143,Q146,Q827,Q931,Q279
 predict: Q212
 ## overview
@@ -317,7 +317,7 @@ Remova legal hold e (depois de vencer) a retenção; apague o RG. Políticas **l
 - https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview
 - https://learn.microsoft.com/en-us/azure/storage/blobs/blob-inventory
 
-=== L12 | Criptografia: chaves do cliente, encryption scopes e discos | B | 60
+=== L12 | Criptografia: chaves do cliente, escopos de criptografia e discos | B | 60
 questions: Q220,Q245,Q150,Q250,Q264,Q265
 predict: Q265
 ## overview

@@ -17,14 +17,14 @@ SIM.registerQuestions("AZ-104", [
     "src": 1,
     "domain": 1,
     "skill": "1.3",
-    "topic": "Tags",
+    "topic": "Marcas",
     "type": "single",
-    "stem": "Your company has serval departments. Each department has a number of virtual machines (VMs).\n\nThe company has an Azure subscription that contains a resource group named RG1.\n\nAll VMs are located in RG1.\n\nYou want to associate each VM with its respective department.\n\nWhat should you do?",
+    "stem": "Sua empresa tem vários departamentos. Cada departamento tem um conjunto de máquinas virtuais (VMs).\n\nA empresa tem uma assinatura do Azure que contém um grupo de recursos chamado RG1.\n\nTodas as VMs estão em RG1.\n\nVocê quer associar cada VM ao respectivo departamento.\n\nO que você deve fazer?",
     "options": [
-      "Create Azure Management Groups for each department.",
-      "Create a resource group for each department.",
-      "Assign tags to the virtual machines.",
-      "Modify the settings of the virtual machines."
+      "Criar grupos de gerenciamento do Azure para cada departamento.",
+      "Criar um grupo de recursos para cada departamento.",
+      "Atribuir marcas às máquinas virtuais.",
+      "Modificar as configurações das máquinas virtuais."
     ],
     "answer": 2,
     "scope": "in",
@@ -52,12 +52,12 @@ SIM.registerQuestions("AZ-104", [
     "skill": "3.2",
     "topic": "Criação de VM Linux (cloud-init)",
     "type": "single",
-    "stem": "You are planning to deploy an Ubuntu Server virtual machine to your company's Azure subscription.\n\nYou are required to implement a custom deployment that includes adding a particular trusted root certification authority (CA).\n\nWhich of the following should you use to create the virtual machine?",
+    "stem": "Você está planejando implantar uma máquina virtual Ubuntu Server na assinatura do Azure da sua empresa.\n\nVocê deve implementar uma implantação personalizada que inclua a adição de uma autoridade de certificação (CA) raiz confiável específica.\n\nQual das opções a seguir você deve usar para criar a máquina virtual?",
     "options": [
-      "The New-AzureRmVm cmdlet.",
-      "The New-AzVM cmdlet.",
-      "The Create-AzVM cmdlet.",
-      "The az vm create command."
+      "O cmdlet New-AzureRmVm.",
+      "O cmdlet New-AzVM.",
+      "O cmdlet Create-AzVM.",
+      "O comando az vm create."
     ],
     "answer": 3,
     "answer_original": 2,
@@ -92,14 +92,14 @@ SIM.registerQuestions("AZ-104", [
     "src": 12,
     "domain": 2,
     "skill": "2.2",
-    "topic": "Redundância de storage",
+    "topic": "Redundância de armazenamento",
     "type": "single",
-    "stem": "Your company has a Microsoft Azure subscription.\n\nThe company has datacenters in Los Angeles and New York.\n\nYou are configuring the two datacenters as geo-clustered sites for site resiliency.\n\nYou need to recommend an Azure storage redundancy option.\n\nYou have the following data storage requirements:\n\n- Data must be stored on multiple nodes.\n- Data must be stored on nodes in separate geographic locations.\n- Data can be read from the secondary location as well as from the primary location.\n\nWhich of the following Azure stored redundancy options should you recommend?",
+    "stem": "Sua empresa tem uma assinatura do Microsoft Azure.\n\nA empresa tem data centers em Los Angeles e Nova York.\n\nVocê está configurando os dois data centers como sites em um cluster geográfico para obter resiliência de site.\n\nVocê precisa recomendar uma opção de redundância de armazenamento do Azure.\n\nVocê tem os seguintes requisitos de armazenamento de dados:\n\n- Os dados devem ser armazenados em vários nós.\n- Os dados devem ser armazenados em nós em locais geográficos diferentes.\n- Os dados podem ser lidos no local secundário e no local primário.\n\nQual das opções de redundância de armazenamento do Azure a seguir você deve recomendar?",
     "options": [
-      "Geo-redundant storage",
-      "Read-only geo-redundant storage",
-      "Zone-redundant storage",
-      "Locally redundant storage"
+      "Armazenamento com redundância geográfica",
+      "Armazenamento com redundância geográfica somente leitura",
+      "Armazenamento com redundância de zona",
+      "Armazenamento com redundância local"
     ],
     "answer": 1,
     "scope": "in",
@@ -125,16 +125,16 @@ SIM.registerQuestions("AZ-104", [
     "src": 13,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Templates ARM — histórico de implantação",
+    "topic": "Modelos ARM — histórico de implantação",
     "type": "single",
     "group": {
       "kind": "series",
       "id": "ARMREVIEW"
     },
-    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.\n\nA colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.\n\nYou want to review the ARM template that was used by Jon Ross.\n\nSolution: You access the Virtual Machine blade.\n\nDoes the solution meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam a mesma configuração. Entretanto, cada questão tem um resultado diferente. Determine se a solução atende aos requisitos.\n\nSua empresa tem uma assinatura do Azure que inclui uma conta de armazenamento, um grupo de recursos, um contêiner de blobs e um compartilhamento de arquivos.\n\nUm colega chamado Jon Ross usa um único modelo do Azure Resource Manager (ARM) para implantar uma máquina virtual e uma conta adicional do Azure Storage.\n\nVocê quer examinar o modelo ARM usado por Jon Ross.\n\nSolução: você acessa o painel Máquina Virtual.\n\nA solução atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -165,16 +165,16 @@ SIM.registerQuestions("AZ-104", [
     "src": 14,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Templates ARM — histórico de implantação",
+    "topic": "Modelos ARM — histórico de implantação",
     "type": "single",
     "group": {
       "kind": "series",
       "id": "ARMREVIEW"
     },
-    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.\n\nA colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.\n\nYou want to review the ARM template that was used by Jon Ross.\n\nSolution: You access the Resource Group blade.\n\nDoes the solution meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam a mesma configuração. Entretanto, cada questão tem um resultado diferente. Determine se a solução atende aos requisitos.\n\nSua empresa tem uma assinatura do Azure que inclui uma conta de armazenamento, um grupo de recursos, um contêiner de blobs e um compartilhamento de arquivos.\n\nUm colega chamado Jon Ross usa um único modelo do Azure Resource Manager (ARM) para implantar uma máquina virtual e uma conta adicional do Azure Storage.\n\nVocê quer examinar o modelo ARM usado por Jon Ross.\n\nSolução: você acessa o painel Grupo de Recursos.\n\nA solução atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 0,
     "shuffle": false,
@@ -205,16 +205,16 @@ SIM.registerQuestions("AZ-104", [
     "src": 15,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Templates ARM — histórico de implantação",
+    "topic": "Modelos ARM — histórico de implantação",
     "type": "single",
     "group": {
       "kind": "series",
       "id": "ARMREVIEW"
     },
-    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.\n\nA colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.\n\nYou want to review the ARM template that was used by Jon Ross.\n\nSolution: You access the Container blade.\n\nDoes the solution meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam a mesma configuração. Entretanto, cada questão tem um resultado diferente. Determine se a solução atende aos requisitos.\n\nSua empresa tem uma assinatura do Azure que inclui uma conta de armazenamento, um grupo de recursos, um contêiner de blobs e um compartilhamento de arquivos.\n\nUm colega chamado Jon Ross usa um único modelo do Azure Resource Manager (ARM) para implantar uma máquina virtual e uma conta adicional do Azure Storage.\n\nVocê quer examinar o modelo ARM usado por Jon Ross.\n\nSolução: você acessa o painel Contêiner.\n\nA solução atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -245,14 +245,14 @@ SIM.registerQuestions("AZ-104", [
     "src": 16,
     "domain": 3,
     "skill": "3.2",
-    "topic": "Redimensionar VM em availability set",
+    "topic": "Redimensionar VM em conjunto de disponibilidade",
     "type": "single",
-    "stem": "Your company has three virtual machines (VMs) that are included in an availability set.\n\nYou try to resize one of the VMs, which returns an allocation failure message. It is imperative that the VM is resized.\n\nWhich of the following actions should you take?",
+    "stem": "Sua empresa tem três máquinas virtuais (VMs) incluídas em um conjunto de disponibilidade.\n\nVocê tenta redimensionar uma das VMs e recebe uma mensagem de falha de alocação. É imprescindível redimensionar a VM.\n\nQual das ações a seguir você deve executar?",
     "options": [
-      "You should only stop one of the VMs.",
-      "You should stop two of the VMs.",
-      "You should stop all three VMs.",
-      "You should remove the necessary VM from the availability set."
+      "Parar somente uma das VMs.",
+      "Parar duas das VMs.",
+      "Parar as três VMs.",
+      "Remover a VM em questão do conjunto de disponibilidade."
     ],
     "answer": 2,
     "scope": "in",
@@ -284,12 +284,12 @@ SIM.registerQuestions("AZ-104", [
     "skill": "3.2",
     "topic": "Discos de dados",
     "type": "single",
-    "stem": "You have an Azure virtual machine (VM) that has a single data disk. You have been tasked with attaching this data disk to another Azure VM. You need to make sure that your strategy allows for the virtual machines to be offline for the least amount of time possible.\n\nWhich of the following is the action you should take FIRST?",
+    "stem": "Você tem uma máquina virtual (VM) do Azure com um único disco de dados. Sua tarefa é anexar esse disco de dados a outra VM do Azure. Você precisa garantir que sua estratégia deixe as máquinas virtuais offline pelo menor tempo possível.\n\nQual das ações a seguir você deve executar PRIMEIRO?",
     "options": [
-      "Stop the VM that includes the data disk.",
-      "Stop the VM that the data disk must be attached to.",
-      "Detach the data disk.",
-      "Delete the VM that includes the data disk."
+      "Parar a VM que contém o disco de dados.",
+      "Parar a VM à qual o disco de dados deve ser anexado.",
+      "Desanexar o disco de dados.",
+      "Excluir a VM que contém o disco de dados."
     ],
     "answer": 2,
     "answer_original": 0,
@@ -325,14 +325,14 @@ SIM.registerQuestions("AZ-104", [
     "src": 18,
     "domain": 3,
     "skill": "3.2",
-    "topic": "Availability sets",
+    "topic": "Conjuntos de disponibilidade",
     "type": "single",
-    "stem": "Your company has an Azure subscription.\n\nYou need to deploy a number of Azure virtual machines (VMs) using Azure Resource Manager (ARM) templates. You have been informed that the VMs will be included in a single availability set.\n\nYou are required to make sure that the ARM template you configure allows for as many VMs as possible to remain accessible in the event of fabric failure or maintenance.\n\nWhich of the following is the value that you should configure for the platformFaultDomainCount property?",
+    "stem": "Sua empresa tem uma assinatura do Azure.\n\nVocê precisa implantar várias máquinas virtuais (VMs) do Azure usando modelos do Azure Resource Manager (ARM). Você foi informado de que as VMs serão incluídas em um único conjunto de disponibilidade.\n\nVocê deve garantir que o modelo ARM permita que o maior número possível de VMs permaneça acessível em caso de falha ou manutenção da infraestrutura.\n\nQual dos valores a seguir você deve configurar para a propriedade platformFaultDomainCount?",
     "options": [
       "10",
       "30",
-      "Min Value",
-      "Max Value"
+      "Valor mínimo",
+      "Valor máximo"
     ],
     "answer": 3,
     "scope": "in",
@@ -341,15 +341,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **10 / 30:** o máximo de fault domains por availability set é 2 ou 3, conforme a região.\n- **Min Value:** menos fault domains significa mais VMs afetadas pela mesma falha de rack.\n\n**Dica de prova:** Fault domain = rack (energia/rede); update domain = grupo reiniciado junto na manutenção.",
     "docs": [
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -362,9 +362,9 @@ SIM.registerQuestions("AZ-104", [
     "src": 19,
     "domain": 3,
     "skill": "3.2",
-    "topic": "Availability sets",
+    "topic": "Conjuntos de disponibilidade",
     "type": "single",
-    "stem": "Your company has an Azure subscription.\n\nYou need to deploy a number of Azure virtual machines (VMs) using Azure Resource Manager (ARM) templates. You have been informed that the VMs will be included in a single availability set.\n\nYou are required to make sure that the ARM template you configure allows for as many VMs as possible to remain accessible in the event of fabric failure or maintenance.\n\nWhich of the following is the value that you should configure for the platformUpdateDomainCount property?",
+    "stem": "Sua empresa tem uma assinatura do Azure.\n\nVocê precisa implantar várias máquinas virtuais (VMs) do Azure usando modelos do Azure Resource Manager (ARM). Você foi informado de que as VMs serão incluídas em um único conjunto de disponibilidade.\n\nVocê deve garantir que o modelo ARM permita que o maior número possível de VMs permaneça acessível em caso de falha ou manutenção da infraestrutura.\n\nQual dos valores a seguir você deve configurar para a propriedade platformUpdateDomainCount?",
     "options": [
       "10",
       "20",
@@ -378,15 +378,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **10:** é válido, mas não é o máximo; deixa mais VMs reiniciando ao mesmo tempo.\n- **30 / 40:** acima do limite de 20 update domains.\n\n**Dica de prova:** Padrão: 5 UDs e 2 FDs (3 em muitas regiões). Com mais VMs que UDs, as VMs são distribuídas em rodízio.",
     "docs": [
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -399,18 +399,18 @@ SIM.registerQuestions("AZ-104", [
     "src": 20,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Senha em templates ARM",
+    "topic": "Senha em modelos ARM",
     "type": "multi",
     "layout": "panel",
-    "panelTitle": "Answer",
-    "stem": "You have downloaded an Azure Resource Manager (ARM) template to deploy numerous virtual machines (VMs). The ARM template is based on a current VM, but must be adapted to reference an administrative password.\n\nYou need to make sure that the password cannot be stored in plain text. You are preparing to create the necessary components to achieve your goal. Which of the following should you create to achieve your goal? Answer by dragging the correct option from the list to the answer area.",
+    "panelTitle": "Resposta",
+    "stem": "Você baixou um modelo do Azure Resource Manager (ARM) para implantar várias máquinas virtuais (VMs). O modelo ARM é baseado em uma VM existente, mas precisa ser adaptado para fazer referência a uma senha administrativa.\n\nVocê precisa garantir que a senha não possa ser armazenada em texto sem formatação. Está se preparando para criar os componentes necessários para atingir esse objetivo. Quais das opções a seguir você deve criar para atingir o objetivo? Responda arrastando a opção correta da lista para a área de resposta.",
     "options": [
-      "An Azure Key Vault",
-      "An Azure Storage account",
+      "Um Azure Key Vault",
+      "Uma conta do Azure Storage",
       "Azure Active Directory (AD) Identity Protection",
-      "An access policy",
-      "An Azure policy",
-      "A backup policy"
+      "Uma política de acesso",
+      "Uma política do Azure",
+      "Uma política de backup"
     ],
     "answer": [
       0,
@@ -447,7 +447,7 @@ SIM.registerQuestions("AZ-104", [
     "skill": "3.2",
     "topic": "Upload de VHD",
     "type": "single",
-    "stem": "Your company has an Azure Active Directory (Azure AD) tenant that is configured for hybrid coexistence with the on-premises Active Directory domain. You plan to deploy several new virtual machines (VMs) in Azure. The VMs will have the same operating system and custom software requirements. You configure a reference VM in the on-premise virtual environment. You then generalize the VM to create an image.\n\nYou need to upload the image to Azure to ensure that it is available for selection when you create the new Azure VMs.\n\nWhich PowerShell cmdlets should you use?",
+    "stem": "Sua empresa tem um tenant do Azure Active Directory (Azure AD) configurado para coexistência híbrida com o domínio do Active Directory local. Você planeja implantar várias máquinas virtuais (VMs) novas no Azure. As VMs terão os mesmos requisitos de sistema operacional e software personalizado. Você configura uma VM de referência no ambiente virtual local e, em seguida, generaliza a VM para criar uma imagem.\n\nVocê precisa carregar a imagem no Azure para garantir que ela esteja disponível para seleção ao criar as novas VMs do Azure.\n\nQuais cmdlets do PowerShell você deve usar?",
     "options": [
       "Add-AzVM",
       "Add-AzVhd",
@@ -486,16 +486,16 @@ SIM.registerQuestions("AZ-104", [
     "src": 28,
     "domain": 4,
     "skill": "4.3",
-    "topic": "Load balancer interno — SQL AG",
+    "topic": "Balanceador de carga interno — grupo de disponibilidade SQL",
     "type": "single",
     "group": {
       "kind": "series",
       "id": "SQLILB"
     },
-    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).\n\nYou need to configure an Azure internal load balancer as a listener for the availability group.\n\nSolution: You create an HTTP health probe on port 1433.\n\nDoes the solution meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam a mesma configuração. Entretanto, cada questão tem um resultado diferente. Determine se a solução atende aos requisitos.\n\nSua empresa tem um grupo de disponibilidade Always On do Microsoft SQL Server configurado em suas máquinas virtuais (VMs) do Azure.\n\nVocê precisa configurar um balanceador de carga interno do Azure como listener do grupo de disponibilidade.\n\nSolução: você cria uma investigação de integridade HTTP na porta 1433.\n\nA solução atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -509,15 +509,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-floating-ip"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ]
@@ -527,16 +527,16 @@ SIM.registerQuestions("AZ-104", [
     "src": 29,
     "domain": 4,
     "skill": "4.3",
-    "topic": "Load balancer interno — SQL AG",
+    "topic": "Balanceador de carga interno — grupo de disponibilidade SQL",
     "type": "single",
     "group": {
       "kind": "series",
       "id": "SQLILB"
     },
-    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).\n\nYou need to configure an Azure internal load balancer as a listener for the availability group.\n\nSolution: You set Session persistence to Client IP.\n\nDoes the solution meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam a mesma configuração. Entretanto, cada questão tem um resultado diferente. Determine se a solução atende aos requisitos.\n\nSua empresa tem um grupo de disponibilidade Always On do Microsoft SQL Server configurado em suas máquinas virtuais (VMs) do Azure.\n\nVocê precisa configurar um balanceador de carga interno do Azure como listener do grupo de disponibilidade.\n\nSolução: você define Persistência de sessão como IP do Cliente.\n\nA solução atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 1,
     "shuffle": false,
@@ -554,11 +554,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/availability-group-load-balancer-portal-configure"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       }
     ],
@@ -571,16 +571,16 @@ SIM.registerQuestions("AZ-104", [
     "src": 30,
     "domain": 4,
     "skill": "4.3",
-    "topic": "Load balancer interno — SQL AG",
+    "topic": "Balanceador de carga interno — grupo de disponibilidade SQL",
     "type": "single",
     "group": {
       "kind": "series",
       "id": "SQLILB"
     },
-    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).\n\nYou need to configure an Azure internal load balancer as a listener for the availability group.\n\nSolution: You enable Floating IP.\n\nDoes the solution meet the goal?",
+    "stem": "Observação: esta questão faz parte de uma série de questões que apresentam a mesma configuração. Entretanto, cada questão tem um resultado diferente. Determine se a solução atende aos requisitos.\n\nSua empresa tem um grupo de disponibilidade Always On do Microsoft SQL Server configurado em suas máquinas virtuais (VMs) do Azure.\n\nVocê precisa configurar um balanceador de carga interno do Azure como listener do grupo de disponibilidade.\n\nSolução: você habilita o IP Flutuante.\n\nA solução atende ao objetivo?",
     "options": [
-      "Yes",
-      "No"
+      "Sim",
+      "Não"
     ],
     "answer": 0,
     "shuffle": false,
@@ -594,15 +594,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-floating-ip"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ]
@@ -614,7 +614,7 @@ SIM.registerQuestions("AZ-104", [
     "skill": "4.1",
     "topic": "Interfaces de rede",
     "type": "single",
-    "stem": "Your company has an Azure Active Directory (Azure AD) subscription. You need to deploy five virtual machines (VMs) to your company's virtual network subnet.\n\nThe VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical. Which of the following is the least amount of network interfaces needed for this configuration?",
+    "stem": "Sua empresa tem uma assinatura do Azure Active Directory (Azure AD). Você precisa implantar cinco máquinas virtuais (VMs) na sub-rede da rede virtual da empresa.\n\nCada VM terá um endereço IP público e um privado. As regras de segurança de entrada e saída de todas essas máquinas virtuais devem ser idênticas. Qual é o número mínimo de interfaces de rede necessárias para essa configuração?",
     "options": [
       "5",
       "10",
@@ -628,11 +628,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **10 / 20 / 40:** uma NIC já carrega o IP privado e o IP público associado. NICs extras só servem para separar tráfego em sub-redes diferentes.\n\n**Dica de prova:** O número máximo de NICs depende do tamanho da VM. Toda VM precisa de pelo menos uma.",
     "docs": [
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
@@ -648,7 +648,7 @@ SIM.registerQuestions("AZ-104", [
     "skill": "4.2",
     "topic": "NSGs",
     "type": "single",
-    "stem": "Your company has an Azure Active Directory (Azure AD) subscription. You need to deploy five virtual machines (VMs) to your company's virtual network subnet.\n\nThe VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical. Which of the following is the least amount of security groups needed for this configuration?",
+    "stem": "Sua empresa tem uma assinatura do Azure Active Directory (Azure AD). Você precisa implantar cinco máquinas virtuais (VMs) na sub-rede da rede virtual da empresa.\n\nCada VM terá um endereço IP público e um privado. As regras de segurança de entrada e saída de todas essas máquinas virtuais devem ser idênticas. Qual é o número mínimo de grupos de segurança necessários para essa configuração?",
     "options": [
       "4",
       "3",
@@ -662,11 +662,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **2, 3 ou 4 NSGs:** regras idênticas não justificam mais de um NSG; um NSG associado à sub-rede (ou reaproveitado em todas as NICs) basta.\n\n**Dica de prova:** Um NSG pode ser associado a várias sub-redes e NICs, desde que estejam na mesma região.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -682,12 +682,12 @@ SIM.registerQuestions("AZ-104", [
     "skill": "5.2",
     "topic": "Restauração de arquivos (Azure Backup)",
     "type": "single",
-    "stem": "Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.\n\nOne of the VMs is backed up every day using Azure Backup Instant Restore. When the VM becomes infected with data encrypting ransomware, you decide to recover the VM's files.\n\nWhich of the following is TRUE in this scenario?",
+    "stem": "A assinatura do Azure da sua empresa inclui máquinas virtuais (VMs) do Azure que executam o Windows Server 2016.\n\nUma das VMs recebe backup diariamente usando a Restauração Instantânea do Azure Backup. Quando a VM é infectada por um ransomware que criptografa dados, você decide recuperar seus arquivos.\n\nQual das afirmações a seguir é VERDADEIRA nesse cenário?",
     "options": [
-      "You can only recover the files to the infected VM.",
-      "You can recover the files to any VM within the company's subscription.",
-      "You can only recover the files to a new VM.",
-      "You will not be able to recover the files."
+      "Você só pode recuperar os arquivos para a VM infectada.",
+      "Você pode recuperar os arquivos para qualquer VM na assinatura da empresa.",
+      "Você só pode recuperar os arquivos para uma nova VM.",
+      "Você não poderá recuperar os arquivos."
     ],
     "answer": 1,
     "answer_original": 0,
@@ -697,15 +697,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Somente na VM infectada:** o script de File Recovery roda em qualquer máquina com SO compatível e internet até o Azure.\n- **Somente em uma VM nova:** não é exigido; serve qualquer máquina, inclusive on-premises.\n- **Não é possível recuperar:** os pontos de recuperação ficam no vault (e no snapshot do Instant Restore) e não são afetados pelo ransomware da VM.\n\n**Dica de prova:** Os volumes ficam montados por 12 horas; depois, desmonte e feche a sessão no portal.",
     "docs": [
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ]
@@ -717,12 +717,12 @@ SIM.registerQuestions("AZ-104", [
     "skill": "5.2",
     "topic": "Restauração de VM (Azure Backup)",
     "type": "single",
-    "stem": "Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.\n\nOne of the VMs is backed up every day using Azure Backup Instant Restore. When the VM becomes infected with data encrypting ransomware, you are required to restore the VM.\n\nWhich of the following actions should you take?",
+    "stem": "A assinatura do Azure da sua empresa inclui máquinas virtuais (VMs) do Azure que executam o Windows Server 2016.\n\nUma das VMs recebe backup diariamente usando a Restauração Instantânea do Azure Backup. Quando a VM é infectada por um ransomware que criptografa dados, você precisa restaurá-la.\n\nQual das ações a seguir você deve executar?",
     "options": [
-      "You should restore the VM after deleting the infected VM.",
-      "You should restore the VM to any VM within the company's subscription.",
-      "You should restore the VM to a new Azure VM.",
-      "You should restore the VM to an on-premise Windows device."
+      "Restaurar a VM após excluir a VM infectada.",
+      "Restaurar a VM para qualquer VM na assinatura da empresa.",
+      "Restaurar a VM para uma nova VM do Azure.",
+      "Restaurar a VM para um dispositivo Windows local."
     ],
     "answer": 2,
     "answer_original": 1,
@@ -732,15 +732,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Excluir a VM infectada antes:** não é necessário; pode-se restaurar como nova VM ou substituir os discos.\n- **Restaurar em qualquer VM da assinatura:** não existe; as opções são Create new (VM ou discos) e Replace existing.\n- **Restaurar em dispositivo Windows on-premises:** o backup de VM do Azure não restaura para on-premises.\n\n**Dica de prova:** Replace existing troca os discos da mesma VM e guarda os discos antigos; útil para manter a configuração e o IP.",
     "docs": [
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ]
@@ -752,7 +752,7 @@ SIM.registerQuestions("AZ-104", [
     "skill": "5.1",
     "topic": "Azure Monitor — métricas",
     "type": "single",
-    "stem": "You administer a solution in Azure that is currently having performance issues. You need to find the cause of the performance issues pertaining to metrics on the Azure infrastructure.\n\nWhich of the following is the tool you should use?",
+    "stem": "Você administra uma solução no Azure que está apresentando problemas de desempenho. Você precisa identificar a causa dos problemas de desempenho relacionados às métricas da infraestrutura do Azure.\n\nQual das ferramentas a seguir você deve usar?",
     "options": [
       "Azure Traffic Analytics",
       "Azure Monitor",
@@ -818,11 +818,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       }
     ],
@@ -867,7 +867,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       }
     ],
@@ -911,11 +911,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Contributor no LB:** funciona, mas é mais amplo que o necessário.\n- **Owner no LB:** dá também gerência de acesso; viola o menor privilégio.\n- **Network Contributor no RG1:** dá acesso a todos os recursos de rede do RG, não só ao LB.\n\n**Dica de prova:** Na AZ-104, \"menor privilégio\" = função mais específica no menor escopo que resolve.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -952,15 +952,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/microsoft-365-groups-expiration-policy"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -1005,11 +1005,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/management-groups/manage"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       }
     ],
@@ -1043,11 +1043,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/assignment-structure"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
@@ -1215,15 +1215,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -1256,7 +1256,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users"
       },
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       }
     ],
@@ -1289,15 +1289,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/itsmc-overview"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ],
@@ -1338,15 +1338,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/overview"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ],
@@ -1409,11 +1409,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -1446,15 +1446,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -1486,7 +1486,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (criar logic apps no RG Dev):** DevTest Labs User e Logic App Operator **não** criam logic apps. **Contributor no Dev** (ou Logic App Contributor) atende.\n\n**Dica de prova:** Logic App Operator = ler, habilitar, desabilitar e ver execuções. Logic App Contributor = criar e gerenciar.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
@@ -1494,7 +1494,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/logic-apps/set-up-security-permissions"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -1527,7 +1527,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Logic App Operator não tem permissão de escrita. Funções que criam: Logic App Contributor, Contributor e Owner.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
@@ -1535,7 +1535,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/logic-apps/set-up-security-permissions"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -1568,11 +1568,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Contributor no RG Dev atende, no escopo certo. Atribuir na assinatura também funcionaria, mas daria acesso além do Dev.\n\n**Dica de prova:** Contributor não atribui funções (para isso: Owner, User Access Administrator ou RBAC Administrator).",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ]
@@ -1691,15 +1691,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/reliability/overview"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -1828,7 +1828,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Public load balancer:** o tráfego chega pela VPN (endereços privados); um frontend público exporia o app na internet sem necessidade.\n- **CDN:** cacheia conteúdo estático na borda; não distribui conexões entre VMs.\n- **Traffic Manager:** balanceia por DNS entre endpoints públicos/regionais; não serve para tráfego privado dentro da VNet.\n\n**Dica de prova:** Application Gateway com **frontend IP privado** também atende tráfego que entra por VPN.",
     "docs": [
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
@@ -1836,11 +1836,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/application-gateway/overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -1916,7 +1916,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       }
     ],
@@ -2000,15 +2000,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1:** Group1 (cidade começa com \"m\"). Fica fora do Group2 porque o departamento é Human resources, e fora do Group3, que é atribuído e sem membros.\n- **User2:** Group1 (Melbourne) e Group2 (Marketing).\n\n**Dica de prova:** Regras dinâmicas avaliam atributos do usuário (city, department…); licença não é critério, a menos que a regra use assignedPlans.",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       }
     ],
@@ -2052,15 +2052,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **JobTitle de User2:** atributo sincronizado do AD, com o AD on-premises como fonte de autoridade; edite on-premises e espere o próximo ciclo de sync.\n- **UsageLocation:** atributo só de nuvem, editável para usuários sincronizados, de nuvem e convidados.\n\n**Dica de prova:** Para usuários sincronizados, o portal mostra os campos de origem on-premises desabilitados.",
     "docs": [
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -2100,11 +2100,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -2144,11 +2144,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -2189,11 +2189,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -2222,11 +2222,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Owner:** cobre tudo, mas também atribui funções; viola o menor privilégio.\n- **Virtual Machine Contributor:** gerencia VMs, mas não as VNets (só associa a VM a uma VNet existente).\n- **Virtual Machine Administrator Login:** data action de login na VM; não implanta nada.\n\n**Dica de prova:** Network Contributor + Virtual Machine Contributor seria ainda mais restrito, mas a combinação não está nas opções.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -2375,15 +2375,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/delegate-subdomain"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -2422,15 +2422,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -2463,15 +2463,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -2558,7 +2558,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Security Admin:** gerencia o Defender for Cloud e as políticas de segurança, não sub-redes.\n- **Network Contributor atribuindo funções:** não tem Microsoft.Authorization/roleAssignments/write.\n\n**Dica de prova:** Só Owner, User Access Administrator e Role Based Access Control Administrator atribuem funções.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
@@ -2566,7 +2566,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -2652,15 +2652,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-delete"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ],
@@ -2701,11 +2701,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
@@ -2749,11 +2749,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/frequently-asked-questions"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -2786,15 +2786,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ],
@@ -2826,11 +2826,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** Logic App Contributor no RG Dev atende com menor privilégio. Logic App Operator e DevTest Labs User não atendem.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ],
@@ -2872,11 +2872,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Excluir LB1 / criar NAT rule:** User Access Administrator não gerencia o recurso; só atribui acesso.\n- **Modificar regras do LB / implantar AKS:** Virtual Machine Contributor não gerencia load balancer nem AKS.\n\n**Dica de prova:** Funções de \"gestão de acesso\" e de \"gestão do recurso\" são independentes. Owner = as duas.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       },
       {
@@ -2914,7 +2914,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Contributor no RG1:** gerencia recursos, mas não atribui funções.\n- **Contributor / Network Contributor no VNet1:** mesmo problema, sem roleAssignments/write.\n\n**Dica de prova:** Se aparecer User Access Administrator ou RBAC Administrator no VNet1, essas são opções de menor privilégio que o Owner.",
     "docs": [
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       },
       {
@@ -2922,7 +2922,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       }
     ],
@@ -2979,7 +2979,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
@@ -3059,7 +3059,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Owner na raiz:** também gerencia todos os recursos; excede o pedido (só atribuições).\n- **Novo management group:** as assinaturas atuais e novas não caem nele automaticamente; exigiria movê-las, o que dá mais esforço.\n\n**Dica de prova:** Assinaturas novas entram no **default management group**, que por padrão é o Tenant Root Group (configurável em Hierarchy settings).",
     "docs": [
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       },
       {
@@ -3126,11 +3126,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/exemption-structure"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       }
     ],
@@ -3167,15 +3167,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ],
@@ -3211,15 +3211,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ],
@@ -3255,15 +3255,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ],
@@ -3391,11 +3391,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **BlobStorage para Table:** a conta legada BlobStorage só tem blobs (block e append).\n- **Blob só em algumas contas:** GPv1, GPv2 e BlobStorage oferecem blob.\n\n**Dica de prova:** Na prática, sempre use GPv2. GPv1 e BlobStorage são legados, com aposentadoria anunciada.",
     "docs": [
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -3502,11 +3502,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       }
     ],
@@ -3548,11 +3548,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deny"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
@@ -3656,7 +3656,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ]
@@ -3917,7 +3917,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       },
       {
@@ -4005,7 +4005,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ],
@@ -4055,7 +4055,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ],
@@ -4130,15 +4130,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/previous-versions/azure/virtual-machines/windows/tutorial-availability-sets"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -4249,11 +4249,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       }
     ],
@@ -4306,7 +4306,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       },
       {
@@ -4344,15 +4344,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -4415,7 +4415,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só storage1 / storage1 e storage2:** deixa de fora a BlockBlobStorage (Premium), que também suporta lifecycle.\n- **storage4 (FileStorage):** não tem blobs para gerenciar.\n\n**Dica de prova:** Políticas de lifecycle rodam uma vez por dia; a primeira execução pode levar até 24 h.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -4496,11 +4496,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       }
     ],
@@ -4533,7 +4533,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ]
@@ -4604,7 +4604,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Dep1File1:** Não. Foi para Archive (Rule1) e exige reidratação (horas) antes de ler.\n- **File2 / File3:** Sim. Estão em Cool, que é online e permite leitura.\n\n**Dica de prova:** As regras contam dias desde a **última modificação** (ou último acesso, se o tracking estiver ligado).",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -4731,7 +4731,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ],
@@ -4761,11 +4761,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Replication:** Premium block blob aceita LRS ou ZRS, então a ZRS já serve.\n- **Access tier:** Premium não tem tier hot/cool, mas a opção a mudar primeiro é Performance.\n- **Hierarchical namespace:** compatível com Premium block blob; não bloqueia.\n\n**Dica de prova:** Premium = Block blobs, File shares (FileStorage) ou Page blobs.",
     "docs": [
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -4812,7 +4812,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ],
@@ -4881,19 +4881,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (alerta de eventos do System log):** o caminho é **Log Analytics workspace + coleta de eventos (AMA + DCR) + alerta de log** com consulta KQL (Event | where EventLevelName == \"Error\"), contagem > 2 em 1 h. Storage como fonte não funciona.\n\n**Dica de prova:** O MMA (Log Analytics agent) foi aposentado em agosto de 2024; em questões novas, a resposta é Azure Monitor Agent + Data Collection Rule.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ],
@@ -4959,7 +4959,7 @@ SIM.registerQuestions("AZ-104", [
     "src": 156,
     "domain": 3,
     "skill": "3.1",
-    "topic": "Senha em templates ARM",
+    "topic": "Senha em modelos ARM",
     "type": "single",
     "stem": "You download an Azure Resource Manager template based on an existing virtual machine. The template will be used to deploy 100 virtual machines. You need to modify the template to reference an administrative password. You must prevent the password from being stored in plain text.\n\nWhat should you create to store the password?",
     "options": [
@@ -5243,15 +5243,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Scale set com 10 ou 12 instâncias:** sem domínios configurados, a manutenção da plataforma não garante 8 de pé (o gabarito prefere o availability set com 10 UDs).\n- **3 FDs e 1 UD:** com 1 update domain, todas as VMs reiniciariam juntas.\n\n**Dica de prova:** Com N VMs em N UDs (até 20), a manutenção derruba no máximo 1 VM por vez.",
     "docs": [
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -5283,19 +5283,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** event subscription (Event Grid) reage a eventos do Azure Resource Manager, não ao Event Log dentro do SO. Use **AMA + DCR → Log Analytics → alerta de log**.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ],
@@ -5500,11 +5500,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -5544,11 +5544,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -5588,11 +5588,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -5676,15 +5676,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **7 / 10 / 14 na manutenção:** as UDs reiniciam uma de cada vez; com 14 VMs em 10 UDs, a maior UD tem 2 VMs.\n- **2 / 10 / 14 no rack:** as VMs são divididas entre 2 fault domains (7 e 7); a falha de um rack derruba um FD inteiro.",
     "docs": [
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -5872,7 +5872,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Habilitar o Network Watcher manualmente:** hoje ele é criado automaticamente quando há uma VNet na região (o gabarito considera feito).\n- **Connection monitor:** testa conectividade; não registra todas as tentativas de conexão.\n- **Provedor \"MicrosoftLogAnalytics\":** não existe com esse nome; o provedor exigido é Microsoft.Insights.\n\n**Dica de prova:** O NSG flow log não pode ser criado desde junho de 2025 (aposentadoria em 2027). Use **VNet flow logs**.",
     "docs": [
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       },
       {
@@ -5880,11 +5880,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-tutorial"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -6088,11 +6088,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-overview"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -6184,11 +6184,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
@@ -6238,15 +6238,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **0, 4 ou 6 e-mails:** o limite de e-mail (100/h por endereço) não é atingido com 60 alertas.\n- **60 SMS:** o limite é 1 SMS a cada 5 minutos por número.\n\n**Dica de prova:** Chamadas de voz têm o mesmo limite do SMS: 1 a cada 5 minutos por número.",
     "docs": [
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ],
@@ -6317,11 +6317,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://azure.microsoft.com/en-us/blog/introducing-proximity-placement-groups/"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       }
     ],
@@ -6475,7 +6475,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **HDInsight:** cluster de big data (Hadoop/Spark); não é ferramenta de monitoramento de VM.\n- **AzurePerformanceDiagnostics:** diagnóstico pontual de desempenho em VMs **Windows**.\n- **Analysis Services:** modelagem de dados (BI).\n\n**Dica de prova:** O LAD e o agente do Log Analytics estão aposentados ou em fim de vida. Em questões novas: **Azure Monitor Agent + DCR** (métricas de convidado e syslog).",
     "docs": [
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -6531,15 +6531,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Só DNS / web e DNS (com a Rule2):** a Rule2 (prioridade 100, Deny 50–60) bloqueia a 53 antes da Rule1.\n- **Nenhum acesso:** a porta 80 está fora do Deny e cai no Allow da Rule1.\n- **Sem a Rule2, só web:** a Rule1 (50–500) passa a liberar a 53 também.\n\n**Dica de prova:** As regras são avaliadas por prioridade (número menor primeiro), e a primeira que casar decide.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -6568,7 +6568,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Mesma zona:** a perda daquele datacenter derruba as três VMs.\n- **Availability set (um ou vários):** distribui VMs entre racks de um mesmo datacenter, não entre datacenters.\n\n**Dica de prova:** Zonas = SLA de 99,99% para 2 ou mais VMs; availability set = 99,95%.",
     "docs": [
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
@@ -6576,11 +6576,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/previous-versions/azure/virtual-machines/windows/tutorial-availability-sets"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -6740,7 +6740,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       }
     ]
@@ -6795,11 +6795,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ]
@@ -6834,11 +6834,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User1 com Reader:** Reader não lê dados do storage (nem lista as chaves).\n- **User1 com Storage Blob Data Reader:** também atenderia blobs, mas o gabarito usa Reader and Data Access, que cobre todos os serviços via chave.\n- **User2 com Contributor / Storage Account Contributor:** não atribuem funções.\n\n**Dica de prova:** Se as opções incluíssem User Access Administrator ou RBAC Administrator, seriam o menor privilégio para o User2.",
     "docs": [
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ]
@@ -6867,11 +6867,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       },
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       }
     ]
@@ -6897,7 +6897,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só User4:** o User1 é membro direto do Group1 e herda a licença.\n- **User2 / User3:** estão em grupos aninhados, e o licenciamento por grupo não propaga para grupos aninhados.\n\n**Dica de prova:** O licenciamento por grupo também não aceita grupos com associação dinâmica de dispositivos.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       }
     ]
@@ -6926,7 +6926,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **File1 em Cool em 6/6:** a Rule1 (prefixo container1) arquiva no dia 3, então ele está em Archive.\n- **File2 em Cool em 1/6:** no dia do upload ele está no tier padrão (Hot).\n- **File2 em Archive em 16/6:** a exclusão em 10 dias acontece antes, então ele já foi apagado.\n\n**Dica de prova:** Quando várias ações casam no mesmo dia, vence a mais barata: delete > archive > cool.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -6963,11 +6963,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/point-in-time-restore-overview"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -7010,7 +7010,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **enableAutoTierToHotFromCool:** volta blobs para Hot quando acessados (exige o tracking de último acesso).\n- **tierToCool:** não é o tier mais barato.\n- **blobIndexMatch:** filtra por tags de índice do blob, não por container.\n- **blobTypes:** filtro obrigatório (blockBlob), mas não limita o container.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -7076,7 +7076,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Task1 (criar a storage account):** o Storage Explorer não cria contas; isso é feito pelo portal, CLI ou PowerShell.\n\n**Dica de prova:** O Storage Explorer também gerencia filas, discos gerenciados (upload/download de VHD) e ADLS Gen2.",
     "docs": [
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       },
       {
@@ -7201,15 +7201,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ]
@@ -7333,7 +7333,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Cool / Archive / Hot:** no dia 7, várias regras casam ao mesmo tempo e o lifecycle aplica a ação mais barata, que é delete.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -7384,7 +7384,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -7494,7 +7494,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **daysAfterCreationGreaterThan:** conta desde a criação, não desde a última atualização.\n- **daysAfterLastAccessTimeGreaterThan:** exige o tracking de último acesso e mede leitura, não atualização.\n- **AppendBlob / PageBlob:** tiers não se aplicam (append só aceita delete).",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -7683,7 +7683,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Atribuir Defender for Cloud Apps Discovery ao User1:** Sim. Um plano desligado no grupo pode ser atribuído direto ao usuário.\n- **Remover a P2 herdada do User1:** Não. Licença herdada só sai removendo o usuário do grupo (ou a licença do grupo).\n- **User2 com P2:** Não. Grupos aninhados não herdam licença.\n\n**Dica de prova:** O usuário pode ter a mesma licença direta **e** herdada; nesse caso, ela consome uma unidade só.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       }
     ]
@@ -7733,11 +7733,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/network-routing-preference"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -7830,7 +7830,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       }
     ]
@@ -7871,7 +7871,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
       },
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       }
     ]
@@ -7994,7 +7994,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/external-id/tutorial-bulk-invite"
       },
       {
-        "t": "Configure external collaboration - Microsoft Entra External ID",
+        "t": "Configurar a colaboração externa - Microsoft Entra External ID",
         "u": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure"
       }
     ]
@@ -8059,7 +8059,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Group2 / Group4:** grupos com securityEnabled = false (ex.: listas de distribuição) não recebem licença.\n- **Só Group1:** o grupo Microsoft 365 com securityEnabled = true também é aceito.\n\n**Dica de prova:** Grupos sincronizados do AD também podem receber licença.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       }
     ]
@@ -8109,15 +8109,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **device.managementType / device.organizationalUnit:** atributos de dispositivo; o grupo é de usuários.\n- **user.usageLocation:** é o país de uso de licença, não o departamento.\n- **-or:** incluiria todo o Marketing ou toda a França.\n- **-in / -match:** -in exige uma lista e -match exige regex; para valor exato, -eq.\n\n**Dica de prova:** Grupos Microsoft 365 também aceitam associação dinâmica (exige P1).",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       }
     ]
@@ -8156,15 +8156,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ]
@@ -8525,11 +8525,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **ZRS:** não replica para outra região.\n- **Hot:** custa mais para dados pouco acessados.\n\n**Dica de prova:** O hierarchical namespace só pode ser habilitado na criação (ou com a migração para ADLS Gen2, que é irreversível).",
     "docs": [
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -8597,7 +8597,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Snapshot para Cool:** Não. As ações estão em \"version\", e snapshots têm o próprio bloco \"snapshot\".\n- **Versão no container2:** Não. O prefixMatch limita a regra ao container1.\n- **Versão reidratada volta ao Archive em 30 dias:** Não. A regra usa daysAfterLastTierChangeGreaterThan para evitar o pingue-pongue.\n\n**Dica de prova:** baseBlob (versão atual), version (versões anteriores) e snapshot são tratados separadamente.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -8658,7 +8658,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Device4 (Android/iOS):** o Storage Explorer é um app desktop (Electron) só para Windows, macOS e Linux.\n\n**Dica de prova:** Alternativa sem instalar: o **Storage browser** no portal do Azure.",
     "docs": [
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       },
       {
@@ -8829,7 +8829,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **File1 em Cool em 6/6:** Não. A Rule1 o arquivou no 3º dia.\n- **File2 em Cool em 7/6:** Sim. A Rule2 o moveu no 5º dia.\n- **File2 em Archive em 16/6:** Não. A exclusão em 10 dias vem antes.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -8878,19 +8878,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Usuários só sem licença:** usuários podem ser excluídos com licença direta ou herdada; a licença volta para o pool.\n- **Grupos com licença (Group1, Group3):** o Entra bloqueia a exclusão de grupos com licença atribuída. Remova a licença do grupo antes.\n\n**Dica de prova:** Usuário excluído fica 30 dias em \"Deleted users\" e pode ser restaurado com as licenças.",
     "docs": [
       {
-        "t": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+        "t": "Atribuir ou remover licenças de um grupo no centro de administração do Microsoft 365 - Administração do Microsoft 365",
         "u": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ]
@@ -9228,15 +9228,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Arquivos só na VM1 ou numa VM nova:** o script de File Recovery roda em qualquer máquina com SO compatível e acesso à internet.\n- **VM para a VM2 ou outro computador:** a restauração de VM cria uma VM nova ou substitui os discos da VM1; não restaura sobre outra VM existente.",
     "docs": [
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -9269,15 +9269,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://azure.microsoft.com/en-us/blog/azure-vm-backup-pre-checks/"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -9372,15 +9372,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **FD 0, 1, 2 ou 4:** o máximo em East US é 3. Use menos só se a região tiver 2.\n- **UD 10:** válido, mas não é o máximo.\n- **UD 25 a 50:** acima do limite de 20.\n\n**Dica de prova:** Com managed disks, o FD do availability set também alinha os clusters de storage dos discos.",
     "docs": [
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ],
@@ -9413,19 +9413,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (alerta de eventos):** atende quando há **workspace + coleta do System log + agente na VM + alerta de log** (com o agente instalado manualmente ou como extensão). Não atende com storage como fonte ou com event subscription.\n\n**Dica de prova:** A consulta seria Event | where EventLog == \"System\" and EventLevelName == \"Error\" | summarize count() by bin(TimeGenerated, 1h), com limite > 2.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ],
@@ -9604,19 +9604,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** a extensão de VM é a forma padrão de instalar o agente em VMs do Azure, e atende. Hoje: AMA (AzureMonitorWindowsAgent) + DCR.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ],
@@ -9648,19 +9648,19 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** workspace + coleta do log System + agente + alerta de log = atende.",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ],
@@ -9694,15 +9694,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-windows-server"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -9789,11 +9789,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -9829,11 +9829,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -9869,11 +9869,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -10100,15 +10100,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -10141,15 +10141,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/inbound-nat-rules"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ]
@@ -10194,7 +10194,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
@@ -10202,7 +10202,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-scenarios"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       }
     ],
@@ -10261,7 +10261,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-diagnostics"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       }
     ],
@@ -10299,11 +10299,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       }
     ],
@@ -10343,7 +10343,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
@@ -10351,7 +10351,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-multivip-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       }
     ],
@@ -10388,15 +10388,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       }
     ],
@@ -10435,11 +10435,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-plan-design-arm"
       },
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       }
     ],
@@ -10479,11 +10479,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/update-virtual-network-peering-address-space"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       },
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       }
     ],
@@ -10638,15 +10638,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/distribution-mode-concepts"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -10683,11 +10683,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/troubleshoot-rdp-connection"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -10723,11 +10723,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/troubleshoot-rdp-connection"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -10763,11 +10763,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/troubleshoot-rdp-connection"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -10821,11 +10821,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-virtual-network"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
@@ -10859,11 +10859,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **3, 4 ou 12 NSGs:** um único NSG pode ser associado a todas as sub-redes, com regras por IP de destino.\n\n**Dica de prova:** Na prática, NSGs separados por camada facilitam a manutenção, mas a pergunta é o **mínimo**.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -10904,11 +10904,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/samples/"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       }
     ],
@@ -10942,15 +10942,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-import-export"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -10987,11 +10987,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       }
     ],
@@ -11036,15 +11036,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Adatum.com / zonas públicas:** zonas públicas não se vinculam a VNets nem recebem registro automático.\n\n**Dica de prova:** O sufixo DNS do Windows (Adatum.com) não define em qual zona a VM se registra; quem define é o link com auto registration.",
     "docs": [
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -11077,11 +11077,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group"
       },
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -11126,11 +11126,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/create-portal-availability-zone"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       }
     ],
@@ -11225,11 +11225,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VNET1 só para uma:** a VNET1 tem peering direto com as duas.\n- **VNET2 para a VNET3:** exigiria peering direto, ou hub com NVA/gateway e UDRs; peering não é transitivo.\n\n**Dica de prova:** Hub-spoke: o spoke fala com outro spoke via NVA ou Azure Firewall no hub (com UDR), ou com o Azure Virtual Network Manager (conectividade mesh).",
     "docs": [
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       }
     ],
@@ -11265,11 +11265,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
@@ -11299,11 +11299,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Mudar a prioridade da regra RDP:** a regra RDP já é avaliada antes do DenyAllInBound.\n- **Anexar outra NIC:** a NIC já foi adicionada; o problema é a VM desligada.\n- **Excluir DenyAllInBound:** regras padrão não podem ser excluídas e não são o problema.\n\n**Dica de prova:** Adicionar ou remover NICs exige a VM desalocada; depois de alterar, é preciso iniciá-la.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
@@ -11340,7 +11340,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Conditional forwarder na VM1:** ajuda a resolver outros domínios, mas VNET2 e VNET3 nem alcançam a VM1.\n- **Service endpoints:** dão acesso a serviços PaaS, não conectividade entre VNets.\n\n**Dica de prova:** Alternativa moderna: Azure DNS Private Resolver no hub, com peering das spokes.",
     "docs": [
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
@@ -11348,11 +11348,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
       },
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       }
     ],
@@ -11389,11 +11389,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
@@ -11430,11 +11430,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/security/fundamentals/network-best-practices"
       },
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -11466,11 +11466,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Propriedades do ASG1:** o ASG não lista membros; quem entra no grupo é a NIC.\n- **Propriedades do NSG1:** o NSG referencia o ASG nas regras, mas não associa VMs a ele.\n\n**Dica de prova:** Todas as NICs de um ASG precisam estar na mesma VNet. Um NSG pode usar ASGs como origem e destino.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -11518,11 +11518,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **vNET6 com vNET1 / vNET2 / todas:** os peerings estão Disconnected, sem tráfego.\n- **Service endpoint / subnet / address space:** não reconectam o peering.\n\n**Dica de prova:** \"Disconnected\" = o outro lado foi excluído. \"Initiated\" = só um lado criado. \"Connected\" = os dois lados criados.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       },
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       }
     ],
@@ -11564,15 +11564,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **NSG antes do backend pool:** não é exigência para criar o pool.\n- **IP privado estático:** não é necessário para o backend.\n- **Remover IP público para conectar:** já foi feito no passo anterior.\n\n**Dica de prova:** O Standard LB e o IP público Standard são \"secure by default\": sem NSG com allow, o tráfego é negado.",
     "docs": [
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -11605,11 +11605,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       }
     ],
@@ -11643,15 +11643,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       }
     ],
@@ -11705,11 +11705,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -11745,15 +11745,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -11902,15 +11902,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Protocolo da Rule4:** não altera o deny da Rule2.\n- **Excluir a Rule1:** não libera o 443.\n- **Regra nova com prioridade 501:** o deny da Rule2 (500) é avaliado antes.\n\n**Dica de prova:** Prioridades vão de 100 a 4096; o número menor vence e a primeira regra que casa encerra a avaliação.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -11950,11 +11950,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       }
     ],
@@ -11995,11 +11995,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://azure.microsoft.com/en-us/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       },
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       }
     ],
@@ -12032,11 +12032,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (443 de 131.107.100.50 falha):** as regras efetivas já permitem esse IP com prioridade 100. Excluir o bloqueio ou mexer na prioridade não muda nada; o problema está fora do NSG (app, probe, firewall do SO).\n\n**Dica de prova:** Confirme com IP flow verify: se o resultado for \"Allow\", investigue a VM (serviço escutando, firewall do Windows) e o health probe.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -12068,11 +12068,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\":** a regra de allow já está no topo (100). Investigue o serviço na VM2, o firewall do SO e o health probe do LB.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -12112,11 +12112,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       }
     ],
@@ -12194,11 +12194,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
       },
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       }
     ],
@@ -12227,15 +12227,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **IP flow verify:** verifica allow/deny de um pacote; não mede latência.\n- **Connection troubleshoot:** teste pontual (mostra latência só daquele teste); não dá média contínua.\n- **NSG flow logs:** registram fluxos, sem RTT.\n\n**Dica de prova:** O Connection monitor guarda o histórico de RTT e de % de falhas no Log Analytics e permite alertar sobre eles.",
     "docs": [
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ],
@@ -12265,15 +12265,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **vm1.core.windows.net / vm1.azure.com:** domínios que não são usados pelo DNS interno do Azure.\n- **vm1.westeurope.cloudapp.azure.com:** é o rótulo DNS do **IP público**, não do privado.\n\n**Dica de prova:** O sufixo interno é <id>.internal.cloudapp.net (ou <id>.xx.internal.cloudapp.net) e só resolve dentro da mesma VNet.",
     "docs": [
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       }
     ]
@@ -12302,15 +12302,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM5 registrada:** Não. A VNet1 não é VNet de registro.\n- **VM5 resolve vm9.adatum.com:** Não. A VNet1 não tem link com a zona.\n- **VM6 resolve:** Sim. A VNet2 está vinculada (com registro).\n\n**Dica de prova:** Para resolver sem registrar, crie um link de **resolução** (auto registration desligado) para a VNet1.",
     "docs": [
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -12355,11 +12355,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       }
     ],
@@ -12403,15 +12403,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **AzureFirewallSubnet / LAN01 / RemoteAccessSubnet:** o Bastion só é implantado numa sub-rede com o nome exato AzureBastionSubnet.\n- **/29 ou /30:** pequenas demais (o mínimo é /26 na documentação atual; /27 era o antigo).\n\n**Dica de prova:** O SKU Developer não precisa da AzureBastionSubnet; os SKUs Basic, Standard e Premium precisam.",
     "docs": [
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ],
@@ -12447,15 +12447,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ],
@@ -12492,15 +12492,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ],
@@ -12536,15 +12536,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ],
@@ -12582,15 +12582,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -12626,15 +12626,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/packet-capture-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ],
@@ -12666,11 +12666,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (443 falha mesmo com allow):** acrescentar um deny só piora; o NSG já permite. O problema está no app ou no SO.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -12707,15 +12707,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Server2 → host2 = 131.107.50.50:** Não. O Server1 é autoritativo para contoso.com e não tem host2 (NXDOMAIN).\n- **Server2 → host1:** Sim. O registro existe no Server1.\n- **Server3 → host2:** Não. A VNET2 usa DNS customizado, então a zona privada vinculada não é consultada.\n\n**Dica de prova:** Para usar a zona privada com DNS customizado, o servidor precisa encaminhar para 168.63.129.16 (ou para o DNS Private Resolver).",
     "docs": [
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ]
@@ -12741,7 +12741,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Gateway subnet:** só é necessária para VPN/ExpressRoute.\n- **Sub-redes nas duas VNets:** não resolve a sobreposição.\n- **Service endpoint:** não tem relação com peering.\n\n**Dica de prova:** O address space só pode ser alterado se nenhuma sub-rede em uso conflitar; com a VNet vazia, é simples.",
     "docs": [
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       },
       {
@@ -12749,7 +12749,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       }
     ],
@@ -12781,15 +12781,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **comp1 (TXT):** não tem IP.\n- **comp3 (CNAME → comp1):** o alvo não tem registro A.\n- **comp4 (PTR):** é resolução reversa (IP → nome).\n\n**Dica de prova:** Ping exige um nome que resolva para A/AAAA (diretamente ou via CNAME que termine num A).",
     "docs": [
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ],
@@ -12859,11 +12859,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Inbound:** a entrada já é permitida pelo AllowVnetInBound; o bloqueio está na saída.\n- **Origem/destino Any ou /28:** amplos demais para o menor privilégio.\n- **Prioridade 111 ou 112:** não passa à frente da DENY_PING (111).\n\n**Dica de prova:** A Windows Firewall da VM2 também bloqueia ICMP por padrão; libere-a se o ping continuar falhando.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -12896,15 +12896,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -12992,11 +12992,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Internet → VM1:** Não. O NSG1 tem só as regras padrão, e a DenyAllInBound bloqueia a internet.\n- **Internet → VM2:** Sim. A Subnet2 não tem NSG, e o NSG2 da NIC permite 3389 de Any.\n- **VM1 → VM2:** Sim. A saída da VM1 é liberada por AllowVnetOutBound, e a entrada na VM2 pelo NSG2.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ]
@@ -13026,15 +13026,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Frontend IP:** já criado com o LB (é obrigatório na criação).\n- **Inbound NAT rule:** serve para porta específica → VM; não é pré-requisito da regra de balanceamento.\n- **Virtual network:** as VMs já estão numa VNet.\n\n**Dica de prova:** Ordem prática: backend pool → health probe → load balancing rule (frontend + porta + backend + probe).",
     "docs": [
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ],
@@ -13066,15 +13066,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 → server1 = 131.107.3.3:** Sim. A VNET1 usa o DNS do Azure e está vinculada à zona privada.\n- **VM2 → server1 = 131.107.3.3:** Não. A VM2 usa o DNS customizado 192.168.0.5, que responde .2.3.\n- **VM3 → server2 = 131.107.2.4:** Sim. Vem do DNS customizado.\n\n**Dica de prova:** O vínculo da zona privada só tem efeito se a VNet usar o DNS do Azure (ou se o DNS customizado encaminhar para 168.63.129.16).",
     "docs": [
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       }
     ]
@@ -13116,11 +13116,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       }
     ],
@@ -13158,15 +13158,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM2 → VM1:1433:** Não. O NSG2 na NIC da VM1 nega a origem 10.10.2.5.\n- **VM1 → VM2:1433:** Sim. A Subnet2 não tem NSG, e a saída da VM1 é liberada pelo padrão.\n- **VM2 → VM3:1433:** Sim. Mesma sub-rede, sem NSG.\n\n**Dica de prova:** Entrada: o NSG da sub-rede é avaliado primeiro e depois o da NIC. Saída: o da NIC primeiro e depois o da sub-rede. É preciso allow nos dois.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -13240,11 +13240,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       }
     ],
@@ -13322,15 +13322,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **1 a 3 regras:** cada sinal de activity log precisa da própria regra; métricas diferentes, com destinatários diferentes, também.\n- **1, 2 ou 4 action groups:** um action group por conjunto distinto de destinatários; os conjuntos repetidos são reaproveitados.\n\n**Dica de prova:** Um action group pode ser usado por várias regras, e uma regra pode chamar vários action groups.",
     "docs": [
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -13357,15 +13357,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Incluir Principal1/Principal2:** service principals e managed identities não têm caixa de correio para receber o e-mail.\n- **Só User1:** a regra antiga mandava só para atribuições diretas. Hoje membros de grupo atribuído também recebem.\n\n**Dica de prova:** A atribuição precisa estar no escopo da **assinatura** para o e-mail por ARM role valer.",
     "docs": [
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ],
@@ -13446,7 +13446,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Tamanho da VM:** o Replace existing mantém a configuração atual da VM, inclusive o tamanho.\n- **Disco de dados novo:** continua anexado; o Replace existing troca os discos que estavam no backup.\n- **Senha:** também volta à do backup (fica no disco do SO), mas o gabarito destaca o arquivo como a mudança a refazer.\n\n**Dica de prova:** O Replace existing cria um snapshot dos discos atuais antes de substituí-los, o que permite reverter.",
     "docs": [
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
@@ -13454,11 +13454,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/about-azure-vm-restore"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -13495,7 +13495,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **User2 só com perguntas:** Não. São exigidos 2 métodos, e as perguntas de segurança não podem ser os dois (ao menos um precisa ser outro método).\n- **User1 pelo app:** Não. O User1 não está no Group2, e o SSPR está em \"Selected\".\n- **User3 (User administrator) configurar perguntas:** Não. É necessário Authentication Policy Administrator ou Global Administrator.\n\n**Dica de prova:** Administradores sempre usam a política de SSPR de administrador (2 métodos, sem perguntas de segurança).",
     "docs": [
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
@@ -13503,7 +13503,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/passwords-faq"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       }
     ],
@@ -13575,11 +13575,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **SecAdmin1 / BillAdmin1 com perguntas:** Não. Funções administrativas usam a política de administrador (dois métodos fortes, como app, SMS ou e-mail), sem perguntas de segurança.\n- **User1 com a pergunta do pet:** Sim. Usuário comum segue a política do tenant (3 perguntas no registro e 3 no reset, entre as 3 definidas).\n\n**Dica de prova:** A política de administrador não pode ser alterada e vale mesmo com o SSPR desabilitado para usuários.",
     "docs": [
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       },
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       }
     ],
@@ -13615,15 +13615,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       },
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       }
     ],
@@ -13716,7 +13716,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Sequência**\n- **Restore VM:** restaura a VM inteira; mais lento que recuperar dois arquivos.\n- **Mount a VHD:** o script já monta os volumes do ponto de recuperação via iSCSI.\n- **AzCopy:** os volumes aparecem como unidades locais; basta copiar.\n\n**Dica de prova:** Ressalva da prova: para VM Linux, o script precisa rodar numa máquina Linux compatível. Para Windows, numa máquina Windows.",
     "docs": [
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
@@ -13724,11 +13724,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-automation"
       },
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -13810,7 +13810,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Virtual machine extension:** não é recurso alvo de alertas.\n- **Virtual machine:** alertas de log também podem ter a VM como escopo, mas a consulta roda nos dados do workspace; o gabarito pede o workspace.\n- **Metric alert:** é um tipo de regra, não um recurso alvo.\n\n**Dica de prova:** Eventos do Windows não viram métricas da plataforma; por isso o alerta é de log (KQL).",
     "docs": [
       {
-        "t": "Create Azure Monitor log search alert rules - Azure Monitor",
+        "t": "Criar regras de alerta de pesquisa de logs do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule"
       },
       {
@@ -13818,11 +13818,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/windows-server/storage/storage-spaces/configure-azure-monitor"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ],
@@ -13970,15 +13970,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Desalocar a VM:** não é necessário para o Replace existing (o serviço para a VM).\n- **Excluir a VM:** aumenta a indisponibilidade e perde a configuração.\n- **Create new:** gera uma VM nova (outro IP e NIC), com mais trabalho e mais tempo fora.\n\n**Dica de prova:** Pontos fora da retenção de snapshot (5 dias) vêm do vault (tier padrão) e são mais lentos que o Instant Restore, mas funcionam.",
     "docs": [
       {
-        "t": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+        "t": "Restaurar VMs pelo portal do Azure usando o Azure Backup - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
       },
       {
-        "t": "Recover files and folders from Azure VM backup - Azure Backup",
+        "t": "Recuperar arquivos e pastas de um backup de VM do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm"
       },
       {
-        "t": "Back up Azure Files in the Azure portal - Azure Backup",
+        "t": "Fazer backup do Azure Files no portal do Azure - Azure Backup",
         "u": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-files"
       }
     ],
@@ -14030,7 +14030,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -14164,11 +14164,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 acessa o storage1:** Sim. Storage_Access (145) vem antes do Block_Internet (150).\n- **VM2 → VM1 por HTTPS:** Sim. O deny de entrada só cobre a origem Internet; o tráfego da VNet entra pela AllowVnetInBound.\n- **Regras valem para toda a VNET1:** Não. O NSG está associado a uma sub-rede só.\n\n**Dica de prova:** A service tag \"Storage\" pode ser regional (Storage.EastUS) para restringir ainda mais.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ]
@@ -14244,7 +14244,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -14326,11 +14326,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       },
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       }
     ]
@@ -14438,15 +14438,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-performance"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -14491,11 +14491,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Contributor (RG1 ou Sub1):** não gerencia políticas, porque Microsoft.Authorization/* está em NotActions.\n- **Security Admin:** gerencia políticas de segurança do Defender, mas é amplo e não é o recomendado aqui.\n\n**Dica de prova:** Resource Policy Contributor = criar e atribuir definições, iniciativas e exemptions, sem outros acessos.",
     "docs": [
       {
-        "t": "Overview of Azure Policy - Azure Policy",
+        "t": "Visão geral do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
       },
       {
-        "t": "Azure Policy definitions effect basics - Azure Policy",
+        "t": "Noções básicas dos efeitos de definições do Azure Policy - Azure Policy",
         "u": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics"
       },
       {
@@ -14622,7 +14622,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
       },
       {
-        "t": "Get started with Storage Explorer",
+        "t": "Introdução ao Storage Explorer",
         "u": "https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer"
       }
     ],
@@ -14658,11 +14658,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Blob:** Sim. Blueprints em archive e discos não gerenciados (page blobs).\n- **Table / File:** Não. Nenhum requisito do caso pede esses serviços.",
     "docs": [
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -14717,7 +14717,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
@@ -14808,7 +14808,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **storage1 / storage3 / storage4:** estão em regiões diferentes da VM5 (East US). O storage dos flow logs precisa estar na mesma região.\n\n**Dica de prova:** A retenção máxima configurável no flow log é de 365 dias; depois disso, use lifecycle management.",
     "docs": [
       {
-        "t": "Azure Blob Storage lifecycle management overview - Azure Blob Storage",
+        "t": "Visão geral do gerenciamento do ciclo de vida do Azure Blob Storage - Azure Blob Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
       },
       {
@@ -14816,11 +14816,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       }
     ],
@@ -14859,15 +14859,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/ip-flow-verify-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ],
@@ -14901,11 +14901,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **NSG nas duas VMs:** o NSG só filtra; não cria conectividade entre VNets.\n- **IP 10.0.1.5 na VM4:** trocar o IP não conecta VNets sem peering.\n- **UDR VNET1 → VNET3:** a UDR precisaria de um next hop (NVA na VNET2 com forwarding); sem peering direto, mais esforço.\n\n**Dica de prova:** Peering não é transitivo: VNET1↔VNET2 e VNET2↔VNET3 não ligam VNET1↔VNET3.",
     "docs": [
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       }
     ],
@@ -14951,15 +14951,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **2 ou 3 VNets:** separar camadas em VNets exigiria peering, sem ganho de segurança sobre sub-redes com NSG.\n- **1 ou 2 sub-redes:** misturaria camadas e dificultaria isolar as portas entre web, app e dados.\n\n**Dica de prova:** O padrão de prova para N camadas é uma VNet, uma sub-rede por camada e um NSG por sub-rede.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
@@ -14996,11 +14996,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Regra de saída:** os usuários iniciam a conexão, então a regra é de entrada; a resposta já sai pelo estado da sessão.\n- **NSG em todas as sub-redes:** abriria 443 da internet também para as camadas de negócio e de dados.\n\n**Dica de prova:** NSGs são stateful: liberar a entrada já permite o retorno da resposta.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -15042,11 +15042,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 → VM2 (RDP):** Sim. Não há deny de saída na VM1, e a entrada na Subnet2 é liberada pelo padrão AllowVnetInBound.\n- **VM2 → VM3 (ping):** Sim. A saída cai na AllowVnetOutBound (VNets emparelhadas contam como VirtualNetwork).\n- **VM2 → VM3 (RDP):** Não. O NSG2 nega 3389 de saída.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ],
@@ -15098,11 +15098,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-powershell"
       },
       {
-        "t": "Azure built-in roles - Azure RBAC",
+        "t": "Funções internas do Azure - Azure RBAC",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
       },
       {
-        "t": "Azure roles, Microsoft Entra roles, and classic subscription administrator roles",
+        "t": "Funções do Azure, funções do Microsoft Entra e funções clássicas de administrador de assinatura",
         "u": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
       }
     ]
@@ -15298,15 +15298,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-nsg"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -15355,15 +15355,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/identity/adds-extend-domain"
       },
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       }
     ]
@@ -15389,15 +15389,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **1 monitor:** um connection monitor é regional e precisa de origens na região dele.\n- **3 ou 4:** só há VMs de origem em duas regiões.\n\n**Dica de prova:** Cada connection monitor pode ter vários test groups; o limite é por região e assinatura.",
     "docs": [
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ]
@@ -15430,15 +15430,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-resource"
       },
       {
-        "t": "What is Azure Load Balancer? - Azure Load Balancer",
+        "t": "O que é o Azure Load Balancer? - Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
       },
       {
-        "t": "Azure Load Balancer Components Overview",
+        "t": "Visão geral dos componentes do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/components"
       },
       {
-        "t": "Azure Load Balancer SKUs",
+        "t": "SKUs do Azure Load Balancer",
         "u": "https://learn.microsoft.com/en-us/azure/load-balancer/skus"
       }
     ]
@@ -15468,11 +15468,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/network-routing-preference"
       },
       {
-        "t": "Storage Account Overview - Azure Storage",
+        "t": "Visão geral das contas de armazenamento - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
       },
       {
-        "t": "Create an Azure Storage Account - Azure Storage",
+        "t": "Criar uma conta do Azure Storage - Azure Storage",
         "u": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
       },
       {
@@ -15502,11 +15502,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Bastion:** facilita o RDP; não bloqueia tráfego entre VMs.\n- **Porta de **origem** 3389:** o RDP usa 3389 como destino; a origem é uma porta efêmera.\n- **Regra inbound de origem 3389 na sub-rede:** mesmo erro, e afetaria a sub-rede inteira.\n\n**Dica de prova:** Também resolveria uma regra inbound no NIC da VM2 negando destino 3389 com origem = IP da VM1.",
     "docs": [
       {
-        "t": "Azure network security groups overview",
+        "t": "Visão geral dos grupos de segurança de rede do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
       },
       {
-        "t": "Azure Application Security Groups Overview",
+        "t": "Visão geral dos grupos de segurança de aplicativo do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
       },
       {
@@ -15616,15 +15616,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-activity-log-alert-rule"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -15749,15 +15749,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **Alert1 listado em 11/08:** Sim. O alerta dispara e aparece no portal; só a notificação é suprimida.\n- **E-mail em 12/08:** Não. Está dentro da janela de supressão.\n- **E-mail em 15/08:** Sim. A supressão terminou em 13/08.\n\n**Dica de prova:** As alert processing rules também podem **adicionar** action groups a muitas regras de uma vez.",
     "docs": [
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       }
     ]
@@ -15815,15 +15815,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **contoso.com (Entra Domain Services):** o Bastion não acessa serviços gerenciados.\n- **App1 (web app):** o acesso é HTTP(S) direto; o Bastion só faz RDP/SSH para VMs.\n\n**Dica de prova:** O Bastion também alcança VMs em VNets emparelhadas (SKUs Basic e superiores).",
     "docs": [
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -15879,7 +15879,7 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **WAD:** extensão legada; envia a storage/Event Hubs e não atende vários workspaces com DCR.\n- **Windows VM agent:** é o agente da plataforma (provisionamento/extensões), não coleta logs.\n\n**Dica de prova:** Uma DCR pode ter vários destinos; associe a mesma DCR às 100 VMs (Azure Policy facilita).",
     "docs": [
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -15913,15 +15913,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Application security group:** agrupa NICs para regras de NSG.\n- **Grupo dinâmico de dispositivos:** Entra ID, sem relação com alertas.\n- **Application group:** é do Azure Virtual Desktop.\n\n**Dica de prova:** O action group pode chamar Azure Function, Logic App, webhook, Automation runbook, ITSM, e-mail, SMS e voz.",
     "docs": [
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -15997,7 +15997,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       }
     ]
@@ -16027,15 +16027,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configure-host-scaling"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -16065,15 +16065,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-activity-log-alert-rule"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -16109,15 +16109,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/bastion/connect-vm-native-client-windows"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -16197,15 +16197,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **IP2 (tier Global):** o Bastion exige tier Regional.\n- **IPs Basic, dinâmicos ou IPv6:** só IPv4 Standard estático.\n\n**Dica de prova:** O IP público precisa estar na mesma região do Bastion.",
     "docs": [
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -16288,15 +16288,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -16401,11 +16401,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Série \"Solution\" (443 falha mesmo com allow):** a AllowAzureLoadBalancerInBound padrão já libera o probe. Uma regra nova com prioridade 150 é redundante. Investigue o app, o firewall do SO e o health probe.",
     "docs": [
       {
-        "t": "How Network Security Groups Filter Network Traffic in Azure",
+        "t": "Como os grupos de segurança de rede filtram o tráfego de rede no Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
       },
       {
-        "t": "Effective Security Rules Overview - Azure Network Watcher",
+        "t": "Visão geral das regras de segurança efetivas - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/effective-security-rules-overview"
       }
     ]
@@ -16710,15 +16710,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **3, 9 ou 10:** o Bastion alcança VNets emparelhadas, inclusive em outras regiões (global peering).\n\n**Dica de prova:** O Bastion não alcança VNets conectadas só por VPN/hub transitivo; precisa de peering direto com a VNet do Bastion.",
     "docs": [
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       }
     ]
@@ -16752,15 +16752,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **mstsc via Bastion Basic:** Não. O cliente nativo exige Standard (ou Premium).\n- **Portal SSH para a VM2:** Sim. A VNet2 está emparelhada com a VNet1.\n- **Portal para a VM3:** Não. A VNet3 só se emparelha com a VNet2, e peering não é transitivo.",
     "docs": [
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -16861,15 +16861,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **VM1 resolve server1:** Não. A VNET1 usa o DNS do Azure, que não conhece a zona contoso.com hospedada na VM4.\n- **VM2 → 131.107.3.3:** Sim. Usa o DNS customizado com a zona.\n- **VM3 → server2 = 131.107.2.4:** Não. No DNS customizado, server2 = 131.107.3.4.\n\n**Dica de prova:** Variantes desta questão trocam as VNets ligadas a zonas privadas. Confira sempre qual DNS cada VNet usa.",
     "docs": [
       {
-        "t": "Azure Virtual Network Name Resolution Guide",
+        "t": "Guia de resolução de nomes do Azure Virtual Network",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
       },
       {
-        "t": "Azure DNS Overview: Hosting and Resolution",
+        "t": "Visão geral do Azure DNS: hospedagem e resolução",
         "u": "https://learn.microsoft.com/en-us/azure/dns/dns-overview"
       },
       {
-        "t": "Azure Private DNS: Secure DNS for Virtual Networks",
+        "t": "Azure Private DNS: DNS seguro para redes virtuais",
         "u": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
       }
     ]
@@ -16934,15 +16934,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só VM1:** a VNet2 está emparelhada com a VNet1, e o Bastion alcança VNets emparelhadas.\n- **Com VM3:** a VNet3 não tem peering direto com a VNet1.",
     "docs": [
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       }
     ]
@@ -17058,7 +17058,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -17159,7 +17159,7 @@ SIM.registerQuestions("AZ-104", [
     "src": 1069,
     "domain": 5,
     "skill": "5.1",
-    "topic": "Diagnostic settings",
+    "topic": "Configurações de diagnóstico",
     "type": "single",
     "stem": "You have an Azure subscription that contains an Azure SQL database named DB1.\n\nYou plan to use Azure Monitor to monitor the performance of DB1. You must be able to run queries to analyze log data.\n\nWhich destination should you configure in the Diagnostic settings of DB1?",
     "options": [
@@ -17178,7 +17178,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -17215,7 +17215,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       },
       {
@@ -17245,15 +17245,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Arc agent sozinho:** é o pré-requisito para gerenciar o servidor, mas o Connection Monitor usa o AMA.\n- **Network Watcher Agent:** só para VMs do Azure.\n- **Log Analytics agent:** aposentado.\n\n**Dica de prova:** Na prática: Arc no DC1 → extensão AMA → endpoint no Connection Monitor.",
     "docs": [
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ]
@@ -17283,15 +17283,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ]
@@ -17330,7 +17330,7 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
       },
       {
-        "t": "Azure Monitor Agent Overview - Azure Monitor",
+        "t": "Visão geral do Azure Monitor Agent - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview"
       }
     ]
@@ -17424,15 +17424,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/co-location"
       },
       {
-        "t": "Availability sets overview - Azure Virtual Machines",
+        "t": "Visão geral dos conjuntos de disponibilidade - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
       },
       {
-        "t": "Availability options for Azure Virtual Machines - Azure Virtual Machines",
+        "t": "Opções de disponibilidade para o Azure Virtual Machines - Azure Virtual Machines",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
       },
       {
-        "t": "What are Azure Availability Zones?",
+        "t": "O que são as Zonas de Disponibilidade do Azure?",
         "u": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
       }
     ]
@@ -17472,15 +17472,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Item a item**\n- **/24:** maior que o necessário.\n- **/28 / /29:** abaixo do mínimo /26.\n- **IP Basic (estático ou dinâmico):** o Bastion exige IP Standard estático.\n\n**Dica de prova:** Upload e download de arquivos só funcionam com o cliente nativo (Standard/Premium); host scaling vai de 2 a 50 instâncias.",
     "docs": [
       {
-        "t": "About Azure Bastion configuration settings",
+        "t": "Sobre as configurações do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
       },
       {
-        "t": "What is Azure Bastion?",
+        "t": "O que é o Azure Bastion?",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/bastion-overview"
       },
       {
-        "t": "VNet peering and Azure Bastion architecture",
+        "t": "Emparelhamento de VNets e arquitetura do Azure Bastion",
         "u": "https://learn.microsoft.com/en-us/azure/bastion/vnet-peering"
       }
     ]
@@ -17552,15 +17552,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics"
       },
       {
-        "t": "Azure Network Watcher Overview",
+        "t": "Visão geral do Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
       },
       {
-        "t": "Connection Monitor Overview - Azure Network Watcher",
+        "t": "Visão geral do Monitor de Conexão - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
       },
       {
-        "t": "Virtual Network Flow Logs - Azure Network Watcher",
+        "t": "Logs de fluxo de rede virtual - Azure Network Watcher",
         "u": "https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-overview"
       }
     ]
@@ -17586,15 +17586,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Mail-enabled security group / distribution group / Microsoft 365 group:** são objetos do Entra/Exchange. Até poderiam receber o e-mail, mas a regra de alerta só notifica por meio de um action group.\n\n**Dica de prova:** No action group, use a notificação \"Email/SMS message/Push/Voice\" com os dois endereços, ou \"Email Azure Resource Manager Role\".",
     "docs": [
       {
-        "t": "Create and manage action groups in Azure Monitor - Azure Monitor",
+        "t": "Criar e gerenciar grupos de ações no Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups"
       },
       {
-        "t": "Overview of Azure Monitor alerts - Azure Monitor",
+        "t": "Visão geral dos alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
       },
       {
-        "t": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+        "t": "Regras de processamento para alertas do Azure Monitor - Azure Monitor",
         "u": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
       }
     ]
@@ -17698,11 +17698,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Private endpoint:** dá acesso privado a serviços PaaS, não liga VNets.\n- **ExpressRoute:** liga on-premises ao Azure.\n- **Route table:** muda o próximo salto, mas não conecta VNets sem peering ou gateway.\n\n**Dica de prova:** Tráfego entre regiões do Azure sempre fica no backbone da Microsoft, mesmo por VPN; o peering é a resposta mais direta.",
     "docs": [
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       }
     ]
@@ -17806,15 +17806,15 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Grupos Assigned:** exigiriam adicionar cada usuário à mão.\n- **ARM template:** não cria usuários do Entra.\n- **Script PowerShell:** funcionaria, mas com mais esforço que grupos dinâmicos.\n- **XML:** o Bulk create do portal usa CSV.\n\n**Dica de prova:** A regra seria user.department -eq \"Vendas\"; a associação pode levar alguns minutos.",
     "docs": [
       {
-        "t": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+        "t": "Gerenciar regras de grupos de associação dinâmica no Microsoft Entra ID - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
       },
       {
-        "t": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+        "t": "Como criar, convidar e excluir usuários no Microsoft Entra ID - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
       },
       {
-        "t": "How to manage groups - Microsoft Entra",
+        "t": "Como gerenciar grupos - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
       }
     ]
@@ -18090,11 +18090,11 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
       },
       {
-        "t": "What is Azure Virtual Network?",
+        "t": "O que é o Azure Virtual Network?",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
       },
       {
-        "t": "Add, change, or delete a subnet",
+        "t": "Adicionar, alterar ou excluir uma sub-rede",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
       },
       {
@@ -18126,11 +18126,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **User1:** o modo Selected aceita grupos, não usuários avulsos.\n- **Group2:** o gabarito considera só o grupo de segurança Group1 (grupos Microsoft 365 também são aceitos na documentação atual; leia o tipo na tabela).\n\n**Dica de prova:** Para habilitar para todos, use \"All\".",
     "docs": [
       {
-        "t": "Enable Microsoft Entra self-service password reset - Microsoft Entra ID",
+        "t": "Habilitar a redefinição de senha por autoatendimento do Microsoft Entra - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
       },
       {
-        "t": "Self-service password reset policies - Microsoft Entra ID",
+        "t": "Políticas de redefinição de senha por autoatendimento - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
       }
     ]
@@ -18442,11 +18442,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que não as outras**\n- **Só VNet2 ou parciais:** peering funciona entre regiões, assinaturas e tenants (com permissão nos dois lados), desde que não haja sobreposição.\n\n**Dica de prova:** Entre tenants, o usuário precisa de Network Contributor nas duas VNets (ou ser convidado no outro tenant).",
     "docs": [
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       }
     ]
@@ -18480,11 +18480,11 @@ SIM.registerQuestions("AZ-104", [
     "details": "**Por que todos são Não:** Azure público, Azure Government e Azure China (21Vianet) são nuvens separadas, sem peering entre si. Para conectar, use VPN ou ExpressRoute.",
     "docs": [
       {
-        "t": "Azure Virtual Network Peering",
+        "t": "Emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
       },
       {
-        "t": "Create, Change, or Delete Azure Virtual Network Peering",
+        "t": "Criar, alterar ou excluir um emparelhamento de redes virtuais do Azure",
         "u": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
       }
     ]
@@ -18552,15 +18552,15 @@ SIM.registerQuestions("AZ-104", [
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-naming-policy"
       },
       {
-        "t": "How to manage user profile information in the Microsoft Entra admin center - Microsoft Entra",
+        "t": "Como gerenciar informações de perfil de usuário no centro de administração do Microsoft Entra - Microsoft Entra",
         "u": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info"
       },
       {
-        "t": "Configure group settings using PowerShell - Microsoft Entra ID",
+        "t": "Definir configurações de grupo usando o PowerShell - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets"
       },
       {
-        "t": "Set expiration for Microsoft 365 groups - Microsoft Entra ID",
+        "t": "Definir a expiração de grupos do Microsoft 365 - Microsoft Entra ID",
         "u": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
       }
     ]
@@ -18749,7 +18749,7 @@ SIM.registerQuestions("AZ-104", [
     "src": 1151,
     "domain": 3,
     "skill": "3.2",
-    "topic": "Redimensionar VM em availability set",
+    "topic": "Redimensionar VM em conjunto de disponibilidade",
     "type": "single",
     "stem": "You have an Azure subscription that contains three virtual machines named VM1, VM2, and VM3. All the virtual machines are in an availability set named AVSet1.\n\nYou need to scale up VM1 to a new virtual machine size, but the intended size is unavailable.\n\nWhat should you do first?",
     "options": [
