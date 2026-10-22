@@ -70,7 +70,7 @@ SIM.registerExam({
       "tabs": [
         {
           "title": "Visão geral",
-          "body": "A Contoso, Ltd. é uma empresa de consultoria com sede em Montreal e duas filiais, em Seattle e Nova York.\n\nA Contoso tem os usuários e computadores mostrados na tabela a seguir.\n\n| Local | Usuários | Notebooks | Computadores desktop | Dispositivos móveis |\n|---|---|---|---|---|\n| Montreal | 2,500 | 2,800 | 300 | 3,100 |\n| Seattle | 1,000 | 1,100 | 200 | 1,500 |\n| Nova York | 300 | 320 | 30 | 400 |\n\nA empresa tem departamentos de TI, recursos humanos (HR), jurídico (LEG), marketing (MKG) e finanças (FIN).\n\nA Contoso comprou recentemente uma assinatura do Microsoft 365.\n\nA empresa está abrindo uma nova filial em Phoenix. A maioria dos usuários do escritório de Phoenix trabalhará em casa."
+          "body": "A Contoso, Ltd. é uma empresa de consultoria com sede em Montreal e duas filiais, em Seattle e Nova York.\n\nA Contoso tem os usuários e computadores mostrados na tabela a seguir.\n\n| Local | Usuários | Notebooks | Computadores desktop | Dispositivos móveis |\n|---|---|---|---|---|\n| Montreal | 2.500 | 2.800 | 300 | 3.100 |\n| Seattle | 1.000 | 1.100 | 200 | 1.500 |\n| Nova York | 300 | 320 | 30 | 400 |\n\nA empresa tem departamentos de TI, recursos humanos (HR), jurídico (LEG), marketing (MKG) e finanças (FIN).\n\nA Contoso comprou recentemente uma assinatura do Microsoft 365.\n\nA empresa está abrindo uma nova filial em Phoenix. A maioria dos usuários do escritório de Phoenix trabalhará em casa."
         },
         {
           "title": "Ambiente existente",

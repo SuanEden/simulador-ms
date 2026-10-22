@@ -1,0 +1,7 @@
+[
+  {"exam":"MD-102","id":"Q098 e Q188","note":"O original expande PKCS como ‘public key pair’. Essa redação foi traduzida fielmente; revisar a terminologia técnica separadamente."},
+  {"exam":"MD-102","id":"Q157","note":"A captura mostra simultaneamente ‘Target to apps on all device types = Yes’ e ‘Device types = Unmanaged’. A tradução reproduz os dois valores sem resolver essa aparente inconsistência."},
+  {"exam":"SC-300","id":"Q005","note":"User3 é convidado no enunciado, mas a tabela não informa seu endereço de email/domínio. Não acrescentar informação que permita inferir uma resposta."},
+  {"exam":"SC-300","id":"Q020","note":"A alternativa usa contoso.ommicrosoft.com, enquanto o cenário usa contoso.onmicrosoft.com. O identificador da alternativa foi preservado literalmente."},
+  {"exam":"AZ-104","id":"Q020","note":"O enunciado fala em arrastar uma opção, mas o banco original usa múltipla escolha em painel. Tipo, ordem e gabarito preservados."}
+]

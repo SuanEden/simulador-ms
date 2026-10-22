@@ -3302,7 +3302,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Proteção contra explorações",
     "type": "match",
-    "stem": "Você tem 500 dispositivos Windows 10 inscritos no Microsoft Intune.\n\nVocê planeja usar a Proteção contra explorações no Microsoft Intune para habilitar as seguintes configurações do sistema nos dispositivos:\n\n- Prevenção de Execução de Dados (DEP)\n- Forçar aleatoriedade para imagens (ASLR obrigatório)\n\nVocê precisa configurar um dispositivo Windows 10 que será usado para criar um arquivo de modelo.\n\nQuais áreas de proteção do dispositivo você deve configurar no aplicativo Segurança do Windows antes de criar o arquivo de modelo? Para responder, arraste as áreas de proteção apropriadas para as configurações correspondentes. Cada área de proteção pode ser usada uma vez, mais de uma vez ou nenhuma vez.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
+    "stem": "Você tem 500 dispositivos Windows 10 inscritos no Microsoft Intune.\n\nVocê planeja usar a Proteção contra explorações no Microsoft Intune para habilitar as seguintes configurações do sistema nos dispositivos:\n\n- Prevenção de Execução de Dados (DEP)\n- Forçar a randomização de imagens (ASLR obrigatório)\n\nVocê precisa configurar um dispositivo Windows 10 que será usado para criar um arquivo de modelo.\n\nQuais áreas de proteção do dispositivo você deve configurar no aplicativo Segurança do Windows antes de criar o arquivo de modelo? Para responder, arraste as áreas de proteção apropriadas para as configurações correspondentes. Cada área de proteção pode ser usada uma vez, mais de uma vez ou nenhuma vez.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "pool": [
       "Proteção de conta",
       "Controle de aplicativos e do navegador",
@@ -6494,7 +6494,7 @@ SIM.registerQuestions("MD-102", [
         "options": [
           "Certificado de par de chaves públicas (PKCS) importado",
           "Certificado de par de chaves públicas (PKCS)",
-          "Certificado do Protocolo SCEP",
+          "Certificado do Protocolo Simples de Inscrição de Certificados (SCEP)",
           "Certificado confiável"
         ],
         "answer": 3
@@ -6526,7 +6526,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Grupos de dispositivos do Defender",
     "type": "hotarea",
-    "stem": "Sua empresa usa o Microsoft Defender for Endpoint. O Microsoft Defender for Endpoint inclui os grupos de dispositivos mostrados na tabela a seguir.\n\n| Classificação | Nome | Membros |\n|---|---|---|\n| 1 | Group1 | Marca igual a demo e sistema operacional entre Windows 10 |\n| 2 | Group2 | Marca igual a demo |\n| 3 | Group3 | Domínio igual a adatum.com |\n| 4 | Group4 | Domínio igual a adatum.com e sistema operacional entre Windows 10 |\n| 5 | Group5 | Nome começa com COMP |\n| Última | Dispositivos não agrupados (padrão) | Não se aplica |\n\nVocê integra ao Microsoft Defender for Endpoint um computador com as seguintes propriedades:\n\n- Nome: computer1\n- Domínio: adatum.com\n- Sistema operacional: Windows10 64-bit (Build 17134)\n\nQual é o efeito da configuração do Microsoft Defender for Endpoint? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
+    "stem": "Sua empresa usa o Microsoft Defender for Endpoint. O Microsoft Defender for Endpoint inclui os grupos de dispositivos mostrados na tabela a seguir.\n\n| Classificação | Nome | Membros |\n|---|---|---|\n| 1 | Group1 | Marca igual a demo e sistema operacional Windows 10 |\n| 2 | Group2 | Marca igual a demo |\n| 3 | Group3 | Domínio igual a adatum.com |\n| 4 | Group4 | Domínio igual a adatum.com e sistema operacional Windows 10 |\n| 5 | Group5 | Nome começa com COMP |\n| Última | Dispositivos não agrupados (padrão) | Não se aplica |\n\nVocê integra ao Microsoft Defender for Endpoint um computador com as seguintes propriedades:\n\n- Nome: computer1\n- Domínio: adatum.com\n- Sistema operacional: Windows10 64-bit (Build 17134)\n\nQual é o efeito da configuração do Microsoft Defender for Endpoint? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
         "label": "Computer1 será membro de:",
@@ -7386,7 +7386,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Integração ao Defender for Endpoint",
     "type": "match",
-    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Defender for Endpoint.\n\nVocê planeja integrar os seguintes tipos de dispositivos ao Defender for Endpoint:\n\n- macOS\n- Linux Server\n\nO que você deve usar para integrar cada dispositivo? Para responder, arraste as ferramentas apropriadas para os tipos de dispositivo correspondentes. Cada ferramenta pode ser usada uma vez, mais de uma vez ou nenhuma vez.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Defender for Endpoint.\n\nVocê planeja integrar os seguintes tipos de dispositivos ao Defender for Endpoint:\n\n- macOS\n- Servidor Linux\n\nO que você deve usar para integrar cada dispositivo? Para responder, arraste as ferramentas apropriadas para os tipos de dispositivo correspondentes. Cada ferramenta pode ser usada uma vez, mais de uma vez ou nenhuma vez.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "pool": [
       "Ansible",
       "Política de Grupo",
@@ -7399,7 +7399,7 @@ SIM.registerQuestions("MD-102", [
         "answer": 2
       },
       {
-        "label": "Linux Server:",
+        "label": "Servidor Linux:",
         "answer": 0
       }
     ],
@@ -7463,12 +7463,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.2",
     "topic": "Conjuntos de políticas",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Microsoft Intune to manage Windows 11 devices.\n\nYou create a new policy set named Set1 and add five device configuration profiles for Windows 10 and later.\n\nYou create a device compliance policy named Policy1.\n\nYou need to ensure that when users are assigned the device configuration profiles in Set1, they are always assigned Policy1 also.\n\nWhat should you configure?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Microsoft Intune para gerenciar dispositivos Windows 11.\n\nVocê cria um novo conjunto de políticas chamado Set1 e adiciona cinco perfis de configuração de dispositivos para Windows 10 e posteriores.\n\nVocê cria uma política de conformidade de dispositivos chamada Policy1.\n\nVocê precisa garantir que, quando os perfis de configuração de dispositivos de Set1 forem atribuídos aos usuários, Policy1 também seja sempre atribuída.\n\nO que você deve configurar?",
     "options": [
-      "the assignments of Policy1",
-      "the Policy1 configurations",
-      "the assignments of Set1",
-      "the Set1 configurations"
+      "as atribuições de Policy1",
+      "as configurações de Policy1",
+      "as atribuições de Set1",
+      "as configurações de Set1"
     ],
     "answer": 3,
     "scope": "in",
@@ -7548,12 +7548,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.2",
     "topic": "Perfis de configuração de dispositivos",
     "type": "single",
-    "stem": "You have 200 computers that run Windows 10. The computers are joined to Azure AD and enrolled in Microsoft Intune.\n\nYou need to enable self-service password reset on the sign-in screen.\n\nWhich settings should you configure from the Microsoft Intune admin center?",
+    "stem": "Você tem 200 computadores que executam o Windows 10. Os computadores estão ingressados no Azure AD e inscritos no Microsoft Intune.\n\nVocê precisa habilitar a redefinição de senha por autoatendimento na tela de entrada.\n\nQuais configurações você deve definir no centro de administração do Microsoft Intune?",
     "options": [
-      "Device configuration",
-      "Device enrollment",
-      "Conditional access",
-      "Device compliance"
+      "Configuração de dispositivos",
+      "Inscrição de dispositivos",
+      "Acesso Condicional",
+      "Conformidade de dispositivos"
     ],
     "answer": 0,
     "scope": "in",
@@ -7582,20 +7582,20 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Análise de endpoint",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 tenant that uses Microsoft Intune.\n\nFrom the Microsoft Intune admin center, you plan to create a baseline to monitor the Startup score and the App reliability score of enrolled Windows 10 devices.\n\nYou need to identify which tool to use to create the baseline and the minimum number of devices required to create the baseline.\n\nWhat should you identify? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Microsoft 365 que usa o Microsoft Intune.\n\nNo centro de administração do Microsoft Intune, você planeja criar uma linha de base para monitorar a Pontuação de inicialização e a Pontuação de confiabilidade de aplicativos dos dispositivos Windows 10 inscritos.\n\nVocê precisa identificar qual ferramenta usar para criar a linha de base e o número mínimo de dispositivos necessários para criá-la.\n\nO que você deve identificar? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "Tool to use:",
+        "label": "Ferramenta a usar:",
         "options": [
-          "Workloads",
+          "Cargas de trabalho",
           "Log Analytics",
-          "Endpoint analytics",
-          "Security baselines"
+          "Análise de endpoint",
+          "Linhas de base de segurança"
         ],
         "answer": 2
       },
       {
-        "label": "Minimum number of devices:",
+        "label": "Número mínimo de dispositivos:",
         "options": [
           "1",
           "5",
@@ -7627,13 +7627,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Análise de endpoint",
     "type": "single",
-    "stem": "You are implementing Microsoft Intune Suite.\n\nYou enroll devices in Intune as shown in the following table.\n\n| Name | Platform |\n|---|---|\n| Device1 | Windows 11 |\n| Device2 | Windows 10 |\n| Device3 | Android |\n| Device4 | iOS |\n\nThe performance of which devices can be analyzed by using Endpoint analytics?",
+    "stem": "Você está implementando o Microsoft Intune Suite.\n\nVocê inscreve dispositivos no Intune conforme a tabela a seguir.\n\n| Nome | Plataforma |\n|---|---|\n| Device1 | Windows 11 |\n| Device2 | Windows 10 |\n| Device3 | Android |\n| Device4 | iOS |\n\nO desempenho de quais dispositivos pode ser analisado usando a Análise de endpoint?",
     "options": [
-      "Device1 only",
-      "Device1 and Device2 only",
-      "Device1, Device2, and Device3 only",
-      "Device1, Device2, and Device4 only",
-      "Device1, Device2, Device3, and Device4"
+      "Somente Device1",
+      "Somente Device1 e Device2",
+      "Somente Device1, Device2 e Device3",
+      "Somente Device1, Device2 e Device4",
+      "Device1, Device2, Device3 e Device4"
     ],
     "answer": 1,
     "shuffle": false,
@@ -7659,13 +7659,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Defender for Endpoint",
     "type": "single",
-    "stem": "You have the devices shown in the following table.\n\n| Name | Operating system | Domain member |\n|---|---|---|\n| Device1 | Windows 11 Enterprise | No |\n| Device2 | Windows 10 Pro | Yes |\n| Device3 | Android | No |\n| Device4 | Mac OS X | No |\n\nYou plan to implement Microsoft Defender for Endpoint.\n\nYou need to identify which devices can be onboarded to Microsoft Defender for Endpoint.\n\nWhat should you identify?",
+    "stem": "Você tem os dispositivos mostrados na tabela a seguir.\n\n| Nome | Sistema operacional | Membro do domínio |\n|---|---|---|\n| Device1 | Windows 11 Enterprise | Não |\n| Device2 | Windows 10 Pro | Sim |\n| Device3 | Android | Não |\n| Device4 | Mac OS X | Não |\n\nVocê planeja implementar o Microsoft Defender for Endpoint.\n\nVocê precisa identificar quais dispositivos podem ser integrados ao Microsoft Defender for Endpoint.\n\nO que você deve identificar?",
     "options": [
-      "Device1 only",
-      "Device2 only",
-      "Device1, Device2 only",
-      "Device1, Device2, and Device3 only",
-      "Device1, Device2, Device3, and Device4"
+      "Somente Device1",
+      "Somente Device2",
+      "Somente Device1 e Device2",
+      "Somente Device1, Device2 e Device3",
+      "Device1, Device2, Device3 e Device4"
     ],
     "answer": 3,
     "shuffle": false,
@@ -7691,12 +7691,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "Acesso Condicional (MAM)",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription.\n\nYou use app protection policies to protect corporate data on Android devices.\n\nYou need to ensure that any user connecting from an Android device can only access the corporate data if they connect from an app that supports mobile application management (MAM).\n\nWhat should you configure?",
+    "stem": "Você tem uma assinatura do Microsoft 365.\n\nVocê usa políticas de proteção de aplicativos para proteger dados corporativos em dispositivos Android.\n\nVocê precisa garantir que qualquer usuário que se conecte de um dispositivo Android só possa acessar os dados corporativos se usar um aplicativo compatível com o gerenciamento de aplicativos móveis (MAM).\n\nO que você deve configurar?",
     "options": [
-      "an app configuration policy",
-      "a Conditional Access policy",
-      "a device configuration profile",
-      "a device compliance policy"
+      "uma política de configuração de aplicativos",
+      "uma política de Acesso Condicional",
+      "um perfil de configuração de dispositivos",
+      "uma política de conformidade de dispositivos"
     ],
     "answer": 1,
     "scope": "in",
@@ -7721,12 +7721,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Atribuição de aplicativos",
     "type": "single",
-    "stem": "Your company has a Microsoft 365 subscription.\n\nAll the users in the finance department own personal devices that run iOS or Android. All the devices are enrolled in Microsoft Intune.\n\nThe finance department adds new users each month.\n\nThe company develops a mobile application named App1 for the finance department users.\n\nYou need to ensure that only the finance department users can download App1.\n\nWhat should you do first?",
+    "stem": "Sua empresa tem uma assinatura do Microsoft 365.\n\nTodos os usuários do departamento de finanças têm dispositivos pessoais que executam iOS ou Android. Todos os dispositivos estão inscritos no Microsoft Intune.\n\nO departamento de finanças recebe novos usuários a cada mês.\n\nA empresa desenvolve um aplicativo móvel chamado App1 para os usuários do departamento de finanças.\n\nVocê precisa garantir que somente os usuários do departamento de finanças possam baixar App1.\n\nO que você deve fazer primeiro?",
     "options": [
-      "Register App1 in Azure AD.",
-      "Add App1 to the vendor stores for iOS and Android applications.",
-      "Add App1 to a Microsoft Deployment Toolkit (MDT) deployment share.",
-      "Add App1 to Intune."
+      "Registrar App1 no Azure AD.",
+      "Adicionar App1 às lojas dos fornecedores de aplicativos iOS e Android.",
+      "Adicionar App1 a um compartilhamento de implantação do Microsoft Deployment Toolkit (MDT).",
+      "Adicionar App1 ao Intune."
     ],
     "answer": 3,
     "scope": "in",
@@ -7759,12 +7759,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "Gerenciamento do Microsoft Edge",
     "type": "match",
-    "stem": "You have a Microsoft 365 subscription that contains the devices shown in the following table.\n\n| Name | Platform | Enrolled in Microsoft Intune |\n|---|---|---|\n| Device1 | Windows 10 | Yes |\n| Device2 | Android Enterprise | Yes |\n| Device3 | iOS/iPadOS | Yes |\n\nYou need to configure the Microsoft Edge settings for each device.\n\nWhat should you use? To answer, drag the appropriate Intune features to the correct devices. Each feature may be used once, more than once, or not at all.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém os dispositivos mostrados na tabela a seguir.\n\n| Nome | Plataforma | Inscrito no Microsoft Intune |\n|---|---|---|\n| Device1 | Windows 10 | Sim |\n| Device2 | Android Enterprise | Sim |\n| Device3 | iOS/iPadOS | Sim |\n\nVocê precisa definir as configurações do Microsoft Edge para cada dispositivo.\n\nO que você deve usar? Para responder, arraste os recursos apropriados do Intune para os dispositivos correspondentes. Cada recurso pode ser usado uma vez, mais de uma vez ou nenhuma vez.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "pool": [
-      "App configuration policy",
-      "Device compliance policy",
-      "Device configuration profile",
-      "Endpoint security policy"
+      "Política de configuração de aplicativos",
+      "Política de conformidade de dispositivos",
+      "Perfil de configuração de dispositivos",
+      "Política de segurança de endpoint"
     ],
     "targets": [
       {
@@ -7806,11 +7806,11 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Políticas para aplicativos do Office",
     "type": "yesno",
-    "stem": "You have a Microsoft 365 E5 subscription that uses Microsoft Intune. The subscription contains the users shown in the following table.\n\n| Name | Member of |\n|---|---|\n| User1 | Group1, Group2 |\n| User2 | Group2 |\n| User3 | Group3 |\n\nGroup2 and Group3 are members of Group1.\n\nAll the users use Microsoft Excel.\n\nFrom the Microsoft Intune admin center, you create the policies shown in the following table.\n\n| Name | Type | Priority | Assigned to | Default file format for Excel |\n|---|---|---|---|---|\n| Policy1 | Policies for Office apps | 0 | Group1 | OpenDocument Spreadsheet (*.ods) |\n| Policy2 | Policies for Office apps | 1 | Group2 | Excel Binary Workbook (*.xlsb) |\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que usa o Microsoft Intune. A assinatura contém os usuários mostrados na tabela a seguir.\n\n| Nome | Membro de |\n|---|---|\n| User1 | Group1, Group2 |\n| User2 | Group2 |\n| User3 | Group3 |\n\nGroup2 e Group3 são membros de Group1.\n\nTodos os usuários usam o Microsoft Excel.\n\nNo centro de administração do Microsoft Intune, você cria as políticas mostradas na tabela a seguir.\n\n| Nome | Tipo | Prioridade | Atribuída a | Formato de arquivo padrão do Excel |\n|---|---|---|---|---|\n| Policy1 | Políticas para aplicativos do Office | 0 | Group1 | Planilha OpenDocument (*.ods) |\n| Policy2 | Políticas para aplicativos do Office | 1 | Group2 | Pasta de Trabalho Binária do Excel (*.xlsb) |\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "When User1 saves a new spreadsheet, the .ods format is used.",
-      "When User2 saves a new spreadsheet, the .xlsb format is used.",
-      "When User3 saves a new spreadsheet, the .xlsx format is used."
+      "Quando User1 salva uma nova planilha, o formato .ods é usado.",
+      "Quando User2 salva uma nova planilha, o formato .xlsb é usado.",
+      "Quando User3 salva uma nova planilha, o formato .xlsx é usado."
     ],
     "answer": [
       true,
@@ -7839,20 +7839,20 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Aplicativos Win32",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 E5 subscription that contains a computer named Computer1 that runs Windows 11. Computer1 is enrolled in Microsoft Intune.\n\nYou need to deploy an app named App1 to Computer1. The App1 installation will use multiple files.\n\nWhat should you use to package App1, and which file format will be used? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que contém um computador chamado Computer1 que executa o Windows 11. Computer1 está inscrito no Microsoft Intune.\n\nVocê precisa implantar um aplicativo chamado App1 em Computer1. A instalação de App1 usará vários arquivos.\n\nO que você deve usar para empacotar App1 e qual formato de arquivo será usado? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "Use:",
+        "label": "Usar:",
         "options": [
-          "Deployment Image Servicing and Management (DISM)",
-          "Microsoft Application Virtualization (App-V) Sequencer",
+          "Gerenciamento e Manutenção de Imagens de Implantação (DISM)",
+          "Sequenciador do Microsoft Application Virtualization (App-V)",
           "Win32 Content Prep Tool",
           "Windows Package Manager"
         ],
         "answer": 2
       },
       {
-        "label": "File format:",
+        "label": "Formato de arquivo:",
         "options": [
           ".apk",
           ".appv",
@@ -7888,12 +7888,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.3",
     "topic": "Configurações de política de conformidade",
     "type": "single",
-    "stem": "You have a Microsoft 365 tenant that contains the devices shown in the following table.\n\n| Name | Member of |\n|---|---|\n| Device1 | Group1 |\n| Device2 | Group1 |\n| Device3 | Group1 |\n\nThe devices are managed by using Microsoft Intune.\n\nYou create a compliance policy named Policy1 and assign Policy1 to Group1. Policy1 is configured to mark a device as Compliant only if the device security settings match the settings specified in the policy.\n\nYou discover that devices that are not members of Group1 are shown as Compliant.\n\nYou need to ensure that only devices that are assigned a compliance policy can be shown as Compliant. All other devices must be shown as Not compliant.\n\nWhat should you do from the Microsoft Intune admin center?",
+    "stem": "Você tem um tenant do Microsoft 365 que contém os dispositivos mostrados na tabela a seguir.\n\n| Nome | Membro de |\n|---|---|\n| Device1 | Group1 |\n| Device2 | Group1 |\n| Device3 | Group1 |\n\nOs dispositivos são gerenciados pelo Microsoft Intune.\n\nVocê cria uma política de conformidade chamada Policy1 e a atribui a Group1. Policy1 está configurada para marcar um dispositivo como Em conformidade somente se as configurações de segurança do dispositivo corresponderem às configurações especificadas na política.\n\nVocê descobre que dispositivos que não são membros de Group1 aparecem como Em conformidade.\n\nVocê precisa garantir que somente os dispositivos com uma política de conformidade atribuída possam aparecer como Em conformidade. Todos os outros dispositivos devem aparecer como Não conforme.\n\nO que você deve fazer no centro de administração do Microsoft Intune?",
     "options": [
-      "From Device compliance, configure the Compliance policy settings.",
-      "From Endpoint security, configure the Conditional access settings.",
-      "From Tenant administration, modify the Diagnostic settings.",
-      "From Policy1, modify the actions for noncompliance."
+      "Em Conformidade de dispositivos, definir as Configurações de política de conformidade.",
+      "Em Segurança de endpoint, definir as configurações de Acesso Condicional.",
+      "Em Administração do tenant, modificar as Configurações de diagnóstico.",
+      "Em Policy1, modificar as ações para não conformidade."
     ],
     "answer": 0,
     "scope": "in",
@@ -7922,24 +7922,24 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows Autopilot",
     "type": "hotarea",
-    "stem": "Your company has an infrastructure that has the following:\n\n- A Microsoft 365 tenant\n- An Active Directory forest\n- Microsoft Intune\n- A Key Management Service (KMS) server\n- A Windows Deployment Services (WDS) server\n- An Azure AD Premium tenant\n\nThe company purchases 100 new client computers that run Windows.\n\nYou need to ensure that the new computers are joined automatically to Azure AD by using Windows Autopilot.\n\nWhat should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Sua empresa tem uma infraestrutura com os seguintes componentes:\n\n- Um tenant do Microsoft 365\n- Uma floresta do Active Directory\n- Microsoft Intune\n- Um servidor do Serviço de Gerenciamento de Chaves (KMS)\n- Um servidor do Windows Deployment Services (WDS)\n- Um tenant do Azure AD Premium\n\nA empresa compra 100 novos computadores cliente que executam o Windows.\n\nVocê precisa garantir que os novos computadores ingressem automaticamente no Azure AD usando o Windows Autopilot.\n\nO que você deve usar? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "Management tool:",
+        "label": "Ferramenta de gerenciamento:",
         "options": [
-          "Microsoft Entra admin center",
-          "Microsoft Intune admin center",
-          "Volume Activation Management Tool console",
-          "Windows Deployment Services console"
+          "Centro de administração do Microsoft Entra",
+          "Centro de administração do Microsoft Intune",
+          "Console da Ferramenta de Gerenciamento de Ativação de Volume",
+          "Console do Windows Deployment Services"
         ],
         "answer": 1
       },
       {
-        "label": "Required information from each computer:",
+        "label": "Informações necessárias de cada computador:",
         "options": [
-          "Device serial number and hardware hash",
-          "MAC address and computer name",
-          "Volume License Key and computer name"
+          "Número de série do dispositivo e hash de hardware",
+          "Endereço MAC e nome do computador",
+          "Chave de Licença por Volume e nome do computador"
         ],
         "answer": 0
       }
@@ -7970,13 +7970,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows Autopilot",
     "type": "multi",
-    "stem": "You have an Azure AD tenant named contoso.com.\n\nYou plan to purchase 25 computers that run Windows 11. You plan to deliver the computers directly to users.\n\nYou need to ensure that during the out-of-box experience (OOBE), users are prompted to sign in, and then the computers are configured to use Microsoft Intune.\n\nWhich two components should you configure? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Azure AD chamado contoso.com.\n\nVocê planeja comprar 25 computadores que executam o Windows 11 e entregá-los diretamente aos usuários.\n\nVocê precisa garantir que, durante a experiência inicial (OOBE), os usuários sejam solicitados a entrar e, em seguida, os computadores sejam configurados para usar o Microsoft Intune.\n\nQuais dois componentes você deve configurar? Cada resposta correta apresenta parte da solução.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "a provisioning package",
-      "automatic enrollment",
-      "an unattend.xml answer file",
-      "a Windows Autopilot deployment profile for self-deploying mode",
-      "a Windows Autopilot deployment profile for user-driven mode"
+      "um pacote de provisionamento",
+      "inscrição automática",
+      "um arquivo de resposta unattend.xml",
+      "um perfil de implantação do Windows Autopilot no modo de autoimplantação",
+      "um perfil de implantação do Windows Autopilot no modo controlado pelo usuário"
     ],
     "answer": [
       1,
@@ -8008,14 +8008,14 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows Autopilot",
     "type": "multi",
-    "stem": "You need to assign the same deployment profile to all the computers that are configured by using Windows Autopilot.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você precisa atribuir o mesmo perfil de implantação a todos os computadores configurados usando o Windows Autopilot.\n\nQuais duas ações você deve executar? Cada resposta correta apresenta parte da solução.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "Create an Azure AD group that has dynamic membership rules and uses the ZTDID tag.",
-      "Create an Azure AD group that has dynamic membership rules and uses the operatingSystem tag.",
-      "Assign a Windows Autopilot deployment profile to a group.",
-      "Join the computers to Azure AD.",
-      "Create a Group Policy object (GPO) that is linked to a domain.",
-      "Join the computers to an on-premises Active Directory domain."
+      "Criar um grupo do Azure AD com regras de associação dinâmica que use a marca ZTDID.",
+      "Criar um grupo do Azure AD com regras de associação dinâmica que use a marca operatingSystem.",
+      "Atribuir um perfil de implantação do Windows Autopilot a um grupo.",
+      "Ingressar os computadores no Azure AD.",
+      "Criar um objeto de Política de Grupo (GPO) vinculado a um domínio.",
+      "Ingressar os computadores em um domínio do Active Directory local."
     ],
     "answer": [
       0,
@@ -8047,7 +8047,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.2",
     "topic": "Área de Trabalho Remota",
     "type": "hotarea",
-    "stem": "You have an Azure AD tenant that contains the following:\n\n- Windows 11 devices that are joined to Azure AD\n- A user that has a display name of User1 and a UPN of user1@contoso.com\n\nYou enable Remote Desktop on the Windows 11 devices.\n\nYou need to ensure that User1 can use Remote Desktop to connect to the devices.\n\nHow should you complete the command that must be run on each device? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Azure AD que contém os seguintes elementos:\n\n- Dispositivos Windows 11 ingressados no Azure AD\n- Um usuário com nome de exibição User1 e UPN user1@contoso.com\n\nVocê habilita a Área de Trabalho Remota nos dispositivos Windows 11.\n\nVocê precisa garantir que User1 possa usar a Área de Trabalho Remota para se conectar aos dispositivos.\n\nComo você deve completar o comando que precisa ser executado em cada dispositivo? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
         "label": "net localgroup [answer choice] /add",
@@ -8061,7 +8061,7 @@ SIM.registerQuestions("MD-102", [
         "answer": 3
       },
       {
-        "label": "Account to add:",
+        "label": "Conta a adicionar:",
         "options": [
           "\"AzureAD\\User1@Contoso.com\"",
           "\"Contoso\\User1\"",
@@ -8102,11 +8102,11 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Requisitos e licenciamento do Windows 11",
     "type": "yesno",
-    "stem": "You have a Microsoft 365 subscription that contains the devices shown in the following table.\n\n| Name | RAM | Storage | TPM version |\n|---|---|---|---|\n| Device1 | 14 GB | 256 GB | 1.2 |\n| Device2 | 4 GB | 64 GB | 2.0 |\n| Device3 | 8 GB | 128 GB | 2.0 |\n\nAll the devices will be reimaged and licensed by using subscription activation.\n\nThe devices are assigned to the users shown in the following table.\n\n| Name | Device | License |\n|---|---|---|\n| User1 | Device1 | Microsoft 365 E5 |\n| User2 | Device2 | Microsoft 365 E3 |\n| User3 | Device3 | Office 365 E5, Enterprise Mobility + Security E5 |\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém os dispositivos mostrados na tabela a seguir.\n\n| Nome | RAM | Armazenamento | Versão do TPM |\n|---|---|---|---|\n| Device1 | 14 GB | 256 GB | 1.2 |\n| Device2 | 4 GB | 64 GB | 2.0 |\n| Device3 | 8 GB | 128 GB | 2.0 |\n\nTodos os dispositivos receberão uma nova imagem e serão licenciados usando a ativação de assinatura.\n\nOs dispositivos são atribuídos aos usuários mostrados na tabela a seguir.\n\n| Nome | Dispositivo | Licença |\n|---|---|---|\n| User1 | Device1 | Microsoft 365 E5 |\n| User2 | Device2 | Microsoft 365 E3 |\n| User3 | Device3 | Office 365 E5, Enterprise Mobility + Security E5 |\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "Device1 can be upgraded to Windows 11 and activated.",
-      "Device2 requires additional hardware before it can be upgraded to Windows 11.",
-      "User3 requires an additional license to activate Windows 11 on Device3."
+      "Device1 pode ser atualizado para o Windows 11 e ativado.",
+      "Device2 precisa de hardware adicional antes de poder ser atualizado para o Windows 11.",
+      "User3 precisa de uma licença adicional para ativar o Windows 11 em Device3."
     ],
     "answer": [
       false,
@@ -8139,12 +8139,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.2",
     "topic": "Comunicação remota do PowerShell",
     "type": "single",
-    "stem": "Your network contains an Active Directory domain. The domain contains 10 computers that run Windows 10. Users in the finance department use the computers.\n\nYou have a computer named Computer1 that runs Windows 10.\n\nFrom Computer1, you plan to run a script that executes Windows PowerShell commands on the finance department computers.\n\nYou need to ensure that you can run the PowerShell commands on the finance department computers from Computer1.\n\nWhat should you do on the finance department computers?",
+    "stem": "Sua rede contém um domínio do Active Directory. O domínio contém 10 computadores que executam o Windows 10. Os usuários do departamento de finanças usam esses computadores.\n\nVocê tem um computador chamado Computer1 que executa o Windows 10.\n\nDe Computer1, você planeja executar um script que execute comandos do Windows PowerShell nos computadores do departamento de finanças.\n\nVocê precisa garantir que possa executar os comandos do PowerShell nos computadores do departamento de finanças a partir de Computer1.\n\nO que você deve fazer nos computadores do departamento de finanças?",
     "options": [
-      "From Windows PowerShell, run the Enable-MMAgent cmdlet.",
-      "From the local Group Policy, enable the Allow Remote Shell Access setting.",
-      "From Windows PowerShell, run the Enable-PSRemoting cmdlet.",
-      "From the local Group Policy, enable the Turn on Script Execution setting."
+      "No Windows PowerShell, executar o cmdlet Enable-MMAgent.",
+      "Na Política de Grupo local, habilitar a configuração Permitir Acesso ao Shell Remoto.",
+      "No Windows PowerShell, executar o cmdlet Enable-PSRemoting.",
+      "Na Política de Grupo local, habilitar a configuração Ativar a Execução de Scripts."
     ],
     "answer": 2,
     "scope": "borderline",
@@ -8177,12 +8177,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Página de Status de Inscrição",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that includes Microsoft Intune.\n\nYou plan to use Windows Autopilot to deploy Windows 11 devices.\n\nYou need to meet the following requirements during Autopilot provisioning:\n\n- Display the app and profile configuration progress.\n- Block users from using the devices until all apps and profiles are installed.\n\nWhat should you configure?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que inclui o Microsoft Intune.\n\nVocê planeja usar o Windows Autopilot para implantar dispositivos Windows 11.\n\nVocê precisa atender aos seguintes requisitos durante o provisionamento do Autopilot:\n\n- Exibir o progresso da configuração de aplicativos e perfis.\n- Impedir que os usuários usem os dispositivos até que todos os aplicativos e perfis estejam instalados.\n\nO que você deve configurar?",
     "options": [
-      "an app configuration policy",
-      "an app protection policy",
-      "an enrollment device platform restriction",
-      "an enrollment status page"
+      "uma política de configuração de aplicativos",
+      "uma política de proteção de aplicativos",
+      "uma restrição de plataforma de dispositivo para inscrição",
+      "uma página de status de inscrição"
     ],
     "answer": 3,
     "scope": "in",
@@ -8204,14 +8204,14 @@ SIM.registerQuestions("MD-102", [
     "topic": "Políticas de conformidade",
     "type": "multi",
     "layout": "panel",
-    "panelTitle": "Windows 10/11 compliance policy · Compliance settings",
-    "stem": "You have a Microsoft 365 subscription. The subscription contains 1,000 computers that run Windows 11 and are enrolled in Microsoft Intune.\n\nYou plan to create a compliance policy that has the following options enabled:\n\n- Require Secure Boot to be enabled on the device.\n- Require the device to be at or under the machine risk score.\n\nWhich two Compliance settings should you configure? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "panelTitle": "Política de conformidade do Windows 10/11 · Configurações de conformidade",
+    "stem": "Você tem uma assinatura do Microsoft 365. A assinatura contém 1.000 computadores que executam o Windows 11 e estão inscritos no Microsoft Intune.\n\nVocê planeja criar uma política de conformidade com as seguintes opções habilitadas:\n\n- Exigir que a Inicialização Segura esteja habilitada no dispositivo.\n- Exigir que o dispositivo tenha uma pontuação de risco igual ou inferior à pontuação de risco da máquina especificada.\n\nQuais duas configurações de Conformidade você deve definir? Para responder, selecione as configurações apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "Custom Compliance",
-      "Device Health",
-      "Device Properties",
-      "Configuration Manager Compliance",
-      "System Security",
+      "Conformidade Personalizada",
+      "Integridade do Dispositivo",
+      "Propriedades do Dispositivo",
+      "Conformidade do Configuration Manager",
+      "Segurança do Sistema",
       "Microsoft Defender for Endpoint"
     ],
     "answer": [
@@ -8245,12 +8245,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.1",
     "topic": "Ingresso híbrido",
     "type": "single",
-    "stem": "Your network contains an Active Directory domain named contoso.com. The domain contains 25 computers that run Windows 11.\n\nYou have a Microsoft 365 subscription.\n\nYou have an Azure AD tenant that syncs with contoso.com.\n\nYou configure hybrid Azure AD join and discover that some of the computers have a registered state of Pending.\n\nYou need to ensure that the computers complete the join successfully.\n\nWhat should you ensure?",
+    "stem": "Sua rede contém um domínio do Active Directory chamado contoso.com. O domínio contém 25 computadores que executam o Windows 11.\n\nVocê tem uma assinatura do Microsoft 365.\n\nVocê tem um tenant do Azure AD sincronizado com contoso.com.\n\nVocê configura o ingresso híbrido no Azure AD e descobre que alguns computadores têm o estado de registro Pendente.\n\nVocê precisa garantir que os computadores concluam o ingresso com êxito.\n\nO que você deve garantir?",
     "options": [
-      "that Windows is activated on all the computers",
-      "that the users of the computers are assigned Microsoft 365 licenses",
-      "that each computer has a line of sight to a domain controller",
-      "that the computers contain the latest quality updates"
+      "que o Windows esteja ativado em todos os computadores",
+      "que os usuários dos computadores tenham licenças do Microsoft 365 atribuídas",
+      "que cada computador tenha conectividade com um controlador de domínio",
+      "que os computadores tenham as atualizações de qualidade mais recentes"
     ],
     "answer": 2,
     "scope": "in",
@@ -8283,13 +8283,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.2",
     "topic": "Atualizações para todas as plataformas",
     "type": "single",
-    "stem": "You have devices enrolled in Microsoft Intune as shown in the following table.\n\n| Name | Platform |\n|---|---|\n| Device1 | Windows |\n| Device2 | Android |\n| Device3 | iOS |\n| Device4 | macOS |\n\nFor which devices can you manage updates by using Intune?",
+    "stem": "Você tem dispositivos inscritos no Microsoft Intune, conforme a tabela a seguir.\n\n| Nome | Plataforma |\n|---|---|\n| Device1 | Windows |\n| Device2 | Android |\n| Device3 | iOS |\n| Device4 | macOS |\n\nPara quais dispositivos você pode gerenciar atualizações usando o Intune?",
     "options": [
-      "Device1 only",
-      "Device1 and Device2 only",
-      "Device1 and Device3 only",
-      "Device1, Device3, and Device4 only",
-      "Device1, Device2, Device3, and Device4"
+      "Somente Device1",
+      "Somente Device1 e Device2",
+      "Somente Device1 e Device3",
+      "Somente Device1, Device3 e Device4",
+      "Device1, Device2, Device3 e Device4"
     ],
     "answer": 4,
     "shuffle": false,
@@ -8315,7 +8315,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.3",
     "topic": "Certificados (SCEP)",
     "type": "single",
-    "stem": "You have 500 computers that run Windows 10. The computers are joined to Azure AD and enrolled in Microsoft Intune.\n\nYou plan to distribute certificates to the computers by using Simple Certificate Enrollment Protocol (SCEP).\n\nYou have the servers shown in the following table.\n\n| Name | Configuration |\n|---|---|\n| Server1 | Domain controller |\n| Server2 | Root certification authority (CA) |\n| Server3 | Subordinate certification authority (CA) |\n| Server4 | Network Device Enrollment Service (NDES) |\n\nNDES issues certificates from the subordinate CA.\n\nYou are configuring a SCEP certificate device configuration profile. The profile has the Root Certificate field still empty.\n\nYou need to complete the SCEP profile.\n\nOn which server is the required root certificate located?",
+    "stem": "Você tem 500 computadores que executam o Windows 10. Os computadores estão ingressados no Azure AD e inscritos no Microsoft Intune.\n\nVocê planeja distribuir certificados aos computadores usando o Protocolo Simples de Inscrição de Certificados (SCEP).\n\nVocê tem os servidores mostrados na tabela a seguir.\n\n| Nome | Configuração |\n|---|---|\n| Server1 | Controlador de domínio |\n| Server2 | Autoridade de certificação (CA) raiz |\n| Server3 | Autoridade de certificação (CA) subordinada |\n| Server4 | Serviço de Inscrição de Dispositivo de Rede (NDES) |\n\nO NDES emite certificados da CA subordinada.\n\nVocê está configurando um perfil de configuração de dispositivos de certificado SCEP. O campo Certificado Raiz do perfil ainda está vazio.\n\nVocê precisa concluir o perfil SCEP.\n\nEm qual servidor está o certificado raiz necessário?",
     "options": [
       "Server1",
       "Server2",
@@ -8351,23 +8351,23 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.3",
     "topic": "Check-in de conformidade",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 subscription that contains the devices shown in the following table.\n\n| Name | Platform |\n|---|---|\n| Device1 | Windows 10 |\n| Device2 | iOS |\n\nYou plan to enroll the devices in Microsoft Intune.\n\nHow often will the compliance policy check-ins run after each device is enrolled in Intune? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém os dispositivos mostrados na tabela a seguir.\n\n| Nome | Plataforma |\n|---|---|\n| Device1 | Windows 10 |\n| Device2 | iOS |\n\nVocê planeja inscrever os dispositivos no Microsoft Intune.\n\nCom que frequência os check-ins de política de conformidade serão executados após a inscrição de cada dispositivo no Intune? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
         "label": "Device1:",
         "options": [
-          "Every 15 minutes for one hour, and then every eight hours",
-          "Every five minutes for 15 minutes, then every 15 minutes for two hours, and then every eight hours",
-          "Every three minutes for 15 minutes, then every 15 minutes for two hours, and then every eight hours"
+          "A cada 15 minutos por uma hora e, em seguida, a cada oito horas",
+          "A cada cinco minutos por 15 minutos, depois a cada 15 minutos por duas horas e, em seguida, a cada oito horas",
+          "A cada três minutos por 15 minutos, depois a cada 15 minutos por duas horas e, em seguida, a cada oito horas"
         ],
         "answer": 2
       },
       {
         "label": "Device2:",
         "options": [
-          "Every 15 minutes for one hour, and then every eight hours",
-          "Every five minutes for 15 minutes, then every 15 minutes for two hours, and then every eight hours",
-          "Every three minutes for 15 minutes, then every 15 minutes for two hours, and then every eight hours"
+          "A cada 15 minutos por uma hora e, em seguida, a cada oito horas",
+          "A cada cinco minutos por 15 minutos, depois a cada 15 minutos por duas horas e, em seguida, a cada oito horas",
+          "A cada três minutos por 15 minutos, depois a cada 15 minutos por duas horas e, em seguida, a cada oito horas"
         ],
         "answer": 0
       }
@@ -8398,11 +8398,11 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.3",
     "topic": "Políticas de conformidade",
     "type": "yesno",
-    "stem": "You have two Windows 10 devices enrolled in Microsoft Intune as shown in the following table.\n\n| Name | BitLocker Drive Encryption (BitLocker) | Member of |\n|---|---|---|\n| Device1 | Enabled | Group2 |\n| Device2 | Disabled | Group1 |\n\nThe Compliance policy settings are configured as follows: Mark devices with no compliance policy assigned as: **Not Compliant** · Enhanced jailbreak detection: Disabled · Compliance status validity period (days): 10.\n\nOn August 1, you create a compliance policy with the following configuration:\n\n| Setting | Value |\n|---|---|\n| Name | Compliance1 |\n| Platform | Windows 10 and later |\n| Require BitLocker | Require |\n| Action: Mark device noncompliant | 3 days |\n| Action: Retire the noncompliant device | 5 days |\n| Included groups | Group1 |\n| Excluded groups | Group2 |\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem dois dispositivos Windows 10 inscritos no Microsoft Intune, conforme a tabela a seguir.\n\n| Nome | Criptografia de Unidade de Disco BitLocker (BitLocker) | Membro de |\n|---|---|---|\n| Device1 | Habilitada | Group2 |\n| Device2 | Desabilitada | Group1 |\n\nAs configurações de política de conformidade são as seguintes: Marcar dispositivos sem política de conformidade atribuída como: **Não conforme** · Detecção aprimorada de jailbreak: Desabilitada · Período de validade do status de conformidade (dias): 10.\n\nEm 1º de agosto, você cria uma política de conformidade com a seguinte configuração:\n\n| Configuração | Valor |\n|---|---|\n| Nome | Compliance1 |\n| Plataforma | Windows 10 e posteriores |\n| Exigir BitLocker | Exigir |\n| Ação: Marcar dispositivo como não conforme | 3 dias |\n| Ação: Desativar o dispositivo não conforme | 5 dias |\n| Grupos incluídos | Group1 |\n| Grupos excluídos | Group2 |\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "Device1 is marked as compliant on August 4.",
-      "Device2 is marked as compliant on August 2.",
-      "Device2 is retired on August 6."
+      "Device1 é marcado como em conformidade em 4 de agosto.",
+      "Device2 é marcado como em conformidade em 2 de agosto.",
+      "Device2 é desativado em 6 de agosto."
     ],
     "answer": [
       false,
@@ -8436,22 +8436,22 @@ SIM.registerQuestions("MD-102", [
     "topic": "Restrições de dispositivo",
     "type": "multi",
     "layout": "panel",
-    "panelTitle": "Device restrictions — Windows 10 and later",
-    "stem": "You have 100 computers that run Windows 10. The computers are joined to Azure AD and enrolled in Microsoft Intune.\n\nYou need to configure the following device restrictions:\n\n- Block users from browsing to suspicious websites.\n- Scan all scripts loaded into Microsoft Edge.\n\nWhich two settings should you configure in the Device restrictions configuration profile? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "panelTitle": "Restrições de dispositivo — Windows 10 e posteriores",
+    "stem": "Você tem 100 computadores que executam o Windows 10. Os computadores estão ingressados no Azure AD e inscritos no Microsoft Intune.\n\nVocê precisa configurar as seguintes restrições de dispositivo:\n\n- Impedir que os usuários naveguem para sites suspeitos.\n- Verificar todos os scripts carregados no Microsoft Edge.\n\nQuais duas configurações você deve definir no perfil de configuração de Restrições de dispositivo? Para responder, selecione as configurações apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "Microsoft Edge Browser",
-      "Network proxy",
-      "Password",
-      "Per-app privacy exceptions",
-      "Personalization",
-      "Printer",
-      "Privacy",
-      "Projection",
-      "Reporting and Telemetry",
-      "Search",
-      "Start",
+      "Navegador Microsoft Edge",
+      "Proxy de rede",
+      "Senha",
+      "Exceções de privacidade por aplicativo",
+      "Personalização",
+      "Impressora",
+      "Privacidade",
+      "Projeção",
+      "Relatórios e Telemetria",
+      "Pesquisa",
+      "Iniciar",
       "Microsoft Defender SmartScreen",
-      "Windows Spotlight",
+      "Destaque do Windows",
       "Microsoft Defender Antivirus"
     ],
     "answer": [
@@ -8489,27 +8489,27 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.4",
     "topic": "Ciclo de vida de dispositivos",
     "type": "hotarea",
-    "stem": "You have devices enrolled in Microsoft Intune as shown in the following table.\n\n| Name | Description |\n|---|---|\n| Device1 | User-enrolled Windows 11 device |\n| Device2 | Auto-enrolled Windows 10 device |\n| Device3 | User-enrolled Android device |\n| Device4 | User-enrolled iOS device |\n\nYou need to identify the following:\n\n- Device you can remove from Intune by using the Wipe action.\n- The enrollment state and the associated user account can be retained on devices that are wiped.\n\nWhat should you identify? To answer, select the appropriate options in the answer area.",
+    "stem": "Você tem dispositivos inscritos no Microsoft Intune, conforme a tabela a seguir.\n\n| Nome | Descrição |\n|---|---|\n| Device1 | Dispositivo Windows 11 inscrito pelo usuário |\n| Device2 | Dispositivo Windows 10 inscrito automaticamente |\n| Device3 | Dispositivo Android inscrito pelo usuário |\n| Device4 | Dispositivo iOS inscrito pelo usuário |\n\nVocê precisa identificar o seguinte:\n\n- Os dispositivos que você pode remover do Intune usando a ação Apagar.\n- Os dispositivos em que o estado de inscrição e a conta de usuário associada podem ser mantidos após a ação Apagar.\n\nO que você deve identificar? Para responder, selecione as opções apropriadas na área de resposta.",
     "slots": [
       {
-        "label": "Devices you can remove from Intune by using the Wipe action:",
+        "label": "Dispositivos que você pode remover do Intune usando a ação Apagar:",
         "options": [
-          "Device1 only",
-          "Device1 and Device2 only",
-          "Device1, Device2, and Device3 only",
-          "Device1, Device2, and Device4 only",
-          "Device1, Device2, Device3, and Device4"
+          "Somente Device1",
+          "Somente Device1 e Device2",
+          "Somente Device1, Device2 e Device3",
+          "Somente Device1, Device2 e Device4",
+          "Device1, Device2, Device3 e Device4"
         ],
         "answer": 2
       },
       {
-        "label": "The enrollment state and the associated user account can be retained on devices that are wiped:",
+        "label": "Dispositivos em que o estado de inscrição e a conta de usuário associada podem ser mantidos após a ação Apagar:",
         "options": [
-          "Device1 only",
-          "Device1 and Device2 only",
-          "Device1, Device2, and Device3 only",
-          "Device1, Device2, and Device4 only",
-          "Device1, Device2, Device3, and Device4"
+          "Somente Device1",
+          "Somente Device1 e Device2",
+          "Somente Device1, Device2 e Device3",
+          "Somente Device1, Device2 e Device4",
+          "Device1, Device2, Device3 e Device4"
         ],
         "answer": 1
       }
@@ -8540,11 +8540,11 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows Autopilot",
     "type": "yesno",
-    "stem": "You have an Azure AD tenant named contoso.com that contains the devices shown in the following table.\n\n| Name | Deployed by using Windows Autopilot | Azure AD status | Enrolled in Microsoft Intune |\n|---|---|---|---|\n| Device1 | No | Joined | No |\n| Device2 | No | Joined | Yes |\n| Device3 | Yes | Joined | Yes |\n\nThe tenant contains the Azure AD groups shown in the following table.\n\n| Name | Member |\n|---|---|\n| Group1 | Device1, Device2, Device3 |\n| Group2 | Device2 |\n\nYou add an Autopilot deployment profile with: Convert all targeted devices to Autopilot = **Yes** · Deployment mode = Self-Deploying (preview) · Join to Azure AD as = Azure AD joined · Included groups = **Group1** · Excluded groups = **Group2**.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Azure AD chamado contoso.com que contém os dispositivos mostrados na tabela a seguir.\n\n| Nome | Implantado usando o Windows Autopilot | Status no Azure AD | Inscrito no Microsoft Intune |\n|---|---|---|---|\n| Device1 | Não | Ingressado | Não |\n| Device2 | Não | Ingressado | Sim |\n| Device3 | Sim | Ingressado | Sim |\n\nO tenant contém os grupos do Azure AD mostrados na tabela a seguir.\n\n| Nome | Membro |\n|---|---|\n| Group1 | Device1, Device2, Device3 |\n| Group2 | Device2 |\n\nVocê adiciona um perfil de implantação do Autopilot com: Converter todos os dispositivos de destino para Autopilot = **Sim** · Modo de implantação = Autoimplantação (versão prévia) · Ingressar no Azure AD como = Ingressado no Azure AD · Grupos incluídos = **Group1** · Grupos excluídos = **Group2**.\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "If you reset Device1, the device will be deployed by using Autopilot.",
-      "If you reset Device2, the device will be deployed by using Autopilot.",
-      "If you restart Device3, the device will be deployed by using Autopilot."
+      "Se você redefinir Device1, o dispositivo será implantado usando o Autopilot.",
+      "Se você redefinir Device2, o dispositivo será implantado usando o Autopilot.",
+      "Se você reiniciar Device3, o dispositivo será implantado usando o Autopilot."
     ],
     "answer": [
       false,
@@ -8577,13 +8577,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "Políticas de configuração de aplicativos",
     "type": "multi",
-    "stem": "You have a Microsoft 365 subscription that contains 1,000 Android devices enrolled in Microsoft Intune.\n\nYou create an app configuration policy that contains the following settings:\n\n- Device enrollment type: Managed devices\n- Profile Type: All Profile Types\n- Platform: Android Enterprise\n\nWhich two types of apps can be associated with the policy? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém 1.000 dispositivos Android inscritos no Microsoft Intune.\n\nVocê cria uma política de configuração de aplicativos com as seguintes configurações:\n\n- Tipo de inscrição de dispositivo: Dispositivos gerenciados\n- Tipo de Perfil: Todos os Tipos de Perfil\n- Plataforma: Android Enterprise\n\nQuais dois tipos de aplicativo podem ser associados à política? Cada resposta correta apresenta uma solução completa.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "Android Enterprise system app",
-      "Web link",
-      "Android store app",
-      "Managed Google Play store app",
-      "Built-in Android app"
+      "Aplicativo de sistema do Android Enterprise",
+      "Link da web",
+      "Aplicativo da loja Android",
+      "Aplicativo da loja do Managed Google Play",
+      "Aplicativo Android interno"
     ],
     "answer": [
       0,
@@ -8612,13 +8612,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Plataformas de implantação de aplicativos",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription.\n\nYou have devices enrolled in Microsoft Intune as shown in the following table.\n\n| Name | Platform |\n|---|---|\n| Device1 | Windows 11 |\n| Device2 | Android |\n| Device3 | iOS |\n| Device4 | Ubuntu Linux |\n\nTo which devices can you deploy apps by using Intune?",
+    "stem": "Você tem uma assinatura do Microsoft 365.\n\nVocê tem dispositivos inscritos no Microsoft Intune, conforme a tabela a seguir.\n\n| Nome | Plataforma |\n|---|---|\n| Device1 | Windows 11 |\n| Device2 | Android |\n| Device3 | iOS |\n| Device4 | Ubuntu Linux |\n\nEm quais dispositivos você pode implantar aplicativos usando o Intune?",
     "options": [
-      "Device1 only",
-      "Device1 and Device2 only",
-      "Device1 and Device3 only",
-      "Device1, Device2, and Device3 only",
-      "Device1, Device2, Device3, and Device4"
+      "Somente Device1",
+      "Somente Device1 e Device2",
+      "Somente Device1 e Device3",
+      "Somente Device1, Device2 e Device3",
+      "Device1, Device2, Device3 e Device4"
     ],
     "answer": 3,
     "shuffle": false,
@@ -8652,11 +8652,11 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Microsoft 365 Apps",
     "type": "yesno",
-    "stem": "You have a Microsoft 365 E5 subscription that uses Microsoft Intune. The subscription contains the resources shown in the following table.\n\n| Name | Type | Member of |\n|---|---|---|\n| User1 | User | Group1 |\n| Device1 | Device | Group2 |\n\nUser1 is the owner of Device1.\n\nYou deploy Microsoft 365 Apps Windows 10 and later app types to Intune as shown in the following table.\n\n| Name | Shows in Company Portal | Microsoft Office app to install | Assignment | Time of creation |\n|---|---|---|---|---|\n| App1 | Yes | Word | Group1 – Required | 10:00 AM |\n| App2 | Yes | Excel | Group2 – Required | 10:30 AM |\n| App3 | Yes | PowerPoint | Group1 – Available | 11:00 AM |\n\nThe next day you review the results of the app deployments.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que usa o Microsoft Intune. A assinatura contém os recursos mostrados na tabela a seguir.\n\n| Nome | Tipo | Membro de |\n|---|---|---|\n| User1 | Usuário | Group1 |\n| Device1 | Dispositivo | Group2 |\n\nUser1 é o proprietário de Device1.\n\nVocê implanta no Intune aplicativos do tipo Microsoft 365 Apps para Windows 10 e posteriores, conforme a tabela a seguir.\n\n| Nome | Aparece no Company Portal | Aplicativo do Microsoft Office a instalar | Atribuição | Horário de criação |\n|---|---|---|---|---|\n| App1 | Sim | Word | Group1 – Obrigatório | 10h |\n| App2 | Sim | Excel | Group2 – Obrigatório | 10h30 |\n| App3 | Sim | PowerPoint | Group1 – Disponível | 11h |\n\nNo dia seguinte, você examina os resultados das implantações dos aplicativos.\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "App1 shows in the Company Portal.",
-      "Word is installed on Device1.",
-      "Excel is installed on Device1."
+      "App1 aparece no Company Portal.",
+      "O Word está instalado em Device1.",
+      "O Excel está instalado em Device1."
     ],
     "answer": [
       true,
@@ -8681,23 +8681,23 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Análise de endpoint",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Intune to manage devices.\n\nYou need to assess device performance during startup and identify any device models that take longer than average to start.\n\nWhat should you use to assess the device performance, and which portal should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Intune para gerenciar dispositivos.\n\nVocê precisa avaliar o desempenho dos dispositivos durante a inicialização e identificar modelos de dispositivo que levam mais tempo do que a média para iniciar.\n\nO que você deve usar para avaliar o desempenho dos dispositivos e qual portal deve usar? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "Use:",
+        "label": "Usar:",
         "options": [
-          "Compliance policies",
-          "Device diagnostics",
-          "Endpoint analytics"
+          "Políticas de conformidade",
+          "Diagnóstico de dispositivos",
+          "Análise de endpoint"
         ],
         "answer": 2
       },
       {
-        "label": "In portal:",
+        "label": "No portal:",
         "options": [
-          "Microsoft 365 Apps admin center",
-          "Microsoft Entra admin center",
-          "Microsoft Intune admin center"
+          "Centro de administração do Microsoft 365 Apps",
+          "Centro de administração do Microsoft Entra",
+          "Centro de administração do Microsoft Intune"
         ],
         "answer": 2
       }
@@ -8724,26 +8724,26 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows 365",
     "type": "match",
-    "stem": "Your on-premises network contains an Active Directory Domain Services (AD DS) domain.\n\nYou have an Azure subscription that contains a virtual network named VNet1. VNet1 contains five virtual machines and is NOT connected to the on-premises network.\n\nYou have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou purchase Windows 365 Enterprise licenses.\n\nYou need to deploy Cloud PC. The solution must meet the following requirements:\n\n- All users must be able to access their Cloud PC at any time without any restrictions.\n- The users must be able to connect to the virtual machines on VNet1.\n\nHow should you configure the provisioning policy for Windows 365? To answer, drag the appropriate options to the correct settings. Each option may be used once, more than once, or not at all.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Sua rede local contém um domínio do Active Directory Domain Services (AD DS).\n\nVocê tem uma assinatura do Azure que contém uma rede virtual chamada VNet1. VNet1 contém cinco máquinas virtuais e NÃO está conectada à rede local.\n\nVocê tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê compra licenças do Windows 365 Enterprise.\n\nVocê precisa implantar PCs na Nuvem. A solução deve atender aos seguintes requisitos:\n\n- Todos os usuários devem poder acessar seus PCs na Nuvem a qualquer momento, sem restrições.\n- Os usuários devem poder se conectar às máquinas virtuais em VNet1.\n\nComo você deve configurar a política de provisionamento do Windows 365? Para responder, arraste as opções apropriadas para as configurações correspondentes. Cada opção pode ser usada uma vez, mais de uma vez ou nenhuma vez.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "pool": [
-      "Azure network connection",
+      "Conexão de rede do Azure",
       "Enterprise",
       "Frontline",
-      "Microsoft Entra Hybrid Join",
-      "Microsoft Entra Join",
-      "Microsoft hosted network"
+      "Ingresso híbrido no Microsoft Entra",
+      "Ingresso no Microsoft Entra",
+      "Rede hospedada pela Microsoft"
     ],
     "targets": [
       {
-        "label": "Join type:",
+        "label": "Tipo de ingresso:",
         "answer": 4
       },
       {
-        "label": "Network:",
+        "label": "Rede:",
         "answer": 0
       },
       {
-        "label": "License type:",
+        "label": "Tipo de licença:",
         "answer": 1
       }
     ],
@@ -8778,12 +8778,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Requisitos do Windows 11",
     "type": "single",
-    "stem": "You have a Hyper-V host. The host contains virtual machines that run Windows 10 as shown in following table.\n\n| Name | Generation | Virtual TPM | Virtual processors | Memory |\n|---|---|---|---|---|\n| VM1 | 1 | No | 4 | 16 GB |\n| VM2 | 2 | Yes | 2 | 4 GB |\n| VM3 | 2 | Yes | 1 | 8 GB |\n\nWhich virtual machines can be upgraded to Windows 11?",
+    "stem": "Você tem um host Hyper-V. O host contém máquinas virtuais que executam o Windows 10, conforme a tabela a seguir.\n\n| Nome | Geração | TPM virtual | Processadores virtuais | Memória |\n|---|---|---|---|---|\n| VM1 | 1 | Não | 4 | 16 GB |\n| VM2 | 2 | Sim | 2 | 4 GB |\n| VM3 | 2 | Sim | 1 | 8 GB |\n\nQuais máquinas virtuais podem ser atualizadas para o Windows 11?",
     "options": [
-      "VM1 only",
-      "VM2 only",
-      "VM2 and VM3 only",
-      "VM1, VM2, and VM3"
+      "Somente VM1",
+      "Somente VM2",
+      "Somente VM2 e VM3",
+      "VM1, VM2 e VM3"
     ],
     "answer": 1,
     "shuffle": false,
@@ -8813,12 +8813,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "Políticas de proteção de aplicativos",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Intune to manage all devices.\n\nUsers have iOS devices with Microsoft apps installed.\n\nYou need to prevent users from cutting, copying, and pasting data between Microsoft Excel and other apps installed on the devices.\n\nWhat should you configure?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Intune para gerenciar todos os dispositivos.\n\nOs usuários têm dispositivos iOS com aplicativos da Microsoft instalados.\n\nVocê precisa impedir que os usuários recortem, copiem e colem dados entre o Microsoft Excel e outros aplicativos instalados nos dispositivos.\n\nO que você deve configurar?",
     "options": [
-      "an app protection policy",
-      "an app configuration policy",
-      "an iOS app provisioning profile",
-      "policies for Microsoft Office apps"
+      "uma política de proteção de aplicativos",
+      "uma política de configuração de aplicativos",
+      "um perfil de provisionamento de aplicativos iOS",
+      "políticas para aplicativos do Microsoft Office"
     ],
     "answer": 0,
     "scope": "in",
@@ -8843,12 +8843,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Relatórios",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Intune to manage devices.\n\nYou need to review details about device wipes initiated through Intune.\n\nWhich report should you review?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Intune para gerenciar dispositivos.\n\nVocê precisa analisar detalhes sobre apagamentos de dispositivos iniciados pelo Intune.\n\nQual relatório você deve examinar?",
     "options": [
-      "Noncompliant devices",
-      "Assignment status",
-      "Windows health attestation report",
-      "Device actions"
+      "Dispositivos não conformes",
+      "Status de atribuição",
+      "Relatório de atestado de integridade do Windows",
+      "Ações de dispositivo"
     ],
     "answer": 3,
     "scope": "in",
@@ -8877,12 +8877,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.2",
     "topic": "Anéis de atualização do Windows",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription. The subscription contains 500 computers that run Windows 11 and are enrolled in Microsoft Intune.\n\nYou need to manage the deployment of monthly security updates. The solution must meet the following requirements:\n\n- Updates must be deployed to a group of test computers for quality assurance.\n- Updates must be deployed automatically 15 days after the quality assurance testing.\n\nWhat should you create in the Microsoft Intune admin center?",
+    "stem": "Você tem uma assinatura do Microsoft 365. A assinatura contém 500 computadores que executam o Windows 11 e estão inscritos no Microsoft Intune.\n\nVocê precisa gerenciar a implantação de atualizações mensais de segurança. A solução deve atender aos seguintes requisitos:\n\n- As atualizações devem ser implantadas em um grupo de computadores de teste para garantia de qualidade.\n- As atualizações devem ser implantadas automaticamente 15 dias após os testes de garantia de qualidade.\n\nO que você deve criar no centro de administração do Microsoft Intune?",
     "options": [
-      "a device configuration profile",
-      "a feature update policy",
-      "a security baseline",
-      "an update ring"
+      "um perfil de configuração de dispositivos",
+      "uma política de atualização de recursos",
+      "uma linha de base de segurança",
+      "um anel de atualização"
     ],
     "answer": 3,
     "scope": "in",
@@ -8911,24 +8911,24 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Azure Monitor",
     "type": "hotarea",
-    "stem": "Your company has computers that run Windows 10 and are Microsoft Entra joined.\n\nThe company purchases an Azure subscription.\n\nYou need to collect Windows events from the Windows 10 computers in Azure. The solution must enable you to create alerts based on the collected events.\n\nWhat should you create in Azure and what should you configure on the computers? To answer, select the appropriate options in the answer area.",
+    "stem": "Sua empresa tem computadores que executam o Windows 10 e estão ingressados no Microsoft Entra.\n\nA empresa compra uma assinatura do Azure.\n\nVocê precisa coletar no Azure os eventos do Windows dos computadores Windows 10. A solução deve permitir a criação de alertas com base nos eventos coletados.\n\nO que você deve criar no Azure e o que deve configurar nos computadores? Para responder, selecione as opções apropriadas na área de resposta.",
     "slots": [
       {
-        "label": "Resource to create in Azure:",
+        "label": "Recurso a criar no Azure:",
         "options": [
-          "An Azure event hub",
-          "An Azure Log Analytics workspace",
-          "An Azure SQL database",
-          "An Azure Storage account"
+          "Um hub de eventos do Azure",
+          "Um workspace do Azure Log Analytics",
+          "Um banco de dados SQL do Azure",
+          "Uma conta do Azure Storage"
         ],
         "answer": 1
       },
       {
-        "label": "Configuration to perform on the computers:",
+        "label": "Configuração a executar nos computadores:",
         "options": [
-          "Configure the Event Collector service",
-          "Create an event subscription",
-          "Install the Azure Monitor Agent"
+          "Configurar o serviço Coletor de Eventos",
+          "Criar uma assinatura de eventos",
+          "Instalar o Azure Monitor Agent"
         ],
         "answer": 2
       }
@@ -8959,12 +8959,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Proteção contra adulteração",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that contains 500 computers that run Windows 11. The computers are Azure AD joined and are enrolled in Microsoft Intune.\n\nYou plan to manage Microsoft Defender Antivirus on the computers.\n\nYou need to prevent users from disabling Microsoft Defender for Endpoint.\n\nWhat should you do?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém 500 computadores que executam o Windows 11. Os computadores estão ingressados no Azure AD e inscritos no Microsoft Intune.\n\nVocê planeja gerenciar o Microsoft Defender Antivirus nos computadores.\n\nVocê precisa impedir que os usuários desabilitem o Microsoft Defender for Endpoint.\n\nO que você deve fazer?",
     "options": [
-      "From the Microsoft Intune admin center, create an attack surface reduction (ASR) policy.",
-      "From the Microsoft 365 Defender portal, enable tamper protection.",
-      "From the Microsoft Intune admin center, create an account protection policy.",
-      "From the Microsoft Entra admin center, create a Conditional Access policy."
+      "No centro de administração do Microsoft Intune, criar uma política de redução da superfície de ataque (ASR).",
+      "No portal do Microsoft 365 Defender, habilitar a proteção contra adulteração.",
+      "No centro de administração do Microsoft Intune, criar uma política de proteção de conta.",
+      "No centro de administração do Microsoft Entra, criar uma política de Acesso Condicional."
     ],
     "answer": 1,
     "scope": "in",
@@ -8989,12 +8989,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows 365",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that has Windows 365 Enterprise licenses.\n\nYou plan to use a custom Windows 11 image as a template for Cloud PCs.\n\nYou have a Hyper-V virtual machine that runs Windows 11 and has the following configurations:\n\n- Name: VM1\n- Disk size: 64 GB\n- Disk format: VHDX\n- Disk type: Fixed size\n- Generation: Generation 2\n\nYou need to ensure that you can use VM1 as a source for the custom image.\n\nWhat should you do on VM1 first?",
+    "stem": "Você tem uma assinatura do Microsoft 365 com licenças do Windows 365 Enterprise.\n\nVocê planeja usar uma imagem personalizada do Windows 11 como modelo para PCs na Nuvem.\n\nVocê tem uma máquina virtual Hyper-V que executa o Windows 11 e tem as seguintes configurações:\n\n- Nome: VM1\n- Tamanho do disco: 64 GB\n- Formato do disco: VHDX\n- Tipo de disco: Tamanho fixo\n- Geração: Geração 2\n\nVocê precisa garantir que possa usar VM1 como origem da imagem personalizada.\n\nO que você deve fazer primeiro em VM1?",
     "options": [
-      "Change the disk type to Dynamically expanding.",
-      "Change the disk format to the VHD.",
-      "Change the generation to Generation 1.",
-      "Increase the disk size."
+      "Alterar o tipo de disco para Expansão dinâmica.",
+      "Alterar o formato do disco para VHD.",
+      "Alterar a geração para Geração 1.",
+      "Aumentar o tamanho do disco."
     ],
     "answer": 1,
     "answer_original": 0,
@@ -9024,19 +9024,19 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Ingresso híbrido com Autopilot",
     "type": "hotarea",
-    "stem": "Your on-premises network contains an Active Directory domain named contoso.com. The domain contains a user account named Admin1 and the resources shown in the following table.\n\n| Name | Type |\n|---|---|\n| Server1 | Computer object |\n| OU1 | Organizational unit (OU) |\n\nYou have a Microsoft 365 E5 subscription.\n\nYou have a Microsoft Entra tenant that syncs with contoso.com.\n\nAdmin1 plans to use Windows Autopilot to deploy 100 Windows 11 devices. The deployment must meet the following requirements:\n\n- The devices must be Microsoft Entra hybrid joined during the deployment.\n- Computer objects must be created in OU1.\n\nYou need to configure Server1 and Active Directory delegation to support the deployment.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Sua rede local contém um domínio do Active Directory chamado contoso.com. O domínio contém uma conta de usuário chamada Admin1 e os recursos mostrados na tabela a seguir.\n\n| Nome | Tipo |\n|---|---|\n| Server1 | Objeto de computador |\n| OU1 | Unidade organizacional (OU) |\n\nVocê tem uma assinatura do Microsoft 365 E5.\n\nVocê tem um tenant do Microsoft Entra sincronizado com contoso.com.\n\nAdmin1 planeja usar o Windows Autopilot para implantar 100 dispositivos Windows 11. A implantação deve atender aos seguintes requisitos:\n\n- Os dispositivos devem ter ingresso híbrido no Microsoft Entra durante a implantação.\n- Os objetos de computador devem ser criados em OU1.\n\nVocê precisa configurar Server1 e a delegação do Active Directory para dar suporte à implantação.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
         "label": "Server1:",
         "options": [
-          "Enroll in Microsoft Intune.",
-          "Export the hardware hash and upload the hash to Microsoft Intune.",
-          "Install the Intune Connector for Active Directory."
+          "Inscrever no Microsoft Intune.",
+          "Exportar o hash de hardware e carregá-lo no Microsoft Intune.",
+          "Instalar o Intune Connector for Active Directory."
         ],
         "answer": 2
       },
       {
-        "label": "Resource:",
+        "label": "Recurso:",
         "options": [
           "Admin1",
           "OU1",
@@ -9078,12 +9078,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows 365",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription.\n\nEach user is assigned a Windows 365 Enterprise license.\n\nYou need to deploy Cloud PCs that will be Microsoft Entra hybrid joined.\n\nWhat should you do first?",
+    "stem": "Você tem uma assinatura do Microsoft 365.\n\nCada usuário tem uma licença do Windows 365 Enterprise atribuída.\n\nVocê precisa implantar PCs na Nuvem com ingresso híbrido no Microsoft Entra.\n\nO que você deve fazer primeiro?",
     "options": [
-      "Create an Azure network connection (ANC).",
-      "Create a provisioning policy.",
-      "Create a configuration profile in Microsoft Intune.",
-      "Upload a custom image."
+      "Criar uma conexão de rede do Azure (ANC).",
+      "Criar uma política de provisionamento.",
+      "Criar um perfil de configuração no Microsoft Intune.",
+      "Carregar uma imagem personalizada."
     ],
     "answer": 0,
     "scope": "in",
@@ -9119,13 +9119,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.1",
     "topic": "Windows 365",
     "type": "single",
-    "stem": "Your on-premises network contains an Active Directory Domain Services (AD DS) domain named contoso.com.\n\nThe domain contains a domain controller named dc1.contoso.com.\n\nYou have a Microsoft 365 E5 subscription that uses Microsoft Intune Suite.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n| Name | Description |\n|---|---|\n| LNG1 | Local network gateway that uses the public IP address of the local infrastructure |\n| GW1 | Virtual network gateway |\n| GW2 | Virtual network gateway |\n| CN1 | Site-to-Site (S2S) VPN connection that connects LNG1 and GW1 |\n\nThe subscription contains the virtual networks shown in the following table.\n\n| Name | IP address space | Subnet | DNS configuration | Virtual network gateway |\n|---|---|---|---|---|\n| VNet1 | 192.168.10.0/24 | 192.168.10.0/26 | dc1.contoso.com | GW1 |\n| VNet2 | 192.168.11.0/24 | 192.168.11.0/26 | Azure DNS | None |\n| VNet3 | 192.168.12.0/24 | 192.168.12.0/26 | Azure DNS | GW2 |\n\nYou plan to deploy Windows 365 Enterprise Cloud PC.\n\nYou need to create an Azure network connection (ANC) that will use Microsoft Entra hybrid join.\n\nWhich virtual network can you use for the ANC?",
+    "stem": "Sua rede local contém um domínio do Active Directory Domain Services (AD DS) chamado contoso.com.\n\nO domínio contém um controlador de domínio chamado dc1.contoso.com.\n\nVocê tem uma assinatura do Microsoft 365 E5 que usa o Microsoft Intune Suite.\n\nVocê tem uma assinatura do Azure que contém os recursos mostrados na tabela a seguir.\n\n| Nome | Descrição |\n|---|---|\n| LNG1 | Gateway de rede local que usa o endereço IP público da infraestrutura local |\n| GW1 | Gateway de rede virtual |\n| GW2 | Gateway de rede virtual |\n| CN1 | Conexão VPN site a site (S2S) que conecta LNG1 e GW1 |\n\nA assinatura contém as redes virtuais mostradas na tabela a seguir.\n\n| Nome | Espaço de endereços IP | Sub-rede | Configuração DNS | Gateway de rede virtual |\n|---|---|---|---|---|\n| VNet1 | 192.168.10.0/24 | 192.168.10.0/26 | dc1.contoso.com | GW1 |\n| VNet2 | 192.168.11.0/24 | 192.168.11.0/26 | Azure DNS | Nenhum |\n| VNet3 | 192.168.12.0/24 | 192.168.12.0/26 | Azure DNS | GW2 |\n\nVocê planeja implantar PCs na Nuvem do Windows 365 Enterprise.\n\nVocê precisa criar uma conexão de rede do Azure (ANC) que usará ingresso híbrido no Microsoft Entra.\n\nQual rede virtual você pode usar para a ANC?",
     "options": [
-      "VNet1 only",
-      "VNet2 only",
-      "VNet3 only",
-      "VNet1 and VNet2",
-      "VNet1 and VNet3"
+      "Somente VNet1",
+      "Somente VNet2",
+      "Somente VNet3",
+      "VNet1 e VNet2",
+      "VNet1 e VNet3"
     ],
     "answer": 0,
     "shuffle": false,
@@ -9155,13 +9155,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.3",
     "topic": "Notificações de conformidade",
     "type": "order",
-    "stem": "You have a Microsoft 365 E5 subscription that includes Microsoft Intune.\n\nThe subscription contains Android Enterprise devices that are enrolled in Intune and have personally-owned work profiles. All the Android devices are members of a group named Group1.\n\nYou need to ensure that end users and Intune administrators receive an email message when an Android device does NOT have an up-to-date security provider.\n\nWhich actions should you perform from the Microsoft Intune admin center in sequence? Place the first two steps in order. Step 3 is: Assign the policy to Group1.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que inclui o Microsoft Intune.\n\nA assinatura contém dispositivos Android Enterprise inscritos no Intune com perfis de trabalho em dispositivos pessoais. Todos os dispositivos Android são membros de um grupo chamado Group1.\n\nVocê precisa garantir que os usuários finais e os administradores do Intune recebam uma mensagem de email quando um dispositivo Android NÃO tiver um provedor de segurança atualizado.\n\nQuais ações você deve executar em sequência no centro de administração do Microsoft Intune? Coloque as duas primeiras etapas em ordem. A etapa 3 é: atribuir a política a Group1.",
     "pool": [
-      "Create a compliance policy.",
-      "Create a Conditional Access policy.",
-      "Create an attack surface reduction (ASR) policy.",
-      "From Compliance policies, create a notification message template.",
-      "From Tenant admin, create a custom notification."
+      "Criar uma política de conformidade.",
+      "Criar uma política de Acesso Condicional.",
+      "Criar uma política de redução da superfície de ataque (ASR).",
+      "Em Políticas de conformidade, criar um modelo de mensagem de notificação.",
+      "Em Administração do tenant, criar uma notificação personalizada."
     ],
     "answer": [
       0,
@@ -9197,27 +9197,27 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.2",
     "topic": "Surface Hub",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 subscription.\n\nYou have 25 Microsoft Surface Hub devices that you plan to manage by using Microsoft Intune.\n\nYou need to configure the devices to meet the following requirements:\n\n- Enable Windows Hello for Business.\n- Configure Microsoft Defender SmartScreen to block users from running unverified files.\n\nWhich profile type template should you use for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365.\n\nVocê tem 25 dispositivos Microsoft Surface Hub que planeja gerenciar usando o Microsoft Intune.\n\nVocê precisa configurar os dispositivos para atender aos seguintes requisitos:\n\n- Habilitar o Windows Hello for Business.\n- Configurar o Microsoft Defender SmartScreen para impedir que os usuários executem arquivos não verificados.\n\nQual modelo de tipo de perfil você deve usar para cada requisito? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
         "label": "Windows Hello for Business:",
         "options": [
-          "Device restrictions",
-          "Device restrictions (Windows 10 Team)",
-          "Endpoint protection",
-          "Identity protection",
-          "Microsoft Defender for Endpoint (Desktop devices running Windows 10 or later)"
+          "Restrições de dispositivo",
+          "Restrições de dispositivo (Windows 10 Team)",
+          "Proteção de endpoint",
+          "Proteção de identidade",
+          "Microsoft Defender for Endpoint (dispositivos desktop que executam Windows 10 ou posterior)"
         ],
         "answer": 3
       },
       {
         "label": "Microsoft Defender SmartScreen:",
         "options": [
-          "Windows health monitoring",
-          "Device restrictions (Windows 10 Team)",
-          "Endpoint protection",
-          "Identity protection",
-          "Microsoft Defender for Endpoint (Desktop devices running Windows 10 or later)"
+          "Monitoramento da integridade do Windows",
+          "Restrições de dispositivo (Windows 10 Team)",
+          "Proteção de endpoint",
+          "Proteção de identidade",
+          "Microsoft Defender for Endpoint (dispositivos desktop que executam Windows 10 ou posterior)"
         ],
         "answer": 2
       }
@@ -9252,11 +9252,11 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.2",
     "topic": "Atualizações de recursos",
     "type": "yesno",
-    "stem": "You have a Microsoft 365 E5 subscription that contains the security groups shown in the following table.\n\n| Name | Membership type | Membership rule |\n|---|---|---|\n| Group1 | Assigned | Not applicable |\n| Group2 | Dynamic | `(device.deviceOSType -eq \"Windows\")` |\n| Group3 | Dynamic | `(extensionAttribute1 -eq \"Test\")` |\n\nThe subscription contains devices that run Windows 11, version 21H2 as shown in the following table.\n\n| Name | extensionAttribute1 | Member of Group1 |\n|---|---|---|\n| Device1 | Test | No |\n| Device2 | None | No |\n| Device3 | None | Yes |\n\nYou have a feature update deployment profile named Deployment1 as shown in the following table.\n\n| Setting | Value |\n|---|---|\n| Feature update to deploy | Windows 11, version 22H2 |\n| Rollout options | Make update available as soon as possible |\n| Included groups | Group2 |\n| Excluded groups | Group1, Group3 |\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que contém os grupos de segurança mostrados na tabela a seguir.\n\n| Nome | Tipo de associação | Regra de associação |\n|---|---|---|\n| Group1 | Atribuído | Não se aplica |\n| Group2 | Dinâmico | `(device.deviceOSType -eq \"Windows\")` |\n| Group3 | Dinâmico | `(extensionAttribute1 -eq \"Test\")` |\n\nA assinatura contém dispositivos que executam o Windows 11 versão 21H2, conforme a tabela a seguir.\n\n| Nome | extensionAttribute1 | Membro de Group1 |\n|---|---|---|\n| Device1 | Test | Não |\n| Device2 | Nenhum | Não |\n| Device3 | Nenhum | Sim |\n\nVocê tem um perfil de implantação de atualização de recursos chamado Deployment1, conforme a tabela a seguir.\n\n| Configuração | Valor |\n|---|---|\n| Atualização de recursos a implantar | Windows 11, versão 22H2 |\n| Opções de distribuição | Disponibilizar a atualização assim que possível |\n| Grupos incluídos | Group2 |\n| Grupos excluídos | Group1, Group3 |\n\nPara cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "Device1 will be upgraded to Windows 11, version 22H2.",
-      "Device2 will be upgraded to Windows 11, version 22H2.",
-      "Device3 will be upgraded to Windows 11, version 22H2."
+      "Device1 será atualizado para o Windows 11 versão 22H2.",
+      "Device2 será atualizado para o Windows 11 versão 22H2.",
+      "Device3 será atualizado para o Windows 11 versão 22H2."
     ],
     "answer": [
       false,
@@ -9290,17 +9290,17 @@ SIM.registerQuestions("MD-102", [
     "topic": "Restrições de inscrição",
     "type": "multi",
     "layout": "panel",
-    "panelTitle": "Edit restriction — Device type restriction · Platform settings",
-    "stem": "You have a Microsoft 365 E5 subscription that uses Microsoft Intune.\n\nYou need to ensure that users can only enroll devices that meet the following requirements:\n\n- Android devices that support the use of work profiles.\n- iOS devices that run iOS 11.0 or later.\n\nThe current device type restriction allows Android Enterprise (work profile), Android device administrator and iOS/iPadOS, with no version limits.\n\nWhich two restrictions should you modify? To answer, select the restrictions in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "panelTitle": "Editar restrição — Restrição de tipo de dispositivo · Configurações de plataforma",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que usa o Microsoft Intune.\n\nVocê precisa garantir que os usuários só possam inscrever dispositivos que atendam aos seguintes requisitos:\n\n- Dispositivos Android compatíveis com o uso de perfis de trabalho.\n- Dispositivos iOS que executem o iOS 11.0 ou posterior.\n\nA restrição atual de tipo de dispositivo permite Android Enterprise (perfil de trabalho), Administrador de dispositivo Android e iOS/iPadOS, sem limites de versão.\n\nQuais duas restrições você deve modificar? Para responder, selecione as restrições na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "Android Enterprise (work profile) › Platform",
-      "Android Enterprise (work profile) › Versions",
-      "Android device administrator › Platform (Block)",
-      "Android device administrator › Versions",
-      "iOS/iPadOS › Platform",
-      "iOS/iPadOS › Versions (Min)",
-      "macOS › Platform",
-      "Windows (MDM) › Platform"
+      "Android Enterprise (perfil de trabalho) › Plataforma",
+      "Android Enterprise (perfil de trabalho) › Versões",
+      "Administrador de dispositivo Android › Plataforma (Bloquear)",
+      "Administrador de dispositivo Android › Versões",
+      "iOS/iPadOS › Plataforma",
+      "iOS/iPadOS › Versões (Mín.)",
+      "macOS › Plataforma",
+      "Windows (MDM) › Plataforma"
     ],
     "answer": [
       2,
@@ -9329,12 +9329,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.3",
     "topic": "Windows LAPS",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Intune to manage Windows 11 devices.\n\nYou need to implement Windows Local Administrator Password Solution (Windows LAPS).\n\nWhat should you configure?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Intune para gerenciar dispositivos Windows 11.\n\nVocê precisa implementar o Windows Local Administrator Password Solution (Windows LAPS).\n\nO que você deve configurar?",
     "options": [
-      "a configuration profile",
-      "an account protection policy",
-      "an app protection policy",
-      "a device compliance policy"
+      "um perfil de configuração",
+      "uma política de proteção de conta",
+      "uma política de proteção de aplicativos",
+      "uma política de conformidade de dispositivos"
     ],
     "answer": 1,
     "scope": "in",
@@ -9366,12 +9366,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Proteção contra adulteração",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that contains 500 computers that run Windows 11. The computers are Microsoft Entra joined and are enrolled in Microsoft Intune.\n\nYou plan to manage Microsoft Defender for Endpoint on the computers.\n\nYou need to prevent users from disabling Microsoft Defender for Endpoint.\n\nWhat should you do?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém 500 computadores que executam o Windows 11. Os computadores estão ingressados no Microsoft Entra e inscritos no Microsoft Intune.\n\nVocê planeja gerenciar o Microsoft Defender for Endpoint nos computadores.\n\nVocê precisa impedir que os usuários desabilitem o Microsoft Defender for Endpoint.\n\nO que você deve fazer?",
     "options": [
-      "From the Microsoft Intune admin center, create a security baseline.",
-      "From the Microsoft Intune admin center, create an antivirus policy.",
-      "From the Microsoft Entra admin center, create a Conditional Access policy.",
-      "From the Microsoft Intune admin center, create a device compliance policy."
+      "No centro de administração do Microsoft Intune, criar uma linha de base de segurança.",
+      "No centro de administração do Microsoft Intune, criar uma política de antivírus.",
+      "No centro de administração do Microsoft Entra, criar uma política de Acesso Condicional.",
+      "No centro de administração do Microsoft Intune, criar uma política de conformidade de dispositivos."
     ],
     "answer": 1,
     "scope": "in",
@@ -9396,13 +9396,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Aplicativos de linha de negócios",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that includes Microsoft Intune.\n\nYou need to deploy a custom app to Android devices. The app uses the APK file format.\n\nWhich type of app should you select for the deployment?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que inclui o Microsoft Intune.\n\nVocê precisa implantar um aplicativo personalizado em dispositivos Android. O aplicativo usa o formato de arquivo APK.\n\nQual tipo de aplicativo você deve selecionar para a implantação?",
     "options": [
-      "built-in",
-      "Android store",
+      "interno",
+      "loja Android",
       "Managed Google Play",
-      "line-of-business (LOB)",
-      "web link"
+      "linha de negócios (LOB)",
+      "link da web"
     ],
     "answer": 3,
     "scope": "in",
@@ -9431,12 +9431,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Aplicativos Win32",
     "type": "single",
-    "stem": "You have a Microsoft 365 E5 subscription.\n\nYou use Microsoft Intune to manage all devices.\n\nYou need to prepare a Win32 app named App1.exe for deployment.\n\nWhat should you do first?",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5.\n\nVocê usa o Microsoft Intune para gerenciar todos os dispositivos.\n\nVocê precisa preparar um aplicativo Win32 chamado App1.exe para implantação.\n\nO que você deve fazer primeiro?",
     "options": [
-      "From the Microsoft Intune admin center, create an app configuration policy.",
-      "Change App1.exe to the INTUNEWIN format.",
-      "From the Microsoft 365 Apps admin center, create a deployment configuration.",
-      "Upload App1.exe to Azure Blob Storage."
+      "No centro de administração do Microsoft Intune, criar uma política de configuração de aplicativos.",
+      "Alterar App1.exe para o formato INTUNEWIN.",
+      "No centro de administração do Microsoft 365 Apps, criar uma configuração de implantação.",
+      "Carregar App1.exe no Azure Blob Storage."
     ],
     "answer": 1,
     "scope": "in",

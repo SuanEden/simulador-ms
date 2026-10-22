@@ -179,6 +179,7 @@ details.adv summary{cursor:pointer;color:var(--accent);font-size:14px;margin:6px
 .q table.md{border-collapse:collapse;margin:4px 0 14px;font-size:14px}
 .q table.md th,.q table.md td{border:1px solid var(--q-border);padding:4px 10px;text-align:left}
 .q table.md th{background:var(--q-th)}
+.md-table{max-width:100%;overflow-x:auto}
 .exhibit{margin:6px 0 16px;display:inline-block;max-width:100%}
 .exhibit img{max-width:100%;max-height:520px;border:1px solid var(--q-border);border-radius:3px;cursor:zoom-in;background:#fff;display:block}
 .exhibit.inl{display:block;margin:4px 0 14px}
@@ -365,7 +366,8 @@ details.adv summary{cursor:pointer;color:var(--accent);font-size:14px;margin:6px
 .prev{border:1px solid var(--border);border-radius:var(--r);padding:20px;background:var(--surface-2)}
 .qmeta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 .split2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:18px;align-items:start}
-@media (max-width:1000px){.split2{grid-template-columns:1fr}}
+@media (max-width:1000px){.split2{grid-template-columns:minmax(0,1fr)}}
+.split2>*{min-width:0}
 .qlist{max-height:70vh;overflow:auto}
 .vlist{font-size:13.5px;margin:0;padding-left:18px}
 .vlist li{margin:3px 0}
@@ -487,7 +489,7 @@ function md(src){
       const rows=[]; while(i<lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
       const cells = r => r.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
       const head = cells(rows[0]); const body = rows.slice(1).filter(r=>!/^\s*\|?\s*:?-{2,}/.test(r)).map(cells);
-      out += `<table class="md"><thead><tr>${head.map(c=>`<th>${inl(c)}</th>`).join("")}</tr></thead><tbody>${body.map(r=>`<tr>${r.map(c=>`<td>${inl(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+      out += `<div class="md-table" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="md"><thead><tr>${head.map(c=>`<th>${inl(c)}</th>`).join("")}</tr></thead><tbody>${body.map(r=>`<tr>${r.map(c=>`<td>${inl(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
       continue;
     }
     if (/^\s*-\s/.test(L)){
@@ -1442,7 +1444,7 @@ function vLabs(app){
     $("#lab-list").innerHTML = groups.length ? groups.map(g => `<h2 style="margin:22px 0 10px">${g.d.id}. ${esc(g.d.name)}</h2><div class="grid">${g.items.map(l => `
       <div class="labrow" data-lab="${esc(l.id)}"><div class="lid">${esc(l.id)}</div>
         <div><div class="lt">${esc(l.title)}</div><div class="lm">${(l.questions||[]).length ? `${l.questions.length} questões · ${esc(l.questions.slice(0,6).join(", "))}${l.questions.length>6?"…":""}` : "sem questão no dump"}</div></div>
-        <div class="lr">${labStatusPill(labState(ex,l.id).status)}<span class="pill kind-${esc(l.kind)}">${esc(l.kind)} · ${KIND[l.kind]||""}</span><span class="pill">~${l.minutes} min</span></div></div>`).join("")}</div>`).join("") : `<div class="card muted">Nenhum lab com esses filtros.</div>`;
+        <div class="lr">${labStatusPill(labState(ex,l.id).status)}<span class="pill kind-${esc(l.kind)}">${esc(l.kind)} · ${KIND[l.kind]||""}</span><span class="pill">~${l.minutes} min</span></div></div>`).join("")}</div>`).join("") : `<div class="card muted">Nenhum laboratório com esses filtros.</div>`;
   };
   draw();
   const upd = () => { F.d = $("#lf-d").value; F.k = $("#lf-k").value; F.s = $("#lf-s").value; F.q = $("#lf-q").value; draw(); };

@@ -16,6 +16,10 @@ const protegidos = texto => ({
   imagens: [...texto.matchAll(/!\[[^\]]*\]\(([^)]+)\)(\{w=\d+\})?/g)].map(m => m[1] + (m[2] || '')),
   urls: [...texto.matchAll(/https?:\/\/[^\s<>"`]+/g)].map(m => m[0]),
   codigo: [...texto.matchAll(/```[^\n]*\n[\s\S]*?```/g)].map(m => m[0]),
+  codigoInline: [...texto.replace(/```[^\n]*\n[\s\S]*?```/g,'').matchAll(/(?<!`)`([^`\n]+)`(?!`)/g)].map(m => m[1]),
+  cmdlets: [...texto.matchAll(/\b(?:Add|Clear|Connect|Convert|Create|Disable|Disconnect|Enable|Export|Get|Import|Install|Invoke|New|Remove|Restart|Resume|Run|Select|Set|Start|Stop|Test|Uninstall|Update|Write)-[A-Za-z][A-Za-z0-9]+\b/g)].map(m => m[0]),
+  caminhosWindows: [...texto.matchAll(/\b[A-Z]:\\(?:[A-Za-z0-9_*.-]+\\)*[A-Za-z0-9_.*-]*/g)].map(m => m[0]),
+  enderecosIP: [...texto.matchAll(/\b\d{1,3}(?:\.\d{1,3}){3}(?:\/\d{1,2})?\b/g)].map(m => m[0]),
   marcadores: [...texto.matchAll(/\[answer choice\]/g)].map(m => m[0])
 });
 function comparar(a,b,caminho,campo='') {
