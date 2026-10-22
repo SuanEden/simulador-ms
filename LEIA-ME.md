@@ -4,6 +4,8 @@ Simulador de provas de certificação que roda localmente no navegador. Para abr
 
 A tradução integral para português brasileiro está em andamento. Consulte `TRADUCAO_STATUS.md` para saber quais lotes foram aplicados e quais conteúdos ainda estão pendentes. Os nomes oficiais de produtos, comandos, URLs, caminhos e identificadores dos cenários são preservados.
 
+Os links do Microsoft Learn, do antigo `docs.microsoft.com` e do Microsoft Support abrem com preferência por português brasileiro (`pt-br`), inclusive nas explicações, competências e laboratórios. Os endereços originais continuam nos bancos; o ajuste acontece ao montar os links na interface. O idioma disponível depende do artigo e do site de destino. Portais administrativos, endpoints, URLs dos cenários e sites de terceiros conservam seus endereços.
+
 O app é genérico: ele não sabe nada sobre nenhuma prova específica. Cada prova é uma pasta em `exams/`, e o app lê o que estiver lá.
 
 ```

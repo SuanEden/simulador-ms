@@ -71,7 +71,7 @@ No banco SC-300 em 390 px, o conteúdo atingia 481 px. A coluna móvel da grade 
 - A tradução ainda tem 745 enunciados/campos de resposta SC-300/AZ-104, 682 títulos de documentos e 468 imagens pendentes, além da revisão das explicações, dos corpos dos laboratórios e de materiais auxiliares.
 - Os testes de fluxo cobrem amostras dos tipos, sem percorrer manualmente as 1.026 questões. Os comandos de laboratório e serviços reais Microsoft não foram executados.
 - Apenas Chrome foi exercitado; outros navegadores e todos os estados/gestos de arrastar não foram testados.
-- Os links foram preservados e comparados; o conteúdo externo dos sites não foi traduzido nem revalidado pela internet nesta tarefa.
+- Os URLs dos bancos foram preservados e comparados. O ajuste posterior de preferência `pt-br` nos destinos da interface e suas amostras externas estão descritos abaixo; não houve verificação individual de todos os artigos externos.
 - Os PDFs, caches e snapshots originais permanecem originais. Dúvidas técnicas estão em `QUESTOES_PARA_REVISAO.md`, sem mudança de gabarito.
 
 ## Como repetir
@@ -98,3 +98,15 @@ Scripts e evidências locais do navegador estão em `../Certificados-102-validac
 ![Estudo de caso em 390 px](../Certificados-102-validacao/mobile-caso.png)
 
 ![Imagem original e tradução textual, banco SC-300 em 390 px](../Certificados-102-validacao/mobile-sc300.png)
+
+## Links de documentação em português brasileiro — 22/10/2026
+
+A interface passou a preferir `pt-br` nos links de `learn.microsoft.com`, `docs.microsoft.com` e `support.microsoft.com`. A mudança acontece na montagem dos links; os registros originais dos bancos, os comandos e os endereços dos cenários continuam preservados. Não modifica o título dos documentos.
+
+- Validador estrutural aprovado: mesmas 1.026 questões, IDs, tipos, alternativas, gabaritos e imagens, além da sintaxe dos scripts inline.
+- Quinze casos de URLs conferidos: localização, reaplicação sem duplicar o idioma, parâmetros, fragmentos, entidades HTML e preservação de endpoints, portais, terceiros e caminhos de imagens.
+- Playwright/Chrome: 210/286/387 links nos catálogos de competências MD-102/SC-300/AZ-104 apontaram para `pt-br`, incluindo os guias oficiais. Busca e clique em nova aba mantiveram o destino localizado. O destino externo foi interceptado somente nesses cliques para isolar o teste de interface da rede.
+- Laboratório L01 e explicação de uma questão por prova: links localizados; URLs dos bancos ainda originais. Botão Microsoft Learn do simulado aponta para `/pt-br/`. URL `contoso.com` da Q028 e os quatro portais do ambiente MD-102 foram preservados. Nenhuma exceção JavaScript.
+- Amostras externas: páginas do Learn sobre administradores locais e criação de usuários abriram em português. Requisições HTTP ao antigo endereço de tags do Azure em `docs.microsoft.com` e ao artigo de coleções do My Apps em `support.microsoft.com` retornaram 200, com redirecionamentos e idioma HTML `pt-br`. Não foram testados todos os links; o conteúdo disponível depende da Microsoft.
+
+Evidências locais: `../Certificados-102-validacao/links-ptbr.cjs` e `links-ptbr.json`. Backup dos arquivos antes da alteração: `../Certificados-102-backups/antes-links-ptbr-bc84383.zip`.

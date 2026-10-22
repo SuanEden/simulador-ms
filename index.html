@@ -432,11 +432,23 @@ const pct = x => Math.round(x*100) + "%";
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
 function toast(msg, ms=2600){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("on"), ms); }
 
+/* Prefere PT-BR nos destinos da documentação; conserva os URLs dos bancos e cenários. */
+function docURL(value){
+  const original = String(value ?? "");
+  const m = original.match(/^(https?:\/\/(?:learn|docs|support)\.microsoft\.com)(\/[^?#]*)?([?#].*)?$/i);
+  if (!m) return original;
+  const caminho = m[2] || "/";
+  const localizado = /^\/[a-z]{2}-[a-z]{2}(?=\/|$)/i.test(caminho)
+    ? caminho.replace(/^\/[a-z]{2}-[a-z]{2}(?=\/|$)/i, "/pt-br")
+    : "/pt-br" + caminho;
+  return m[1] + localizado + (m[3] || "");
+}
+
 /* inline markdown: **bold**, `code` */
 function inl(s){
   return esc(s).replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>")
     .replace(/(^|[\s(>])\*([^*\s][^*]*?[^*\s]|[^*\s])\*(?=[\s.,;:)<]|$)/g, "$1<i>$2</i>")
-    .replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, (m,a,u) => `${a}<a href="${u}" target="_blank" rel="noopener">${u}</a>`)
+    .replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, (m,a,u) => `${a}<a href="${docURL(u)}" target="_blank" rel="noopener">${u}</a>`)
     .replace(/(^|\s|\()@ ([^:@<>]{2,24}):\s(.+)$/, (m,a,pt,rest) => `${a}<span class="navpath inl">${navHTML(pt, rest.split(/\s+&gt;\s+/))}</span>`);
 }
 /* caminho de navegação: "Portal: A > B > C" — o texto que vem depois do último item (": valor", ", faça…", " (nota)") vira um complemento */
@@ -1003,7 +1015,7 @@ function vRun(app){
     };
     tick(); timerH = setInterval(tick, 1000);
   }
-  $("#x-learn").onclick = () => window.open("https://learn.microsoft.com/", "_blank", "noopener");
+  $("#x-learn").onclick = () => window.open(docURL("https://learn.microsoft.com/"), "_blank", "noopener");
   const on = (id, fn) => { const el = $(id); if (el) el.onclick = fn; };
 
   on("#x-quit", () => go("exam"));
@@ -1179,7 +1191,7 @@ function renderQ(ex, q, it, ctx){
   return h;
 }
 function docLinks(list){
-  return `<ul class="doclist">${list.map(d => `<li><a href="${esc(d.u)}" target="_blank" rel="noopener">${esc(d.t || d.u)}</a></li>`).join("")}</ul>`;
+  return `<ul class="doclist">${list.map(d => `<li><a href="${esc(docURL(d.u))}" target="_blank" rel="noopener">${esc(d.t || d.u)}</a></li>`).join("")}</ul>`;
 }
 function explainHTML(q){
   const badge = q.review==="corrigida" ? `<span class="pill warn">gabarito corrigido em relação ao dump</span>` : q.review==="duvidosa" ? `<span class="pill bad">questão duvidosa — confira a discussão</span>` : "";
@@ -1189,7 +1201,7 @@ function explainHTML(q){
   const skHTML = sk ? `<div class="lablinks"><span>Competência:</span><button type="button" class="lablink" data-skill="${esc(sk.id)}">${esc(sk.id)} · ${esc(sk.name)}</button></div>` : "";
   const det = q.details ? `<div class="xdet"><div class="xh">Detalhes</div>${md(q.details)}</div>` : "";
   const docs = q.docs && q.docs.length ? `<div class="xdocs"><div class="xh">Documentação (Microsoft Learn)</div>${docLinks(q.docs)}</div>`
-    : (q.refs && q.refs.length ? `<div class="xdocs"><div class="xh">Referências do dump</div><div class="refs">${q.refs.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div></div>` : "");
+    : (q.refs && q.refs.length ? `<div class="xdocs"><div class="xh">Referências do dump</div><div class="refs">${q.refs.map(u=>`<a href="${esc(docURL(u))}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div></div>` : "");
   return `<div class="expl">${badge ? `<div style="margin-bottom:8px">${badge}</div>` : ""}${md(q.explanation || "Sem explicação cadastrada.")}${q.note ? `<p><b>Nota de curadoria:</b> ${inl(q.note)}</p>` : ""}${det}${docs}${skHTML}${labHTML}</div>`;
 }
 
@@ -1371,7 +1383,7 @@ function vDocs(app){
   const nLinks = new Set(ex.skills.flatMap(k => (k.items||[]).flatMap(i => (i.docs||[]).map(d=>d.u)).concat((k.docs||[]).map(d=>d.u)))).size;
   app.innerHTML = topbar("Documentação") + `<div class="wrap">
     <h1>Documentação por competência</h1>
-    <p class="sub">Competências avaliadas · ${ex.skills.length} competências · ${nLinks} links principais${M.updated ? ` · verificados no Microsoft Learn em ${esc(M.updated)}` : ""}${M.source ? ` · <a href="${esc(M.source)}" target="_blank" rel="noopener">guia de estudo oficial</a>` : ""}</p>
+    <p class="sub">Competências avaliadas · ${ex.skills.length} competências · ${nLinks} links principais${M.updated ? ` · verificados no Microsoft Learn em ${esc(M.updated)}` : ""}${M.source ? ` · <a href="${esc(docURL(M.source))}" target="_blank" rel="noopener">guia de estudo oficial</a>` : ""}</p>
     ${M.note ? `<div class="notice info" style="margin-bottom:16px">${inl(M.note)}</div>` : ""}
     <div class="row" style="margin-bottom:16px">
       <select id="df-d" class="inp" style="width:auto"><option value="">Todos os domínios</option>${ex.domains.map(d=>`<option value="${d.id}" ${+F.d===d.id?"selected":""}>${d.id}. ${esc(d.name)}</option>`).join("")}</select>
@@ -1478,7 +1490,7 @@ function vLab(app){
       <div>
         ${l.predict && ex.byId[l.predict] ? `<div class="notice info" style="margin-bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div style="flex:1;min-width:240px"><b>Antes de montar:</b> responda a <b>${esc(l.predict)}</b> sem consultar nada. No fim do laboratório, compare o que você previu com o que viu.</div><button class="btn sm primary" id="lab-pred">Responder ${esc(l.predict)}</button></div>` : ""}
         ${secs.map(([k,t],n) => `<div class="card labsec ${k==="test"||k==="expected"?"key":""}" id="ls-${k}"><h2><span class="n">${String(n+1).padStart(2,"0")}</span>${t}</h2><div class="labdoc">${md(l[k])}</div></div>`).join("")}
-        ${l.refs && l.refs.length ? `<div class="card labsec"><h2>Documentação</h2><div class="refs">${l.refs.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div></div>` : ""}
+        ${l.refs && l.refs.length ? `<div class="card labsec"><h2>Documentação</h2><div class="refs">${l.refs.map(u=>`<a href="${esc(docURL(u))}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div></div>` : ""}
       </div>
       <aside class="lab-side">
         <div class="card"><h3>Seu progresso</h3>

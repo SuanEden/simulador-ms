@@ -14,6 +14,8 @@ Total: **281 enunciados e campos de resposta traduzidos; 745 pendentes**. Isso n
 
 Já traduzidos: interface, 14 domínios, oito estudos de caso, 44 competências e seus 263 itens, títulos dos 89 laboratórios e três ambientes, cabeçalhos das 16 fontes Markdown e 99 títulos de documentação em 1.486 ocorrências. Quatro títulos que são nomes de cmdlets (20 ocorrências) são preservados intencionalmente.
 
+Links de estudo: por solicitação posterior, a interface passou a abrir os destinos de `learn.microsoft.com`, `docs.microsoft.com` e `support.microsoft.com` em `pt-br`, preservando caminho do artigo, parâmetros e fragmentos. Abrange documentação das questões, referências, textos Markdown, competências, guias e laboratórios das três provas, além do botão Microsoft Learn do simulado. Os URLs originais dos bancos e os comandos/cenários foram preservados; esse ajuste não traduz os títulos de documentos ainda pendentes nem garante tradução de todo artigo externo. Cópia dos arquivos antes desse ajuste: `../Certificados-102-backups/antes-links-ptbr-bc84383.zip`.
+
 Lista exata e reutilizável: `tools/traducao/TRADUCAO_PENDENCIAS.json`. Termos preservados: `tools/traducao/TERMOS_PRESERVADOS.md`. Resultados de testes: `TRADUCAO_VERIFICACOES.md`. Observações técnicas sem mudança de gabarito: `QUESTOES_PARA_REVISAO.md`.
 
 ## Ponto de recuperação
