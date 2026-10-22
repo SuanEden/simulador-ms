@@ -481,7 +481,7 @@ function md(src){
       out += html + "</ol>"; continue;
     }
     const im = L.match(/^\s*!\[([^\]]*)\]\(([^)\s]+)\)(?:\{w=(\d+)\})?\s*$/);
-    if (im){ out += `<figure class="exhibit inl"><img src="${esc(mdSrc(im[2]))}" alt="${esc(im[1]||"Exhibit")}" data-zoom="1"${im[3]?` style="width:${+im[3]}px"`:""}></figure>`; i++; continue; }
+    if (im){ out += `<figure class="exhibit inl"><img src="${esc(mdSrc(im[2]))}" alt="${esc(im[1]||"Imagem")}" data-zoom="1"${im[3]?` style="width:${+im[3]}px"`:""}></figure>`; i++; continue; }
     if (/^#{1,4}\s/.test(L)){ out += `<h4>${inl(L.replace(/^#+\s*/,""))}</h4>`; i++; continue; }
     if (/^\s*\|/.test(L)){
       const rows=[]; while(i<lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
@@ -520,7 +520,8 @@ const DB = (function(){
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(DB)); } catch(e){ /* storage indisponível: o app segue funcionando em memória */ } }
 
 /* ------------------------------ question model ------------------------------ */
-const TYPES = { single:"Escolha única", multi:"Múltipla escolha", yesno:"Sim / Não", hotarea:"Hot area (dropdown)", order:"Ordenação", match:"Arrastar e soltar" };
+const TYPES = { single:"Escolha única", multi:"Múltipla escolha", yesno:"Sim / Não", hotarea:"Seleção em listas", order:"Ordenação", match:"Arrastar e soltar" };
+const SCOPE_LABELS = { in:"No escopo", borderline:"Escopo limítrofe", out:"Fora do escopo" };
 function keyOf(q){
   switch(q.type){
     case "single": return q.answer;
@@ -743,7 +744,7 @@ function topbar(crumb){
     <div class="brand" data-go="home"><div class="logo">MS</div><div>SimuladorMS<small>simulados de certificação</small></div></div>
     <div class="crumbs">${ex ? `<span data-go="exam" style="cursor:pointer"><b>${esc(ex.code)}</b></span>${crumb?" · "+esc(crumb):""}` : ""}</div>
     <div class="spacer"></div>
-    ${ex && ex.skills && ex.skills.length ? `<button class="btn sm ghost" data-go="docs">Documentação</button>` : ""}${ex && ex.labs && ex.labs.length ? `<button class="btn sm ghost" data-go="labs">Labs</button>` : ""}${ex ? `<button class="btn sm ghost" data-go="history">Histórico</button><button class="btn sm ghost" data-go="bank">Banco de questões</button>` : ""}
+    ${ex && ex.skills && ex.skills.length ? `<button class="btn sm ghost" data-go="docs">Documentação</button>` : ""}${ex && ex.labs && ex.labs.length ? `<button class="btn sm ghost" data-go="labs">Laboratórios</button>` : ""}${ex ? `<button class="btn sm ghost" data-go="history">Histórico</button><button class="btn sm ghost" data-go="bank">Banco de questões</button>` : ""}
   </div>`;
 }
 document.addEventListener("click", e => {
@@ -833,9 +834,9 @@ function vExamHome(app){
           </div>
           <label class="chk"><input type="checkbox" id="s-vary" ${s.vary?"checked":""}><span>Variar o peso dos domínios dentro das faixas<small>Desligado: usa o ponto médio de cada faixa.</small></span></label>
           <label class="chk"><input type="checkbox" id="s-prio" ${s.prio?"checked":""}><span>Priorizar questões não vistas e erradas</span></label>
-          <label class="chk"><input type="checkbox" id="s-partial" ${s.partial?"checked":""}><span>Pontuação parcial<small>Em Sim/Não, hot area e arrastar, cada item vale uma fração. Desligado: tudo ou nada.</small></span></label>
+          <label class="chk"><input type="checkbox" id="s-partial" ${s.partial?"checked":""}><span>Pontuação parcial<small>Em Sim/Não, seleção em listas e arrastar, cada item vale uma fração. Desligado: tudo ou nada.</small></span></label>
           <label class="chk"><input type="checkbox" id="s-doubt" ${s.doubtful?"checked":""}><span>Incluir questões marcadas como duvidosas</span></label>
-          <label class="chk"><input type="checkbox" id="s-border" ${s.borderline?"checked":""}><span>Incluir questões "borderline" de escopo</span></label>
+          <label class="chk"><input type="checkbox" id="s-border" ${s.borderline?"checked":""}><span>Incluir questões de escopo limítrofe</span></label>
         </details>
         <div class="row" style="margin-top:16px"><button class="btn primary" id="start">Iniciar simulado</button><span class="muted" id="s-hint" style="font-size:13px"></span></div>
       </div>
@@ -860,10 +861,10 @@ function vExamHome(app){
         <div style="margin:10px 0 12px" class="row">${(()=>{ const v=validateExam(ex); return v.errs.length?`<span class="pill bad">${v.errs.length} erro(s)</span>`:`<span class="pill good">Banco válido</span>`; })()}<span class="pill warn">${ex.questions.filter(q=>q.review==="duvidosa").length} duvidosa(s)</span></div>
         <button class="btn" data-go="bank">Abrir banco</button>
       </div>
-      ${ex.labs && ex.labs.length ? `<div class="card"><h3>Labs práticos</h3><p class="muted" style="font-size:14px">Monte no seu lab o cenário das questões e veja o resultado na prática.</p>
+      ${ex.labs && ex.labs.length ? `<div class="card"><h3>Laboratórios práticos</h3><p class="muted" style="font-size:14px">Monte no seu laboratório o cenário das questões e veja o resultado na prática.</p>
         <div class="kpi" style="margin:10px 0 12px">${ex.labs.length}</div>
-        <button class="btn" data-go="labs">Abrir labs</button></div>` : ""}
-      ${ex.skills && ex.skills.length ? `<div class="card"><h3>Documentação por skill</h3><p class="muted" style="font-size:14px">Links do Microsoft Learn para cada item do Skills Measured, com treino focado por skill.</p>
+        <button class="btn" data-go="labs">Abrir laboratórios</button></div>` : ""}
+      ${ex.skills && ex.skills.length ? `<div class="card"><h3>Documentação por competência</h3><p class="muted" style="font-size:14px">Links do Microsoft Learn para cada item das competências avaliadas, com treino focado por competência.</p>
         <div class="kpi" style="margin:10px 0 12px">${ex.skills.length}</div>
         <button class="btn" data-go="docs">Abrir documentação</button></div>` : ""}
     </div>
@@ -1069,7 +1070,7 @@ function introPage(ex, S){
     <ul>
       <li>Você pode marcar questões para revisão e voltar a elas pela <b>Tela de revisão</b>, enquanto a seção estiver aberta.</li>
       <li>Ao encerrar uma seção, as respostas dela ficam travadas.</li>
-      <li>Questões de mais de um item (Sim/Não, hot area, arrastar e soltar) ${S.settings.partial ? "valem pontuação parcial por item" : "só pontuam se estiverem totalmente corretas"}.</li>
+      <li>Questões de mais de um item (Sim/Não, seleção em listas, arrastar e soltar) ${S.settings.partial ? "valem pontuação parcial por item" : "só pontuam se estiverem totalmente corretas"}.</li>
       <li>Não há penalidade por errar: responda tudo.</li>
       <li>O botão <b>Microsoft Learn</b> abre a documentação em outra aba, como no exame real. O tempo continua correndo.</li>
       <li>A nota é exibida na escala de 0 a 1000; a aprovação é com ${ex.passingScore}.</li>
@@ -1110,8 +1111,8 @@ function renderQ(ex, q, it, ctx){
   const r = it.resp, perm = it.perm || makePerm(q), k = q._key;
   // enunciado + exhibits (depois do parágrafo que menciona "exhibit")
   const blocks = String(q.stem||"").split(/\n\n/);
-  let at = blocks.findIndex(b => /exhibit|graphic/i.test(b));
-  const exh = (q.exhibits||[]).map(x => `<figure class="exhibit"><img src="${esc(ex.folder+"/"+x.src)}" alt="${esc(x.alt||"Exhibit")}" data-zoom="1"><figcaption>${esc(x.caption||"Exhibit — clique para ampliar")}</figcaption></figure>`).join("");
+  let at = blocks.findIndex(b => /exhibit|graphic|imagem|figura|captura/i.test(b));
+  const exh = (q.exhibits||[]).map(x => `<figure class="exhibit"><img src="${esc(ex.folder+"/"+x.src)}" alt="${esc(x.alt||"Imagem")}" data-zoom="1"><figcaption>${esc(x.caption||"Imagem — clique para ampliar")}</figcaption></figure>`).join("");
   let h = "";
   if (exh && at >= 0) h += md(blocks.slice(0,at+1).join("\n\n")) + exh + md(blocks.slice(at+1).join("\n\n"));
   else h += md(q.stem) + exh;
@@ -1125,7 +1126,7 @@ function renderQ(ex, q, it, ctx){
     const isKey = o => multi ? k.includes(o) : k === o;
     const mark = o => !show ? "" : (isSel(o) && isKey(o) ? "ok" : isSel(o) ? "ko" : isKey(o) ? "miss" : "");
     if (q.layout === "panel"){
-      h += `<div class="ans-title">Answer Area</div><div class="panelq"><div class="pt">${esc(q.panelTitle||"")}</div>${perm.opt.map(o => `<button type="button" class="${isSel(o)?"sel":""} ${mark(o)}" data-a="${multi?"multi":"single"}" data-o="${o}" ${dis}>${inl(q.options[o])}</button>`).join("")}</div>`;
+      h += `<div class="ans-title">Área de resposta</div><div class="panelq"><div class="pt">${esc(q.panelTitle||"")}</div>${perm.opt.map(o => `<button type="button" class="${isSel(o)?"sel":""} ${mark(o)}" data-a="${multi?"multi":"single"}" data-o="${o}" ${dis}>${inl(q.options[o])}</button>`).join("")}</div>`;
     } else {
       h += `<div class="opts">${perm.opt.map((o,p) => `<label class="opt ${isSel(o)?"sel":""} ${mark(o)}"><input type="${multi?"checkbox":"radio"}" name="${nm}" data-a="${multi?"multi":"single"}" data-o="${o}" ${isSel(o)?"checked":""} ${dis}><span class="lt">${LETTERS[p]}.</span><span>${inl(q.options[o])}</span>${show && isSel(o) ? `<span class="you">${isKey(o) ? "✓ sua resposta" : "✕ sua resposta"}</span>` : ""}</label>`).join("")}</div>`;
     }
@@ -1135,13 +1136,13 @@ function renderQ(ex, q, it, ctx){
     }
   }
   else if (q.type === "yesno"){
-    h += `<div class="ans-title">Answer Area</div><table class="yn"><thead><tr><th>Statements</th><th>Yes</th><th>No</th></tr></thead><tbody>${q.statements.map((s,i) => {
-      const cell = v => { const on = r && r[i]===v; const cls = !show ? "" : (on && k[i]===v ? "ok" : on ? "ko" : k[i]===v ? "miss" : ""); return `<td class="c ${cls}"><input type="radio" name="${nm}_${i}" data-a="yn" data-i="${i}" data-v="${v?1:0}" ${on?"checked":""} ${dis} aria-label="${v?"Yes":"No"}"></td>`; };
+    h += `<div class="ans-title">Área de resposta</div><table class="yn"><thead><tr><th>Afirmações</th><th>Sim</th><th>Não</th></tr></thead><tbody>${q.statements.map((s,i) => {
+      const cell = v => { const on = r && r[i]===v; const cls = !show ? "" : (on && k[i]===v ? "ok" : on ? "ko" : k[i]===v ? "miss" : ""); return `<td class="c ${cls}"><input type="radio" name="${nm}_${i}" data-a="yn" data-i="${i}" data-v="${v?1:0}" ${on?"checked":""} ${dis} aria-label="${v?"Sim":"Não"}"></td>`; };
       return `<tr><td>${inl(s)}</td>${cell(true)}${cell(false)}</tr>`;
     }).join("")}</tbody></table>`;
   }
   else if (q.type === "hotarea"){
-    h += `<div class="ans-title">Answer Area</div><div class="ha">${q.slots.map((s,i) => {
+    h += `<div class="ans-title">Área de resposta</div><div class="ha">${q.slots.map((s,i) => {
       const v = r ? r[i] : null; const cls = !show ? "" : (v===k[i] ? "ok" : "ko");
       const sel = `<select data-a="slot" data-i="${i}" class="${cls}" ${dis}><option value=""></option>${s.options.map((o,j)=>`<option value="o${j}" ${v===j?"selected":""}>${esc(o)}</option>`).join("")}</select>`;
       const corr = show && v!==k[i] ? `<span class="corr">✓ ${esc(s.options[k[i]])}</span>` : "";
@@ -1155,9 +1156,9 @@ function renderQ(ex, q, it, ctx){
     const src = perm.pool.filter(o => !ans.includes(o));
     const slots = Math.max(k.length, ans.length);
     h += `<div class="dd" data-order>
-      <div><h5>Actions</h5><div class="dd-list" data-drop="src">${src.map(o => `<div class="dd-item ${ui.src===o?"sel":""}" draggable="${!lock}" data-a="osrc" data-o="${o}">${inl(q.pool[o])}</div>`).join("")}</div></div>
+      <div><h5>Ações</h5><div class="dd-list" data-drop="src">${src.map(o => `<div class="dd-item ${ui.src===o?"sel":""}" draggable="${!lock}" data-a="osrc" data-o="${o}">${inl(q.pool[o])}</div>`).join("")}</div></div>
       <div class="mid"><button class="circ" data-a="oadd" title="Mover para a área de resposta" ${dis}>▶</button><button class="circ" data-a="orem" title="Devolver" ${dis}>◀</button></div>
-      <div><h5>Answer Area</h5><div class="dd-list" data-drop="dst">${range(slots).map(p => { const o = ans[p]; const cls = !show || o==null ? "" : (k[p]===o ? "ok" : "ko");
+      <div><h5>Área de resposta</h5><div class="dd-list" data-drop="dst">${range(slots).map(p => { const o = ans[p]; const cls = !show || o==null ? "" : (k[p]===o ? "ok" : "ko");
           return `<div class="dd-slot"><span class="n">${p+1}</span><div class="box" data-slot="${p}">${o!=null?`<div class="dd-item ${ui.dst===p?"sel":""} ${cls}" draggable="${!lock}" data-a="odst" data-p="${p}">${inl(q.pool[o])}</div>`:""}</div></div>`; }).join("")}</div></div>
       <div class="mid"><button class="circ" data-a="oup" title="Subir" ${dis}>▲</button><button class="circ" data-a="odown" title="Descer" ${dis}>▼</button></div>
     </div>`;
@@ -1166,8 +1167,8 @@ function renderQ(ex, q, it, ctx){
   else if (q.type === "match"){
     const ans = r || [], ui = it._ui || (it._ui = {});
     h += `<div class="mt">
-      <div><h5 style="margin:0 0 8px">Options</h5><div class="dd-list">${perm.pool.map(o => `<div class="dd-item ${ui.src===o?"sel":""}" draggable="${!lock}" data-a="msrc" data-o="${o}">${inl(q.pool[o])}</div>`).join("")}</div></div>
-      <div><h5 style="margin:0 0 8px">Answer Area</h5>${q.targets.map((t,i) => { const v = ans[i]; const cls = !show ? "" : (v===k[i] ? "ok" : "ko");
+      <div><h5 style="margin:0 0 8px">Opções</h5><div class="dd-list">${perm.pool.map(o => `<div class="dd-item ${ui.src===o?"sel":""}" draggable="${!lock}" data-a="msrc" data-o="${o}">${inl(q.pool[o])}</div>`).join("")}</div></div>
+      <div><h5 style="margin:0 0 8px">Área de resposta</h5>${q.targets.map((t,i) => { const v = ans[i]; const cls = !show ? "" : (v===k[i] ? "ok" : "ko");
         return `<div class="mt-target"><div class="lbl">${inl(t.label)}</div><div class="mt-box ${cls}" data-a="mtgt" data-i="${i}">${v!=null ? `<span>${inl(q.pool[v])}</span>${lock?"":`<button class="x" data-a="mclr" data-i="${i}" title="Limpar">×</button>`}` : `<span style="opacity:.5">${lock?"—":"(selecione uma opção e clique aqui)"}</span>`}</div>${show && v!==k[i] ? `<div></div><div class="corr" style="font-size:13px;color:var(--good);font-weight:500">✓ ${inl(q.pool[k[i]])}</div>` : ""}</div>`; }).join("")}</div>
     </div>`;
   }
@@ -1182,8 +1183,8 @@ function explainHTML(q){
   const badge = q.review==="corrigida" ? `<span class="pill warn">gabarito corrigido em relação ao dump</span>` : q.review==="duvidosa" ? `<span class="pill bad">questão duvidosa — confira a discussão</span>` : "";
   const ex = curExam(), labs = (ex && ex.labIndex && ex.labIndex[q.id]) || [];
   const sk = ex && ex.skillById && q.skill ? ex.skillById[q.skill] : null;
-  const labHTML = labs.length ? `<div class="lablinks"><span>Lab prático:</span>${labs.map(l=>`<button type="button" class="lablink" data-lab="${esc(l.id)}">${esc(l.id)} · ${esc(l.title)}</button>`).join("")}</div>` : "";
-  const skHTML = sk ? `<div class="lablinks"><span>Skill:</span><button type="button" class="lablink" data-skill="${esc(sk.id)}">${esc(sk.id)} · ${esc(sk.name)}</button></div>` : "";
+  const labHTML = labs.length ? `<div class="lablinks"><span>Laboratório prático:</span>${labs.map(l=>`<button type="button" class="lablink" data-lab="${esc(l.id)}">${esc(l.id)} · ${esc(l.title)}</button>`).join("")}</div>` : "";
+  const skHTML = sk ? `<div class="lablinks"><span>Competência:</span><button type="button" class="lablink" data-skill="${esc(sk.id)}">${esc(sk.id)} · ${esc(sk.name)}</button></div>` : "";
   const det = q.details ? `<div class="xdet"><div class="xh">Detalhes</div>${md(q.details)}</div>` : "";
   const docs = q.docs && q.docs.length ? `<div class="xdocs"><div class="xh">Documentação (Microsoft Learn)</div>${docLinks(q.docs)}</div>`
     : (q.refs && q.refs.length ? `<div class="xdocs"><div class="xh">Referências do dump</div><div class="refs">${q.refs.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div></div>` : "");
@@ -1331,14 +1332,14 @@ function vPractice(app){
   if (P.pos >= P.items.length){
     const got = P.items.filter(i=>i.checked).reduce((a,i)=>a+i.sc,0), n = P.items.filter(i=>i.checked).length;
     app.innerHTML = topbar(P.title) + `<div class="wrap"><div class="card"><h1>Treino concluído</h1><p class="sub">${n} questões verificadas · aproveitamento ${n?pct(got/n):"—"}</p>
-      <div class="row">${P.back ? `<button class="btn primary" data-lab="${esc(P.back)}">Voltar ao lab ${esc(P.back)}</button>` : P.backView ? `<button class="btn primary" data-skill="${esc(P.backView)}">Voltar à documentação</button>` : `<button class="btn primary" data-go="exam">Voltar</button>`}</div></div></div>`;
+      <div class="row">${P.back ? `<button class="btn primary" data-lab="${esc(P.back)}">Voltar ao laboratório ${esc(P.back)}</button>` : P.backView ? `<button class="btn primary" data-skill="${esc(P.backView)}">Voltar à documentação</button>` : `<button class="btn primary" data-go="exam">Voltar</button>`}</div></div></div>`;
     return;
   }
   const it = P.items[P.pos], q = ex.byId[it.qid];
   const fb = it.checked ? (it.sc>=0.999 ? `<div class="practice-fb ok">✓ Correta</div>` : it.sc>0 ? `<div class="practice-fb part">◐ Parcialmente correta (${pct(it.sc)})</div>` : `<div class="practice-fb ko">✕ Incorreta</div>`) : "";
   app.innerHTML = topbar(P.title) + `<div class="wrap">
     <div class="row" style="justify-content:space-between;margin-bottom:14px"><div class="row"><span class="pill acc">Questão ${P.pos+1} de ${P.items.length}</span><span class="pill">${esc(q.id)}</span><span class="pill">D${q.domain} · ${esc(q.topic||"")}</span><span class="pill">${TYPES[q.type]}</span></div>
-      ${P.back ? `<button class="btn sm ghost" data-lab="${esc(P.back)}">Voltar ao lab</button>` : P.backView ? `<button class="btn sm ghost" data-skill="${esc(P.backView)}">Voltar à documentação</button>` : `<button class="btn sm ghost" data-go="exam">Encerrar treino</button>`}</div>
+      ${P.back ? `<button class="btn sm ghost" data-lab="${esc(P.back)}">Voltar ao laboratório</button>` : P.backView ? `<button class="btn sm ghost" data-skill="${esc(P.backView)}">Voltar à documentação</button>` : `<button class="btn sm ghost" data-go="exam">Encerrar treino</button>`}</div>
     ${q.group && q.group.kind==="case" ? `<details class="card" style="margin-bottom:14px"><summary style="cursor:pointer;color:var(--accent)">Estudo de caso: ${esc(ex.cases[q.group.id]?.title||"")}</summary><div class="q qtheme-dark" style="margin-top:10px">${(ex.cases[q.group.id]?.tabs||[]).map(t=>`<h4>${esc(t.title)}</h4>${md(t.body)}`).join("")}</div></details>` : ""}
     <div class="card qtheme-dark"><div class="q" id="pq">${renderQ(ex, q, it, {mode: it.checked ? "show" : "practice"})}</div>${fb}
       <div class="row" style="margin-top:18px"><button class="btn" id="pp" ${P.pos?"":"disabled"}>◀ Anterior</button><span class="spacer"></span>${it.checked ? "" : `<button class="btn" id="pc">Verificar</button>`}<button class="btn primary" id="pn">${P.pos===P.items.length-1?"Concluir":"Próxima ▶"}</button></div></div>
@@ -1367,12 +1368,12 @@ function vDocs(app){
   const M = ex.docsMeta || {};
   const nLinks = new Set(ex.skills.flatMap(k => (k.items||[]).flatMap(i => (i.docs||[]).map(d=>d.u)).concat((k.docs||[]).map(d=>d.u)))).size;
   app.innerHTML = topbar("Documentação") + `<div class="wrap">
-    <h1>Documentação por skill</h1>
-    <p class="sub">Skills Measured · ${ex.skills.length} skills · ${nLinks} links principais${M.updated ? ` · verificados no Microsoft Learn em ${esc(M.updated)}` : ""}${M.source ? ` · <a href="${esc(M.source)}" target="_blank" rel="noopener">study guide oficial</a>` : ""}</p>
+    <h1>Documentação por competência</h1>
+    <p class="sub">Competências avaliadas · ${ex.skills.length} competências · ${nLinks} links principais${M.updated ? ` · verificados no Microsoft Learn em ${esc(M.updated)}` : ""}${M.source ? ` · <a href="${esc(M.source)}" target="_blank" rel="noopener">guia de estudo oficial</a>` : ""}</p>
     ${M.note ? `<div class="notice info" style="margin-bottom:16px">${inl(M.note)}</div>` : ""}
     <div class="row" style="margin-bottom:16px">
       <select id="df-d" class="inp" style="width:auto"><option value="">Todos os domínios</option>${ex.domains.map(d=>`<option value="${d.id}" ${+F.d===d.id?"selected":""}>${d.id}. ${esc(d.name)}</option>`).join("")}</select>
-      <input id="df-q" class="inp" style="width:260px" placeholder="Buscar skill, item ou documento" value="${esc(F.q||"")}">
+      <input id="df-q" class="inp" style="width:260px" placeholder="Buscar competência, item ou documento" value="${esc(F.q||"")}">
     </div>
     <div id="doc-list"></div>
   </div>`;
@@ -1386,17 +1387,17 @@ function vDocs(app){
       const qs = (ex.skillQ[k.id]||[]).filter(id => ex.byId[id].scope !== "out"), labs = labsOf(k), more = skillDocsFromQuestions(ex, k);
       return `<div class="skcard ${focus===k.id?"hl":""}" id="sk-${esc(k.id)}">
         <div class="skhead"><h3><span class="skid">${esc(k.id)}</span>${esc(k.name)}</h3>
-          <div class="row"><span class="pill">${qs.length} questões</span><button class="btn sm" data-train="${esc(k.id)}" ${qs.length?"":"disabled"}>Treinar esta skill</button></div></div>
+          <div class="row"><span class="pill">${qs.length} questões</span><button class="btn sm" data-train="${esc(k.id)}" ${qs.length?"":"disabled"}>Treinar esta competência</button></div></div>
         ${(k.docs||[]).length ? `<div style="margin-top:10px">${docLinks(k.docs)}</div>` : ""}
-        <ul class="skitems">${(k.items||[]).map(i => `<li class="skitem"><div class="t">${esc(i.t)}</div>${(i.docs||[]).length ? docLinks(i.docs) : `<div class="none">Sem link específico — veja as leituras gerais da skill.</div>`}</li>`).join("")}</ul>
+        <ul class="skitems">${(k.items||[]).map(i => `<li class="skitem"><div class="t">${esc(i.t)}</div>${(i.docs||[]).length ? docLinks(i.docs) : `<div class="none">Sem link específico — veja as leituras gerais da competência.</div>`}</li>`).join("")}</ul>
         ${more.length ? `<details class="skmore"><summary>Mais leituras citadas nas questões (${more.length})</summary>${docLinks(more)}</details>` : ""}
-        ${labs.length ? `<div class="lablinks"><span>Labs:</span>${labs.map(l=>`<button type="button" class="lablink" data-lab="${esc(l.id)}">${esc(l.id)} · ${esc(l.title)}</button>`).join("")}</div>` : ""}
+        ${labs.length ? `<div class="lablinks"><span>Laboratórios:</span>${labs.map(l=>`<button type="button" class="lablink" data-lab="${esc(l.id)}">${esc(l.id)} · ${esc(l.title)}</button>`).join("")}</div>` : ""}
       </div>`; }).join("")}`).join("") : `<div class="card muted">Nada encontrado com esses filtros.</div>`;
     app.querySelectorAll("[data-train]").forEach(b => b.onclick = () => {
       const k = ex.skillById[b.dataset.train];
       const ids = shuffle((ex.skillQ[k.id]||[]).filter(id => ex.byId[id].scope !== "out"));
-      if (!ids.length) return toast("Nenhuma questão nesta skill.");
-      startPractice(ex, ids, `Skill ${k.id}`, null, k.id);
+      if (!ids.length) return toast("Nenhuma questão nesta competência.");
+      startPractice(ex, ids, `Competência ${k.id}`, null, k.id);
     });
   };
   draw();
@@ -1416,13 +1417,13 @@ function labState(ex, id){ const all = DB.labs[ex.code] = DB.labs[ex.code] || {}
 function labStatusPill(st){ return st==="feito" ? `<span class="pill st-feito">Concluído</span>` : st==="andamento" ? `<span class="pill st-andamento">Em andamento</span>` : ""; }
 function vLabs(app){
   const ex = curExam(); if (!ex) return go("home");
-  if (!ex.labs || !ex.labs.length){ app.innerHTML = topbar("Labs") + `<div class="wrap"><div class="card">Esta prova ainda não tem labs.</div></div>`; return; }
+  if (!ex.labs || !ex.labs.length){ app.innerHTML = topbar("Laboratórios") + `<div class="wrap"><div class="card">Esta prova ainda não tem laboratórios.</div></div>`; return; }
   const F = UI.data.f = UI.data.f || {};
   const cov = new Set(ex.labs.flatMap(l => l.questions||[]));
   const done = ex.labs.filter(l => labState(ex,l.id).status==="feito").length;
-  app.innerHTML = topbar("Labs") + `<div class="wrap">
-    <h1>Labs práticos</h1>
-    <p class="sub">${ex.labs.length} labs · cobrem ${cov.size} das ${ex.questions.length} questões do banco · ${done} concluído(s)</p>
+  app.innerHTML = topbar("Laboratórios") + `<div class="wrap">
+    <h1>Laboratórios práticos</h1>
+    <p class="sub">${ex.labs.length} laboratórios · cobrem ${cov.size} das ${ex.questions.length} questões do banco · ${done} concluído(s)</p>
     ${ex.labEnv ? `<div class="labrow" data-lab="ENV" style="margin-bottom:18px;border-color:rgba(0,180,216,.45)"><div class="lid">ENV</div><div><div class="lt">${esc(ex.labEnv.title)}</div><div class="lm">Leia antes do primeiro lab: VMs, usuários de teste, convenções, como forçar a sincronização e onde olhar os logs.</div></div><div class="lr"><span class="pill acc">comece aqui</span></div></div>` : ""}
     <div class="row" style="margin-bottom:16px">
       <select id="lf-d" class="inp" style="width:auto"><option value="">Todos os domínios</option>${ex.domains.map(d=>`<option value="${d.id}" ${+F.d===d.id?"selected":""}>${d.id}. ${esc(d.name)}</option>`).join("")}</select>
@@ -1453,8 +1454,8 @@ function vLab(app){
   const id = UI.data.id;
   if (id === "ENV" && ex.labEnv){
     const e = ex.labEnv;
-    app.innerHTML = topbar("Labs") + `<div class="wrap"><div class="row" style="margin-bottom:8px"><button class="btn sm ghost" data-go="labs">◀ Todos os labs</button></div>
-      <div class="exam-code">AMBIENTE</div><h1>${esc(e.title)}</h1><p class="sub">Referência comum a todos os labs.</p>
+    app.innerHTML = topbar("Laboratórios") + `<div class="wrap"><div class="row" style="margin-bottom:8px"><button class="btn sm ghost" data-go="labs">◀ Todos os laboratórios</button></div>
+      <div class="exam-code">AMBIENTE</div><h1>${esc(e.title)}</h1><p class="sub">Referência comum a todos os laboratórios.</p>
       <div class="card labsec"><div class="labdoc">${md(e.overview||"")}</div></div>
       <div class="card labsec"><div class="labdoc">${md(e.steps||"")}</div></div></div>`;
     return;
@@ -1465,15 +1466,15 @@ function vLab(app){
   const dom = ex.domainById[l.domain];
   const secs = LSEC.filter(([k]) => l[k]);
   const qs = (l.questions||[]).filter(qid => ex.byId[qid]);
-  app.innerHTML = topbar("Labs") + `<div class="wrap">
-    <div class="row" style="margin-bottom:8px;justify-content:space-between"><button class="btn sm ghost" data-go="labs">◀ Todos os labs</button>
+  app.innerHTML = topbar("Laboratórios") + `<div class="wrap">
+    <div class="row" style="margin-bottom:8px;justify-content:space-between"><button class="btn sm ghost" data-go="labs">◀ Todos os laboratórios</button>
       <div class="row">${prev?`<button class="btn sm ghost" data-lab="${esc(prev.id)}">◀ ${esc(prev.id)}</button>`:""}${next?`<button class="btn sm ghost" data-lab="${esc(next.id)}">${esc(next.id)} ▶</button>`:""}</div></div>
     <div class="exam-code">${esc(l.id)} · DOMÍNIO ${l.domain}${dom?` — ${esc(dom.name.toUpperCase())}`:""}</div>
     <h1>${esc(l.title)}</h1>
     <div class="row" style="margin:6px 0 20px"><span class="pill kind-${esc(l.kind)}">Classe ${esc(l.kind)} · ${KIND[l.kind]||""}</span><span class="pill">~${l.minutes} min</span>${qs.length?`<span class="pill">${qs.length} questões</span>`:""}${labStatusPill(st.status)}</div>
     <div class="lab-layout">
       <div>
-        ${l.predict && ex.byId[l.predict] ? `<div class="notice info" style="margin-bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div style="flex:1;min-width:240px"><b>Antes de montar:</b> responda a <b>${esc(l.predict)}</b> sem consultar nada. No fim do lab, compare o que você previu com o que viu.</div><button class="btn sm primary" id="lab-pred">Responder ${esc(l.predict)}</button></div>` : ""}
+        ${l.predict && ex.byId[l.predict] ? `<div class="notice info" style="margin-bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div style="flex:1;min-width:240px"><b>Antes de montar:</b> responda a <b>${esc(l.predict)}</b> sem consultar nada. No fim do laboratório, compare o que você previu com o que viu.</div><button class="btn sm primary" id="lab-pred">Responder ${esc(l.predict)}</button></div>` : ""}
         ${secs.map(([k,t],n) => `<div class="card labsec ${k==="test"||k==="expected"?"key":""}" id="ls-${k}"><h2><span class="n">${String(n+1).padStart(2,"0")}</span>${t}</h2><div class="labdoc">${md(l[k])}</div></div>`).join("")}
         ${l.refs && l.refs.length ? `<div class="card labsec"><h2>Documentação</h2><div class="refs">${l.refs.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div></div>` : ""}
       </div>
@@ -1525,7 +1526,7 @@ function vBank(app){
         <select id="f-d"><option value="">Domínio</option>${ex.domains.map(d=>`<option value="${d.id}" ${F.d==d.id?"selected":""}>D${d.id}</option>`).join("")}</select>
         <select id="f-t"><option value="">Tipo</option>${Object.entries(TYPES).map(([k,l])=>`<option value="${k}" ${F.t===k?"selected":""}>${l}</option>`).join("")}</select>
         <select id="f-r"><option value="">Status</option>${["ok","corrigida","duvidosa"].map(x=>`<option ${F.r===x?"selected":""}>${x}</option>`).join("")}</select>
-        <select id="f-s"><option value="">Escopo</option>${["in","borderline","out"].map(x=>`<option ${F.s===x?"selected":""}>${x}</option>`).join("")}</select>
+        <select id="f-s"><option value="">Escopo</option>${["in","borderline","out"].map(x=>`<option value="${x}" ${F.s===x?"selected":""}>${SCOPE_LABELS[x]}</option>`).join("")}</select>
         <input id="f-q" placeholder="Buscar…" value="${esc(F.q)}" style="flex:1;min-width:120px">
       </div>
       <div class="qlist"><table class="tbl"><thead><tr><th>ID</th><th>D</th><th>Tipo</th><th>Tópico</th><th>Status</th></tr></thead><tbody id="b-rows"></tbody></table></div><p class="muted" style="font-size:12.5px" id="b-count"></p></div>
@@ -1535,7 +1536,7 @@ function vBank(app){
   checkImages(ex, bad => { const p = $("#imgchk"); if (!p) return; p.className = "pill " + (bad.length?"bad":"good"); p.textContent = bad.length ? `${bad.length} imagem(ns) faltando` : "imagens ok"; if (bad.length) $("#imgerr").innerHTML = `<ul class="vlist" style="color:#ff9b95">${bad.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>`; });
   const rows = () => {
     const all = ex.questions.filter(q => (!F.d || q.domain===+F.d) && (!F.t || q.type===F.t) && (!F.r || q.review===F.r) && (!F.s || q.scope===F.s) && (!F.q || (q.id+" "+q.stem+" "+(q.topic||"")).toLowerCase().includes(F.q.toLowerCase())));
-    $("#b-rows").innerHTML = all.map(q => `<tr class="click" data-q="${esc(q.id)}" style="${sel&&sel.id===q.id?"background:var(--surface-2)":""}"><td class="mono">${esc(q.id)}${q._ov?' <span title="alterada localmente" style="color:var(--accent)">●</span>':""}</td><td>${q.domain}</td><td style="font-size:12.5px">${TYPES[q.type]}</td><td style="font-size:13px">${esc(q.topic||"")}${q.group?` <span class="pill acc" style="font-size:10.5px">${q.group.kind}</span>`:""}</td><td>${q.scope!=="in"?`<span class="pill">${q.scope}</span> `:""}${q.review!=="ok"?`<span class="pill ${q.review==="duvidosa"?"bad":"warn"}">${q.review}</span>`:'<span class="muted" style="font-size:12px">ok</span>'}</td></tr>`).join("");
+    $("#b-rows").innerHTML = all.map(q => `<tr class="click" data-q="${esc(q.id)}" style="${sel&&sel.id===q.id?"background:var(--surface-2)":""}"><td class="mono">${esc(q.id)}${q._ov?' <span title="alterada localmente" style="color:var(--accent)">●</span>':""}</td><td>${q.domain}</td><td style="font-size:12.5px">${TYPES[q.type]}</td><td style="font-size:13px">${esc(q.topic||"")}${q.group?` <span class="pill acc" style="font-size:10.5px">${q.group.kind==="case"?"estudo de caso":"série"}</span>`:""}</td><td>${q.scope!=="in"?`<span class="pill">${SCOPE_LABELS[q.scope]}</span> `:""}${q.review!=="ok"?`<span class="pill ${q.review==="duvidosa"?"bad":"warn"}">${q.review}</span>`:'<span class="muted" style="font-size:12px">ok</span>'}</td></tr>`).join("");
     $("#b-count").textContent = `${all.length} de ${ex.questions.length}`;
     app.querySelectorAll("[data-q]").forEach(tr => tr.onclick = () => { UI.data.sel = tr.dataset.q; UI.data.edit = false; const y = window.scrollY, ql = $(".qlist").scrollTop; render(); window.scrollTo(0,y); $(".qlist").scrollTop = ql; const p=$("#b-prev"); if (window.innerWidth<1000 && p) p.scrollIntoView({behavior:"smooth"}); });
   };
@@ -1560,7 +1561,7 @@ function bankPreview(ex, q){
     <div style="border-top:1px solid var(--border);margin-top:18px;padding-top:16px">
       <h3>Curadoria</h3>
       <div class="set">
-        <div class="field"><label>Escopo</label><select id="c-scope" class="inp">${["in","borderline","out"].map(x=>`<option ${q.scope===x?"selected":""}>${x}</option>`).join("")}</select></div>
+        <div class="field"><label>Escopo</label><select id="c-scope" class="inp">${["in","borderline","out"].map(x=>`<option value="${x}" ${q.scope===x?"selected":""}>${SCOPE_LABELS[x]}</option>`).join("")}</select></div>
         <div class="field"><label>Status do gabarito</label><select id="c-rev" class="inp">${["ok","corrigida","duvidosa"].map(x=>`<option ${q.review===x?"selected":""}>${x}</option>`).join("")}</select></div>
       </div>
       <div class="field" style="margin-top:10px"><label>Nota de curadoria</label><input type="text" id="c-note" class="inp" value="${esc(q.note||"")}" placeholder="Ex.: conferir discussão no ExamTopics"></div>

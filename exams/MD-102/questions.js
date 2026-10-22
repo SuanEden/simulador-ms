@@ -21,11 +21,11 @@ SIM.registerQuestions("MD-102", [
       "kind": "case",
       "id": "ADATUM"
     },
-    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Para cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "statements": [
-      "User1 can create a file named D:\\Folder1\\file1.txt on Device4 by using Notepad.",
-      "User2 can remove D:\\Folder1 from the list of protected folders on Device2.",
-      "User3 can create a file named C:\\Users\\User3\\Desktop\\file1.txt on Device2 by running a custom Windows PowerShell script."
+      "User1 pode criar um arquivo chamado D:\\Folder1\\file1.txt em Device4 usando o Notepad.",
+      "User2 pode remover D:\\Folder1 da lista de pastas protegidas em Device2.",
+      "User3 pode criar um arquivo chamado C:\\Users\\User3\\Desktop\\file1.txt em Device2 executando um script personalizado do Windows PowerShell."
     ],
     "answer": [
       false,
@@ -62,12 +62,12 @@ SIM.registerQuestions("MD-102", [
       "kind": "case",
       "id": "ADATUM"
     },
-    "stem": "Which devices are registered by using the Windows Autopilot deployment service?",
+    "stem": "Quais dispositivos são registrados usando o serviço de implantação do Windows Autopilot?",
     "options": [
-      "Device1 only",
-      "Device3 only",
-      "Device1 and Device3 only",
-      "Device1, Device2, and Device3"
+      "Somente Device1",
+      "Somente Device3",
+      "Somente Device1 e Device3",
+      "Device1, Device2 e Device3"
     ],
     "answer": 0,
     "shuffle": false,
@@ -108,11 +108,11 @@ SIM.registerQuestions("MD-102", [
       "kind": "case",
       "id": "ADATUM"
     },
-    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "stem": "Para cada afirmação a seguir, selecione Sim se ela for verdadeira. Caso contrário, selecione Não.",
     "statements": [
-      "Device1 is marked as compliant.",
-      "Device4 is marked as compliant.",
-      "Device5 is marked as compliant."
+      "Device1 é marcado como em conformidade.",
+      "Device4 é marcado como em conformidade.",
+      "Device5 é marcado como em conformidade."
     ],
     "answer": [
       false,
@@ -149,12 +149,12 @@ SIM.registerQuestions("MD-102", [
       "kind": "case",
       "id": "ADATUM"
     },
-    "stem": "You implement Boundary1 based on the planned changes.\n\nWhich devices have a network boundary of 192.168.1.0/24 applied?",
+    "stem": "Você implementa Boundary1 de acordo com as alterações planejadas.\n\nA quais dispositivos é aplicado o limite de rede 192.168.1.0/24?",
     "options": [
-      "Device2 only",
-      "Device3 only",
-      "Device1, Device2, and Device5 only",
-      "Device1, Device2, Device3, and Device4 only"
+      "Somente Device2",
+      "Somente Device3",
+      "Somente Device1, Device2 e Device5",
+      "Somente Device1, Device2, Device3 e Device4"
     ],
     "answer": 3,
     "shuffle": false,
@@ -184,24 +184,24 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "App protection policies",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 subscription.\n\nYou use Microsoft Intune Suite to manage devices.\n\nYou have the iOS app protection policy shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365.\n\nVocê usa o Microsoft Intune Suite para gerenciar dispositivos.\n\nVocê tem a política de proteção de aplicativos iOS mostrada na imagem a seguir.\n\n### Tradução do texto da imagem\n\n**Requisitos de acesso**\n\n| Configuração | Valor |\n|---|---|\n| PIN para acesso | Exigir |\n| Tipo de PIN | Numérico |\n| PIN simples | Permitir |\n| Comprimento mínimo do PIN | 6 |\n| Touch ID em vez de PIN para acesso (iOS8+/iPadOS) | Permitir |\n| Substituir biometria por PIN após o tempo limite | Exigir |\n| Tempo limite (minutos de inatividade) | 30 |\n| Face ID em vez de PIN para acesso (iOS11+/iPadOS) | Bloquear |\n| Redefinir PIN após determinado número de dias | Não |\n| Número de dias | 0 |\n| PIN do aplicativo quando há um PIN definido no dispositivo | Exigir |\n| Credenciais da conta corporativa ou de estudante para acesso | Exigir |\n| Verificar novamente os requisitos de acesso após este número de minutos de inatividade | 30 |\n\n**Inicialização condicional**\n\n| Configuração | Valor | Ação |\n|---|---|---|\n| Número máximo de tentativas de PIN | 5 | Redefinir PIN |\n| Período de carência offline | 720 | Bloquear acesso (minutos) |\n| Período de carência offline | 90 | Apagar dados (dias) |\n| Dispositivos com jailbreak/root | | Bloquear acesso |\n\nUse as listas suspensas para selecionar a opção que completa cada afirmação com base nas informações apresentadas na imagem.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "After 30 minutes of inactivity, a user will be prompted for their",
+        "label": "Após 30 minutos de inatividade, será solicitado ao usuário que informe",
         "options": [
-          "account credentials only",
-          "PIN only",
-          "PIN and account credentials"
+          "somente as credenciais da conta",
+          "somente o PIN",
+          "o PIN e as credenciais da conta"
         ],
         "answer": 2
       },
       {
-        "label": "Entering the wrong PIN five times will",
+        "label": "Inserir o PIN errado cinco vezes fará com que o sistema",
         "options": [
-          "block access",
-          "reset the app PIN",
-          "reset the device PIN",
-          "wipe company data"
+          "bloqueie o acesso",
+          "redefina o PIN do aplicativo",
+          "redefina o PIN do dispositivo",
+          "apague os dados da empresa"
         ],
         "answer": 1
       }
@@ -230,7 +230,7 @@ SIM.registerQuestions("MD-102", [
     "exhibits": [
       {
         "src": "img/Q005-1.png",
-        "alt": "Política de proteção de app iOS — Access requirements e Conditional launch"
+        "alt": "Política de proteção de aplicativos iOS — requisitos de acesso e inicialização condicional"
       }
     ]
   },
@@ -241,13 +241,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Microsoft 365 Apps",
     "type": "order",
-    "stem": "You have a Microsoft 365 E5 subscription and a computer that runs Windows 11.\n\nYou need to create a customized installation of Microsoft 365 Apps for enterprise.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 e um computador que executa o Windows 11.\n\nVocê precisa criar uma instalação personalizada do Microsoft 365 Apps for enterprise.\n\nQuais quatro ações você deve executar em sequência? Para responder, mova as ações apropriadas da lista de ações para a área de resposta e organize-as na ordem correta.",
     "pool": [
-      "Run setup.exe and specify the /packager switch.",
-      "Download the Microsoft Office Deployment Tool (ODT) and run the self-extracting executable (.exe) file.",
-      "Edit the XML configuration file.",
-      "Run setup.exe and specify the /download switch.",
-      "Run setup.exe and specify the /configure switch."
+      "Execute setup.exe e especifique a opção /packager.",
+      "Baixe o Microsoft Office Deployment Tool (ODT) e execute o arquivo executável autoextraível (.exe).",
+      "Edite o arquivo de configuração XML.",
+      "Execute setup.exe e especifique a opção /download.",
+      "Execute setup.exe e especifique a opção /configure."
     ],
     "answer": [
       1,
@@ -273,13 +273,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "App configuration policies",
     "type": "single",
-    "stem": "You have devices enrolled in Microsoft Intune as shown in the following table.\n\n| Name | Platform |\n|---|---|\n| Device1 | Windows 10 |\n| Device2 | Windows 11 |\n| Device3 | Android |\n| Device4 | iOS |\n\nOn which devices can you apply app configuration policies?",
+    "stem": "Você tem dispositivos inscritos no Microsoft Intune, conforme a tabela a seguir.\n\n| Nome | Plataforma |\n|---|---|\n| Device1 | Windows 10 |\n| Device2 | Windows 11 |\n| Device3 | Android |\n| Device4 | iOS |\n\nA quais dispositivos você pode aplicar políticas de configuração de aplicativos?",
     "options": [
-      "Device2 only",
-      "Device1 and Device2 only",
-      "Device3 and Device4 only",
-      "Device2, Device3, and Device4 only",
-      "Device1, Device2, Device3, and Device4"
+      "Somente Device2",
+      "Somente Device1 e Device2",
+      "Somente Device3 e Device4",
+      "Somente Device2, Device3 e Device4",
+      "Device1, Device2, Device3 e Device4"
     ],
     "answer": 2,
     "shuffle": false,
@@ -305,20 +305,20 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "App protection policies",
     "type": "hotarea",
-    "stem": "You have an Azure AD tenant named contoso.com that contains the devices shown in the following table.\n\n| Name | Operating system |\n|---|---|\n| Device1 | Windows 10 |\n| Device2 | Android 8.0 |\n| Device3 | Android 9 |\n| Device4 | iOS 11.0 |\n| Device5 | iOS 11.4.1 |\n\nAll devices contain an app named App1 and are enrolled in Microsoft Intune.\n\nYou need to prevent users from copying data from App1 and pasting the data into other apps.\n\nWhich type of policy and how many policies should you create in Intune? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem um tenant do Azure AD chamado contoso.com que contém os dispositivos mostrados na tabela a seguir.\n\n| Nome | Sistema operacional |\n|---|---|\n| Device1 | Windows 10 |\n| Device2 | Android 8.0 |\n| Device3 | Android 9 |\n| Device4 | iOS 11.0 |\n| Device5 | iOS 11.4.1 |\n\nTodos os dispositivos contêm um aplicativo chamado App1 e estão inscritos no Microsoft Intune.\n\nVocê precisa impedir que os usuários copiem dados de App1 e os colem em outros aplicativos.\n\nQue tipo de política e quantas políticas você deve criar no Intune? Para responder, selecione as opções apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "Policy type:",
+        "label": "Tipo de política:",
         "options": [
-          "App configuration policy",
-          "App protection policy",
-          "Conditional access policy",
-          "Device compliance policy"
+          "Política de configuração de aplicativos",
+          "Política de proteção de aplicativos",
+          "Política de Acesso Condicional",
+          "Política de conformidade de dispositivos"
         ],
         "answer": 1
       },
       {
-        "label": "Minimum number of policies:",
+        "label": "Número mínimo de políticas:",
         "options": [
           "1",
           "2",
@@ -351,12 +351,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Win32 apps",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Microsoft Intune to manage devices.\n\nYou plan to deploy two apps named App1 and App2 to all Windows devices. App1 must be installed before App2.\n\nFrom the Intune admin center, you create and deploy two Windows app (Win32) apps.\n\nYou need to ensure that App1 is installed before App2 on every device.\n\nWhat should you configure?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Microsoft Intune para gerenciar dispositivos.\n\nVocê planeja implantar dois aplicativos chamados App1 e App2 em todos os dispositivos Windows. App1 deve ser instalado antes de App2.\n\nNo centro de administração do Intune, você cria e implanta dois aplicativos do tipo Aplicativo do Windows (Win32).\n\nVocê precisa garantir que App1 seja instalado antes de App2 em todos os dispositivos.\n\nO que você deve configurar?",
     "options": [
-      "the App1 deployment configurations",
-      "a dynamic device group",
-      "a detection rule",
-      "the App2 deployment configurations"
+      "as configurações de implantação de App1",
+      "um grupo dinâmico de dispositivos",
+      "uma regra de detecção",
+      "as configurações de implantação de App2"
     ],
     "answer": 3,
     "scope": "in",
@@ -385,7 +385,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.2",
     "topic": "App configuration policies",
     "type": "single",
-    "stem": "You have a Microsoft Intune subscription.\n\nYou have devices enrolled in Intune as shown in the following table.\n\n| Name | Operating system |\n|---|---|\n| Device1 | Android 8.1.0 |\n| Device2 | Android 9 |\n| Device3 | iOS 11.4.1 |\n| Device4 | iOS 12.3.1 |\n| Device5 | iOS 12.3.2 |\n\nAn app named App1 is installed on each device.\n\nWhat is the minimum number of app configuration policies required to manage App1?",
+    "stem": "Você tem uma assinatura do Microsoft Intune.\n\nVocê tem dispositivos inscritos no Intune, conforme a tabela a seguir.\n\n| Nome | Sistema operacional |\n|---|---|\n| Device1 | Android 8.1.0 |\n| Device2 | Android 9 |\n| Device3 | iOS 11.4.1 |\n| Device4 | iOS 12.3.1 |\n| Device5 | iOS 12.3.2 |\n\nUm aplicativo chamado App1 está instalado em cada dispositivo.\n\nQual é o número mínimo de políticas de configuração de aplicativos necessárias para gerenciar App1?",
     "options": [
       "1",
       "2",
@@ -417,7 +417,7 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Line-of-business apps",
     "type": "single",
-    "stem": "You have a Microsoft 365 E5 subscription that contains 100 iOS devices enrolled in Microsoft Intune.\n\nYou need to deploy a custom line-of-business (LOB) app to the devices by using Intune.\n\nWhich extension should you select for the app package file?",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que contém 100 dispositivos iOS inscritos no Microsoft Intune.\n\nVocê precisa implantar um aplicativo de linha de negócios (LOB) personalizado nos dispositivos usando o Intune.\n\nQual extensão você deve selecionar para o arquivo do pacote do aplicativo?",
     "options": [
       ".intunemac",
       ".ipa",
@@ -451,13 +451,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "1.3",
     "topic": "Conditional Access",
     "type": "single",
-    "stem": "You have a Microsoft 365 E5 subscription that contains a user named User1 and a web app named App1.\n\nApp1 must only accept modern authentication requests.\n\nYou plan to create a Conditional Access policy named CAPolicy1 that will have the following settings:\n\n- Assignments — Users or workload identities: User1\n- Cloud apps or actions: App1\n- Access controls — Grant: Block access\n\nYou need to block only legacy authentication requests to App1.\n\nWhich condition should you add to CAPolicy1?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que contém um usuário chamado User1 e um aplicativo web chamado App1.\n\nApp1 deve aceitar somente solicitações de autenticação moderna.\n\nVocê planeja criar uma política de Acesso Condicional chamada CAPolicy1 com as seguintes configurações:\n\n- Atribuições — Usuários ou identidades de carga de trabalho: User1\n- Aplicativos de nuvem ou ações: App1\n- Controles de acesso — Conceder: Bloquear acesso\n\nVocê precisa bloquear somente as solicitações de autenticação herdada para App1.\n\nQual condição você deve adicionar a CAPolicy1?",
     "options": [
-      "Filter for devices",
-      "Device platforms",
-      "User risk",
-      "Sign-in risk",
-      "Client apps"
+      "Filtro de dispositivos",
+      "Plataformas de dispositivo",
+      "Risco do usuário",
+      "Risco de entrada",
+      "Aplicativos cliente"
     ],
     "answer": 4,
     "scope": "in",
@@ -483,21 +483,21 @@ SIM.registerQuestions("MD-102", [
     "topic": "Microsoft 365 Apps admin center",
     "type": "multi",
     "layout": "panel",
-    "panelTitle": "Microsoft 365 Apps admin center",
-    "stem": "All users have Microsoft 365 apps deployed.\n\nYou need to configure Microsoft 365 apps to meet the following requirements:\n\n- Enable the automatic installation of WebView2 Runtime.\n- Prevent users from submitting feedback.\n\nWhich two settings should you configure in the Microsoft 365 Apps admin center? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "panelTitle": "Centro de administração do Microsoft 365 Apps",
+    "stem": "Todos os usuários têm aplicativos do Microsoft 365 implantados.\n\nVocê precisa configurar os aplicativos do Microsoft 365 para atender aos seguintes requisitos:\n\n- Habilitar a instalação automática do WebView2 Runtime.\n- Impedir que os usuários enviem comentários.\n\nQuais duas configurações você deve definir no centro de administração do Microsoft 365 Apps? Para responder, selecione as configurações apropriadas na área de resposta.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "options": [
-      "Home",
-      "Servicing › Monthly Enterprise",
-      "Customization › Device Configuration",
-      "Customization › Policy Management",
-      "Customization › What's New Management",
-      "Health › Apps Health",
-      "Health › Security Update Status",
-      "Health › OneDrive Sync",
-      "Health › Service Health",
-      "Inventory",
-      "Learn More",
-      "Setup"
+      "Início",
+      "Manutenção › Canal Empresarial Mensal",
+      "Personalização › Configuração de dispositivos",
+      "Personalização › Gerenciamento de políticas",
+      "Personalização › Gerenciamento de novidades",
+      "Integridade › Integridade dos aplicativos",
+      "Integridade › Status das atualizações de segurança",
+      "Integridade › Sincronização do OneDrive",
+      "Integridade › Integridade do serviço",
+      "Inventário",
+      "Saiba mais",
+      "Configuração"
     ],
     "answer": [
       2,
@@ -522,12 +522,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "4.1",
     "topic": "Microsoft 365 Apps",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription.\n\nYou have 10 computers that run Windows 10 and are enrolled in mobile device management (MDM).\n\nYou need to deploy the Microsoft 365 Apps for enterprise suite to all the computers.\n\nWhat should you do?",
+    "stem": "Você tem uma assinatura do Microsoft 365.\n\nVocê tem 10 computadores que executam o Windows 10 e estão inscritos no gerenciamento de dispositivos móveis (MDM).\n\nVocê precisa implantar o pacote Microsoft 365 Apps for enterprise em todos os computadores.\n\nO que você deve fazer?",
     "options": [
-      "From the Microsoft Intune admin center, create a Windows 10 device profile.",
-      "From Azure AD, add an app registration.",
-      "From Azure AD, add an enterprise application.",
-      "From the Microsoft Intune admin center, add an app."
+      "No centro de administração do Microsoft Intune, criar um perfil de dispositivo Windows 10.",
+      "No Azure AD, adicionar um registro de aplicativo.",
+      "No Azure AD, adicionar um aplicativo empresarial.",
+      "No centro de administração do Microsoft Intune, adicionar um aplicativo."
     ],
     "answer": 3,
     "scope": "in",
@@ -548,12 +548,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.4",
     "topic": "Device lifecycle",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Microsoft Intune to manage devices.\n\nYou have a Windows 11 device named Device1 that is enrolled in Intune. Device1 has been offline for 30 days.\n\nYou need to remove Device1 from Intune immediately. The solution must ensure that if the device checks in again, any apps and data provisioned by Intune are removed. User-installed apps, personal data, and OEM-installed apps must be retained.\n\nWhat should you use?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Microsoft Intune para gerenciar dispositivos.\n\nVocê tem um dispositivo Windows 11 chamado Device1, inscrito no Intune. Device1 está offline há 30 dias.\n\nVocê precisa remover Device1 do Intune imediatamente. A solução deve garantir que, se o dispositivo voltar a fazer check-in, todos os aplicativos e dados provisionados pelo Intune sejam removidos. Os aplicativos instalados pelo usuário, os dados pessoais e os aplicativos instalados pelo OEM devem ser mantidos.\n\nO que você deve usar?",
     "options": [
-      "a Delete action",
-      "a Retire action",
-      "a Fresh Start action",
-      "an Autopilot Reset action"
+      "uma ação Excluir",
+      "uma ação Desativar",
+      "uma ação Recomeço",
+      "uma ação de redefinição do Autopilot"
     ],
     "answer": 0,
     "scope": "in",
@@ -585,12 +585,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Endpoint analytics",
     "type": "single",
-    "stem": "You have a Microsoft 365 subscription that uses Microsoft Intune Suite.\n\nYou use Microsoft Intune to manage devices.\n\nYou need to review the startup times and restart frequencies of the devices.\n\nWhat should you use?",
+    "stem": "Você tem uma assinatura do Microsoft 365 que usa o Microsoft Intune Suite.\n\nVocê usa o Microsoft Intune para gerenciar dispositivos.\n\nVocê precisa analisar os tempos de inicialização e a frequência de reinicialização dos dispositivos.\n\nO que você deve usar?",
     "options": [
       "Azure Monitor",
       "Intune Data Warehouse",
       "Microsoft Defender for Endpoint",
-      "Endpoint analytics"
+      "Análise de endpoint"
     ],
     "answer": 3,
     "scope": "in",
@@ -618,23 +618,23 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.2",
     "topic": "Windows update rings",
     "type": "hotarea",
-    "stem": "You have a Microsoft 365 E5 subscription.\n\nYou create a new update rings policy named Policy1 as shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5.\n\nVocê cria uma nova política de anéis de atualização chamada Policy1, conforme a imagem a seguir.\n\n### Tradução do texto da imagem\n\n**Configurações do anel de atualização — Editar**\n\n| Configuração | Valor |\n|---|---|\n| Atualizações de produtos Microsoft | Permitir |\n| Drivers do Windows | Permitir |\n| Período de adiamento de atualizações de qualidade (dias) | 0 |\n| Período de adiamento de atualizações de recursos (dias) | 30 |\n| Atualizar dispositivos Windows 10 para a versão mais recente do Windows 11 | Não |\n| Período de desinstalação de atualizações de recursos (2 a 60 dias) | 10 |\n| Canal de manutenção | Canal de Disponibilidade Geral |\n\n**Configurações da experiência do usuário**\n\n| Configuração | Valor |\n|---|---|\n| Comportamento de atualização automática | Instalar automaticamente no horário de manutenção |\n| Início do horário ativo | 8h |\n| Fim do horário ativo | 17h |\n| Verificações de reinicialização | Permitir |\n| Opção de pausar atualizações do Windows | Habilitar |\n| Opção de verificar atualizações do Windows | Habilitar |\n| Alterar nível de notificações de atualização | Usar as notificações padrão do Windows Update |\n| Usar configurações de prazo | Permitir |\n| Prazo para atualizações de recursos | 30 |\n| Prazo para atualizações de qualidade | 0 |\n| Período de carência | 0 |\n| Reinicialização automática antes do prazo | Não |\n\nUse as listas suspensas para selecionar a opção que completa cada afirmação com base nas informações apresentadas na imagem.\n\nOBSERVAÇÃO: cada seleção correta vale um ponto.",
     "slots": [
       {
-        "label": "Updates that contain fixes and improvements to existing Windows functionality [answer choice]",
+        "label": "As atualizações que contêm correções e melhorias para funcionalidades existentes do Windows [answer choice]",
         "options": [
-          "can be deferred indefinitely",
-          "can be deferred for 30 days",
-          "will be installed immediately"
+          "podem ser adiadas indefinidamente",
+          "podem ser adiadas por 30 dias",
+          "serão instaladas imediatamente"
         ],
         "answer": 2
       },
       {
-        "label": "Updates that contain new Windows functionality will be installed within [answer choice] of release",
+        "label": "As atualizações que contêm novas funcionalidades do Windows serão instaladas em até [answer choice] após o lançamento",
         "options": [
-          "1 day",
-          "30 days",
-          "60 days"
+          "1 dia",
+          "30 dias",
+          "60 dias"
         ],
         "answer": 2
       }
@@ -678,13 +678,13 @@ SIM.registerQuestions("MD-102", [
     "skill": "5.2",
     "topic": "Log Analytics",
     "type": "single",
-    "stem": "You have computers that run Windows 10 and connect to an Azure Log Analytics workspace. The workspace is configured to collect all available events from the Windows event logs.\n\nThe computers have the logged events shown in the following table.\n\n| Event ID | Log | Type | Computer |\n|---|---|---|---|\n| 1 | Application | Success | Computer1 |\n| 2 | System | Information | Computer1 |\n| 3 | Security | Audit Success | Computer2 |\n| 4 | System | Error | Computer2 |\n\nWhich events are collected in the Log Analytics workspace?",
+    "stem": "Você tem computadores que executam o Windows 10 e se conectam a um workspace do Azure Log Analytics. O workspace está configurado para coletar todos os eventos disponíveis dos logs de eventos do Windows.\n\nOs computadores têm os eventos registrados mostrados na tabela a seguir.\n\n| ID do evento | Log | Tipo | Computador |\n|---|---|---|---|\n| 1 | Aplicativo | Êxito | Computer1 |\n| 2 | Sistema | Informação | Computer1 |\n| 3 | Segurança | Êxito na auditoria | Computer2 |\n| 4 | Sistema | Erro | Computer2 |\n\nQuais eventos são coletados no workspace do Log Analytics?",
     "options": [
-      "1 only",
-      "2 and 3 only",
-      "1 and 3 only",
-      "1, 2, and 4 only",
-      "1, 2, 3, and 4"
+      "Somente 1",
+      "Somente 2 e 3",
+      "Somente 1 e 3",
+      "Somente 1, 2 e 4",
+      "1, 2, 3 e 4"
     ],
     "answer": 3,
     "shuffle": false,
@@ -714,12 +714,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "2.2",
     "topic": "Android Enterprise",
     "type": "single",
-    "stem": "You have a Microsoft 365 E5 subscription that contains 10 Android Enterprise devices. Each device has a corporate-owned work profile and is enrolled in Microsoft Intune.\n\nYou need to configure the devices to run a single app in kiosk mode.\n\nWhich Configuration settings should you modify in the device restrictions profile?",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que contém 10 dispositivos Android Enterprise. Cada dispositivo tem um perfil de trabalho em dispositivo corporativo e está inscrito no Microsoft Intune.\n\nVocê precisa configurar os dispositivos para executar um único aplicativo no modo de quiosque.\n\nQuais configurações você deve modificar no perfil de restrições de dispositivo?",
     "options": [
-      "Users and Accounts",
-      "General",
-      "System security",
-      "Device experience"
+      "Usuários e contas",
+      "Geral",
+      "Segurança do sistema",
+      "Experiência do dispositivo"
     ],
     "answer": 3,
     "scope": "in",
@@ -744,12 +744,12 @@ SIM.registerQuestions("MD-102", [
     "skill": "3.1",
     "topic": "Defender for Endpoint (macOS)",
     "type": "single",
-    "stem": "You have a Microsoft 365 E5 subscription that contains 500 macOS devices enrolled in Microsoft Intune.\n\nYou need to ensure that you can apply Microsoft Defender for Endpoint antivirus policies to the macOS devices. The solution must minimize administrative effort.\n\nWhat should you do?",
+    "stem": "Você tem uma assinatura do Microsoft 365 E5 que contém 500 dispositivos macOS inscritos no Microsoft Intune.\n\nVocê precisa garantir que possa aplicar políticas de antivírus do Microsoft Defender for Endpoint aos dispositivos macOS. A solução deve minimizar o esforço administrativo.\n\nO que você deve fazer?",
     "options": [
-      "Onboard the macOS devices to the Microsoft Purview compliance portal.",
-      "From the Microsoft Intune admin center, create a security baseline.",
-      "Install Defender for Endpoint on the macOS devices.",
-      "From the Microsoft Intune admin center, create a configuration profile."
+      "Integrar os dispositivos macOS ao portal de conformidade do Microsoft Purview.",
+      "No centro de administração do Microsoft Intune, criar uma linha de base de segurança.",
+      "Instalar o Defender for Endpoint nos dispositivos macOS.",
+      "No centro de administração do Microsoft Intune, criar um perfil de configuração."
     ],
     "answer": 3,
     "scope": "in",

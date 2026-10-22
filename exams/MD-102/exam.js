@@ -4,81 +4,86 @@
    As questões ficam em questions.js, na mesma pasta.
    ===================================================================== */
 SIM.registerExam({
-  code: "MD-102",
-  title: "Microsoft 365 Endpoint Administrator",
-  language: "en",                 // idioma das questões
-  passingScore: 700,              // escala 0–1000
-  defaultQuestions: 50,           // tamanho padrão do simulado
-  defaultMinutes: 100,            // tempo padrão para o tamanho acima (escala proporcionalmente)
-  sourceNote: "Dump ExamTopics 269Q (maio/2024) — 241 questões curadas, out/2026",
-
-  // Skills at a glance (Study Guide oficial). Os pesos são faixas, como no site.
-  domains: [
-    { id: 1, name: "Prepare infrastructure for devices",                                   min: 20, max: 25 },
-    { id: 2, name: "Manage and maintain devices",                                          min: 25, max: 30 },
-    { id: 3, name: "Protect devices",                                                      min: 15, max: 20 },
-    { id: 4, name: "Manage and secure applications",                                       min: 15, max: 20 },
-    { id: 5, name: "Optimize endpoint operations by using automation, monitoring, and reporting", min: 10, max: 15 }
+  "code": "MD-102",
+  "title": "Microsoft 365 Endpoint Administrator",
+  "language": "en",
+  "passingScore": 700,
+  "defaultQuestions": 50,
+  "defaultMinutes": 100,
+  "sourceNote": "Dump ExamTopics 269Q (maio/2024) — 241 questões curadas, out/2026",
+  "domains": [
+    {
+      "id": 1,
+      "name": "Preparar a infraestrutura para dispositivos",
+      "min": 20,
+      "max": 25
+    },
+    {
+      "id": 2,
+      "name": "Gerenciar e manter dispositivos",
+      "min": 25,
+      "max": 30
+    },
+    {
+      "id": 3,
+      "name": "Proteger dispositivos",
+      "min": 15,
+      "max": 20
+    },
+    {
+      "id": 4,
+      "name": "Gerenciar e proteger aplicativos",
+      "min": 15,
+      "max": 20
+    },
+    {
+      "id": 5,
+      "name": "Otimizar as operações de endpoints usando automação, monitoramento e relatórios",
+      "min": 10,
+      "max": 15
+    }
   ],
-
-  // Estudos de caso: o texto fica aqui uma vez só; as questões apontam para o id.
-  cases: {
-    ADATUM: {
-      title: "ADatum Corporation",
-      tabs: [
-        { title: "Overview", body:
-"ADatum Corporation is a consulting company that has a main office in Montreal and branch offices in Seattle and New York.\n\nADatum has a Microsoft 365 E5 subscription." },
-
-        { title: "Environment", body:
-"### Network environment\n\nThe network contains an on-premises Active Directory domain named adatum.com. The domain contains the servers shown in the following table.\n\n" +
-"| Name | Operating system | Role |\n|---|---|---|\n| DC1 | Windows Server 2019 | Domain controller |\n| Server1 | Windows Server 2016 | Member server |\n| Server2 | Windows Server 2019 | Member server |\n\n" +
-"ADatum has a hybrid Azure AD tenant named adatum.com.\n\n" +
-"### Users and groups\n\nThe adatum.com tenant contains the users shown in the following table.\n\n" +
-"| Name | Azure AD role | Member of |\n|---|---|---|\n| User1 | Cloud Device Administrator | GroupA |\n| User2 | Azure AD Joined Device Local Administrator | GroupB |\n| User3 | Global Reader | GroupA, GroupB |\n| User4 | Global Administrator | Group1 |\n\n" +
-"All users are assigned a Microsoft Office 365 license and an Enterprise Mobility + Security E3 license.\n\nEnterprise State Roaming is enabled for Group1 and GroupA.\n\nGroup1 and Group2 have a Membership type of Assigned.\n\n" +
-"### Devices\n\nADatum has the Windows 10 devices shown in the following table.\n\n" +
-"| Name | Type | Member of | Scope (Tags) |\n|---|---|---|---|\n| Device1 | Corporate-owned | Group1 | Default |\n| Device2 | Corporate-owned | Group1, Group2 | Tag2 |\n| Device3 | Personally-owned | Group1 | Tag1 |\n| Device4 | Personally-owned | Group2 | Tag2 |\n| Device5 | Corporate-owned | Group3 | Default |\n\n" +
-"The Windows 10 devices are joined to Azure AD and enrolled in Microsoft Intune.\n\nThe Windows 10 devices are configured as shown in the following table.\n\n" +
-"| Name | BitLocker Drive Encryption (BitLocker) | Secure Boot | VPN connection |\n|---|---|---|---|\n| Device1 | Yes | No | VPN1 |\n| Device2 | Yes | Yes | VPN1, VPN3 |\n| Device3 | No | No | VPN3 |\n| Device4 | No | Yes | None |\n| Device5 | Yes | No | None |\n\n" +
-"All the Azure AD joined devices have an executable file named C:\\AppA.exe and a folder named D:\\Folder1." },
-
-        { title: "Intune configuration", body:
-"### Compliance policies\n\nMicrosoft Intune has the compliance policies shown in the following table.\n\n" +
-"| Name | Configuration | Assignment |\n|---|---|---|\n| Policy1 | Require BitLocker only | Group1 |\n| Policy2 | Require Secure Boot only | Group1 |\n| Policy3 | Require BitLocker and Secure Boot | Group2 |\n\n" +
-"The Compliance policy settings are configured as follows:\n\n" +
-"| Setting | Value |\n|---|---|\n| Mark devices with no compliance policy assigned as | **Compliant** |\n| Enhanced jailbreak detection | Disabled |\n| Compliance status validity period (days) | 30 |\n\n" +
-"### Automatic enrollment\n\n- MDM user scope: GroupA\n- MAM user scope: GroupB\n\n" +
-"### Endpoint protection\n\nYou have an Endpoint protection configuration profile that has the following Controlled folder access settings:\n\n- Name: Protection1\n- Folder protection: Enable\n- List of apps that have access to protected folders: C:\\*\\AppA.exe\n- List of additional folders that need to be protected: D:\\Folder1\n- Assignments — Included groups: Group2, GroupB\n\n" +
-"### Windows Autopilot configuration\n\nADatum has a Windows Autopilot deployment profile configured as follows:\n\n" +
-"| Setting | Value |\n|---|---|\n| Name | Profile1 |\n| Convert all targeted devices to Autopilot | Yes |\n| Device type | Windows PC |\n| Deployment mode | User-Driven |\n| Join to Azure AD as | Azure AD joined |\n| Skip AD connectivity check (preview) | No |\n| Language (Region) | Operating system default |\n| Automatically configure keyboard | Yes |\n| Microsoft Software License Terms | Hide |\n| Privacy settings | Hide |\n| Hide change account options | Hide |\n| User account type | Standard |\n| Allow White Glove OOBE | No |\n| Apply device name template | No |\n| Included groups | Group1 |\n| Excluded groups | Group2 |\n\n" +
-"Currently, there are no devices deployed by using Windows Autopilot.\n\nThe Intune connector for Active Directory is installed on Server1." },
-
-        { title: "Requirements", body:
-"### Planned changes\n\nADatum plans to implement the following changes:\n\n" +
-"- Purchase a new Windows 10 device named Device6 and enroll the device in Intune.\n- New computers will be deployed by using Windows Autopilot and will be hybrid Azure AD joined.\n" +
-"- Deploy a network boundary configuration profile that will have the following settings:\n  - Name: Boundary1\n  - Network boundary: 192.168.1.0/24\n  - Scope tags: Tag1\n  - Assignments — Included groups: Group1, Group2\n" +
-"- Deploy two VPN configuration profiles named Connection1 and Connection2 that will have the following settings:\n  - Connection1 — Connection name: VPN1 · Connection type: L2TP · Included groups: Group1, Group2, GroupA · Excluded groups: none\n  - Connection2 — Connection name: VPN2 · Connection type: IKEv2 · Included groups: GroupA · Excluded groups: GroupB\n\n" +
-"### Technical requirements\n\nADatum must meet the following technical requirements:\n\n- Users in GroupA must be able to deploy new computers.\n- Administrative effort must be minimized." }
+  "cases": {
+    "ADATUM": {
+      "title": "ADatum Corporation",
+      "tabs": [
+        {
+          "title": "Visão geral",
+          "body": "A ADatum Corporation é uma empresa de consultoria com sede em Montreal e filiais em Seattle e Nova York.\n\nA ADatum tem uma assinatura do Microsoft 365 E5."
+        },
+        {
+          "title": "Ambiente",
+          "body": "### Ambiente de rede\n\nA rede contém um domínio do Active Directory local chamado adatum.com. O domínio contém os servidores mostrados na tabela a seguir.\n\n| Nome | Sistema operacional | Função |\n|---|---|---|\n| DC1 | Windows Server 2019 | Controlador de domínio |\n| Server1 | Windows Server 2016 | Servidor membro |\n| Server2 | Windows Server 2019 | Servidor membro |\n\nA ADatum tem um tenant híbrido do Azure AD chamado adatum.com.\n\n### Usuários e grupos\n\nO tenant adatum.com contém os usuários mostrados na tabela a seguir.\n\n| Nome | Função do Azure AD | Membro de |\n|---|---|---|\n| User1 | Administrador de Dispositivos de Nuvem | GroupA |\n| User2 | Administrador Local de Dispositivo Ingressado no Azure AD | GroupB |\n| User3 | Leitor Global | GroupA, GroupB |\n| User4 | Administrador Global | Group1 |\n\nTodos os usuários têm uma licença do Microsoft Office 365 e uma licença do Enterprise Mobility + Security E3 atribuídas.\n\nO Enterprise State Roaming está habilitado para Group1 e GroupA.\n\nGroup1 e Group2 têm o tipo de associação Atribuído.\n\n### Dispositivos\n\nA ADatum tem os dispositivos Windows 10 mostrados na tabela a seguir.\n\n| Nome | Tipo | Membro de | Escopo (marcas) |\n|---|---|---|---|\n| Device1 | Corporativo | Group1 | Default |\n| Device2 | Corporativo | Group1, Group2 | Tag2 |\n| Device3 | Pessoal | Group1 | Tag1 |\n| Device4 | Pessoal | Group2 | Tag2 |\n| Device5 | Corporativo | Group3 | Default |\n\nOs dispositivos Windows 10 estão ingressados no Azure AD e inscritos no Microsoft Intune.\n\nOs dispositivos Windows 10 estão configurados conforme a tabela a seguir.\n\n| Nome | Criptografia de Unidade de Disco BitLocker (BitLocker) | Inicialização Segura | Conexão VPN |\n|---|---|---|---|\n| Device1 | Sim | Não | VPN1 |\n| Device2 | Sim | Sim | VPN1, VPN3 |\n| Device3 | Não | Não | VPN3 |\n| Device4 | Não | Sim | Nenhuma |\n| Device5 | Sim | Não | Nenhuma |\n\nTodos os dispositivos ingressados no Azure AD têm um arquivo executável chamado C:\\AppA.exe e uma pasta chamada D:\\Folder1."
+        },
+        {
+          "title": "Configuração do Intune",
+          "body": "### Políticas de conformidade\n\nO Microsoft Intune tem as políticas de conformidade mostradas na tabela a seguir.\n\n| Nome | Configuração | Atribuição |\n|---|---|---|\n| Policy1 | Exigir somente BitLocker | Group1 |\n| Policy2 | Exigir somente Inicialização Segura | Group1 |\n| Policy3 | Exigir BitLocker e Inicialização Segura | Group2 |\n\nAs configurações das políticas de conformidade são as seguintes:\n\n| Configuração | Valor |\n|---|---|\n| Marcar dispositivos sem política de conformidade atribuída como | **Em conformidade** |\n| Detecção aprimorada de jailbreak | Desabilitada |\n| Período de validade do status de conformidade (dias) | 30 |\n\n### Inscrição automática\n\n- Escopo de usuário MDM: GroupA\n- Escopo de usuário MAM: GroupB\n\n### Proteção de endpoint\n\nVocê tem um perfil de configuração de proteção de endpoint com as seguintes configurações de Acesso controlado a pastas:\n\n- Nome: Protection1\n- Proteção de pastas: Habilitar\n- Lista de aplicativos com acesso às pastas protegidas: C:\\*\\AppA.exe\n- Lista de pastas adicionais que precisam ser protegidas: D:\\Folder1\n- Atribuições — Grupos incluídos: Group2, GroupB\n\n### Configuração do Windows Autopilot\n\nA ADatum tem um perfil de implantação do Windows Autopilot configurado da seguinte maneira:\n\n| Configuração | Valor |\n|---|---|\n| Nome | Profile1 |\n| Converter todos os dispositivos de destino para Autopilot | Sim |\n| Tipo de dispositivo | PC Windows |\n| Modo de implantação | Controlado pelo usuário |\n| Ingressar no Azure AD como | Ingressado no Azure AD |\n| Ignorar verificação de conectividade com o AD (versão prévia) | Não |\n| Idioma (região) | Padrão do sistema operacional |\n| Configurar o teclado automaticamente | Sim |\n| Termos de Licença de Software Microsoft | Ocultar |\n| Configurações de privacidade | Ocultar |\n| Ocultar opções de alteração de conta | Ocultar |\n| Tipo de conta de usuário | Padrão |\n| Permitir OOBE White Glove | Não |\n| Aplicar modelo de nome de dispositivo | Não |\n| Grupos incluídos | Group1 |\n| Grupos excluídos | Group2 |\n\nAtualmente, nenhum dispositivo foi implantado usando o Windows Autopilot.\n\nO conector do Intune para Active Directory está instalado em Server1."
+        },
+        {
+          "title": "Requisitos",
+          "body": "### Alterações planejadas\n\nA ADatum planeja implementar as seguintes alterações:\n\n- Comprar um novo dispositivo Windows 10 chamado Device6 e inscrevê-lo no Intune.\n- Os novos computadores serão implantados usando o Windows Autopilot e terão ingresso híbrido no Azure AD.\n- Implantar um perfil de configuração de limite de rede com as seguintes configurações:\n  - Nome: Boundary1\n  - Limite de rede: 192.168.1.0/24\n  - Marcas de escopo: Tag1\n  - Atribuições — Grupos incluídos: Group1, Group2\n- Implantar dois perfis de configuração de VPN chamados Connection1 e Connection2 com as seguintes configurações:\n  - Connection1 — Nome da conexão: VPN1 · Tipo de conexão: L2TP · Grupos incluídos: Group1, Group2, GroupA · Grupos excluídos: nenhum\n  - Connection2 — Nome da conexão: VPN2 · Tipo de conexão: IKEv2 · Grupos incluídos: GroupA · Grupos excluídos: GroupB\n\n### Requisitos técnicos\n\nA ADatum deve atender aos seguintes requisitos técnicos:\n\n- Os usuários de GroupA devem poder implantar novos computadores.\n- O esforço administrativo deve ser minimizado."
+        }
       ]
     },
-    CONTOSO: {
-      title: "Contoso, Ltd.",
-      tabs: [
-        { title: "Overview", body:
-"Contoso, Ltd. is a consulting company that has a main office in Montreal and two branch offices in Seattle and New York.\n\nContoso has the users and computers shown in the following table.\n\n" +
-"| Location | Users | Laptops | Desktop computers | Mobile devices |\n|---|---|---|---|---|\n| Montreal | 2,500 | 2,800 | 300 | 3,100 |\n| Seattle | 1,000 | 1,100 | 200 | 1,500 |\n| New York | 300 | 320 | 30 | 400 |\n\n" +
-"The company has IT, human resources (HR), legal (LEG), marketing (MKG), and finance (FIN) departments.\n\nContoso recently purchased a Microsoft 365 subscription.\n\nThe company is opening a new branch office in Phoenix. Most of the users in the Phoenix office will work from home." },
-        { title: "Existing environment", body:
-"The network contains an Active Directory domain named contoso.com that is synced to Azure AD.\n\nAll member servers run Windows Server 2016. All laptops and desktop computers run Windows 10 Enterprise.\n\nThe computers are managed by using Microsoft Configuration Manager. The mobile devices are managed by using Microsoft Intune.\n\nThe naming convention for the computers is the department acronym, followed by a hyphen, and then four numbers, for example FIN-6785. All the computers are joined to the on-premises Active Directory domain.\n\nEach department has an organizational unit (OU) that contains a child OU named Computers. Each computer account is in the Computers OU of its respective department." },
-        { title: "Intune configuration", body:
-"The domain has the users shown in the following table.\n\n| Name | Role | Member of |\n|---|---|---|\n| User1 | Intune administrator | GroupA |\n| User2 | None | GroupB |\n\nUser2 is a device enrollment manager (DEM) in Intune.\n\nThe devices enrolled in Intune are shown in the following table.\n\n" +
-"| Name | Platform | Encryption | Member of |\n|---|---|---|---|\n| Device1 | Android | Disabled | Group1 |\n| Device2 | iOS | Not applicable | Group2, Group3 |\n| Device3 | Android | Disabled | Group2, Group3 |\n| Device4 | iOS | Not applicable | Group2 |\n\n" +
-"The device compliance policies in Intune are configured as shown in the following table.\n\n| Name | Platform | Require encryption | Assigned |\n|---|---|---|---|\n| Policy1 | Android | Not configured | Yes |\n| Policy2 | iOS | Not applicable | Yes |\n| Policy3 | Android | Require | Yes |\n\n" +
-"The device compliance policies have the assignments shown in the following table.\n\n| Name | Include | Exclude |\n|---|---|---|\n| Policy1 | Group3 | None |\n| Policy2 | Group2 | Group3 |\n| Policy3 | Group1 | None |\n\n" +
-"The device limit restrictions in Intune are configured as shown in the following table.\n\n| Priority | Name | Device limit | Assigned to |\n|---|---|---|---|\n| 1 | Restriction1 | 15 | GroupB |\n| 2 | Restriction2 | 10 | GroupA |\n| Default | All users | 5 | All users |" },
-        { title: "Requirements", body:
-"### Planned changes\n\nContoso plans to implement the following changes:\n\n- Provide new computers to the Phoenix office users. The new computers have Windows 10 Pro preinstalled and were purchased already.\n- Implement co-management for the computers.\n\n" +
-"### Technical requirements\n\nContoso must meet the following technical requirements:\n\n- Ensure that the users in a group named Group4 can only access Microsoft Exchange Online from devices that are enrolled in Intune.\n- Deploy Windows 10 Enterprise to the computers of the Phoenix office users by using Windows Autopilot.\n- Create a provisioning package for new computers in the HR department.\n- Block iOS devices from sending diagnostic and usage telemetry data.\n- Use the principle of least privilege whenever possible.\n- Enable the users in the MKG department to use App1.\n- Pilot co-management for the IT department." }
+    "CONTOSO": {
+      "title": "Contoso, Ltd.",
+      "tabs": [
+        {
+          "title": "Visão geral",
+          "body": "A Contoso, Ltd. é uma empresa de consultoria com sede em Montreal e duas filiais, em Seattle e Nova York.\n\nA Contoso tem os usuários e computadores mostrados na tabela a seguir.\n\n| Local | Usuários | Notebooks | Computadores desktop | Dispositivos móveis |\n|---|---|---|---|---|\n| Montreal | 2,500 | 2,800 | 300 | 3,100 |\n| Seattle | 1,000 | 1,100 | 200 | 1,500 |\n| Nova York | 300 | 320 | 30 | 400 |\n\nA empresa tem departamentos de TI, recursos humanos (HR), jurídico (LEG), marketing (MKG) e finanças (FIN).\n\nA Contoso comprou recentemente uma assinatura do Microsoft 365.\n\nA empresa está abrindo uma nova filial em Phoenix. A maioria dos usuários do escritório de Phoenix trabalhará em casa."
+        },
+        {
+          "title": "Ambiente existente",
+          "body": "A rede contém um domínio do Active Directory chamado contoso.com, sincronizado com o Azure AD.\n\nTodos os servidores membros executam o Windows Server 2016. Todos os notebooks e computadores desktop executam o Windows 10 Enterprise.\n\nOs computadores são gerenciados pelo Microsoft Configuration Manager. Os dispositivos móveis são gerenciados pelo Microsoft Intune.\n\nA convenção de nomenclatura dos computadores é a sigla do departamento, seguida de um hífen e quatro números, por exemplo, FIN-6785. Todos os computadores estão ingressados no domínio do Active Directory local.\n\nCada departamento tem uma unidade organizacional (OU) que contém uma OU filha chamada Computers. Cada conta de computador está na OU Computers do respectivo departamento."
+        },
+        {
+          "title": "Configuração do Intune",
+          "body": "O domínio tem os usuários mostrados na tabela a seguir.\n\n| Nome | Função | Membro de |\n|---|---|---|\n| User1 | Administrador do Intune | GroupA |\n| User2 | Nenhuma | GroupB |\n\nUser2 é um gerenciador de inscrição de dispositivos (DEM) no Intune.\n\nOs dispositivos inscritos no Intune são mostrados na tabela a seguir.\n\n| Nome | Plataforma | Criptografia | Membro de |\n|---|---|---|---|\n| Device1 | Android | Desabilitada | Group1 |\n| Device2 | iOS | Não se aplica | Group2, Group3 |\n| Device3 | Android | Desabilitada | Group2, Group3 |\n| Device4 | iOS | Não se aplica | Group2 |\n\nAs políticas de conformidade de dispositivos no Intune estão configuradas conforme a tabela a seguir.\n\n| Nome | Plataforma | Exigir criptografia | Atribuída |\n|---|---|---|---|\n| Policy1 | Android | Não configurado | Sim |\n| Policy2 | iOS | Não se aplica | Sim |\n| Policy3 | Android | Exigir | Sim |\n\nAs políticas de conformidade de dispositivos têm as atribuições mostradas na tabela a seguir.\n\n| Nome | Incluir | Excluir |\n|---|---|---|\n| Policy1 | Group3 | Nenhum |\n| Policy2 | Group2 | Group3 |\n| Policy3 | Group1 | Nenhum |\n\nAs restrições de limite de dispositivos no Intune estão configuradas conforme a tabela a seguir.\n\n| Prioridade | Nome | Limite de dispositivos | Atribuída a |\n|---|---|---|---|\n| 1 | Restriction1 | 15 | GroupB |\n| 2 | Restriction2 | 10 | GroupA |\n| Padrão | Todos os usuários | 5 | Todos os usuários |"
+        },
+        {
+          "title": "Requisitos",
+          "body": "### Alterações planejadas\n\nA Contoso planeja implementar as seguintes alterações:\n\n- Fornecer novos computadores aos usuários do escritório de Phoenix. Os computadores já foram comprados e têm o Windows 10 Pro pré-instalado.\n- Implementar o cogerenciamento dos computadores.\n\n### Requisitos técnicos\n\nA Contoso deve atender aos seguintes requisitos técnicos:\n\n- Garantir que os usuários de um grupo chamado Group4 possam acessar o Microsoft Exchange Online somente de dispositivos inscritos no Intune.\n- Implantar o Windows 10 Enterprise nos computadores dos usuários do escritório de Phoenix usando o Windows Autopilot.\n- Criar um pacote de provisionamento para os novos computadores do departamento HR.\n- Impedir que dispositivos iOS enviem dados de telemetria de diagnóstico e uso.\n- Usar o princípio do menor privilégio sempre que possível.\n- Permitir que os usuários do departamento MKG usem App1.\n- Realizar um piloto de cogerenciamento para o departamento de TI."
+        }
       ]
     }
   }
