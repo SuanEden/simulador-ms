@@ -1,0 +1,11440 @@
+/* =====================================================================
+   SimuladorMS — banco de questões AZ-104
+   Fonte: dump AZ-104 (SecExams, 1.153 questões) — curadoria Claude, out/2026.
+   448 questões estruturadas. Fora do banco: 608 duplicadas/variantes e
+   97 fora de escopo (temas que saíram do Skills Measured de abril/2026 —
+   VPN/ExpressRoute, AKS, File Sync, Import/Export, Conditional Access/MFA, Entra Connect,
+   Basic Load Balancer etc. — e questões inconsistentes).
+
+   Campos de curadoria:
+     scope   in | borderline | out        → o simulado usa só "in" (borderline é opcional)
+     review  ok | corrigida | duvidosa    → corrigida = gabarito do dump foi alterado
+     answer_original                      → o que o dump marcava, quando difere
+   ===================================================================== */
+SIM.registerQuestions("AZ-104", [
+  {
+    "id": "Q001",
+    "src": 1,
+    "domain": 1,
+    "topic": "Tags",
+    "type": "single",
+    "stem": "Your company has serval departments. Each department has a number of virtual machines (VMs).\n\nThe company has an Azure subscription that contains a resource group named RG1.\n\nAll VMs are located in RG1.\n\nYou want to associate each VM with its respective department.\n\nWhat should you do?",
+    "options": [
+      "Create Azure Management Groups for each department.",
+      "Create a resource group for each department.",
+      "Assign tags to the virtual machines.",
+      "Modify the settings of the virtual machines."
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Tags** associam metadados (ex.: departamento) aos recursos sem mudar a organização deles, e servem para filtrar custos por departamento. Management groups e resource groups organizam escopo/governança, não rotulam VMs dentro do mesmo RG.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags"
+    ]
+  },
+  {
+    "id": "Q005",
+    "src": 5,
+    "domain": 3,
+    "topic": "Criação de VM Linux (cloud-init)",
+    "type": "single",
+    "stem": "You are planning to deploy an Ubuntu Server virtual machine to your company's Azure subscription.\n\nYou are required to implement a custom deployment that includes adding a particular trusted root certification authority (CA).\n\nWhich of the following should you use to create the virtual machine?",
+    "options": [
+      "The New-AzureRmVm cmdlet.",
+      "The New-AzVM cmdlet.",
+      "The Create-AzVM cmdlet.",
+      "The az vm create command."
+    ],
+    "answer": 3,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para personalizar uma VM Linux na criação (ex.: instalar uma CA raiz confiável) usa-se um arquivo **cloud-init** passado em **az vm create --custom-data**. *Create-AzVM* não existe e New-AzureRmVm é do módulo AzureRM aposentado. O dump marcava C.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-automate-vm-deployment"
+    ]
+  },
+  {
+    "id": "Q012",
+    "src": 12,
+    "domain": 2,
+    "topic": "Redundância de storage",
+    "type": "single",
+    "stem": "Your company has a Microsoft Azure subscription.\n\nThe company has datacenters in Los Angeles and New York.\n\nYou are configuring the two datacenters as geo-clustered sites for site resiliency.\n\nYou need to recommend an Azure storage redundancy option.\n\nYou have the following data storage requirements:\n\n- Data must be stored on multiple nodes.\n- Data must be stored on nodes in separate geographic locations.\n- Data can be read from the secondary location as well as from the primary location.\n\nWhich of the following Azure stored redundancy options should you recommend?",
+    "options": [
+      "Geo-redundant storage",
+      "Read-only geo-redundant storage",
+      "Zone-redundant storage",
+      "Locally redundant storage"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Vários nós, região secundária distante **e leitura na secundária** = **RA-GRS** (read-access geo-redundant). GRS replica para outra região, mas a secundária só é lida após failover. ZRS e LRS ficam em uma única região.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+    ]
+  },
+  {
+    "id": "Q013",
+    "src": 13,
+    "domain": 3,
+    "topic": "Templates ARM — histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ARMREVIEW"
+    },
+    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.\n\nA colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.\n\nYou want to review the ARM template that was used by Jon Ross.\n\nSolution: You access the Virtual Machine blade.\n\nDoes the solution meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O template usado em uma implantação que criou **vários recursos** (VM + storage) fica no histórico de **Deployments do resource group**. O blade da VM só exporta a própria VM.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template"
+    ]
+  },
+  {
+    "id": "Q014",
+    "src": 14,
+    "domain": 3,
+    "topic": "Templates ARM — histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ARMREVIEW"
+    },
+    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.\n\nA colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.\n\nYou want to review the ARM template that was used by Jon Ross.\n\nSolution: You access the Resource Group blade.\n\nDoes the solution meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Em **Resource group > Deployments** você abre a implantação e vê o **template** usado (ou o exporta). É o caminho para revisar o template de uma implantação com vários recursos.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template"
+    ]
+  },
+  {
+    "id": "Q015",
+    "src": 15,
+    "domain": 3,
+    "topic": "Templates ARM — histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ARMREVIEW"
+    },
+    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.\n\nA colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.\n\nYou want to review the ARM template that was used by Jon Ross.\n\nSolution: You access the Container blade.\n\nDoes the solution meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Container de blob não guarda histórico de implantação. O template está em **Resource group > Deployments**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template"
+    ]
+  },
+  {
+    "id": "Q016",
+    "src": 16,
+    "domain": 3,
+    "topic": "Redimensionar VM em availability set",
+    "type": "single",
+    "stem": "Your company has three virtual machines (VMs) that are included in an availability set.\n\nYou try to resize one of the VMs, which returns an allocation failure message. It is imperative that the VM is resized.\n\nWhich of the following actions should you take?",
+    "options": [
+      "You should only stop one of the VMs.",
+      "You should stop two of the VMs.",
+      "You should stop all three VMs.",
+      "You should remove the necessary VM from the availability set."
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Se o novo tamanho não está disponível no cluster de hardware atual (falha de alocação), é preciso **parar (desalocar) todas as VMs do availability set**, redimensionar e iniciar novamente.",
+    "refs": [
+      "https://azure.microsoft.com/es-es/blog/resize-virtual-machines/"
+    ]
+  },
+  {
+    "id": "Q017",
+    "src": 17,
+    "domain": 3,
+    "topic": "Discos de dados",
+    "type": "single",
+    "stem": "You have an Azure virtual machine (VM) that has a single data disk. You have been tasked with attaching this data disk to another Azure VM. You need to make sure that your strategy allows for the virtual machines to be offline for the least amount of time possible.\n\nWhich of the following is the action you should take FIRST?",
+    "options": [
+      "Stop the VM that includes the data disk.",
+      "Stop the VM that the data disk must be attached to.",
+      "Detach the data disk.",
+      "Delete the VM that includes the data disk."
+    ],
+    "answer": 2,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Disco de dados pode ser **desanexado a quente** (hot detach) e anexado a outra VM sem desligar nenhuma delas. Portanto, o primeiro passo com menor indisponibilidade é **desanexar o disco**. O dump marcava \"parar a VM\".",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/detach-disk",
+      "https://docs.microsoft.com/en-us/azure/lab-services/devtest-lab-attach-detach-data-disk"
+    ]
+  },
+  {
+    "id": "Q018",
+    "src": 18,
+    "domain": 3,
+    "topic": "Availability sets",
+    "type": "single",
+    "stem": "Your company has an Azure subscription.\n\nYou need to deploy a number of Azure virtual machines (VMs) using Azure Resource Manager (ARM) templates. You have been informed that the VMs will be included in a single availability set.\n\nYou are required to make sure that the ARM template you configure allows for as many VMs as possible to remain accessible in the event of fabric failure or maintenance.\n\nWhich of the following is the value that you should configure for the platformFaultDomainCount property?",
+    "options": [
+      "10",
+      "30",
+      "Min Value",
+      "Max Value"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para maximizar a disponibilidade, use o **valor máximo** de fault domains da região (2 ou 3, conforme a região).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/manage-availability"
+    ]
+  },
+  {
+    "id": "Q019",
+    "src": 19,
+    "domain": 3,
+    "topic": "Availability sets",
+    "type": "single",
+    "stem": "Your company has an Azure subscription.\n\nYou need to deploy a number of Azure virtual machines (VMs) using Azure Resource Manager (ARM) templates. You have been informed that the VMs will be included in a single availability set.\n\nYou are required to make sure that the ARM template you configure allows for as many VMs as possible to remain accessible in the event of fabric failure or maintenance.\n\nWhich of the following is the value that you should configure for the platformUpdateDomainCount property?",
+    "options": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um availability set aceita até **20 update domains** (o padrão é 5). Mais UDs = menos VMs reiniciadas por vez na manutenção.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+    ]
+  },
+  {
+    "id": "Q020",
+    "src": 20,
+    "domain": 3,
+    "topic": "Senha em templates ARM",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "Answer",
+    "stem": "You have downloaded an Azure Resource Manager (ARM) template to deploy numerous virtual machines (VMs). The ARM template is based on a current VM, but must be adapted to reference an administrative password.\n\nYou need to make sure that the password cannot be stored in plain text. You are preparing to create the necessary components to achieve your goal. Which of the following should you create to achieve your goal? Answer by dragging the correct option from the list to the answer area.",
+    "options": [
+      "An Azure Key Vault",
+      "An Azure Storage account",
+      "Azure Active Directory (AD) Identity Protection",
+      "An access policy",
+      "An Azure policy",
+      "A backup policy"
+    ],
+    "answer": [
+      0,
+      3
+    ],
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para não deixar a senha em texto puro, guarde-a como segredo em um **Azure Key Vault** e dê acesso a ele (**access policy**, ou hoje RBAC, com *enabled for template deployment*). O template referencia o segredo no arquivo de parâmetros."
+  },
+  {
+    "id": "Q022",
+    "src": 22,
+    "domain": 3,
+    "topic": "Upload de VHD",
+    "type": "single",
+    "stem": "Your company has an Azure Active Directory (Azure AD) tenant that is configured for hybrid coexistence with the on-premises Active Directory domain. You plan to deploy several new virtual machines (VMs) in Azure. The VMs will have the same operating system and custom software requirements. You configure a reference VM in the on-premise virtual environment. You then generalize the VM to create an image.\n\nYou need to upload the image to Azure to ensure that it is available for selection when you create the new Azure VMs.\n\nWhich PowerShell cmdlets should you use?",
+    "options": [
+      "Add-AzVM",
+      "Add-AzVhd",
+      "Add-AzImage",
+      "Add-AzImageDataDisk"
+    ],
+    "answer": 1,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "**Add-AzVhd** envia um VHD on-premises (generalizado) para o Azure (blob ou managed disk), a partir do qual se cria a imagem. Add-AzImage não existe (o cmdlet é New-AzImage).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/upload-generalized-managed"
+    ]
+  },
+  {
+    "id": "Q028",
+    "src": 28,
+    "domain": 4,
+    "topic": "Load balancer interno — SQL AG",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SQLILB"
+    },
+    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).\n\nYou need to configure an Azure internal load balancer as a listener for the availability group.\n\nSolution: You create an HTTP health probe on port 1433.\n\nDoes the solution meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O listener do Always On usa um probe **TCP** (ex.: porta 59999), não HTTP na porta 1433."
+  },
+  {
+    "id": "Q029",
+    "src": 29,
+    "domain": 4,
+    "topic": "Load balancer interno — SQL AG",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SQLILB"
+    },
+    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).\n\nYou need to configure an Azure internal load balancer as a listener for the availability group.\n\nSolution: You set Session persistence to Client IP.\n\nDoes the solution meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A regra do listener usa Session persistence **None**; Client IP não é o requisito.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener"
+    ]
+  },
+  {
+    "id": "Q030",
+    "src": 30,
+    "domain": 4,
+    "topic": "Load balancer interno — SQL AG",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SQLILB"
+    },
+    "stem": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).\n\nYou need to configure an Azure internal load balancer as a listener for the availability group.\n\nSolution: You enable Floating IP.\n\nDoes the solution meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A regra de balanceamento do listener do Always On precisa de **Floating IP (direct server return)** habilitado, porque só uma instância do SQL é dona do IP do listener por vez."
+  },
+  {
+    "id": "Q032",
+    "src": 32,
+    "domain": 4,
+    "topic": "Interfaces de rede",
+    "type": "single",
+    "stem": "Your company has an Azure Active Directory (Azure AD) subscription. You need to deploy five virtual machines (VMs) to your company's virtual network subnet.\n\nThe VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical. Which of the following is the least amount of network interfaces needed for this configuration?",
+    "options": [
+      "5",
+      "10",
+      "20",
+      "40"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Cada VM precisa de pelo menos **uma NIC**, que recebe o IP privado e pode ter o IP público associado. 5 VMs = **5 NICs**."
+  },
+  {
+    "id": "Q033",
+    "src": 33,
+    "domain": 4,
+    "topic": "NSGs",
+    "type": "single",
+    "stem": "Your company has an Azure Active Directory (Azure AD) subscription. You need to deploy five virtual machines (VMs) to your company's virtual network subnet.\n\nThe VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical. Which of the following is the least amount of security groups needed for this configuration?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Regras idênticas para todas as VMs da mesma sub-rede = **um único NSG** (associado à sub-rede ou às NICs)."
+  },
+  {
+    "id": "Q034",
+    "src": 34,
+    "domain": 5,
+    "topic": "Restauração de arquivos (Azure Backup)",
+    "type": "single",
+    "stem": "Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.\n\nOne of the VMs is backed up every day using Azure Backup Instant Restore. When the VM becomes infected with data encrypting ransomware, you decide to recover the VM's files.\n\nWhich of the following is TRUE in this scenario?",
+    "options": [
+      "You can only recover the files to the infected VM.",
+      "You can recover the files to any VM within the company's subscription.",
+      "You can only recover the files to a new VM.",
+      "You will not be able to recover the files."
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A **File Recovery** monta os pontos de recuperação via script, que pode rodar em **qualquer máquina** com SO compatível, não só na VM original. Com ransomware, faz sentido recuperar em outra VM limpa. O dump marcava \"somente na VM infectada\"."
+  },
+  {
+    "id": "Q035",
+    "src": 35,
+    "domain": 5,
+    "topic": "Restauração de VM (Azure Backup)",
+    "type": "single",
+    "stem": "Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.\n\nOne of the VMs is backed up every day using Azure Backup Instant Restore. When the VM becomes infected with data encrypting ransomware, you are required to restore the VM.\n\nWhich of the following actions should you take?",
+    "options": [
+      "You should restore the VM after deleting the infected VM.",
+      "You should restore the VM to any VM within the company's subscription.",
+      "You should restore the VM to a new Azure VM.",
+      "You should restore the VM to an on-premise Windows device."
+    ],
+    "answer": 2,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A partir do ponto de recuperação você pode **criar uma nova VM** (ou substituir os discos da existente). Restaurar \"em qualquer VM da assinatura\" não é uma opção. O dump marcava B; a comunidade e a documentação indicam C."
+  },
+  {
+    "id": "Q036",
+    "src": 36,
+    "domain": 5,
+    "topic": "Azure Monitor — métricas",
+    "type": "single",
+    "stem": "You administer a solution in Azure that is currently having performance issues. You need to find the cause of the performance issues pertaining to metrics on the Azure infrastructure.\n\nWhich of the following is the tool you should use?",
+    "options": [
+      "Azure Traffic Analytics",
+      "Azure Monitor",
+      "Azure Activity Log",
+      "Azure Advisor"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Métricas de desempenho da infraestrutura são analisadas no **Azure Monitor** (Metrics). Activity Log registra operações de controle; Advisor dá recomendações; Traffic Analytics é de fluxos de rede.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-platform"
+    ]
+  },
+  {
+    "id": "Q037",
+    "src": 37,
+    "domain": 5,
+    "topic": "Azure Backup — VMs suportadas",
+    "type": "multi",
+    "stem": "Your company has an Azure subscription that includes a Recovery Services vault.\n\nYou want to use Azure Backup to schedule a backup of your company's virtual machines (VMs) to the Recovery Services vault.\n\nWhich of the following VMs can you back up? Choose all that apply.",
+    "options": [
+      "VMs that run Windows 10.",
+      "VMs that run Windows Server 2012 or higher.",
+      "VMs that have NOT been shut down.",
+      "VMs that run Debian 8.2+.",
+      "VMs that have been shut down."
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O backup de VM do Azure suporta Windows Server e Windows cliente 64-bit, as principais distros Linux (ex.: Debian) e VMs **ligadas ou desligadas** (desligada = backup consistente com falha). Todas as alternativas são válidas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-support-matrix-iaas",
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros"
+    ]
+  },
+  {
+    "id": "Q039",
+    "src": 39,
+    "domain": 1,
+    "topic": "Usuários convidados (B2B)",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "GUEST500"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Active Directory (Azure AD) tenant named contoso.com. You have a CSV file that contains the names and email addresses of 500 external users.\n\nYou need to create a guest user account in contoso.com for each of the 500 external users.\n\nSolution: From Azure AD in the Azure portal, you use the Bulk create user operation.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Bulk create** cria usuários **membros** do tenant. Para convidados use **Bulk invite** (CSV com e-mail e redirect URL) ou New-MgInvitation.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureadmsinvitation"
+    ]
+  },
+  {
+    "id": "Q041",
+    "src": 41,
+    "domain": 1,
+    "topic": "RBAC — menor privilégio",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1 that contains a resource group named RG1.\n\nIn RG1, you create an internal load balancer named LB1 and a public load balancer named LB2.\n\nYou need to ensure that an administrator named Admin1 can manage LB1 and LB2. The solution must follow the principle of least privilege. Which role should you assign to Admin1 for each task? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "To add a backend pool to LB1:",
+        "options": [
+          "Contributor on LB1",
+          "Network Contributor on LB1",
+          "Network Contributor on RG1",
+          "Owner on LB1"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "To add a health probe to LB2:",
+        "options": [
+          "Contributor on LB2",
+          "Network Contributor on LB2",
+          "Network Contributor on RG1",
+          "Owner on LB2"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Network Contributor** no próprio recurso (LB1 e LB2) basta para gerenciar backend pools e health probes. Contributor/Owner são mais amplos, e Network Contributor no RG1 dá acesso a mais recursos que o necessário.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+    ]
+  },
+  {
+    "id": "Q043",
+    "src": 43,
+    "domain": 1,
+    "topic": "Expiração de grupos",
+    "type": "multi",
+    "stem": "You have a Microsoft 365 tenant and an Azure Active Directory (Azure AD) tenant named contoso.com.\n\nYou plan to grant three users named User1, User2, and User3 access to a temporary Microsoft SharePoint document library named Library1. You need to create groups for the users. The solution must ensure that the groups are deleted automatically after 180 days.\n\nWhich two groups should you create? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "a Microsoft 365 group that uses the Assigned membership type",
+      "a Security group that uses the Assigned membership type",
+      "a Microsoft 365 group that uses the Dynamic User membership type",
+      "a Security group that uses the Dynamic User membership type",
+      "a Security group that uses the Dynamic Device membership type"
+    ],
+    "answer": [
+      0,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A **política de expiração** vale apenas para **grupos Microsoft 365**, com associação atribuída ou dinâmica. Grupos de segurança não expiram.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/office365/admin/create-groups/office-365-groups-expiration-policy?view=o365-worldwide"
+    ]
+  },
+  {
+    "id": "Q045",
+    "src": 45,
+    "domain": 1,
+    "topic": "Azure Policy e management groups",
+    "type": "yesno",
+    "stem": "You have the Azure management groups shown in the following table:\n\n![Exhibit](img/S045-stem-1.png){w=611}\n\nYou add Azure subscriptions to the management groups as shown in the following table:\n\n![Exhibit](img/S045-stem-2.png){w=611}\n\nYou create the Azure policies shown in the following table:\n\n![Exhibit](img/S045-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can create a virtual network in Subscription1.",
+      "You can create a virtual machine in Subscription2.",
+      "You can add Subscription1 to ManagementGroup11."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "answer_original": [
+      false,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Not allowed resource types (virtualNetworks) na **Tenant Root Group** vale para todas as assinaturas, então não dá para criar VNet na Subscription1. Allowed resource types = virtualNetworks no ManagementGroup12 faz a Subscription2 aceitar **só VNets**, então VM é negada. Uma assinatura pode ser **movida** para o ManagementGroup11. O dump marcava Sim na segunda.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/governance/management-groups/overview",
+      "https://docs.microsoft.com/en-us/azure/governance/management-groups/manage#moving-management-groups-and-subscriptions"
+    ]
+  },
+  {
+    "id": "Q046",
+    "src": 46,
+    "domain": 1,
+    "topic": "Azure Policy — exclusões",
+    "type": "single",
+    "stem": "You have an Azure policy as shown in the following exhibit:\n\n![Exhibit](img/S046-stem-1.png){w=611}\n\nWhat is the effect of the policy?",
+    "options": [
+      "You are prevented from creating Azure SQL servers anywhere in Subscription 1.",
+      "You can create Azure SQL servers in ContosoRG1 only.",
+      "You are prevented from creating Azure SQL Servers in ContosoRG1 only.",
+      "You can create Azure SQL servers in any resource group within Subscription 1."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A política nega SQL servers no escopo da assinatura, mas o **ContosoRG1 está em Exclusions**: só nele é possível criar SQL servers."
+  },
+  {
+    "id": "Q047",
+    "src": 47,
+    "domain": 1,
+    "topic": "Azure Policy — tags",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table:\n\n![Exhibit](img/S047-stem-1.png){w=611}\n\nYou assign a policy to RG6 as shown in the following table:\n\n![Exhibit](img/S047-stem-2.png){w=611}\n\nTo RG6, you apply the tag: RGroup: RG6.\n\nYou deploy a virtual network named VNET2 to RG6.\n\nWhich tags apply to VNET1 and VNET2? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "VNET1:",
+        "options": [
+          "None",
+          "Department: D1 only",
+          "Department: D1, and RGroup: RG6 only",
+          "Department: D1, and Label: Value1 only",
+          "Department: D1, RGroup: RG6, and Label: Value1"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "VNET2:",
+        "options": [
+          "None",
+          "RGroup: RG6 only",
+          "Label: Value1 only",
+          "RGroup: RG6, and Label: Value1"
+        ],
+        "answer": 2
+      }
+    ],
+    "answer_original": [
+      3,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A política *Apply tag and its default value* (append/modify) age na **criação ou atualização** de recursos: o VNET1, já existente, não recebe a tag sem remediação. O VNET2, novo, recebe Label: Value1. Tags do RG **não são herdadas**. O dump marcava Department e Label no VNET1.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies"
+    ]
+  },
+  {
+    "id": "Q048",
+    "src": 48,
+    "domain": 1,
+    "topic": "Mover recursos entre assinaturas",
+    "type": "single",
+    "stem": "You have an Azure subscription named AZPT1 that contains the resources shown in the following table:\n\n![Exhibit](img/S048-stem-1.png){w=515}\n\nYou create a new Azure subscription named AZPT2.\n\nYou need to identify which resources can be moved to AZPT2.\n\nWhich resources should you identify?",
+    "options": [
+      "VM1, storage1, VNET1, and VM1Managed only",
+      "VM1 and VM1Managed only",
+      "VM1, storage1, VNET1, VM1Managed, and RVAULT1",
+      "RVAULT1 only"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "VMs, discos gerenciados, storage accounts, VNets e Recovery Services vaults suportam **move** para outra assinatura (com restrições, ex.: VM com backup). Mover não muda a região.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
+    ]
+  },
+  {
+    "id": "Q049",
+    "src": 49,
+    "domain": 3,
+    "topic": "Termos do Marketplace",
+    "type": "single",
+    "stem": "You recently created a new Azure subscription that contains a user named Admin1.\n\nAdmin1 attempts to deploy an Azure Marketplace resource by using an Azure Resource Manager template. Admin1 deploys the template by using Azure PowerShell and receives the following error message: `User failed validation to purchase resources. Error message: `Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal (http://go.microsoft.com/fwlink/?LinkId=534873) and configure programmatic deployment for the Marketplace item or create it there for the first time.`\n\nYou need to ensure that Admin1 can deploy the Marketplace resource successfully.\n\nWhat should you do?",
+    "options": [
+      "From Azure PowerShell, run the Set-AzApiManagementSubscription cmdlet",
+      "From the Azure portal, register the Microsoft.Marketplace resource provider",
+      "From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet",
+      "From the Azure portal, assign the Billing administrator role to Admin1"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Implantações programáticas de itens do Marketplace exigem aceitar os termos legais: **Set-AzMarketplaceTerms -Accept** (ou az vm image terms accept).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/powershell/module/az.marketplaceordering/set-azmarketplaceterms?view=azps-4.1.0"
+    ]
+  },
+  {
+    "id": "Q050",
+    "src": 50,
+    "domain": 1,
+    "topic": "Funções do Entra ID",
+    "type": "single",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant that contains 5,000 user accounts.\n\nYou create a new user account named AdminUser1.\n\nYou need to assign the User administrator administrative role to AdminUser1. What should you do from the user account properties?",
+    "options": [
+      "From the Licenses blade, assign a new license",
+      "From the Directory role blade, modify the directory role",
+      "From the Groups blade, invite the user account to a new group"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Funções administrativas do diretório são atribuídas em **Assigned roles / Directory role** do usuário (ou em Roles and administrators).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal"
+    ]
+  },
+  {
+    "id": "Q051",
+    "src": 51,
+    "domain": 1,
+    "topic": "Licenças",
+    "type": "single",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com that contains 100 user accounts.\n\nYou purchase 10 Azure AD Premium P2 licenses for the tenant.\n\nYou need to ensure that 10 users can use all the Azure AD Premium features. What should you do?",
+    "options": [
+      "From the Licenses blade of Azure AD, assign a license",
+      "From the Groups blade of each user, invite the users to a group",
+      "From the Azure AD domain, add an enterprise application",
+      "From the Directory role blade of each user, modify the directory role"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Licenças P2 são atribuídas em **Entra ID > Licenses** (ao usuário ou a um grupo). Sem licença atribuída, o usuário não usa os recursos Premium.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/license-users-groups"
+    ]
+  },
+  {
+    "id": "Q052",
+    "src": 52,
+    "domain": 5,
+    "topic": "ITSM Connector",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1 and an on-premises deployment of Microsoft System Center Service Manager.\n\nSubscription1 contains a virtual machine named VM1.\n\nYou need to ensure that an alert is set in Service Manager when the amount of available memory on VM1 is below 10 percent.\n\nWhat should you do first?",
+    "options": [
+      "Create an automation runbook",
+      "Deploy a function app",
+      "Deploy the IT Service Management Connector (ITSM)",
+      "Create a notification"
+    ],
+    "answer": 2,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Para gerar itens no System Center Service Manager a partir de alertas do Azure, primeiro implante o **IT Service Management Connector (ITSMC)** e use-o no action group.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/itsmc-overview"
+    ]
+  },
+  {
+    "id": "Q054",
+    "src": 54,
+    "domain": 1,
+    "topic": "Grupos de dispositivos",
+    "type": "yesno",
+    "stem": "You have Azure Active Directory tenant named Contoso.com that includes following users:\n\n![Exhibit](img/S054-stem-1.png){w=302}\n\nContoso.com includes following Windows 10 devices:\n\n![Exhibit](img/S054-stem-2.png){w=380}\n\nYou create following security groups in Contoso.com:\n\n![Exhibit](img/S054-stem-3.png){w=566}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can add Device2 to Group1.",
+      "User2 can add Device1 to Group1.",
+      "User2 can add Device2 to Group2."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Quem adiciona membros a um grupo atribuído é o **dono** do grupo (ou uma função de administração de grupos): User2 pode pôr o Device1 (dispositivos *registered* também podem ser membros) no Group1. Cloud device administrator (User1) **não gerencia associação** de grupos. Grupo **dinâmico** (Group2) não aceita membros manuais. O dump marcava Sim/Não/Sim.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/devices/overview"
+    ]
+  },
+  {
+    "id": "Q055",
+    "src": 55,
+    "domain": 5,
+    "topic": "Excluir RG com backup",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a resource group named RG26. RG26 is set to the West Europe location and is used to create temporary resources for a project. RG26 contains the resources shown in the following table.\n\n![Exhibit](img/S055-stem-1.png){w=611}\n\nSQLDB01 is backed up to RGV1.\n\nWhen the project is complete, you attempt to delete RG26 from the Azure portal. The deletion fails.\n\nYou need to delete RG26.\n\nWhat should you do first?",
+    "options": [
+      "Delete VM1",
+      "Stop VM1",
+      "Stop the backup of SQLDB01",
+      "Delete sa001"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um Recovery Services vault com itens protegidos impede a exclusão do RG. Primeiro **pare o backup (e exclua os dados de backup)** do SQLDB01; depois o vault e o RG podem ser excluídos."
+  },
+  {
+    "id": "Q056",
+    "src": 56,
+    "domain": 1,
+    "topic": "RBAC — delegar acesso",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\n\nSubscription1 has a user named User1. User1 has the following roles:\n\n- Reader\n- Security Admin\n- Security Reader\n\nYou need to ensure that User1 can assign the Reader role for VNet1 to other users.\n\nWhat should you do?",
+    "options": [
+      "Remove User1 from the Security Reader and Reader roles for Subscription1.",
+      "Assign User1 the User Access Administrator role for VNet1.",
+      "Assign User1 the Network Contributor role for VNet1.",
+      "Assign User1 the Network Contributor role for RG1."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Atribuir funções exige **Microsoft.Authorization/roleAssignments/write**: **User Access Administrator** (ou Owner) no escopo do VNet1. Contributor e Network Contributor não atribuem funções.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/overview"
+    ]
+  },
+  {
+    "id": "Q057",
+    "src": 57,
+    "domain": 1,
+    "topic": "Domínio personalizado",
+    "type": "single",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant named contosocloud.onmicrosoft.com.\n\nYour company has a public DNS zone for contoso.com.\n\nYou add contoso.com as a custom domain name to Azure AD.\n\nYou need to ensure that Azure can verify the domain name.\n\nWhich type of DNS record should you create?",
+    "options": [
+      "MX",
+      "NSEC",
+      "PTR",
+      "RRSIG"
+    ],
+    "answer": 0,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "A verificação do domínio no Entra ID usa registro **TXT** ou **MX**; entre as opções, só **MX** serve.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain"
+    ]
+  },
+  {
+    "id": "Q058",
+    "src": 58,
+    "domain": 1,
+    "topic": "RBAC — Logic Apps",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LOGICAPP"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers. Subscription1 contains a resource group named Dev.\n\nYou need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.\n\nSolution: On Subscription1, you assign the DevTest Labs User role to the Developers group.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "DevTest Labs User só opera VMs em DevTest Labs; não cria logic apps.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+      "https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app"
+    ]
+  },
+  {
+    "id": "Q059",
+    "src": 59,
+    "domain": 1,
+    "topic": "RBAC — Logic Apps",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LOGICAPP"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers. Subscription1 contains a resource group named Dev.\n\nYou need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.\n\nSolution: On Subscription1, you assign the Logic App Operator role to the Developers group.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Logic App Operator** só lê, habilita e desabilita logic apps. Criar exige **Logic App Contributor** ou Contributor.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+      "https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app"
+    ]
+  },
+  {
+    "id": "Q060",
+    "src": 60,
+    "domain": 1,
+    "topic": "RBAC — Logic Apps",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LOGICAPP"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers. Subscription1 contains a resource group named Dev.\n\nYou need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.\n\nSolution: On Dev, you assign the Contributor role to the Developers group. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Contributor** no resource group Dev permite criar qualquer recurso nele, inclusive logic apps."
+  },
+  {
+    "id": "Q061",
+    "src": 61,
+    "domain": 1,
+    "topic": "Custos por departamento — tags",
+    "type": "order",
+    "stem": "You have an Azure subscription that is used by four departments in your company. The subscription contains 10 resource groups. Each department uses resources in several resource groups.\n\nYou need to send a report to the finance department. The report must detail the costs for each department.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Assign a tag to each resource group.",
+      "Assign a tag to each resource.",
+      "Download the usage report.",
+      "From the Cost analysis blade, filter the view by tag.",
+      "Open the Resource costs blade of each resource group."
+    ],
+    "answer": [
+      1,
+      3,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Marque cada recurso com tag** do departamento (os recursos de um departamento estão em vários RGs, e tags do RG não são herdadas), **filtre o Cost analysis pela tag** e **baixe o relatório**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags",
+      "https://docs.microsoft.com/en-us/azure/billing/billing-getting-started"
+    ]
+  },
+  {
+    "id": "Q062",
+    "src": 62,
+    "domain": 5,
+    "topic": "KQL — search",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.\n\nYou need to view the error events from a table named Event.\n\nWhich query should you run in Workspace1?",
+    "options": [
+      "Get-Event Event | where {$_.EventType == \"error\"}",
+      "search in (Event) \"error\"",
+      "select * from Event where EventType == \"error\"",
+      "search in (Event) * | where EventType -eq \"error\""
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Em KQL, **search in (Event) \"error\"** procura o termo na tabela Event. As demais usam sintaxe de PowerShell/SQL ou operadores inválidos (-eq). Também valeria Event | search \"error\" ou Event | where EventType == \"error\".",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/search-queries",
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-portal",
+      "https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/searchoperator?"
+    ]
+  },
+  {
+    "id": "Q063",
+    "src": 63,
+    "domain": 3,
+    "topic": "Availability zones",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains a virtual network named VNET1 in the East US 2 region. A network interface named VM1-NI is connected to VNET1.\n\nYou successfully deploy the following Azure Resource Manager template.\n\n![Exhibit](img/S063-stem-1.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM1 and VM2 can connect to VNET1.",
+      "If an Azure datacenter becomes unavailable, VM1 or VM2 will be available.",
+      "If the East US 2 region becomes unavailable, VM1 or VM2 will be available."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "As duas VMs ficam em East US 2, nas zonas **1 e 2**, com NICs na região do VNET1. A perda de **um datacenter (zona)** deixa a outra VM no ar, mas a perda da **região inteira** derruba as duas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/architecture/resiliency/recovery-loss-azure-region"
+    ]
+  },
+  {
+    "id": "Q064",
+    "src": 64,
+    "domain": 3,
+    "topic": "Mover web app entre RGs",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1. Subscription1 contains the resource groups in the following table.\n\n![Exhibit](img/S064-stem-1.png){w=607}\n\nRG1 has a web app named WebApp1. WebApp1 is located in West Europe. You move WebApp1 to RG2.\n\nWhat is the effect of the move?",
+    "options": [
+      "The App Service plan for WebApp1 remains in West Europe. Policy2 applies to WebApp1.",
+      "The App Service plan for WebApp1 moves to North Europe. Policy2 applies to WebApp1.",
+      "The App Service plan for WebApp1 remains in West Europe. Policy1 applies to WebApp1.",
+      "The App Service plan for WebApp1 moves to North Europe. Policy1 applies to WebApp1."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Mover um recurso de resource group **não muda a região**: o App Service plan continua em West Europe. Após o move, valem as políticas do RG de destino (**Policy2**).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
+    ]
+  },
+  {
+    "id": "Q065",
+    "src": 65,
+    "domain": 1,
+    "topic": "Funções customizadas",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1 that has a subscription ID of c276fc76-9cd4-44c9-99a7-4fd71546436e.\n\nYou need to create a custom RBAC role named CR1 that meets the following requirements:\n\n- Can be assigned only to the resource groups in Subscription1\n- Prevents the management of the access permissions for the resource groups\n- Allows the viewing, creating, modifying, and deleting of resources within the resource groups\n\nWhat should you specify in the assignable scopes and the permission elements of the definition of CR1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "assignableScopes:",
+        "options": [
+          "\"/\"",
+          "\"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e\"",
+          "\"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups\""
+        ],
+        "answer": 1
+      },
+      {
+        "label": "notActions:",
+        "options": [
+          "\"Microsoft.Authorization/*\"",
+          "\"Microsoft.Resources/*\"",
+          "\"Microsoft.Security/*\""
+        ],
+        "answer": 0
+      }
+    ],
+    "answer_original": [
+      2,
+      0
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O escopo atribuível **/subscriptions/<id>** permite atribuir a função em qualquer RG da assinatura. \"/subscriptions/<id>/resourceGroups\" **não é um escopo válido**. Para impedir a gestão de acesso, ponha **Microsoft.Authorization/*** em notActions. O dump marcava o escopo .../resourceGroups.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles",
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations#microsoftresources"
+    ]
+  },
+  {
+    "id": "Q066",
+    "src": 66,
+    "domain": 4,
+    "topic": "Balanceamento interno",
+    "type": "multi",
+    "stem": "You have an Azure subscription.\n\nUsers access the resources in the subscription from either home or from customer sites. From home, users must establish a point-to-site VPN to access the Azure resources. The users on the customer sites access the Azure resources by using site-to-site VPNs.\n\nYou have a line-of-business-app named App1 that runs on several Azure virtual machine. The virtual machines run Windows Server 2016.\n\nYou need to ensure that the connections to App1 are spread across all the virtual machines.\n\nWhat are two possible Azure services that you can use? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "an internal load balancer",
+      "a public load balancer",
+      "an Azure Content Delivery Network (CDN)",
+      "Traffic Manager",
+      "an Azure Application Gateway"
+    ],
+    "answer": [
+      0,
+      4
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Usuários chegam por VPN (rede privada), então serve um **load balancer interno** (camada 4) ou um **Application Gateway** (camada 7, que pode ter frontend privado). Traffic Manager é DNS global; CDN não balanceia app.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/vpn",
+      "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+      "https://docs.microsoft.com/en-us/azure/application-gateway/overview"
+    ]
+  },
+  {
+    "id": "Q067",
+    "src": 67,
+    "domain": 1,
+    "topic": "Azure Advisor — custo",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou have 100 Azure virtual machines.\n\nYou need to quickly identify underutilized virtual machines that can have their service tier changed to a less expensive offering.\n\nWhich blade should you use?",
+    "options": [
+      "Monitor",
+      "Advisor",
+      "Metrics",
+      "Customer insights"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A recomendação de **Cost** do **Advisor** aponta VMs subutilizadas que podem ser redimensionadas ou desligadas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations"
+    ]
+  },
+  {
+    "id": "Q069",
+    "src": 69,
+    "domain": 1,
+    "topic": "Usuários externos",
+    "type": "single",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.\n\nThe User administrator role is assigned to a user named Admin1. An external partner has a Microsoft account that uses the user1@outlook.com sign in.\n\nAdmin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: `Unable to invite user user1@outlook.com `\" Generic authorization exception.`\n\nYou need to ensure that Admin1 can invite the external partner to sign in to the Azure AD tenant.\n\nWhat should you do?",
+    "options": [
+      "From the Users settings blade, modify the External collaboration settings.",
+      "From the Custom domain names blade, add a custom domain.",
+      "From the Organizational relationships blade, add an identity provider.",
+      "From the Roles and administrators blade, assign the Security administrator role to Admin1."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "\"Generic authorization exception\" ao convidar indica que as **External collaboration settings** restringem quem pode convidar ou quais domínios são permitidos. É lá que se ajusta.",
+    "refs": [
+      "https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Generic-authorization-"
+    ]
+  },
+  {
+    "id": "Q070",
+    "src": 70,
+    "domain": 1,
+    "topic": "Management groups — elevar acesso",
+    "type": "single",
+    "stem": "You have an Azure subscription linked to an Azure Active Directory tenant. The tenant includes a user account named User1.\n\nYou need to ensure that User1 can assign a policy to the tenant root management group.\n\nWhat should you do?",
+    "options": [
+      "Assign the Owner role for the Azure Subscription to User1, and then modify the default conditional access policies.",
+      "Assign the Owner role for the Azure subscription to User1, and then instruct User1 to configure access management for Azure resources.",
+      "Assign the Global administrator role to User1, and then instruct User1 to configure access management for Azure resources.",
+      "Create a new management group and delegate User1 as the owner of the new management group."
+    ],
+    "answer": 2,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Ninguém tem acesso padrão ao **root management group**. Um **Global administrator** precisa ativar *Access management for Azure resources* (elevar acesso, que dá User Access Administrator na raiz) e então atribuir as permissões. Owner de assinatura não consegue isso. O dump marcava B.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/governance/management-groups/overview"
+    ]
+  },
+  {
+    "id": "Q071",
+    "src": 71,
+    "domain": 1,
+    "topic": "Grupos dinâmicos",
+    "type": "hotarea",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant named adatum.com. Adatum.com contains the groups in the following table.\n\n![Exhibit](img/S071-stem-1.png){w=611}\n\nYou create two user accounts that are configured as shown in the following table.\n\n![Exhibit](img/S071-stem-2.png){w=607}\n\nOf which groups are User1 and User2 members? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "User1:",
+        "options": [
+          "Group1 only",
+          "Group2 only",
+          "Group3 only",
+          "Group1 and Group2 only",
+          "Group1 and Group3 only",
+          "Group2 and Group3 only",
+          "Group1, Group2, and Group3"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "User2:",
+        "options": [
+          "Group1 only",
+          "Group2 only",
+          "Group3 only",
+          "Group1 and Group2 only",
+          "Group1 and Group3 only",
+          "Group2 and Group3 only",
+          "Group1, Group2, and Group3"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "User1 (Montreal, Human resources): cidade começa com \"m\" → Group1; departamento HR → **não** entra no Group2. User2 (Melbourne, Marketing) → Group1 e Group2. Group3 é atribuído e ninguém foi adicionado. Licença do Office não influencia.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/sccm/core/clients/manage/collections/create-collections"
+    ]
+  },
+  {
+    "id": "Q072",
+    "src": 72,
+    "domain": 1,
+    "topic": "Propriedades de usuários sincronizados",
+    "type": "hotarea",
+    "stem": "You have a hybrid deployment of Azure Active Directory (Azure AD) that contains the users shown in the following table.\n\n![Exhibit](img/S072-stem-1.png){w=607}\n\nYou need to modify the JobTitle and UsageLocation attributes for the users. For which users can you modify the attributes from Azure AD? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "JobTitle:",
+        "options": [
+          "User1 only",
+          "User1 and User2 only",
+          "User1 and User3 only",
+          "User1, User2, and User3"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "UsageLocation:",
+        "options": [
+          "User1 only",
+          "User1 and User2 only",
+          "User1 and User3 only",
+          "User1, User2, and User3"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Atributos de identidade/cargo (JobTitle) de usuários **sincronizados do AD** (User2) só mudam on-premises; os de usuários de nuvem e convidados mudam no Entra. **UsageLocation** é atributo de nuvem e pode ser alterado para todos.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal"
+    ]
+  },
+  {
+    "id": "Q073",
+    "src": 73,
+    "domain": 5,
+    "topic": "Traffic Analytics — permissões",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "TRAFFICAN"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou need to ensure that an Azure Active Directory (Azure AD) user named Admin1 is assigned the required role to enable Traffic Analytics for an Azure subscription.\n\nSolution: You assign the Network Contributor role at the subscription level to Admin1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Habilitar Traffic Analytics exige **Owner, Contributor ou Network Contributor** na assinatura (ou função customizada com as permissões). Network Contributor atende.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics-faq"
+    ]
+  },
+  {
+    "id": "Q074",
+    "src": 74,
+    "domain": 5,
+    "topic": "Traffic Analytics — permissões",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "TRAFFICAN"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou need to ensure that an Azure Active Directory (Azure AD) user named Admin1 is assigned the required role to enable Traffic Analytics for an Azure subscription.\n\nSolution: You assign the Owner role at the subscription level to Admin1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Owner** na assinatura atende aos requisitos para habilitar Traffic Analytics.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics-faq"
+    ]
+  },
+  {
+    "id": "Q075",
+    "src": 75,
+    "domain": 5,
+    "topic": "Traffic Analytics — permissões",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "TRAFFICAN"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou need to ensure that an Azure Active Directory (Azure AD) user named Admin1 is assigned the required role to enable Traffic Analytics for an Azure subscription.\n\nSolution: You assign the Reader role at the subscription level to Admin1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A documentação antiga listava Reader, mas **Reader não configura** flow logs nem Traffic Analytics (só leitura). A documentação atual exige Owner, Contributor ou Network Contributor. O dump marcava Sim.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics-faq"
+    ]
+  },
+  {
+    "id": "Q076",
+    "src": 76,
+    "domain": 1,
+    "topic": "RBAC — menor privilégio",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a user named User1. You need to ensure that User1 can deploy virtual machines and manage virtual networks. The solution must use the principle of least privilege. Which role-based access control (RBAC) role should you assign to User1?",
+    "options": [
+      "Owner",
+      "Virtual Machine Contributor",
+      "Contributor",
+      "Virtual Machine Administrator Login"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Implantar VMs **e** gerenciar VNets: entre as opções, só **Contributor** cobre os dois sem permitir atribuir funções (Owner é excessivo; Virtual Machine Contributor não gerencia VNets).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+    ]
+  },
+  {
+    "id": "Q077",
+    "src": 77,
+    "domain": 1,
+    "topic": "Elevar acesso (Global admin)",
+    "type": "yesno",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant that contains three global administrators named Admin1, Admin2, and Admin3.\n\nThe tenant is associated to an Azure subscription. Access control for the subscription is configured as shown in the Access control exhibit. (Click the Access\n\nControl tab.)\n\n![Exhibit](img/S077-stem-1.png){w=611}\n\nYou sign in to the Azure portal as Admin1 and configure the tenant as shown in the Tenant exhibit. (Click the Tenant tab.)\n\n![Exhibit](img/S077-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Admin1 can add Admin2 as an owner of the subscription.",
+      "Admin3 can add Admin2 as an owner of the subscription.",
+      "Admin2 can create a resource group in the subscription."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "answer_original": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Com **Access management for Azure resources = Yes**, o Admin1 (Global admin) vira **User Access Administrator na raiz** e pode atribuir qualquer função, inclusive Owner. O Admin3 é Owner da assinatura. O Admin2 não tem função de Azure RBAC e não cria RGs. O dump marcava Não na primeira.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator"
+    ]
+  },
+  {
+    "id": "Q078",
+    "src": 78,
+    "domain": 1,
+    "topic": "Managed identity",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1 that contains an Azure virtual machine named VM1. VM1 is in a resource group named RG1. VM1 runs services that will be used to deploy resources to RG1. You need to ensure that a service running on VM1 can manage the resources in RG1 by using the identity of VM1.\n\nWhat should you do first?",
+    "options": [
+      "From the Azure portal, modify the Managed Identity settings of VM1",
+      "From the Azure portal, modify the Access control (IAM) settings of RG1",
+      "From the Azure portal, modify the Access control (IAM) settings of VM1",
+      "From the Azure portal, modify the Policies settings of RG1"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Primeiro habilite a **managed identity** (system-assigned) da VM1; depois atribua a ela uma função no RG1 (IAM). Sem a identidade, não há principal para dar acesso.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm"
+    ]
+  },
+  {
+    "id": "Q079",
+    "src": 79,
+    "domain": 1,
+    "topic": "Excluir RG com lock e backup",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a resource group named TestRG. You use TestRG to validate an Azure deployment.\n\nTestRG contains the following resources:\n\n![Exhibit](img/S079-stem-1.png){w=611}\n\nYou need to delete TestRG.\n\nWhat should you do first?",
+    "options": [
+      "Modify the backup configurations of VM1 and modify the resource lock type of VNET1",
+      "Remove the resource lock from VNET1 and delete all data in Vault1",
+      "Turn off VM1 and remove the resource lock from VNET1",
+      "Turn off VM1 and delete all data in Vault1"
+    ],
+    "answer": 1,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O **lock Delete** no VNET1 impede excluir o RG, e o **vault com dados de backup** também. Primeiro remova o lock e pare o backup/exclua os dados do Vault1. Desligar a VM1 não ajuda em nada. O dump marcava C.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group?tabs=azure-powershell"
+    ]
+  },
+  {
+    "id": "Q080",
+    "src": 80,
+    "domain": 4,
+    "topic": "Azure DNS — delegação",
+    "type": "single",
+    "stem": "You have an Azure DNS zone named adatum.com.\n\nYou need to delegate a subdomain named research.adatum.com to a different DNS server in Azure.\n\nWhat should you do?",
+    "options": [
+      "Create an NS record named research in the adatum.com zone.",
+      "Create a PTR record named research in the adatum.com zone.",
+      "Modify the SOA record of adatum.com.",
+      "Create an A record named *.research in the adatum.com zone."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para delegar research.adatum.com, crie um **registro NS** \"research\" na zona adatum.com apontando para os servidores de nomes da zona filha.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/delegate-subdomain"
+    ]
+  },
+  {
+    "id": "Q081",
+    "src": 81,
+    "domain": 1,
+    "topic": "Domínio personalizado",
+    "type": "order",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant that has the contoso.onmicrosoft.com domain name.\n\nYou have a domain name of contoso.com registered at a third-party registrar. You need to ensure that you can create Azure AD users that have names containing a suffix of @contoso.com.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Add an Azure AD tenant",
+      "Configure company branding",
+      "Create an Azure DNS zone",
+      "Add a custom name",
+      "Add a record to the public contoso.com DNS zone",
+      "Verify the domain"
+    ],
+    "answer": [
+      3,
+      4,
+      5
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "**Adicione o domínio** no Entra ID, **crie o registro** (TXT/MX) na zona pública do registrador e **verifique o domínio**. Depois os usuários podem usar @contoso.com.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain"
+    ]
+  },
+  {
+    "id": "Q083",
+    "src": 83,
+    "domain": 4,
+    "topic": "Azure DNS — delegação no registrador",
+    "type": "single",
+    "stem": "You have a registered DNS domain named contoso.com.\n\nYou create a public Azure DNS zone named contoso.com.\n\nYou need to ensure that records created in the contoso.com zone are resolvable from the internet.\n\nWhat should you do?",
+    "options": [
+      "Create NS records in contoso.com.",
+      "Modify the SOA record in the DNS domain registrar.",
+      "Create the SOA record in contoso.com.",
+      "Modify the NS records in the DNS domain registrar."
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para a zona pública do Azure DNS responder na internet, **altere os registros NS no registrador** do domínio para os name servers do Azure DNS.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
+    ]
+  },
+  {
+    "id": "Q084",
+    "src": 84,
+    "domain": 2,
+    "topic": "Azure Files — permissões de share",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. The subscription is linked to an Azure Active Directory (Azure AD) tenant named contoso.com that syncs to an on-premises Active Directory domain. The domain contains the security principals shown in the following table.\n\n![Exhibit](img/S084-stem-1.png){w=282}\n\nIn Azure AD, you create a user named User2.\n\nThe storage1 account contains a file share named share1 and has the following configurations.\n\n![Exhibit](img/S084-stem-2.png){w=604}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can assign the Storage File Data SMB Share Contributor role to User1 for share1.",
+      "You can assign the Storage File Data SMB Share Reader role to Computer1 for share1.",
+      "You can assign the Storage File Data SMB Share Elevated Contributor role to User2 for share1."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Com autenticação **AD DS**, as funções de share valem para identidades **híbridas** (sincronizadas). User1 (do AD) pode receber a função. Contas de **computador** não são sincronizadas e não recebem funções de share. Atribuir a função a um usuário só de nuvem (User2) é permitido no IAM, embora ele não consiga autenticar via AD DS.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-assign-permissions?tabs=azure-portal"
+    ]
+  },
+  {
+    "id": "Q085",
+    "src": 85,
+    "domain": 1,
+    "topic": "RBAC — VNet",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1 that contains a virtual network VNet1.\n\nYou add the users in the following table.\n\n![Exhibit](img/S085-stem-1.png){w=534}\n\nWhich user can perform each configuration? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Add a subnet to VNet1:",
+        "options": [
+          "User1 only",
+          "User3 only",
+          "User1 and User3 only",
+          "User2 and User3 only",
+          "User1, User2, and User3"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Assign a user the Reader role to VNet1:",
+        "options": [
+          "User1 only",
+          "User2 only",
+          "User3 only",
+          "User1 and User2 only",
+          "User2 and User3 only",
+          "User1, User2, and User3"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Criar sub-rede: **Owner** e **Network Contributor**; Security Admin só gerencia o Defender/políticas de segurança. Atribuir funções: só o **Owner**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations#microsoftnetwork"
+    ]
+  },
+  {
+    "id": "Q086",
+    "src": 86,
+    "domain": 1,
+    "topic": "Locks e tags",
+    "type": "hotarea",
+    "stem": "You have the Azure resources shown on the following exhibit.\n\n![Exhibit](img/S086-stem-1.png){w=611}\n\nYou plan to track resource usage and prevent the deletion of resources. To which resources can you apply locks and tags? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Locks:",
+        "options": [
+          "RG1 and VM1 only",
+          "Sub1 and RG1 only",
+          "Sub1, RG1, and VM1 only",
+          "MG1, Sub1, RG1, and VM1 only",
+          "Tenant Root Group, MG1, Sub1, RG1, and VM1"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Tags:",
+        "options": [
+          "RG1 and VM1 only",
+          "Sub1 and RG1 only",
+          "Sub1, RG1, and VM1 only",
+          "MG1, Sub1, RG1, and VM1 only",
+          "Tenant Root Group, MG1, Sub1, RG1, and VM1"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Locks e tags se aplicam a **assinaturas, resource groups e recursos**. Management groups (inclusive a raiz) não recebem locks.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json",
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json"
+    ]
+  },
+  {
+    "id": "Q087",
+    "src": 87,
+    "domain": 1,
+    "topic": "Exclusão em massa",
+    "type": "single",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant.\n\nYou plan to delete multiple users by using Bulk delete in the Azure Active Directory admin center.\n\nYou need to create and upload a file for the bulk delete.\n\nWhich user attributes should you include in the file?",
+    "options": [
+      "The user principal name and usage location of each user only",
+      "The user principal name of each user only",
+      "The display name of each user only",
+      "The display name and usage location of each user only",
+      "The display name and user principal name of each user only"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O CSV de **Bulk delete** precisa apenas do **User principal name** de cada usuário.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/users-bulk-delete"
+    ]
+  },
+  {
+    "id": "Q088",
+    "src": 88,
+    "domain": 1,
+    "topic": "Azure Policy — append tag",
+    "type": "yesno",
+    "stem": "You have an Azure subscription named Sub1 that contains the Azure resources shown in the following table.\n\n![Exhibit](img/S088-stem-1.png){w=263}\n\nYou assign an Azure policy that has the following settings:\n\n- Scope: Sub1\n- Exclusions: Sub1/RG1/VNET1\n- Policy definition: Append a tag and its value to resources\n- Policy enforcement: Enabled\n- Tag name: Tag4\n- Tag value: value4\n\nYou assign tags to the resources as shown in the following table.\n\n![Exhibit](img/S088-stem-2.png){w=329}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "RG1 has the Tag2:IT tag assigned only.",
+      "Storage1 has the Tag1:subscription, Tag2:IT, Tag3:value1, and Tag4:value4 tags assigned.",
+      "VNET1 has the Tag2:IT and Tag3:value2 tags assigned only."
+    ],
+    "answer": [
+      true,
+      false,
+      false
+    ],
+    "answer_original": [
+      false,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A definição built-in *Append a tag and its value to resources* **não se aplica a resource groups**, então o RG1 fica só com Tag2:IT. Tags **não são herdadas**: storage1 fica com Tag3:value1 + Tag4:value4. VNET1 está excluído e fica só com Tag3:value2. O dump marcava Não na primeira.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json"
+    ]
+  },
+  {
+    "id": "Q089",
+    "src": 89,
+    "domain": 5,
+    "topic": "Traffic Analytics — permissões",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "TRAFFICAN"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou need to ensure that an Azure Active Directory (Azure AD) user named Admin1 is assigned the required role to enable Traffic Analytics for an Azure subscription.\n\nSolution: You assign the Traffic Manager Contributor role at the subscription level to Admin1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Traffic Manager Contributor** só gerencia perfis do Traffic Manager; não habilita Traffic Analytics.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics-faq"
+    ]
+  },
+  {
+    "id": "Q090",
+    "src": 90,
+    "domain": 1,
+    "topic": "Unidades administrativas",
+    "type": "single",
+    "stem": "You have three offices and an Azure subscription that contains an Azure Active Directory (Azure AD) tenant.\n\nYou need to grant user management permissions to a local administrator in each office.\n\nWhat should you use?",
+    "options": [
+      "Azure AD roles",
+      "administrative units",
+      "access packages in Azure AD entitlement management",
+      "Azure roles"
+    ],
+    "answer": 1,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "**Administrative units** limitam o escopo de uma função do Entra (ex.: User administrator) a um subconjunto de usuários, como os de cada escritório.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/roles/administrative-units"
+    ]
+  },
+  {
+    "id": "Q091",
+    "src": 91,
+    "domain": 1,
+    "topic": "RBAC — Logic Apps",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LOGICAPP"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers. Subscription1 contains a resource group named Dev.\n\nYou need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.\n\nSolution: On Dev, you assign the Logic App Contributor role to the Developers group.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Logic App Contributor** no RG Dev permite criar e gerenciar logic apps ali.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+    ]
+  },
+  {
+    "id": "Q092",
+    "src": 92,
+    "domain": 1,
+    "topic": "Interpretar atribuições",
+    "type": "hotarea",
+    "stem": "You have an Azure Load Balancer named LB1.\n\nYou assign a user named User1 the roles shown in the following exhibit.\n\n![Exhibit](img/S092-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "User1 can [answer choice] LB1.",
+        "options": [
+          "delete",
+          "create a NAT rule for",
+          "assign access to other users for"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "User1 can [answer choice] the resource group.",
+        "options": [
+          "delete a virtual machine from",
+          "modify the load balancing rules in",
+          "deploy an Azure Kubernetes Service (AKS) cluster to"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**User Access Administrator** no LB1 permite **atribuir acesso** a outros usuários no LB1. **Virtual Machine Contributor** herdado do RG permite **excluir VMs** do RG (não gerencia LB nem AKS).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#virtual-machine-contributor",
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles"
+    ]
+  },
+  {
+    "id": "Q093",
+    "src": 93,
+    "domain": 1,
+    "topic": "RBAC — delegar acesso",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\n\nSubscription1 has a user named User1. User1 has the following roles:\n\n- Reader\n- Security Admin\n- Security Reader\n\nYou need to ensure that User1 can assign the Reader role for VNet1 to other users.\n\nWhat should you do?",
+    "options": [
+      "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1.",
+      "Assign User1 the Owner role for VNet1.",
+      "Assign User1 the Contributor role for VNet1.",
+      "Assign User1 the Network Contributor role for VNet1."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Atribuir funções exige **Owner** ou **User Access Administrator** no escopo. Entre as opções, **Owner do VNet1**. Contributor/Network Contributor não atribuem funções.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/overview"
+    ]
+  },
+  {
+    "id": "Q094",
+    "src": 94,
+    "domain": 1,
+    "topic": "Funções customizadas — login em VM",
+    "type": "hotarea",
+    "stem": "You configure the custom role shown in the following exhibit.\n\n![Exhibit](img/S094-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "To ensure that users can sign in to virtual machines that are assigned role1, modify the [answer choice] section:",
+        "options": [
+          "actions",
+          "roletype",
+          "notActions",
+          "dataActions",
+          "notDataActions",
+          "assignableScopes"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "To ensure that role1 can be assigned only to a resource group named RG1, modify the [answer choice] section:",
+        "options": [
+          "actions",
+          "roletype",
+          "notActions",
+          "dataActions",
+          "notDataActions",
+          "assignableScopes"
+        ],
+        "answer": 5
+      }
+    ],
+    "answer_original": [
+      1,
+      5
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Entrar em VMs com Entra ID é uma **data action** (Microsoft.Compute/virtualMachines/login/action), que vai em **dataActions**. \"roletype\" não é uma seção de permissões. Para limitar a função ao RG1, edite **assignableScopes**. O dump marcava roletype.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows",
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal"
+    ]
+  },
+  {
+    "id": "Q095",
+    "src": 95,
+    "domain": 2,
+    "topic": "Azure Files — acesso por identidade",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains a file share named share1.\n\nThe subscription is linked to a hybrid Azure Active Directory (Azure AD) tenant that contains a security group named Group1.\n\nYou need to grant Group1 the Storage File Data SMB Share Elevated Contributor role for share1.\n\nWhat should you do first?",
+    "options": [
+      "Enable Active Directory Domain Service (AD DS) authentication for storage1.",
+      "Grant share-level permissions by using File Explorer.",
+      "Mount share1 by using File Explorer.",
+      "Create a private endpoint."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "As funções Storage File Data SMB Share * só funcionam depois de habilitar uma fonte de identidade no storage account: **AD DS** (ou Entra Domain Services/Entra Kerberos). Esse é o primeiro passo.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-domain-service-enable"
+    ]
+  },
+  {
+    "id": "Q096",
+    "src": 96,
+    "domain": 1,
+    "topic": "Management groups — RBAC",
+    "type": "single",
+    "stem": "You have 15 Azure subscriptions.\n\nYou have an Azure Active Directory (Azure AD) tenant that contains a security group named Group1.\n\nYou plan to purchase additional Azure subscription.\n\nYou need to ensure that Group1 can manage role assignments for the existing subscriptions and the planned subscriptions. The solution must meet the following requirements:\n\n- Use the principle of least privilege.\n- Minimize administrative effort.\n\nWhat should you do?",
+    "options": [
+      "Assign Group1 the Owner role for the root management group.",
+      "Assign Group1 the User Access Administrator role for the root management group.",
+      "Create a new management group and assign Group1 the User Access Administrator role for the group.",
+      "Create a new management group and assign Group1 the Owner role for the group."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para gerenciar atribuições de funções em todas as assinaturas atuais e futuras com menor privilégio: **User Access Administrator no root management group** (assinaturas novas caem sob a raiz).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
+      "https://docs.microsoft.com/en-us/azure/governance/management-groups/overview"
+    ]
+  },
+  {
+    "id": "Q097",
+    "src": 97,
+    "domain": 1,
+    "topic": "Azure Policy — escopos",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the hierarchy shown in the following exhibit.\n\n![Exhibit](img/S097-stem-1.png){w=203}\n\nYou create an Azure Policy definition named Policy1.\n\nTo which Azure resources can you assign Policy1 and which Azure resources can you specify as exclusions from Policy1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "You can assign Policy1 to:",
+        "options": [
+          "Subscription1 and RG1 only",
+          "ManagementGroup1 and Subscription1 only",
+          "Tenant Root Group, ManagementGroup1, and Subscription1 only",
+          "Tenant Root Group, ManagementGroup1, Subscription1, and RG1 only",
+          "Tenant Root Group, ManagementGroup1, Subscription1, RG1, and VM1"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "You can exclude Policy1 from:",
+        "options": [
+          "VM1 only",
+          "RG1 and VM1 only",
+          "Subscription1, RG1, and VM1 only",
+          "ManagementGroup1, Subscription1, RG1, and VM1 only",
+          "Tenant Root Group, ManagementGroup1, Subscription1, RG1, and VM1"
+        ],
+        "answer": 3
+      }
+    ],
+    "answer_original": [
+      4,
+      3
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Uma atribuição de política pode ter escopo de **management group, assinatura ou resource group** (o portal não oferece um recurso individual como escopo). Exclusões podem ser qualquer coisa **abaixo** do escopo: MG filho, assinatura, RG ou **recurso**. O dump incluía a VM1 como escopo de atribuição.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+    ]
+  },
+  {
+    "id": "Q098",
+    "src": 98,
+    "domain": 1,
+    "topic": "Novo tenant",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NEWTENANT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following users in an Azure Active Directory tenant named contoso.onmicrosoft.com:\n\n![Exhibit](img/S098-stem-1.png){w=611}\n\nUser1 creates a new Azure Active Directory tenant named external.contoso.onmicrosoft.com.\n\nYou need to create new user accounts in external.contoso.onmicrosoft.com.\n\nSolution: You instruct User2 to create the user accounts.\n\nDoes that meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Quem cria um tenant (User1) passa a ser o **único Global administrator** dele. User2 é Global admin de contoso.onmicrosoft.com, mas **não tem acesso** ao novo tenant até ser convidado. O dump marcava Sim.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/add-users-to-azure-ad"
+    ]
+  },
+  {
+    "id": "Q099",
+    "src": 99,
+    "domain": 1,
+    "topic": "Novo tenant",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NEWTENANT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following users in an Azure Active Directory tenant named contoso.onmicrosoft.com:\n\n![Exhibit](img/S099-stem-1.png){w=611}\n\nUser1 creates a new Azure Active Directory tenant named external.contoso.onmicrosoft.com.\n\nYou need to create new user accounts in external.contoso.onmicrosoft.com.\n\nSolution: You instruct User4 to create the user accounts.\n\nDoes that meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "User4 é Owner da **assinatura** (Azure RBAC), o que não dá acesso ao novo tenant do Entra. Só User1, que o criou, é Global administrator lá.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/add-users-to-azure-ad"
+    ]
+  },
+  {
+    "id": "Q100",
+    "src": 100,
+    "domain": 1,
+    "topic": "Novo tenant",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NEWTENANT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following users in an Azure Active Directory tenant named contoso.onmicrosoft.com:\n\n![Exhibit](img/S100-stem-1.png){w=611}\n\nUser1 creates a new Azure Active Directory tenant named external.contoso.onmicrosoft.com.\n\nYou need to create new user accounts in external.contoso.onmicrosoft.com.\n\nSolution: You instruct User3 to create the user accounts.\n\nDoes that meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "User3 é User administrator em contoso.onmicrosoft.com, não no novo tenant. Só o criador (User1) tem acesso inicialmente.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/add-users-to-azure-ad"
+    ]
+  },
+  {
+    "id": "Q101",
+    "src": 101,
+    "domain": 1,
+    "topic": "Funções customizadas",
+    "type": "single",
+    "stem": "You have two Azure subscriptions named Sub1 and Sub2.\n\nAn administrator creates a custom role that has an assignable scope to a resource group named RG1 in Sub1.\n\nYou need to ensure that you can apply the custom role to any resource group in Sub1 and Sub2. The solution must minimize administrative effort. What should you do?",
+    "options": [
+      "Select the custom role and add Sub1 and Sub2 to the assignable scopes. Remove RG1 from the assignable scopes.",
+      "Create a new custom role for Sub1. Create a new custom role for Sub2. Remove the role from RG1.",
+      "Create a new custom role for Sub1 and add Sub2 to the assignable scopes. Remove the role from RG1.",
+      "Select the custom role and add Sub1 to the assignable scopes. Remove RG1 from the assignable scopes. Create a new custom role for Sub2."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Edite a função e troque **AssignableScopes** de RG1 para **/subscriptions/Sub1 e /subscriptions/Sub2**. Assim ela pode ser atribuída em qualquer RG das duas assinaturas, sem criar funções novas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles"
+    ]
+  },
+  {
+    "id": "Q102",
+    "src": 102,
+    "domain": 2,
+    "topic": "RBAC de dados em storage",
+    "type": "multi",
+    "stem": "You have an Azure Subscription that contains a storage account named storageacct1234 and two users named User1 and User2.\n\nYou assign User1 the roles shown in the following exhibit.\n\n![Exhibit](img/S102-stem-1.png){w=611}\n\nWhich two actions can User1 perform? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Assign roles to User2 for storageacct1234.",
+      "Upload blob data to storageacct1234.",
+      "Modify the firewall of storageacct1234.",
+      "View blob data in storageacct1234.",
+      "View file shares in storageacct1234."
+    ],
+    "answer": [
+      1,
+      3
+    ],
+    "answer_original": [
+      0,
+      4
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "**Storage Blob Data Contributor** no storage account permite **ler e gravar blobs** (B e D). Reader no RG só dá leitura do plano de controle: não atribui funções, não altera firewall e não lê arquivos (sem chaves ou função de dados de Files). O dump marcava A e E."
+  },
+  {
+    "id": "Q104",
+    "src": 104,
+    "domain": 2,
+    "topic": "Tipos de storage account",
+    "type": "hotarea",
+    "stem": "You have Azure Storage accounts as shown in the following exhibit.\n\n![Exhibit](img/S104-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "You can use [answer choice] for Azure Table Storage.",
+        "options": [
+          "storageaccount1 only",
+          "storageaccount2 only",
+          "storageaccount3 only",
+          "storageaccount1 and storageaccount2 only",
+          "storageaccount2 and storageaccount3 only"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "You can use [answer choice] for Azure Blob storage.",
+        "options": [
+          "storageaccount3 only",
+          "storageaccount2 and storageaccount3 only",
+          "storageaccount1 and storageaccount3 only",
+          "all the storage accounts"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Table storage** existe em contas **GPv1 (Storage)** e **GPv2**, não em BlobStorage. **Blob** existe nas três.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-account-options"
+    ]
+  },
+  {
+    "id": "Q106",
+    "src": 106,
+    "domain": 2,
+    "topic": "Acesso a blobs por apps",
+    "type": "hotarea",
+    "stem": "You have an Azure Storage account named storage1.\n\nYou have an Azure App Service app named App1 and an app named App2 that runs in an Azure container instance. Each app uses a managed identity. You need to ensure that App1 and App2 can read blobs from storage1. The solution must meet the following requirements:\n\n- Minimize the number of secrets used.\n- Ensure that App2 can only read from storage1 for the next 30 days. What should you configure in storage1 for each app? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "App1:",
+        "options": [
+          "Access keys",
+          "Advanced security",
+          "Access control (IAM)",
+          "Shared access signatures (SAS)"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "App2:",
+        "options": [
+          "Access keys",
+          "Advanced security",
+          "Access control (IAM)",
+          "Shared access signatures (SAS)"
+        ],
+        "answer": 3
+      }
+    ],
+    "answer_original": [
+      0,
+      3
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "App1 tem managed identity: dê uma função de dados via **Access control (IAM)**, sem nenhum segredo. App2 precisa de acesso **por 30 dias**: um **SAS** com expiração. Access keys são segredos permanentes com acesso total. O dump marcava Access keys para o App1.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+    ]
+  },
+  {
+    "id": "Q107",
+    "src": 107,
+    "domain": 2,
+    "topic": "Criar storage account (CLI)",
+    "type": "hotarea",
+    "stem": "You need to create an Azure Storage account that meets the following requirements:\n\n- Minimizes costs\n- Supports hot, cool, and archive blob tiers\n- Provides fault tolerance if a disaster affects the Azure region where the account resides\n\nHow should you complete the command? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "--kind",
+        "options": [
+          "FileStorage",
+          "Storage",
+          "StorageV2"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "--sku",
+        "options": [
+          "Standard_GRS",
+          "Standard_LRS",
+          "Standard_RAGRS",
+          "Premium_LRS"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Tiers hot/cool/archive exigem **StorageV2**. Tolerância a desastre regional com menor custo = **Standard_GRS** (RA-GRS custa mais e o requisito não pede leitura na secundária).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy-grs",
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers"
+    ]
+  },
+  {
+    "id": "Q109",
+    "src": 109,
+    "domain": 1,
+    "topic": "Azure Policy — Not allowed resource types",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S109-stem-1.png){w=480}\n\nThe status of VM1 is Running.\n\nYou assign an Azure policy as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S109-stem-2.png){w=611}\n\nYou assign the policy by using the following parameters:\n\nMicrosoft.ClassicNetwork/virtualNetworks\n\nMicrosoft.Network/virtualNetworks\n\nMicrosoft.Compute/virtualMachines\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "An administrator can move VNET1 to RG2.",
+      "The state of VM1 changed to deallocated.",
+      "An administrator can modify the address space of VNET2."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "answer_original": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Com VNet e VM proibidas no RG2: **mover o VNET1 para o RG2 é negado**. A política **não desliga** VMs existentes (só marca como não conformes). **Alterar** o VNET2 (atualização de recurso proibido) também é negado. O dump marcava Sim na segunda; a comunidade testou Não/Não/Não."
+  },
+  {
+    "id": "Q112",
+    "src": 112,
+    "domain": 2,
+    "topic": "Azure Files — caminho UNC",
+    "type": "match",
+    "stem": "You have an Azure subscription named Subscription1.\n\nYou create an Azure Storage account named contosostorage, and then you create a file share named data.\n\nWhich UNC path should you include in a script that references files from the data file share? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "pool": [
+      "blob",
+      "blob.core.windows.net",
+      "contosostorage",
+      "data",
+      "file",
+      "file.core.windows.net",
+      "portal.azure.com",
+      "subscription1"
+    ],
+    "targets": [
+      {
+        "label": "\\\\ [Box 1]",
+        "answer": 2
+      },
+      {
+        "label": ". [Box 2]",
+        "answer": 5
+      },
+      {
+        "label": "\\ [Box 3]",
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O caminho UNC de um file share é **\\\\<conta>.file.core.windows.net\\<share>**: \\\\contosostorage.file.core.windows.net\\data.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
+    ]
+  },
+  {
+    "id": "Q113",
+    "src": 113,
+    "domain": 2,
+    "topic": "AzCopy — criar container",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains an Azure Storage account. You plan to copy an on-premises virtual machine image to a container named vmimages.\n\nYou need to create the container for the planned image.\n\nWhich command should you run? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "azcopy",
+        "options": [
+          "make",
+          "sync",
+          "copy"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "'https://mystorageaccount.[answer choice].core.windows.net/vmimages'",
+        "options": [
+          "blob",
+          "dfs",
+          "queue",
+          "table",
+          "images",
+          "file"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**azcopy make** cria um container (ou share). Para blobs (imagens de VM como page blobs), use o endpoint **blob**: azcopy make 'https://<conta>.blob.core.windows.net/vmimages'."
+  },
+  {
+    "id": "Q115",
+    "src": 115,
+    "domain": 2,
+    "topic": "Firewall do storage",
+    "type": "hotarea",
+    "stem": "You have several Azure virtual machines on a virtual network named VNet1. You configure an Azure Storage account as shown in the following exhibit.\n\n![Exhibit](img/S115-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The virtual machines on the 10.2.9.0/24 subnet will have network connectivity to the file shares in the storage account [answer choice].",
+        "options": [
+          "always",
+          "during a backup",
+          "never"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Azure Backup will be able to back up the unmanaged hard disks of the virtual machines in the storage account [answer choice].",
+        "options": [
+          "always",
+          "during a backup",
+          "never"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Só a sub-rede **10.2.0.0/24** (Prod) do VNet1 foi liberada; 10.2.9.0/24 nem existe como sub-rede liberada, então **nunca** acessa. **Allow trusted Microsoft services** está desmarcado, então o Azure Backup **nunca** consegue fazer backup dos discos não gerenciados nesse storage.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows",
+      "https://azure.microsoft.com/en-us/blog/azure-backup-now-supports-storage-accounts-secured-with-azure-storage-firewalls-and-virtual-networks/"
+    ]
+  },
+  {
+    "id": "Q117",
+    "src": 117,
+    "domain": 2,
+    "topic": "Conversão para ZRS",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S117-stem-1.png){w=611}\n\nYou need to identify which storage account can be converted to zone-redundant storage (ZRS) replication by requesting a live migration from Azure support. What should you identify?",
+    "options": [
+      "storage1",
+      "storage2",
+      "storage3",
+      "storage4"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Conversão para ZRS (live migration/conversão) é suportada para contas **Standard GPv2 com LRS** (ou GRS → GZRS). storage1 é GPv1 Premium; storage3 é RA-GRS Premium; BlobStorage não suporta ZRS. Resposta: **storage2**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy-zrs"
+    ]
+  },
+  {
+    "id": "Q118",
+    "src": 118,
+    "domain": 2,
+    "topic": "Firewall do storage",
+    "type": "multi",
+    "stem": "You have an Azure subscription that contains a storage account named account1.\n\nYou plan to upload the disk files of a virtual machine to account1 from your on- premises network. The on-premises network uses a public IP address space of 131.107.1.0/24.\n\nYou plan to use the disk files to provision an Azure virtual machine named VM1. VM1 will be attached to a virtual network named VNet1. VNet1 uses an IP address space of 192.168.0.0/24.\n\nYou need to configure account1 to meet the following requirements:\n\n- Ensure that you can upload the disk files to account1.\n- Ensure that you can attach the disks to VM1.\n- Prevent all other access to account1.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "From the Networking blade of account1, select Selected networks.",
+      "From the Networking blade of account1, select Allow trusted Microsoft services to access this storage account.",
+      "From the Networking blade of account1, add the 131.107.1.0/24 IP address range.",
+      "From the Networking blade of account1, add VNet1.",
+      "From the Service endpoints blade of VNet1, add a service endpoint."
+    ],
+    "answer": [
+      0,
+      2
+    ],
+    "answer_original": [
+      0,
+      4
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Mude o firewall para **Selected networks** e libere o intervalo **131.107.1.0/24** (upload a partir de on-premises). Anexar os discos à VM é operação da plataforma, não precisa de service endpoint. O dump marcava A e E.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security"
+    ]
+  },
+  {
+    "id": "Q120",
+    "src": 120,
+    "domain": 2,
+    "topic": "Redundância — ZRS",
+    "type": "hotarea",
+    "stem": "You plan to create an Azure Storage account in the Azure region of East US 2. You need to create a storage account that meets the following requirements:\n\n- Replicates synchronously.\n- Remains available if a single data center in the region fails. How should you configure the storage account? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Replication:",
+        "options": [
+          "Geo-redundant storage (GRS)",
+          "Locally-redundant storage (LRS)",
+          "Read-access geo-redundant storage (RA GRS)",
+          "Zone-redundant storage (ZRS)"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Account type:",
+        "options": [
+          "Blob storage",
+          "Storage (general purpose v1)",
+          "StorageV2 (general purpose v2)"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Replicação **síncrona** que sobrevive à perda de um datacenter = **ZRS** (3 zonas na região). GRS/RA-GRS replicam de forma **assíncrona** para outra região. ZRS exige **StorageV2** (GPv2).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy-zrs"
+    ]
+  },
+  {
+    "id": "Q122",
+    "src": 122,
+    "domain": 5,
+    "topic": "Excluir Recovery Services vault",
+    "type": "single",
+    "stem": "You have a Recovery Service vault that you use to test backups. The test backups contain two protected virtual machines.\n\nYou need to delete the Recovery Services vault.\n\nWhat should you do first?",
+    "options": [
+      "From the Recovery Service vault, delete the backup data.",
+      "Modify the disaster recovery properties of each virtual machine.",
+      "Modify the locks of each virtual machine.",
+      "From the Recovery Service vault, stop the backup of each backup item."
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Antes de excluir o vault, **pare o backup** de cada item (e exclua os dados de backup); só então as dependências somem.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-delete-vault"
+    ]
+  },
+  {
+    "id": "Q123",
+    "src": 123,
+    "domain": 5,
+    "topic": "Recovery Services vault — o que protege",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1 that contains the resources shown in the following table.\n\n![Exhibit](img/S123-stem-1.png){w=607}\n\nIn storage1, you create a blob container named blob1 and a file share named share1.\n\nWhich resources can be backed up to Vault1 and Vault2? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Can use Vault1 for backups:",
+        "options": [
+          "VM1 only",
+          "VM1 and share1 only",
+          "VM1 and SQL1 only",
+          "VM1, storage1, and SQL1 only",
+          "VM1, blob1, share1, and SQL1"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Can use Vault2 for backups:",
+        "options": [
+          "storage1 only",
+          "share1 only",
+          "VM1 and share1 only",
+          "blob1 and share1 only",
+          "storage1 and SQL1 only"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O vault protege recursos **da mesma região**. Vault1 (Central US): só a **VM1**. Vault2 (West US): o **file share share1** do storage1 (West US). Blobs usam o Backup vault (não o Recovery Services vault), e SQL Database tem backup próprio.",
+    "refs": [
+      "https://docs.microsoft.com/bs-cyrl-ba/azure/backup/backup-create-rs-vault",
+      "https://docs.microsoft.com/en-us/azure/backup/backup-afs"
+    ]
+  },
+  {
+    "id": "Q125",
+    "src": 125,
+    "domain": 2,
+    "topic": "LRS e access tier",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou create the Azure Storage account shown in the following exhibit.\n\n![Exhibit](img/S125-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The minimum number of copies of the storage account will be [answer choice].",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "To reduce the cost of infrequently accessed data in the storage account, you must modify the [answer choice] setting.",
+        "options": [
+          "Access tier (default)",
+          "Performance",
+          "Account kind",
+          "Replication"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**LRS** mantém **3 cópias** dentro de um datacenter. Para baratear dado pouco acessado, mude o **Access tier (default)** para Cool.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/blog/data-series-introducing-locally-redundant-storage-for-windows-azure-storage/",
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers"
+    ]
+  },
+  {
+    "id": "Q126",
+    "src": 126,
+    "domain": 2,
+    "topic": "AzCopy",
+    "type": "single",
+    "stem": "You have an Azure Storage account named storage1.\n\nYou plan to use AzCopy to copy data to storage1.\n\nYou need to identify the storage services in storage1 to which you can copy the data.\n\nWhich storage services should you identify?",
+    "options": [
+      "blob, file, table, and queue",
+      "blob and file only",
+      "file and table only",
+      "file only",
+      "blob, table, and queue only"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "AzCopy v10 copia para **Blob e Files** (e ADLS Gen2). Não suporta Table nem Queue.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
+    ]
+  },
+  {
+    "id": "Q127",
+    "src": 127,
+    "domain": 2,
+    "topic": "AzCopy — autenticação",
+    "type": "hotarea",
+    "stem": "You have an Azure Storage account named storage1 that uses Azure Blob storage and Azure File storage.\n\nYou need to use AzCopy to copy data to the blob storage and file storage in storage1.\n\nWhich authentication method should you use for each type of storage? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Blob storage:",
+        "options": [
+          "Azure Active Directory (Azure AD) only",
+          "Shared access signatures (SAS) only",
+          "Access keys and shared access signatures (SAS) only",
+          "Azure Active Directory (Azure AD) and shared access signatures (SAS) only",
+          "Azure Active Directory (Azure AD), access keys, and shared access signatures (SAS)"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "File storage:",
+        "options": [
+          "Azure Active Directory (Azure AD) only",
+          "Shared access signatures (SAS) only",
+          "Access keys and shared access signatures (SAS) only",
+          "Azure Active Directory (Azure AD) and shared access signatures (SAS) only",
+          "Azure Active Directory (Azure AD), access keys, and shared access signatures (SAS)"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "**Blob**: Entra ID ou SAS. **Files**: tradicionalmente só **SAS** no AzCopy (versões recentes também passaram a aceitar Entra ID em alguns cenários). Access keys não são usadas diretamente pelo AzCopy.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
+    ]
+  },
+  {
+    "id": "Q128",
+    "src": 128,
+    "domain": 3,
+    "topic": "ACI — armazenamento persistente",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains an Azure Storage account. You plan to create an Azure container instance named container1 that will use a Docker image named Image1. Image1 contains a Microsoft SQL Server instance that requires persistent storage.\n\nYou need to configure a storage service for Container1.\n\nWhat should you use?",
+    "options": [
+      "Azure Files",
+      "Azure Blob storage",
+      "Azure Queue storage",
+      "Azure Table storage"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Volumes persistentes em Azure Container Instances usam **Azure Files** (montagem de file share).",
+    "refs": [
+      "https://azure.microsoft.com/en-us/blog/persistent-docker-volumes-with-azure-file-storage/",
+      "https://docs.microsoft.com/en-us/azure/aks/concepts-storage"
+    ]
+  },
+  {
+    "id": "Q129",
+    "src": 129,
+    "domain": 3,
+    "topic": "Availability sets — manutenção",
+    "type": "single",
+    "stem": "You have an app named App1 that runs on two Azure virtual machines named VM1 and VM2.\n\nYou plan to implement an Azure Availability Set for App1. The solution must ensure that App1 is available during planned maintenance of the hardware hosting\n\nVM1 and VM2.\n\nWhat should you include in the Availability Set?",
+    "options": [
+      "one update domain",
+      "two fault domains",
+      "one fault domain",
+      "two update domains"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Manutenção planejada reinicia um **update domain** por vez. Com VM1 e VM2 em **dois update domains**, uma fica de pé enquanto a outra reinicia.",
+    "refs": [
+      "https://petri.com/understanding-azure-availability-sets",
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-availability-sets"
+    ]
+  },
+  {
+    "id": "Q133",
+    "src": 133,
+    "domain": 5,
+    "topic": "Relatórios do Backup — diagnostic settings",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1 that contains the resources shown in the following table:\n\n![Exhibit](img/S133-stem-1.png){w=611}\n\nYou plan to configure Azure Backup reports for Vault1.\n\nYou are configuring the Diagnostics settings for the AzureBackupReports log. Which storage accounts and which Log Analytics workspaces can you use for the Azure Backup reports of Vault1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Storage accounts:",
+        "options": [
+          "storage1 only",
+          "storage2 only",
+          "storage3 only",
+          "storage1, storage2, and storage3"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Log Analytics workspaces:",
+        "options": [
+          "Analytics1 only",
+          "Analytics2 only",
+          "Analytics3 only",
+          "Analytics1, Analytics2, and Analytics3"
+        ],
+        "answer": 3
+      }
+    ],
+    "answer_original": [
+      3,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Em diagnostic settings, o **storage account precisa estar na mesma região** do recurso (Vault1, West Europe): só o **storage3**. O **Log Analytics workspace pode estar em qualquer região**: os três servem. O dump marcava todos os storages e só o Analytics3.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-configure-reports"
+    ]
+  },
+  {
+    "id": "Q134",
+    "src": 134,
+    "domain": 2,
+    "topic": "Tipos de storage account",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following exhibit.\n\n![Exhibit](img/S134-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "You can create a premium file share in:",
+        "options": [
+          "contoso101 only",
+          "contoso104 only",
+          "contoso101 or contoso104 only",
+          "contoso101, contoso102, or contoso104 only",
+          "contoso101, contoso102, contoso103, or contoso104"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "You can use the Archive access tier in:",
+        "options": [
+          "contoso101 only",
+          "contoso101 or contoso103 only",
+          "contoso101, contoso102, and contoso103 only",
+          "contoso101, contoso102, and contoso104 only",
+          "contoso101, contoso102, contoso103, and contoso104"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "File shares **Premium** só em contas **FileStorage** (contoso104). O tier **Archive** existe em **GPv2 e BlobStorage** (contoso101 e contoso103); GPv1 (Storage) não tem tiers. O dump incluía a contoso102.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-premium-fileshare?tabs=azure-portal",
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers"
+    ]
+  },
+  {
+    "id": "Q135",
+    "src": 135,
+    "domain": 2,
+    "topic": "SAS — IP e protocolo",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1.\n\nIn Subscription1, you create an Azure file share named share1. You create a shared access signature (SAS) named SAS1 as shown in the following exhibit:\n\n![Exhibit](img/S135-stem-1.png){w=611}\n\nTo answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "If on September 2, 2018, you run Microsoft Azure Storage Explorer on a computer that has an IP address of 193.77.134.1, and you use SAS1 to connect to the storage account, you [answer choice].",
+        "options": [
+          "will be prompted for credentials",
+          "will have no access",
+          "will have read, write, and list access",
+          "will have read-only access"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "If on September 10, 2018, you run the net use command on a computer that has an IP address of 193.77.134.50, and you use SAS1 as the password to connect to share1, you [answer choice].",
+        "options": [
+          "will be prompted for credentials",
+          "will have no access",
+          "will have read, write, and list access",
+          "will have read-only access"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O IP 193.77.134.1 está **fora** do intervalo permitido (…134.10–…134.50): **sem acesso**. O **net use** (SMB) não aceita SAS como senha (usa a chave da conta ou identidade), então a conexão falha. O dump dava leitura/gravação/listagem no segundo caso; a comunidade aponta que o SMB não autentica com SAS.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1",
+      "https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows"
+    ]
+  },
+  {
+    "id": "Q136",
+    "src": 136,
+    "domain": 5,
+    "topic": "Trocar vault de backup",
+    "type": "single",
+    "stem": "You have two Azure virtual machines named VM1 and VM2. You have two Recovery Services vaults named RSV1 and RSV2.\n\nVM2 is backed up to RSV1.\n\nYou need to back up VM2 to RSV2.\n\nWhat should you do first?",
+    "options": [
+      "From the RSV1 blade, click Backup items and stop the VM2 backup",
+      "From the RSV2 blade, click Backup. From the Backup blade, select the backup for the virtual machine, and then click Backup",
+      "From the VM2 blade, click Disaster recovery, click Replication settings, and then select RSV2 as the Recovery Services vault",
+      "From the RSV1 blade, click Backup Jobs and export the VM2 job"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma VM só pode estar protegida por um vault. Primeiro **pare o backup da VM2 no RSV1** (Backup items); depois configure-a no RSV2.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
+    ]
+  },
+  {
+    "id": "Q137",
+    "src": 137,
+    "domain": 2,
+    "topic": "Redundância — GPv1",
+    "type": "single",
+    "stem": "You have a general-purpose v1 Azure Storage account named storage1 that uses locally-redundant storage (LRS).\n\nYou need to ensure that the data in the storage account is protected if a zone fails. The solution must minimize costs and administrative effort. What should you do first?",
+    "options": [
+      "Create a new storage account.",
+      "Configure object replication rules.",
+      "Upgrade the account to general-purpose v2.",
+      "Modify the Replication setting of storage1."
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "GPv1 não suporta ZRS. O mais barato e simples é **atualizar para GPv2** e depois mudar a replicação para ZRS.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+    ]
+  },
+  {
+    "id": "Q138",
+    "src": 138,
+    "domain": 2,
+    "topic": "Lifecycle management",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S138-stem-1.png){w=572}\n\nYou plan to manage the data stored in the accounts by using lifecycle management rules.\n\nTo which storage accounts can you apply lifecycle management rules?",
+    "options": [
+      "storage1 only",
+      "storage1 and storage2 only",
+      "storage3 and storage4 only",
+      "storage1, storage2, and storage3 only",
+      "storage1, storage2, storage3, and storage4"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Lifecycle management funciona em **GPv2, BlobStorage e BlockBlobStorage (Premium)**. FileStorage (só Azure Files) não tem blobs.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal"
+    ]
+  },
+  {
+    "id": "Q139",
+    "src": 139,
+    "domain": 2,
+    "topic": "Azure Files — SMB",
+    "type": "single",
+    "stem": "You create an Azure Storage account named contosostorage.\n\nYou plan to create a file share named data.\n\nUsers need to map a drive to the data file share from home computers that run Windows 10.\n\nWhich outbound port should you open between the home computers and the data file share?",
+    "options": [
+      "80",
+      "443",
+      "445",
+      "3389"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Mapear unidade de um file share usa **SMB na porta TCP 445** (muitos ISPs bloqueiam essa porta).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows"
+    ]
+  },
+  {
+    "id": "Q141",
+    "src": 141,
+    "domain": 2,
+    "topic": "Interpretar template de storage",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains an Azure Storage account named storageaccount1.\n\nYou export storageaccount1 as an Azure Resource Manager template. The template contains the following sections.\n\n![Exhibit](img/S141-stem-1.png){w=581}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point",
+    "statements": [
+      "A server that has a public IP address of 131.107.103.10 can access storageaccount1.",
+      "Individual blobs in storageaccount1 can be set to use the archive tier.",
+      "Global administrators in Azure Active Directory (Azure AD) can access a file share hosted in storageaccount1 by using their Azure AD credentials."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**defaultAction: Allow** sem regras = acesso de qualquer IP público. Contas **StorageV2** permitem pôr blobs individuais no tier **Archive**. Acesso a file shares com credenciais do Entra exige **acesso por identidade** configurado, que o template não tem.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?"
+    ]
+  },
+  {
+    "id": "Q142",
+    "src": 142,
+    "domain": 2,
+    "topic": "AzCopy — plataformas",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. You have the devices shown in the following table.\n\n![Exhibit](img/S142-stem-1.png){w=534}\n\nFrom which devices can you use AzCopy to copy data to storage1?",
+    "options": [
+      "Device 1 only",
+      "Device1, Device2 and Device3",
+      "Device1 and Device2 only",
+      "Device1 and Device3 only"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "AzCopy v10 é um executável único para **Windows, Linux e macOS**. Os três dispositivos servem."
+  },
+  {
+    "id": "Q143",
+    "src": 143,
+    "domain": 2,
+    "topic": "Armazenamento imutável",
+    "type": "single",
+    "stem": "You have an Azure Storage account named storage1 that contains a blob container named container1.\n\nYou need to prevent new content added to container1 from being modified for one year.\n\nWhat should you configure?",
+    "options": [
+      "the access tier",
+      "an access policy",
+      "the Access control (IAM) settings",
+      "the access level"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Impedir alterações por um ano = **política de retenção baseada em tempo** (immutability policy), configurada em **Access policy** do container. Access tier, IAM e access level não bloqueiam modificações.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/immutable-storage-overview?"
+    ]
+  },
+  {
+    "id": "Q144",
+    "src": 144,
+    "domain": 2,
+    "topic": "Lifecycle management",
+    "type": "yesno",
+    "stem": "You have an Azure Storage account named storage1 that contains a blob container. The blob container has a default access tier of Hot. Storage1 contains a container named conainer1.\n\nYou create lifecycle management rules in storage1 as shown in the following table.\n\n![Exhibit](img/S144-stem-1.png){w=611}\n\nYou perform the actions shown in the following table.\n\n![Exhibit](img/S144-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "On October 10, you can read Dep1File1.docx.",
+      "On October 10, you can read File2.docx.",
+      "On October 10, you can read File3.docx."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "answer_original": [
+      true,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Dep1File1 (editado em 2/10) cai na Rule1 (prefixo container1/Dep1) e vai para **Archive** após 2 dias: em 10/10 está arquivado e **não pode ser lido** sem reidratação. File2 (editado em 5/10) e File3 (2/10) seguem a Rule2: em 10/10 estão em **Cool** (Archive só após 9 dias), e dá para ler. O dump marcava Sim nos três."
+  },
+  {
+    "id": "Q145",
+    "src": 145,
+    "domain": 2,
+    "topic": "Acesso a blobs pelo portal com Entra ID",
+    "type": "multi",
+    "stem": "You are configuring Azure Active Directory (Azure AD) authentication for an Azure Storage account named storage1.\n\nYou need to ensure that the members of a group named Group1 can upload files by using the Azure portal. The solution must use the principle of least privilege. Which two roles should you configure for storage1? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Storage Account Contributor",
+      "Storage Blob Data Contributor",
+      "Reader",
+      "Contributor",
+      "Storage Blob Data Reader"
+    ],
+    "answer": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para enviar blobs pelo portal com Entra ID: uma função **de dados** (**Storage Blob Data Contributor**) e **Reader** (plano de controle) para navegar até o storage account no portal. É o menor privilégio.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access"
+    ]
+  },
+  {
+    "id": "Q146",
+    "src": 146,
+    "domain": 2,
+    "topic": "Object replication",
+    "type": "hotarea",
+    "stem": "You have an Azure Storage account named storage1 that stores images. You need to create a new storage account and replicate the images in storage1 to the new account by using object replication.\n\nHow should you configure the new account? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Account type:",
+        "options": [
+          "StorageV2 only",
+          "StorageV2 or FileStorage only",
+          "StorageV2 or BlobStorage only",
+          "StorageV2, BlobStorage, or FileStorage"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Object type to create in the new account:",
+        "options": [
+          "Container",
+          "File share",
+          "Table",
+          "Queue"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Object replication exige contas **StorageV2 ou Premium block blob (BlobStorage)** com versionamento, e replica **containers** (de origem para destino). Na conta nova, crie o **container** de destino.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+    ]
+  },
+  {
+    "id": "Q147",
+    "src": 147,
+    "domain": 2,
+    "topic": "AzCopy copy",
+    "type": "single",
+    "stem": "You have an on-premises server that contains a folder named D:\\Folder1. You need to copy the contents of D:\\Folder1 to the public container in an Azure Storage account named contosodata.\n\nWhich command should you run?",
+    "options": [
+      "https://contosodata.blob.core.windows.net/public",
+      "azcopy sync D:\\folder1 https://contosodata.blob.core.windows.net/public --snapshot",
+      "azcopy copy D:\\folder1 https://contosodata.blob.core.windows.net/public --recursive",
+      "az storage blob copy start-batch D:\\Folder1 https://contosodata.blob.core.windows.net/public"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**azcopy copy <origem> <URL do container> --recursive** copia a pasta e as subpastas para o container. azcopy sync com --snapshot não existe nesse contexto; az storage blob copy copia entre blobs, não do disco local.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs",
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy-copy"
+    ]
+  },
+  {
+    "id": "Q148",
+    "src": 148,
+    "domain": 2,
+    "topic": "Tipos de storage account",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nIn the Azure portal, you plan to create a storage account named storage1 that will have the following settings:\n\n- Performance: Standard\n- Replication: Zone-redundant storage (ZRS)\n- Access tier (default): Cool\n- Hierarchical namespace: Disabled\n\nYou need to ensure that you can set Account kind for storage1 to BlockBlobStorage.\n\nWhich setting should you modify first?",
+    "options": [
+      "Performance",
+      "Replication",
+      "Access tier (default)",
+      "Hierarchical namespace"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**BlockBlobStorage** é um tipo **Premium**. Primeiro mude **Performance** para Premium; depois escolha o account kind Premium block blobs.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-performance-tiers"
+    ]
+  },
+  {
+    "id": "Q149",
+    "src": 149,
+    "domain": 2,
+    "topic": "AzCopy — blob para Files",
+    "type": "match",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S149-stem-1.png){w=611}\n\nYou plan to use AzCopy to copy a blob from container1 directly to share1. You need to identify which authentication method to use when you use AzCopy. What should you identify for each account? To answer, drag the appropriate authentication methods to the correct accounts. Each method may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "pool": [
+      "OAuth",
+      "Anonymous",
+      "A storage account access key",
+      "A shared access signature (SAS) token"
+    ],
+    "targets": [
+      {
+        "label": "storage1:",
+        "answer": 3
+      },
+      {
+        "label": "storage2:",
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Na cópia **serviço a serviço** de blob para Azure Files, o AzCopy autoriza a **origem** e o **destino** com **SAS**. Files tradicionalmente só aceitava SAS; versões recentes ampliaram o suporte a Entra ID.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10"
+    ]
+  },
+  {
+    "id": "Q150",
+    "src": 150,
+    "domain": 2,
+    "topic": "Encryption scopes",
+    "type": "single",
+    "stem": "You create an Azure Storage account.\n\nYou plan to add 10 blob containers to the storage account.\n\nFor one of the containers, you need to use a different key to encrypt data at rest.\n\nWhat should you do before you create the container?",
+    "options": [
+      "Generate a shared access signature (SAS).",
+      "Modify the minimum TLS version.",
+      "Rotate the access keys.",
+      "Create an encryption scope."
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para usar outra chave em um container, crie antes um **encryption scope** e selecione-o como padrão na criação do container.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview"
+    ]
+  },
+  {
+    "id": "Q154",
+    "src": 154,
+    "domain": 5,
+    "topic": "Alerta por eventos da VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SYSLOGALERT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1 that runs Windows Server 2016. You need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure storage account and configure shared access signatures (SASs). You install the Microsoft Monitoring Agent on VM1. You create an alert in Azure Monitor and specify the storage account as the source. Does that meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Alertas sobre eventos do Windows exigem coletar os eventos em um **Log Analytics workspace** e criar um alerta de **log** sobre ele. Storage account não serve de fonte. Hoje o agente é o **Azure Monitor Agent** com DCR (o MMA foi aposentado).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agents-overview"
+    ]
+  },
+  {
+    "id": "Q155",
+    "src": 155,
+    "domain": 3,
+    "topic": "Mover VM para outra VNet",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1. Subscription1 contains the resources in the following table.\n\n![Exhibit](img/S155-stem-1.png){w=394}\n\nVNet1 is in RG1. VNet2 is in RG2. There is no connectivity between VNet1 and VNet2.\n\nAn administrator named Admin1 creates an Azure virtual machine named VM1 in RG1. VM1 uses a disk named Disk1 and connects to VNet1. Admin1 then installs a custom application in VM1.\n\nYou need to move the custom application to VNet2. The solution must minimize administrative effort.\n\nWhich two actions should you perform? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "First action:",
+        "options": [
+          "Create a network interface in RG2.",
+          "Detach a network interface.",
+          "Delete VM1.",
+          "Move a network interface to RG2."
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Second action:",
+        "options": [
+          "Attach a network interface.",
+          "Create a network interface in RG2.",
+          "Create a new virtual machine.",
+          "Move VM1 to RG2."
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Não dá para trocar a VNet de uma VM. **Exclua a VM1** mantendo o Disk1 e **crie uma nova VM** na VNet2 anexando o disco existente (com a aplicação instalada).",
+    "refs": [
+      "https://blogs.technet.microsoft.com/canitpro/2014/06/16/step-by-step-move-a-vm-to-a-different-vnet-on-azure/",
+      "https://4sysops.com/archives/move-an-azure-vm-to-another-virtual-network-vnet/#migrate-an-azure-vm-between-vnets"
+    ]
+  },
+  {
+    "id": "Q156",
+    "src": 156,
+    "domain": 3,
+    "topic": "Senha em templates ARM",
+    "type": "single",
+    "stem": "You download an Azure Resource Manager template based on an existing virtual machine. The template will be used to deploy 100 virtual machines. You need to modify the template to reference an administrative password. You must prevent the password from being stored in plain text.\n\nWhat should you create to store the password?",
+    "options": [
+      "an Azure Key Vault and an access policy",
+      "an Azure Storage account and an access policy",
+      "a Recovery Services vault and a backup policy",
+      "Azure Active Directory (AD) Identity Protection and an Azure policy"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Guarde a senha como **segredo no Key Vault** (com acesso liberado para implantação de templates) e referencie o segredo no arquivo de parâmetros. Assim ela nunca fica em texto puro.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/resources/templates/101-vm-secure-password/"
+    ]
+  },
+  {
+    "id": "Q157",
+    "src": 157,
+    "domain": 3,
+    "topic": "App Service plan — SO e região",
+    "type": "hotarea",
+    "stem": "You have the App Service plans shown in the following table.\n\n![Exhibit](img/S157-stem-1.png){w=611}\n\nYou plan to create the Azure web apps shown in the following table.\n\n![Exhibit](img/S157-stem-2.png){w=611}\n\nYou need to identify which App Service plans can be used for the web apps. What should you identify? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "WebApp1:",
+        "options": [
+          "ASP1 only",
+          "ASP3 only",
+          "ASP1 and ASP2 only",
+          "ASP1 and ASP3 only",
+          "ASP1, ASP2, and ASP3"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "WebApp2:",
+        "options": [
+          "ASP1 only",
+          "ASP3 only",
+          "ASP1 and ASP2 only",
+          "ASP1 and ASP3 only",
+          "ASP1, ASP2, and ASP3"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O app roda na região do plano. WebApp1 (.NET Core, West US) cabe em plano **Windows ou Linux de West US**: ASP1 e ASP3. WebApp2 (ASP.NET 4.7) só roda em **Windows**: ASP1.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore?",
+      "https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage#"
+    ]
+  },
+  {
+    "id": "Q158",
+    "src": 158,
+    "domain": 3,
+    "topic": "VMSS — autoscale",
+    "type": "hotarea",
+    "stem": "You create a virtual machine scale set named Scale1. Scale1 is configured as shown in the following exhibit.\n\n![Exhibit](img/S158-stem-1.png){w=597}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "If Scale1 is utilized at 85 percent for six minutes after it is deployed, Scale1 will be running [answer choice].",
+        "options": [
+          "2 virtual machines",
+          "4 virtual machines",
+          "6 virtual machines",
+          "10 virtual machines",
+          "20 virtual machines"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "If Scale1 is first utilized at 25 percent for six minutes after it is deployed, and then utilized at 50 percent for six minutes, Scale1 will be running [answer choice].",
+        "options": [
+          "2 virtual machines",
+          "4 virtual machines",
+          "6 virtual machines",
+          "8 virtual machines",
+          "10 virtual machines"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Começa com 4. CPU 85% por mais de 5 min → **+2 = 6**. CPU 25% → **−4**, mas o mínimo é 2, então fica em **2**; depois, 50% não dispara nenhuma regra.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-overview",
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-best-practices",
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-common-scale-patterns"
+    ]
+  },
+  {
+    "id": "Q159",
+    "src": 159,
+    "domain": 3,
+    "topic": "VMSS — extensões",
+    "type": "multi",
+    "stem": "You plan to automate the deployment of a virtual machine scale set that uses the Windows Server 2016 Datacenter image.\n\nYou need to ensure that when the scale set virtual machines are provisioned, they have web server components installed.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Upload a configuration script",
+      "Create an automation account",
+      "Create an Azure policy",
+      "Modify the extensionProfile section of the Azure Resource Manager template",
+      "Create a new virtual machine scale set in the Azure portal"
+    ],
+    "answer": [
+      0,
+      3
+    ],
+    "answer_original": [
+      3,
+      4
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para instalar componentes ao provisionar instâncias do scale set: **envie o script/configuração** (Custom Script ou DSC) e referencie-o no **extensionProfile** do template. Criar um scale set novo no portal não é parte da automação. O dump marcava D e E.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-dsc"
+    ]
+  },
+  {
+    "id": "Q162",
+    "src": 162,
+    "domain": 3,
+    "topic": "Templates ARM — location",
+    "type": "single",
+    "stem": "You have an Azure Resource Manager template named Template1 that is used to deploy an Azure virtual machine.\n\nTemplate1 contains the following text:\n\n![Exhibit](img/S162-stem-1.png){w=207}\n\nThe variables section in Template1 contains the following text:\n\n\"location\": \"westeurope\"\n\nThe resources section in Template1 contains the following text:\n\n![Exhibit](img/S162-stem-2.png){w=351}\n\nYou need to deploy the virtual machine to the West US location by using Template1.\n\nWhat should you do?",
+    "options": [
+      "Modify the location in the resources section to westus",
+      "Select West US during the deployment",
+      "Modify the location in the variables section to westus"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O recurso tem \"location\": \"westeurope\" **fixo** (não usa o parâmetro nem a variável). Para implantar em West US, altere a location na seção **resources** (ou faça-a referenciar o parâmetro)."
+  },
+  {
+    "id": "Q163",
+    "src": 163,
+    "domain": 3,
+    "topic": "Deployment slots",
+    "type": "single",
+    "stem": "You create an App Service plan named Plan1 and an Azure web app named webapp1.\n\nYou discover that the option to create a staging slot is unavailable. You need to create a staging slot for Plan1.\n\nWhat should you do first?",
+    "options": [
+      "From Plan1, scale up the App Service plan",
+      "From webapp1, modify the Application settings",
+      "From webapp1, add a custom domain",
+      "From Plan1, scale out the App Service plan"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Slots exigem plano **Standard, Premium ou Isolated**. Se a opção não aparece, faça **scale up** do App Service plan.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up"
+    ]
+  },
+  {
+    "id": "Q164",
+    "src": 164,
+    "domain": 3,
+    "topic": "Availability sets — manutenção",
+    "type": "single",
+    "stem": "You plan to move a distributed on-premises app named App1 to an Azure subscription.\n\nAfter the planned move, App1 will be hosted on several Azure virtual machines. You need to ensure that App1 always runs on at least eight virtual machines during planned Azure maintenance.\n\nWhat should you create?",
+    "options": [
+      "one virtual machine scale set that has 10 virtual machines instances",
+      "one Availability Set that has three fault domains and one update domain",
+      "one Availability Set that has 10 update domains and one fault domain",
+      "one virtual machine scale set that has 12 virtual machines instances"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Manutenção planejada reinicia **um update domain por vez**. Com 10 VMs distribuídas em 10 update domains, no máximo 1 fica fora, e pelo menos 8 seguem rodando. Parte da comunidade defende o scale set (até 20% das instâncias em atualização).",
+    "refs": [
+      "http://www.thatlazyadmin.com/azure-fault-update-domains/"
+    ]
+  },
+  {
+    "id": "Q165",
+    "src": 165,
+    "domain": 5,
+    "topic": "Alerta por eventos da VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SYSLOGALERT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1 that runs Windows Server 2016. You need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an event subscription on VM1. You create an alert in Azure Monitor and specify VM1 as the source\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Event subscription (Event Grid) não coleta o log de eventos do Windows. É preciso enviar os eventos a um **Log Analytics workspace** (agente + DCR) e criar um alerta de log.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agents-overview"
+    ]
+  },
+  {
+    "id": "Q166",
+    "src": 166,
+    "domain": 3,
+    "topic": "Redeploy de VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "REDEPLOY"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\n\nYou receive a notification that VM1 will be affected by maintenance. You need to move VM1 to a different host immediately.\n\nSolution: From the Overview blade, you move the virtual machine to a different subscription.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Mover a VM para outra assinatura não muda o host físico. Para sair do host em manutenção, use **Redeploy**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/redeploy-to-new-node"
+    ]
+  },
+  {
+    "id": "Q167",
+    "src": 167,
+    "domain": 3,
+    "topic": "Redeploy de VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "REDEPLOY"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\n\nYou receive a notification that VM1 will be affected by maintenance. You need to move VM1 to a different host immediately.\n\nSolution: From the Redeploy blade, you click Redeploy.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Redeploy** move a VM para um novo nó da infraestrutura e a liga de novo, mantendo a configuração (o disco temporário é perdido).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/redeploy-to-new-node"
+    ]
+  },
+  {
+    "id": "Q168",
+    "src": 168,
+    "domain": 3,
+    "topic": "Redeploy de VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "REDEPLOY"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\n\nYou receive a notification that VM1 will be affected by maintenance. You need to move VM1 to a different host immediately.\n\nSolution: From the Update management blade, you click Enable.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Update management cuida de patches do SO; não move a VM de host. Use **Redeploy**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/redeploy-to-new-node"
+    ]
+  },
+  {
+    "id": "Q169",
+    "src": 169,
+    "domain": 3,
+    "topic": "Domínio personalizado no App Service",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a web app named webapp1. You need to add a custom domain named www.contoso.com to webapp1. What should you do first?",
+    "options": [
+      "Create a DNS record",
+      "Add a connection string",
+      "Upload a certificate.",
+      "Stop webapp1."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Primeiro crie o registro **DNS** (CNAME, ou A + TXT de verificação). Depois adicione o custom domain no web app.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/Azure/app-service/app-service-web-tutorial-custom-domain"
+    ]
+  },
+  {
+    "id": "Q170",
+    "src": 170,
+    "domain": 4,
+    "topic": "Mudar VM de VNet",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "VMVNET"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S170-stem-1.png){w=446}\n\nVM1 connects to VNET1.\n\nYou need to connect VM1 to VNET2.\n\nSolution: You move VM1 to RG2, and then you add a new network interface to VM1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A VM1 está em West US e a VNET2 em East Asia. Uma NIC só se conecta a VNet **da mesma região**, e mover de RG não muda a região. É preciso **recriar a VM** em East Asia.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/network-overview"
+    ]
+  },
+  {
+    "id": "Q171",
+    "src": 171,
+    "domain": 4,
+    "topic": "Mudar VM de VNet",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "VMVNET"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S171-stem-1.png){w=558}\n\nVM1 connects to VNET1.\n\nYou need to connect VM1 to VNET2.\n\nSolution: You delete VM1. You recreate VM1, and then you create a new network interface for VM1 and connect it to VNET2.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Não dá para trocar a VNet de uma VM, e a VNET2 está em outra região. A solução é **excluir e recriar a VM1** com uma NIC na VNET2 (mantendo os discos, se quiser).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/network-overview"
+    ]
+  },
+  {
+    "id": "Q172",
+    "src": 172,
+    "domain": 4,
+    "topic": "Mudar VM de VNet",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "VMVNET"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S172-stem-1.png){w=558}\n\nVM1 connects to VNET1.\n\nYou need to connect VM1 to VNET2.\n\nSolution: You turn off VM1, and then you add a new network interface to VM1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Todas as NICs de uma VM precisam estar na **mesma VNet** (e região) da VM. Adicionar outra NIC com ela desligada não a liga à VNET2.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/network-overview"
+    ]
+  },
+  {
+    "id": "Q173",
+    "src": 173,
+    "domain": 3,
+    "topic": "Cotas de vCPU",
+    "type": "yesno",
+    "stem": "You have an Azure subscription named Subscription1 that contains the quotas shown in the following table.\n\n![Exhibit](img/S173-stem-1.png){w=611}\n\nYou deploy virtual machines to Subscription1 as shown in the following table.\n\n![Exhibit](img/S173-stem-2.png){w=607}\n\nYou plan to deploy the virtual machines shown in the following table.\n\n![Exhibit](img/S173-stem-3.png){w=497}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can deploy VM3 to West US.",
+      "You can deploy VM4 to West US.",
+      "You can deploy VM5 to West US."
+    ],
+    "answer": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A cota regional conta os vCPUs de VMs **alocadas e desalocadas**: VM1 (2) + VM2 (16) = 18 de 20. Cabe só +2: VM3 (1 vCPU) **sim**; VM4 (4) e VM5 (16) estouram a cota total regional.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quotas"
+    ]
+  },
+  {
+    "id": "Q174",
+    "src": 174,
+    "domain": 3,
+    "topic": "Availability set — FD/UD",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains an Azure Availability Set named WEBPROD-AS-USE2 as shown in the following exhibit.\n\n![Exhibit](img/S174-stem-1.png){w=611}\n\nYou add 14 virtual machines to WEBPROD-AS-USE2.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "When Microsoft performs planned maintenance in East US 2, the maximum number of unavailable virtual machines will be [answer choice].",
+        "options": [
+          "2",
+          "7",
+          "10",
+          "14"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "If the server rack in the Azure datacenter that hosts WEBPROD-AS-USE2 experiences a power failure, the maximum number of unavailable virtual machines will be [answer choice].",
+        "options": [
+          "2",
+          "7",
+          "10",
+          "14"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "14 VMs em **10 update domains**: 4 UDs com 2 VMs e 6 com 1. Na manutenção, um UD por vez = no máximo **2** fora. Com **2 fault domains**, as VMs se dividem 7/7, e a falha de um rack derruba até **7**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/manage-availability"
+    ]
+  },
+  {
+    "id": "Q176",
+    "src": 176,
+    "domain": 3,
+    "topic": "App Service plan",
+    "type": "single",
+    "stem": "You have a deployment template named Template1 that is used to deploy 10 Azure web apps.\n\nYou need to identify what to deploy before you deploy Template1. The solution must minimize Azure costs.\n\nWhat should you identify?",
+    "options": [
+      "five Azure Application Gateways",
+      "one App Service plan",
+      "10 App Service plans",
+      "one Azure Traffic Manager",
+      "one Azure Application Gateway"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Web apps rodam em um **App Service plan**, e vários apps podem compartilhar o mesmo plano. Para minimizar custo: **um plano** antes de implantar o template.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+    ]
+  },
+  {
+    "id": "Q177",
+    "src": 177,
+    "domain": 3,
+    "topic": "ACI — template",
+    "type": "hotarea",
+    "stem": "You plan to deploy an Azure container instance by using the following Azure Resource Manager template.\n\n![Exhibit](img/S177-stem-1.png){w=402}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the template.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Internet users [answer choice].",
+        "options": [
+          "can connect to the container from any device",
+          "cannot connect to the container",
+          "can only connect to the container from devices that run Windows"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "If Internet Information Services (IIS) in the container fails, [answer choice].",
+        "options": [
+          "the container will restart automatically",
+          "the container will only restart manually",
+          "the container must be redeployed"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "IP **público** sem restrição: usuários da internet acessam de **qualquer dispositivo** (o SO do container não importa para o cliente). **restartPolicy: OnFailure** reinicia o container automaticamente se o processo falhar."
+  },
+  {
+    "id": "Q178",
+    "src": 178,
+    "domain": 3,
+    "topic": "Redimensionar VM",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1. VM1 hosts a line-of-business application that is available 24 hours a day. VM1 has one network interface and one managed disk. VM1 uses the D4s v3 size. You plan to make the following changes to VM1:\n\n- Change the size to D8s v3.\n- Add a 500-GB managed disk.\n- Add the Puppet Agent extension.\n- Enable Desired State Configuration Management.\n\nWhich change will cause downtime for VM1?",
+    "options": [
+      "Enable Desired State Configuration Management",
+      "Add a 500-GB managed disk",
+      "Change the size to D8s v3",
+      "Add the Puppet Agent extension"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Mudar o tamanho** reinicia a VM (e, se o tamanho não existir no cluster, exige desalocar), então causa indisponibilidade. Disco de dados e extensões são adicionados com a VM ligada.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/blog/resize-virtual-machines/"
+    ]
+  },
+  {
+    "id": "Q179",
+    "src": 179,
+    "domain": 3,
+    "topic": "Deployment slots",
+    "type": "multi",
+    "stem": "You have an app named App1 that runs on an Azure web app named webapp1. The developers at your company upload an update of App1 to a Git repository named Git1.\n\nWebapp1 has the deployment slots shown in the following table.\n\n![Exhibit](img/S179-stem-1.png){w=494}\n\nYou need to ensure that the App1 update is tested before the update is made available to users.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Swap the slots",
+      "Deploy the App1 update to webapp1-prod, and then test the update",
+      "Stop webapp1-prod",
+      "Deploy the App1 update to webapp1-test, and then test the update",
+      "Stop webapp1-test"
+    ],
+    "answer": [
+      0,
+      3
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Implante a atualização no slot **webapp1-test**, teste e depois faça **swap** com produção. O swap aquece as instâncias antes de trocar."
+  },
+  {
+    "id": "Q180",
+    "src": 180,
+    "domain": 4,
+    "topic": "Flow logs",
+    "type": "multi",
+    "stem": "You have an Azure subscription named Subscription1 that has the following providers registered:\n\n- Authorization\n- Automation\n- Resources\n- Compute\n- KeyVault\n- Network\n- Storage\n- Billing\n- Web\n\nSubscription1 contains an Azure virtual machine named VM1 that has the following configurations:\n\n- Private IP address: 10.0.0.4 (dynamic)\n- Network security group (NSG): NSG1\n- Public IP address: None\n- Availability set: AVSet\n- Subnet: 10.0.0.0/24\n- Managed disks: No\n- Location: East US\n\nYou need to record all the successful and failed connection attempts to VM1. Which three actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Enable Azure Network Watcher in the East US Azure region.",
+      "Add an Azure Network Watcher connection monitor.",
+      "Register the MicrosoftLogAnalytics provider.",
+      "Create an Azure Storage account.",
+      "Register the Microsoft.Insights resource provider.",
+      "Enable Azure Network Watcher flow logs."
+    ],
+    "answer": [
+      3,
+      4,
+      5
+    ],
+    "answer_original": [
+      0,
+      4,
+      5
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Para registrar as conexões aceitas e negadas: Network Watcher na região (hoje habilitado automaticamente), provedor **Microsoft.Insights** registrado, **storage account** para os logs e os **flow logs** habilitados. NSG flow logs estão sendo substituídos por **VNet flow logs**. O dump marcava A, E e F.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal"
+    ]
+  },
+  {
+    "id": "Q181",
+    "src": 181,
+    "domain": 3,
+    "topic": "VMSS — orquestração",
+    "type": "single",
+    "stem": "You need to deploy an Azure virtual machine scale set that contains five instances as quickly as possible.\n\nWhat should you do?",
+    "options": [
+      "Deploy five virtual machines. Modify the Availability Zones settings for each virtual machine.",
+      "Deploy five virtual machines. Modify the Size setting for each virtual machine.",
+      "Deploy one virtual machine scale set that is set to VM (virtual machines) orchestration mode.",
+      "Deploy one virtual machine scale set that is set to ScaleSetVM orchestration mode."
+    ],
+    "answer": 3,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Criar um scale set com 5 instâncias de uma vez é mais rápido que 5 VMs avulsas. No modo **Uniform (ScaleSetVM)** as instâncias são criadas a partir do modelo. Hoje o padrão do portal é o modo **Flexible**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/orchestration-modes"
+    ]
+  },
+  {
+    "id": "Q182",
+    "src": 182,
+    "domain": 3,
+    "topic": "App Service plan — SO",
+    "type": "single",
+    "stem": "You plan to create the Azure web apps shown in the following table.\n\n![Exhibit](img/S182-stem-1.png){w=382}\n\nWhat is the minimum number of App Service plans you should create for the web apps?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Um plano é **Windows ou Linux**. ASP.NET 4.8 só roda em Windows e Ruby só em Linux, então são necessários **2 planos** (.NET Core e PHP entram em qualquer um). O dump marcava 1."
+  },
+  {
+    "id": "Q183",
+    "src": 183,
+    "domain": 1,
+    "topic": "Budgets",
+    "type": "hotarea",
+    "stem": "You have a pay-as-you-go Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S183-stem-1.png){w=611}\n\nYou create the budget shown in the following exhibit.\n\n![Exhibit](img/S183-stem-2.png){w=611}\n\nThe AG1 action group contains a user named User1@contoso.com only. Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.",
+    "slots": [
+      {
+        "label": "When the maximum amount in Budget1 is reached, [answer choice].",
+        "options": [
+          "VM1 and VM2 are turned off",
+          "VM1 and VM2 continue to run",
+          "VM1 is turned off, and VM2 continues to run"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Based on the current usage costs of the virtual machines, [answer choice].",
+        "options": [
+          "no email notifications will be sent each month",
+          "one email notification will be sent each month",
+          "two email notifications will be sent each month",
+          "three email notifications will be sent each month"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Budgets **só notificam**; não desligam recursos (sem automação extra). O escopo é o RG1: só a VM1 (~20 €/dia ≈ 600 €/mês) conta. Atinge 50% (500 €), mas não 70% (700 €): **um e-mail** por mês, ao AG1.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending",
+      "https://docs.microsoft.com/en-gb/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
+    ]
+  },
+  {
+    "id": "Q184",
+    "src": 184,
+    "domain": 3,
+    "topic": "Histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RGCREATED"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\n\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the Subscriptions blade, you select the subscription, and then click Programmatic deployment.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Programmatic deployment (termos do Marketplace) não mostra quando os recursos foram criados. Use **RG1 > Deployments**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell"
+    ]
+  },
+  {
+    "id": "Q185",
+    "src": 185,
+    "domain": 4,
+    "topic": "Mudar VM de VNet",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "VMVNET"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S185-stem-1.png){w=446}\n\nVM1 connects to VNET1.\n\nYou need to connect VM1 to VNET2.\n\nSolution: You create a new network interface, and then you add the network interface to VM1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma NIC nova na VNET2 (em outra região) não pode ser anexada à VM1. É preciso recriar a VM.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/network-overview"
+    ]
+  },
+  {
+    "id": "Q187",
+    "src": 187,
+    "domain": 1,
+    "topic": "Mover recursos e locks",
+    "type": "yesno",
+    "stem": "You have Azure subscriptions named Subscription1 and Subscription2. Subscription1 has following resource groups:\n\n![Exhibit](img/S187-stem-1.png){w=320}\n\nRG1 includes a web app named App1 in the West Europe location. Subscription2 contains the following resource groups:\n\n![Exhibit](img/S187-stem-2.png){w=386}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "App1 can be moved to RG2.",
+      "App1 can be moved to RG3.",
+      "App1 can be moved to RG4."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O lock **ReadOnly** no RG2 impede gravar nele, então o move falha. O lock **Delete** no RG3 só impede exclusão; o move para lá é permitido. Mover o web app para outra assinatura/RG não muda sua região (West Europe), por isso RG3 e RG4 aceitam.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/manage-move-across-regions",
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-limitations/app-service-move-limitations"
+    ]
+  },
+  {
+    "id": "Q188",
+    "src": 188,
+    "domain": 1,
+    "topic": "Azure Policy — append tag",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1 that contains the following resource group:\n\n- Name: RG1\n- Region: West US\n- Tag: `tag1`: `value1`\n\nYou assign an Azure policy named Policy1 to Subscription1 by using the following configurations:\n\n- Exclusions: None\n- Policy definition: Append a tag and its value to resources\n- Assignment name: Policy1\n- Parameters:\n- Tag name: tag2\n\nTag value: value2 -\n\nAfter Policy1 is assigned, you create a storage account that has the following configuration:\n\n- Name: storage1\n- Location: West US\n- Resource group: RG1\n- Tags: `tag3`: `value3`\n\nYou need to identify which tags are assigned to each resource. What should you identify? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Tags assigned to RG1:",
+        "options": [
+          "\"tag1\": \"value1\" only",
+          "\"tag2\": \"value2\" only",
+          "\"tag1\": \"value1\" and \"tag2\": \"value2\""
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Tags assigned to storage1:",
+        "options": [
+          "\"tag3\": \"value3\" only",
+          "\"tag1\": \"value1\" and \"tag3\": \"value3\" only",
+          "\"tag2\": \"value2\" and \"tag3\": \"value3\" only",
+          "\"tag1\": \"value1\", \"tag2\": \"value2\", and \"tag3\": \"value3\""
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "*Append a tag and its value to resources* atinge **recursos criados ou atualizados** depois da atribuição, não resource groups: o RG1 fica só com tag1. O storage1 recebe tag2 da política além da sua tag3. Tags do RG **não são herdadas**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags"
+    ]
+  },
+  {
+    "id": "Q189",
+    "src": 189,
+    "domain": 5,
+    "topic": "Action groups — limites",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1.\n\nIn Subscription1, you create an alert rule named Alert1.\n\nThe Alert1 action group is configured as shown in the following exhibit.\n\n![Exhibit](img/S189-stem-1.png){w=611}\n\nAlert1 alert criteria triggered every minute.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The number of email messages that Alert1 will send in an hour is [answer choice].",
+        "options": [
+          "0",
+          "4",
+          "6",
+          "12",
+          "60"
+        ],
+        "answer": 4
+      },
+      {
+        "label": "The number of SMS messages that Alert1 will send in an hour is [answer choice].",
+        "options": [
+          "0",
+          "4",
+          "6",
+          "12",
+          "60"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Os limites de taxa são por destinatário: **SMS no máximo 1 a cada 5 minutos** (12/hora) e e-mail até 100/hora. Alertas a cada minuto geram **60 e-mails** e **12 SMS** por hora.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-rate-limiting"
+    ]
+  },
+  {
+    "id": "Q190",
+    "src": 190,
+    "domain": 5,
+    "topic": "Recovery Services vault — região",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1 that contains the resources shown in the following table.\n\n![Exhibit](img/S190-stem-1.png){w=562}\n\nYou create virtual machines in Subscription1 as shown in the following table.\n\n![Exhibit](img/S190-stem-2.png){w=577}\n\nYou plan to use Vault1 for the backup of as many virtual machines as possible. Which virtual machines can be backed up to Vault1?",
+    "options": [
+      "VM1 only",
+      "VM3 and VMC only",
+      "VM1, VM2, VM3, VMA, VMB, and VMC",
+      "VM1, VM3, VMA, and VMC only",
+      "VM1 and VM3 only"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O vault só protege VMs **da mesma região** (e assinatura); resource group e SO não importam. O Vault1 está em West Europe: **VM1, VM3, VMA e VMC**.",
+    "refs": [
+      "https://docs.microsoft.com/bs-cyrl-ba/azure/backup/backup-create-rs-vault"
+    ]
+  },
+  {
+    "id": "Q193",
+    "src": 193,
+    "domain": 3,
+    "topic": "Proximity placement groups",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S193-stem-1.png){w=608}\n\nYou need to configure a proximity placement group for VMSS1.\n\nWhich proximity placement groups should you use?",
+    "options": [
+      "Proximity2 only",
+      "Proximity1, Proximity2, and Proximity3",
+      "Proximity1 only",
+      "Proximity1 and Proximity3 only"
+    ],
+    "answer": 0,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "O PPG precisa estar na **mesma região** do scale set (West US). Só o **Proximity2** atende.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/blog/introducing-proximity-placement-groups/"
+    ]
+  },
+  {
+    "id": "Q194",
+    "src": 194,
+    "domain": 3,
+    "topic": "Histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RGCREATED"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\n\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the Subscriptions blade, you select the subscription, and then click Resource providers.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Resource providers mostra os provedores registrados, não as implantações. Use **RG1 > Deployments**."
+  },
+  {
+    "id": "Q195",
+    "src": 195,
+    "domain": 3,
+    "topic": "Histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RGCREATED"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\n\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the RG1 blade, you click Automation script.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Automation script (Export template) gera o template atual, sem data/hora de criação. Use **RG1 > Deployments**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell"
+    ]
+  },
+  {
+    "id": "Q196",
+    "src": 196,
+    "domain": 3,
+    "topic": "Histórico de implantação",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RGCREATED"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\n\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the RG1 blade, you click Deployments.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**RG1 > Deployments** lista cada implantação com data, hora e status.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell"
+    ]
+  },
+  {
+    "id": "Q197",
+    "src": 197,
+    "domain": 5,
+    "topic": "Monitorar VM Linux",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1.\n\nYou deploy a Linux virtual machine named VM1 to Subscription1. You need to monitor the metrics and the logs of VM1.\n\nWhat should you use?",
+    "options": [
+      "Azure HDInsight",
+      "Linux Diagnostic Extension (LAD) 3.0",
+      "the AzurePerformanceDiagnostics extension",
+      "Azure Analysis Services"
+    ],
+    "answer": 1,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Entre as opções, a **Linux Diagnostic Extension (LAD)** coleta métricas e logs (syslog) de VMs Linux. Hoje o recomendado é o **Azure Monitor Agent** com DCR.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/diagnostics-linux"
+    ]
+  },
+  {
+    "id": "Q198",
+    "src": 198,
+    "domain": 4,
+    "topic": "Regras efetivas de NSG",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1. Subscription1 contains a virtual machine named VM1.\n\nYou install and configure a web server and a DNS server on VM1. VM1 has the effective network security rules shown in the following exhibit:\n\n![Exhibit](img/S198-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Internet users [answer choice].",
+        "options": [
+          "can connect to only the DNS server on VM1",
+          "can connect to only the web server on VM1",
+          "can connect to the web server and the DNS server on VM1",
+          "cannot connect to the web server and the DNS server on VM1"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "If you delete Rule2, Internet users [answer choice].",
+        "options": [
+          "can connect to only the DNS server on VM1",
+          "can connect to only the web server on VM1",
+          "can connect to the web server and the DNS server on VM1",
+          "cannot connect to the web server and the DNS server on VM1"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Rule2 (prioridade 100) **nega 50–60**, o que inclui o DNS (53), e é avaliada antes da Rule1 (50–500, Allow). A porta 80 cai na Rule1: **só o web server** responde. Sem a Rule2, a Rule1 libera **web e DNS**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview"
+    ]
+  },
+  {
+    "id": "Q199",
+    "src": 199,
+    "domain": 3,
+    "topic": "Availability zones",
+    "type": "single",
+    "stem": "You plan to deploy three Azure virtual machines named VM1, VM2, and VM3. The virtual machines will host a web app named App1.\n\nYou need to ensure that at least two virtual machines are available if a single Azure datacenter becomes unavailable.\n\nWhat should you deploy?",
+    "options": [
+      "all three virtual machines in a single Availability Zone",
+      "all virtual machines in a single Availability Set",
+      "each virtual machine in a separate Availability Zone",
+      "each virtual machine in a separate Availability Set"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para resistir à perda de um datacenter, coloque **cada VM em uma availability zone diferente**. Availability set protege só dentro de um datacenter.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/manage-availability",
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-availability-sets"
+    ]
+  },
+  {
+    "id": "Q201",
+    "src": 201,
+    "domain": 3,
+    "topic": "Escalonamento vertical agendado",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains an Azure virtual machine named VM1. VM1 runs a financial reporting app named App1 that does not support multiple active instances.\n\nAt the end of each month, CPU usage for VM1 peaks when App1 runs. You need to create a scheduled runbook to increase the processor performance of VM1 at the end of each month.\n\nWhat task should you include in the runbook?",
+    "options": [
+      "Add the Azure Performance Diagnostics agent to VM1.",
+      "Modify the VM size property of VM1.",
+      "Add VM1 to a scale set.",
+      "Increase the vCPU quota for the subscription.",
+      "Add a Desired State Configuration (DSC) extension to VM1."
+    ],
+    "answer": 1,
+    "answer_original": 4,
+    "scope": "borderline",
+    "review": "corrigida",
+    "explanation": "Para aumentar a CPU de um app que não aceita várias instâncias, o runbook deve **alterar o tamanho da VM** (scale up). DSC configura o SO, não muda o hardware. O dump marcava E.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-dsc-configuration"
+    ]
+  },
+  {
+    "id": "Q202",
+    "src": 202,
+    "domain": 3,
+    "topic": "VMSS — extensões",
+    "type": "single",
+    "stem": "You plan to deploy several Azure virtual machines that will run Windows Server 2019 in a virtual machine scale set by using an Azure Resource Manager template.\n\nYou need to ensure that NGINX is available on all the virtual machines after they are deployed.\n\nWhat should you use?",
+    "options": [
+      "Deployment Center in Azure App Service",
+      "A Desired State Configuration (DSC) extension",
+      "the New-AzConfigurationAssignment cmdlet",
+      "a Microsoft Intune device configuration profile"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para ter o NGINX em todas as instâncias após a implantação, use uma extensão de configuração: **DSC** (ou Custom Script Extension) no template do scale set.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/architecture/framework/devops/automation-configuration"
+    ]
+  },
+  {
+    "id": "Q205",
+    "src": 205,
+    "domain": 3,
+    "topic": "App Service — Web Deploy com Entra ID",
+    "type": "single",
+    "stem": "You have an Azure App Services web app named App1.\n\nYou plan to deploy App1 by using Web Deploy.\n\nYou need to ensure that the developers of App1 can use their Azure AD credentials to deploy content to App1. The solution must use the principle of least privilege.\n\nWhat should you do?",
+    "options": [
+      "Assign the Owner role to the developers",
+      "Configure app-level credentials for FTPS",
+      "Assign the Website Contributor role to the developers",
+      "Configure user-level credentials for FTPS"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para publicar com credenciais do Entra ID com menor privilégio, atribua **Website Contributor** (gerencia o site, não o plano). Credenciais FTPS não são Entra ID."
+  },
+  {
+    "id": "Q206",
+    "src": 206,
+    "domain": 1,
+    "topic": "Usuários convidados (B2B)",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "GUEST500"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Active Directory (Azure AD) tenant named contoso.com. You have a CSV file that contains the names and email addresses of 500 external users.\n\nYou need to create a guest user account in contoso.com for each of the 500 external users.\n\nSolution: From Azure AD in the Azure portal, you use the Bulk invite users operation.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "**Bulk invite users** (Entra ID > Users > Bulk operations) é o recurso certo para convidar vários externos via CSV. O modelo exige e-mail e **redirect URL**, que podem ser acrescentados ao arquivo. O dump marcava Não, alegando que o CSV não tem a URL; a comunidade se divide."
+  },
+  {
+    "id": "Q207",
+    "src": 207,
+    "domain": 1,
+    "topic": "Clonar funções customizadas",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that is linked to an Azure AD tenant. The tenant contains the custom role-based access control (RBAC) roles shown in the following table.\n\n![Exhibit](img/S207-stem-1.png){w=413}\n\nFrom the Azure portal, you need to create two custom roles named Role3 and Role4. Role3 will be an Azure subscription role. Role4 will be an Azure AD role. Which roles can you clone to create the new roles? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Role3:",
+        "options": [
+          "Role1 only",
+          "Built-in Azure subscription roles only",
+          "Role1 and built-in Azure subscription roles only",
+          "Built-in Azure subscription roles and built-in Azure AD roles only",
+          "Role1, Role2, built-in Azure subscription roles, and built-in Azure AD roles"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Role4:",
+        "options": [
+          "Role2 only",
+          "Built-in Azure AD roles only",
+          "Role2 and built-in Azure AD roles only",
+          "Built-in Azure AD roles and built-in Azure subscription roles only",
+          "Role1, Role2, built-in Azure AD, and built-in Azure subscription roles"
+        ],
+        "answer": 0
+      }
+    ],
+    "answer_original": [
+      2,
+      1
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Funções do **Azure RBAC** (assinatura) podem ser clonadas de funções **built-in ou customizadas** (Role1). No **Entra ID**, a opção de clonar só aceita **funções customizadas** do Entra (Role2); built-ins do Entra não podem ser clonadas. O dump marcava \"Built-in Azure AD roles only\" para o Role4."
+  },
+  {
+    "id": "Q208",
+    "src": 208,
+    "domain": 1,
+    "topic": "RBAC — menor privilégio",
+    "type": "match",
+    "stem": "You have an Azure subscription named Sub1 that contains two users named User1 and User2.\n\nYou need to assign role-based access control (RBAC) roles to User1 and User2. The users must be able to perform the following tasks in Sub1:\n\n- User1 must view the data in any storage account.\n- User2 must assign users the Contributor role for storage accounts. The solution must use the principle of least privilege.\n\nWhich RBAC role should you assign to each user? To answer, drag the appropriate roles to the correct users. Each role may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "pool": [
+      "Owner",
+      "Contributor",
+      "Reader and Data Access",
+      "Storage Account Contributor"
+    ],
+    "targets": [
+      {
+        "label": "User1:",
+        "answer": 2
+      },
+      {
+        "label": "User2:",
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "User1 precisa **ver dados** de qualquer storage: **Reader and Data Access** (lê via chaves). User2 precisa **atribuir funções**: entre as opções, só **Owner** (User Access Administrator não aparece). Contributor e Storage Account Contributor não atribuem funções."
+  },
+  {
+    "id": "Q209",
+    "src": 209,
+    "domain": 4,
+    "topic": "NSG — service tags",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains 10 virtual machines, a key vault named Vault1, and a network security group (NSG) named NSG1. All the resources are deployed to the East US Azure region.\n\nThe virtual machines are protected by using NSG1. NSG1 is configured to block all outbound traffic to the internet.\n\nYou need to ensure that the virtual machines can access Vault1. The solution must use the principle of least privilege and minimize administrative effort What should you configure as the destination of the outbound security rule for NSG1?",
+    "options": [
+      "an application security group",
+      "a service tag",
+      "an IP address range"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Use a **service tag** AzureKeyVault (ou AzureKeyVault.EastUS) como destino. A Microsoft mantém os IPs; não há lista para administrar."
+  },
+  {
+    "id": "Q210",
+    "src": 210,
+    "domain": 1,
+    "topic": "Licenciamento por grupo",
+    "type": "single",
+    "stem": "You have an Azure AD tenant named adatum.com that contains the groups shown in the following table.\n\n![Exhibit](img/S210-stem-1.png){w=195}\n\nAdatum.com contains the users shown in the following table.\n\n![Exhibit](img/S210-stem-2.png){w=186}\n\nYou assign the Azure Active Directory Premium Plan 2 license to Group1 and User4.\n\nWhich users are assigned the Azure Active Directory Premium Plan 2 license?",
+    "options": [
+      "User4 only",
+      "User1 and User4 only",
+      "User1, User2, and User4 only",
+      "User1, User2, User3, and User4"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Licença atribuída a um grupo vale só para os **membros diretos**; grupos aninhados não herdam. Group1 tem User1 direto, e User4 recebeu a licença diretamente: **User1 e User4**."
+  },
+  {
+    "id": "Q212",
+    "src": 212,
+    "domain": 2,
+    "topic": "Lifecycle management",
+    "type": "yesno",
+    "stem": "You have an Azure subscription. The subscription contains a storage account named storage1 that has the lifecycle management rules shown in the following table.\n\n![Exhibit](img/S212-stem-1.png){w=611}\n\nOn June 1, you store two blobs in storage1 as shown in the following table.\n\n![Exhibit](img/S212-stem-2.png){w=283}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "On June 6, File1 will be stored in the Cool access tier.",
+      "On June 1, File2 will be stored in the Cool access tier.",
+      "On June 16, File2 will be stored in the Archive access tier."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Rule2 (sem prefixo) vale para todos os blobs. File1 (container1): Rule1 o arquiva no 3º dia, então em 6/6 está em **Archive**. Em 1/6 o File2 acabou de chegar (Hot). Em 16/6 o File2 já foi **excluído** pela Rule3 (10 dias), antes da Rule4."
+  },
+  {
+    "id": "Q213",
+    "src": 213,
+    "domain": 2,
+    "topic": "Interpretar template de storage",
+    "type": "yesno",
+    "stem": "You have an Azure subscription.\n\nYou plan to deploy a storage account named storage1 by using the following Azure Resource Manager (ARM) template.\n\n![Exhibit](img/S213-stem-1.png){w=585}\n\nFor each of the following statements, select Yes if the statement is hue. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Changes made to the data in storage1 can be rolled back after seven days.",
+      "Only users located in the East US Azure region can connect to storage1.",
+      "Three copies of storage1 will be maintained in the East US Azure region."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**restorePolicy** de 6 dias: point-in-time restore só volta até 6 dias, não 7. defaultAction **Allow**: acesso de qualquer lugar, não só de East US. **Standard_LRS**: 3 cópias na região East US."
+  },
+  {
+    "id": "Q215",
+    "src": 215,
+    "domain": 2,
+    "topic": "Lifecycle management — JSON",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains a container named container1.\n\nYou need to create a lifecycle management rule for storage1 that will automatically move the blobs in container1 to the lowest-cost tier after 90 days. How should you complete the rule? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "baseBlob action:",
+        "options": [
+          "\"enableAutoTierToHotFromCool\":{",
+          "\"tierToArchive\":{",
+          "\"tierToCool\":{"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "filters:",
+        "options": [
+          "\"blobIndexMatch\":[",
+          "\"blobTypes\":[",
+          "\"prefixMatch\":["
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Tier mais barato = **tierToArchive** (daysAfterModificationGreaterThan: 90). Para limitar ao container1, use o filtro **prefixMatch** [\"container1/\"]."
+  },
+  {
+    "id": "Q216",
+    "src": 216,
+    "domain": 5,
+    "topic": "Backup em 3 zonas",
+    "type": "order",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1. You need to back up VM1. The solution must ensure that backups are stored across three availability zones in the primary region.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Configure a replication policy.",
+      "Set Replication to Zone-redundant storage (ZRS).",
+      "For VM1, create a backup policy and configure the backup.",
+      "Set Replication to Locally-redundant storage (LRS).",
+      "Create a Recovery Services vault."
+    ],
+    "answer": [
+      4,
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Crie o **Recovery Services vault**, defina a redundância de armazenamento como **ZRS** (antes de proteger qualquer item, pois depois não muda) e então **crie a política de backup e configure o backup da VM1**."
+  },
+  {
+    "id": "Q218",
+    "src": 218,
+    "domain": 2,
+    "topic": "Azure Storage Explorer",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S218-stem-1.png){w=365}\n\nYou need to perform the tasks shown in the following table.\n\n![Exhibit](img/S218-stem-2.png){w=491}\n\nWhich tasks can you perform by using Azure Storage Explorer?",
+    "options": [
+      "Task1 and Task3 only",
+      "Task1, Task2, and Task3 only",
+      "Task1, Task3, and Task4 only",
+      "Task2, Task3, and Task4 only",
+      "Task1, Task2, Task3, and Task4"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Storage Explorer gerencia dados de contas **existentes**: blobs (inclusive append), file shares e tabelas. Ele **não cria** storage accounts. Tarefas 2, 3 e 4."
+  },
+  {
+    "id": "Q219",
+    "src": 219,
+    "domain": 2,
+    "topic": "Storage — RBAC e failover",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "contoso2023",
+    "stem": "You have an Azure AD user named User1 and a read-access geo-redundant storage (RA-GRS) account named contoso2023.\n\nYou need to meet the following requirements:\n\n- User1 must be able to write blob data to contoso2023.\n- The contoso2023 account must fail over to its secondary endpoint. Which two settings should you configure? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Diagnose and solve problems",
+      "Access Control (IAM)",
+      "Data migration",
+      "Events",
+      "Storage browser",
+      "Containers",
+      "File shares",
+      "Queues",
+      "Tables",
+      "Networking",
+      "Azure CDN",
+      "Access keys",
+      "Shared access signature",
+      "Encryption",
+      "Microsoft Defender for Cloud",
+      "Geo-replication",
+      "Data protection",
+      "Object replication",
+      "Blob inventory",
+      "Static website",
+      "Lifecycle management"
+    ],
+    "answer": [
+      1,
+      15
+    ],
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "User1 grava blobs com uma função de dados atribuída em **Access Control (IAM)** (Storage Blob Data Contributor). O failover para a secundária é feito em **Geo-replication** (hoje *Redundancy*)."
+  },
+  {
+    "id": "Q220",
+    "src": 220,
+    "domain": 2,
+    "topic": "Chaves gerenciadas pelo cliente",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. You plan to create a blob container named container1.\n\nYou need to use customer-managed key encryption for container1. Which key should you use?",
+    "options": [
+      "an EC key that uses the P-384 curve only",
+      "an EC key that uses the P-521 curve only",
+      "an EC key that uses the P-384 curve or P-521 curve only",
+      "an RSA key with a key size of 4096 only",
+      "an RSA key type with a key size of 2048, 3072, or 4096 only"
+    ],
+    "answer": 4,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Criptografia do Azure Storage com customer-managed keys aceita chaves **RSA/RSA-HSM de 2048, 3072 ou 4096 bits**. Chaves EC não são suportadas."
+  },
+  {
+    "id": "Q222",
+    "src": 222,
+    "domain": 1,
+    "topic": "Grupos com funções atribuíveis",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the users shown in the following table.\n\n![Exhibit](img/S222-stem-1.png){w=203}\n\nThe groups are configured as shown in the following table.\n\n![Exhibit](img/S222-stem-2.png){w=611}\n\nYou have a resource group named RG1 as shown in the following exhibit.\n\n![Exhibit](img/S222-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can assign User2 the Owner role for RG1 by adding Group2 as a member of Group1.",
+      "You can assign User3 the Owner role for RG1 by adding Group3 as a member of Group1.",
+      "You can assign User3 the Owner role for RG1 by assigning the Owner role to Group3 for RG1."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O Group1 tem *Azure AD roles can be assigned* = Yes. Grupos **role-assignable não aceitam grupos aninhados** como membros, então não dá para adicionar Group2 nem Group3 ao Group1. Atribuir **Owner diretamente ao Group3** funciona."
+  },
+  {
+    "id": "Q223",
+    "src": 223,
+    "domain": 2,
+    "topic": "Chave da conta x SAS",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a user named User1 and a storage account named storage1. The storage1 account contains the resources shown in the following table.\n\n![Exhibit](img/S223-stem-1.png){w=205}\n\nUser1 is assigned the following roles for storage1:\n\n- Storage Blob Data Reader\n- Storage Table Data Contributor\n- Storage File Data SMB Share Contributor\n\nFor storage1, you create a shared access signature (SAS) named SAS1 that has the settings shown in the following exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S223-stem-2.png){w=608}\n\nTo which resources can User1 write by using SAS1 and key1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "key1:",
+        "options": [
+          "Table1 only",
+          "Table1 and container1 only",
+          "folder1 and Table1 only",
+          "folder1 and container1 only",
+          "Table1, folder1, and container1"
+        ],
+        "answer": 4
+      },
+      {
+        "label": "SAS1:",
+        "options": [
+          "Table1 only",
+          "Table1 and container1 only",
+          "folder1 and Table1 only",
+          "folder1 and container1 only",
+          "Table1, folder1, and container1"
+        ],
+        "answer": 0
+      }
+    ],
+    "answer_original": [
+      2,
+      1
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A **chave da conta (key1)** dá acesso total a todos os serviços: container1, folder1 (share) e Table1. As funções de RBAC do User1 não importam aqui. O **SAS1** só permite o serviço **Table**. O dump marcava \"folder1 and Table1\" e \"Table1 and container1\"."
+  },
+  {
+    "id": "Q224",
+    "src": 224,
+    "domain": 2,
+    "topic": "Stored access policies e imutabilidade",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the storage account shown in the following exhibit.\n\n![Exhibit](img/S224-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The maximum number of additional stored access policies that you can create for container1 is [answer choice].",
+        "options": [
+          "0",
+          "1",
+          "3",
+          "5",
+          "6"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "The maximum number of additional immutable blob storage policies that you can create for container1 is [answer choice].",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um container aceita até **5 stored access policies**; já há 2, cabem **3**. Para imutabilidade, existe **uma** política de retenção por tempo por container (já existe) mais um **legal hold**: só **1** a mais."
+  },
+  {
+    "id": "Q226",
+    "src": 226,
+    "domain": 2,
+    "topic": "Lifecycle management",
+    "type": "single",
+    "stem": "You have an Azure subscription. The subscription contains a storage account named storage1 that has the lifecycle management rules shown in the following table.\n\n![Exhibit](img/S226-stem-1.png){w=610}\n\nOn June 1, you store a blob named File1 in the Hot access tier of storage1. What is the state of File1 on June 7?",
+    "options": [
+      "stored in the Cool access tier",
+      "stored in the Archive access tier",
+      "stored in the Hot access tier",
+      "deleted"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Quando várias ações se aplicam ao mesmo blob, o lifecycle management executa a **mais barata**: delete < archive < cool. No dia 7 o File1 estará **excluído**."
+  },
+  {
+    "id": "Q227",
+    "src": 227,
+    "domain": 2,
+    "topic": "Lifecycle e Archive",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S227-stem-1.png){w=611}\n\nYou need to identify which storage accounts support lifecycle management, and which storage accounts support moving data to the Archive access tier. Which storage accounts should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Lifecycle management:",
+        "options": [
+          "storage1 only",
+          "storage2 only",
+          "storage1 and storage3 only",
+          "storage2 and storage3 only",
+          "storage1, storage2, and storage3"
+        ],
+        "answer": 4
+      },
+      {
+        "label": "The Archive access tier:",
+        "options": [
+          "storage1 only",
+          "storage2 only",
+          "storage1 and storage3 only",
+          "storage2 and storage3 only",
+          "storage1, storage2, and storage3"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Lifecycle management vale para **GPv2, BlobStorage e BlockBlobStorage**: as três. O tier **Archive** exige redundância **LRS, GRS ou RA-GRS** (não ZRS/GZRS) e conta Standard: só o **storage2**."
+  },
+  {
+    "id": "Q229",
+    "src": 229,
+    "domain": 4,
+    "topic": "Private endpoints",
+    "type": "single",
+    "stem": "Your on-premises network contains a VPN gateway.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S229-stem-1.png){w=611}\n\nYou need to ensure that all the traffic from VM1 to storage1 travels across the Microsoft backbone network.\n\nWhat should you configure?",
+    "options": [
+      "Azure Application Gateway",
+      "private endpoints",
+      "a network security group (NSG)",
+      "Azure Virtual WAN"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um **private endpoint** dá ao storage1 um IP privado na VNet, e o tráfego da VM1 vai pelo backbone da Microsoft via Private Link."
+  },
+  {
+    "id": "Q230",
+    "src": 230,
+    "domain": 1,
+    "topic": "Interpretar atribuições",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains a user named User1 and the resources shown in the following table.\n\n![Exhibit](img/S230-stem-1.png){w=374}\n\nNSG1 is associated to networkinterface1.\n\nUser1 has role assignments for NSG1 as shown in the following table.\n\n![Exhibit](img/S230-stem-2.png){w=425}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can create a storage account in RG1.",
+      "User1 can modify the DNS settings of networkinterface1.",
+      "User1 can create an inbound security rule to filter inbound traffic to networkinterface1."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Storage Account Contributor** herdado do RG cria storage accounts no RG1. **Contributor no NSG1** gerencia o NSG, inclusive regras de entrada, mas **não a NIC** (DNS da NIC exige permissão na interface)."
+  },
+  {
+    "id": "Q232",
+    "src": 232,
+    "domain": 2,
+    "topic": "Lifecycle management — JSON",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains a container named container1.\n\nYou create a blob lifecycle rule named rule1.\n\nYou need to configure rule1 to automatically move blobs that were NOT updated for 45 days from contained to the Cool access tier.\n\nHow should you complete the rule? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Condition:",
+        "options": [
+          "\"daysAfterCreationGreaterThan\"",
+          "\"daysAfterLastAccessTimeGreaterThan\"",
+          "\"daysAfterModificationGreaterThan\""
+        ],
+        "answer": 2
+      },
+      {
+        "label": "blobTypes:",
+        "options": [
+          "\"AppendBlob\"",
+          "\"Blockblob\"",
+          "\"Pageblob\""
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "\"Não atualizados há 45 dias\" = **daysAfterModificationGreaterThan**. Tiers só valem para **blockBlob**."
+  },
+  {
+    "id": "Q234",
+    "src": 234,
+    "domain": 1,
+    "topic": "RBAC em management groups",
+    "type": "yesno",
+    "stem": "You have three Azure subscriptions named Sub1, Sub2, and Sub3 that are linked to an Azure AD tenant.\n\nThe tenant contains a user named User1, a security group named Group1, and a management group named MG1. User is a member of Group1.\n\nSub1 and Sub2 are members of MG1. Sub1 contains a resource group named RG1. RG1 contains five Azure functions.\n\nYou create the following role assignments for MG1:\n\n- Group1: Reader\n- User1: User Access Administrator\n\nYou assign User the Virtual Machine Contributor role for Sub1 and Sub2.",
+    "statements": [
+      "The Group1 members can view the configurations of the Azure functions.",
+      "User1 can assign the Owner role for RG1.",
+      "User1 can create a new resource group and deploy a virtual machine to the new group."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Reader** do Group1 no MG1 é herdado por Sub1/RG1: veem a configuração das functions. **User Access Administrator** no MG1 permite atribuir **Owner** no RG1. **Virtual Machine Contributor** não cria resource groups."
+  },
+  {
+    "id": "Q235",
+    "src": 235,
+    "domain": 2,
+    "topic": "Azure Files — acesso por identidade",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S235-stem-1.png){w=411}\n\nYou need to assign User1 the Storage File Data SMB Share Contributor role for share1.\n\nWhat should you do first?",
+    "options": [
+      "Enable identity-based data access for the file shares in storage1.",
+      "Modify the security profile for the file shares in storage1.",
+      "Select Default to Azure Active Directory authorization in the Azure portal for storage1.",
+      "Configure Access control (IAM) for share1."
+    ],
+    "answer": 0,
+    "answer_original": 3,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "As funções Storage File Data SMB Share * só têm efeito depois de **habilitar o acesso por identidade** (AD DS, Entra Kerberos ou Entra Domain Services) nas file shares do storage1. Esse é o primeiro passo. O dump marcava D."
+  },
+  {
+    "id": "Q238",
+    "src": 238,
+    "domain": 2,
+    "topic": "SMB Multichannel",
+    "type": "single",
+    "stem": "You plan to create an Azure Storage account named storage1 that will contain a file share named share1.\n\nYou need to ensure that share1 can support SMB Multichannel. The solution must minimize costs.\n\nHow should you configure storage?",
+    "options": [
+      "Premium performance with locally-redundant storage (LRS)",
+      "Standard performance with zone-redundant storage (ZRS)",
+      "Premium performance with geo-redundant storage (GRS)",
+      "Standard performance with locally-redundant storage (LRS)"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "SMB Multichannel só existe em file shares **Premium (FileStorage)**, com LRS ou ZRS. O mais barato: **Premium + LRS**."
+  },
+  {
+    "id": "Q240",
+    "src": 240,
+    "domain": 2,
+    "topic": "Condições em atribuições de função",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. You plan to use conditions when assigning role-based access control (RBAC) roles to storage1.\n\nWhich storage1 services support conditions when assigning roles?",
+    "options": [
+      "containers only",
+      "file shares only",
+      "tables only",
+      "queues only",
+      "containers and queues only",
+      "files shares and tables only"
+    ],
+    "answer": 4,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Condições de atribuição de funções (ABAC) são suportadas em **Blob storage** (containers) e **Queue storage**. O dump marcava \"containers only\"."
+  },
+  {
+    "id": "Q243",
+    "src": 243,
+    "domain": 1,
+    "topic": "Licenciamento por grupo",
+    "type": "yesno",
+    "stem": "You have an Azure AD tenant named adatum.com that contains the groups shown in the following table.\n\n![Exhibit](img/S243-stem-1.png){w=339}\n\nAdatum.com contains the users shown in the following table.\n\n![Exhibit](img/S243-stem-2.png){w=226}\n\nYou assign an Azure Active Directory Premium P2 license to Group1 as shown in the following exhibit.\n\n![Exhibit](img/S243-stem-3.png){w=611}\n\nGroup2 is NOT directly assigned a license.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can assign User1 the Microsoft Defender for Cloud Apps Discovery license.",
+      "You can remove the Azure Active Directory Premium P2 license from User1.",
+      "User2 is assigned the Azure Active Directory Premium P2."
+    ],
+    "answer": [
+      true,
+      false,
+      false
+    ],
+    "answer_original": [
+      false,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A opção Defender for Cloud Apps Discovery foi desligada no grupo, mas pode ser atribuída **diretamente** ao User1. Licença **herdada do grupo** não é removida no usuário (é preciso tirá-lo do grupo). Grupos **aninhados** não herdam licença, então o User2 (membro do Group2) não recebe a P2. O dump marcava Não/Sim/Sim."
+  },
+  {
+    "id": "Q244",
+    "src": 244,
+    "domain": 2,
+    "topic": "Storage — routing e criptografia",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that has offices in the East US and West US Azure regions.\n\nYou plan to create the storage account shown in the following exhibit.\n\n![Exhibit](img/S244-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "To minimize the network costs of accessing adatum22, modify the [answer choice] setting.",
+        "options": [
+          "Default routing tier",
+          "Endpoint type",
+          "Location",
+          "Network connectivity",
+          "Performance"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "After adatum22 is created, you can modify the [answer choice] setting.",
+        "options": [
+          "Enable infrastructure encryption",
+          "Enable support for customer-managed keys",
+          "Encryption type",
+          "Premium account type"
+        ],
+        "answer": 2
+      }
+    ],
+    "answer_original": [
+      4,
+      1
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para reduzir custo de rede, mude o **Default routing tier** para *Internet routing* (mais barato que Microsoft network routing). Depois de criada a conta, ainda dá para mudar o **Encryption type** (chaves Microsoft ↔ customer-managed). Infraestrutura dupla, suporte a CMK em tabelas/filas e tipo Premium não mudam depois. O dump marcava Performance e \"Enable support for customer-managed keys\"."
+  },
+  {
+    "id": "Q245",
+    "src": 245,
+    "domain": 2,
+    "topic": "Chaves gerenciadas pelo cliente",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou plan to deploy a new storage account.\n\nYou need to configure encryption for the account. The solution must meet the following requirements:\n\n- Use a customer-managed key stored in a key vault.\n- Use the maximum supported bit length.\n\nWhich type of key and which bit length should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Key:",
+        "options": [
+          "AES",
+          "3DES",
+          "RSA"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Bit length:",
+        "options": [
+          "2048",
+          "3072",
+          "4096",
+          "8192"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O Azure Storage aceita chaves **RSA** (ou RSA-HSM) de 2048, 3072 ou **4096** bits; o máximo é **4096**. AES e 3DES não são opções de chave no Key Vault para isso."
+  },
+  {
+    "id": "Q247",
+    "src": 247,
+    "domain": 1,
+    "topic": "Usuários convidados (B2B)",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "GUEST500"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Active Directory (Azure AD) tenant named contoso.com. You have a CSV file that contains the names and email addresses of 500 external users.\n\nYou need to create a guest user account in contoso.com for each of the 500 external users.\n\nSolution: You create a PowerShell script that runs the New-MgUser cmdlet for each external user.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**New-MgUser** cria usuário **membro** com senha. Para convidado use **New-MgInvitation** (B2B)."
+  },
+  {
+    "id": "Q248",
+    "src": 248,
+    "domain": 1,
+    "topic": "Usuários convidados (B2B)",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "GUEST500"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Active Directory (Azure AD) tenant named contoso.com. You have a CSV file that contains the names and email addresses of 500 external users.\n\nYou need to create a guest user account in contoso.com for each of the 500 external users.\n\nSolution: You create a PowerShell script that runs the New-MgInvitation cmdlet for each external user.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**New-MgInvitation** (Microsoft Graph PowerShell) convida o externo e cria a conta **guest**. Em um script que percorre o CSV, isso atende."
+  },
+  {
+    "id": "Q249",
+    "src": 249,
+    "domain": 2,
+    "topic": "ABAC — blob index tags",
+    "type": "single",
+    "stem": "You have an Azure Storage account that contains 5,000 blobs accessed by multiple users.\n\nYou need to ensure that the users can view only specific blobs based on blob index tags.\n\nWhat should you include in the solution?",
+    "options": [
+      "a role assignment condition",
+      "a stored access policy",
+      "just-in-time (JIT) VM access",
+      "a shared access signature (SAS)"
+    ],
+    "answer": 0,
+    "answer_original": 3,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Filtrar o acesso por **blob index tags** usa uma **condição na atribuição de função** (ABAC), ex.: Storage Blob Data Reader com condição na tag. SAS e stored access policy não filtram por tag. O dump marcava SAS."
+  },
+  {
+    "id": "Q250",
+    "src": 250,
+    "domain": 2,
+    "topic": "Encryption scopes",
+    "type": "single",
+    "stem": "You have an Azure Storage account named storage1.\n\nFor storage1, you create an encryption scope named Scope1.\n\nWhich storage types can you encrypt by using Scope?",
+    "options": [
+      "file shares only",
+      "containers only",
+      "file shares and containers only",
+      "containers and tables only",
+      "file shares, containers, and tables only",
+      "file shares, containers, tables, and queues"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Encryption scopes valem para **blobs/containers**. Não se aplicam a file shares, tabelas ou filas."
+  },
+  {
+    "id": "Q254",
+    "src": 254,
+    "domain": 1,
+    "topic": "Convidado — trocar e-mail de entrada",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "External User — Overview",
+    "stem": "You have an Azure AD tenant that contains a user named External User. External User authenticates to the tenant by using external195@gmail.com. You need to ensure that External User authenticates to the tenant by using external195@outlook.com.\n\nWhich two settings should you configure from the Overview blade? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "options": [
+      "Edit properties",
+      "Delete",
+      "Reset password",
+      "Revoke sessions",
+      "Identities",
+      "Account status",
+      "Sign-ins",
+      "B2B collaboration (Reset redemption status)"
+    ],
+    "answer": [
+      0,
+      7
+    ],
+    "shuffle": false,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Para o convidado entrar com outro endereço: **edite as propriedades** (e-mail) do usuário e use **Reset redemption status** (cartão *B2B collaboration*) para que ele resgate o convite de novo com a nova identidade."
+  },
+  {
+    "id": "Q255",
+    "src": 255,
+    "domain": 2,
+    "topic": "RBAC de dados em storage",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S255-stem-1.png){w=512}\n\nYou need to assign Workspace1 a role to allow read, write, and delete operations for the data stored in the containers of storage1.\n\nWhich role should you assign?",
+    "options": [
+      "Storage Account Contributor",
+      "Contributor",
+      "Storage Blob Data Contributor",
+      "Reader and Data Access"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Ler, gravar e excluir dados em containers = **Storage Blob Data Contributor**. As outras funções são do plano de controle (Reader and Data Access usa as chaves)."
+  },
+  {
+    "id": "Q257",
+    "src": 257,
+    "domain": 1,
+    "topic": "Licenciamento por grupo",
+    "type": "single",
+    "stem": "You have an Azure AD tenant that contains the groups shown in the following table.\n\n![Exhibit](img/S257-stem-1.png){w=611}\n\nYou purchase Azure Active Directory Premium P2 licenses.\n\nTo which groups can you assign a license?",
+    "options": [
+      "Group1 only",
+      "Group1 and Group3 only",
+      "Group3 and Group4 only",
+      "Group1, Group2, and Group3 only",
+      "Group1, Group2, Group3, and Group4"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Licenciamento por grupo aceita **grupos de segurança** e **grupos Microsoft 365 com securityEnabled = true**. Group1 e Group3. Grupos com segurança desabilitada não recebem licença."
+  },
+  {
+    "id": "Q258",
+    "src": 258,
+    "domain": 1,
+    "topic": "Regra de associação dinâmica",
+    "type": "hotarea",
+    "stem": "You have an Azure AD tenant.\n\nYou need to create a Microsoft 365 group that contains only members of a marketing department in France.\n\nHow should you complete the dynamic membership rule? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "( [attribute] -eq \"Marketing\")",
+        "options": [
+          "device.managementType",
+          "device.organizationalUnit",
+          "user.department",
+          "user.usageLocation"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "[operator] (user.country",
+        "options": [
+          "-and",
+          "-or",
+          "typeof"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "user.country [operator] \"France\")",
+        "options": [
+          "-and",
+          "-eq",
+          "-in",
+          "-match"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Regra: **(user.department -eq \"Marketing\") -and (user.country -eq \"France\")**."
+  },
+  {
+    "id": "Q259",
+    "src": 259,
+    "domain": 1,
+    "topic": "Default user role permissions",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "Default user role permissions",
+    "stem": "You have an Azure AD tenant.\n\nYou need to modify the Default user role permissions settings for the tenant. The solution must meet the following requirements:\n\n- Standard users must be prevented from creating new service principals.\n- Standard users must only be able to use PowerShell or Microsoft Graph to manage their own Azure resources.\n\nWhich two settings should you modify? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "options": [
+      "Users can register applications",
+      "Restrict non-admin users from creating tenants",
+      "Users can create security groups",
+      "Guest user access restrictions",
+      "Restrict access to Azure AD administration portal",
+      "Allow users to connect their work or school account with LinkedIn",
+      "Show keep user signed in"
+    ],
+    "answer": [
+      0,
+      4
+    ],
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Impedir que usuários criem service principals: **Users can register applications = No**. Limitar a gestão a PowerShell/Graph, sem navegar no portal de administração: **Restrict access to Azure AD administration portal = Yes**."
+  },
+  {
+    "id": "Q260",
+    "src": 260,
+    "domain": 2,
+    "topic": "Condições de atribuição (ABAC)",
+    "type": "yesno",
+    "stem": "You have an Azure subscription named Sub1 that contains the blob containers shown in the following table.\n\n![Exhibit](img/S260-stem-1.png){w=588}\n\nSub1 contains two users named User1 and User2. Both users are assigned the Reader role at the Sub1 scope.\n\nYou have a condition named Condition1 as shown in the following exhibit.\n\n![Exhibit](img/S260-stem-2.png){w=611}\n\nYou have a condition named Condition2 as shown in the following exhibit.\n\n![Exhibit](img/S260-stem-3.png){w=611}\n\nYou assign roles to User1 and User2 as shown in the following table.\n\n![Exhibit](img/S260-stem-4.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can read blob2.",
+      "User1 can read blob3.",
+      "User2 can read blob1."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "answer_original": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Condition1 (User1, Blob Data Reader): **leitura** só vale quando o container é **cont1**. User1 não lê blob2 nem blob3. Condition2 (User2, Blob Data Owner no storage1) restringe só a **escrita** (paths com \"2\"); a **leitura do blob1** é livre. O dump marcava Sim/Sim/Não."
+  },
+  {
+    "id": "Q261",
+    "src": 261,
+    "domain": 1,
+    "topic": "Funções customizadas — ações",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou plan to create a role definition to meet the following requirements:\n\n- Users must be able to view the configuration data of a storage account.\n- Users must be able to perform all actions on a virtual network.\n- The solution must use the principle of least privilege.\n\nWhat should you include in the role definition for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Perform all actions on a virtual network:",
+        "options": [
+          "\"Microsoft.Network/virtualNetworks/*\"",
+          "\"Microsoft.Network/virtualNetworks/delete\"",
+          "\"Microsoft.Network/virtualNetworks/write\""
+        ],
+        "answer": 0
+      },
+      {
+        "label": "View the configuration data of a storage account:",
+        "options": [
+          "\"Microsoft.Storage/storageAccounts/*\"",
+          "\"Microsoft.Storage/storageAccounts/read\"",
+          "\"Microsoft.Storage/storageAccounts/blobServices/containers/blob/read\""
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Todas as ações na VNet: **Microsoft.Network/virtualNetworks/***. Só ver a configuração do storage: **Microsoft.Storage/storageAccounts/read** (plano de controle, menor privilégio)."
+  },
+  {
+    "id": "Q263",
+    "src": 263,
+    "domain": 3,
+    "topic": "Discos — redundância e cache",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1. To VM1, you plan to add a 1-TB data disk that meets the following requirements:\n\n- Provides data resiliency in the event of a datacenter outage.\n- Provides the lowest latency and the highest performance.\n- Ensures that no data loss occurs if a host fails.\n\nYou need to recommend which type of storage and host caching to configure for the new data disk.",
+    "slots": [
+      {
+        "label": "Storage type:",
+        "options": [
+          "Premium SSD that uses locally-redundant storage (LRS)",
+          "Premium SSD that uses zone-redundant storage (ZRS)",
+          "Standard SSD that uses locally-redundant storage (LRS)",
+          "Standard SSD that uses zone-redundant storage (ZRS)"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Host caching:",
+        "options": [
+          "None",
+          "Read-only",
+          "Read/Write"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Resistir à queda de um datacenter com a melhor performance: **Premium SSD ZRS**. Para **não perder dados** se o host falhar, evite o cache de escrita: **Read-only** (o Read/Write mantém escritas em cache no host). O dump marcava Read/Write."
+  },
+  {
+    "id": "Q264",
+    "src": 264,
+    "domain": 3,
+    "topic": "Azure Disk Encryption — KEK",
+    "type": "multi",
+    "stem": "You have an Azure virtual machine named VM1 and an Azure key vault named Vault1.\n\nOn VM1, you plan to configure Azure Disk Encryption to use a key encryption key (KEK).\n\nYou need to prepare Vault1 for Azure Disk Encryption.\n\nWhich two actions should you perform on Vault1? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Select Azure Virtual machines for deployment.",
+      "Create a new key.",
+      "Create a new secret.",
+      "Configure a key rotation policy.",
+      "Select Azure Disk Encryption for volume encryption."
+    ],
+    "answer": [
+      1,
+      4
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Para ADE com KEK: crie uma **chave** no Key Vault (a KEK) e habilite a política de acesso **Azure Disk Encryption for volume encryption**. O ADE será aposentado em 2028; a recomendação atual é **encryption at host**."
+  },
+  {
+    "id": "Q265",
+    "src": 265,
+    "domain": 3,
+    "topic": "Azure Disk Encryption",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1 and an Azure key vault named KV1.\n\nYou need to configure encryption for VM1. The solution must meet the following requirements:\n\n- Store and use the encryption key in KV1.\n- Maintain encryption if VM1 is downloaded from Azure.\n- Encrypt both the operating system disk and the data disks.\n\nWhich encryption method should you use?",
+    "options": [
+      "customer-managed keys",
+      "Confidential disk encryption",
+      "Azure Disk Encryption",
+      "encryption at host"
+    ],
+    "answer": 2,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Só o **Azure Disk Encryption** (BitLocker/DM-Crypt dentro do SO) mantém os discos de SO e de dados criptografados mesmo se o VHD for baixado, com as chaves no Key Vault. SSE com CMK e encryption at host criptografam do lado do servidor, e o download sai descriptografado."
+  },
+  {
+    "id": "Q266",
+    "src": 266,
+    "domain": 2,
+    "topic": "SAS — download por nome",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "Shared access signature (Blob)",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. You need to configure a shared access signature (SAS) to ensure that users can only download blobs securely by name.\n\nWhich two settings should you configure? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "options": [
+      "Service",
+      "Container",
+      "Object",
+      "Read",
+      "Write",
+      "Delete",
+      "List",
+      "Add",
+      "Create"
+    ],
+    "answer": [
+      2,
+      3
+    ],
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para baixar blobs pelo nome: resource type **Object** (blob individual) e permissão **Read**. Service/Container ou List permitiriam enumerar."
+  },
+  {
+    "id": "Q268",
+    "src": 268,
+    "domain": 3,
+    "topic": "Templates ARM — copy e funções",
+    "type": "yesno",
+    "stem": "You purchase a new Azure subscription.\n\nYou create an Azure Resource Manager (ARM) template named deploy.json as shown in the following exhibit.\n\n![Exhibit](img/S268-stem-1.png){w=611}\n\nYou connect to the subscription and run the following command. New-AzDeployment -Location westus -TemplateFile \"deploy.json\"\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Three resource groups are created when you run the script.",
+      "A resource group named RGroup5 is created.",
+      "All the resource groups are created in the East US Azure region."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "answer_original": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O template (com erros de digitação no dump) cria **4** RGs: RGS0 e RGS1 (copy count 2), ResGrp8 e **RGroup4** (length de obj1 = 4 propriedades). Todos em **East US**: last(var1) = eastus e o parâmetro padrão é eastus. A comunidade testou Não/Não/Sim; o dump marcava Sim na primeira."
+  },
+  {
+    "id": "Q269",
+    "src": 269,
+    "domain": 2,
+    "topic": "SAS",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains a container named container1.\n\nYou need to configure access to container1. The solution must meet the following requirements:\n\n- Only allow read access.\n- Allow both HTTP and HTTPS protocols.\n- Apply access permissions to all the content in the container. What should you use?",
+    "options": [
+      "an access policy",
+      "a shared access signature (SAS)",
+      "Azure Content Delivery Network (CDN)",
+      "access keys"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um **SAS** de container permite só leitura (sp=r), aceita **HTTPS e HTTP** (spr=https,http) e vale para todo o conteúdo. As chaves dão acesso total; stored access policy sozinha não dá acesso."
+  },
+  {
+    "id": "Q270",
+    "src": 270,
+    "domain": 2,
+    "topic": "Criar storage account",
+    "type": "multi",
+    "stem": "You need to create an Azure Storage account named storage1. The solution must meet the following requirements:\n\n- Support Azure Data Lake Storage.\n- Minimize costs for infrequently accessed data.\n- Automatically replicate data to a secondary Azure region.\n\nWhich three options should you configure for storage1? Each correct answer presents part of the solution.\n\nNOTE: Each correct answer is worth one point.",
+    "options": [
+      "zone-redundant storage (ZRS)",
+      "the Cool access tire",
+      "geo-redundant storage (GRS)",
+      "the Hot access tier",
+      "hierarchical namespace"
+    ],
+    "answer": [
+      1,
+      2,
+      4
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Data Lake Storage Gen2 = **hierarchical namespace**; dado pouco acessado = tier **Cool**; réplica em outra região = **GRS**."
+  },
+  {
+    "id": "Q272",
+    "src": 272,
+    "domain": 4,
+    "topic": "Service endpoints",
+    "type": "single",
+    "stem": "Your on-premises network contains a VPN gateway.\n\nYou have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S272-stem-1.png){w=611}\n\nYou need to ensure that all the traffic from VM1 to storage1 travels across the Microsoft backbone network.\n\nWhat should you configure?",
+    "options": [
+      "Azure AD Application Proxy",
+      "service endpoints",
+      "a network security group (NSG)",
+      "Azure Firewall"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Service endpoints** fazem o tráfego da sub-rede para o Azure Storage sair pelo backbone da Microsoft, com a identidade da VNet. Private endpoints também atenderiam."
+  },
+  {
+    "id": "Q275",
+    "src": 275,
+    "domain": 2,
+    "topic": "Lifecycle — versões",
+    "type": "yesno",
+    "stem": "You have an Azure Storage account named storage1 that contains two containers named container1 and container2. Blob versioning is enabled for both containers.\n\nYou periodically take blob snapshots of critical blobs.\n\nYou create the following lifecycle management policy.\n\n![Exhibit](img/S275-stem-1.png){w=551}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "A blob snapshot automatically moves to the Cool access tier after 15 days.",
+      "A blob version in container2 automatically moves to the Archive access tier after 30 days.",
+      "A rehydrated version automatically moves to the Archive access tier after 30 days."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "As ações estão no bloco **version**, que vale para **versões anteriores**, não para **snapshots**. O filtro prefixMatch limita a regra ao **container1**, então nada acontece no container2. Uma versão reidratada só volta ao Archive se passar a condição *daysAfterLastTierChangeGreaterThan: 7*, e não \"após 30 dias\" automaticamente. O dump marcava Sim na primeira."
+  },
+  {
+    "id": "Q276",
+    "src": 276,
+    "domain": 2,
+    "topic": "Conversão para ZRS",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S276-stem-1.png){w=594}\n\nWhich storage account can be converted to zone-redundant storage (ZRS) replication?",
+    "options": [
+      "storage1",
+      "storage2",
+      "storage3",
+      "storage4"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Converter para ZRS exige **Standard GPv2** (ou Premium block blob/file) com **LRS** (de GRS/RA-GRS vai para GZRS). storage1 é GPv1; storage3 é RA-GRS; storage4 é BlobStorage. Resposta: **storage2**."
+  },
+  {
+    "id": "Q277",
+    "src": 277,
+    "domain": 2,
+    "topic": "Azure Storage Explorer",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the devices shown in the following table.\n\n![Exhibit](img/S277-stem-1.png){w=238}\n\nOn which devices can you install Azure Storage Explorer?",
+    "options": [
+      "Device1 only",
+      "Device1 and Device2 only",
+      "Device1 and Device3 only",
+      "Device1, Device2, and Device3 only",
+      "Device1, Device3, and Device4 only"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Storage Explorer roda em **Windows, Linux e macOS**. Não há versão para Android."
+  },
+  {
+    "id": "Q278",
+    "src": 278,
+    "domain": 2,
+    "topic": "LRS e access tier",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou plan to create the Azure Storage account as shown in the following exhibit.\n\n![Exhibit](img/S278-stem-1.png){w=589}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The minimum number of copies of the storage account will be [answer choice].",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "To reduce the cost of infrequently accessed data in the storage account, you must modify the [answer choice] setting.",
+        "options": [
+          "Access tier (default)",
+          "Performance",
+          "Account kind",
+          "Replication"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**LRS** mantém **3 cópias**. Para baratear dado pouco acessado, mude o **Access tier (default)**."
+  },
+  {
+    "id": "Q279",
+    "src": 279,
+    "domain": 2,
+    "topic": "Blob inventory",
+    "type": "hotarea",
+    "stem": "You have an Azure Storage account named storage1 that contains a container named container1. The container1 container stores thousands of image files. You plan to use an Azure Resource Manager (ARM) template to create a blob inventory rule named rule1.\n\nYou need to ensure that only blobs whose names start with the word finance are stored daily as a CSV file in container1.\n\nHow should you complete rule1? To answer, select the options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "\"blobTypes\":",
+        "options": [
+          "appendBlob",
+          "blockBlob",
+          "pageBlob"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "\"prefixMatch\":",
+        "options": [
+          "container1/*",
+          "container1/finance",
+          "finance"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O inventário de blobs filtra por tipo (**blockBlob**, que são os arquivos de imagem/CSV) e por **prefixMatch** com o caminho **container1/finance** (container + início do nome)."
+  },
+  {
+    "id": "Q280",
+    "src": 280,
+    "domain": 2,
+    "topic": "SAS — listar e baixar",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "Shared access signature (Blob)",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains blobs in a container named container1. You plan to share access to storage1.\n\nYou need to generate a shared access signature (SAS). The solution must meet the following requirements:\n\n- Ensure that the SAS can only be used to enumerate and download blobs stored in container1.\n- Use the principle of least privilege.\n\nWhich three settings should you enable? To answer, select the appropriate settings in the answer area.",
+    "options": [
+      "Service",
+      "Container",
+      "Object",
+      "Read",
+      "Write",
+      "Delete",
+      "List",
+      "Add",
+      "Create"
+    ],
+    "answer": [
+      1,
+      2,
+      3
+    ],
+    "shuffle": false,
+    "scope": "borderline",
+    "review": "duvidosa",
+    "explanation": "Num account SAS, **listar** blobs exige resource type **Container** com permissão **List**, e **baixar** exige **Object** com **Read**. O gabarito do dump marca Container, Object e Read, mas sem List a enumeração não funciona. A questão pede 3 itens; trate-a com cautela."
+  },
+  {
+    "id": "Q281",
+    "src": 281,
+    "domain": 2,
+    "topic": "Lifecycle management",
+    "type": "yesno",
+    "stem": "You have an Azure subscription. The subscription contains a storage account named storage1 that has the lifecycle management rules shown in the following table.\n\n![Exhibit](img/S281-stem-1.png){w=611}\n\nOn June 1, you store two blobs in storage1 as shown in the following table.\n\n![Exhibit](img/S281-stem-2.png){w=283}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "On June 6, File1 will be stored in the Cool access tier.",
+      "On June 7, File2 will be stored in the Cool access tier.",
+      "On June 16, File2 will be stored in the Archive access tier."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "File1: a Rule1 o arquiva no 3º dia, então em 6/6 não está em Cool. File2: a Rule2 o move para **Cool** no 5º dia, e ele está em Cool em 7/6. Em 16/6 o File2 já foi **excluído** pela Rule3 (10 dias)."
+  },
+  {
+    "id": "Q282",
+    "src": 282,
+    "domain": 1,
+    "topic": "Excluir usuários e grupos",
+    "type": "hotarea",
+    "stem": "You have a Microsoft Entra tenant that contains the groups shown in the following table.\n\n![Exhibit](img/S282-stem-1.png){w=422}\n\nThe tenant contains the users shown in the following table.\n\n![Exhibit](img/S282-stem-2.png){w=445}\n\nWhich users and groups can you delete? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Users:",
+        "options": [
+          "User4 only",
+          "User1 and User4 only",
+          "User2 and User4 only",
+          "User1, User2, User3, and User4"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Groups:",
+        "options": [
+          "Group2 only",
+          "Group2 and Group3 only",
+          "Group2 and Group4 only",
+          "Group1, Group2, Group3, and Group4"
+        ],
+        "answer": 2
+      }
+    ],
+    "answer_original": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "**Usuários** podem ser excluídos com ou sem licença (direta ou herdada). **Grupos com licença atribuída** não podem ser excluídos até remover a atribuição: só **Group2 e Group4**. O dump limitava os usuários a User1 e User4."
+  },
+  {
+    "id": "Q283",
+    "src": 283,
+    "domain": 4,
+    "topic": "Private endpoints",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S283-stem-1.png){w=322}\n\nYou need to ensure that data transfers between storage1 and VM1 do NOT traverse the internet\n\nWhat should you configure for storage1?",
+    "options": [
+      "data protection",
+      "a private endpoint",
+      "Public network access in the Firewalls and virtual networks settings",
+      "a shared access signature (SAS)"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Com um **private endpoint** no storage1, a VM1 acessa por IP privado e o tráfego não passa pela internet."
+  },
+  {
+    "id": "Q284",
+    "src": 284,
+    "domain": 2,
+    "topic": "Acesso a dados do storage",
+    "type": "yesno",
+    "stem": "You have an Azure Storage account named contoso2024 that contains the resources shown in the following table.\n\n![Exhibit](img/S284-stem-1.png){w=355}\n\nYou have users that have permissions for contoso2024 as shown in the following table.\n\n![Exhibit](img/S284-stem-2.png){w=387}\n\nThe contoso2024 account is configured as shown in the following exhibit.\n\n![Exhibit](img/S284-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can read File1.",
+      "User2 can read File2.",
+      "User3 can read File1 and File2."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "**Reader** (User1) e **Storage Account Contributor** (User2) são funções do plano de controle e não leem dados sem as chaves. Com **storage account key access = Disabled**, nem a chave (User3) funciona. Ninguém lê. O dump marcava Sim para o User1."
+  },
+  {
+    "id": "Q488",
+    "src": 488,
+    "domain": 3,
+    "topic": "Autoscale do App Service",
+    "type": "hotarea",
+    "stem": "You have the App Service plan shown in the following exhibit.\n\n![Exhibit](img/S488-stem-1.png){w=611}\n\nThe scale-in settings for the App Service plan are configured as shown in the following exhibit.\n\n![Exhibit](img/S488-stem-2.png){w=611}\n\nThe scale out rule is configured with the same duration and cool down tile as the scale in rule.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "If after deployment CPU usage is 70 percent for one hour and then reaches 90 percent for five minutes, at that time the total number of instances will be [answer choice].",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "If after deployment the CPU maintains constant usage of 90 percent for one hour, and then the average CPU usage is below 25 percent for nine minutes, at that point the number of instances will be [answer choice].",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": 3
+      }
+    ],
+    "answer_original": [
+      4,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Scale-out: **CPU máxima > 85%** por 5 min → +1; scale-in: média < 30% por 5 min → −1 (cooldown 5). Caso 1: só os últimos 5 min passam de 85%, então 1 → **2**. Caso 2: com 90% por 1 hora chega ao máximo (5); em 9 minutos abaixo de 25% só há tempo para **um** scale-in (5 min + cooldown), então ficam **4**. O dump marcava 5 e 3.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/learn/tutorial-autoscale-performance-schedule"
+    ]
+  },
+  {
+    "id": "Q490",
+    "src": 490,
+    "domain": 3,
+    "topic": "Disco temporário",
+    "type": "single",
+    "stem": "You have an Azure virtual machine named VM1 that runs Windows Server 2019. The VM was deployed using default drive settings.\n\nYou sign in to VM1 as a user named User1 and perform the following actions:\n\n- Create files on drive C.\n- Create files on drive D.\n- Modify the screen saver timeout.\n- Change the desktop background.\n\nYou plan to redeploy VM1.\n\nWhich changes will be lost after you redeploy VM1?",
+    "options": [
+      "the modified screen saver timeout",
+      "the new desktop background",
+      "the new files on drive D",
+      "the new files on drive C"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "No Windows, **D:** é o **disco temporário** (local ao host). Redeploy move a VM para outro host e **perde o conteúdo do D:**. O disco do SO (C:) e o perfil (proteção de tela, papel de parede) são preservados."
+  },
+  {
+    "id": "Q492",
+    "src": 492,
+    "domain": 3,
+    "topic": "Preparar VHD para o Azure",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou have an on-premises virtual machine named VM1. The settings for VM1 are shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S492-stem-1.png){w=611}\n\nYou need to ensure that you can use the disks attached to VM1 as a template for Azure virtual machines.\n\nWhat should you modify on VM1?",
+    "options": [
+      "the memory",
+      "the network adapters",
+      "the hard drive",
+      "the processor",
+      "Integration Services"
+    ],
+    "answer": 2,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "O Azure aceita discos no formato **VHD de tamanho fixo**. O exhibit mostra um disco **VHDX**: converta o disco rígido para VHD antes de subir.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image"
+    ]
+  },
+  {
+    "id": "Q494",
+    "src": 494,
+    "domain": 3,
+    "topic": "VMSS — upgrade policy",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a virtual machine scale set. The scale set contains four instances that have the following configurations:\n\n- Operating system: Windows Server 2016\n- Size: Standard_D1_v2\n\nYou run the get-azvmss cmdlet as shown in the following exhibit:\n\n![Exhibit](img/S494-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "When an administrator changes the virtual machine size, the size will be changed on up to [answer choice] virtual machines simultaneously.",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "4"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "When a new build of the Windows Server 2016 image is released, the new build will be deployed to up to [answer choice] virtual machines simultaneously.",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "4"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      0,
+      3
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Com **upgrade policy Automatic**, mudanças no modelo (como o tamanho) são aplicadas a **todas as 4** instâncias ao mesmo tempo. Upgrades automáticos de imagem do SO atualizam no máximo **20% por lote (mínimo 1)**: com 4 instâncias, **1** por vez. O dump marcava 0 e 4.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set",
+      "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade"
+    ]
+  },
+  {
+    "id": "Q498",
+    "src": 498,
+    "domain": 3,
+    "topic": "Deployment slots — rollback",
+    "type": "single",
+    "stem": "You have an Azure web app named App1. App1 has the deployment slots shown in the following table:\n\n![Exhibit](img/S498-stem-1.png){w=456}\n\nIn webapp1-test, you test several changes to App1.\n\nYou back up App1.\n\nYou swap webapp1-test for webapp1-prod and discover that App1 is experiencing performance issues.\n\nYou need to revert to the previous version of App1 as quickly as possible. What should you do?",
+    "options": [
+      "Redeploy App1",
+      "Swap the slots",
+      "Clone App1",
+      "Restore the backup of App1"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O swap troca as configurações de roteamento entre os slots. Para voltar à versão anterior rapidamente, basta **fazer o swap de novo**. A versão anterior ficou no slot de teste.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+    ]
+  },
+  {
+    "id": "Q500",
+    "src": 500,
+    "domain": 5,
+    "topic": "Restauração — arquivos x VM",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Subscription1. Subscription1 contains two Azure virtual machines VM1 and VM2. VM1 and VM2 run Windows Server 2016.\n\nVM1 is backed up daily by Azure Backup without using the Azure Backup agent. VM1 is affected by ransomware that encrypts data.\n\nYou need to restore the latest backup of VM1.\n\nTo which location can you restore the backup? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "You can perform a file recovery of VM1 to:",
+        "options": [
+          "VM1 only",
+          "VM1 or a new Azure virtual machine only",
+          "VM1 and VM2 only",
+          "A new Azure virtual machine only",
+          "Any Windows computer that has Internet connectivity"
+        ],
+        "answer": 4
+      },
+      {
+        "label": "You can restore VM1 to:",
+        "options": [
+          "VM1 only",
+          "VM1 or a new Azure virtual machine only",
+          "VM1 and VM2 only",
+          "Any Windows computer that has Internet connectivity"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      1,
+      1
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "A **recuperação de arquivos** monta o ponto de recuperação via script, que roda em **qualquer computador com SO compatível e internet**, não só na VM original. A **VM inteira** pode ser restaurada substituindo os discos da VM1 ou **criando uma nova VM**. O dump limitava a recuperação de arquivos à VM1 ou a uma nova VM.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+    ]
+  },
+  {
+    "id": "Q502",
+    "src": 502,
+    "domain": 5,
+    "topic": "Backup Pre-Check",
+    "type": "single",
+    "stem": "You plan to back up an Azure virtual machine named VM1.\n\nYou discover that the Backup Pre-Check status displays a status of Warning. What is a possible cause of the Warning status?",
+    "options": [
+      "VM1 is stopped.",
+      "VM1 does not have the latest version of the Azure VM Agent (WaAppAgent.exe) installed.",
+      "VM1 has an unmanaged disk.",
+      "A Recovery Services vault is unavailable."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O status **Warning** indica problemas de configuração que podem causar falhas, como **VM Agent desatualizado**. VM parada ou disco não gerenciado não geram warning; vault indisponível seria erro.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/blog/azure-vm-backup-pre-checks/"
+    ]
+  },
+  {
+    "id": "Q504",
+    "src": 504,
+    "domain": 3,
+    "topic": "Redeploy de VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "REDEPLOY"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\n\nYou receive a notification that VM1 will be affected by maintenance. You need to move VM1 to a different host immediately.\n\nSolution: From the Overview blade, you move the virtual machine to a different resource group.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Mover para outro resource group não muda o host físico. Use **Redeploy**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/redeploy-to-new-node"
+    ]
+  },
+  {
+    "id": "Q506",
+    "src": 506,
+    "domain": 3,
+    "topic": "Availability set — FD/UD no template",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou plan to use Azure Resource Manager templates to deploy 50 Azure virtual machines that will be part of the same availability set.\n\nYou need to ensure that as many virtual machines as possible are available if the fabric fails or during servicing.\n\nHow should you configure the template? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "\"platformFaultDomainCount\":",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "\"platformUpdateDomainCount\":",
+        "options": [
+          "10",
+          "20",
+          "25",
+          "30",
+          "40",
+          "50"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      2,
+      1
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para maximizar a disponibilidade, use o **máximo** de cada um: East US suporta **3 fault domains**, e o limite de update domains é **20**. O dump marcava 2 fault domains (o máximo de algumas regiões, não de East US).",
+    "refs": [
+      "https://www.itprotoday.com/microsoft-azure/check-if-azure-region-supports-2-or-3-fault-domains-managed-disks",
+      "https://github.com/Azure/acs-engine/issues/1030"
+    ]
+  },
+  {
+    "id": "Q508",
+    "src": 508,
+    "domain": 5,
+    "topic": "Alerta por eventos da VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SYSLOGALERT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1 that runs Windows Server 2016. You need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure Log Analytics workspace and configure the Agent configuration settings. You install the Microsoft Monitoring Agent on VM1. You create an alert in Azure Monitor and specify the Log Analytics workspace as the source.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Workspace do Log Analytics configurado para coletar o log **System** (Agents configuration), agente na VM1 e alerta de log tendo o workspace como fonte: atende. Hoje o agente é o **Azure Monitor Agent** com DCR (o MMA foi aposentado em 2024).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/learn/tutorial-response",
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agents-overview"
+    ]
+  },
+  {
+    "id": "Q510",
+    "src": 510,
+    "domain": 3,
+    "topic": "VMSS — autoscale",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou deploy a virtual machine scale set that is configured as shown in the following exhibit.\n\n![Exhibit](img/S510-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that answers each question based on the information presented in the graphic\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "At 9:00 AM, the scale set starts and CPU utilization is 90 percent for 15 minutes. How many virtual machine instances will be running at 9:15 AM?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "At 10:00 AM, the scale set has five virtual machine instances running and CPU utilization falls to less than 15 percent for 60 minutes. How many virtual machine instances will be running at 11:00 AM?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Começa com 2. CPU > 75% por **10 min** → +1: às 9:10 são 3, e às 9:15 ainda não houve nova janela completa, então **3**. Com CPU < 25% por 60 min, a regra reduz 1 a cada ciclo até o **mínimo de 1**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal"
+    ]
+  },
+  {
+    "id": "Q512",
+    "src": 512,
+    "domain": 3,
+    "topic": "App Service plan — regiões",
+    "type": "single",
+    "stem": "You have web apps in the West US, Central US and East US Azure regions. You have the App Service plans shown in the following table.\n\n![Exhibit](img/S512-stem-1.png){w=568}\n\nYou plan to create an additional App Service plan named ASP5 that will use the Linux operating system.\n\nYou need to identify in which of the currently used locations you can deploy ASP5.\n\nWhat should you recommend?",
+    "options": [
+      "West US, Central US, or East US",
+      "Central US only",
+      "East US only",
+      "West US only"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Não há restrição para criar um plano Linux em qualquer uma dessas regiões. A antiga limitação era misturar Windows e Linux **no mesmo resource group e região**, e não se aplica aqui. Resposta: West US, Central US ou East US.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage"
+    ]
+  },
+  {
+    "id": "Q516",
+    "src": 516,
+    "domain": 3,
+    "topic": "Implantar template no RG",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S516-stem-1.png){w=538}\n\nIn Azure Cloud Shell, you need to create a virtual machine by using an Azure Resource Manager (ARM) template.\n\nHow should you complete the command? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Cmdlet:",
+        "options": [
+          "New-AzVm",
+          "New-AzResource",
+          "New-AzTemplateSpec",
+          "New-AzResourceGroupDeployment"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Parameter:",
+        "options": [
+          "-Tag Tag1",
+          "-ResourceGroupName RG1",
+          "-GroupName ManagementGroup1",
+          "-Subscription 9c8bc1cd-7655-4c66-b3ea-a8ee101d8f75"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para implantar uma VM (recurso de RG) a partir de um template: **New-AzResourceGroupDeployment -ResourceGroupName RG1** -TemplateUri ...",
+    "refs": [
+      "https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-6.6.0"
+    ]
+  },
+  {
+    "id": "Q520",
+    "src": 520,
+    "domain": 5,
+    "topic": "Alerta por eventos da VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SYSLOGALERT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1 that runs Windows Server 2016. You need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure Log Analytics workspace and configure the data settings. You add the Microsoft Monitoring Agent VM extension to VM1. You create an alert in Azure Monitor and specify the Log Analytics workspace as the source.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Instalar o agente **como extensão de VM** é a forma recomendada de instalá-lo em VMs do Azure, então a solução também atende. O dump marcava Não, alegando que só a instalação manual vale. Hoje o agente é o Azure Monitor Agent (extensão) com DCR.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agents-overview"
+    ]
+  },
+  {
+    "id": "Q522",
+    "src": 522,
+    "domain": 5,
+    "topic": "Alerta por eventos da VM",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "SYSLOGALERT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure virtual machine named VM1 that runs Windows Server 2016. You need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure Log Analytics workspace and configure the data settings. You install the Microsoft Monitoring Agent on VM1. You create an alert in\n\nAzure Monitor and specify the Log Analytics workspace as the source. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Workspace + coleta dos eventos (data settings) + agente na VM + alerta de log com o workspace como fonte = atende. Hoje: Azure Monitor Agent + DCR.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/learn/tutorial-response",
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agents-overview"
+    ]
+  },
+  {
+    "id": "Q524",
+    "src": 524,
+    "domain": 5,
+    "topic": "Restaurar com MARS",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S524-stem-1.png){w=611}\n\nAll virtual machines run Windows Server 2016.\n\nOn VM1, you back up a folder named Folder1 as shown in the following exhibit.\n\n![Exhibit](img/S524-stem-2.png){w=611}\n\nYou plan to restore the backup to a different virtual machine. You need to restore the backup to VM2.\n\nWhat should you do first?",
+    "options": [
+      "From VM1, install the Windows Server Backup feature.",
+      "From VM2, install the Microsoft Azure Recovery Services Agent.",
+      "From VM1, install the Microsoft Azure Recovery Services Agent.",
+      "From VM2, install the Windows Server Backup feature."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O backup de pasta (Files and folders) é feito pelo **agente MARS**. Para restaurar em outra máquina (Recover data > Another server), instale o **MARS agent na VM2** e registre-o no vault.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-restore-windows-server"
+    ]
+  },
+  {
+    "id": "Q526",
+    "src": 526,
+    "domain": 3,
+    "topic": "ARM — copy de propriedade",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou need to use an Azure Resource Manager (ARM) template to create a virtual machine that will have multiple data disks.\n\nHow should you complete the template? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "storageProfile:",
+        "options": [
+          "\"copy\": [",
+          "\"copyIndex\": [",
+          "\"dependsOn\": ["
+        ],
+        "answer": 0
+      },
+      {
+        "label": "\"lun\":",
+        "options": [
+          "\"[copy",
+          "\"[copyIndex",
+          "\"[dependsOn"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para criar vários **dataDisks**, use o loop **copy** na propriedade e defina o lun com **copyIndex('dataDisks')**."
+  },
+  {
+    "id": "Q528",
+    "src": 528,
+    "domain": 4,
+    "topic": "NIC — região",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NIC2"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1 that contains the resources shown in the following table.\n\n![Exhibit](img/S528-stem-1.png){w=611}\n\nSubscription1 also includes a virtual network named VNET2. VM1 connects to a virtual network named VNET2 by using a network interface named NIC1. You need to create a new network interface named NIC2 for VM1.\n\nSolution: You create NIC2 in RG1 and West US.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A NIC precisa estar na **mesma região** da VM e da VNet (West US); o resource group pode ser qualquer um. RG1 + West US atende.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
+    ]
+  },
+  {
+    "id": "Q530",
+    "src": 530,
+    "domain": 4,
+    "topic": "NIC — região",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NIC2"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1 that contains the resources shown in the following table.\n\n![Exhibit](img/S530-stem-1.png){w=611}\n\nSubscription1 also includes a virtual network named VNET2. VM1 connects to a virtual network named VNET2 by using a network interface named NIC1. You need to create a new network interface named NIC2 for VM1.\n\nSolution: You create NIC2 in RG2 and Central US.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Central US é outra região da VM1 (West US). Não atende.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
+    ]
+  },
+  {
+    "id": "Q532",
+    "src": 532,
+    "domain": 4,
+    "topic": "NIC — região",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NIC2"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription named Subscription1 that contains the resources shown in the following table.\n\n![Exhibit](img/S532-stem-1.png){w=611}\n\nSubscription1 also includes a virtual network named VNET2. VM1 connects to a virtual network named VNET2 by using a network interface named NIC1. You need to create a new network interface named NIC2 for VM1.\n\nSolution: You create NIC2 in RG2 and West US.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "RG2 + **West US** atende: o RG não importa, a região sim.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
+    ]
+  },
+  {
+    "id": "Q534",
+    "src": 534,
+    "domain": 3,
+    "topic": "Escopo de implantação ARM",
+    "type": "single",
+    "stem": "You develop the following Azure Resource Manager (ARM) template to create a resource group and deploy an Azure Storage account to the resource group.\n\n![Exhibit](img/S534-stem-1.png){w=611}\n\nWhich cmdlet should you run to deploy the template?",
+    "options": [
+      "New-AzResource",
+      "New-AzResourceGroupDeployment",
+      "New-AzTenantDeployment",
+      "New-AzDeployment"
+    ],
+    "answer": 3,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O template **cria um resource group** (Microsoft.Resources/resourceGroups) e faz uma implantação aninhada nele. Isso é uma implantação no escopo da **assinatura**: **New-AzDeployment** (az deployment sub create). New-AzResourceGroupDeployment exige um RG já existente. O dump marcava B.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell"
+    ]
+  },
+  {
+    "id": "Q536",
+    "src": 536,
+    "domain": 3,
+    "topic": "Backup do App Service",
+    "type": "hotarea",
+    "stem": "You have an Azure App Service app named WebApp1 that contains two folders named Folder1 and Folder2.\n\nYou need to configure a daily backup of WebApp1. The solution must ensure that Folder2 is excluded from the backup.\n\nWhat should you create first, and what should you use to exclude Folder2? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "First create:",
+        "options": [
+          "An Azure Storage account",
+          "A Backup vault",
+          "A Recovery Services vault",
+          "A resource group"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "To exclude Folder2, use:",
+        "options": [
+          "A _backup.filter file",
+          "A backup policy",
+          "A lock",
+          "A WebJob"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O backup do App Service grava em um **storage account** (container), que precisa existir antes. Para excluir pastas, use o arquivo **_backup.filter** na raiz (wwwroot).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/app-service/manage-backup"
+    ]
+  },
+  {
+    "id": "Q538",
+    "src": 538,
+    "domain": 3,
+    "topic": "VMSS — extensões",
+    "type": "single",
+    "stem": "You plan to deploy several Azure virtual machines that will run Windows Server 2019 in a virtual machine scale set by using an Azure Resource Manager template.\n\nYou need to ensure that NGINX is available on all the virtual machines after they are deployed.\n\nWhat should you use?",
+    "options": [
+      "the Publish-AzVMDscConfiguration cmdlet",
+      "Azure Application Insights",
+      "Azure Custom Script Extension",
+      "a Microsoft Endpoint Manager device configuration profile"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A **Custom Script Extension** baixa e executa scripts após a implantação. É uma das formas de instalar o NGINX em todas as instâncias (a outra é o DSC).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/tutorial-install-apps-template"
+    ]
+  },
+  {
+    "id": "Q540",
+    "src": 540,
+    "domain": 3,
+    "topic": "ARM — extensão de domain join",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription. The subscription contains a virtual machine that runs Windows 10.\n\nYou need to join the virtual machine to an Active Directory domain. How should you complete the Azure Resource Manager (ARM) template? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "\"type\":",
+        "options": [
+          "\"Extensions\"",
+          "\"Microsoft.Compute/VirtualMachines\"",
+          "\"Microsoft.Compute/virtualMachines/extensions\""
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Section that contains the password:",
+        "options": [
+          "\"ProtectedSettings\":{",
+          "\"Settings\":{",
+          "\"Statuses\":{"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Extensões são recursos **Microsoft.Compute/virtualMachines/extensions** (JsonADDomainExtension). A senha da conta de domínio vai em **protectedSettings**, criptografada e não exibida.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-windows-vm-template"
+    ]
+  },
+  {
+    "id": "Q542",
+    "src": 542,
+    "domain": 4,
+    "topic": "Balanceamento interno e WAF",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription named Sub1.\n\nYou plan to deploy a multi-tiered application that will contain the tiers shown in the following table.\n\n![Exhibit](img/S542-stem-1.png){w=536}\n\nYou need to recommend a networking solution to meet the following requirements:\n\n- Ensure that communication between the web servers and the business logic tier spreads equally across the virtual machines.\n- Protect the web servers from SQL injection attacks.\n\nWhich Azure resource should you recommend for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Ensure that communication between the web servers and the business logic tier spreads equally across the virtual machines:",
+        "options": [
+          "an application gateway that uses the Standard tier",
+          "an application gateway that uses the WAF tier",
+          "an internal load balancer",
+          "a network security group (NSG)",
+          "a public load balancer"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Protect the web servers from SQL injection attacks:",
+        "options": [
+          "an application gateway that uses the Standard tier",
+          "an application gateway that uses the WAF tier",
+          "an internal load balancer",
+          "a network security group (NSG)",
+          "a public load balancer"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Tráfego interno entre web e lógica de negócio = **internal load balancer**. Proteção contra SQL injection = **Application Gateway com WAF** (o Application Gateway em si saiu do Skills Measured da AZ-104).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview"
+    ]
+  },
+  {
+    "id": "Q548",
+    "src": 548,
+    "domain": 4,
+    "topic": "Load balancer — inbound NAT",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S548-stem-1.png){w=611}\n\nLB1 is configured as shown in the following table.\n\n![Exhibit](img/S548-stem-2.png){w=611}\n\nYou plan to create new inbound NAT rules that meet the following requirements:\n\n- Provide Remote Desktop access to VM1 from the internet by using port 3389.\n- Provide Remote Desktop access to VM2 from the internet by using port 3389. What should you create on LB1 before you can create the new inbound NAT rules?",
+    "options": [
+      "a frontend IP address",
+      "a load balancing rule",
+      "a health probe",
+      "a backend pool"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para RDP na **mesma porta 3389** para duas VMs diferentes, cada regra NAT precisa de um frontend distinto. Crie primeiro um **segundo frontend IP** (o LB só tem um)."
+  },
+  {
+    "id": "Q550",
+    "src": 550,
+    "domain": 4,
+    "topic": "Private DNS — auto registration",
+    "type": "hotarea",
+    "stem": "You have Azure virtual machines that run Windows Server 2019 and are configured as shown in the following table.\n\n![Exhibit](img/S550-stem-1.png){w=607}\n\nYou create a private Azure DNS zone named adatum.com. You configure the adatum.com zone to allow auto registration from VNET1.\n\nWhich A records will be added to the adatum.com zone for each virtual machine? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "A records for VM1:",
+        "options": [
+          "None",
+          "Private IP address only",
+          "Public IP address only",
+          "Private IP address and public IP address"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "A records for VM2:",
+        "options": [
+          "None",
+          "Private IP address only",
+          "Public IP address only",
+          "Private IP address and public IP address"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Com auto registration, as VMs da VNet vinculada registram **registros A com o IP privado**, independentemente do sufixo DNS do Windows. IPs públicos nunca são registrados na zona privada.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-overview",
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-scenarios"
+    ]
+  },
+  {
+    "id": "Q552",
+    "src": 552,
+    "domain": 5,
+    "topic": "Quem se conecta ao ILB",
+    "type": "hotarea",
+    "stem": "You have an Azure virtual network named VNet1 that connects to your on- premises network by using a site-to-site VPN. VNet1 contains one subnet named Sunet1.\n\nSubnet1 is associated to a network security group (NSG) named NSG1. Subnet1 contains a basic internal load balancer named ILB1. ILB1 has three Azure virtual machines in the backend pool.\n\nYou need to collect data about the IP addresses that connects to ILB1. You must be able to run interactive queries from the Azure portal against the collected data.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Resource to create:",
+        "options": [
+          "An Azure Event Grid",
+          "An Azure Log Analytics workspace",
+          "An Azure Storage account"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Resource on which to enable diagnostics:",
+        "options": [
+          "ILB1",
+          "NSG1",
+          "The Azure virtual machines"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      1,
+      0
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Load balancer **Basic** não registra os IPs dos clientes. Quem registra origem/destino é o **flow log do NSG1** (Network Watcher), enviado a um **Log Analytics workspace** para consultas (Traffic Analytics). O dump marcava habilitar o diagnóstico no ILB1.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-create-workspace",
+      "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-diagnostics"
+    ]
+  },
+  {
+    "id": "Q554",
+    "src": 554,
+    "domain": 4,
+    "topic": "Peering — espaços sobrepostos",
+    "type": "single",
+    "stem": "You have the Azure virtual networks shown in the following table.\n\n![Exhibit](img/S554-stem-1.png){w=611}\n\nTo which virtual networks can you establish a peering connection from VNet1?",
+    "options": [
+      "VNet2 andVNet3 only",
+      "VNet2 only",
+      "VNet3 and VNet4 only",
+      "VNet2, VNet3, and VNet4"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Peering exige espaços de endereço **sem sobreposição**. VNet2 (10.11.0.0/17) cabe dentro de VNet1 (10.11.0.0/16). VNet3 e VNet4 não se sobrepõem; a VNet4 em outra região usa **global peering**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-connect-virtual-networks-portal",
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#vnet-peering"
+    ]
+  },
+  {
+    "id": "Q556",
+    "src": 556,
+    "domain": 4,
+    "topic": "Load balancer — NVAs com HA ports",
+    "type": "multi",
+    "stem": "You have an Azure subscription that contains a virtual network named VNet1. VNet1 contains four subnets named Gateway, Perimeter, NVA, and Production. The NVA subnet contains two network virtual appliances (NVAs) that will perform network traffic inspection between the Perimeter subnet and the Production subnet.\n\nYou need to implement an Azure load balancer for the NVAs. The solution must meet the following requirements:\n\n- The NVAs must run in an active-active configuration that uses automatic failover.\n- The load balancer must load balance traffic to two services on the Production subnet. The services have different IP addresses.\n\nWhich three actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Deploy a basic load balancer",
+      "Deploy a standard load balancer",
+      "Add two load balancing rules that have HA Ports and Floating IP enabled",
+      "Add two load balancing rules that have HA Ports enabled and Floating IP disabled",
+      "Add a frontend IP configuration, a backend pool, and a health probe",
+      "Add a frontend IP configuration, two backend pools, and a health probe"
+    ],
+    "answer": [
+      1,
+      2,
+      5
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "NVA ativo-ativo com failover: **Standard Load Balancer** (HA ports só existem no Standard), **regras com HA ports e Floating IP** e frontend, backend pools e health probe. A comunidade se divide sobre Floating IP e o número de pools.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview",
+      "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-multivip-overview"
+    ]
+  },
+  {
+    "id": "Q560",
+    "src": 560,
+    "domain": 4,
+    "topic": "Private DNS — auto registration",
+    "type": "yesno",
+    "stem": "You have an Azure subscription. The subscription contains virtual machines that run Windows Server 2016 and are configured as shown in the following table.\n\n![Exhibit](img/S560-stem-1.png){w=611}\n\nYou create a public Azure DNS zone named adatum.com and a private Azure DNS zone named contoso.com.\n\nYou create a virtual network link for contoso.com as shown in the following exhibit.\n\n![Exhibit](img/S560-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "When VM1 starts, a record for VM1 is added to the contoso.com DNS zone.",
+      "When VM2 starts, a record for VM2 is added to the contoso.com DNS zone.",
+      "When VM3 starts, a record for VM3 is added to the adatum.com DNS zone."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O link com **auto registration** na VNET2 registra **todas as VMs da VNET2** em contoso.com, independentemente do sufixo do Windows. Zonas **públicas** (adatum.com) não têm auto registration.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances",
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
+    ]
+  },
+  {
+    "id": "Q562",
+    "src": 562,
+    "domain": 4,
+    "topic": "NSG — região",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources in the following table.\n\n![Exhibit](img/S562-stem-1.png){w=611}\n\nTo which subnets can you apply NSG1?",
+    "options": [
+      "the subnets on VNet1 only",
+      "the subnets on VNet2 and VNet3 only",
+      "the subnets on VNet2 only",
+      "the subnets on VNet3 only",
+      "the subnets on VNet1, VNet2, and VNet3"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "NSG só pode ser associado a sub-redes/NICs **da mesma região** (e assinatura). NSG1 está em East US, então só as sub-redes da **VNet3**. O resource group não importa.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-plan-design-arm"
+    ]
+  },
+  {
+    "id": "Q564",
+    "src": 564,
+    "domain": 4,
+    "topic": "Peering — alterar address space",
+    "type": "order",
+    "stem": "You have an Azure subscription that contains two virtual networks named VNet1 and VNet2. Virtual machines connect to the virtual networks.\n\nThe virtual networks have the address spaces and the subnets configured as shown in the following table.\n\n![Exhibit](img/S564-stem-1.png){w=611}\n\nYou need to add the address space of 10.33.0.0/16 to VNet1. The solution must ensure that the hosts on VNet1 and VNet2 can communicate.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Remove VNet1.",
+      "Add the 10.33.0.0/16 address space to VNet1.",
+      "Create a new virtual network named VNet1.",
+      "On the peering connection in VNet2, allow gateway transit.",
+      "Recreate peering between VNet1 and VNet2.",
+      "On the peering connection in VNet1, allow gateway transit.",
+      "Remove peering between VNet1 and VNet2."
+    ],
+    "answer": [
+      6,
+      1,
+      4
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Pela resposta clássica: **remova o peering**, **adicione o address space 10.33.0.0/16** ao VNet1 e **recrie o peering**. Hoje o Azure também permite alterar o espaço de um VNet emparelhado e depois **sincronizar** o peering, sem removê-lo (opção ausente aqui).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
+    ]
+  },
+  {
+    "id": "Q566",
+    "src": 566,
+    "domain": 1,
+    "topic": "Mover recursos entre RGs",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the resource groups shown in the following table.\n\n![Exhibit](img/S566-stem-1.png){w=507}\n\nRG1 contains the resources shown in the following table.\n\n![Exhibit](img/S566-stem-2.png){w=611}\n\nVM1 is running and connects to NIC1 and Disk1. NIC1 connects to VNET1. RG2 contains a public IP address named IP2 that is in the East US location. IP2 is not assigned to a virtual machine.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can move storage1 to RG2.",
+      "You can move NIC1 to RG2.",
+      "If you move IP2 to RG1, the location of IP2 will change."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Mover de **resource group não muda a região** (o IP2 continua em East US). O storage1 pode ser movido. Uma NIC anexada a uma VM também pode ser movida de RG (testado pela comunidade); os recursos dependentes só precisam se mover juntos ao **trocar de assinatura**. O dump marcava Não para a NIC.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-support-resources",
+      "https://docs.microsoft.com/en-us/azure/virtual-network/move-across-regions-publicip-powershell"
+    ]
+  },
+  {
+    "id": "Q568",
+    "src": 568,
+    "domain": 3,
+    "topic": "App Service — VNet integration",
+    "type": "single",
+    "stem": "You have an Azure web app named webapp1.\n\nYou have a virtual network named VNET1 and an Azure virtual machine named VM1 that hosts a MySQL database. VM1 connects to VNET1.\n\nYou need to ensure that webapp1 can access the data hosted on VM1. What should you do?",
+    "options": [
+      "Deploy an internal load balancer",
+      "Peer VNET1 to another virtual network",
+      "Connect webapp1 to VNET1",
+      "Deploy an Azure Application Gateway"
+    ],
+    "answer": 2,
+    "answer_original": 3,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para o web app acessar recursos privados da VNet (o MySQL na VM1), habilite a **VNet integration** do webapp1 com o VNET1. Application Gateway é para tráfego de entrada. O dump marcava D."
+  },
+  {
+    "id": "Q570",
+    "src": 570,
+    "domain": 3,
+    "topic": "Extensão DSC",
+    "type": "single",
+    "stem": "You create an Azure VM named VM1 that runs Windows Server 2019. VM1 is configured as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S570-stem-1.png){w=611}\n\nYou need to enable Desired State Configuration for VM1.\n\nWhat should you do first?",
+    "options": [
+      "Connect to VM1.",
+      "Start VM1.",
+      "Capture a snapshot of VM1.",
+      "Configure a DNS name for VM1."
+    ],
+    "answer": 1,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "O exhibit mostra a VM1 **Stopped (deallocated)**. Extensões (inclusive DSC) exigem a VM em execução com o agente comunicando com o Azure. Primeiro **inicie a VM1**. O Azure Automation State Configuration será aposentado; o sucessor é o Machine Configuration.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-windows"
+    ]
+  },
+  {
+    "id": "Q572",
+    "src": 572,
+    "domain": 4,
+    "topic": "Load balancer — afinidade",
+    "type": "single",
+    "stem": "You have five Azure virtual machines that run Windows Server 2016. The virtual machines are configured as web servers.\n\nYou have an Azure load balancer named LB1 that provides load balancing services for the virtual machines.\n\nYou need to ensure that visitors are serviced by the same web server for each request.\n\nWhat should you configure?",
+    "options": [
+      "Floating IP (direct server return) to Disabled",
+      "Session persistence to None",
+      "Floating IP (direct server return) to Enabled",
+      "Session persistence to Client IP"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para o mesmo cliente cair sempre no mesmo servidor, use **Session persistence = Client IP** (ou Client IP and protocol). Floating IP é para DSR (ex.: SQL AG).",
+    "refs": [
+      "https://cloudopszone.com/configure-azure-load-balancer-for-sticky-sessions/"
+    ]
+  },
+  {
+    "id": "Q574",
+    "src": 574,
+    "domain": 4,
+    "topic": "NSG — RDP",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RDPNSG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following resources:\n\n- A virtual network that has a subnet named Subnet1\n- Two network security groups (NSGs) named NSG-VM1 and NSG-Subnet1\n- A virtual machine named VM1 that has the required Windows Server configurations to allow Remote Desktop connections\n\nNSG-Subnet1 has the default inbound security rules only.\n\nNSG-VM1 has the default inbound security rules and the following custom inbound security rule:\n\n- Priority: 100\n- Source: Any\n- Source port range: *\n- Destination: *\n- Destination port range: 3389\n- Protocol: UDP\n- Action: Allow\n\nVM1 has a public IP address and is connected to Subnet1. NSG-VM1 is associated to the network interface of VM1. NSG-Subnet1 is associated to Subnet1. You need to be able to establish Remote Desktop connections from the internet to VM1.\n\nSolution: You add an inbound security rule to NSG-Subnet1 that allows connections from the Any source to the *destination for port range 3389 and uses the TCP protocol. You remove NSG-VM1 from the network interface of VM1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Com NSG-VM1 removido da NIC, só vale o NSG-Subnet1, que passa a permitir **TCP 3389** de qualquer origem. O RDP funciona. O dump marcava Não; a comunidade corrigiu.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection"
+    ]
+  },
+  {
+    "id": "Q576",
+    "src": 576,
+    "domain": 4,
+    "topic": "NSG — RDP",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RDPNSG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following resources:\n\n- A virtual network that has a subnet named Subnet1\n- Two network security groups (NSGs) named NSG-VM1 and NSG-Subnet1\n- A virtual machine named VM1 that has the required Windows Server configurations to allow Remote Desktop connections\n\nNSG-Subnet1 has the default inbound security rules only.\n\nNSG-VM1 has the default inbound security rules and the following custom inbound security rule:\n\n- Priority: 100\n- Source: Any\n- Source port range: *\n- Destination: *\n- Destination port range: 3389\n\nProtocol: UDP -\n\n- Action: Allow\n\nVM1 has a public IP address and is connected to Subnet1. NSG-VM1 is associated to the network interface of VM1. NSG-Subnet1 is associated to Subnet1. You need to be able to establish Remote Desktop connections from the internet to VM1.\n\nSolution: You add an inbound security rule to NSG-Subnet1 that allows connections from the internet source to the VirtualNetwork destination for port range 3389 and uses the UDP protocol.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O RDP precisa de **TCP 3389**. Liberar só UDP no NSG da sub-rede não resolve, e o NSG da NIC também só libera UDP.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection"
+    ]
+  },
+  {
+    "id": "Q578",
+    "src": 578,
+    "domain": 4,
+    "topic": "NSG — RDP",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "RDPNSG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following resources:\n\n- A virtual network that has a subnet named Subnet1\n- Two network security groups (NSGs) named NSG-VM1 and NSG-Subnet1\n- A virtual machine named VM1 that has the required Windows Server configurations to allow Remote Desktop connections\n\nNSG-Subnet1 has the default inbound security rules only.\n\nNSG-VM1 has the default inbound security rules and the following custom inbound security rule:\n\n- Priority: 100\n- Source: Any\n- Source port range: *\n- Destination: *\n- Destination port range: 3389\n- Protocol: UDP\n- Action: Allow\n\nVM1 has a public IP address and is connected to Subnet1. NSG-VM1 is associated to the network interface of VM1. NSG-Subnet1 is associated to Subnet1. You need to be able to establish Remote Desktop connections from the internet to VM1.\n\nSolution: You add an inbound security rule to NSG-Subnet1 and NSG-VM1 that allows connections from the internet source to the VirtualNetwork destination for port range 3389 and uses the TCP protocol.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Com NSG na sub-rede **e** na NIC, o tráfego precisa ser permitido **nos dois**. Uma regra TCP 3389 (Internet → VirtualNetwork) em ambos atende.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection"
+    ]
+  },
+  {
+    "id": "Q580",
+    "src": 580,
+    "domain": 4,
+    "topic": "VNet — espaço de endereços e sub-redes",
+    "type": "hotarea",
+    "stem": "You have a virtual network named VNet1 that has the configuration shown in the following exhibit.\n\n![Exhibit](img/S580-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Before a virtual machine on VNet1 can receive an IP address from 192.168.1.0/24, you must first [answer choice].",
+        "options": [
+          "add a network interface",
+          "add a subnet",
+          "add an address space",
+          "delete a subnet",
+          "delete an address space"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Before a virtual machine on VNet1 can receive an IP address from 10.2.1.0/24, you must first [answer choice].",
+        "options": [
+          "add a network interface",
+          "add a subnet",
+          "add an address space",
+          "delete a subnet",
+          "delete an address space"
+        ],
+        "answer": 1
+      }
+    ],
+    "answer_original": [
+      2,
+      0
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O VNet1 só tem 10.2.0.0/16 com a sub-rede 10.2.0.0/24. IP de **192.168.1.0/24**: primeiro **adicione um address space**. IP de **10.2.1.0/24** (dentro do espaço existente): **adicione uma sub-rede**. O dump marcava \"add a network interface\" no segundo.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/office365/enterprise/designing-networking-for-microsoft-azure-iaas"
+    ]
+  },
+  {
+    "id": "Q582",
+    "src": 582,
+    "domain": 4,
+    "topic": "NSGs — quantidade mínima",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual network named VNET1. VNET1 contains the subnets shown in the following table.\n\n![Exhibit](img/S582-stem-1.png){w=386}\n\nEach virtual machine uses a static IP address.\n\nYou need to create network security groups (NSGs) to meet following requirements:\n\n- Allow web requests from the internet to VM3, VM4, VM5, and VM6.\n- Allow all connections between VM1 and VM2.\n- Allow Remote Desktop connections to VM1.\n- Prevent all other network traffic to VNET1.\n\nWhat is the minimum number of NSGs you should create?",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "12"
+    ],
+    "answer": 0,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Um NSG pode ser associado a **várias sub-redes**. Como as VMs têm IP estático, as regras podem usar os IPs de destino (web para VM3–VM6, RDP para VM1, tráfego VM1↔VM2), e o deny padrão bloqueia o resto: **1 NSG** basta. O dump marcava 4.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview#default-security-rules"
+    ]
+  },
+  {
+    "id": "Q584",
+    "src": 584,
+    "domain": 1,
+    "topic": "Azure Policy — Not allowed resource types",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S584-stem-1.png){w=406}\n\nThe Not allowed resource types Azure policy that has policy enforcement enabled is assigned to RG1 and uses the following parameters:\n\nMicrosoft.Network/virtualNetworks\n\nMicrosoft.Compute/virtualMachines\n\nIn RG1, you need to create a new virtual machine named VM2, and then connect VM2 to VNET1.\n\nWhat should you do first?",
+    "options": [
+      "Remove Microsoft.Compute/virtualMachines from the policy.",
+      "Create an Azure Resource Manager template",
+      "Add a subnet to VNET1.",
+      "Remove Microsoft.Network/virtualNetworks from the policy."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A política bloqueia criar **VNets e VMs** no RG1. A VNET1 já existe; o que falta criar é a VM. Remova **Microsoft.Compute/virtualMachines** da política.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/governance/policy/samples/not-allowed-resource-types"
+    ]
+  },
+  {
+    "id": "Q586",
+    "src": 586,
+    "domain": 4,
+    "topic": "Azure DNS — importar zona",
+    "type": "single",
+    "stem": "Your company has an Azure subscription named Subscription1.\n\nThe company also has two on-premises servers named Server1 and Server2 that run Windows Server 2016. Server1 is configured as a DNS server that has a primary DNS zone named adatum.com. Adatum.com contains 1,000 DNS records. You manage Server1 and Subscription1 from Server2. Server2 has the following tools installed:\n\n- The DNS Manager console\n- Azure PowerShell\n- Azure CLI 2.0\n\nYou need to move the adatum.com zone to an Azure DNS zone in Subscription1. The solution must minimize administrative effort.\n\nWhat should you use?",
+    "options": [
+      "Azure CLI",
+      "Azure PowerShell",
+      "the Azure portal",
+      "the DNS Manager console"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Importar um arquivo de zona BIND para o Azure DNS é feito pela **Azure CLI** (az network dns zone import). O PowerShell não tem import. O dump marcava PowerShell.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-migration-guide"
+    ]
+  },
+  {
+    "id": "Q588",
+    "src": 588,
+    "domain": 4,
+    "topic": "Load balancer — inbound NAT",
+    "type": "single",
+    "stem": "You have a public load balancer that balances ports 80 and 443 across three virtual machines named VM1, VM2, and VM3.\n\nYou need to direct all the Remote Desktop Protocol (RDP) connections to VM3 only.\n\nWhat should you configure?",
+    "options": [
+      "an inbound NAT rule",
+      "a new public load balancer for VM3",
+      "a frontend IP configuration",
+      "a load balancing rule"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma **inbound NAT rule** encaminha uma porta do frontend para **uma VM específica** (RDP 3389 → VM3). A regra de balanceamento distribui para o pool inteiro.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal",
+      "https://pixelrobots.co.uk/2017/08/azure-load-balancer-for-rds/"
+    ]
+  },
+  {
+    "id": "Q592",
+    "src": 592,
+    "domain": 4,
+    "topic": "Private DNS — vínculos",
+    "type": "hotarea",
+    "stem": "You have an Azure virtual machine that runs Windows Server 2019 and has the following configurations:\n\n- Name: VM1\n- Location: West US\n- Connected to: VNET1\n- Private IP address: 10.1.0.4\n- Public IP addresses: 52.186.85.63\n- DNS suffix in Windows Server: Adatum.com\n\nYou create the Azure DNS zones shown in the following table.\n\n![Exhibit](img/S592-stem-1.png){w=376}\n\nYou need to identify which DNS zones you can link to VNET1 and the DNS zones to which VM1 can automatically register.\n\nWhich zones should you identify? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "DNS zones that you can link to VNET1:",
+        "options": [
+          "Adatum.com only",
+          "Adatum.pri and adatum.com only",
+          "The private zones only",
+          "The public zones only"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "DNS zones to which VM1 can automatically register:",
+        "options": [
+          "Adatum.com only",
+          "Adatum.pri and adatum.com only",
+          "The private zones only",
+          "The public zones only"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Só zonas **privadas** podem ser vinculadas a VNets (virtual network links) e recebem **auto registration**; a região da zona não importa (é global).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-overview"
+    ]
+  },
+  {
+    "id": "Q596",
+    "src": 596,
+    "domain": 4,
+    "topic": "NSG — associação",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources in the following table.\n\n![Exhibit](img/S596-stem-1.png){w=441}\n\nVM1 and VM2 are deployed from the same template and host line-of-business applications.\n\nYou configure the network security group (NSG) shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S596-stem-2.png){w=611}\n\nYou need to prevent users of VM1 and VM2 from accessing websites on the Internet over TCP port 80.\n\nWhat should you do?",
+    "options": [
+      "Disassociate the NSG from a network interface",
+      "Change the Port_80 inbound security rule.",
+      "Associate the NSG to Subnet1.",
+      "Change the DenyWebSites outbound security rule."
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A regra outbound DenyWebSites já bloqueia a porta 80 para a Internet, mas o NSG está associado a **0 sub-redes e 0 NICs**. Basta **associá-lo à Subnet1**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group"
+    ]
+  },
+  {
+    "id": "Q600",
+    "src": 600,
+    "domain": 3,
+    "topic": "Availability zones",
+    "type": "multi",
+    "stem": "You plan to create an Azure virtual machine named VM1 that will be configured as shown in the following exhibit.\n\n![Exhibit](img/S600-stem-1.png){w=611}\n\nThe planned disk configurations for VM1 are shown in the following exhibit.\n\n![Exhibit](img/S600-stem-2.png){w=611}\n\nYou need to ensure that VM1 can be created in an Availability Zone. Which two settings should you modify? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Use managed disks",
+      "OS disk type",
+      "Availability options",
+      "Size",
+      "Image"
+    ],
+    "answer": [
+      0,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para criar a VM em uma zona, configure **Availability options = Availability zone** e use **managed disks** (discos não gerenciados não suportam zonas).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/site-recovery/move-azure-vms-avset-azone",
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/windows/create-portal-availability-zone"
+    ]
+  },
+  {
+    "id": "Q602",
+    "src": 602,
+    "domain": 3,
+    "topic": "VMSS Flexible — adicionar VM",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S602-stem-1.png){w=572}\n\nVMSS1 is set to VM (virtual machines) orchestration mode.\n\nYou need to deploy a new Azure virtual machine named VM1, and then add VM1 to VMSS1.\n\nWhich resource group and location should you use to deploy VM1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Resource group:",
+        "options": [
+          "RG1 only",
+          "RG2 only",
+          "RG1 or RG2 only",
+          "RG1, RG2, or RG3"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Location:",
+        "options": [
+          "West US only",
+          "Central US only",
+          "Central US or West US only",
+          "East US, Central US, or West US"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "No modo **Flexible (VM)**, a VM é criada já associada ao scale set e precisa estar na **mesma região** (West US). O resource group pode ser qualquer um.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+    ]
+  },
+  {
+    "id": "Q604",
+    "src": 604,
+    "domain": 4,
+    "topic": "Peering não transitivo",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains three virtual networks named VNET1, VNET2, and VNET3.\n\nPeering for VNET1 is configured as shown in the following exhibit.\n\n![Exhibit](img/S604-stem-1.png){w=611}\n\nPeering for VNET2 is configured as shown in the following exhibit.\n\n![Exhibit](img/S604-stem-2.png){w=611}\n\nPeering for VNET3 is configured as shown in the following exhibit.\n\n![Exhibit](img/S604-stem-3.png){w=611}\n\nHow can packets be routed between the virtual networks? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Packets from VNET1 can be routed to:",
+        "options": [
+          "VNET2 only",
+          "VNET3 only",
+          "VNET2 and VNET3"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Packets from VNET2 can be routed to:",
+        "options": [
+          "VNET1 only",
+          "VNET3 only",
+          "VNET1 and VNET3"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "VNET1 está emparelhada com VNET2 e VNET3, mas peering **não é transitivo**: VNET2 só alcança a **VNET1** (sem gateway transit nem NVA). A VNET1 alcança as duas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+    ]
+  },
+  {
+    "id": "Q610",
+    "src": 610,
+    "domain": 1,
+    "topic": "Bloquear porta por padrão",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NSG8080"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains 10 virtual networks. The virtual networks are hosted in separate resource groups.\n\nAnother administrator plans to create several network security groups (NSGs) in the subscription.\n\nYou need to ensure that when an NSG is created, it automatically blocks TCP port 8080 between the virtual networks.\n\nSolution: You create a resource lock, and then you assign the lock to the subscription.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Resource lock evita exclusão/alteração; não injeta regras em NSGs. A solução é uma **Azure Policy customizada**."
+  },
+  {
+    "id": "Q612",
+    "src": 612,
+    "domain": 4,
+    "topic": "RDP — VM parada",
+    "type": "single",
+    "stem": "You have an Azure subscription named Subscription1. Subscription1 contains a virtual machine named VM1.\n\nYou have a computer named Computer1 that runs Windows 10. Computer1 is connected to the Internet.\n\nYou add a network interface named vm1173 to VM1 as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S612-stem-1.png){w=611}\n\nFrom Computer1, you attempt to connect to VM1 by using Remote Desktop, but the connection fails.\n\nYou need to establish a Remote Desktop connection to VM1.\n\nWhat should you do first?",
+    "options": [
+      "Change the priority of the RDP rule",
+      "Attach a network interface",
+      "Delete the DenyAllInBound rule",
+      "Start VM1"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Adicionar uma NIC exige a VM **parada (desalocada)**. As regras do NSG já permitem RDP (prioridade 300), então o que falta é **iniciar a VM1**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview"
+    ]
+  },
+  {
+    "id": "Q614",
+    "src": 614,
+    "domain": 4,
+    "topic": "DNS customizado entre VNets",
+    "type": "single",
+    "stem": "You have the Azure virtual machines shown in the following table.\n\n![Exhibit](img/S614-stem-1.png){w=473}\n\nA DNS service is installed on VM1.\n\nYou configure the DNS servers settings for each virtual network as shown in the following exhibit.\n\n![Exhibit](img/S614-stem-2.png){w=329}\n\nYou need to ensure that all the virtual machines can resolve DNS names by using the DNS service on VM1.\n\nWhat should you do?",
+    "options": [
+      "Configure a conditional forwarder on VM1",
+      "Add service endpoints on VNET1",
+      "Add service endpoints on VNET2 and VNET3",
+      "Configure peering between VNET1, VNET2, and VNET3"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "As VNets usam o DNS customizado 10.1.0.4 (VM1 na VNET1), mas VNET2 e VNET3 não alcançam esse IP. É preciso **peering** entre as VNets. Service endpoints são para serviços PaaS.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+    ]
+  },
+  {
+    "id": "Q616",
+    "src": 616,
+    "domain": 4,
+    "topic": "Network Watcher — connection troubleshoot",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the Azure virtual machines shown in the following table.\n\n![Exhibit](img/S616-stem-1.png){w=354}\n\nYou add inbound security rules to a network security group (NSG) named NSG1 as shown in the following table.\n\n![Exhibit](img/S616-stem-2.png){w=611}\n\nYou run Azure Network Watcher as shown in the following exhibit.\n\n![Exhibit](img/S616-stem-3.png){w=569}\n\nYou run Network Watcher again as shown in the following exhibit.\n\n![Exhibit](img/S616-stem-4.png){w=603}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "NSG1 limits VM1 traffic.",
+      "NSG1 applies to VM2.",
+      "VM1 and VM2 connect to the same virtual network."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "As regras do NSG1 têm destino 172.16.2.0/24 (sub-rede da VM2): o NSG1 **filtra a VM2**, não o tráfego da VM1. O ICMP chega com next hop direto para 172.16.2.4. O dump considera que as VMs não estão na mesma VNet (pode ser peering). TCP 8080 falha por falta de serviço escutando ou por outro filtro.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
+    ]
+  },
+  {
+    "id": "Q618",
+    "src": 618,
+    "domain": 4,
+    "topic": "NSG — bloquear RDP",
+    "type": "single",
+    "stem": "You have the Azure virtual network named VNet1 that contains a subnet named Subnet1. Subnet1 contains three Azure virtual machines. Each virtual machine has a public IP address.\n\nThe virtual machines host several applications that are accessible over port 443 to users on the Internet.\n\nYour on-premises network has a site-to-site VPN connection to VNet1. You discover that the virtual machines can be accessed by using the Remote Desktop Protocol (RDP) from the Internet and from the on-premises network. You need to prevent RDP access to the virtual machines from the Internet, unless the RDP connection is established from the on-premises network. The solution must ensure that all the applications can still be accessed by the Internet users.\n\nWhat should you do?",
+    "options": [
+      "Modify the address space of the local network gateway",
+      "Create a deny rule in a network security group (NSG) that is linked to Subnet1",
+      "Remove the public IP addresses from the virtual machines",
+      "Modify the address space of Subnet1"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um NSG na Subnet1 com regra **deny RDP da Internet** (e allow do intervalo on-premises/VirtualNetwork) bloqueia o acesso externo sem afetar a porta 443 nem a VPN.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/security/fundamentals/network-best-practices"
+    ]
+  },
+  {
+    "id": "Q620",
+    "src": 620,
+    "domain": 4,
+    "topic": "Application security groups",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources in the following table.\n\n![Exhibit](img/S620-stem-1.png){w=420}\n\nSubnet1 is associated to VNet1. NIC1 attaches VM1 to Subnet1.\n\nYou need to apply ASG1 to VM1.\n\nWhat should you do?",
+    "options": [
+      "Associate NIC1 to ASG1",
+      "Modify the properties of ASG1",
+      "Modify the properties of NSG1"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "ASGs são associados às **NICs**: adicione a NIC1 ao ASG1 (nas configurações de IP da NIC). Depois as regras do NSG podem usar o ASG.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview#application-security-groups"
+    ]
+  },
+  {
+    "id": "Q624",
+    "src": 624,
+    "domain": 4,
+    "topic": "Status de peering",
+    "type": "hotarea",
+    "stem": "You have peering configured as shown in the following exhibit.\n\n![Exhibit](img/S624-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Hosts on vNET6 can communicate with hosts on [answer choice].",
+        "options": [
+          "vNET6 only",
+          "vNET6 and vNET1 only",
+          "vNET6, vNET1, and vNET2 only",
+          "all the virtual networks in the subscription"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "To change the status of the peering connection to vNET1 to Connected, you must first [answer choice].",
+        "options": [
+          "add a service endpoint",
+          "add a subnet",
+          "delete peering1",
+          "modify the address space"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Os dois peerings do vNET6 estão **Disconnected** (o lado remoto foi excluído): o vNET6 só fala **consigo mesmo**. Para voltar a *Connected*, **exclua o peering1** e recrie os dois lados.",
+    "refs": [
+      "https://blog.kloud.com.au/2018/10/19/address-space-maintenance-with-vnet-peering/"
+    ]
+  },
+  {
+    "id": "Q628",
+    "src": 628,
+    "domain": 4,
+    "topic": "Standard Load Balancer — pré-requisitos",
+    "type": "hotarea",
+    "stem": "You have an Azure virtual machine named VM1 that connects to a virtual network named VNet1. VM1 has the following configurations:\n\n- Subnet: 10.0.0.0/24\n- Availability set: AVSet\n- Network security group (NSG): None\n- Private IP address: 10.0.0.4 (dynamic)\n- Public IP address: 40.90.219.6 (dynamic)\n\nYou deploy a standard, Internet-facing load balancer named slb1. You need to configure slb1 to allow connectivity to VM1.\n\nWhich changes should you apply to VM1 as you configure slb1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Before you create a backend pool on slb1, you must:",
+        "options": [
+          "Create and assign an NSG to VM1",
+          "Remove the public IP address from VM1",
+          "Change the private IP address of VM1 to static"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Before you can connect to VM1 from slb1, you must:",
+        "options": [
+          "Create and configure an NSG",
+          "Remove the public IP address from VM1",
+          "Change the private IP address of VM1 to static"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A VM1 tem IP público **dinâmico (Basic)**, incompatível com Standard LB: **remova o IP público** antes de colocá-la no backend pool. O Standard LB é **fechado por padrão**, então é preciso um **NSG** permitindo o tráfego para conectar.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+    ]
+  },
+  {
+    "id": "Q630",
+    "src": 630,
+    "domain": 4,
+    "topic": "NIC — região",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S630-stem-1.png){w=576}\n\nYou need to create a network interface named NIC1.\n\nIn which location can you create NIC1?",
+    "options": [
+      "East US and North Europe only",
+      "East US only",
+      "East US, West Europe, and North Europe",
+      "East US and West Europe only"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma NIC só pode ser criada na região de uma **VNet existente** da mesma assinatura. Só há VNet em East US.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface"
+    ]
+  },
+  {
+    "id": "Q632",
+    "src": 632,
+    "domain": 4,
+    "topic": "Azure DNS — zona pública",
+    "type": "single",
+    "stem": "You have Azure virtual machines that run Windows Server 2019 and are configured as shown in the following table.\n\n![Exhibit](img/S632-stem-1.png){w=575}\n\nYou create a public Azure DNS zone named adatum.com and a private Azure DNS zone named contoso.com.\n\nFor controso.com, you create a virtual network link named link1 as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S632-stem-2.png){w=611}\n\nYou discover that VM1 can resolve names in contoso.com but cannot resolve names in adatum.com. VM1 can resolve other hosts on the Internet. You need to ensure that VM1 can resolve host names in adatum.com. What should you do?",
+    "options": [
+      "Update the DNS suffix on VM1 to be adatum.com",
+      "Configure the name servers for adatum.com at the domain registrar",
+      "Create an SRV record in the contoso.com zone",
+      "Modify the Access control (IAM) settings for link1"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "adatum.com é uma zona **pública**. Para ser resolvida pela internet (inclusive pela VM1, que usa o DNS do Azure), configure os **name servers no registrador** apontando para o Azure DNS. O sufixo DNS não resolve isso. O dump marcava A.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
+    ]
+  },
+  {
+    "id": "Q634",
+    "src": 634,
+    "domain": 5,
+    "topic": "Network Watcher — ferramentas",
+    "type": "hotarea",
+    "stem": "You plan to use Azure Network Watcher to perform the following tasks:\n\n- Task1: Identify a security rule that prevents a network packet from reaching an Azure virtual machine.\n- Task2: Validate outbound connectivity from an Azure virtual machine to an external host.\n\nWhich feature should you use for each task? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Task1:",
+        "options": [
+          "IP flow verify",
+          "Next hop",
+          "Packet capture",
+          "Security group view",
+          "Traffic Analytics"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Task2:",
+        "options": [
+          "Connection troubleshoot",
+          "IP flow verify",
+          "Next hop",
+          "NSG flow logs",
+          "Traffic Analytics"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Descobrir qual regra bloqueia um pacote: **IP flow verify**. Validar conectividade de saída de uma VM para um host externo: **Connection troubleshoot**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview"
+    ]
+  },
+  {
+    "id": "Q636",
+    "src": 636,
+    "domain": 4,
+    "topic": "DNS da VNet x DNS da NIC",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the Azure virtual machines shown in the following table.\n\n![Exhibit](img/S636-stem-1.png){w=608}\n\nYou configure the network interfaces of the virtual machines to use the settings shown in the following table.\n\n![Exhibit](img/S636-stem-2.png){w=344}\n\nFrom the settings of VNET1 you configure the DNS servers shown in the following exhibit.\n\n![Exhibit](img/S636-stem-3.png){w=257}\n\nThe virtual machines can successfully connect to the DNS server that has an IP address of 192.168.10.15 and the DNS server that has an IP address of 193.77.134.10.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM1 connects to 193.77.134.10 for DNS queries.",
+      "VM2 connects to 193.77.134.10 for DNS queries.",
+      "VM3 connects to 192.168.10.15 for DNS queries."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O DNS configurado na **NIC sobrepõe** o da VNet. A VM1 (NIC sem DNS) usa o da VNet (193.77.134.10); VM2 e VM3 usam 192.168.10.15.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#name-resolution-dns"
+    ]
+  },
+  {
+    "id": "Q640",
+    "src": 640,
+    "domain": 4,
+    "topic": "Standard LB — backend",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LBBACKEND"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S640-stem-1.png){w=608}\n\nYou deploy a load balancer that has the following configurations:\n\n- Name: LB1\n- Type: Internal\n- SKU: Standard\n- Virtual network: VNET1\n\nYou need to ensure that you can add VM1 and VM2 to the backend pool of LB1.\n\nSolution: You create a Basic SKU public IP address, associate the address to the network interface of VM1, and then start VM1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Standard LB exige VMs **sem IP público ou com IP público Standard**. Associar um IP **Basic** à VM1 não resolve, e a VM2 continua com IP Basic.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
+    ]
+  },
+  {
+    "id": "Q642",
+    "src": 642,
+    "domain": 4,
+    "topic": "Standard LB — backend",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LBBACKEND"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S642-stem-1.png){w=608}\n\nYou deploy a load balancer that has the following configurations:\n\n- Name: LB1\n- Type: Internal\n- SKU: Standard\n- Virtual network: VNET1\n\nYou need to ensure that you can add VM1 and VM2 to the backend pool of LB1.\n\nSolution: You create a Standard SKU public IP address, associate the address to the network interface of VM1, and then stop VM2.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A VM2 ainda tem IP público **Basic**; parar a VM não muda isso. Não atende.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
+    ]
+  },
+  {
+    "id": "Q644",
+    "src": 644,
+    "domain": 4,
+    "topic": "Standard LB — backend",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LBBACKEND"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S644-stem-1.png){w=611}\n\nYou deploy a load balancer that has the following configurations:\n\n- Name: LB1\n- Type: Internal\n- SKU: Standard\n- Virtual network: VNET1\n\nYou need to ensure that you can add VM1 and VM2 to the backend pool of LB1.\n\nSolution: You create two Standard SKU public IP addresses and associate a Standard SKU public IP address to the network interface of each virtual machine.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Com IPs públicos **Standard** nas duas VMs (substituindo o Basic da VM2), ambas podem entrar no backend do Standard LB.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/backend-pool-management"
+    ]
+  },
+  {
+    "id": "Q648",
+    "src": 648,
+    "domain": 4,
+    "topic": "NSG — prioridade",
+    "type": "single",
+    "stem": "You have an Azure virtual machine named VM1.\n\nThe network interface for VM1 is configured as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S648-stem-1.png){w=611}\n\nYou deploy a web server on VM1, and then create a secure website that is accessible by using the HTTPS protocol. VM1 is used as a web server only. You need to ensure that users can connect to the website from the Internet. What should you do?",
+    "options": [
+      "Modify the protocol of Rule4",
+      "Delete Rule1",
+      "For Rule5, change the Action to Allow and change the priority to 401",
+      "Create a new inbound rule that allows TCP protocol 443 and configure the rule to have a priority of 501."
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A Rule2 (prioridade 500) **nega 80/443**. Mudando a Rule5 (50–5000) para **Allow com prioridade 401**, ela é avaliada antes da Rule2 e libera o 443. Uma regra nova com prioridade 501 viria depois do deny.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+    ]
+  },
+  {
+    "id": "Q650",
+    "src": 650,
+    "domain": 1,
+    "topic": "Bloquear porta por padrão",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NSG8080"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains 10 virtual networks. The virtual networks are hosted in separate resource groups.\n\nAnother administrator plans to create several network security groups (NSGs) in the subscription.\n\nYou need to ensure that when an NSG is created, it automatically blocks TCP port 8080 between the virtual networks.\n\nSolution: From the Resource providers blade, you unregister the Microsoft.ClassicNetwork provider.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Desregistrar Microsoft.ClassicNetwork não afeta NSGs do Resource Manager. Use **Azure Policy customizada**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-policy/policy-definition"
+    ]
+  },
+  {
+    "id": "Q652",
+    "src": 652,
+    "domain": 4,
+    "topic": "Conectar VNets",
+    "type": "yesno",
+    "stem": "You manage two Azure subscriptions named Subscription1 and Subscription2. Subscription1 has following virtual networks:\n\n![Exhibit](img/S652-stem-1.png){w=422}\n\nThe virtual networks contain the following subnets:\n\n![Exhibit](img/S652-stem-2.png){w=450}\n\nSubscription2 contains the following virtual network:\n\n- Name: VNETA\n- Address space: 10.10.128.0/17\n- Location: Canada Central\n\nVNETA contains the following subnets:\n\n![Exhibit](img/S652-stem-3.png){w=286}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "A Site-to-Site connection can be established between VNET1 and VNET2.",
+      "VNET1 and VNET2 can be peered.",
+      "VNET1 and VNETA can be peered."
+    ],
+    "answer": [
+      true,
+      true,
+      true
+    ],
+    "answer_original": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "VNET1 e VNET2 podem se conectar por VNet-to-VNet (S2S) ou por **global peering**. VNET1 (10.10.10.0/24) e VNETA (10.10.128.0/17) **não se sobrepõem**, e o peering funciona entre regiões e assinaturas, então também pode. O dump marcava Não na terceira.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/",
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints"
+    ]
+  },
+  {
+    "id": "Q656",
+    "src": 656,
+    "domain": 4,
+    "topic": "NSG — diagnóstico",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "APP443"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an app named App1 that is installed on two Azure virtual machines named VM1 and VM2. Connections to App1 are managed by using an Azure Load Balancer.\n\nThe effective network security configurations for VM2 are shown in the following exhibit.\n\n![Exhibit](img/S656-stem-1.png){w=611}\n\nYou discover that connections to App1 from 131.107.100.50 over TCP port 443 fail. You verify that the Load Balancer rules are configured correctly. You need to ensure that connections to App1 can be established successfully from 131.107.100.50 over TCP port 443.\n\nSolution: You delete the BlockAllOther443 inbound security rule. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "As regras efetivas já permitem 131.107.100.50 na 443 com **prioridade 100**, antes do BlockAllOther443. Excluir o bloqueio não muda nada: o problema não é o NSG.",
+    "refs": [
+      "https://fastreroute.com/azure-network-security-groups-explained/"
+    ]
+  },
+  {
+    "id": "Q658",
+    "src": 658,
+    "domain": 4,
+    "topic": "NSG — diagnóstico",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "APP443"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an app named App1 that is installed on two Azure virtual machines named VM1 and VM2. Connections to App1 are managed by using an Azure Load Balancer.\n\nThe effective network security configurations for VM2 are shown in the following exhibit.\n\n![Exhibit](img/S658-stem-1.png){w=611}\n\nYou discover that connections to App1 from 131.107.100.50 over TCP port 443 fail. You verify that the Load Balancer rules are configured correctly. You need to ensure that connections to App1 can be established successfully from 131.107.100.50 over TCP port 443.\n\nSolution: You modify the priority of the Allow_131.107.100.50 inbound security rule.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A regra Allow_131.107.100.50 já tem a **maior prioridade (100)**. Mudar a prioridade não resolve.",
+    "refs": [
+      "https://fastreroute.com/azure-network-security-groups-explained/"
+    ]
+  },
+  {
+    "id": "Q660",
+    "src": 660,
+    "domain": 1,
+    "topic": "Bloquear porta por padrão",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NSG8080"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains 10 virtual networks. The virtual networks are hosted in separate resource groups.\n\nAnother administrator plans to create several network security groups (NSGs) in the subscription.\n\nYou need to ensure that when an NSG is created, it automatically blocks TCP port 8080 between the virtual networks.\n\nSolution: You assign a built-in policy definition to the subscription. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Não existe uma política **built-in** que adicione essa regra aos NSGs. É preciso uma **custom policy definition** (ex.: efeito append/deny).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-policy/policy-definition"
+    ]
+  },
+  {
+    "id": "Q664",
+    "src": 664,
+    "domain": 4,
+    "topic": "Standard LB — backend",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "LBBACKEND"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S664-stem-1.png){w=608}\n\nYou deploy a load balancer that has the following configurations:\n\n- Name: LB1\n- Type: Internal\n- SKU: Standard\n- Virtual network: VNET1\n\nYou need to ensure that you can add VM1 and VM2 to the backend pool of LB1.\n\nSolution: You disassociate the public IP address from the network interface of VM2.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Sem IP público em nenhuma das duas (a VM1 não tem e o IP Basic da VM2 é removido), ambas podem entrar no backend do **Standard LB**. O dump marcava Não; a comunidade e a documentação indicam Sim."
+  },
+  {
+    "id": "Q666",
+    "src": 666,
+    "domain": 1,
+    "topic": "Bloquear porta por padrão",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NSG8080"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains 10 virtual networks. The virtual networks are hosted in separate resource groups.\n\nAnother administrator plans to create several network security groups (NSGs) in the subscription.\n\nYou need to ensure that when an NSG is created, it automatically blocks TCP port 8080 between the virtual networks.\n\nSolution: You configure a custom policy definition, and then you assign the policy to the subscription.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma **custom policy definition** atribuída à assinatura pode acrescentar ou exigir a regra de bloqueio da 8080 em todo NSG criado.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-policy/policy-definition"
+    ]
+  },
+  {
+    "id": "Q668",
+    "src": 668,
+    "domain": 5,
+    "topic": "Network Watcher — RTT",
+    "type": "single",
+    "stem": "You have two Azure virtual networks named VNet1 and VNet2. VNet1 contains an Azure virtual machine named VM1. VNet2 contains an Azure virtual machine named VM2.\n\nVM1 hosts a frontend application that connects to VM2 to retrieve data. Users report that the frontend application is slower than usual. You need to view the average round-trip time (RTT) of the packets from VM1 to VM2.\n\nWhich Azure Network Watcher feature should you use?",
+    "options": [
+      "IP flow verify",
+      "Connection troubleshoot",
+      "Connection monitor",
+      "NSG flow logs"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Connection monitor** mede periodicamente alcançabilidade e **latência (RTT)** entre a VM1 e a VM2. IP flow verify e connection troubleshoot são testes pontuais.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview"
+    ]
+  },
+  {
+    "id": "Q674",
+    "src": 674,
+    "domain": 4,
+    "topic": "DNS fornecido pelo Azure — reverso",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains two virtual machines as shown in the following table.\n\n![Exhibit](img/S674-stem-1.png){w=611}\n\nYou perform a reverse DNS lookup for 10.0.0.4 from VM2.\n\nWhich FQDN will be returned?",
+    "options": [
+      "vm1.core.windows.net",
+      "vm1.azure.com",
+      "vm1.westeurope.cloudapp.azure.com",
+      "vm1.internal.cloudapp.net"
+    ],
+    "answer": 3,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Com o DNS fornecido pelo Azure, o PTR de um IP privado retorna **<vm>.internal.cloudapp.net**. O dump marcava vm1.azure.com."
+  },
+  {
+    "id": "Q680",
+    "src": 680,
+    "domain": 4,
+    "topic": "Private DNS — registro e resolução",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the resources in the following table:\n\n![Exhibit](img/S680-stem-1.png){w=422}\n\nIn Azure, you create a private DNS zone named adatum.com. You set the registration virtual network to VNet2. The adatum.com zone is configured as shown in the following exhibit:\n\n![Exhibit](img/S680-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "The A record for VM5 will be registered automatically in the adatum.com zone.",
+      "VM5 can resolve VM9.adatum.com.",
+      "VM6 can resolve VM9.adatum.com."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Só VMs da VNet de **registro** (VNet2) entram automaticamente na zona: a VM5 (VNet1) não. A VNet1 **não está vinculada** à zona, então a VM5 não resolve nomes de adatum.com. A VM6 (VNet2, vinculada) resolve vm9.adatum.com.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-overview"
+    ]
+  },
+  {
+    "id": "Q682",
+    "src": 682,
+    "domain": 4,
+    "topic": "Private DNS — virtual network links",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S682-stem-1.png){w=611}\n\nThe subscription contains the private DNS zones shown in the following table.\n\n![Exhibit](img/S682-stem-2.png){w=611}\n\nYou add virtual network links to the private DNS zones as shown in the following table.\n\n![Exhibit](img/S682-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can enable auto registration for Link2.",
+      "You can add a virtual network link for VNET1 to Zone3.com.",
+      "You can add a virtual network link for VNET2 to Zone1.com and enable auto registration."
+    ],
+    "answer": [
+      true,
+      true,
+      true
+    ],
+    "answer_original": [
+      false,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Zonas privadas são **globais**: a região listada não importa para vincular. Uma VNet só pode ter auto registration em **uma** zona. A VNET2 não tem registro em lugar nenhum, então dá para habilitá-lo no Link2 **ou** criar um link com registro para a Zone1 (uma zona aceita várias VNets de registro). Links só de resolução (VNET1 → Zone3) são livres. O dump marcava Não nas três.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+      "https://docs.microsoft.com/en-us/azure/dns/private-dns-autoregistration"
+    ]
+  },
+  {
+    "id": "Q684",
+    "src": 684,
+    "domain": 4,
+    "topic": "Azure Bastion — sub-rede",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou plan to use an Azure Resource Manager template to deploy a virtual network named VNET1 that will use Azure Bastion.\n\nHow should you complete the template? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "\"name\":",
+        "options": [
+          "AzureBastionSubnet",
+          "AzureFirewallSubnet",
+          "LAN01",
+          "RemoteAccessSubnet"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "\"addressPrefix\":",
+        "options": [
+          "10.10.10.0/27",
+          "10.10.10.0/29",
+          "10.10.10.0/30"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O Bastion exige uma sub-rede chamada **AzureBastionSubnet**. O template usa **/27** (era o mínimo; hoje recomenda-se /26 ou maior).",
+    "refs": [
+      "https://medium.com/charot/deploy-azure-bastion-preview-using-an-arm-template-15e3010767d6"
+    ]
+  },
+  {
+    "id": "Q686",
+    "src": 686,
+    "domain": 5,
+    "topic": "Network Watcher — packet capture",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "INSPECT3H"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou manage a virtual network named VNet1 that is hosted in the West US Azure region.\n\nVNet1 hosts two virtual machines named VM1 and VM2 that run Windows Server. You need to inspect all the network traffic from VM1 to VM2 for a period of three hours.\n\nSolution: From Azure Network Watcher, you create a packet capture. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Inspecionar **todo o tráfego** por 3 horas = **packet capture** do Network Watcher, com duração e filtros configuráveis.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-packet-capture-overview"
+    ]
+  },
+  {
+    "id": "Q688",
+    "src": 688,
+    "domain": 5,
+    "topic": "Network Watcher — connection monitor",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "INSPECT3H"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou manage a virtual network named VNet1 that is hosted in the West US Azure region.\n\nVNet1 hosts two virtual machines named VM1 and VM2 that run Windows Server. You need to inspect all the network traffic from VM1 to VM2 for a period of three hours.\n\nSolution: From Azure Network Watcher, you create a connection monitor. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Connection monitor mede alcançabilidade e latência, mas **não captura o conteúdo** do tráfego. Use packet capture. O dump marcava Sim.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/updates/general-availability-azure-network-watcher-connection-monitor-in-all-public-regions/"
+    ]
+  },
+  {
+    "id": "Q690",
+    "src": 690,
+    "domain": 5,
+    "topic": "Inspecionar tráfego",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "INSPECT3H"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou manage a virtual network named VNet1 that is hosted in the West US Azure region.\n\nVNet1 hosts two virtual machines named VM1 and VM2 that run Windows Server. You need to inspect all the network traffic from VM1 to VM2 for a period of three hours.\n\nSolution: From Performance Monitor, you create a Data Collector Set (DCS). Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Data Collector Set do Performance Monitor coleta contadores, não pacotes. Use **packet capture**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview"
+    ]
+  },
+  {
+    "id": "Q692",
+    "src": 692,
+    "domain": 4,
+    "topic": "Standard LB — configurar",
+    "type": "order",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S692-stem-1.png){w=562}\n\nYou need to load balance HTTPS connections to vm1 and vm2 by using lb1. Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Remove nsg1.",
+      "Remove the public IP addresses from vm1 and vm2.",
+      "Create a health probe and backend pool on lb1.",
+      "Create an availability set.",
+      "Create a load balancing rule on lb1."
+    ],
+    "answer": [
+      1,
+      2,
+      4
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "VMs com IP público **Basic** não entram no backend de um Standard LB: **remova os IPs públicos**, **crie health probe e backend pool** e então a **regra de balanceamento**. O nsg1 já libera 443, e availability set não é exigido.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal"
+    ]
+  },
+  {
+    "id": "Q694",
+    "src": 694,
+    "domain": 5,
+    "topic": "Inspecionar tráfego",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "INSPECT3H"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou manage a virtual network named VNet1 that is hosted in the West US Azure region.\n\nVNet1 hosts two virtual machines named VM1 and VM2 that run Windows Server. You need to inspect all the network traffic from VM1 to VM2 for a period of three hours.\n\nSolution: From Azure Monitor, you create a metric on Network In and Network Out.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Métricas Network In/Out são só volumes agregados, não inspeção. Use **packet capture**.",
+    "refs": [
+      "https://azure.microsoft.com/en-us/updates/general-availability-azure-network-watcher-connection-monitor-in-all-public-regions/"
+    ]
+  },
+  {
+    "id": "Q696",
+    "src": 696,
+    "domain": 4,
+    "topic": "NSG — diagnóstico",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "APP443"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an app named App1 that is installed on two Azure virtual machines named VM1 and VM2. Connections to App1 are managed by using an Azure Load Balancer.\n\nThe effective network security configurations for VM2 are shown in the following exhibit.\n\n![Exhibit](img/S696-stem-1.png){w=611}\n\nYou discover that connections to App1 from 131.107.100.50 over TCP port 443 fail. You verify that the Load Balancer rules are configured correctly. You need to ensure that connections to App1 can be established successfully from 131.107.100.50 over TCP port 443.\n\nSolution: You create an inbound security rule that denies all traffic from the 131.107.100.50 source and has a priority of 64999.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma regra de **deny** com prioridade 64999 para a origem não ajuda: a regra Allow_131.107.100.50 (100) já permite o tráfego. O problema está em outro lugar.",
+    "refs": [
+      "https://fastreroute.com/azure-network-security-groups-explained/"
+    ]
+  },
+  {
+    "id": "Q700",
+    "src": 700,
+    "domain": 4,
+    "topic": "DNS customizado x zona privada",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S700-stem-1.png){w=611}\n\nYou have the virtual machines shown in the following table.\n\n![Exhibit](img/S700-stem-2.png){w=577}\n\nYou have the virtual network interfaces shown in the following table.\n\n![Exhibit](img/S700-stem-3.png){w=419}\n\nServer1 is a DNS server that contains the resources shown in the following table.\n\n![Exhibit](img/S700-stem-4.png){w=611}\n\nYou have an Azure private DNS zone named contoso.com that has a virtual network link to VNET2 and the records shown in the following table.\n\n![Exhibit](img/S700-stem-5.png){w=447}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Server2 resolves host2.contoso.com to 131.107.50.50.",
+      "Server2 resolves host1.contoso.com to 131.107.10.15.",
+      "Server3 resolves host2.contoso.com to 131.107.50.50."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Server2 (NIC2 → 10.10.0.4) e Server3 (NIC3 herda o DNS da VNET2 = 10.10.0.4) consultam o **Server1**, que é **autoritativo** para contoso.com e só tem Host1 = 131.107.10.15. Host2 não existe lá. A zona privada vinculada à VNET2 **não é consultada**, porque a VNet usa DNS customizado. O dump marcava Sim/Não/Sim."
+  },
+  {
+    "id": "Q702",
+    "src": 702,
+    "domain": 4,
+    "topic": "Peering — espaços sobrepostos",
+    "type": "single",
+    "stem": "You have a virtual network named VNet1 as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S702-stem-1.png){w=611}\n\nNo devices are connected to VNet1.\n\nYou plan to peer VNet1 to another virtual network named VNet2. VNet2 has an address space of 10.2.0.0/16.\n\nYou need to create the peering.\n\nWhat should you do first?",
+    "options": [
+      "Modify the address space of VNet1.",
+      "Add a gateway subnet to VNet1.",
+      "Create a subnet on VNet1 and VNet2.",
+      "Configure a service endpoint on VNet2."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A VNet1 usa **10.2.0.0/16**, o mesmo espaço da VNet2. Peering exige espaços sem sobreposição, e a VNet1 não tem dispositivos: **altere o address space da VNet1** primeiro.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints",
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+    ]
+  },
+  {
+    "id": "Q704",
+    "src": 704,
+    "domain": 4,
+    "topic": "Azure Private DNS — registros",
+    "type": "single",
+    "stem": "You have the Azure virtual machines shown in the following table.\n\n![Exhibit](img/S704-stem-1.png){w=391}\n\nVNET1 is linked to a private DNS zone named contoso.com that contains the records shown in the following table.\n\n![Exhibit](img/S704-stem-2.png){w=611}\n\nYou need to ping VM2 from VM1.\n\nWhich DNS names can you use to ping VM2?",
+    "options": [
+      "comp2.contoso.com and comp4.contoso.com only",
+      "comp1.contoso.com, comp2.contoso.com, comp3.contoso.com, and comp4.contoso.com",
+      "comp2.contoso.com only",
+      "comp1.contoso.com and comp2.contoso.com only",
+      "comp1.contoso.com, comp2.contoso.com, and comp4.contoso.com only"
+    ],
+    "answer": 2,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para pingar é preciso um nome que resolva para um IP: só **comp2** (registro A). comp1 é TXT, comp3 é um CNAME para comp1 (que não tem A) e comp4 é PTR. O dump marcava todos.",
+    "refs": [
+      "https://medium.com/azure-architects/exploring-azure-private-dns-be65de08f780",
+      "https://simpledns.plus/help/dns-record-types"
+    ]
+  },
+  {
+    "id": "Q706",
+    "src": 706,
+    "domain": 4,
+    "topic": "NSG — liberar ping",
+    "type": "hotarea",
+    "stem": "You have a network security group (NSG) named NSG1 that has the rules defined in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S706-stem-1.png){w=611}\n\nNSG1 is associated to a subnet named Subnet1. Subnet1 contains the virtual machines shown in the following table.\n\n![Exhibit](img/S706-stem-2.png){w=474}\n\nYou need to add a rule to NSG1 to ensure that VM1 can ping VM2. The solution must use the principle of least privilege.\n\nHow should you configure the rule? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Direction:",
+        "options": [
+          "Inbound",
+          "Outbound"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Source:",
+        "options": [
+          "Any",
+          "10.1.0.10",
+          "10.1.0.11",
+          "10.1.0.10; 10.1.0.11",
+          "10.1.0.0/28"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Destination:",
+        "options": [
+          "Any",
+          "10.1.0.10",
+          "10.1.0.11",
+          "10.1.0.10; 10.1.0.11",
+          "10.1.0.0/28"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Priority:",
+        "options": [
+          "110",
+          "111",
+          "112"
+        ],
+        "answer": 0
+      }
+    ],
+    "answer_original": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O bloqueio é a regra **DENY_PING de saída** (ICMP, VirtualNetwork → Any, prioridade 111). Com menor privilégio: regra **Outbound**, origem **10.1.0.10** (VM1), destino **10.1.0.11** (VM2), prioridade **110** (antes da 111). A entrada já é permitida por AllowVnetInBound. O dump propunha Inbound/Any/Any.",
+    "refs": [
+      "https://www.thomasmaurer.ch/2019/09/how-to-enable-ping-icmp-echo-on-an-azure-vm/"
+    ]
+  },
+  {
+    "id": "Q712",
+    "src": 712,
+    "domain": 4,
+    "topic": "Standard LB — IP público",
+    "type": "single",
+    "stem": "You have an Azure subscription that uses the public IP addresses shown in the following table.\n\n![Exhibit](img/S712-stem-1.png){w=567}\n\nYou need to create a public Azure Standard Load Balancer.\n\nWhich public IP addresses can you use?",
+    "options": [
+      "IP1, IP2, and IP3",
+      "IP2 only",
+      "IP3 only",
+      "IP1 and IP3 only"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Standard Load Balancer exige IP público **Standard** (estático). IP3 é o único Standard.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+    ]
+  },
+  {
+    "id": "Q716",
+    "src": 716,
+    "domain": 4,
+    "topic": "UDR na GatewaySubnet",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a virtual network named VNet1. VNet1 uses an IP address space of 10.0.0.0/16 and contains the VPN Gateway and subnets in the following table:\n\n![Exhibit](img/S716-stem-1.png){w=394}\n\nSubnet1 contains a virtual appliance named VM1 that operates as a router. You create a routing table named RT1.\n\nYou need to route all inbound traffic from the VPN gateway to VNet1 through VM1.\n\nHow should you configure RT1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Address prefix:",
+        "options": [
+          "10.0.0.0/16",
+          "10.0.1.0/24",
+          "10.0.254.0/24"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Next hop type:",
+        "options": [
+          "Virtual appliance",
+          "Virtual network",
+          "Virtual network gateway"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Assigned to:",
+        "options": [
+          "GatewaySubnet",
+          "Subnet0",
+          "Subnet1 and Subnet2"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Para forçar o tráfego que **chega pelo gateway** a passar pelo NVA: route table com prefixo **10.0.0.0/16** (a VNet), next hop **Virtual appliance** (IP da VM1), associada à **GatewaySubnet**."
+  },
+  {
+    "id": "Q720",
+    "src": 720,
+    "domain": 4,
+    "topic": "NSG — RDP",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual machines shown in the following table:\n\n![Exhibit](img/S720-stem-1.png){w=611}\n\nVM1 and VM2 use public IP addresses. From Windows Server 2019 on VM1 and VM2, you allow inbound Remote Desktop connections.\n\nSubnet1 and Subnet2 are in a virtual network named VNET1.\n\nThe subscription contains two network security groups (NSGs) named NSG1 and NSG2. NSG1 uses only the default rules.\n\nNSG2 uses the default rules and the following custom incoming rule:\n\n- Priority: 100\n- Name: Rule1\n- Port: 3389\n- Protocol: TCP\n- Source: Any\n- Destination: Any\n- Action: Allow\n\nNSG1 is associated to Subnet1. NSG2 is associated to the network interface of VM2.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "From the Internet, you can connect to VM1 by using Remote Desktop.",
+      "From the Internet, you can connect to VM2 by using Remote Desktop.",
+      "From VM1, you can connect to VM2 by using Remote Desktop."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "VM1: o NSG1 da Subnet1 só tem as regras padrão, que **negam** a entrada vinda da internet. VM2: sem NSG na Subnet2 e com o NSG2 da NIC permitindo 3389. **VM1 → VM2**: AllowVnetInBound (e o NSG2 libera 3389)."
+  },
+  {
+    "id": "Q722",
+    "src": 722,
+    "domain": 4,
+    "topic": "Load balancer — regra",
+    "type": "multi",
+    "stem": "You have an Azure subscription that contains two virtual machines named VM1 and VM2.\n\nYou create an Azure load balancer.\n\nYou plan to create a load balancing rule that will load balance HTTPS traffic between VM1 and VM2.\n\nWhich two additional load balancer resources should you create before you can create the load balancing rule? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "a frontend IP address",
+      "an inbound NAT rule",
+      "a virtual network",
+      "a backend pool",
+      "a health probe"
+    ],
+    "answer": [
+      3,
+      4
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma regra de balanceamento referencia um **frontend**, um **backend pool** e um **health probe**. O frontend já existe desde a criação do LB; faltam o **backend pool** e o **health probe**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/load-balancer/components"
+    ]
+  },
+  {
+    "id": "Q726",
+    "src": 726,
+    "domain": 4,
+    "topic": "DNS customizado x zona privada",
+    "type": "yesno",
+    "stem": "You have the Azure virtual machines shown in the following table.\n\n![Exhibit](img/S726-stem-1.png){w=303}\n\nVNET1, VNET2, and VNET3 are peered.\n\n![Exhibit](img/S726-stem-2.png){w=413}\n\nVNET1 and VNET2 are linked to an Azure private DNS zone named contoso.com that contains the records shown in the following table.\n\n![Exhibit](img/S726-stem-3.png){w=412}\n\nThe virtual networks are configured to use the DNS servers shown in the following table.\n\n![Exhibit](img/S726-stem-4.png){w=402}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "From VM1, server1.contoso.com resolves to 131.107.3.3.",
+      "From VM2, server1.contoso.com resolves to 131.107.3.3.",
+      "From VM3, server2.contoso.com resolves to 131.107.2.4."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "VM1 (VNET1, DNS do Azure, VNet vinculada à zona privada) resolve server1 → **131.107.3.3**. VM2 e VM3 usam o DNS customizado 192.168.0.5, cuja zona tem server1 = 131.107.2.3 e server2 = **131.107.2.4**: a VM2 não recebe .3.3, e a VM3 recebe .2.4."
+  },
+  {
+    "id": "Q727",
+    "src": 727,
+    "domain": 4,
+    "topic": "Zonas DNS públicas x privadas",
+    "type": "yesno",
+    "stem": "You have two Azure virtual machines as shown in the following table.\n\n![Exhibit](img/S727-stem-1.png){w=611}\n\nYou create the Azure DNS zones shown in the following table.\n\n![Exhibit](img/S727-stem-2.png){w=346}\n\nYou perform the following actions:\n\nfabrikam.com, you add a virtual network link to vnet1 and enable auto ¾ ԡळԡ\u0003- registration.\n\n- For contoso.com, you assign vm1 and vm2 the Owner role.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "The DNS A record for vm1 is added to contoso.com and has the IP address of 131.107.50.20.",
+      "The DNS A record for vm1 is added to fabrikam.com and has the IP address of 10.0.1.4.",
+      "The DNS A record for vm2 is added to fabrikam.com and has the IP address of 10.0.1.5."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "answer_original": [
+      true,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "**Zona pública** não tem auto registration, e atribuir Owner às VMs não cria registros: nada entra em contoso.com. Na **zona privada** fabrikam.com, vinculada à vnet1 com auto registration, vm1 e vm2 registram seus **IPs privados**, independentemente do sufixo DNS do SO. O dump marcava Sim na primeira.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/dns/dns-zones-records",
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances"
+    ]
+  },
+  {
+    "id": "Q731",
+    "src": 731,
+    "domain": 4,
+    "topic": "NSG na sub-rede + NSG na NIC",
+    "type": "yesno",
+    "stem": "You have a virtual network named VNET1 that contains the subnets shown in the following table:\n\n![Exhibit](img/S731-stem-1.png){w=611}\n\nYou have Azure virtual machines that have the network configurations shown in the following table:\n\n![Exhibit](img/S731-stem-2.png){w=611}\n\nFor NSG1, you create the inbound security rule shown in the following table:\n\n![Exhibit](img/S731-stem-3.png){w=611}\n\nFor NSG2, you create the inbound security rule shown in the following table:\n\n![Exhibit](img/S731-stem-4.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM2 can connect to the TCP port 1433 services on VM1.",
+      "VM1 can connect to the TCP port 1433 services on VM2.",
+      "VM2 can connect to the TCP port 1433 services on VM3."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "answer_original": [
+      true,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Tráfego de entrada para a VM1 precisa passar pelo NSG1 (sub-rede) **e** pelo NSG2 (NIC). O NSG2 **bloqueia 10.10.2.5 (VM2) → VM1 na 1433**, então a VM2 não conecta. VM1 → VM2 e VM2 → VM3 ficam na Subnet2, sem NSG: permitido. O dump marcava Sim na primeira.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/security-overview"
+    ]
+  },
+  {
+    "id": "Q733",
+    "src": 733,
+    "domain": 4,
+    "topic": "UDR com NVA",
+    "type": "yesno",
+    "stem": "You have an Azure subscription named Subscription1.\n\nSubscription1 contains the virtual machines in the following table:\n\n![Exhibit](img/S733-stem-1.png){w=306}\n\nSubscription1 contains a virtual network named VNet1 that has the subnets in the following table:\n\n![Exhibit](img/S733-stem-2.png){w=611}\n\nVM3 has multiple network adapters, including a network adapter named NIC3. IP forwarding is enabled on NIC3. Routing is enabled on VM3.\n\nYou create a route table named RT1 that contains the routes in the following table:\n\n![Exhibit](img/S733-stem-3.png){w=611}\n\nYou apply RT1 to Subnet1 and Subnet2.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM3 can establish a network connection to VM1.",
+      "If VM3 is turned off, VM2 can establish a network connection to VM1.",
+      "VM1 can establish a network connection to VM2."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "As rotas mandam o tráfego entre Subnet1 e Subnet2 para a **VM3** (NVA com IP forwarding). VM3 → VM1 funciona. Com a VM3 desligada, o tráfego VM2 → VM1 é **descartado**: a UDR não tem fallback. VM1 → VM2 passa pela VM3 ligada.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "https://www.quora.com/What-is-IP-forwarding"
+    ]
+  },
+  {
+    "id": "Q741",
+    "src": 741,
+    "domain": 5,
+    "topic": "Azure Backup — VMs suportadas",
+    "type": "single",
+    "stem": "You have an Azure subscription that has a Recovery Services vault named Vault1. The subscription contains the virtual machines shown in the following table:\n\n![Exhibit](img/S741-stem-1.png){w=611}\n\nYou plan to schedule backups to occur every night at 23:00.\n\nWhich virtual machines can you back up by using Azure Backup?",
+    "options": [
+      "VM1 and VM3 only",
+      "VM1, VM2, VM3 and VM4",
+      "VM1 and VM2 only",
+      "VM1 only"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O backup de VM suporta Windows Server, Windows 10 e Ubuntu, e o auto-shutdown não impede: VM desligada recebe backup consistente com falha. As **quatro VMs** podem ser protegidas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-support-matrix-iaas",
+      "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros"
+    ]
+  },
+  {
+    "id": "Q743",
+    "src": 743,
+    "domain": 5,
+    "topic": "Recovery Services vault — região",
+    "type": "single",
+    "stem": "You have the Azure virtual machines shown in the following table:\n\n![Exhibit](img/S743-stem-1.png){w=607}\n\nYou have a Recovery Services vault that protects VM1 and VM2.\n\nYou need to protect VM3 and VM4 by using Recovery Services.\n\nWhat should you do first?",
+    "options": [
+      "Create a new Recovery Services vault",
+      "Create a storage account",
+      "Configure the extensions for VM3 and VM4",
+      "Create a new backup policy"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "VM3 e VM4 estão em **North Europe**, e o vault atual está com as VMs de West Europe. O vault precisa estar na mesma região das VMs: crie **um novo vault** em North Europe.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replicatio"
+    ]
+  },
+  {
+    "id": "Q745",
+    "src": 745,
+    "domain": 5,
+    "topic": "Alert rules e action groups",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains an Azure Storage account named storage1 and the users shown in the following table.\n\n![Exhibit](img/S745-stem-1.png){w=234}\n\nYou plan to monitor storage1 and to configure email notifications for the signals shown in the following table.\n\n![Exhibit](img/S745-stem-2.png){w=607}\n\nYou need to identify the minimum number of alert rules and action groups required for the planned monitoring.\n\nHow many alert rules and action groups should you identify? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Alert rules:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Action groups:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma regra de **activity log** monitora um sinal só, e as métricas Ingress/Egress notificam pessoas diferentes: **4 regras**. Grupos de destinatários distintos: {User1, User3}, {User1} e {User1, User2, User3} = **3 action groups**."
+  },
+  {
+    "id": "Q747",
+    "src": 747,
+    "domain": 5,
+    "topic": "Action groups — ARM role",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the identities shown in the following table.\n\n![Exhibit](img/S747-stem-1.png){w=462}\n\nUser1, Principal1, and Group1 are assigned the Monitoring Reader role. An action group named AG1 has the Email Azure Resource Manager Role notification type and is configured to email the Monitoring Reader role. You create an alert rule named Alert1 that uses AG1.\n\nYou need to identity who will receive an email notification when Alert1 is triggered.\n\nWho should you identify?",
+    "options": [
+      "User1 and Principal1 only",
+      "User1, User2, Principal1, and Principal2",
+      "User1 only",
+      "User1 and User2 only"
+    ],
+    "answer": 3,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Pela documentação atual, o e-mail por **Azure Resource Manager role** vai para os **usuários e membros de grupos** atribuídos à função (com e-mail no perfil). Managed identities/service principals não recebem. Group1 tem a função, então **User1 e User2**. O dump marcava só User1 (regra antiga).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups"
+    ]
+  },
+  {
+    "id": "Q749",
+    "src": 749,
+    "domain": 5,
+    "topic": "Pontos de recuperação",
+    "type": "hotarea",
+    "stem": "You have an Azure virtual machine named VM1 and a Recovery Services vault named Vault1.\n\nYou create a backup policy named Policy1 as shown in the exhibit. (Click the Exhibit tab.)\n\n![Exhibit](img/S749-stem-1.png){w=611}\n\nYou configure the backup of VM1 to use Policy1 on Thursday, January 1 at 1:00 AM.\n\nYou need to identify the number of available recovery points for VM1. How many recovery points are available on January 8 and January 15? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "January 8 at 2:00 PM (14:00):",
+        "options": [
+          "5",
+          "6",
+          "8",
+          "9"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "January 15 at 2:00 PM (14:00):",
+        "options": [
+          "5",
+          "8",
+          "17",
+          "19"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Em 8/1: 5 diários (4 a 8/1, incluindo o domingo 4/1) + mensal do dia **2** = **6**. Em 15/1: 5 diários (11 a 15/1) + semanal de 4/1 + mensal de 2/1 + **anual de 9/1** = **8**.",
+    "refs": [
+      "https://social.technet.microsoft.com/Forums/en-US/854ab6ae-79aa-4bad-ac65-471c4d422e94/daily-monthly-yearly-recovery-points-and-storage-used?"
+    ]
+  },
+  {
+    "id": "Q753",
+    "src": 753,
+    "domain": 5,
+    "topic": "Restore — Replace existing",
+    "type": "single",
+    "stem": "You have an Azure virtual machine named VM1.\n\nYou use Azure Backup to create a backup of VM1 named Backup1.\n\nAfter creating Backup1, you perform the following changes to VM1:\n\n- Modify the size of VM1.\n- Copy a file named Budget.xls to a folder named Data.\n- Reset the password for the built-in administrator account.\n- Add a data disk to VM1.\n\nAn administrator uses the Replace existing option to restore VM1 from Backup1. You need to ensure that all the changes to VM1 are restored.\n\nWhich change should you perform again?",
+    "options": [
+      "Modify the size of VM1.",
+      "Reset the password for the built-in administrator account.",
+      "Add a data disk.",
+      "Copy Budget.xls to Data."
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "**Replace existing** substitui os **discos** pelos do ponto de recuperação e mantém a configuração atual da VM (tamanho e discos anexados depois continuam). O conteúdo do disco volta ao do backup: o **Budget.xls** some, e a troca de senha (que fica no disco do SO) também é revertida. A comunidade se divide.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/about-azure-vm-restore"
+    ]
+  },
+  {
+    "id": "Q755",
+    "src": 755,
+    "domain": 1,
+    "topic": "SSPR",
+    "type": "yesno",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com that contains the users shown in the following table.\n\n![Exhibit](img/S755-stem-1.png){w=611}\n\nYou enable password reset for contoso.onmicrosoft.com as shown in the Password Reset exhibit. (Click the Password Reset tab.)\n\n![Exhibit](img/S755-stem-2.png){w=526}\n\nYou configure the authentication methods for password reset as shown in the Authentication Methods exhibit. (Click the Authentication Methods tab.)\n\n![Exhibit](img/S755-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "After User2 answers three security questions correctly, he can reset his password immediately.",
+      "If User1 forgets her password, she can reset the password by using the mobile phone app.",
+      "User3 can add security questions to the password reset process."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "answer_original": [
+      false,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O SSPR exige **2 métodos**: só as perguntas de segurança não bastam (User2). O SSPR está habilitado só para o **Group2**, e o User1 não é membro. Configurar o SSPR (métodos e perguntas) exige Global admin ou Authentication Policy Administrator; **User administrator não pode**. O dump marcava Sim na terceira.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/authentication/quickstart-sspr",
+      "https://docs.microsoft.com/en-us/azure/active-directory/authentication/active-directory-passwords-faq"
+    ]
+  },
+  {
+    "id": "Q759",
+    "src": 759,
+    "domain": 3,
+    "topic": "Backup do App Service",
+    "type": "yesno",
+    "stem": "You have two Azure App Service app named App1 and App2. Each app has a production deployment slot and a test deployment slot.\n\nThe Backup Configuration settings for the production slots are shown in the following table.\n\n![Exhibit](img/S759-stem-1.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "On January 15, 2021, App1 will have only one backup in storage.",
+      "On February 6, 2021, you can access the backup of the App2 test slot from January 15, 2021.",
+      "On January 15, 2021, you can restore the App2 production slot backup from January 6 to the App2 test slot."
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "answer_original": [
+      true,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Retenção **0 = indefinida**: em 15/1 o App1 terá ~10 backups, não só um. O backup foi configurado nos slots de **produção**, e o slot de teste do App2 não tem backup próprio. Já um backup de produção **pode ser restaurado em outro slot**. O dump marcava Sim nas três."
+  },
+  {
+    "id": "Q761",
+    "src": 761,
+    "domain": 1,
+    "topic": "SSPR para administradores",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant named contoso.com. The tenant is synced to the on-premises Active Directory domain. The domain contains the users shown in the following table.\n\n![Exhibit](img/S761-stem-1.png){w=398}\n\nYou enable self-service password reset (SSPR) for all users and configure SSPR to have the following authentication methods:\n\n- Number of methods required to reset: 2\n- Methods available to users: Mobile phone, Security questions\n- Number of questions required to register: 3\n- Number of questions required to reset: 3\n\nYou select the following security questions:\n\n- What is your favorite food?\n- In what city was your first job?\n- What was the name of your first pet?\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "SecAdmin1 must answer the following question during the self-service password reset: In what city was your first job?",
+      "BillAdmin1 must answer the following question during the self-service password reset: What is your favorite food?",
+      "User1 must answer the following question during the self-service password reset: What was the name of your first pet?"
+    ],
+    "answer": [
+      false,
+      false,
+      true
+    ],
+    "answer_original": [
+      false,
+      true,
+      true
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Contas com **funções administrativas** (Security administrator, Billing administrator etc.) seguem a política fixa de **dois fatores sem perguntas de segurança**. Usuários comuns seguem a política configurada (3 perguntas). Reports reader está na lista de funções que usam a política de administrador? A documentação foca em funções de administração; o dump trata o User1 como usuário comum. O dump marcava Sim para o BillAdmin1.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-sspr-deployment"
+    ]
+  },
+  {
+    "id": "Q763",
+    "src": 763,
+    "domain": 1,
+    "topic": "Novo tenant",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "NEWTENANT"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains the following users in an Azure Active Directory tenant named contoso.onmicrosoft.com:\n\n![Exhibit](img/S763-stem-1.png){w=601}\n\nUser1 creates a new Azure Active Directory tenant named external.contoso.onmicrosoft.com.\n\nYou need to create new user accounts in external.contoso.onmicrosoft.com.\n\nSolution: You instruct User1 to create the user accounts.\n\nDoes that meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Quem cria o tenant (**User1**) é automaticamente o Global administrator dele e pode criar usuários.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/add-users-to-azure-ad"
+    ]
+  },
+  {
+    "id": "Q767",
+    "src": 767,
+    "domain": 3,
+    "topic": "Métricas e scale up do App Service",
+    "type": "hotarea",
+    "stem": "You have an Azure App Service plan named ASP1.\n\nCPU usage for ASP1 is shown in the following exhibit.\n\n![Exhibit](img/S767-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The average CPU percentage is calculated [answer choice] per day.",
+        "options": [
+          "once",
+          "four times",
+          "six times",
+          "24 times"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "ASP1 must be [answer choice] to optimize CPU usage.",
+        "options": [
+          "scaled up",
+          "scaled down",
+          "scaled out"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O gráfico usa granularidade automática de **6 horas** (últimos 30 dias): a média é calculada **4 vezes por dia**. A CPU fica perto de 100%: faça **scale up** (instâncias maiores).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-troubleshoot",
+      "https://azure.microsoft.com/en-us/overview/scaling-out-vs-scaling-up"
+    ]
+  },
+  {
+    "id": "Q769",
+    "src": 769,
+    "domain": 5,
+    "topic": "File Recovery",
+    "type": "order",
+    "stem": "You have an Azure Linux virtual machine that is protected by Azure Backup. One week ago, two files were deleted from the virtual machine. You need to restore the deleted files to an on-premises Windows Server 2016 computer as quickly as possible.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Download and run the script to mount a drive on the local computer",
+      "Select a restore point that contains the deleted files",
+      "From the Azure portal, click Restore VM from the vault",
+      "From the Azure portal, click File Recovery from the vault",
+      "Mount a VHD",
+      "Copy the files by using AZCopy",
+      "Copy the files by using File Explorer"
+    ],
+    "answer": [
+      3,
+      1,
+      0,
+      6
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Recuperação de arquivos: **File Recovery** no vault → **ponto de recuperação** → **baixar e executar o script** que monta os discos → **copiar com o Explorer**. Ressalva: o script de uma VM **Linux** precisa rodar em uma máquina Linux compatível, não no Windows Server.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-restore-files-from-vm",
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-automation#restore-files-from-an-azure-vm-backup"
+    ]
+  },
+  {
+    "id": "Q771",
+    "src": 771,
+    "domain": 5,
+    "topic": "Backup de VM",
+    "type": "hotarea",
+    "stem": "You purchase a new Azure subscription named Subscription1.\n\nYou create a virtual machine named VM1 in Subscription1. VM1 is not protected by Azure Backup.\n\nYou need to protect VM1 by using Azure Backup. Backups must be created at 01:00 and stored for 30 days.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Location in which to store the backups:",
+        "options": [
+          "A blob container",
+          "A file share",
+          "A Recovery Services vault",
+          "A storage account"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Object to use to configure the protection for VM1:",
+        "options": [
+          "A backup policy",
+          "A batch job",
+          "A batch schedule",
+          "A recovery plan"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Os backups ficam em um **Recovery Services vault**, e o horário (01:00) e a retenção (30 dias) são definidos em uma **backup policy**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-first-look-arm"
+    ]
+  },
+  {
+    "id": "Q773",
+    "src": 773,
+    "domain": 5,
+    "topic": "Alerta de log",
+    "type": "single",
+    "stem": "You have an Azure virtual machine named VM1.\n\nAzure collects events from VM1.\n\nYou are creating an alert rule in Azure Monitor to notify an administrator when an error is logged in the System event log of VM1.\n\nWhich target resource should you monitor in the alert rule?",
+    "options": [
+      "virtual machine extension",
+      "virtual machine",
+      "metric alert",
+      "Azure Log Analytics workspace"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Eventos coletados vão para um **Log Analytics workspace**. O alerta de log (log search) usa o workspace como recurso de destino (ou a VM, com consulta de log).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/configure-azure-monitor"
+    ]
+  },
+  {
+    "id": "Q775",
+    "src": 775,
+    "domain": 1,
+    "topic": "Advisor — discos órfãos",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains 100 virtual machines. You regularly create and delete virtual machines.\n\nYou need to identify unattached disks that can be deleted.\n\nWhat should you do?",
+    "options": [
+      "From Azure Cost Management, view Cost Analysis",
+      "From Azure Advisor, modify the Advisor configuration",
+      "From Microsoft Azure Storage Explorer, view the Account Management properties",
+      "From Azure Cost Management, view Advisor Recommendations"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Cost Management > Advisor recommendations** (Advisor Cost) lista **discos não anexados** que podem ser excluídos.",
+    "refs": [
+      "https://codeserendipity.com/2020/07/08/microsoft-azure-find-unattached-disks-that-can-be-deleted-and-other-recommendations/"
+    ]
+  },
+  {
+    "id": "Q777",
+    "src": 777,
+    "domain": 3,
+    "topic": "App Service — logs",
+    "type": "single",
+    "stem": "You have an Azure web app named webapp1.\n\nUsers report that they often experience HTTP 500 errors when they connect to webapp1.\n\nYou need to provide the developers of webapp1 with real-time access to the connection errors. The solution must provide all the connection error details. What should you do first?",
+    "options": [
+      "From webapp1, enable Web server logging",
+      "From Azure Monitor, create a workbook",
+      "From Azure Monitor, create a Service Health alert",
+      "From webapp1, turn on Application Logging"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Erros HTTP 500 com todos os detalhes: habilite o **Web server logging** (logs HTTP brutos), que também pode ser lido em tempo real pelo log stream. Application logging captura só o que o código grava."
+  },
+  {
+    "id": "Q781",
+    "src": 781,
+    "domain": 5,
+    "topic": "KQL — AzureActivity",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that has diagnostic logging enabled and is configured to send logs to a Log Analytics workspace.\n\nYou are investigating a service outage.\n\nYou need to view the event time, the event name, and the affected resources. How should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Table:",
+        "options": [
+          "AzureActivity",
+          "Heartbeat",
+          "NetworkMonitoring",
+          "Perf"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Operator:",
+        "options": [
+          "",
+          " extend",
+          "",
+          " join",
+          "",
+          " print",
+          "",
+          " project"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Eventos de interrupção de serviço ficam no **Activity log**: tabela **AzureActivity**. Para selecionar só algumas colunas, use **project**.",
+    "refs": [
+      "https://github.com/MicrosoftDocs/dataexplorer-docs/blob/main/data-explorer/kusto/query/tutorial.md"
+    ]
+  },
+  {
+    "id": "Q783",
+    "src": 783,
+    "domain": 5,
+    "topic": "Restore — Replace existing",
+    "type": "single",
+    "stem": "You have a Recovery Services vault named RSV1. RSV1 has a backup policy that retains instant snapshots for five days and daily backup for 14 days. RSV1 performs daily backups of VM1. VM1 hosts a static website that was updated eight days ago.\n\nYou need to recover VM1 to a point eight days ago. The solution must minimize downtime.\n\nWhat should you do first?",
+    "options": [
+      "Deallocate VM1.",
+      "Restore VM1 by using the Replace existing restore configuration option.",
+      "Delete VM1.",
+      "Restore VM1 by using the Create new restore configuration option."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Ponto de 8 dias atrás (fora dos 5 dias de snapshot, mas dentro dos 14 do vault). Para **minimizar a indisponibilidade**, use **Replace existing**: só os discos são trocados, mantendo VM, NIC e IP.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+    ]
+  },
+  {
+    "id": "Q785",
+    "src": 785,
+    "domain": 5,
+    "topic": "Data collection rules",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S785-stem-1.png){w=495}\n\nYou plan to create a data collection rule named DCR1 in Azure Monitor. Which resources can you set as data sources in DCR1, and which resources can you set as destinations in DCR1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Data sources:",
+        "options": [
+          "VM1 only",
+          "VM1 and storage1 only",
+          "VM1, storage1, and DB1 only",
+          "VM1, storage1, Workspace1, and DB1"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Destinations:",
+        "options": [
+          "storage1 only",
+          "Workspace1 only",
+          "Workspace1 and storage1 only",
+          "Workspace1, storage1, and DB1 only"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "As fontes de uma DCR são **VMs** (com o Azure Monitor Agent), VMSS ou servidores Arc. Storage e SQL usam diagnostic settings. O destino é um **Log Analytics workspace** (ou métricas do Azure Monitor).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/azure-monitor/agents/data-collection-rule-azure-monitor-agent"
+    ]
+  },
+  {
+    "id": "Q787",
+    "src": 787,
+    "domain": 1,
+    "topic": "Interpretar atribuições (JSON)",
+    "type": "hotarea",
+    "stem": "You have the role assignment file shown in the following exhibit.\n\n![Exhibit](img/S787-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "[answer choice] assigned the Owner role for VM1.",
+        "options": [
+          "User3 is",
+          "User3 and User4 are",
+          "User1 and User3 are",
+          "User1, User3, and User4 are",
+          "User1, User2, User3, and User4"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "[answer choice] can create a virtual machine in RG1.",
+        "options": [
+          "User1 and User4",
+          "User1, User2, and User3",
+          "User1, User2, and User4",
+          "User1, User3, and User4",
+          "User1, User2, User3, and User4"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Owner da VM1: **User1** (Owner da assinatura, herdado) e **User3** (Owner direto na VM1). Criar VM no RG1: **User1** (Owner da assinatura) e **User4** (Contributor no RG1). O User2 é Owner do RG2."
+  },
+  {
+    "id": "Q789",
+    "src": 789,
+    "domain": 1,
+    "topic": "Interpretar função customizada",
+    "type": "yesno",
+    "stem": "You have the following custom role-based access control (RBAC) role.\n\n![Exhibit](img/S789-stem-1.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Users that are assigned Role1 can assign Role1 to users.",
+      "Users that are assigned Role1 can deploy new virtual machines.",
+      "Users that are assigned Role1 can set a static IP address on a virtual machine."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "answer_original": [
+      false,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "**Microsoft.Authorization/*/Write** está em notActions: não atribui funções. Com virtualMachines/*, disks/*, networkInterfaces/* e subnets/join, **dá para implantar VMs**. networkInterfaces/* permite **IP estático**. O dump marcava Não na segunda."
+  },
+  {
+    "id": "Q791",
+    "src": 791,
+    "domain": 4,
+    "topic": "NSG — avaliar regras",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S791-stem-1.png){w=611}\n\nNSG1 is configured as shown in the following exhibit.\n\n![Exhibit](img/S791-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM1 can access storage1.",
+      "VM2 can access VM1 by using the HTTPS protocol.",
+      "The security rules for NSG1 apply to any virtual machine on VNET1."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Saída: **Storage_Access (145)** permite 443 para a tag Storage antes do Block_Internet (150), então a VM1 acessa o storage1. Entrada: a regra de deny vale só para a origem **Internet**, e a VM2 (VirtualNetwork) entra pela AllowVnetInBound. O NSG está associado a **1 sub-rede** só. O dump marcava Não na segunda."
+  },
+  {
+    "id": "Q795",
+    "src": 795,
+    "domain": 1,
+    "topic": "RBAC — VM roles e escopos",
+    "type": "yesno",
+    "stem": "You have two Azure subscriptions named Sub1 and Sub2. Sub1 is in a management group named MG1. Sub2 is in a management group named MG2. You have the resource groups shown in the following table.\n\n![Exhibit](img/S795-stem-1.png){w=277}\n\nYou have the virtual machines shown in the following table.\n\n![Exhibit](img/S795-stem-2.png){w=324}\n\nYou assign roles to users as shown in the following table.\n\n![Exhibit](img/S795-stem-3.png){w=566}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can sign in to VM1.",
+      "User2 can manage disks and disk snapshots of VM1.",
+      "User2 can manage disks and disk snapshots of VM3."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Entrar na VM com Entra ID exige **Virtual Machine User/Administrator Login** no escopo da VM. O User1 tem esse acesso só na Sub2 (a VM1 está na Sub1), e Virtual Machine Contributor não dá login. **Virtual Machine Contributor** gerencia discos, mas **não snapshots**, e o User2 só o tem no MG2. O dump marcava Sim na primeira."
+  },
+  {
+    "id": "Q797",
+    "src": 797,
+    "domain": 5,
+    "topic": "Activity log centralizado",
+    "type": "single",
+    "stem": "You have an Azure Active Directory (Azure AD) tenant that is linked to 10 Azure subscriptions.\n\nYou need to centrally monitor user activity across all the subscriptions. What should you use?",
+    "options": [
+      "Azure Application Insights Profiler",
+      "access reviews",
+      "Activity log filters",
+      "a Log Analytics workspace"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para monitorar centralmente a atividade em 10 assinaturas, envie o **Activity log** de cada uma (diagnostic settings) para um **Log Analytics workspace** e consulte tudo em um só lugar."
+  },
+  {
+    "id": "Q799",
+    "src": 799,
+    "domain": 5,
+    "topic": "Azure Disk Backup",
+    "type": "order",
+    "stem": "You have an Azure subscription that contains a virtual machine name VM1. VM1 has an operating system disk named Disk1 and a data disk named Disk2. You need to back up Disk2 by using Azure Backup.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Configure a managed identity",
+      "Create an Azure Backup vault",
+      "Create a Recovery Services vault",
+      "Delegate permissions for the vault",
+      "Create a backup policy and configure the backup"
+    ],
+    "answer": [
+      1,
+      3,
+      4
+    ],
+    "answer_original": [
+      1,
+      4,
+      0
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Backup de um disco gerenciado avulso usa **Backup vault**. A **managed identity** (system-assigned) do vault precisa de permissões (Disk Backup Reader no disco e Disk Snapshot Contributor no RG de snapshots), e então se cria a política e configura o backup. O dump propunha Backup vault → política → managed identity."
+  },
+  {
+    "id": "Q801",
+    "src": 801,
+    "domain": 4,
+    "topic": "NSG — service tags",
+    "type": "single",
+    "stem": "You have a subnet named Subnet1 that contains Azure virtual machines. A network security group (NSG) named NSG1 is associated to Subnet1. NSG1 only contains the default rules.\n\nYou need to create a rule in NSG1 to prevent the hosts on Subnet1 form connecting to the Azure portal. The hosts must be able to connect to other internet hosts.\n\nTo what should you set Destination in the rule?",
+    "options": [
+      "Application security group",
+      "IP Addresses",
+      "Service Tag",
+      "Any"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Use uma **service tag** como destino (ex.: AzureCloud/AzurePortal). O bloqueio fica restrito aos serviços do Azure e o resto da internet continua liberado."
+  },
+  {
+    "id": "Q811",
+    "src": 811,
+    "domain": 5,
+    "topic": "Vaults e políticas de backup",
+    "type": "hotarea",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to configure Azure Backup to back up the file shares and virtual machines.\n\nWhat is the minimum number of Recovery Services vaults and backup policies you should create? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Recovery Services vaults:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "7"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Backup policies:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": 5
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Os vaults são **regionais**. VMs e file shares estão em **West US, Central US e East US**: **3 vaults**. Cada vault precisa de uma política para **VM** e outra para **file share**: **6 políticas**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/backup-create-rs-vault",
+      "https://docs.microsoft.com/en-us/azure/backup/guidance-best-practices"
+    ]
+  },
+  {
+    "id": "Q813",
+    "src": 813,
+    "domain": 5,
+    "topic": "Alerta de espaço livre em disco",
+    "type": "order",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to configure the alerts for VM1 and VM2 to meet the technical requirements.\n\nWhich three actions should you perform in sequence? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Create a Log Analytics workspace.",
+      "Configure the Diagnostic settings.",
+      "Create an alert rule.",
+      "Collect Windows performance counters from the Log Analytics agents.",
+      "Create an Azure SQL database."
+    ],
+    "answer": [
+      0,
+      3,
+      2
+    ],
+    "answer_original": [
+      2,
+      4,
+      0
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Espaço livre no C: é contador de desempenho do SO convidado: crie um **Log Analytics workspace**, **colete os contadores de desempenho do Windows** (hoje via Azure Monitor Agent + DCR) e crie a **alert rule** (log). O dump trazia uma sequência sem sentido (alerta, SQL Database, workspace)."
+  },
+  {
+    "id": "Q815",
+    "src": 815,
+    "domain": 1,
+    "topic": "Azure Policy — funções",
+    "type": "hotarea",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to ensure that User1 can create initiative definitions, and User4 can assign initiatives to RG2. The solution must meet the technical requirements. Which role should you assign to each user? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "User1:",
+        "options": [
+          "Contributor for RG1",
+          "Contributor for Sub1",
+          "Security Admin for RG1",
+          "Resource Policy Contributor for Sub1"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "User4:",
+        "options": [
+          "Contributor for RG2",
+          "Contributor for Sub1",
+          "Security Admin for Sub1",
+          "Resource Policy Contributor for RG2"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Criar definições de política/iniciativa com menor privilégio: **Resource Policy Contributor** no escopo onde a definição é salva (**Sub1**). Atribuir iniciativas no RG2: **Resource Policy Contributor no RG2**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/governance/policy/overview"
+    ]
+  },
+  {
+    "id": "Q817",
+    "src": 817,
+    "domain": 2,
+    "topic": "Azure Files — acesso por identidade",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to ensure that you can grant Group4 Azure RBAC read only permissions to all the Azure file shares.\n\nWhat should you do?",
+    "options": [
+      "On storage2, enable identity-based access for the file shares.",
+      "Recreate storage2 and set Hierarchical namespace to Enabled.",
+      "On storage1 and storage4, change the Account kind type to StorageV2 (general purpose v2).",
+      "Create a shared access signature (SAS) for storage1, storage2, and storage4."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Funções RBAC nas file shares exigem **acesso por identidade** habilitado. storage1 e storage4 já usam Entra Domain Services; o **storage2** está desabilitado. Habilite-o.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
+    ]
+  },
+  {
+    "id": "Q819",
+    "src": 819,
+    "domain": 5,
+    "topic": "Backup das VMs do App1",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_MFG"
+    },
+    "stem": "You need to implement a backup solution for App1 after the application is moved.\n\nWhat should you create first?",
+    "options": [
+      "a recovery plan",
+      "an Azure Backup Server",
+      "a backup policy",
+      "a Recovery Services vault"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para proteger as VMs com Azure Backup, o primeiro passo é criar o **Recovery Services vault**; depois vêm a política e a habilitação do backup.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal"
+    ]
+  },
+  {
+    "id": "Q821",
+    "src": 821,
+    "domain": 2,
+    "topic": "Copiar arquivos para Blob",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_MFG"
+    },
+    "stem": "You need to move the blueprint files to Azure. What should you do?",
+    "options": [
+      "Generate an access key. Map a drive, and then copy the files by using File Explorer.",
+      "Use Azure Storage Explorer to copy the files.",
+      "Use the Azure Import/Export service.",
+      "Generate a shared access signature (SAS). Map a drive, and then copy the files by using File Explorer."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Requisito: copiar pela **internet** para **Blob storage**. O **Azure Storage Explorer** faz upload para containers de blob. Mapear unidade com File Explorer só funciona com **Azure Files**, e Import/Export é envio de discos físicos.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer"
+    ]
+  },
+  {
+    "id": "Q823",
+    "src": 823,
+    "domain": 2,
+    "topic": "Requisitos de storage",
+    "type": "yesno",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_MFG"
+    },
+    "stem": "You need to identify the storage requirements for Contoso.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Contoso requires a storage account that supports Blob storage.",
+      "Contoso requires a storage account that supports Azure Table storage.",
+      "Contoso requires a storage account that supports Azure File Storage."
+    ],
+    "answer": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Os blueprints vão para **Blob storage** (archive), e os discos não gerenciados das VMs também são page blobs. Nada nos requisitos pede Table nem Azure Files."
+  },
+  {
+    "id": "Q825",
+    "src": 825,
+    "domain": 2,
+    "topic": "Tiers de container e share",
+    "type": "hotarea",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to create container1 and share1.\n\nWhich storage accounts should you use for each resource? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "container1:",
+        "options": [
+          "storage2 only",
+          "storage2 and storage3 only",
+          "storage1, storage2, and storage3 only",
+          "storage2, storage3, and storage4 only",
+          "storage1, storage2, storage3, and storage4"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "share1:",
+        "options": [
+          "storage2 only",
+          "storage4 only",
+          "storage2 and storage4 only",
+          "storage1, storage2, and storage4 only",
+          "storage1, storage2, storage3, and storage4"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Container com tier **Cool**: só contas com tiers de blob, **storage2 (GPv2)** e **storage3 (BlobStorage)**. File share no tier **Cool** (Azure Files Standard): só **GPv2**, ou seja, **storage2**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers",
+      "https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+    ]
+  },
+  {
+    "id": "Q827",
+    "src": 827,
+    "domain": 2,
+    "topic": "Object replication",
+    "type": "hotarea",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to create storage5. The solution must support the planned changes. Which type of storage account should you use, and which account should you configure as the destination storage account? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Account kind:",
+        "options": [
+          "BlobStorage",
+          "BlockBlobStorage",
+          "Storage (general purpose v1)",
+          "StorageV2 (general purpose v2)"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Destination:",
+        "options": [
+          "Storage1",
+          "Storage2",
+          "Storage3",
+          "Storage4"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "\"Replicação para o Blob service\" = **object replication**, que exige **StorageV2** (ou premium block blob) na origem e no destino, com versionamento. Entre as contas existentes, o destino compatível é o **storage2**.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/object-replication-configure?"
+    ]
+  },
+  {
+    "id": "Q829",
+    "src": 829,
+    "domain": 4,
+    "topic": "Flow logs — storage",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to identify which storage account to use for the flow logging of IP traffic from VM5. The solution must meet the retention requirements.\n\nWhich storage account should you identify?",
+    "options": [
+      "storage1",
+      "storage2",
+      "storage3",
+      "storage4"
+    ],
+    "answer": 1,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O storage account dos flow logs precisa estar **na mesma região** do NSG/VM monitorada. A VM5 está em **East US**: só o **storage2** (East US) serve, e a retenção de 8 meses se configura no flow log (ou com lifecycle). O dump marcava storage3, que está em East US 2.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview"
+    ]
+  },
+  {
+    "id": "Q831",
+    "src": 831,
+    "domain": 5,
+    "topic": "IP flow verify",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "LITWARE"
+    },
+    "stem": "You discover that VM3 does NOT meet the technical requirements.\n\nYou need to verify whether the issue relates to the NSGs.\n\nWhat should you use?",
+    "options": [
+      "Diagram in VNet1",
+      "Diagnostic settings in Azure Monitor",
+      "Diagnose and solve problems in Traffic Manager profiles",
+      "The security recommendations in Azure Advisor",
+      "IP flow verify in Azure Network Watcher"
+    ],
+    "answer": 4,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para saber se um **NSG** bloqueia a conexão de saída da VM3 na TCP 8080, use o **IP flow verify** do Network Watcher: ele aponta a regra que permite ou nega o pacote.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-ip-flow-verify-overview"
+    ]
+  },
+  {
+    "id": "Q833",
+    "src": 833,
+    "domain": 4,
+    "topic": "Peering não transitivo",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You need to ensure that VM1 can communicate with VM4. The solution must minimize the administrative effort. What should you do?",
+    "options": [
+      "Create an NSG and associate the NSG to VM1 and VM4.",
+      "Establish peering between VNET1 and VNET3.",
+      "Assign VM4 an IP address of 10.0.1.5/24.",
+      "Create a user-defined route from VNET1 to VNET3."
+    ],
+    "answer": 3,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "VM1 (VNET1) e VM4 (VNET3) estão em VNets que **não estão emparelhadas entre si** (as duas só se emparelham com a VNET2, e peering não é transitivo). Crie o **peering VNET1 ↔ VNET3**. O dump marcava \"atribuir 10.0.1.5 à VM4\", que não faz sentido. Esta questão pertence ao cenário Contoso (consultoria).",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/vpn-gateway/tutorial-site-to-site-portal"
+    ]
+  },
+  {
+    "id": "Q837",
+    "src": 837,
+    "domain": 4,
+    "topic": "Arquitetura do App1",
+    "type": "hotarea",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_MFG"
+    },
+    "stem": "You need to recommend a solution for App1. The solution must meet the technical requirements.\n\nWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Number of virtual networks:",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Number of subnets per virtual network:",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Arquitetura N camadas: **uma VNet** com **três sub-redes** (web, middle tier, SQL). NSGs por sub-rede minimizam as portas abertas entre as camadas.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/n-tier-sql-server"
+    ]
+  },
+  {
+    "id": "Q839",
+    "src": 839,
+    "domain": 4,
+    "topic": "NSG para o App1",
+    "type": "single",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_MFG"
+    },
+    "stem": "You are planning the move of App1 to Azure. You create a network security group (NSG).\n\nYou need to recommend a solution to provide users with access to App1. What should you recommend?",
+    "options": [
+      "Create an incoming security rule for port 443 from the Internet. Associate the NSG to the subnet that contains the web servers.",
+      "Create an outgoing security rule for port 443 from the Internet. Associate the NSG to the subnet that contains the web servers.",
+      "Create an incoming security rule for port 443 from the Internet. Associate the NSG to all the subnets.",
+      "Create an outgoing security rule for port 443 from the Internet. Associate the NSG to all the subnets."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Os usuários só acessam o front-end por HTTPS: regra de **entrada** 443 vinda da Internet, associada **apenas à sub-rede dos web servers**. As outras camadas não devem ficar expostas."
+  },
+  {
+    "id": "Q841",
+    "src": 841,
+    "domain": 4,
+    "topic": "NSGs do cenário",
+    "type": "yesno",
+    "group": {
+      "kind": "case",
+      "id": "CONTOSO_CONSULT"
+    },
+    "stem": "You implement the planned changes for NSG1 and NSG2.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "From VM1, you can establish a Remote Desktop session to VM2.",
+      "From VM2, you can ping VM3.",
+      "From VM2, you can establish a Remote Desktop session to VM3."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "answer_original": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "NSG1 (NIC da VM1) só tem regras de **entrada**. NSG2 (Subnet2) só tem regras de **saída**. VM1 → VM2 (RDP): a saída da VM1 é livre, a entrada na Subnet2 cai na AllowVnetInBound, e o retorno é stateful: **permitido**. VM2 → VM3 (ping): a saída cai na AllowVnetOutBound (VNets emparelhadas): **permitido**. VM2 → VM3 (RDP): NSG2 **nega 3389 de saída**. O dump marcava Não/Sim/Não.",
+    "refs": [
+      "https://docs.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
+    ]
+  },
+  {
+    "id": "Q845",
+    "src": 845,
+    "domain": 1,
+    "topic": "Função customizada a partir de Reader",
+    "type": "hotarea",
+    "group": {
+      "kind": "case",
+      "id": "LITWARE"
+    },
+    "stem": "You need to implement Role1.\n\nWhich command should you run before you create Role1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Cmdlet:",
+        "options": [
+          "Find-RoleCapability",
+          "Get-AzureADDirectoryRole",
+          "Get-AzRoleDefinition",
+          "Get-AzResourceProvider"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "-Name \"Reader\" |",
+        "options": [
+          "ConvertFrom-Json",
+          "ConvertFrom-String",
+          "ConvertTo-Json",
+          "ConvertTo-Xml"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Exporte a definição da função Reader como JSON para usá-la como base: **Get-AzRoleDefinition -Name \"Reader\" | ConvertTo-Json**. Depois edite e crie com New-AzRoleDefinition -InputFile."
+  },
+  {
+    "id": "Q870",
+    "src": 870,
+    "domain": 3,
+    "topic": "Templates ARM — copy",
+    "type": "yesno",
+    "stem": "You have an Azure subscription.\n\nYou create the following file named Deploy.json.\n\n![Exhibit](img/S870-stem-1.png){w=611}\n\nYou connect to the subscription and run the following commands.\n\n![Exhibit](img/S870-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "The commands will create four new resources.",
+      "The commands will create storage accounts in the West US Azure region.",
+      "The first storage account that is created will have a prefix of 0."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O RG1 (criado pelo comando) + 3 storage accounts (copy count 3) = **4 recursos**. A location do recurso é **resourceGroup().location** (Central US), e o parâmetro westus não é usado. O primeiro nome começa com **copyIndex() = 0**."
+  },
+  {
+    "id": "Q873",
+    "src": 873,
+    "domain": 3,
+    "topic": "Modo de implantação Complete",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains a resource group named RG1. You plan to use an Azure Resource Manager (ARM) template named template1 to deploy resources. The solution must meet the following requirements:\n\n- Deploy new resources to RG1.\n- Remove all the existing resources from RG1 before deploying the new resources.\n\nHow should you complete the command? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Parameter:",
+        "options": [
+          "-Name",
+          "-QueryString",
+          "-ResourceGroupName",
+          "-Tag"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "-Mode",
+        "options": [
+          "All",
+          "Complete",
+          "Incremental"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para implantar no RG1 e **remover o que não está no template**, use **-ResourceGroupName RG1 -Mode Complete**. Incremental (o padrão) mantém os recursos existentes."
+  },
+  {
+    "id": "Q875",
+    "src": 875,
+    "domain": 3,
+    "topic": "Autoscale — duração e cooldown",
+    "type": "hotarea",
+    "stem": "You have an Azure App Service web app named app1.\n\nYou configure autoscaling as shown in following exhibit.\n\n![Exhibit](img/S875-stem-1.png){w=611}\n\nYou configure the autoscale rule criteria as shown in the following exhibit.\n\n![Exhibit](img/S875-stem-2.png){w=611}\n\nUse the drop-down menus to select the answer choice that answers each question based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "After CPU usage has reached 80 percent for 15 minutes, [answer choice] will be running.",
+        "options": [
+          "1 instance",
+          "2 instances",
+          "3 instances",
+          "4 instances",
+          "5 instances"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Once the first scale-out instance is created, the minimum time before an additional instance is created will be [answer choice].",
+        "options": [
+          "1 minute",
+          "5 minutes",
+          "10 minutes",
+          "15 minutes"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Regra: média de CPU > 70% por **10 min** → +1, cooldown de **5 min**. Com 80% por 15 minutos: **2 instâncias**. Pelo gabarito, o intervalo mínimo até a próxima instância é **15 minutos** (5 de cooldown + nova janela de 10). Tecnicamente, após o cooldown o autoscale reavalia a janela dos últimos 10 minutos, então a comunidade se divide."
+  },
+  {
+    "id": "Q877",
+    "src": 877,
+    "domain": 5,
+    "topic": "Site Recovery — sub-rede de failover",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S877-stem-1.png){w=569}\n\nYou configure Azure Site Recovery to replicate VM1 between the US East and West US regions.\n\nYou perform a test failover of VM1 and specify VNET2 as the target virtual network.\n\nWhen the test version of VM1 is created, to which subnet will the virtual machine be connected?",
+    "options": [
+      "TestSubnet1",
+      "DemoSubnet1",
+      "RecoverySubnetA",
+      "RecoverySubnetB"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "No failover, o ASR escolhe a sub-rede de destino **pelo nome**: se existir uma com o nome da origem (Subnet2), usa-a; senão, usa a **primeira em ordem alfabética**, **DemoSubnet1**. O dump marcava TestSubnet1, pelo intervalo de endereços."
+  },
+  {
+    "id": "Q884",
+    "src": 884,
+    "domain": 4,
+    "topic": "Azure Bastion — NSG",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains 20 virtual machines, a network security group (NSG) named NSG1, and two virtual networks named VNET1 and VNET2 that are peered.\n\nYou plan to deploy an Azure Bastion Basic SKU host named Bastion1 to VNET1. You need to configure NSG1 to allow inbound access to the virtual machines via Bastion1.\n\nWhich port should you configure for the inbound security rule?",
+    "options": [
+      "22",
+      "443",
+      "389",
+      "8080"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O tráfego do usuário até o Bastion é **HTTPS (443)**: a sub-rede do Bastion precisa liberar 443 de entrada. Nas sub-redes das VMs, libera-se 3389/22 **a partir da AzureBastionSubnet**. Entre as opções, o gabarito é 443."
+  },
+  {
+    "id": "Q886",
+    "src": 886,
+    "domain": 4,
+    "topic": "DC em VNet do Azure",
+    "type": "hotarea",
+    "stem": "Your network contains an on-premises Active Directory Domain Services (AD DS) domain named contoso.com. The domain contains the servers shown in the following table.\n\n![Exhibit](img/S886-stem-1.png){w=502}\n\nYou plan to migrate contoso.com to Azure.\n\nYou create an Azure virtual network named VNET1 that has the following settings:\n\n- Address space: 10.0.0.0/16\n- Subnet:\n  - Name: Subnet1 o IPv4: 10.0.1.0/24\n\nYou need to move DC1 to VNET1. The solution must ensure that the member servers in contoso.com can resolve AD DS DNS names.\n\nHow should you configure DC1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "IP address:",
+        "options": [
+          "Obtain an IP address automatically",
+          "Use 10.0.1.3",
+          "Use 10.0.2.1",
+          "Use 192.168.2.1"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "Name resolution:",
+        "options": [
+          "Configure VNET1 to use a custom DNS server",
+          "Configure VNET1 to use the default Azure-provided DNS server",
+          "Create an Azure Private DNS zone named contoso.com",
+          "Create an Azure public DNS zone named contoso.com"
+        ],
+        "answer": 0
+      }
+    ],
+    "answer_original": [
+      1,
+      2
+    ],
+    "scope": "borderline",
+    "review": "corrigida",
+    "explanation": "Os endereços **.0 a .3** de cada sub-rede são reservados pelo Azure, então **10.0.1.3 não é válido**. A prática recomendada é deixar o SO em **DHCP** (obter IP automaticamente) e tornar o IP privado **estático na NIC do Azure**. Para os membros resolverem o AD, configure a VNet com **DNS customizado** apontando para o DC1; uma zona Private DNS não hospeda os registros SRV dinâmicos do AD. O dump marcava 10.0.1.3 e Private DNS zone."
+  },
+  {
+    "id": "Q892",
+    "src": 892,
+    "domain": 5,
+    "topic": "Connection Monitor",
+    "type": "single",
+    "stem": "You have an on-premises network.\n\nYou have an Azure subscription that contains three virtual networks named VNET1. VNET2. and VNET3. The virtual networks are peered and connected to the on-premises network. The subscription contains the virtual machines shown in the following table.\n\n![Exhibit](img/S892-stem-1.png){w=285}\n\nYou need to monitor connectivity between the virtual machines and the on- premises network by using Connection Monitor.\n\nWhat is the minimum number of connection monitors you should deploy?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O Connection Monitor é **regional**: as VMs de origem precisam estar na região do monitor. Há VMs em West US e Central US: **2 connection monitors**."
+  },
+  {
+    "id": "Q894",
+    "src": 894,
+    "domain": 4,
+    "topic": "Interpretar template de LB",
+    "type": "yesno",
+    "stem": "You plan to deploy the following Azure Resource Manager (ARM) template.\n\n![Exhibit](img/S894-stem-1.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "LB1 will be connected to a subnet named VNET1/netname.",
+      "LB1 can be deployed only to the resource group that contains VNET1.",
+      "The value of the sku variable can be provided as a parameter when the template is deployed from a command prompt."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A sub-rede se chama **APP1** (variables('netname')), não \"VNET1/netname\". resourceId('Microsoft.Network/virtualNetworks','VNET1') sem RG explícito aponta para o **RG da implantação**, então o LB precisa ir para o RG da VNET1. **sku** é variável, não parâmetro: não pode ser passada na linha de comando."
+  },
+  {
+    "id": "Q896",
+    "src": 896,
+    "domain": 2,
+    "topic": "Storage — routing preference",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account. The account stores website data.\n\nYou need to ensure that inbound user traffic uses the Microsoft point-of- presence (POP) closest to the user's location.\n\nWhat should you configure?",
+    "options": [
+      "private endpoints",
+      "Azure Firewall rules",
+      "Routing preference",
+      "load balancing"
+    ],
+    "answer": 2,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "**Routing preference = Microsoft network routing** faz o tráfego entrar pela borda (POP) da Microsoft mais próxima do usuário e seguir pelo backbone global."
+  },
+  {
+    "id": "Q898",
+    "src": 898,
+    "domain": 4,
+    "topic": "NSG — bloquear RDP entre VMs",
+    "type": "single",
+    "stem": "You have two Azure virtual machines named VM1 and VM2 that run Windows Server. The virtual machines are in a subnet named Subnet1. Subnet1 is in a virtual network named VNet1.\n\nYou need to prevent VM1 from accessing VM2 on port 3389.\n\nWhat should you do?",
+    "options": [
+      "Create a network security group (NSG) that has an outbound security rule to deny destination port 3389 and apply the NSG to the network interface of VM1.",
+      "Configure Azure Bastion in VNet1.",
+      "Create a network security group (NSG) that has an outbound security rule to deny source port 3389 and apply the NSG to Subnet1.",
+      "Create a network security group (NSG) that has an inbound security rule to deny source port 3389 and apply the NSG to Subnet1."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma regra **outbound** negando **porta de destino 3389**, no NSG da NIC da VM1, bloqueia só o tráfego que sai da VM1. Regras por porta de **origem** 3389 não pegam o RDP."
+  },
+  {
+    "id": "Q900",
+    "src": 900,
+    "domain": 4,
+    "topic": "Rotas definidas pelo usuário",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S900-stem-1.png){w=611}\n\nYou need to manage outbound traffic from VNET1 by using Firewall1. What should you do first?",
+    "options": [
+      "Configure the Hybrid Connection Manager.",
+      "Upgrade ASP1 to the Premium SKU.",
+      "Create a route table.",
+      "Create an Azure Network Watcher."
+    ],
+    "answer": 2,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Para forçar a saída da VNET1 pelo Firewall1, crie uma **route table** com rota 0.0.0.0/0 → IP privado do firewall (Virtual appliance) e associe às sub-redes."
+  },
+  {
+    "id": "Q902",
+    "src": 902,
+    "domain": 3,
+    "topic": "App Service — backup",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S902-stem-1.png){w=367}\n\nYou deploy a web app named App1 to the West US Azure region.\n\nYou need to back up App1. The solution must minimize costs.\n\nWhich storage account should you use as the target for the backup?",
+    "options": [
+      "storage1",
+      "storage2",
+      "storage3",
+      "storage4"
+    ],
+    "answer": 1,
+    "answer_original": 3,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O backup do App Service grava em um **container de blob**, então FileStorage (storage4) não serve. Para minimizar custo (sem tráfego entre regiões e sem Premium), use **storage2** (Standard, West US, mesma região do app). O dump marcava storage4."
+  },
+  {
+    "id": "Q904",
+    "src": 904,
+    "domain": 5,
+    "topic": "Alertas de Activity log — escopo",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that is linked to an Azure AD tenant. The tenant contains two users named User1 and User2.\n\nThe subscription contains the resources shown in the following table.\n\n![Exhibit](img/S904-stem-1.png){w=273}\n\nThe subscription contains the alert rules shown in the following table.\n\n![Exhibit](img/S904-stem-2.png){w=235}\n\nThe users perform the following action:\n\n- User1 creates a new virtual disk and attaches the disk to VM1\n- User2 creates a new resource tag and assigns the tag to RG1 and VM1 Which alert rules are triggered by each user? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "User1:",
+        "options": [
+          "No alert is triggered",
+          "Only Alert1 is triggered",
+          "Only Alert2 is triggered",
+          "Alert1 and Alert2 are triggered"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "User2:",
+        "options": [
+          "No alert is triggered",
+          "Only Alert1 is triggered",
+          "Only Alert2 is triggered",
+          "Alert1 and Alert2 are triggered"
+        ],
+        "answer": 3
+      }
+    ],
+    "answer_original": [
+      2,
+      3
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O Alert1 (escopo RG1) dispara para operações administrativas em recursos do RG1; o Alert2, para operações na VM1. O User1 cria um disco e o **anexa à VM1** (write na VM): **os dois** disparam. O User2 aplica tag ao **RG1 e à VM1**: também **os dois**. O dump marcava \"só Alert2\" para o User1; a comunidade relata testes divergentes."
+  },
+  {
+    "id": "Q907",
+    "src": 907,
+    "domain": 4,
+    "topic": "Service endpoints",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains eight virtual machines and the resources shown in the following table.\n\n![Exhibit](img/S907-stem-1.png){w=520}\n\nYou need to configure access for VNET1. The solution must meet the following requirements:\n\n- The virtual machines connected to VNET1 must be able to communicate with the virtual machines connected to VNET2 by using the Microsoft backbone.\n- The virtual machines connected to VNET1 must be able to access storage1, storage2, and Azure AD by using the Microsoft backbone.\n\nWhat is the minimum number of service endpoints you should add to VNET1?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ],
+    "answer": 1,
+    "answer_original": 3,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "VNET1 ↔ VNET2 pelo backbone se resolve com **peering**, sem service endpoint. Um único endpoint **Microsoft.Storage** cobre storage1 e storage2, e o acesso ao Entra ID usaria o endpoint Microsoft.AzureActiveDirectory: **2**. O dump marcava 5 (um por recurso)."
+  },
+  {
+    "id": "Q909",
+    "src": 909,
+    "domain": 3,
+    "topic": "Domínio personalizado no App Service",
+    "type": "single",
+    "stem": "You need to configure an Azure web app named contoso.azurewebsites.net to host www.contoso.com.\n\nWhat should you do first?",
+    "options": [
+      "Create A records named www.contoso.com and asuid.contoso.com.",
+      "Create a TXT record named asuid that contains the domain verification ID.",
+      "Create a CNAME record named asuid that contains the domain verification ID.",
+      "Create a TXT record named www.contoso.com that has a value of contoso.azurewebsites.net."
+    ],
+    "answer": 1,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A verificação da posse do domínio usa um **registro TXT asuid.www** com o **Custom Domain Verification ID** (além do CNAME www → contoso.azurewebsites.net). O dump marcava CNAME asuid."
+  },
+  {
+    "id": "Q911",
+    "src": 911,
+    "domain": 5,
+    "topic": "Network Insights / Traffic Analytics",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains 10 network security groups (NSGs), 10 virtual machines, and a Log Analytics workspace named Workspace1. Each NSG is connected to a virtual machine.\n\nYou need to configure an Azure Monitor Network Insights alert that will be triggered when suspicious network traffic is detected.\n\nWhat should you do first?",
+    "options": [
+      "Deploy Connection Monitor.",
+      "Configure data collection endpoints.",
+      "Configure a private link.",
+      "Configure NSG flow logs."
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Detectar tráfego suspeito (Traffic Analytics/Network Insights) depende primeiro dos **flow logs** (NSG flow logs, hoje sucedidos por VNet flow logs) enviados ao Log Analytics."
+  },
+  {
+    "id": "Q913",
+    "src": 913,
+    "domain": 5,
+    "topic": "Alert processing rules",
+    "type": "yesno",
+    "stem": "You have an Azure subscription named Sub1 that contains the resources shown in the following table.\n\n![Exhibit](img/S913-stem-1.png){w=597}\n\nSub1 contains the following alert rule:\n\n- Name: Alert1\n- Scope: All resource groups in Sub1 o Include all future resources\n- Condition: All administrative operations\n- Actions: Action1\n\nSub1 contains the following alert processing rule:\n\n- Name: Rule1\n- Scope: Sub1\n- Rule type: Suppress notifications\n- Apply the rule: On a specific time o Start: August 10, 2022 o End: August 13, 2022\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "If you create a resource group in Sub1 on August 11, 2022, Alert1 is listed in the Azure portal.",
+      "If you create a resource group in Sub1 on August 12, 2022, an email message is sent to admin1@contoso.com.",
+      "If you add a tag to RG1 on August 15, 2022, an email message is sent to admin1@contoso.com."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A regra de supressão **não impede o alerta de disparar** (ele aparece no portal), só **suprime as notificações** no período de 10 a 13/08. Em 12/08 não sai e-mail; em 15/08 sai."
+  },
+  {
+    "id": "Q924",
+    "src": 924,
+    "domain": 3,
+    "topic": "ACI — container groups",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou plan to deploy the Azure container instances shown in the following table.\n\n![Exhibit](img/S924-stem-1.png){w=394}\n\nWhich instances can you deploy to a container group?",
+    "options": [
+      "Instance1 only",
+      "Instance2 only",
+      "Instance1 and Instance2 only",
+      "Instance3 and Instance4 only"
+    ],
+    "answer": 3,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Grupos com **vários containers** só suportam **Linux**; para Windows, o ACI implanta uma instância de container por grupo. Para compor um container group: **Instance3 e Instance4**. O dump marcava as instâncias Windows."
+  },
+  {
+    "id": "Q927",
+    "src": 927,
+    "domain": 4,
+    "topic": "Azure Bastion",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S927-stem-1.png){w=556}\n\nAll the resources connect to a virtual network named VNet1.\n\nYou plan to deploy an Azure Bastion host named Bastion1 to VNet1. Which resources can be protected by using Bastion1?",
+    "options": [
+      "VM1 only",
+      "contoso.com only",
+      "App1 and contoso.com only",
+      "VM1 and contoso.com only",
+      "VM1, App1, and contoso.com"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O Bastion dá RDP/SSH a **máquinas virtuais**. Web app e domínio do Entra Domain Services não são acessados por ele."
+  },
+  {
+    "id": "Q931",
+    "src": 931,
+    "domain": 2,
+    "topic": "Object replication",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1 in the North Europe Azure region.\n\nYou need to ensure that when blob data is added to storage1, a secondary copy is created in the East US region. The solution must minimize administrative effort.\n\nWhat should you configure?",
+    "options": [
+      "operational backup",
+      "object replication",
+      "geo-redundant storage (GRS)",
+      "a lifecycle management rule"
+    ],
+    "answer": 1,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Com GRS o par secundário é fixo (North Europe → West Europe). Para ter cópia em **East US**, use **object replication** para um storage account em East US."
+  },
+  {
+    "id": "Q933",
+    "src": 933,
+    "domain": 5,
+    "topic": "Azure Monitor Agent",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains two Log Analytics workspaces named Workspace1 and Workspace2 and 100 virtual machines that run Windows Server.\n\nYou need to collect performance data and events from the virtual machines. The solution must meet the following requirements:\n\n- Logs must be sent to Workspace1 and Workspace 2.\n- All Windows events must be captured.\n- All security events must be captured.\n\nWhat should you install and configure on each virtual machine?",
+    "options": [
+      "the Azure Monitor agent",
+      "the Windows Azure diagnostics extension (WAD)",
+      "the Windows VM agent"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O **Azure Monitor Agent** com DCRs coleta eventos e contadores e pode enviar para **vários workspaces**. WAD e VM agent não atendem."
+  },
+  {
+    "id": "Q935",
+    "src": 935,
+    "domain": 5,
+    "topic": "Action groups",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1 and an Azure function named App1.\n\nYou need to create an alert rule that will run App1 if VM1 stops. What should you create for the alert rule?",
+    "options": [
+      "an application security group",
+      "a security group that has dynamic device membership",
+      "an action group",
+      "an application group"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A regra de alerta executa ações (Azure Function, e-mail, webhook...) por meio de um **action group**."
+  },
+  {
+    "id": "Q937",
+    "src": 937,
+    "domain": 5,
+    "topic": "Network Insights",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual network named VNet1. VNet1 uses two ExpressRoute circuits that connect to two separate on-premises datacenters.\n\nYou need to create a dashboard to display detailed metrics and a visual representation of the network topology.\n\nWhat should you use?",
+    "options": [
+      "Azure Monitor Network Insights",
+      "a Data Collection Rule (DCR)",
+      "Azure Virtual Network Watcher",
+      "Log Analytics"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Azure Monitor Network Insights** mostra topologia, saúde e métricas dos recursos de rede (inclusive circuitos ExpressRoute) sem configuração."
+  },
+  {
+    "id": "Q939",
+    "src": 939,
+    "domain": 4,
+    "topic": "Diagnóstico de conectividade",
+    "type": "multi",
+    "stem": "You deploy Azure virtual machines to three Azure regions\n\nEach region contains a virtual network. Each virtual network contains multiple subnets peered in a full mesh topology.\n\nEach subnet contains a network security group (NSG) that has defined rules. A user reports that he cannot use port 33000 to connect from a virtual machine in one region to a virtual machine in another region.\n\nWhich two options can you use to diagnose the issue? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Azure Virtual Network Manager",
+      "IP flow verify",
+      "Azure Monitor Network Insights",
+      "Connection troubleshoot",
+      "elective security rules"
+    ],
+    "answer": [
+      1,
+      3
+    ],
+    "answer_original": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "**IP flow verify** mostra qual regra de NSG permite ou nega o pacote, e **Connection troubleshoot** testa a conexão de VM para VM na porta 33000. Network Insights é um painel, não um diagnóstico pontual. O dump marcava B e C."
+  },
+  {
+    "id": "Q950",
+    "src": 950,
+    "domain": 4,
+    "topic": "Azure Bastion — escala",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains 10 virtual machines and the resources shown in the following table.\n\n![Exhibit](img/S950-stem-1.png){w=489}\n\nYou need to ensure that Bastion1 can support 100 concurrent SSH users. The solution must minimize administrative effort.\n\nWhat should you do first?",
+    "options": [
+      "Resize the subnet of Bastion1",
+      "Configure host scaling.",
+      "Create a network security group (NSG)",
+      "Upgrade Bastion1 to the Standard SKU"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O SKU **Basic** tem 2 instâncias fixas. Para 100 sessões SSH simultâneas, faça **upgrade para Standard** e depois configure o **host scaling** (a sub-rede /26 já basta)."
+  },
+  {
+    "id": "Q954",
+    "src": 954,
+    "domain": 5,
+    "topic": "Alerta de Activity log",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou need to receive an email alert when a resource lock is removed from any resource in the subscription.\n\nWhat should you use to create an activity log alert in Azure Monitor?",
+    "options": [
+      "a resource, a condition, and an action group",
+      "a resource, a condition, and a Microsoft 365 group",
+      "a Log Analytics workspace, a resource, and an action group",
+      "a data collection endpoint, an application security group, and a resource group"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um alerta de activity log (ex.: Delete Management Locks) precisa de **escopo/recurso, condição (sinal) e action group** (que envia o e-mail)."
+  },
+  {
+    "id": "Q965",
+    "src": 965,
+    "domain": 4,
+    "topic": "Bastion — cliente nativo",
+    "type": "order",
+    "stem": "You have a Windows 11 device named Device and an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S965-stem-1.png){w=611}\n\nDevice1 has Azure PowerShell and Azure Command-Line Interface (CLI) installed. From Device1, you need to establish a Remote Desktop connection to VM1. Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "From Azure CLI on Device1, run az network bastion rdp.",
+      "From Bastion1, enable Kerberos authentication.",
+      "From VM1, enable just-in-time (JIT) VM access.",
+      "From Bastion1, select Native Client Support.",
+      "On Device1, run mstsc.exe.",
+      "Upgrade Bastion1 to the Standard SKU."
+    ],
+    "answer": [
+      5,
+      3,
+      0
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O cliente nativo (az network bastion rdp) exige **Bastion Standard**: faça o **upgrade**, habilite **Native Client Support** e conecte com **az network bastion rdp** a partir do Device1."
+  },
+  {
+    "id": "Q972",
+    "src": 972,
+    "domain": 3,
+    "topic": "ARM — VM",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription.\n\nYou need to deploy a virtual machine by using an Azure Resource Manager (ARM) template.\n\nHow should you complete the template? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "dependsOn: \"[ [answer choice] ('Microsoft.Network/networkInterfaces/', 'VM1')]\"",
+        "options": [
+          "reference",
+          "resourceId",
+          "union"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "storageProfile: \"[answer choice]\": {",
+        "options": [
+          "Array",
+          "Image",
+          "ImageReference",
+          "vmId"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "No dependsOn use **resourceId**('Microsoft.Network/networkInterfaces', ...). A imagem fica em storageProfile.**imageReference** (publisher, offer, sku, version)."
+  },
+  {
+    "id": "Q974",
+    "src": 974,
+    "domain": 4,
+    "topic": "Azure Bastion — IP público",
+    "type": "single",
+    "stem": "You have an Azure subscription that has the public IP addresses shown in the following table.\n\n![Exhibit](img/S974-stem-1.png){w=590}\n\nYou plan to deploy an Azure Bastion Basic SKU host named Bastion1. Which IP addresses can you use?",
+    "options": [
+      "IP1 only",
+      "IP1 and IP2 only",
+      "IP3, IP4, and IP5 only",
+      "IP1, IP2, IP4, and IP5 only",
+      "IP1, IP2, IP3, IP4, and IP5"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O Bastion exige IP público **Standard, IPv4, estático e regional**. O tier Global (IP2) não é suportado. Só o **IP1**. O dump marcava IP1 e IP2."
+  },
+  {
+    "id": "Q980",
+    "src": 980,
+    "domain": 1,
+    "topic": "Mover VM entre assinaturas",
+    "type": "single",
+    "stem": "You have two Azure subscriptions named Sub1 and Sub2.\n\nSub1 contains a virtual machine named VM1 and a storage account named storage1.\n\nVM1 is associated to the resources shown in the following table.\n\n![Exhibit](img/S980-stem-1.png){w=285}\n\nYou need to move VM1 to Sub2.\n\nWhich resources should you move to Sub2?",
+    "options": [
+      "VM1, Disk1, and NetInt1 only",
+      "VM1, Disk1, and VNet1 only",
+      "VM1, Disk1, and storage1 only",
+      "VM1, Disk1, NetInt1, and VNet1"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para mover uma VM de assinatura, os **recursos dependentes vão junto**: disco, NIC e a **VNet** em que a NIC está. O storage1 não é dependência."
+  },
+  {
+    "id": "Q982",
+    "src": 982,
+    "domain": 5,
+    "topic": "Estado de alertas",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the alerts shown in the following exhibit.\n\n![Exhibit](img/S982-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "For Alert1, User response [answer choice].",
+        "options": [
+          "cannot be changed",
+          "can be changed to New only",
+          "can be changed to Acknowledged only",
+          "can be changed to New or Acknowledged"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "For Alert2, User response [answer choice].",
+        "options": [
+          "cannot be changed",
+          "can be changed to Acknowledged only",
+          "can be changed to closed only",
+          "can be changed to Acknowledged or Closed"
+        ],
+        "answer": 3
+      }
+    ],
+    "answer_original": [
+      0,
+      3
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O estado (user response) de um alerta pode ser alterado livremente entre **New, Acknowledged e Closed**, inclusive reabrir um alerta fechado. O dump dizia que o estado do Alert1 (Closed) não pode ser alterado."
+  },
+  {
+    "id": "Q989",
+    "src": 989,
+    "domain": 3,
+    "topic": "App Service — plano e domínio",
+    "type": "hotarea",
+    "stem": "You need to configure a new Azure App Service app named WebApp1. The solution must meet the following requirements:\n\n- WebApp1 must be able to verify a custom domain name of app.contoso.com.\n- WebApp1 must be able to automatically scale up to eight instances.\n- Costs and administrative effort must be minimized.\n\nWhich pricing plan should you choose, and which type of record should you use to verify the domain? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "Pricing plan:",
+        "options": [
+          "Basic",
+          "Free",
+          "Shared",
+          "Standard"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "Record type:",
+        "options": [
+          "A",
+          "AAAA",
+          "PTR",
+          "TXT"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Autoscale** (até 10 instâncias) exige no mínimo **Standard**; Basic só escala manualmente até 3. A verificação do domínio usa um registro **TXT** (asuid) com o ID de verificação."
+  },
+  {
+    "id": "Q999",
+    "src": 999,
+    "domain": 5,
+    "topic": "Multi-user authorization",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a Recovery Services vault named Vault1.\n\nYou need to enable multi-user authorization (MAU) for Vault1.\n\nWhich resource should you create first?",
+    "options": [
+      "an administrative unit",
+      "a managed identity",
+      "a resource guard",
+      "a custom Azure role"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A **MUA** do Recovery Services vault usa um **Resource Guard**, criado (de preferência em outra assinatura/tenant) e associado ao vault."
+  },
+  {
+    "id": "Q1001",
+    "src": 1001,
+    "domain": 4,
+    "topic": "NSG — diagnóstico",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "APP443"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an app named App1 that is installed on two Azure virtual machines named VM1 and VM2. Connections to App1 are managed by using an Azure Load Balancer.\n\nThe effective network security configurations for VM2 are shown in the following exhibit.\n\n![Exhibit](img/S1001-stem-1.png){w=601}\n\nYou discover that connections to App1 from 131.107.100.50 over TCP port 443 fail. You verify that the Load Balancer rules are configured correctly. You need to ensure that connections to App1 can be established successfully from 131.107.100.50 over TCP port 443.\n\nSolution: You create an inbound security rule that allows any traffic from the AzureLoadBalancer source and has a priority of 150.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A regra padrão **AllowAzureLoadBalancerInBound** (65001) já permite o probe do LB, e Allow_131.107.100.50 (100) permite o cliente. Uma regra nova não muda nada: o problema está fora do NSG. O dump marcava Sim."
+  },
+  {
+    "id": "Q1022",
+    "src": 1022,
+    "domain": 3,
+    "topic": "Azure Compute Gallery",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S1022-stem-1.png){w=581}\n\nYou create an Azure Compute Gallery named ComputeGallery1 as shown in the Azure Compute Gallery exhibit. (Click the Azure Compute Gallery tab.)\n\n![Exhibit](img/S1022-stem-2.png){w=324}\n\nIn ComputeGallery1, you create a virtual machine image definition named Image1 as shown in the image definition exhibit. (Click the Image Definition tab.)\n\n![Exhibit](img/S1022-stem-3.png){w=335}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No,\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "The operating system disk of VM1 can be used as a source for a version of Image1.",
+      "The operating system disk of VM2 can be used as a source for a version of Image1.",
+      "The operating system disk of VM3 can be used as a source for a version of Image1."
+    ],
+    "answer": [
+      false,
+      true,
+      true
+    ],
+    "answer_original": [
+      false,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "A definição é **Generation V1 / Windows / Specialized**. O disco da VM1 é **Gen2**, incompatível com uma definição V1. vCPUs e memória \"recomendados\" **não são impostos**, e a região da VM de origem não impede (a versão é replicada). VM2 e VM3 (Gen1) servem. O dump marcava Não para a VM2."
+  },
+  {
+    "id": "Q1024",
+    "src": 1024,
+    "domain": 3,
+    "topic": "App Service plan — SO",
+    "type": "single",
+    "stem": "You plan to create the Azure web apps shown in the following table.\n\n![Exhibit](img/S1024-stem-1.png){w=493}\n\nWhat is the minimum number of App Service plans you should create for the web apps?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "ASP.NET 4.8 só roda em **Windows**; Python (e PHP 8.x) só em **Linux**. Um plano é de um SO só: **2 planos**."
+  },
+  {
+    "id": "Q1026",
+    "src": 1026,
+    "domain": 3,
+    "topic": "Implantação no escopo da assinatura",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the resource groups shown in the following table.\n\n![Exhibit](img/S1026-stem-1.png){w=473}\n\nYou create the following Azure Resource Manager (ARM) template named deploy.json.\n\n![Exhibit](img/S1026-stem-2.png){w=611}\n\nYou deploy the template by running the following cmdlet.\n\n![Exhibit](img/S1026-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "The template creates a resource group named RG0 in the East US Azure region.",
+      "The template creates four new resource groups.",
+      "The template creates a resource group named RG3 in the West US Azure region."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O copy cria **4 RGs** (RG0–RG3) na location do **template (eastus)**. O -Location westus do comando só define onde ficam os **metadados da implantação**."
+  },
+  {
+    "id": "Q1028",
+    "src": 1028,
+    "domain": 3,
+    "topic": "Autoscale do App Service",
+    "type": "single",
+    "stem": "You have an Azure App Service app named App1 that contains two running instances.\n\nYou have an autoscale rule configured as shown in the following exhibit.\n\n![Exhibit](img/S1028-stem-1.png){w=430}\n\nFor the Instance limits scale condition setting, you set Maximum to 5. During a 30-minute period, App1 uses 80 percent of the available memory. What is the maximum number of instances for App1 during the 30-minute period?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 3,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "A regra soma +1 instância quando a memória média passa de 70% por **15 min**, com cooldown de **5 min**. A 80% constante: 3 instâncias aos 15 min, 4 aos ~20, 5 aos ~25, e o máximo é 5. O dump marcava 2."
+  },
+  {
+    "id": "Q1030",
+    "src": 1030,
+    "domain": 3,
+    "topic": "Onde rodar imagens Windows/Linux",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the container images shown in the following table.\n\n![Exhibit](img/S1030-stem-1.png){w=386}\n\nYou plan to use the following services:\n\n- Azure Container Instances\n- Azure Container Apps\n- Azure App Service\n\nIn which services can you run the images? To answer, select the options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "Image1:",
+        "options": [
+          "Azure Container Instances only",
+          "Azure Container Apps only",
+          "Azure Container Instances and App Services only",
+          "Azure Container Apps and App Services only",
+          "Azure Container Instances, Azure Container Apps, and App Services"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Image2:",
+        "options": [
+          "Azure Container Instances only",
+          "Azure Container Apps only",
+          "Azure Container Instances and App Services only",
+          "Azure Container Apps and App Services only",
+          "Azure Container Instances, Azure Container Apps, and App Services"
+        ],
+        "answer": 4
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Container Apps só roda Linux**. A imagem Windows roda em **ACI e App Service**; a Linux, nos três."
+  },
+  {
+    "id": "Q1032",
+    "src": 1032,
+    "domain": 3,
+    "topic": "Certificado do Key Vault no App Service",
+    "type": "single",
+    "stem": "You have an Azure AD tenant named contoso.com.\n\nYou have an Azure subscription that contains an Azure App Service web app named App1 and an Azure key vault named KV1. KV1 contains a wildcard certificate for contoso.com.\n\nYou have a user named User1@contoso.com that is assigned the Owner role for App1 and KV1.\n\nYou need to configure App1 to use the wildcard certificate of KV1. What should you do first?",
+    "options": [
+      "Create an access policy for KV1 and assign the Microsoft Azure App Service principal to the policy.",
+      "Assign a managed user identity to App1.",
+      "Configure KV1 to use the role-based access control (RBAC) authorization system.",
+      "Create an access policy for KV1 and assign the policy to User1."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "No modelo de **access policy**, dê ao principal **Microsoft Azure App Service** permissão de **get secret** no KV1. Só então o certificado pode ser importado para o App1."
+  },
+  {
+    "id": "Q1034",
+    "src": 1034,
+    "domain": 3,
+    "topic": "Container Apps — VNet",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1034-stem-1.png){w=611}\n\nThe subnets have the IP address spaces shown in the following table.\n\n![Exhibit](img/S1034-stem-2.png){w=333}\n\nYou plan to create a container app named contapp1 in the East US Azure region. You need to create a container app environment named con-env1 that meets the following requirements:\n\n- Uses its own virtual network.\n- Uses its own subnet.\n- Is connected to the smallest possible subnet.\n\nTo which virtual networks can you connect con-env1, and which subnet mask should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "Virtual network:",
+        "options": [
+          "VNet1 only",
+          "VNet2 only",
+          "VNet3 only",
+          "VNet1 or VNet2 only",
+          "VNet2 or VNet3 only",
+          "VNet1 or VNet3 only",
+          "VNet1, VNet2, or VNet3"
+        ],
+        "answer": 6
+      },
+      {
+        "label": "Subnet mask:",
+        "options": [
+          "/16",
+          "/23",
+          "/24",
+          "/26",
+          "/28"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Um ambiente de Container Apps com **workload profiles** exige uma sub-rede dedicada de **no mínimo /27** (o ambiente só Consumption legado exige /23). Entre as opções, a menor válida é **/26**. As VNets precisam estar na mesma região (East US) e ter espaço livre. As tabelas do dump são inconsistentes para a VNet2."
+  },
+  {
+    "id": "Q1036",
+    "src": 1036,
+    "domain": 4,
+    "topic": "Azure Bastion — peering",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1036-stem-1.png){w=433}\n\nAll the virtual networks are peered. Each virtual network contains nine virtual machines.\n\nYou need to configure secure RDP connections to the virtual machines by using Azure Bastion.\n\nWhat is the minimum number of Bastion hosts required?",
+    "options": [
+      "1",
+      "3",
+      "9",
+      "10"
+    ],
+    "answer": 0,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O Bastion alcança VMs em VNets **emparelhadas**, inclusive com **global peering** entre regiões (documentado em *Bastion and VNet peering*). Como todas as VNets estão emparelhadas, **1 Bastion** basta. O dump marcava 3 (um por região)."
+  },
+  {
+    "id": "Q1038",
+    "src": 1038,
+    "domain": 4,
+    "topic": "Azure Bastion Basic",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1038-stem-1.png){w=537}\n\nThe subscription contains the virtual machines shown in the following table.\n\n![Exhibit](img/S1038-stem-2.png){w=534}\n\nEach virtual machine contains only a private IP address.\n\nYou create an Azure bastion for VNet1 as shown in the following exhibit.\n\n![Exhibit](img/S1038-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "The Remote Desktop Connection client (mstsc.exe) can be used to connect to VM1 through Bastion1.",
+      "The Azure portal can use SSH to connect to VM2 through Bastion1.",
+      "The Azure portal can be used to connect to VM3 through Bastion1."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O SKU **Basic** só oferece conexão **pelo portal**; o cliente nativo (mstsc/az network bastion) exige Standard. Pelo portal, o Bastion alcança a VM2 na VNet2 **emparelhada**, mas não a VM3: a VNet3 só está emparelhada com a VNet2, e peering **não é transitivo**. O dump marcava Sim na primeira."
+  },
+  {
+    "id": "Q1040",
+    "src": 1040,
+    "domain": 4,
+    "topic": "Service endpoint policies",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1040-stem-1.png){w=356}\n\nThe subscription contains the subnets shown in the following table.\n\n![Exhibit](img/S1040-stem-2.png){w=611}\n\nThe subscription contains the storage accounts shown in the following table.\n\n![Exhibit](img/S1040-stem-3.png){w=546}\n\nYou create a service endpoint policy named Policy1 in the South Central US Azure region to allow connectivity to all the storage accounts in the subscription.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Policy1 can be applied to Subnet3.",
+      "Only storage1 and storage2 can be accessed from VNet2.",
+      "Only storage2 can be accessed from VNet3."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "borderline",
+    "review": "duvidosa",
+    "explanation": "Uma service endpoint policy só pode ser aplicada a sub-redes de VNets **na mesma região**: South Central US → **Subnet3**. A VNet2 não tem política, então não fica restrita a storage1/storage2. O gabarito considera que, a partir da VNet3, só o storage2 (mesma região) é acessível pelo endpoint."
+  },
+  {
+    "id": "Q1043",
+    "src": 1043,
+    "domain": 3,
+    "topic": "ACI — DNS name label",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a resource group named RG1 and a virtual network named VNet1.\n\nYou plan to create an Azure container instance named container1. You need to be able to configure DNS name label scope reuse for container1. What should you configure for container1?",
+    "options": [
+      "the private networking type",
+      "the public networking type",
+      "a new subnet on VNet1",
+      "a confidential SKU"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O **DNS name label** (e a política de reuso do rótulo) só existe com rede **pública**."
+  },
+  {
+    "id": "Q1045",
+    "src": 1045,
+    "domain": 4,
+    "topic": "DNS customizado x Azure DNS",
+    "type": "yesno",
+    "stem": "You have the Azure virtual machines shown in the following table.\n\n![Exhibit](img/S1045-stem-1.png){w=456}\n\nVNET1, VNET2, and VNET3 are peered.\n\nVM4 has a DNS server that is authoritative for a zone named contoso.com and contains the records shown in the following table.\n\n![Exhibit](img/S1045-stem-2.png){w=450}\n\nThe virtual networks are configured to use the DNS servers shown in the following table.\n\n![Exhibit](img/S1045-stem-3.png){w=434}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "From VM1, server1.contoso.com resolves to 131.107.3.3.",
+      "From VM2, server1.contoso.com resolves to 131.107.3.3.",
+      "From VM3, server2.contoso.com resolves to 131.107.2.4."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "A VM1 (VNET1, **DNS do Azure**) não tem zona contoso.com para consultar: não resolve server1. VM2 e VM3 usam o DNS customizado 192.168.0.5 (VM4), em que **server1 = 131.107.3.3** e **server2 = 131.107.3.4**. O dump reaproveitou o gabarito de outra variante (Sim/Não/Sim)."
+  },
+  {
+    "id": "Q1047",
+    "src": 1047,
+    "domain": 3,
+    "topic": "ARM — ordem de dependências",
+    "type": "order",
+    "stem": "You have an Azure subscription that contains a resource group named RG1. You plan to create an Azure Resource Manager (ARM) template to deploy a new virtual machine named VM1. VM1 must support the capture of performance data. You need to specify resource dependencies for the ARM template. In which order should you deploy the resources? To answer, move all resources from the list of resources to the answer area and arrange them in the correct order.",
+    "pool": [
+      "virtual machine",
+      "Azure Monitor extension",
+      "network interface",
+      "virtual network"
+    ],
+    "answer": [
+      3,
+      2,
+      0,
+      1
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A ordem segue as dependências: **virtual network** → **network interface** (na sub-rede) → **virtual machine** (usa a NIC) → **extensão do Azure Monitor** (instalada na VM)."
+  },
+  {
+    "id": "Q1050",
+    "src": 1050,
+    "domain": 4,
+    "topic": "Azure Bastion — peering",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1050-stem-1.png){w=537}\n\nThe subscription contains the virtual machines shown in the following table.\n\n![Exhibit](img/S1050-stem-2.png){w=460}\n\nAll the virtual machines have only private IP addresses.\n\nYou deploy an Azure Bastion host named Bastion1 to VNet1.\n\nTo which virtual machines can you connect through Bastion1?",
+    "options": [
+      "VM1 only",
+      "VM1 and VM2 only",
+      "VM1 and VM3 only",
+      "VM1, VM2, and VM3"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Peering **não é transitivo**. O Bastion1 na VNet1 alcança a VNet1 e a VNet2 (emparelhada), mas não a VNet3, que só se emparelha com a VNet2. **VM1 e VM2**."
+  },
+  {
+    "id": "Q1053",
+    "src": 1053,
+    "domain": 5,
+    "topic": "Retenção da política de backup",
+    "type": "hotarea",
+    "stem": "You create a Recovery Services vault backup policy named Policy1 as shown in the following exhibit:\n\n![Exhibit](img/S1053-stem-1.png){w=611}\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "The backup that occurs on Sunday, March 1, will be retained for [answer choice].",
+        "options": [
+          "30 days",
+          "10 weeks",
+          "36 months",
+          "10 years"
+        ],
+        "answer": 3
+      },
+      {
+        "label": "The backup that occurs on Sunday, November 1, will be retained for [answer choice].",
+        "options": [
+          "30 days",
+          "10 weeks",
+          "36 months",
+          "10 years"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Domingo, **1º de março**: coincide com o ponto **anual** (1º de março) → **10 anos**, a maior retenção aplicável. Domingo, **1º de novembro**: ponto **mensal** (dia 1) → **36 meses**."
+  },
+  {
+    "id": "Q1055",
+    "src": 1055,
+    "domain": 5,
+    "topic": "Políticas de backup de VM",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the vaults shown in the following table.\n\n![Exhibit](img/S1055-stem-1.png){w=611}\n\nYou deploy the virtual machines shown in the following table.\n\n![Exhibit](img/S1055-stem-2.png){w=611}\n\nYou have the backup policies shown in the following table.\n\n![Exhibit](img/S1055-stem-3.png){w=551}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM1 can be backed up by using Policy1.",
+      "VM2 can be backed up by using Policy3.",
+      "VM2 can be backed up by using Policy2."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A política **Standard** suporta VMs com **ADE**. VMs com **Trusted launch** exigem política **Enhanced** em um Recovery Services vault. O Backup vault (Policy3) não faz backup de VMs."
+  },
+  {
+    "id": "Q1057",
+    "src": 1057,
+    "domain": 5,
+    "topic": "Azure Monitor Private Link Scope",
+    "type": "single",
+    "stem": "You have an Azure subscription. The subscription contains virtual machines that connect to a virtual network named VNet1.\n\nYou plan to configure Azure Monitor for VM Insights.\n\nYou need to ensure that all the virtual machines only communicate with Azure Monitor through VNet1.\n\nWhat should you create first?",
+    "options": [
+      "a data collection rule (DCR)",
+      "a Log Analytics workspace",
+      "an Azure Monitor Private Link Scope (AMPLS)",
+      "a private endpoint"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para o tráfego dos agentes ao Azure Monitor passar só pela VNet, crie primeiro um **AMPLS** e depois o private endpoint ligado a ele."
+  },
+  {
+    "id": "Q1059",
+    "src": 1059,
+    "domain": 5,
+    "topic": "Backup vault x Recovery Services vault",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the vaults shown in the following table.\n\n![Exhibit](img/S1059-stem-1.png){w=594}\n\nYou create a storage account that contains the resources shown in the following table.\n\n![Exhibit](img/S1059-stem-2.png){w=486}\n\nTo which vault can you back up cont1 and share1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "cont1:",
+        "options": [
+          "Backup1 only",
+          "Recovery1 only",
+          "Backup1 or Recovery1",
+          "Cannot be backed up to Backup1 or Recovery1"
+        ],
+        "answer": 0
+      },
+      {
+        "label": "share1:",
+        "options": [
+          "Backup1 only",
+          "Recovery1 only",
+          "Backup1 or Recovery1",
+          "Cannot be backed up to Backup1 or Recovery1"
+        ],
+        "answer": 1
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Blobs** (containers) usam o **Backup vault**; **file shares** do Azure Files usam o **Recovery Services vault**."
+  },
+  {
+    "id": "Q1067",
+    "src": 1067,
+    "domain": 3,
+    "topic": "ARM — dependsOn",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou plan to deploy the resources shown in the following table.\n\n![Exhibit](img/S1067-stem-1.png){w=400}\n\nYou need to create a single Azure Resource Manager (ARM) template that will be used to deploy the resources.\n\nWhich resource should be added to the dependsOn section for VM1?",
+    "options": [
+      "VNET1",
+      "NIC1",
+      "IP1",
+      "NSG1"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A VM referencia diretamente a **NIC1**, que depende da VNET1, do IP1 e do NSG1. No dependsOn da VM entra a **NIC1**."
+  },
+  {
+    "id": "Q1069",
+    "src": 1069,
+    "domain": 5,
+    "topic": "Diagnostic settings",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains an Azure SQL database named DB1.\n\nYou plan to use Azure Monitor to monitor the performance of DB1. You must be able to run queries to analyze log data.\n\nWhich destination should you configure in the Diagnostic settings of DB1?",
+    "options": [
+      "Send to a Log Analytics workspace.",
+      "Archive to a storage account.",
+      "Stream to an Azure event hub."
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para consultar logs com KQL, envie para um **Log Analytics workspace**. Storage é arquivamento; Event Hub é streaming."
+  },
+  {
+    "id": "Q1071",
+    "src": 1071,
+    "domain": 5,
+    "topic": "DCR — filtro de eventos",
+    "type": "single",
+    "stem": "You have an Azure subscription. The subscription contains virtual machines that run Windows Server.\n\nYou have a data collection rule (DCR) named Rule1.\n\nYou plan to use the Azure Monitor Agent to collect events from Windows System event logs.\n\nYou only need to collect system events that have an ID of 1001. Which type of query should you use for the data source in Rule1?",
+    "options": [
+      "SQL",
+      "XPath",
+      "KQL"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "DCRs filtram eventos do Windows com consultas **XPath** (ex.: System!*[System[(EventID=1001)]])."
+  },
+  {
+    "id": "Q1073",
+    "src": 1073,
+    "domain": 5,
+    "topic": "Connection Monitor — on-premises",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1. You have an on-premises datacenter that contains a domain controller named DC1. ExpressRoute is used to connect the on-premises datacenter to Azure. You need to use Connection Monitor to identify network latency between VM1 and DC1.\n\nWhat should you install on DC1?",
+    "options": [
+      "the Azure Connected Machine agent for Azure Arc-enabled servers",
+      "the Azure Network Watcher Agent virtual machine extension",
+      "the Log Analytics agent",
+      "an Azure Monitor agent extension"
+    ],
+    "answer": 3,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Para máquinas fora do Azure, o Connection Monitor usa o **Azure Monitor Agent** (instalado via Azure Arc). O agente do Log Analytics (MMA) foi aposentado."
+  },
+  {
+    "id": "Q1075",
+    "src": 1075,
+    "domain": 5,
+    "topic": "Traffic Analytics",
+    "type": "single",
+    "stem": "You have an Azure subscription that has Traffic Analytics configured. You deploy a new virtual machine named VM1 that has the following settings:\n\n- Region: East US\n- Virtual network: VNet1\n- NIC network security group: NSG1\n\nYou need to monitor VM1 traffic by using Traffic Analytics.\n\nWhich settings should you configure?",
+    "options": [
+      "Diagnostic settings for VM1",
+      "NSG flow logs for NSG1",
+      "Diagnostic settings for NSG1",
+      "Insights for VM1"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O Traffic Analytics processa **flow logs**. Habilite os **NSG flow logs do NSG1** com Traffic Analytics (hoje preferem-se VNet flow logs)."
+  },
+  {
+    "id": "Q1077",
+    "src": 1077,
+    "domain": 5,
+    "topic": "AMA — logs do IIS",
+    "type": "single",
+    "stem": "You have an Azure subscription. The subscription contains 10 virtual machines that run Windows Server. Each virtual machine hosts a website in IIS and has the Azure Monitor Agent installed.\n\nYou need to collect the IIS logs from each virtual machine and store them in a Log Analytics workspace.\n\nWhat should you configure first?",
+    "options": [
+      "a data collection endpoint",
+      "an Azure Monitor Private Link Scope (AMPLS)",
+      "Diagnostic settings",
+      "VM insights",
+      "a private endpoint"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "A coleta de **logs do IIS** pelo AMA usa uma DCR que exige um **data collection endpoint (DCE)**. Crie o DCE primeiro."
+  },
+  {
+    "id": "Q1089",
+    "src": 1089,
+    "domain": 3,
+    "topic": "Escopo de implantação ARM",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou create the following Azure Resource Manager (ARM) template named Template.json.\n\n![Exhibit](img/S1089-stem-1.png){w=611}\n\nYou need to deploy Template.json.\n\nWhich PowerShell cmdlet should you run from Azure Cloud Shell?",
+    "options": [
+      "New-AzSubscriptionDeployment",
+      "New-AzManagementGroupDeployment",
+      "New-AzResourceGroupDeployment",
+      "New-AzTenantDeployment"
+    ],
+    "answer": 0,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "O template cria um **resource group**, então a implantação é no escopo da **assinatura**: **New-AzSubscriptionDeployment** (alias de New-AzDeployment). O dump marcava New-AzResourceGroupDeployment."
+  },
+  {
+    "id": "Q1093",
+    "src": 1093,
+    "domain": 1,
+    "topic": "Locks via template",
+    "type": "yesno",
+    "stem": "Your company purchases a new Azure subscription.\n\nYou create a file named Deploy.json as shown in the following exhibit.\n\n![Exhibit](img/S1093-stem-1.png){w=611}\n\nYou connect to the subscription and run the following cmdlet.\n\nNew-AzDeployment -Location westus -TemplateFile \"deploy.json\"\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "You can deploy a virtual machine to RG1.",
+      "You can deploy a virtual machine to RG2.",
+      "You can manually create a resource group named RG3."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O copy cria RG0, RG1 e RG2. O RG1 recebe lock **CanNotDelete**: dá para criar recursos nele. O RG2 recebe lock **ReadOnly**: não dá para criar VM. Locks de RG não impedem criar **outro RG** (RG3) na assinatura."
+  },
+  {
+    "id": "Q1095",
+    "src": 1095,
+    "domain": 3,
+    "topic": "Proximity placement groups",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S1095-stem-1.png){w=608}\n\nYou need to configure a proximity placement group for VMSS1.\n\nWhich proximity placement groups should you use?",
+    "options": [
+      "Proximity2 only",
+      "Proximity1, Proximity2, and Proximity3",
+      "Proximity1 only",
+      "Proximity1 and Proximity3 only"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O PPG precisa estar na **mesma região** do VMSS1 (West US): só o **Proximity1**."
+  },
+  {
+    "id": "Q1099",
+    "src": 1099,
+    "domain": 4,
+    "topic": "Azure Bastion — SKU e sub-rede",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1099-stem-1.png){w=329}\n\nEach virtual network has 50 connected virtual machines.\n\nYou need to implement Azure Bastion. The solution must meet the fallowing requirements:\n\n- Support host scaling.\n- Support uploading and downloading files.\n- Support the virtual machines on both VNet1 and VNet2.\n- Minimize the number of addresses on the Azure Bastion subnet. How should you configure Azure Bastion? To answer, select the options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "Subnet size:",
+        "options": [
+          "/24",
+          "/26",
+          "/28",
+          "/29"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Public IP:",
+        "options": [
+          "Basic SKU with a dynamic allocation",
+          "Basic SKU with a static allocation",
+          "Standard SKU with a static allocation"
+        ],
+        "answer": 2
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Host scaling e upload/download de arquivos exigem **Bastion Standard**. A AzureBastionSubnet precisa ser **/26** ou maior. O IP público precisa ser **Standard estático**. VNet2 é atendida pelo peering."
+  },
+  {
+    "id": "Q1101",
+    "src": 1101,
+    "domain": 4,
+    "topic": "Service endpoints e policies",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains two storage accounts named contoso101 and contoso102.\n\nThe subscription contains the virtual machines shown in the following table.\n\n![Exhibit](img/S1101-stem-1.png){w=471}\n\nVNet1 has service endpoints configured as shown in the Service endpoints exhibit. (Click the Service endpoints tab.)\n\n![Exhibit](img/S1101-stem-2.png){w=611}\n\nThe Microsoft.Storage service endpoint has the service endpoint policy shown in the Microsoft.Storage exhibit. (Click the Microsoft.Storage tab.)\n\n![Exhibit](img/S1101-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "VM1 can access contoso102.",
+      "VM2 can access contoso101.",
+      "VM2 uses a private IP address to access Azure AD."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "A Subnet1 tem o endpoint Microsoft.Storage com uma **service endpoint policy** que só permite **contoso101**: a VM1 **não acessa contoso102** pelo endpoint. A Subnet2 não tem endpoint de storage nem política, então a VM2 acessa o contoso101 pelo endpoint público (sem firewall indicado). O endpoint Microsoft.AzureActiveDirectory só serve ao ADLS Gen1, e o login no Entra não usa IP privado. O dump marcava Sim/Não/Não."
+  },
+  {
+    "id": "Q1103",
+    "src": 1103,
+    "domain": 5,
+    "topic": "Traffic Analytics",
+    "type": "multi",
+    "stem": "You have an Azure subscription that contains multiple virtual machines in the West US Azure region.\n\nYou need to use Traffic Analytics in Azure Network Watcher to monitor virtual machine traffic.\n\nWhich two resources should you create? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "a Log Analytics workspace",
+      "an Azure Monitor workbook",
+      "a storage account",
+      "a Microsoft Sentinel workspace",
+      "a Data Collection Rule (DCR) in Azure Monitor"
+    ],
+    "answer": [
+      0,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "O Traffic Analytics precisa de **storage account** (para os flow logs) e de **Log Analytics workspace** (para a análise)."
+  },
+  {
+    "id": "Q1105",
+    "src": 1105,
+    "domain": 5,
+    "topic": "Action groups",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a virtual machine named VM1. You plan to deploy an Azure Monitor alert rule that will trigger an alert when CPU usage on VM1 exceeds 80 percent.\n\nYou need to ensure that the alert rule sends an email message to two users named User1 and User2.\n\nWhat should you create for Azure Monitor?",
+    "options": [
+      "an action group",
+      "a mail-enabled security group",
+      "a distribution group",
+      "a Microsoft 365 group"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Para enviar e-mail a User1 e User2 quando o alerta disparar, use um **action group** com as notificações por e-mail."
+  },
+  {
+    "id": "Q1110",
+    "src": 1110,
+    "domain": 3,
+    "topic": "App Service — VNet integration x ASE",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1110-stem-1.png){w=601}\n\nThe subscription contains the virtual machines shown in the following table.\n\n![Exhibit](img/S1110-stem-2.png){w=239}\n\nThe subscription contains the Azure App Service web apps shown in the following table.\n\n![Exhibit](img/S1110-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "WebApp1 can communicate with VM2.",
+      "NSG1 controls inbound traffic to WebApp1.",
+      "WebApp2 can communicate with VM1."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "answer_original": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "A **VNet integration** do WebApp1 é **só de saída**: ele alcança a VM2 pela VNet1 emparelhada, mas o NSG1 **não controla a entrada** no WebApp1. O WebApp2 (Isolated/ASE) roda **dentro** da Subnet2, que está emparelhada com a VNet1, e alcança a VM1. O dump marcava Não na terceira."
+  },
+  {
+    "id": "Q1114",
+    "src": 1114,
+    "domain": 3,
+    "topic": "ACR — admin user",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains an Azure container registry named ContReg1.\n\nYou enable the Admin user for ContReg1.\n\nWhich username can you use to sign in to ContReg1?",
+    "options": [
+      "root",
+      "admin",
+      "administrator",
+      "ContReg1"
+    ],
+    "answer": 3,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Com o **Admin user** habilitado, o usuário é o **nome do registry** (ContReg1) e a senha é uma das duas geradas. O dump marcava admin."
+  },
+  {
+    "id": "Q1116",
+    "src": 1116,
+    "domain": 4,
+    "topic": "Peering global",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1116-stem-1.png){w=211}\n\nYou need to ensure that all the traffic between VNet1 and VNet2 traverses the Microsoft backbone network.\n\nWhat should you configure?",
+    "options": [
+      "a private endpoint",
+      "peering",
+      "Express Route",
+      "a route table"
+    ],
+    "answer": 1,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Tráfego entre VNets **emparelhadas**, inclusive em regiões diferentes (global peering), passa pelo **backbone da Microsoft**. ExpressRoute liga on-premises ao Azure. O dump marcava ExpressRoute."
+  },
+  {
+    "id": "Q1120",
+    "src": 1120,
+    "domain": 3,
+    "topic": "ACI — rede privada",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou are creating a new Azure container instance that will have the following settings:\n\n- Container name: cont1\n- SKU: Standard\n- OS type: Windows\n- Networking type: Public\n- Memory (GiB): 2.5\n- Number of CPU cores: 2\n\nYou discover that the Private setting for Networking type is unavailable. You need to ensure that cont1 can be configured to use private networking. Which setting should you change?",
+    "options": [
+      "Memory (GiB)",
+      "Networking type",
+      "Number of CPU cores",
+      "OS type",
+      "SKU"
+    ],
+    "answer": 3,
+    "answer_original": 1,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Implantar ACI em VNet (rede privada) historicamente era só para **Linux**. Mudando o **OS type**, a opção Private fica disponível. Há relatos de que hoje o Windows também é aceito."
+  },
+  {
+    "id": "Q1122",
+    "src": 1122,
+    "domain": 1,
+    "topic": "RBAC — escopos",
+    "type": "yesno",
+    "stem": "You have a Microsoft Entra tenant that is linked to the subscriptions shown in the following table.\n\n![Exhibit](img/S1122-stem-1.png){w=445}\n\nYou have the resource groups shown in the following table.\n\n![Exhibit](img/S1122-stem-2.png){w=445}\n\nYou assign roles to users as shown in the following table.\n\n![Exhibit](img/S1122-stem-3.png){w=445}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can resize VM1.",
+      "User2 can create a new storage account in RG1.",
+      "User3 can assign User1 the Owner role for RG3."
+    ],
+    "answer": [
+      true,
+      false,
+      true
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "User1: **Contributor no MG2** → Sub3 → RG3 → pode redimensionar a VM1. User2: Storage Account Contributor **no storage1**, não no RG1, então não cria contas novas. User3: **User Access Administrator na raiz** → pode atribuir Owner no RG3."
+  },
+  {
+    "id": "Q1124",
+    "src": 1124,
+    "domain": 1,
+    "topic": "Grupos dinâmicos",
+    "type": "multi",
+    "stem": "You have a Microsoft Entra tenant.\n\nYou plan to perform a bulk import of users.\n\nYou need to ensure that imported user objects are added automatically as the members of a specific group based on each user's department. The solution must minimize administrative effort.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "Create groups that use the Assigned membership type.",
+      "Create an Azure Resource Manager (ARM) template.",
+      "Create groups that use the Dynamic User membership type.",
+      "Write a PowerShell script that parses an import file.",
+      "Create an XML file that contains user information and the appropriate attributes.",
+      "Create a CSV file that contains user information and the appropriate attributes."
+    ],
+    "answer": [
+      2,
+      5
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Crie **grupos dinâmicos de usuário** com regra pelo atributo department e importe os usuários por **CSV** (bulk create). A associação acontece sozinha."
+  },
+  {
+    "id": "Q1125",
+    "src": 1125,
+    "domain": 2,
+    "topic": "Rotação de chaves",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. You need to ensure that the access keys for storage1 rotate automatically. What should you configure?",
+    "options": [
+      "a backup vault",
+      "redundancy for storage1",
+      "lifecycle management for storage1",
+      "an Azure key vault",
+      "a Recovery Services vault"
+    ],
+    "answer": 3,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "A rotação automática das chaves de acesso pode ser feita com o **Key Vault (managed storage account keys)**. Recurso legado; hoje recomenda-se Entra ID/SAS de delegação de usuário e key expiration policy."
+  },
+  {
+    "id": "Q1126",
+    "src": 1126,
+    "domain": 2,
+    "topic": "Azure Files — AD DS",
+    "type": "yesno",
+    "stem": "You have an Azure subscription linked to a hybrid Microsoft Entra tenant. The tenant contains the users shown in the following table.\n\n![Exhibit](img/S1126-stem-1.png){w=251}\n\nYou create the Azure Files shares shown in the following table.\n\n![Exhibit](img/S1126-stem-2.png){w=251}\n\nYou configure identity-based access for contoso2024 as shown in the following exhibit.\n\n![Exhibit](img/S1126-stem-3.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can access the content in share1.",
+      "User2 can access the content in share2.",
+      "User2 can access the content in share3."
+    ],
+    "answer": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Com **AD DS**, só identidades **híbridas (sincronizadas)** acessam: o User1 (só nuvem) não. A permissão padrão de share (SMB Share Contributor para autenticados) dá acesso ao User2 em **share2**. O **contoso2025** não tem identidade configurada, então o share3 não é acessível."
+  },
+  {
+    "id": "Q1127",
+    "src": 1127,
+    "domain": 3,
+    "topic": "ACR — content trust",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou plan to create an Azure container registry named ContReg1. You need to ensure that you can push and pull signed images for ContReg1. What should you do for ContReg1?",
+    "options": [
+      "Enable encryption by using a customer-managed key.",
+      "Create a connected registry.",
+      "Add a token.",
+      "Enable content trust."
+    ],
+    "answer": 3,
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Push/pull de imagens **assinadas** = habilitar **content trust** no registry (Premium). O Docker Content Trust está sendo substituído pelo Notary Project."
+  },
+  {
+    "id": "Q1128",
+    "src": 1128,
+    "domain": 3,
+    "topic": "ACR — tiers",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that has the Azure container registries shown in the following table.\n\n![Exhibit](img/S1128-stem-1.png){w=205}\n\nYou plan to use ACR Tasks and configure private endpoint connections. Which container registries support ACR Tasks and private endpoints? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "slots": [
+      {
+        "label": "ACR Tasks:",
+        "options": [
+          "ContReg1 only",
+          "ContReg1 and ContReg2 only",
+          "ContReg1, ContReg2, and ContReg3"
+        ],
+        "answer": 2
+      },
+      {
+        "label": "Private endpoints:",
+        "options": [
+          "ContReg1 only",
+          "ContReg1 and ContReg2 only",
+          "ContReg1, ContReg2, and ContReg3"
+        ],
+        "answer": 0
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**ACR Tasks** existe em **todos os tiers**. **Private endpoints** (Private Link) só no **Premium**."
+  },
+  {
+    "id": "Q1131",
+    "src": 1131,
+    "domain": 3,
+    "topic": "Escalonamento de containers",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou plan to deploy a container.\n\nYou need to recommend which Azure services can scale the container automatically.\n\nWhat should you recommend?",
+    "options": [
+      "Azure Container Apps only",
+      "Azure Container Instances only",
+      "Azure Container Apps or Azure App Service only",
+      "Azure Container Instances or Azure App Service only",
+      "Azure Container Apps, Azure Container Instances, or Azure App Service"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Azure Container Apps** (KEDA) e **App Service** (autoscale) escalam containers automaticamente. ACI não tem autoscale nativo."
+  },
+  {
+    "id": "Q1132",
+    "src": 1132,
+    "domain": 3,
+    "topic": "ACR — criar e enviar imagem",
+    "type": "hotarea",
+    "stem": "You have an Azure subscription that uses Azure Container Instances. You have a computer that has Azure Command-Line Interface (CLI) and Docker installed.\n\nYou create a container image named image1.\n\nYou need to provision a new Azure container registry and add image1 to the registry.\n\nWhich command should you run for each requirement? To answer, select the options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "slots": [
+      {
+        "label": "Provision a new container registry:",
+        "options": [
+          "az acr build",
+          "az acr create",
+          "az container create",
+          "docker create"
+        ],
+        "answer": 1
+      },
+      {
+        "label": "Add image1 to the registry:",
+        "options": [
+          "az acr create",
+          "az container create",
+          "docker pull",
+          "docker push"
+        ],
+        "answer": 3
+      }
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Crie o registry com **az acr create** e envie a imagem local com **docker push** (depois do docker tag e do az acr login)."
+  },
+  {
+    "id": "Q1133",
+    "src": 1133,
+    "domain": 4,
+    "topic": "Endereçamento de sub-rede",
+    "type": "single",
+    "stem": "You have an Azure virtual network named VNet1 that contains the following settings:\n\n- IPv4 address space: 172.16.10.0/24\n- Subnet name: Subnet1\n- Subnet address range: 172.16.10.0/25\n\nWhat is the maximum number of virtual machines that can connect to Subnet1?",
+    "options": [
+      "24",
+      "25",
+      "123",
+      "128",
+      "251"
+    ],
+    "answer": 2,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma /25 tem 128 endereços, e o Azure reserva **5** em cada sub-rede: **123** utilizáveis."
+  },
+  {
+    "id": "Q1134",
+    "src": 1134,
+    "domain": 1,
+    "topic": "SSPR — escopo",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the Microsoft Entra identities shown in the following table.\n\n![Exhibit](img/S1134-stem-1.png){w=263}\n\nYou need to enable self-service password reset (SSPR).\n\nFor which identities can you enable SSPR in the Azure portal?",
+    "options": [
+      "User1 only",
+      "Group1 only",
+      "User1 and Group1 only",
+      "Group1 and Group2 only",
+      "User1, Group1, and Group2"
+    ],
+    "answer": 1,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "O SSPR em modo **Selected** é habilitado para **grupos** (não para usuários individuais). Entre as opções, o grupo de segurança Group1. O dump marcava User1 e Group1."
+  },
+  {
+    "id": "Q1135",
+    "src": 1135,
+    "domain": 2,
+    "topic": "Azure Files — permissão padrão",
+    "type": "yesno",
+    "stem": "Your network contains an on-premises Active Directory Domain Services (AD DS) domain.\n\nThe domain contains the identities shown in the following table.\n\n![Exhibit](img/S1135-stem-1.png){w=571}\n\nYou have an Azure subscription that contains a storage account named storage1. The file shares in storage1 have an identity source of AD DS and Default share- level permissions set to Enable permissions for all authenticated users and groups.\n\nYou create an Azure Files share named share1 that has the roles shown in the following table.\n\n![Exhibit](img/S1135-stem-2.png){w=419}\n\nYou have a Microsoft Entra tenant that contains a cloud-only user named User3. You use Microsoft Entra Connect to sync OU1 from the AD DS domain to the Microsoft Entra tenant.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "User1 can access content in share1.",
+      "User2 can access content in share1.",
+      "User3 can access content in share1."
+    ],
+    "answer": [
+      true,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Com **AD DS** e a **permissão padrão de share** para todos os usuários autenticados, identidades do AD **mesmo sem sincronização** (User1, na OU2) acessam. O User2 tem SMB Share Reader. O User3 é **só nuvem** e não tem identidade AD DS."
+  },
+  {
+    "id": "Q1136",
+    "src": 1136,
+    "domain": 3,
+    "topic": "ACR — permissões",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ACRIMG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure container registry named Registry1 that contains an image named image1.\n\nYou receive an error message when you attempt to deploy a container instance by using image1.\n\nYou need to be able to deploy a container instance by using image1.\n\nSolution: You assign the AcrPull role to ACR-Tasks-Network for Registry1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "borderline",
+    "review": "duvidosa",
+    "explanation": "Sem a mensagem de erro, a série é ambígua; o gabarito segue o dump."
+  },
+  {
+    "id": "Q1137",
+    "src": 1137,
+    "domain": 3,
+    "topic": "ACR — dedicated data endpoint",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ACRIMG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure container registry named Registry1 that contains an image named image1.\n\nYou receive an error message when you attempt to deploy a container instance by using image1.\n\nYou need to be able to deploy a container instance by using image1.\n\nSolution: You select Use dedicated data endpoint for Registry1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "borderline",
+    "review": "duvidosa",
+    "explanation": "Dedicated data endpoints servem para regras de firewall do cliente; não resolvem erro de implantação. Sem a mensagem de erro, a série é ambígua; o gabarito segue o dump."
+  },
+  {
+    "id": "Q1138",
+    "src": 1138,
+    "domain": 3,
+    "topic": "ACR — private endpoint",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ACRIMG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure container registry named Registry1 that contains an image named image1.\n\nYou receive an error message when you attempt to deploy a container instance by using image1.\n\nYou need to be able to deploy a container instance by using image1.\n\nSolution: You create a private endpoint connection for Registry1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "borderline",
+    "review": "duvidosa",
+    "explanation": "Private endpoint no registry não resolve o erro (e o ACI precisaria estar na VNet). Sem a mensagem de erro, a série é ambígua; o gabarito segue o dump."
+  },
+  {
+    "id": "Q1139",
+    "src": 1139,
+    "domain": 3,
+    "topic": "ACR — dedicated data endpoint",
+    "type": "multi",
+    "layout": "panel",
+    "panelTitle": "contoso2023 | Container registry",
+    "stem": "You have an Azure container registry named contoso2023 as shown in the following exhibit.\n\n![Exhibit](img/S1139-stem-1.png){w=611}\n\nYou need to enable contoso2023 to use a dedicated data endpoint. Which two settings should you configure for contoso2023? To answer, select the appropriate settings in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "options": [
+      "Overview",
+      "Activity log",
+      "Access control (IAM)",
+      "Tags",
+      "Quick start",
+      "Events",
+      "Access keys",
+      "Encryption",
+      "Identity",
+      "Networking",
+      "Microsoft Defender for Cloud",
+      "Properties",
+      "Locks",
+      "Repositories",
+      "Webhooks",
+      "Geo-replications",
+      "Tasks",
+      "Connected registries (Preview)",
+      "Cache"
+    ],
+    "answer": [
+      9,
+      11
+    ],
+    "shuffle": false,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Dedicated data endpoints exigem **Premium**: o registry é **Standard**, então primeiro mude o tier (em **Properties**/Overview) e depois habilite o endpoint em **Networking**. O dump marcava Networking e Connected registries."
+  },
+  {
+    "id": "Q1140",
+    "src": 1140,
+    "domain": 4,
+    "topic": "Route tables",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S1140-stem-1.png){w=348}\n\nYou create a route table named RT1 in the East US Azure region. To which resources can you associate RT1?",
+    "options": [
+      "VNet1 only",
+      "Subnet1 only",
+      "VNet1 and NIC1 only",
+      "Subnet1 and NIC1 only",
+      "VNet1, Subnet1, and NIC1"
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Uma route table é associada a **sub-redes** (da mesma região/assinatura), não a VNets nem NICs."
+  },
+  {
+    "id": "Q1141",
+    "src": 1141,
+    "domain": 4,
+    "topic": "Rotas definidas pelo usuário",
+    "type": "single",
+    "stem": "You have an Azure subscription.\n\nYou create a routing table named RT1.\n\nYou need to add a route to RT1 that specifies the next hop IP address. Which next hop type should you select?",
+    "options": [
+      "Internet",
+      "Virtual network gateway",
+      "Virtual network",
+      "Virtual appliance"
+    ],
+    "answer": 3,
+    "answer_original": 2,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Só o next hop **Virtual appliance** pede um **endereço IP** de próximo salto (ex.: firewall/NVA). O dump marcava Virtual network."
+  },
+  {
+    "id": "Q1142",
+    "src": 1142,
+    "domain": 4,
+    "topic": "Peering",
+    "type": "single",
+    "stem": "You have two Azure subscriptions named Sub1 and Sub2 that are linked to separate Microsoft Entra tenants.\n\n![Exhibit](img/S1142-stem-1.png){w=330}\n\nYou have the virtual networks shown in the following table.\n\nWhich virtual networks can you peer with VNet1?",
+    "options": [
+      "VNet2 only",
+      "VNet2 and VNet3 only",
+      "VNet2 and VNet4 only",
+      "VNet2, VNet3, and VNet4 only",
+      "VNet2, VNet3, VNet4, and VNet5"
+    ],
+    "answer": 4,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Peering funciona entre regiões (global), assinaturas e **tenants diferentes**, desde que os espaços não se sobreponham. Todas as VNets podem ser emparelhadas com a VNet1."
+  },
+  {
+    "id": "Q1143",
+    "src": 1143,
+    "domain": 4,
+    "topic": "Peering entre nuvens",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual networks shown in the following table.\n\n![Exhibit](img/S1143-stem-1.png){w=426}\n\nYou have the peering options shown in the following exhibit.\n\n![Exhibit](img/S1143-stem-2.png){w=611}\n\nYou need to design a communication strategy for the resources on the virtual networks.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "statements": [
+      "Peering 1-2 is a possible configuration.",
+      "Peering 1-3 is a possible configuration.",
+      "Peering 3-2 is a possible configuration."
+    ],
+    "answer": [
+      false,
+      false,
+      false
+    ],
+    "answer_original": [
+      false,
+      true,
+      false
+    ],
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Peering só funciona dentro da **mesma nuvem**. Azure Government, Azure público e Azure China (21Vianet) são nuvens soberanas separadas: **nenhum** dos peerings é possível. O dump marcava Sim para o 1-3."
+  },
+  {
+    "id": "Q1144",
+    "src": 1144,
+    "domain": 2,
+    "topic": "Firewall do storage",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains a storage account named storage1. You need to allow access to storage1 from selected networks and your home office. The solution must minimize administrative effort.\n\nWhat should you do first for storage1?",
+    "options": [
+      "Add a private endpoint.",
+      "Modify the Public network access settings.",
+      "Select Internet routing.",
+      "Modify the Access Control (IAM) settings."
+    ],
+    "answer": 1,
+    "answer_original": 0,
+    "scope": "in",
+    "review": "corrigida",
+    "explanation": "Para liberar redes selecionadas e o IP do escritório, altere **Public network access** para *Enabled from selected virtual networks and IP addresses* e adicione a VNet e o IP. Private endpoint não é necessário. O dump marcava A."
+  },
+  {
+    "id": "Q1145",
+    "src": 1145,
+    "domain": 1,
+    "topic": "Política de nomes de grupos",
+    "type": "order",
+    "stem": "You have a Microsoft Entra tenant.\n\nYou need to ensure that when a new Microsoft 365 group is created, the group name is automatically formatted as follows:\n\n![Exhibit](img/S1145-stem-1.png){w=334}\n\nWhich three actions should you perform in sequence in the Microsoft Entra admin center? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "pool": [
+      "Set Add suffix to Attribute.",
+      "Create a group naming policy.",
+      "Set Add prefix to Attribute.",
+      "Set Add suffix to String.",
+      "Set Add prefix to String.",
+      "Set Select type to Department.",
+      "Customize the company branding."
+    ],
+    "answer": [
+      1,
+      2,
+      5
+    ],
+    "scope": "borderline",
+    "review": "ok",
+    "explanation": "Em Entra ID > Groups > **Naming policy**: crie a política, defina **prefixo do tipo Attribute** e escolha o atributo **Department**. O resultado é <Department><Group name>."
+  },
+  {
+    "id": "Q1146",
+    "src": 1146,
+    "domain": 2,
+    "topic": "Conversão para ZRS",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains the storage accounts shown in the following table.\n\n![Exhibit](img/S1146-stem-1.png){w=601}\n\nWhich storage account can be converted to zone-redundant storage (ZRS) replication?",
+    "options": [
+      "storage1 only",
+      "storage2 only",
+      "storage3 only",
+      "storage2 and storage3",
+      "storage1, storage2, and storage3"
+    ],
+    "answer": 0,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Converter para ZRS: **Standard GPv2 com LRS** (storage1). RA-GRS vai para GZRS; BlobStorage legado não suporta."
+  },
+  {
+    "id": "Q1147",
+    "src": 1147,
+    "domain": 2,
+    "topic": "Chaves do storage — RBAC",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "KEYOPS"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Storage account named storage1.\n\nYou need to enable a user named User1 to list and regenerate storage account keys for storage1.\n\nSolution: You assign the Reader and Data Access role to User1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Reader and Data Access** pode **listar** as chaves, mas não **regenerá-las**."
+  },
+  {
+    "id": "Q1148",
+    "src": 1148,
+    "domain": 2,
+    "topic": "Chaves do storage — RBAC",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "KEYOPS"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Storage account named storage1.\n\nYou need to enable a user named User1 to list and regenerate storage account keys for storage1.\n\nSolution: You assign the Storage Account Key Operator Service Role to User1. Does this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 0,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "**Storage Account Key Operator Service Role** permite **listar e regenerar** as chaves de acesso."
+  },
+  {
+    "id": "Q1149",
+    "src": 1149,
+    "domain": 2,
+    "topic": "Chaves do storage — RBAC",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "KEYOPS"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Storage account named storage1.\n\nYou need to enable a user named User1 to list and regenerate storage account keys for storage1.\n\nSolution: You assign the Storage Account Encryption Scope Contributor Role to User1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Storage Account Encryption Scope Contributor gerencia encryption scopes, não as chaves."
+  },
+  {
+    "id": "Q1150",
+    "src": 1150,
+    "domain": 3,
+    "topic": "ACR — admin user",
+    "type": "single",
+    "group": {
+      "kind": "series",
+      "id": "ACRIMG"
+    },
+    "stem": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure container registry named Registry1 that contains an image named image1.\n\nYou receive an error message when you attempt to deploy a container instance by using image1.\n\nYou need to be able to deploy a container instance by using image1.\n\nSolution: You set Admin user to Enable for Registry1.\n\nDoes this meet the goal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer": 1,
+    "shuffle": false,
+    "scope": "borderline",
+    "review": "duvidosa",
+    "explanation": "Habilitar o admin user dá credenciais que o ACI poderia usar. Sem a mensagem de erro, a série é ambígua; o gabarito segue o dump."
+  },
+  {
+    "id": "Q1151",
+    "src": 1151,
+    "domain": 3,
+    "topic": "Redimensionar VM em availability set",
+    "type": "single",
+    "stem": "You have an Azure subscription that contains three virtual machines named VM1, VM2, and VM3. All the virtual machines are in an availability set named AVSet1.\n\nYou need to scale up VM1 to a new virtual machine size, but the intended size is unavailable.\n\nWhat should you do first?",
+    "options": [
+      "Create a proximity placement group.",
+      "Deallocate VM1.",
+      "Convert AvSet1 into a managed availability set.",
+      "Shut down VM3 and VM3."
+    ],
+    "answer": 1,
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "Se o tamanho não está disponível no cluster atual, é preciso **desalocar** para realocar. Em availability set, todas as VMs do set precisam ser desalocadas; o primeiro passo listado é desalocar a VM1."
+  },
+  {
+    "id": "Q1152",
+    "src": 1152,
+    "domain": 4,
+    "topic": "IP público — associação",
+    "type": "multi",
+    "stem": "You have an Azure subscription that contains the resources shown in the following table.\n\n![Exhibit](img/S1152-stem-1.png){w=260}\n\nYou create a public IP address named IP1.\n\nWhich two resources can you associate to IP1? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      "VM1",
+      "LB1",
+      "NIC1",
+      "VPN1",
+      "VNet1"
+    ],
+    "answer": [
+      1,
+      2
+    ],
+    "scope": "in",
+    "review": "ok",
+    "explanation": "Um IP público avulso pode ser associado a um **load balancer** (frontend) ou a uma **NIC** (configuração de IP). VM não recebe IP diretamente (é pela NIC), e VNet não tem IP público."
+  },
+  {
+    "id": "Q1153",
+    "src": 1153,
+    "domain": 2,
+    "topic": "Firewall do storage — mesma região",
+    "type": "yesno",
+    "stem": "You have an Azure subscription that contains the virtual machines shown in the following table.\n\n![Exhibit](img/S1153-stem-1.png){w=372}\n\nThe subscription contains a storage account named contoso2024 as shown in the following exhibit.\n\n![Exhibit](img/S1153-stem-2.png){w=611}\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      "VM1 can connect to contoso2024 by using 131.107.10.10.",
+      "VM2 can connect to contoso2024 by using 150.120.10.10.",
+      "VM3 must use its private IP address to connect to contoso2024."
+    ],
+    "answer": [
+      true,
+      false,
+      false
+    ],
+    "scope": "in",
+    "review": "duvidosa",
+    "explanation": "A Subnet1 tem **service endpoint** liberado: VM1 e VM3 entram pela regra de VNet (com IP privado de origem). **IP rules não valem para clientes na mesma região** do storage, então a VM2 (Subnet2, sem endpoint) é bloqueada mesmo com o IP público na lista. O gabarito considera Sim/Não/Não."
+  }
+]);

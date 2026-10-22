@@ -1,0 +1,346 @@
+{
+ "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/md-102",
+ "block": "Skills measured as of October 27, 2026",
+ "skills": [
+  {
+   "id": "1.1",
+   "domain": 1,
+   "name": "Add devices to Microsoft Entra ID",
+   "items": [
+    {
+     "t": "Choose an appropriate device join type, including considerations such as device registration and Microsoft Entra join"
+    },
+    {
+     "t": "Join devices to Microsoft Entra ID"
+    },
+    {
+     "t": "Register devices to Microsoft Entra ID"
+    },
+    {
+     "t": "Plan and implement groups for devices in Microsoft Entra ID, including dynamic group membership rules"
+    }
+   ]
+  },
+  {
+   "id": "1.2",
+   "domain": 1,
+   "name": "Enroll devices to Microsoft Intune",
+   "items": [
+    {
+     "t": "Configure enrollment settings in Microsoft Intune"
+    },
+    {
+     "t": "Configure automatic enrollment for Windows"
+    },
+    {
+     "t": "Configure personal enrollment for macOS, iOS, iPadOS"
+    },
+    {
+     "t": "Configure enrollment profiles for Android devices, including fully managed, dedicated, corporate-owned devices with a work profile, enrollment restrictions and troubleshooting enrollment failures"
+    },
+    {
+     "t": "Configure corporate enrollment for macOS and iOS devices by integrating Intune with Apple Business Manager"
+    },
+    {
+     "t": "Configure enrollment for Android devices by integrating Intune with Samsung Knox Mobile Enrollment or Google zero-touch enrollment"
+    }
+   ]
+  },
+  {
+   "id": "1.3",
+   "domain": 1,
+   "name": "Implement identity and compliance",
+   "items": [
+    {
+     "t": "Manage built-in and custom roles for Intune and Windows 365, including role assignments"
+    },
+    {
+     "t": "Configure scope tags and scoped administration for multi-admin environments"
+    },
+    {
+     "t": "Implement and manage multi-admin approval"
+    },
+    {
+     "t": "Implement compliance policies for all supported device platforms by using Intune"
+    },
+    {
+     "t": "Implement Microsoft Entra Conditional Access policies that require a compliance status"
+    },
+    {
+     "t": "Configure Windows Hello for Business by using Intune"
+    },
+    {
+     "t": "Implement and manage Windows Local Administrator Password Solution (Windows LAPS) by using Microsoft Intune and Microsoft Entra ID"
+    },
+    {
+     "t": "Manage the membership of local groups on Windows devices by using Intune"
+    }
+   ]
+  },
+  {
+   "id": "2.1",
+   "domain": 2,
+   "name": "Deploy and upgrade Windows clients by using cloud-based tools",
+   "items": [
+    {
+     "t": "Choose between Windows Autopilot deployment profiles and device preparation policies"
+    },
+    {
+     "t": "Choose between Windows Autopilot deployment modes, including user-driven, pre-provisioning, and self-deploying"
+    },
+    {
+     "t": "Apply a device name template by using Windows Autopilot"
+    },
+    {
+     "t": "Implement Windows client deployment by using Windows Autopilot"
+    },
+    {
+     "t": "Create an Enrollment Status Page (ESP)"
+    },
+    {
+     "t": "Plan and implement device upgrades for Windows 11 by using Intune"
+    },
+    {
+     "t": "Provision and configure Windows 365 Cloud PCs by using Intune, including provisioning policies, network connections, and image management"
+    },
+    {
+     "t": "Implement Windows Backup by using Intune"
+    }
+   ]
+  },
+  {
+   "id": "2.2",
+   "domain": 2,
+   "name": "Plan and implement device configuration profiles",
+   "items": [
+    {
+     "t": "Create device configuration profiles for Windows devices, including importing ADMX files and using Group Policy analytics"
+    },
+    {
+     "t": "Create device configuration profiles for Android devices"
+    },
+    {
+     "t": "Create device configuration profiles for iOS/iPadOS devices"
+    },
+    {
+     "t": "Create device configuration profiles for macOS devices"
+    },
+    {
+     "t": "Create device configuration profiles for specialty devices, including Microsoft Teams Rooms, HoloLens 2, and Zebra"
+    },
+    {
+     "t": "Target a profile by using assignment filters and enrollment time grouping"
+    }
+   ]
+  },
+  {
+   "id": "2.3",
+   "domain": 2,
+   "name": "Implement Intune Suite add-on capabilities",
+   "items": [
+    {
+     "t": "Configure Endpoint Privilege Management including configuring elevation policies, monitoring elevated actions, and adjusting EPM settings"
+    },
+    {
+     "t": "Manage applications by using the Enterprise App Catalog"
+    },
+    {
+     "t": "Configure Microsoft Intune Remote Help"
+    },
+    {
+     "t": "Plan and implement Microsoft Cloud PKI, including setting up cloud-based PKI, automating certificate issuance, and monitoring certificate health"
+    },
+    {
+     "t": "Implement Microsoft Tunnel for Mobile Application Management, including configuring the Microsoft Tunnel VPN Gateway, extending support to MAM devices, and monitoring tunnel connections"
+    },
+    {
+     "t": "Implement Microsoft Intune Advanced Analytics, including anomaly detection, proactive insights, and risk-based policy recommendations"
+    }
+   ]
+  },
+  {
+   "id": "2.4",
+   "domain": 2,
+   "name": "Perform remote actions on devices",
+   "items": [
+    {
+     "t": "Sync, restart, retire, or wipe devices"
+    },
+    {
+     "t": "Perform bulk remote actions"
+    },
+    {
+     "t": "Update Microsoft Defender Antivirus security intelligence"
+    },
+    {
+     "t": "Rotate BitLocker recovery keys"
+    },
+    {
+     "t": "Rotate local administrator passwords"
+    },
+    {
+     "t": "Run a device query by using KQL"
+    },
+    {
+     "t": "Collect device diagnostics and logs by using Microsoft Intune, including using the Troubleshooting blade for user-based diagnostics"
+    }
+   ]
+  },
+  {
+   "id": "3.1",
+   "domain": 3,
+   "name": "Configure endpoint security",
+   "items": [
+    {
+     "t": "Create antivirus policies by using Microsoft Intune"
+    },
+    {
+     "t": "Create and manage disk encryption policies by using Microsoft Intune, including managing BitLocker recovery keys, configuring user self-service recovery, and monitoring encryption compliance status"
+    },
+    {
+     "t": "Create firewall policies by using Microsoft Intune"
+    },
+    {
+     "t": "Configure Attack surface reduction policies by using Microsoft Intune, including applying Zero Trust principles for endpoint protection"
+    },
+    {
+     "t": "Plan and implement security baselines by using Microsoft Intune"
+    },
+    {
+     "t": "Integrate Intune with Microsoft Defender for Endpoint, including configuring Endpoint Detection and Response (EDR) policies, investigating endpoint threats, and triaging incidents"
+    },
+    {
+     "t": "Onboard devices into Microsoft Defender for Endpoint"
+    },
+    {
+     "t": "Configure App Control for Business policies by using Microsoft Intune"
+    }
+   ]
+  },
+  {
+   "id": "3.2",
+   "domain": 3,
+   "name": "Manage device updates",
+   "items": [
+    {
+     "t": "Plan for device updates by using Intune"
+    },
+    {
+     "t": "Create and manage update rings, feature updates, and quality updates for Windows devices by using Intune"
+    },
+    {
+     "t": "Implement Windows Autopatch and configure Hotpatch policies"
+    },
+    {
+     "t": "Create and manage update policies for iOS/iPadOS and macOS devices by using the Settings Catalog in Microsoft Intune"
+    },
+    {
+     "t": "Manage Android updates by using configuration profiles or firmware-over-the-air (FOTA) deployments"
+    },
+    {
+     "t": "Configure Windows client Delivery Optimization by using Intune"
+    },
+    {
+     "t": "Monitor device updates by using Intune"
+    }
+   ]
+  },
+  {
+   "id": "4.1",
+   "domain": 4,
+   "name": "Deploy and update apps",
+   "items": [
+    {
+     "t": "Prepare applications for deployment by using Intune"
+    },
+    {
+     "t": "Deploy apps by using Intune, including Win32 apps, line-of-business (LOB) apps, and Microsoft Store apps"
+    },
+    {
+     "t": "Configure Quiet Time policies for Android and iOS apps"
+    },
+    {
+     "t": "Deploy Microsoft 365 Apps by using Intune"
+    },
+    {
+     "t": "Configure policies for Microsoft 365 apps by using Microsoft Intune or the Microsoft 365 Apps admin center"
+    },
+    {
+     "t": "Deploy Microsoft 365 Apps as part of a Windows Autopilot deployment, including using the Office Deployment Tool (ODT) or Microsoft Intune"
+    },
+    {
+     "t": "Manage Microsoft 365 Apps by using the Microsoft 365 Apps admin center"
+    },
+    {
+     "t": "Deploy apps from platform-specific app stores by using Intune, including Apple Business Manager and Managed Google Play"
+    },
+    {
+     "t": "Monitor app deployment status and troubleshoot installation failures by using Microsoft Intune"
+    }
+   ]
+  },
+  {
+   "id": "4.2",
+   "domain": 4,
+   "name": "Plan and implement app protection and app configuration policies",
+   "items": [
+    {
+     "t": "Plan and implement app protection policies for managed and unmanaged (BYOD) devices by using Microsoft Intune"
+    },
+    {
+     "t": "Implement Microsoft Entra Conditional Access policies for app protection policies"
+    },
+    {
+     "t": "Plan and implement app configuration policies for managed apps and managed devices"
+    }
+   ]
+  },
+  {
+   "id": "5.1",
+   "domain": 5,
+   "name": "Automate management tasks",
+   "items": [
+    {
+     "t": "Automate Intune management tasks by using PowerShell and Microsoft Graph"
+    },
+    {
+     "t": "Investigate threats identified by Security Copilot agents in Intune"
+    },
+    {
+     "t": "Analyze device performance by using Security Copilot agents in Intune"
+    },
+    {
+     "t": "Review and respond to Security Copilot agent recommendations to make management decisions"
+    },
+    {
+     "t": "Extend device compliance by using PowerShell"
+    }
+   ]
+  },
+  {
+   "id": "5.2",
+   "domain": 5,
+   "name": "Monitor and optimize health",
+   "items": [
+    {
+     "t": "Implement reporting and data visibility in Microsoft Intune, including customizing reports and filters, using workbooks and dashboards, and exporting reporting data"
+    },
+    {
+     "t": "Monitor endpoint performance by using Endpoint Analytics, including Remediations, device health scores, and app startup performance"
+    },
+    {
+     "t": "Configure and manage remediation scripts, including detecting and fixing common device issues, and scheduling remediation runs"
+    },
+    {
+     "t": "Analyze endpoint reliability and user experience scores, including startup performance, restart frequency, and application reliability metrics"
+    },
+    {
+     "t": "Monitor tenant health and Intune service communications, including reviewing service health dashboards, message center notifications, and establishing operational baselines"
+    },
+    {
+     "t": "Configure alerts and notifications for policy and compliance changes, including setting up alert rules for compliance drift, enrollment failures, and configuration conflicts"
+    }
+   ]
+  }
+ ]
+}

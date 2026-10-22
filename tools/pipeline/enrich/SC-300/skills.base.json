@@ -1,0 +1,412 @@
+{
+ "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-300",
+ "block": "Skills measured as of October 28, 2026",
+ "skills": [
+  {
+   "id": "1.1",
+   "domain": 1,
+   "name": "Configure and manage a Microsoft Entra tenant",
+   "items": [
+    {
+     "t": "Configure and manage built-in and custom Microsoft Entra roles"
+    },
+    {
+     "t": "Recommend when to use administrative units"
+    },
+    {
+     "t": "Configure and manage administrative units"
+    },
+    {
+     "t": "Evaluate effective permissions for Microsoft Entra roles"
+    },
+    {
+     "t": "Configure and manage domains in Microsoft Entra ID and Microsoft 365"
+    },
+    {
+     "t": "Configure Company branding settings"
+    },
+    {
+     "t": "Configure tenant properties, user settings, group settings, and device settings"
+    }
+   ]
+  },
+  {
+   "id": "1.2",
+   "domain": 1,
+   "name": "Create, configure, and manage Microsoft Entra identities",
+   "items": [
+    {
+     "t": "Create, configure, and manage users"
+    },
+    {
+     "t": "Create, configure, and manage groups"
+    },
+    {
+     "t": "Manage custom security attributes"
+    },
+    {
+     "t": "Automate bulk operations by using the Microsoft Entra admin center and PowerShell"
+    },
+    {
+     "t": "Manage device join and device registration in Microsoft Entra ID"
+    },
+    {
+     "t": "Assign, modify, and report on licenses"
+    }
+   ]
+  },
+  {
+   "id": "1.3",
+   "domain": 1,
+   "name": "Implement and manage identities for external users and tenants",
+   "items": [
+    {
+     "t": "Manage External collaboration settings in Microsoft Entra ID"
+    },
+    {
+     "t": "Invite external users, individually or in bulk"
+    },
+    {
+     "t": "Manage external user accounts in Microsoft Entra ID"
+    },
+    {
+     "t": "Implement Cross-tenant access settings"
+    },
+    {
+     "t": "Implement and manage cross-tenant synchronization"
+    },
+    {
+     "t": "Configure external identity providers, including protocols such as SAML and WS-Fed"
+    }
+   ]
+  },
+  {
+   "id": "1.4",
+   "domain": 1,
+   "name": "Implement and manage hybrid identity",
+   "items": [
+    {
+     "t": "Implement and manage Microsoft Entra Connect Sync"
+    },
+    {
+     "t": "Implement and manage Microsoft Entra Cloud Sync"
+    },
+    {
+     "t": "Implement and manage password hash synchronization"
+    },
+    {
+     "t": "Implement and manage pass-through authentication"
+    },
+    {
+     "t": "Implement and manage seamless single sign-on (SSO)"
+    },
+    {
+     "t": "Migrate from AD FS to other authentication and authorization mechanisms"
+    },
+    {
+     "t": "Implement and manage Microsoft Entra Connect Health"
+    }
+   ]
+  },
+  {
+   "id": "2.1",
+   "domain": 2,
+   "name": "Plan, implement, and manage Microsoft Entra user authentication",
+   "items": [
+    {
+     "t": "Plan for authentication"
+    },
+    {
+     "t": "Implement and manage authentication methods, including certificate-based authentication, Temporary Access Pass, Microsoft Authenticator, and passkeys (FIDO2)"
+    },
+    {
+     "t": "Implement and manage tenant-wide multifactor authentication (MFA) settings"
+    },
+    {
+     "t": "Configure and deploy self-service password reset (SSPR)"
+    },
+    {
+     "t": "Implement and manage Windows Hello for Business"
+    },
+    {
+     "t": "Disable accounts and revoke user sessions"
+    },
+    {
+     "t": "Implement and manage Microsoft Entra password protection"
+    },
+    {
+     "t": "Enable Microsoft Entra Kerberos authentication for hybrid identities"
+    }
+   ]
+  },
+  {
+   "id": "2.2",
+   "domain": 2,
+   "name": "Plan, implement, and manage Microsoft Entra Conditional Access",
+   "items": [
+    {
+     "t": "Plan Conditional Access policies"
+    },
+    {
+     "t": "Implement Conditional Access policy assignments"
+    },
+    {
+     "t": "Implement Conditional Access policy controls"
+    },
+    {
+     "t": "Test and troubleshoot Conditional Access policies"
+    },
+    {
+     "t": "Implement session management"
+    },
+    {
+     "t": "Implement device-enforced restrictions"
+    },
+    {
+     "t": "Implement continuous access evaluation"
+    },
+    {
+     "t": "Configure authentication context"
+    },
+    {
+     "t": "Implement protected actions"
+    },
+    {
+     "t": "Create a Conditional Access policy from a template"
+    }
+   ]
+  },
+  {
+   "id": "2.3",
+   "domain": 2,
+   "name": "Manage risk by using Microsoft Entra ID Protection",
+   "items": [
+    {
+     "t": "Implement and manage user risk by using Microsoft Entra ID Protection or Conditional Access policies"
+    },
+    {
+     "t": "Implement and manage sign-in risk by using Microsoft Entra ID Protection or Conditional Access policies"
+    },
+    {
+     "t": "Implement and manage multifactor authentication registration by using authentication methods and registration campaigns"
+    },
+    {
+     "t": "Monitor, investigate and remediate risky users and risky sign-ins"
+    },
+    {
+     "t": "Monitor, investigate, and remediate risky workload identities"
+    }
+   ]
+  },
+  {
+   "id": "2.4",
+   "domain": 2,
+   "name": "Implement Global Secure Access",
+   "items": [
+    {
+     "t": "Deploy Global Secure Access clients"
+    },
+    {
+     "t": "Deploy and manage Microsoft Entra Private Access"
+    },
+    {
+     "t": "Deploy and manage Microsoft Entra Internet Access"
+    },
+    {
+     "t": "Deploy and manage the Microsoft traffic profile for Microsoft 365"
+    }
+   ]
+  },
+  {
+   "id": "3.1",
+   "domain": 3,
+   "name": "Plan and implement identities for applications and Azure workloads",
+   "items": [
+    {
+     "t": "Select appropriate identities for applications and Azure workloads, including managed identities, service principals, user accounts, and managed service accounts"
+    },
+    {
+     "t": "Create managed identities"
+    },
+    {
+     "t": "Assign a managed identity to an Azure resource"
+    },
+    {
+     "t": "Use a managed identity assigned to an Azure resource to access other Azure resources"
+    }
+   ]
+  },
+  {
+   "id": "3.2",
+   "domain": 3,
+   "name": "Plan, implement, and monitor the integration of enterprise applications",
+   "items": [
+    {
+     "t": "Plan and implement settings for enterprise applications, including application-level and tenant-level settings"
+    },
+    {
+     "t": "Assign appropriate Microsoft Entra roles to users to manage enterprise applications"
+    },
+    {
+     "t": "Design and implement integration for on-premises apps by using Microsoft Entra Application Proxy"
+    },
+    {
+     "t": "Design and implement integration for software as a service (SaaS) apps"
+    },
+    {
+     "t": "Assign, classify, and manage users, groups, and app roles for enterprise applications"
+    },
+    {
+     "t": "Configure and manage user and admin consent"
+    },
+    {
+     "t": "Create and manage application collections"
+    }
+   ]
+  },
+  {
+   "id": "3.3",
+   "domain": 3,
+   "name": "Plan and implement app registrations",
+   "items": [
+    {
+     "t": "Plan for app registrations"
+    },
+    {
+     "t": "Create app registrations"
+    },
+    {
+     "t": "Configure app authentication"
+    },
+    {
+     "t": "Configure API permissions"
+    },
+    {
+     "t": "Create app roles"
+    }
+   ]
+  },
+  {
+   "id": "3.4",
+   "domain": 3,
+   "name": "Manage and monitor app access by using Microsoft Defender for Cloud Apps",
+   "items": [
+    {
+     "t": "Configure and analyze cloud discovery results by using Defender for Cloud Apps"
+    },
+    {
+     "t": "Configure connected apps"
+    },
+    {
+     "t": "Implement application-enforced restrictions"
+    },
+    {
+     "t": "Configure Conditional Access app control"
+    },
+    {
+     "t": "Create access and session policies in Defender for Cloud Apps"
+    },
+    {
+     "t": "Implement and manage policies for OAuth apps"
+    },
+    {
+     "t": "Manage the Cloud app catalog"
+    }
+   ]
+  },
+  {
+   "id": "4.1",
+   "domain": 4,
+   "name": "Plan and implement entitlement management in Microsoft Entra",
+   "items": [
+    {
+     "t": "Plan entitlements"
+    },
+    {
+     "t": "Create and configure catalogs"
+    },
+    {
+     "t": "Create and configure access packages"
+    },
+    {
+     "t": "Manage access requests"
+    },
+    {
+     "t": "Implement and manage terms of use (ToU)"
+    },
+    {
+     "t": "Manage the lifecycle of external users"
+    },
+    {
+     "t": "Configure and manage connected organizations"
+    }
+   ]
+  },
+  {
+   "id": "4.2",
+   "domain": 4,
+   "name": "Plan, implement, and manage access reviews in Microsoft Entra",
+   "items": [
+    {
+     "t": "Plan for access reviews"
+    },
+    {
+     "t": "Create and configure access reviews"
+    },
+    {
+     "t": "Monitor access review activity"
+    },
+    {
+     "t": "Manually respond to access review activity"
+    }
+   ]
+  },
+  {
+   "id": "4.3",
+   "domain": 4,
+   "name": "Plan and implement privileged access",
+   "items": [
+    {
+     "t": "Plan and manage Microsoft Entra roles in Microsoft Entra Privileged Identity Management (PIM), including settings and assignments"
+    },
+    {
+     "t": "Plan and manage Azure resources in PIM, including settings and assignments"
+    },
+    {
+     "t": "Plan and configure PIM for Groups"
+    },
+    {
+     "t": "Manage the PIM request and approval process"
+    },
+    {
+     "t": "Analyze PIM audit history and reports"
+    },
+    {
+     "t": "Create and manage emergency access accounts"
+    }
+   ]
+  },
+  {
+   "id": "4.4",
+   "domain": 4,
+   "name": "Monitor identity activity by using logs, workbooks, and reports",
+   "items": [
+    {
+     "t": "Review and analyze sign-in, audit, and provisioning logs by using the Microsoft Entra admin center"
+    },
+    {
+     "t": "Configure diagnostic settings, including configuring destinations such as Log Analytics workspaces, storage accounts, and Azure Event Hubs"
+    },
+    {
+     "t": "Monitor Microsoft Entra ID by using KQL queries in Log Analytics"
+    },
+    {
+     "t": "Analyze Microsoft Entra ID by using workbooks and reporting"
+    },
+    {
+     "t": "Monitor and improve the security posture by using Identity Secure Score"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+A=[]
+def D(n,d,t,e,**k): A.append(dict(n=n,d=d,t=t,e=e,**k))
+D(61,1,"Custos por departamento — tags","**Marque cada recurso com tag** do departamento (os recursos de um departamento estão em vários RGs, e tags do RG não são herdadas), **filtre o Cost analysis pela tag** e **baixe o relatório**.",
+  order=(["Assign a tag to each resource group.","Assign a tag to each resource.","Download the usage report.","From the Cost analysis blade, filter the view by tag.","Open the Resource costs blade of each resource group."],[1,3,2]))
+D(81,1,"Domínio personalizado","**Adicione o domínio** no Entra ID, **crie o registro** (TXT/MX) na zona pública do registrador e **verifique o domínio**. Depois os usuários podem usar @contoso.com.",
+  order=(["Add an Azure AD tenant","Configure company branding","Create an Azure DNS zone","Add a custom name","Add a record to the public contoso.com DNS zone","Verify the domain"],[3,4,5]), s="borderline")
+D(110,2,"Import/Export","Azure Import/Export saiu do Skills Measured da AZ-104.", s="out")
+D(112,2,"Azure Files — caminho UNC","O caminho UNC de um file share é **\\\\<conta>.file.core.windows.net\\<share>**: \\\\contosostorage.file.core.windows.net\\data.",
+  match=(["blob","blob.core.windows.net","contosostorage","data","file","file.core.windows.net","portal.azure.com","subscription1"],[("\\\\ [Box 1]",2),(". [Box 2]",5),("\\ [Box 3]",3)]))
+D(119,2,"Azure File Sync","Azure File Sync saiu do Skills Measured da AZ-104.", s="out")
+D(131,2,"Azure File Sync","Azure File Sync saiu do Skills Measured da AZ-104.", s="out")
+D(149,2,"AzCopy — blob para Files","Na cópia **serviço a serviço** de blob para Azure Files, o AzCopy autoriza a **origem** e o **destino** com **SAS**. Files tradicionalmente só aceitava SAS; versões recentes ampliaram o suporte a Entra ID.",
+  match=(["OAuth","Anonymous","A storage account access key","A shared access signature (SAS) token"],[("storage1:",3),("storage2:",3)]), r="duvidosa")
+D(161,3,"Azure Automation State Configuration","Automation State Configuration (DSC) não está no Skills Measured da AZ-104 e será aposentado.", s="out")
+D(208,1,"RBAC — menor privilégio","User1 precisa **ver dados** de qualquer storage: **Reader and Data Access** (lê via chaves). User2 precisa **atribuir funções**: entre as opções, só **Owner** (User Access Administrator não aparece). Contributor e Storage Account Contributor não atribuem funções.",
+  match=(["Owner","Contributor","Reader and Data Access","Storage Account Contributor"],[("User1:",2),("User2:",0)]))
+D(216,5,"Backup em 3 zonas","Crie o **Recovery Services vault**, defina a redundância de armazenamento como **ZRS** (antes de proteger qualquer item, pois depois não muda) e então **crie a política de backup e configure o backup da VM1**.",
+  order=(["Configure a replication policy.","Set Replication to Zone-redundant storage (ZRS).","For VM1, create a backup policy and configure the backup.","Set Replication to Locally-redundant storage (LRS).","Create a Recovery Services vault."],[4,1,2]))
+D(564,4,"Peering — alterar address space","Pela resposta clássica: **remova o peering**, **adicione o address space 10.33.0.0/16** ao VNet1 e **recrie o peering**. Hoje o Azure também permite alterar o espaço de um VNet emparelhado e depois **sincronizar** o peering, sem removê-lo (opção ausente aqui).",
+  order=(["Remove VNet1.","Add the 10.33.0.0/16 address space to VNet1.","Create a new virtual network named VNet1.","On the peering connection in VNet2, allow gateway transit.","Recreate peering between VNet1 and VNet2.","On the peering connection in VNet1, allow gateway transit.","Remove peering between VNet1 and VNet2."],[6,1,4]), r="duvidosa")
+D(594,4,"VPN S2S","Gateways de VPN saíram do Skills Measured da AZ-104.", s="out")
+D(692,4,"Standard LB — configurar","VMs com IP público **Basic** não entram no backend de um Standard LB: **remova os IPs públicos**, **crie health probe e backend pool** e então a **regra de balanceamento**. O nsg1 já libera 443, e availability set não é exigido.",
+  order=(["Remove nsg1.","Remove the public IP addresses from vm1 and vm2.","Create a health probe and backend pool on lb1.","Create an availability set.","Create a load balancing rule on lb1."],[1,2,4]))
+D(698,4,"Virtual WAN","Virtual WAN/VPN saíram do Skills Measured da AZ-104.", s="out")
+D(769,5,"File Recovery","Recuperação de arquivos: **File Recovery** no vault → **ponto de recuperação** → **baixar e executar o script** que monta os discos → **copiar com o Explorer**. Ressalva: o script de uma VM **Linux** precisa rodar em uma máquina Linux compatível, não no Windows Server.",
+  order=(["Download and run the script to mount a drive on the local computer","Select a restore point that contains the deleted files","From the Azure portal, click Restore VM from the vault","From the Azure portal, click File Recovery from the vault","Mount a VHD","Copy the files by using AZCopy","Copy the files by using File Explorer"],[3,1,0,6]), r="duvidosa")
+D(799,5,"Azure Disk Backup","Backup de um disco gerenciado avulso usa **Backup vault**. A **managed identity** (system-assigned) do vault precisa de permissões (Disk Backup Reader no disco e Disk Snapshot Contributor no RG de snapshots), e então se cria a política e configura o backup. O dump propunha Backup vault → política → managed identity.",
+  order=(["Configure a managed identity","Create an Azure Backup vault","Create a Recovery Services vault","Delegate permissions for the vault","Create a backup policy and configure the backup"],[1,3,4]), ans_orig=[1,4,0], r="duvidosa")
+D(965,4,"Bastion — cliente nativo","O cliente nativo (az network bastion rdp) exige **Bastion Standard**: faça o **upgrade**, habilite **Native Client Support** e conecte com **az network bastion rdp** a partir do Device1.",
+  order=(["From Azure CLI on Device1, run az network bastion rdp.","From Bastion1, enable Kerberos authentication.","From VM1, enable just-in-time (JIT) VM access.","From Bastion1, select Native Client Support.","On Device1, run mstsc.exe.","Upgrade Bastion1 to the Standard SKU."],[5,3,0]))
+D(1047,3,"ARM — ordem de dependências","A ordem segue as dependências: **virtual network** → **network interface** (na sub-rede) → **virtual machine** (usa a NIC) → **extensão do Azure Monitor** (instalada na VM).",
+  order=(["virtual machine","Azure Monitor extension","network interface","virtual network"],[3,2,0,1]))
+D(1145,1,"Política de nomes de grupos","Em Entra ID > Groups > **Naming policy**: crie a política, defina **prefixo do tipo Attribute** e escolha o atributo **Department**. O resultado é <Department><Group name>.",
+  order=(["Set Add suffix to Attribute.","Create a group naming policy.","Set Add prefix to Attribute.","Set Add suffix to String.","Set Add prefix to String.","Set Select type to Department.","Customize the company branding."],[1,2,5]), s="borderline")
